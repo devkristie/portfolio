@@ -1,3 +1,15 @@
+/*css variables*/
+:root {
+    --primary-color: #FFA724;
+    --secondary-color: #A26D5F;
+    --third-color: #FFCC7E;
+    --darkest-grey: #646464;
+    --dark-grey: #959595;
+    --light-grey: #C6C6C6;
+    --lightest-grey: #EAEAEA;
+    --dark-mode: #242424;
+    --light-mode: #FEFEFE;
+}
 *, *::after, *::before {
     box-sizing: border-box;
 }
