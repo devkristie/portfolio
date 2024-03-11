@@ -16,3 +16,35 @@
 body {
     margin: 0;
 }
+.top-navigation-bar {
+    width: 100%;
+    height: 2.5rem;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: var(--primary-color);
+}
+.logo {
+    width: 5rem;
+    height: 2.5rem;
+}
+.dark-mode-icon-container ul {
+    height: 2.5rem;
+}
+li {
+    list-style-type: none;
+}
+.hamburger-menu {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.accordion-navigation {
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 2.5rem;
+    top: 0;
+    position: fixed;
+    background-color: #A26D5F;
+}
