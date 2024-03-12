@@ -20,6 +20,7 @@ body {
     width: 100%;
     height: 2.5rem;
     top: 0;
+    padding-left: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,6 +44,8 @@ li {
 .hamburger-menu {
     width: 2.5rem;
     height: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
     border: solid 1px var(--darkest-grey); /*!temporary border*/
 }
 .accordion-navigation-bar {
@@ -66,4 +69,82 @@ li {
 }
 .accordion-navigation-bar-li a {
     text-decoration: none;
+    color: var(--dark-mode);
 }
+.main-content {
+    padding-top: 5rem;
+}
+.landing-page-title {
+    display: grid; 
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 20rem;
+    height: 90vh;
+ }
+ .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8 {
+    margin: 0;
+ }
+ .grid1 {
+    background-color: #AEBBF5; 
+    grid-row: 1;
+    /* grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 1;
+    grid-column-end: 2; */
+ }
+ .grid2 {
+    background-color: #B9F896; 
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+ }
+ .grid3 {
+    background-color: #5D77E6; 
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 2;
+ }
+ .grid4 {
+    background-color: #976a74; 
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-row-end: 4;
+    grid-column-end: 2;
+ }
+ .grid5 {
+    background-color: #778DA7; 
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 2;
+ }
+ .grid6 {
+    background-color: #68657D; 
+    grid-row-start: 4;
+    grid-column-start: 2;
+    grid-row-end: 5;
+    grid-column-end: 3;
+ }
+ .grid7 {
+    background-color: #A7877B; 
+    grid-row-start: 4;
+    grid-column-start: 3;
+    grid-row-end: 5;
+    grid-column-end: 4;
+ }
+ .grid8 {
+    background-color: #9DDB5B; 
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-row-end: 6;
+    grid-column-end: 2;
+ }
+ .computer-image {
+    background-color: #db5ba8; 
+    grid-row-start: 6;
+    grid-column-start: 1;
+    grid-row-end: 6;
+    grid-column-end: 3;
+ }
