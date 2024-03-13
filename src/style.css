@@ -23,14 +23,14 @@ body {
     margin: 0;
 }
 .top-navigation-bar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 2.5rem;
     top: 0;
     padding-left: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
     background-color: var(--primary-color);
     z-index: 1;
 }
@@ -56,20 +56,20 @@ li {
     border: solid 1px var(--darkest-grey); /*!temporary border*/
 }
 .accordion-navigation-bar {
+    position: fixed;
     width: 100%;
     height: 2.5rem;
     margin-top: 2.5rem;
     top: 0;
-    position: fixed;
     background-color: #A26D5F;
     z-index: 1;
 }
 .accordion-navigation-bar-nav .accordion-navigation-bar-ul .accordion-navigation-bar-li {
-    width: 100%;
-    height: 2.5rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
+    height: 2.5rem;
 }
 .accordion-navigation-bar-ul {
     margin: 0;
@@ -79,78 +79,6 @@ li {
     text-decoration: none;
     color: var(--dark-mode);
 }
- .main-content {
-    /* margin-top: 5rem; */
-} 
-
-/* .landing-page-title {
-    display: grid; 
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: auto;
-    margin-top: 9em;
-    width: 11rem;
-    height: 100%;
- }
- .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8 {
-    margin: 0;
-    height: 1.5rem;
- }
- .grid3, .grid4, .grid5 {
-    padding-left: 2.5rem;
- }
- .grid1 {
-    background-color: #AEBBF5; 
- }
- .grid2 {
-    background-color: #B9F896; 
-    margin-left: -1.5rem;
-    font-size: 5rem;
- }
- .grid3 {
-    background-color: #5D77E6; 
-    grid-row-start: 2;
-    grid-column-start: 1;
- }
- .grid4 {
-    background-color: #976a74; 
-    grid-row-start: 3;
-    grid-column-start: 1;
- }
- .grid5 {
-    background-color: #778DA7; 
-    grid-row-start: 4;
-    grid-column-start: 1;
- }
- .grid6 {
-    background-color: #68657D; 
-    grid-row-start: 4;
-    grid-column-start: 2;
-    padding-left: 5px;
- }
- .grid7 {
-    background-color: #A7877B; 
-    grid-row-start: 4;
-    grid-column-start: 3;
- }
- .grid8 {
-    background-color: #9DDB5B; 
-    grid-row-start: 5;
-    grid-column-start: 1;
- }
- .laptop-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #db5ba8; 
-    grid-row-start: 6;
-    grid-column-start: 1;
-    margin-top: 5rem;
- }
-.profile-content {
-    margin-top: 70vh;
-} */
 .landing-page-title {
     display: flex;
     flex-direction: column;
@@ -164,57 +92,59 @@ li {
     margin: 0;
     font-family: "roboto-bold", Arial;
 }
-.grid1, .grid2, .grid5, .grid6, .grid7 {
+.p1, .p2, .p5, .p6, .p7 {
     display: inline;
 }
-.grid2, .grid8 {
+.p2, .p8 {
     font-size: 4rem;
     color: var(--lightest-grey);
 }
-.grid3, .grid4, .grid5 {
+.p3, .p4, .p5 {
     padding-left: 2rem;
 }
-.grid3, .grid4, .grid5, .grid6, .grid7 {
+.p3, .p4, .p5, .p6, .p7 {
     font-size: 1.2rem;
 }
-.grid1  {
+.p1  {
     font-size: 2rem;
 }
-.grid2 {
+.p2 {
     position: relative;
     left: 1rem;
     top: 0.5rem;
 }
-.grid6 {
-    color: var(--primary-color);
-}
-.grid7 {
-    position: relative;
-    right: 0.25rem;
-}
-.laptop-image {
-    margin-top: 2rem;
-    background-color: aqua;
-}
 .welcome-background-one {
     position: absolute;
-    background-color: var(--dark-grey);
-    opacity: 50%;
     display: inline-block;
     width: 13.5rem;
     height: 2.4rem;
     margin-top: 2rem;
     margin-left: -9rem;
+    background-color: var(--dark-grey);
+    opacity: 50%;
     z-index: -1;
 }
 .welcome-background-two {
     position: absolute;
-    background-color: var(--light-grey);
-    opacity: 50%;
     display: inline-block;
     width: 15rem;
     height: 1rem;
     margin-top: 3.75rem;
     margin-left: -8rem;
+    background-color: var(--light-grey);
+    opacity: 50%;
     z-index: -2;
 }
+.p6 {
+    color: var(--primary-color);
+}
+.p7 {
+    position: relative;
+    right: 0.25rem;
+}
+.laptop-image-container {
+    margin-top: 2rem;
+    height: 12.125rem;
+    background-color: aqua; /*!temporary background*/
+}
+
