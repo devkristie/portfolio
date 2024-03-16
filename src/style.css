@@ -92,7 +92,7 @@ li {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    padding-top: 1rem;
+    padding-top: 2.5rem;
     border: solid 1px #000; /*!temporary border*/
 }
 .landing-page-title p {
@@ -153,5 +153,20 @@ li {
     margin-top: 2rem;
     height: 12.125rem;
     background-color: aqua; /*!temporary background*/
+}
+.section-title-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8.125rem;
+    background-color: var(--darkest-grey);
+}
+.section-title {
+    padding-top: 3.5rem;
+    font-size: 2.813rem;
+    font-family: "tomorrow-light";
+    color: var(--light-mode);
+    letter-spacing: 0.75rem;
 }
 
