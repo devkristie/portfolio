@@ -21,6 +21,7 @@
 }
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 .top-navigation-bar {
     position: fixed;
@@ -54,6 +55,10 @@ li {
     margin-left: 1rem;
     margin-right: 2rem;
     border: solid 1px var(--darkest-grey); /*!temporary border*/
+}
+.accordion-navigation-bar-hide {
+    position: absolute;
+    visibility: hidden;
 }
 .accordion-navigation-bar {
     position: fixed;
