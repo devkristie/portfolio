@@ -175,11 +175,21 @@ li {
     border: solid 1px #05ff0d; /*!temporary border*/
 }
 .profile-content-container-background {
+    display: block;
     margin: 0 2.5rem;
+    padding-bottom: -1rem;
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
 }
+.profile-content-container {
+    margin: -4rem 2rem 1rem;
+    padding: 6rem 1rem 1.25rem 1rem;
+    font-family: "roboto-regular", Arial;
+    background-color: rgba(255, 204, 126, 50%);
+}
 .profile-headshot {
+    display: inline-block;
+    margin-bottom: -8.8rem;
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
@@ -197,7 +207,7 @@ li {
     padding-right: 1rem;
     margin-left: auto;
     background-color: var(--light-grey);
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     font-family: "roboto-bold", Arial;
     text-align: center;
 }
@@ -217,15 +227,18 @@ q::after {
     font-size: 4.688rem;
     font-family: none;
 }
-.profile-content-container {
-    margin: -11.5rem 2rem 1rem;
-    padding: 11.5rem 1rem 0 1rem;
-    font-family: "roboto-regular", Arial;
-    background-color: rgba(255, 204, 126, 50%);
-}
 .download-cv-button {
+    display: block;
+    margin: 0 auto;
     width: 50%;
-    height: 2.5rem;
+    height: 3rem;
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
     border: none;
     border-radius: 50rem;
+}
+.download-cv-button:hover {
+    background-color: #895c50;
 }
