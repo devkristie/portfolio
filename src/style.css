@@ -186,9 +186,6 @@ li {
     box-shadow: 0.1rem 0.1rem 0.5rem var(--dark-mode);
     /*! border: 0.01rem solid var(--dark-mode); temporary border*/
 }
-/* .quotation-container-background, .profile-content-container-background {
-    margin-top: -3rem;
-} */
 .quotation-container-background {
     position: relative;
     display: flex;
