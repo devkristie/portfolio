@@ -244,3 +244,23 @@ q::after {
 .download-cv-button:hover {
     background-color: #895C50;
 }
+.portfolio-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2.5rem;
+}
+.portfolio-content-container h2 {
+    font-size: 2rem;
+    font-family: "roboto-bold", Arial;
+    text-align: center;
+}
+.portfolio-content-container p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;   
+    font-family: "roboto-regular", Arial;
+}
+hr {
+    margin: 2rem 2.5rem;
+}
