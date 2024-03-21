@@ -264,3 +264,47 @@ q::after {
 hr {
     margin: 2rem 2.5rem;
 }
+.portfolio-website-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio-website-title-container {
+    width: 15.313rem;
+    background-image: linear-gradient(to bottom, var(--dark-mode), var(--primary-color));
+    color: var(--light-mode);
+    text-align: center;
+}
+.portfolio-website-slider-container {
+    display: flex;
+    align-items: center;
+}
+.left-arrow, .right-arrow {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--dark-grey);
+}
+.image-slider {
+    width: 16.25rem;
+    height: 6.563rem;
+    background-color: #000;
+}
+.portfolio-website-button-container {
+    display: flex;
+    flex-direction: row;
+}
+.portfolio-website-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light-grey);
+}
+.technologies-used-title {
+    text-align: center;
+}
+.technology-used-container {
+    margin: 0;
+    width: 10rem;
+    background-color: var(--secondary-color);
+}
