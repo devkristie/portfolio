@@ -297,14 +297,18 @@ hr {
 .portfolio-website-content-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: var(--light-grey);
+}
+.show-more-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .technologies-used-title {
     text-align: center;
 }
 .technology-used-container {
-    margin: 0;
+    margin: auto;
     width: 10rem;
     background-color: var(--secondary-color);
 }
