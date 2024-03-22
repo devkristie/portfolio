@@ -219,6 +219,7 @@ q::before {
     content: open-quote;
     font-size: 4.688rem;
     font-family: none;
+    color: var(--secondary-color);
 }
 q::after {
     position: absolute;
@@ -227,6 +228,7 @@ q::after {
     content: close-quote;
     font-size: 4.688rem;
     font-family: none;
+    color: var(--secondary-color);
 }
 .download-cv-button {
     display: block;
