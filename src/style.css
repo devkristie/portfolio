@@ -253,18 +253,18 @@ q::after {
     align-items: center;
     margin: 0 2.5rem;
 }
-.portfolio-content-container h2 {
+.portfolio-content-container > h2 {
     font-size: 2rem;
     font-family: "roboto-bold", Arial;
     text-align: center;
 }
-.portfolio-content-container p {
+.portfolio-content-container > p {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;   
     font-family: "roboto-regular", Arial;
 }
 hr {
-    margin: 2rem 2.5rem;
+    margin: 2.5rem 2.5rem;
 }
 .portfolio-website-flex-container {
     display: flex;
@@ -273,8 +273,10 @@ hr {
     align-items: center;
 }
 .portfolio-website-title-container {
-    width: 15.313rem;
+    margin: 0.5rem 0 0 0;
+    width: 80%;
     background-image: linear-gradient(to bottom, var(--dark-mode), var(--primary-color));
+    font-family: "roboto-medium", Arial;
     color: var(--light-mode);
     text-align: center;
 }
