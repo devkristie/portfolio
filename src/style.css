@@ -302,10 +302,27 @@ hr {
 .portfolio-website-button-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin: 2.5rem 0 1.5rem;
+    min-width: 50%;
 }
-/* @media {
-    
-} */
+@media only screen and (max-width: 650px) {
+    .portfolio-website-button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .view-button {
+        margin-bottom: 1.5em;
+    }
+}
+.view-button {
+    width: 10rem;
+    padding: 0.25rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+    font-family: "roboto-bold", Arial;
+    font-size: 1rem;
+}
 .portfolio-website-content-container {
     display: flex;
     flex-direction: column;
