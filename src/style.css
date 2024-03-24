@@ -327,19 +327,31 @@ hr {
 .portfolio-website-content-container {
     display: flex;
     flex-direction: column;
-    margin: 0 2.5rem;
+    margin: 0 2.5rem 5rem;
+    padding: 0 2.5rem;
     background-color: var(--light-grey);
+    font-family: "roboto-regular", Arial;
+}
+.portfolio-website-content-container > p {
+    margin: 0.5rem 0;
 }
 .show-more-button {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+.show-more-arrow {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 2rem;
+    border: 0.01rem solid var(--dark-mode); /*!temporary border*/
+}
 .technologies-used-title {
     text-align: center;
 }
 .technology-used-container {
-    margin: auto;
-    width: 10rem;
+    margin: auto auto 2rem;
+    width: 100%;
     background-color: var(--secondary-color);
+    border-radius: 1.5rem;
 }
