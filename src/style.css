@@ -393,6 +393,9 @@ form {
     border: 0.01rem solid var(--dark-mode);
     background-color: var(--lightest-grey);
 }
+.form-input-message {
+    height: 12.688rem;
+}
 .contact-form-button {
     width: 100%;
     height: 4.063rem;
