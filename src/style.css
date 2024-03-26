@@ -382,7 +382,6 @@ hr {
     background-clip: text;
     color: transparent;
     background-image: linear-gradient(to bottom, var(--dark-mode), var(--secondary-color));
-
 }
 form {
     width: 100%;
@@ -393,4 +392,14 @@ form {
     margin-bottom: 1.5rem;
     border: 0.01rem solid var(--dark-mode);
     background-color: var(--lightest-grey);
+}
+.contact-form-button {
+    width: 100%;
+    height: 4.063rem;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    color: var(--light-mode);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 50rem;
 }
