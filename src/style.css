@@ -371,6 +371,9 @@ hr {
     background-image: linear-gradient(to bottom, var(--light-grey), var(--light-mode));
 
 }
+form {
+    width: 100%;
+}
 .form-input {
     width: 100%;
     height: 3.125rem;
