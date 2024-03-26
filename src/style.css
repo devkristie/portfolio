@@ -397,6 +397,7 @@ form {
 .contact-form-button {
     width: 100%;
     height: 3rem;
+    margin-top: 1rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     color: var(--light-mode);
@@ -404,3 +405,4 @@ form {
     border: none;
     border-radius: 50rem;
 }
+/*there is no way to change the input placeholder for the message as the browser has default settings. the only way to change it is to add javascript*/
