@@ -406,3 +406,7 @@ form {
     border-radius: 50rem;
 }
 /*there is no way to change the input placeholder for the message as the browser has default settings. the only way to change it is to add javascript*/
+.footer-content {
+    min-height: 100vh;
+    border: 1px solid #8c00ff; /*!temporary border*/
+}
