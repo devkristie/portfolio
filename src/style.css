@@ -401,6 +401,39 @@ form {
 }
 /*there is no way to change the input placeholder for the message as the browser has default settings. the only way to change it is to add javascript*/
 .footer-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15rem;
+    align-items: center;
+    text-align: center;
     min-height: 100vh;
     border: 1px solid #8c00ff; /*!temporary border*/
+}
+ul {
+    margin: 0 0 2rem 0;
+    padding: 0;
+}
+.footer-links a {
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    color: var(--primary-color);
+    text-decoration: none;
+    line-height: 2.5rem;
+}
+.absolute-footer-links {
+    font-size: 1rem;
+    font-family: "roboto-regular", Arial;
+}
+.absolute-footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.footer-bottom {
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    bottom: 0;
+    background-image: linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color));
 }
