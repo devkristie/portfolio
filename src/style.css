@@ -21,6 +21,11 @@
 }
 body {
     margin: 0;
+    background-image: url("./assets/images/code-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     overflow-x: hidden;
 }
 .top-navigation-bar {
@@ -84,6 +89,9 @@ li {
     font-family: "roboto-medium", Arial;
     color: var(--dark-mode);
     text-decoration: none;
+}
+main {
+    background-color: var(--light-mode);
 }
 .landing-page-title {
     display: flex;
@@ -406,6 +414,7 @@ form {
     flex-direction: column;
     justify-content: center;
     margin-top: 15rem;
+    background-color: var(--light-mode);
     align-items: center;
     text-align: center;
     min-height: 100vh;
