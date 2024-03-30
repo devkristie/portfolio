@@ -400,12 +400,42 @@ hr {
 form {
     width: 100%;
 }
+label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: -1.5rem 0;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    text-align: center;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: var(--lightest-grey);
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: var(--lightest-grey);
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: var(--lightest-grey);
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: var(--lightest-grey);
+}
 .form-input {
     width: 100%;
     height: 3rem;
     margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: "roboto-regular", Arial;
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
+}
+.form-input:focus {
+    padding: 0.95rem;
+    outline-style: solid;
+    outline-color: var(--secondary-color);
+    border: 0.1rem solid var(--secondary-color);
 }
 .form-input-message {
     height: 12.688rem;
