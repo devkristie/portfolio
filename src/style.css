@@ -202,10 +202,10 @@ main {
     border-radius: 1.5rem;
 }
 .profile-content-container {
-    margin: -4rem 2rem 1rem;
+    margin: -3.5rem 2rem 1rem;
     padding: 6rem 1rem 1.25rem 1rem;
     font-family: "roboto-regular", Arial;
-    background-color: rgba(255, 204, 126, 50%);
+    background-image: linear-gradient(to bottom, rgba(162, 109, 95, 50%), rgba(255, 255, 255, 0%));
 }
 .profile-headshot {
     display: inline-block;
@@ -230,6 +230,15 @@ main {
     text-align: center;
     border-radius: 1.5rem;
 }
+@media only screen and (max-width: 530px) {
+    .profile-content-container {
+        margin-top: -14.25rem;
+        padding-top: 15.25rem;
+    }
+    .quotation-container-background {
+        margin-top: 10.75rem;
+    }
+}
 q::before {
     position: absolute;
     display: block;
@@ -251,7 +260,7 @@ q::after {
 .download-cv-button {
     width: 58.5%;
     height: 3rem;
-    margin-left: 20.752%;
+    margin: 1rem 0 1rem 20.752%;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     color: var(--light-mode);
@@ -269,7 +278,7 @@ q::after {
     margin: 0 2.5rem;
 }
 .section-introduction-container h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
     text-align: center;
 }
@@ -348,6 +357,18 @@ hr {
     font-family: "roboto-regular", Arial;
     background-color: var(--light-grey);
 }
+.portfolio-website-content-container-accordion {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+    margin: 0 2.5rem 5rem;
+    padding: 0 2.5rem;
+    font-family: "roboto-regular", Arial;
+    background-color: var(--light-grey);
+}
+.portfolio-website-content-container-accordion article {
+    visibility: hidden;
+}
 .portfolio-website-content-container > p {
     margin: 0.5rem 0;
 }
@@ -355,6 +376,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 .show-more-arrow {
     width: 3rem;
@@ -427,7 +449,7 @@ label {
     width: 100%;
     height: 3rem;
     margin-bottom: 1.5rem;
-    padding: 1rem;
+    padding: 0.95rem;
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
     background-color: var(--lightest-grey);
@@ -440,6 +462,7 @@ label {
     border: 0.01rem solid var(--secondary-color);
 }
 .form-input-message {
+    resize: none;
     height: 12.688rem;
 }
 .contact-form-button {
