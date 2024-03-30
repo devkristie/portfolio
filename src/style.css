@@ -20,13 +20,25 @@
     box-sizing: border-box;
 }
 body {
+    position: relative; 
     margin: 0;
+    overflow-x: hidden;
+}
+
+body::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
     background-image: url("./assets/images/code-image.jpg");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
-    overflow-x: hidden;
+    filter: blur(3px); 
+    z-index: -1; 
 }
 .top-navigation-bar {
     position: fixed;
