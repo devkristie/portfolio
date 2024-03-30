@@ -249,10 +249,9 @@ q::after {
     color: var(--secondary-color);
 }
 .download-cv-button {
-    display: block;
+    width: 58.5%;
     height: 3rem;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin-left: 20.752%;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     color: var(--light-mode);
@@ -317,7 +316,7 @@ hr {
 .portfolio-website-button-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     min-width: 50%;
     margin: 2.5rem 0 3rem;
 }
@@ -338,6 +337,8 @@ hr {
     font-family: "roboto-bold", Arial;
     color: var(--light-mode);
     background-color: var(--secondary-color);
+    border: none;
+    border-radius: 50rem;
 }
 .portfolio-website-content-container {
     display: flex;
@@ -442,9 +443,10 @@ label {
     height: 12.688rem;
 }
 .contact-form-button {
-    width: 100%;
+    width: 50%;
     height: 3rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 25%;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     color: var(--light-mode);
