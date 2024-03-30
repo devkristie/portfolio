@@ -408,6 +408,7 @@ label {
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     text-align: center;
+    letter-spacing: 0.01rem;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: var(--lightest-grey);
@@ -435,7 +436,7 @@ label {
     padding: 0.95rem;
     outline-style: solid;
     outline-color: var(--secondary-color);
-    border: 0.1rem solid var(--secondary-color);
+    border: 0.01rem solid var(--secondary-color);
 }
 .form-input-message {
     height: 12.688rem;
