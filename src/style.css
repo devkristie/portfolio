@@ -403,7 +403,7 @@ hr {
     text-align: center;
 }
 .technology-used-container {
-    width: 100%;
+    width: 80%;
     margin: auto auto 2rem;
     background-color: var(--secondary-color);
     border-radius: 1.5rem;
