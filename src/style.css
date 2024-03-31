@@ -388,10 +388,10 @@ hr {
     height: 0rem;
 }
 .show-more-accordion h4 {
-    visibility: hidden;
+    display: none;
 }
 .show-more-accordion .technology-used-container {
-    visibility: hidden;
+    display: none;
 }
 .show-more-arrow {
     width: 3rem;
