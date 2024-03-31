@@ -387,6 +387,12 @@ hr {
 .show-more-accordion {
     height: 0rem;
 }
+.show-more-accordion h4 {
+    visibility: hidden;
+}
+.show-more-accordion .technology-used-container {
+    visibility: hidden;
+}
 .show-more-arrow {
     width: 3rem;
     height: 3rem;
