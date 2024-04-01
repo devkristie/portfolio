@@ -104,6 +104,10 @@ li {
 main {
     background-color: var(--light-mode);
 }
+.anchor {
+    position: absolute;
+    margin-top: -5rem;
+}
 .landing-page-title {
     display: flex;
     flex-direction: column;
