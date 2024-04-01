@@ -196,7 +196,8 @@ main {
 }
 .profile-content-container-background {
     display: block;
-    margin: 0 2.5rem 5rem;
+    width: 80%;
+    margin: 0 auto 5rem;
     padding-bottom: -1rem;
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
@@ -275,9 +276,11 @@ q::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 2.5rem;
+    width: 80%;
+    margin: auto;
 }
 .section-introduction-container h2 {
+    margin-top: 4rem;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
     text-align: center;
@@ -415,7 +418,8 @@ hr {
 .contact-form-container {
     display: flex;
     flex-direction: column;
-    margin: 2.5rem 2.5rem 5rem;
+    width: 80%;
+    margin: 2.5rem auto 5rem;
 }
 .contact-form-top-background {
     width: 100%;
