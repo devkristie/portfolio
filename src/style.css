@@ -231,7 +231,7 @@ main {
     text-align: center;
     border-radius: 1.5rem;
 }
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 570px) {
     .profile-content-container {
         margin-top: -14.25rem;
         padding-top: 15.25rem;
