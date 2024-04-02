@@ -214,8 +214,8 @@ main {
 }
 .profile-content-greeting {
     margin-bottom: 0;
-    font-size: 3rem;
-    font-family: "tomorrow-bold", Arial;
+    font-size: 2.813rem;
+    font-family: "tomorrow-regular", Arial;
     color: var(--primary-color);
 }
 .profile-content-container > p {
@@ -263,7 +263,7 @@ q::before {
     content: open-quote;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--secondary-color);
+    color: var(--darkest-grey);
 }
 q::after {
     position: absolute;
@@ -272,7 +272,7 @@ q::after {
     content: close-quote;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--secondary-color);
+    color: var(--darkest-grey);
 }
 .download-cv-button {
     width: 58.5%;
@@ -286,7 +286,7 @@ q::after {
     border-radius: 50rem;
 }
 .download-cv-button:hover {
-    background-color: #895C50;
+    filter: brightness(90%);
 }
 .section-introduction-container {
     display: flex;
@@ -375,6 +375,9 @@ hr {
     border-top: none;
     border-right: none;
     border-bottom: none;
+}
+.view-button:hover {
+    filter: brightness(90%);
 }
 @media only screen and (max-width: 650px) {
     .view-button {
@@ -525,6 +528,9 @@ label {
     border: none;
     border-radius: 50rem;
 }
+.contact-form-button:hover {
+    filter: brightness(90%);
+}
 /*there is no way to change the input placeholder for the message as the browser has default settings. the only way to change it is to add javascript*/
 .footer-content {
     position: relative;
@@ -548,6 +554,10 @@ ul {
     color: var(--primary-color);
     text-decoration: none;
     line-height: 2.5rem;
+}
+a.footer-link-backtotop {
+    margin-bottom: 1.5rem;
+    color: var(--dark-mode);
 }
 .absolute-footer-links {
     font-size: 1rem;
