@@ -210,14 +210,14 @@ main {
     margin: -3.5rem 2rem 1rem;
     padding: 6rem 1rem 1.25rem 1rem;
     font-family: "roboto-regular", Arial;
-    background-image: linear-gradient(to bottom, rgba(162, 109, 95, 50%), rgba(255, 255, 255, 0%));
+    background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(255, 255, 255, 0%));
 }
 .profile-headshot {
     display: inline-block;
     width: 10rem;
     height: 10rem;
     margin-bottom: -8.8rem;
-    box-shadow: 0.1rem 0.1rem 0.5rem var(--dark-mode);
+    box-shadow: 0.1rem 0.1rem 0.5rem var(--darkest-grey);
     border-radius: 50%;
     /*! border: 0.01rem solid var(--dark-mode); temporary border*/
 }
