@@ -117,6 +117,13 @@ main {
     min-height: 100vh;
     padding: 5rem 0;
     border: solid 1px #000; /*!temporary border*/
+    /*!temporary/experimental background*/
+    background-attachment: fixed;
+    background-image: url("./assets/images/background-image-tag.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
+    background-position-x: center;
 }
 .landing-page-title p {
     margin: 0;
