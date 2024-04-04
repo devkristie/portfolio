@@ -421,6 +421,11 @@ hr {
     align-items: center;
     width: 100%;
 }
+.show-more-button p {
+    width: 10rem;
+    padding: 1.5rem 0 0 2.5rem;
+    font-family: "roboto-bold", Arial;
+}
 .show-more-accordion {
     height: 0rem;
 }
@@ -433,8 +438,12 @@ hr {
 .show-more-arrow {
     width: 3rem;
     height: 3rem;
-    margin-bottom: 2rem;
-    border: 0.01rem solid var(--dark-mode); /*!temporary border*/
+    margin: -1rem 0 2rem 0;
+    stroke: black;
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.25rem;
+    border: 0.01rem solid var(--light-grey);
 }
 .technologies-used-title {
     text-align: center;
