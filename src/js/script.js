@@ -1,6 +1,6 @@
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
 const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
-const showMoreButton = document.querySelectorAll(".show-more-button"); //or .show-more-arrow?
+const showMoreButton = document.querySelectorAll(".show-more-button");
 const showMore = document.querySelectorAll(".show-more-accordion");
 const showMoreArrow = document.querySelectorAll(".show-more-arrow");
 const showLessText = document.querySelectorAll(".show-more-button p");

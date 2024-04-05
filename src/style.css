@@ -394,10 +394,6 @@ hr {
         border-bottom: none;
     }
 }
-.portfolio-website-content-container {
-    font-family: "roboto-regular", Arial;
-    background-color: var(--light-grey);
-}
 .portfolio-website-content-container-accordion {
     width: 80%;
     height: auto;
@@ -410,10 +406,6 @@ hr {
     margin: -1rem 2.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    visibility: visible;
-}
-.hidden {
-    visibility: hidden;
 }
 .show-more-button {
     display: flex;
@@ -426,10 +418,10 @@ hr {
     padding: 1.5rem 0 0 2.5rem;
     font-family: "roboto-bold", Arial;
 }
-.show-more-accordion {
-    height: 0rem;
-}
 .show-more-accordion h4 {
+    display: none;
+}
+.show-more-accordion .hidden {
     display: none;
 }
 .show-more-accordion .technology-used-container {
