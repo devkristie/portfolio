@@ -312,17 +312,21 @@ q::after {
     margin: 0.5rem 0;
     font-family: "roboto-regular", Arial;
 }
+.top-hr-element {
+    margin-top: 1.75rem;
+}
 hr {
-    margin: 2.5rem 2.5rem;
+    margin: 0;
 }
 .portfolio-website-flex-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
 }
 .portfolio-website-title-container {
-    margin: 0.5rem 0 0 0;
+    margin: 5rem 0 2.5rem;
     width: 80%;
     font-family: "roboto-medium", Arial;
     color: var(--light-mode);
@@ -333,16 +337,18 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2.5rem;
     width: 80%;
 }
 .portfolio-website-slider-container > figure {
     width: 80%;
-    margin: 3rem 0 0 0;
+    padding-top: 0.25rem;
+    margin: 0;
 }
 .left-arrow, .right-arrow {
     width: 3rem;
     height: 6.563rem;
-    margin: 2.75rem 0 0 0;
+    margin: 0;
     background-color: var(--dark-grey);
 }
 .left-arrow {
@@ -361,14 +367,12 @@ hr {
     flex-direction: row;
     justify-content: space-around;
     width: 80%;
-    margin: 2.75rem 0 0;
     background-color: var(--secondary-color);
 }
 @media only screen and (max-width: 650px) {
     .portfolio-website-button-container {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 0;
     }
 }
 .view-button {
@@ -397,7 +401,6 @@ hr {
 .portfolio-website-content-container-accordion {
     width: 80%;
     height: auto;
-    margin: 0 2.5rem 5rem;
     padding: 0 0;
     font-family: "roboto-regular", Arial;
     background-color: var(--light-grey);
