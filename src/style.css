@@ -97,13 +97,14 @@ li {
     padding-left: 0;
 }
 .accordion-navigation-bar-li a {
+    padding: 0 1rem;
     font-family: "roboto-medium", Arial;
     color: var(--dark-mode);
     text-decoration: none;
 }
 .accordion-navigation-bar-li a:hover {
     color: var(--light-mode);
-    background-color: var(--dark-mode);
+    background-color: var(--secondary-color);
 }
 main {
     background-color: var(--light-mode);
