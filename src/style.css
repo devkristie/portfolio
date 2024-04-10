@@ -101,6 +101,10 @@ li {
     color: var(--dark-mode);
     text-decoration: none;
 }
+.accordion-navigation-bar-li a:hover {
+    color: var(--light-mode);
+    background-color: var(--dark-mode);
+}
 main {
     background-color: var(--light-mode);
 }
@@ -542,22 +546,24 @@ label {
 .contact-form-button:hover {
     filter: brightness(90%);
 }
-/*there is no way to change the input placeholder for the message as the browser has default settings. the only way to change it is to add javascript*/
 .footer-content {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 15rem;
+    min-height: 100vh;
     background-color: var(--light-mode);
     align-items: center;
     text-align: center;
-    min-height: 100vh;
     border: 1px solid #8c00ff; /*!temporary border*/
 }
 ul {
     margin: 0 0 2rem 0;
     padding: 0;
+}
+.footer-links li:first-child {
+    margin-bottom: 1rem;
 }
 .footer-links a {
     font-size: 1rem;
@@ -566,9 +572,14 @@ ul {
     text-decoration: none;
     line-height: 2.5rem;
 }
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
 a.footer-link-backtotop {
-    margin-bottom: 1.5rem;
     color: var(--dark-mode);
+}
+a.footer-link-backtotop:hover {
+    color: var(--secondary-color);
 }
 .absolute-footer-links {
     font-size: 1rem;
@@ -577,6 +588,9 @@ a.footer-link-backtotop {
 .absolute-footer-links a {
     color: var(--primary-color);
     text-decoration: none;
+}
+.absolute-footer-links a:hover {
+    color: var(--secondary-color);
 }
 .footer-bottom {
     position: absolute;
