@@ -57,10 +57,40 @@ body::before {
     margin-right: auto;
     border: solid 1px var(--darkest-grey); /*!temporary border*/
 }
+.logo-path1 {
+    stroke: var(--dark-mode);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
+.logo-path2 {
+    stroke: var(--darkest-grey);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
+.logo-path5 {
+    stroke: var(--secondary-color);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
+.logo-path8 {
+    stroke: var(--third-color);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
+.logo-path9 {
+    stroke: var(--dark-grey);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
 .dark-mode-icon-container ul {
     margin: 0;
     padding: 0;
-    /* border: solid 1px var(--darkest-grey); !temporary border */
+    /*! border: solid 1px var(--darkest-grey); !temporary border */
 }
 li {
     list-style-type: none;
@@ -70,7 +100,7 @@ li {
     height: 2.5rem;
     margin-left: 1rem;
     margin-right: 2rem;
-    /* border: solid 1px var(--darkest-grey); !temporary border */
+    /*! border: solid 1px var(--darkest-grey); !temporary border */
 }
 .hamburger-menu-topline {
     stroke: var(--dark-mode);
