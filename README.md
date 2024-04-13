@@ -1,2 +1,3 @@
-# portfolio
- Frontend Web Development Portfolio - Showcasing my projects and offering my services.
+# Frontend Web Development Portfolio
+
+## Showcases my projects and offers my services.

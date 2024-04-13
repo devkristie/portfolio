@@ -55,7 +55,7 @@ body::before {
     width: 5rem;
     height: 2.5rem;
     margin-right: auto;
-    border: solid 1px var(--darkest-grey); /*!temporary border*/
+    /* border: solid 1px var(--darkest-grey); !temporary border */
 }
 .logo-path1 {
     stroke: var(--dark-mode);
@@ -64,25 +64,45 @@ body::before {
     stroke-width: 0.30rem;
 }
 .logo-path2 {
+    stroke: var(--dark-mode);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
+.logo-path3 {
     stroke: var(--darkest-grey);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.30rem;
 }
-.logo-path5 {
-    stroke: var(--secondary-color);
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 0.30rem;
+.logo-path4, .logo-path5, .logo-path7, .logo-path8 {
+    fill: var(--lightest-grey);
 }
-.logo-path8 {
-    stroke: var(--third-color);
+.logo-path6 {
+    stroke: var(--dark-grey);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.30rem;
 }
 .logo-path9 {
-    stroke: var(--dark-grey);
+    fill: var(--lightest-grey);
+    stroke-linecap: round;
+    stroke-width: 0.1rem;
+}
+.logo-path10 {
+    stroke: var(--darkest-grey);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
+.logo-path11 {
+    stroke: var(--dark-mode);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.30rem;
+}
+.logo-path12 {
+    stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.30rem;
