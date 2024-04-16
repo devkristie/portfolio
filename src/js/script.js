@@ -4,13 +4,30 @@ const showMoreButton = document.querySelectorAll(".show-more-button");
 const showMore = document.querySelectorAll(".show-more-accordion");
 const showMoreArrow = document.querySelectorAll(".show-more-arrow");
 const showLessText = document.querySelectorAll(".show-more-button p");
+const laptopImageCode1 = document.querySelector(".laptop-image-code1");
 
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {
-    topNavBarShow.classList.toggle("accordion-navigation-bar-hide");
-    topNavBarShow.classList.toggle("accordion-navigation-bar");
+  topNavBarShow.classList.toggle("accordion-navigation-bar-hide");
+  topNavBarShow.classList.toggle("accordion-navigation-bar");
 }
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+function handleScroll() {
+  if (isInViewport(laptopImageCode1)) {
+    laptopImageCode1.style.animation = "animate 15s linear forwards";
+  }
+}
+window.addEventListener("scroll", handleScroll);
 
 showMoreButton.forEach((button, index) => {
   button.addEventListener("click", () => {
