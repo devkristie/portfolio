@@ -172,6 +172,13 @@ li {
     text-decoration: none;
     transition: background 0.5s ease-in;
 }
+@media only screen and (max-width: 410px) {
+    .accordion-navigation-bar-li a {
+        padding: 0.1rem 0.5rem;
+        width: 75%;
+        text-align: center;
+    }
+}
 .accordion-navigation-bar-li a:hover {
     color: var(--light-mode);
     background-color: var(--secondary-color);
