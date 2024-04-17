@@ -4,7 +4,7 @@ const showMoreButton = document.querySelectorAll(".show-more-button");
 const showMore = document.querySelectorAll(".show-more-accordion");
 const showMoreArrow = document.querySelectorAll(".show-more-arrow");
 const showLessText = document.querySelectorAll(".show-more-button p");
-const laptopImageCode1 = document.querySelector(".laptop-image-code1");
+const laptopImageCode1 = document.querySelectorAll(".laptop-image-code1");
 
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
@@ -23,9 +23,13 @@ function isInViewport(element) {
   );
 }
 function handleScroll() {
-  if (isInViewport(laptopImageCode1)) {
-    laptopImageCode1.style.animation = "animate 15s linear forwards";
-  }
+  laptopImageCode1.forEach((element, index) => {
+    if (isInViewport(element)) {
+      setTimeout(() => {
+        element.style.animation = "draw 15s linear forwards";
+      }, index * 500);
+    }
+  });
 }
 window.addEventListener("scroll", handleScroll);
 

@@ -261,9 +261,7 @@ main {
     border: 0.01px solid rgb(0, 255, 17); /*!temporary border*/
 }
 .laptop-image1 {
-    stroke: var(--dark-mode);
     fill: var(--dark-mode);
-    stroke-width: 0.01rem;
 }
 .laptop-image2 {
     fill: var(--light-grey);
@@ -300,14 +298,14 @@ main {
     stroke-width: 1.25rem;
 }
 .laptop-image-code1 {
-    stroke: var(--light-mode);
+    stroke: var(--primary-color);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.15rem;
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
 }
-@keyframes animate {
+@keyframes draw {
     to {
         stroke-dashoffset: 0;
     }
