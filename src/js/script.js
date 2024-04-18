@@ -5,6 +5,8 @@ const showMore = document.querySelectorAll(".show-more-accordion");
 const showMoreArrow = document.querySelectorAll(".show-more-arrow");
 const showLessText = document.querySelectorAll(".show-more-button p");
 const laptopImageCode1 = document.querySelectorAll(".laptop-image-code1");
+const contactFormClicked = document.querySelectorAll(".form-input");
+const contactFormLabels = document.querySelectorAll("label");
 
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
@@ -46,4 +48,19 @@ showMoreButton.forEach((button, index) => {
       showMoreArrow[index].style.transform = "rotate(0deg)";
     }
   });
+});
+
+contactFormClicked.forEach((input, index) => {
+  input.addEventListener("input", () => {
+    if (input.value !== '') {
+      contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
+    } else {
+      contactFormLabels[index].style.margin = "0.5rem";
+    }
+    contactFormLabels[index].style.transition = "margin 0.35s ease";
+  });
+  // Check input values on page load
+  if (input.value !== '') {
+    contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
+  }
 });

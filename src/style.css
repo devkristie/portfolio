@@ -349,7 +349,7 @@ main {
     margin: -3.5rem 2rem 1rem;
     padding: 6.5rem 1rem 1.25rem 1rem;
     font-family: "roboto-regular", Arial;
-    background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(255, 255, 255, 0%));
+    background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
 }
 .profile-content-greeting {
     margin-bottom: 0;
@@ -455,15 +455,18 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
+    margin: 5rem 5rem;
+    background-color: var(--lightest-grey);
+    border-radius: 1.5rem;
 }
 .portfolio-website-title-container {
-    margin: 5rem 0 2.5rem;
-    width: 80%;
+    margin: 0 0 2.5rem;
+    width: 100%;
     font-family: "roboto-medium", Arial;
     color: var(--light-mode);
     background-image: linear-gradient(to bottom, var(--dark-mode), var(--primary-color));
     text-align: center;
+    border-radius: 1.5rem 1.5rem 0 0;
 }
 .portfolio-website-slider-container {
     display: flex;
@@ -498,7 +501,7 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 80%;
+    width: 100%;
     background-color: var(--secondary-color);
 }
 @media only screen and (max-width: 650px) {
@@ -531,11 +534,12 @@ hr {
     }
 }
 .portfolio-website-content-container-accordion {
-    width: 80%;
+    width: 100%;
     height: auto;
     padding: 0 0;
     font-family: "roboto-regular", Arial;
     background-color: var(--light-grey);
+    border-radius: 0 0 1.5rem 1.5rem;
 }
 .portfolio-website-content-container > p {
     margin: -1rem 2.5rem;
@@ -595,6 +599,7 @@ hr {
     width: 100%;
     height: 5.75rem;
     background-image: linear-gradient(to bottom, var(--light-grey), var(--light-mode));
+    border-radius: 1.5rem 1.5rem 0 0;
 }
 .envelope-icon {
     display: flex;
@@ -616,12 +621,17 @@ label {
     position: absolute;
     display: flex;
     flex-direction: column;
-    margin: -1.5rem 0;
+    margin: 0.25rem 0.5rem;
+    /*! margin: -1.5rem 0.5rem; */
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     color: var(--darker-grey);
     text-align: center;
-    letter-spacing: 0.01rem;
+    letter-spacing: 0.02rem;
+    z-index: 1;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: var(--lightest-grey);
@@ -639,19 +649,18 @@ label {
     width: 100%;
     height: 3rem;
     margin-bottom: 2.5rem;
-    padding: 0.95rem;
+    padding: 1.5rem;
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
 }
 .form-input:focus {
-    padding: 0.95rem;
     outline-style: solid;
     outline-color: var(--secondary-color);
-    border: 0.01rem solid var(--secondary-color);
-    border-bottom: 0.125rem solid var(--secondary-color) ;
+    border: 0.09rem solid var(--secondary-color);
     filter: brightness(96%);
+    caret-color: var(--lightest-grey);
 }
 .form-input:hover {
     filter: brightness(96%);
@@ -659,6 +668,7 @@ label {
 .form-input-message {
     resize: none;
     height: 12.688rem;
+    border-radius: 0 0 1.5rem 1.5rem;
 }
 .contact-form-button {
     width: 50%;
