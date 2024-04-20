@@ -32,12 +32,12 @@ body::before {
     top: 0;
     left: 0;
     content: "";
-    background-image: url("./assets/images/code-image.jpg");
+    background-image: url("./assets/images/1_image-code9.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: blur(3px); 
+    filter: blur(1px); 
     z-index: -2; 
 }
 .top-navigation-bar {
@@ -363,11 +363,11 @@ main {
 }
 .profile-headshot {
     display: inline-block;
-    width: 10rem;
-    height: 10rem;
-    margin-bottom: -8.8rem;
+    width: 7.313rem;
+    height: 7.313rem;
+    margin-bottom: -7.5rem;
     box-shadow: 0.1rem 0.1rem 0.5rem var(--darker-grey);
-    border-radius: 50%;
+    border-radius: 1.5rem;
     /*! border: 0.01rem solid var(--dark-mode); temporary border*/
 }
 .quotation-container-background {
@@ -388,11 +388,11 @@ main {
 }
 @media only screen and (max-width: 570px) {
     .profile-content-container {
-        margin-top: -14.25rem;
-        padding-top: 15.25rem;
+        margin-top: -12.25rem;
+        padding-top: 13.25rem;
     }
     .quotation-container-background {
-        margin-top: 10.75rem;
+        margin-top: 8.75rem;
     }
 }
 q::before {
@@ -402,7 +402,7 @@ q::before {
     content: open-quote;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--darker-grey);
+    color: var(--darkest-grey);
 }
 q::after {
     position: absolute;
@@ -411,7 +411,7 @@ q::after {
     content: close-quote;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--darker-grey);
+    color: var(--darkest-grey);
 }
 .download-cv-button {
     width: 58.5%;
