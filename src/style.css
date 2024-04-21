@@ -489,8 +489,24 @@ hr {
 .left-arrow {
     border-radius: 1.5rem 0 0 1.5rem;
 }
+.left-arrow > path {
+    width: 3rem;
+    height: 3rem;
+    stroke: var(--dark-mode);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.25rem;
+}
 .right-arrow {
     border-radius: 0 1.5rem 1.5rem 0;
+}
+.right-arrow > path {
+    width: 3rem;
+    height: 3rem;
+    stroke: var(--dark-mode);
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 0.25rem;
 }
 .image-slider {
     width: 100%;
@@ -742,9 +758,12 @@ a.footer-link-backtotop:hover {
     background-image: linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color));
 }
 .footer-icons {
+    display: flex;
+    flex-direction: row;
     margin: 0;
 }
 .footer-icons a {
+    margin-right: 1rem;
     color: var(--light-mode);
 }
 .footer-copyright {
