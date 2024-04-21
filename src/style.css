@@ -198,10 +198,10 @@ main {
     width: 100vw;
     min-height: 100vh;
     padding: 5rem 0;
-    border: solid 1px #000; /*!temporary border*/
+    border: solid 1px #ff0066; /*!temporary border*/
     /*!temporary/experimental background*/
     background-attachment: fixed;
-    background-image: url("./assets/images/background-image-tag.jpg");
+    background-image: url("./assets/images/background-image-tag3.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: center;
