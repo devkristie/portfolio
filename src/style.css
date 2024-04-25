@@ -406,6 +406,9 @@ q::after {
     color: var(--darkest-grey);
 }
 .download-cv-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 58.5%;
     height: 3rem;
     margin: 1rem 0 1rem 20.752%;
@@ -415,6 +418,7 @@ q::after {
     background-color: var(--secondary-color);
     border: none;
     border-radius: 50rem;
+    text-decoration: none;
 }
 .download-cv-button:hover {
     filter: brightness(90%);
