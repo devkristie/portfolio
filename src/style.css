@@ -351,16 +351,16 @@ main {
     color: var(--primary-color);
 }
 .profile-content-container > p {
-    display: inline-block;
+    display: block;
     margin-top: 0;
 }
 .profile-headshot {
     display: inline-block;
     width: 7.313rem;
     height: 7.313rem;
+    margin-left: 2rem;
     margin-bottom: -7.5rem;
-    box-shadow: 0.1rem 0.1rem 0.5rem var(--darker-grey);
-    border-radius: 1.5rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem var(--darkest-grey);
 }
 .quotation-container-background {
     position: relative;
@@ -369,6 +369,7 @@ main {
     align-items: center;
     width: 16.75rem;
     height: 7.313rem;
+    margin-right: 2rem;
     margin-left: auto;
     padding: 0 1rem;
     font-size: 1rem;
@@ -376,7 +377,6 @@ main {
     color: var(--darker-grey);
     background-color: var(--light-grey);
     text-align: center;
-    border-radius: 1.5rem;
 }
 @media only screen and (max-width: 570px) {
     .profile-content-container {
