@@ -171,9 +171,32 @@ li {
 }
 @media only screen and (max-width: 410px) {
     .accordion-navigation-bar-li a {
-        padding: 0.1rem 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.1rem 0.70rem;
         width: 75%;
         text-align: center;
+    }
+    .accordion-navigation-bar-li a:first-child {
+        margin-left: 5rem;
+    }
+    .accordion-navigation-bar-li a:last-child {
+        margin-right: 5rem;
+    }
+}
+@media only screen and (max-width: 355px) {
+    .accordion-navigation-bar-li a {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.1rem 0.30rem;
+        width: 75%;
+        text-align: center;
+    }
+    .accordion-navigation-bar-li a:first-child {
+        margin-left: 5rem;
+    }
+    .accordion-navigation-bar-li a:last-child {
+        margin-right: 5rem;
     }
 }
 .accordion-navigation-bar-li a:hover {
@@ -290,13 +313,15 @@ main {
     stroke-width: 0.05rem;
 }
 .laptop-image9 {
+    stroke: var(--darker-grey);
     fill: var(--dark-mode);
+    stroke-width: 0.03rem;
 }
 .laptop-image10 {
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
-    stroke-width: 1.25rem;
+    stroke-width: 1rem;
 }
 .laptop-image-code1 {
     stroke: var(--primary-color);
@@ -326,6 +351,11 @@ main {
     color: var(--light-mode);
     letter-spacing: 0.75rem;
 }
+@media only screen and (max-width: 400px) {
+    .section-title {
+        letter-spacing: 0.25rem;
+    }
+}
 .profile-content {
     width: 100%;
     min-height: 100vh;
@@ -333,7 +363,7 @@ main {
 .profile-content-container-background {
     display: block;
     width: 80%;
-    margin: 0 auto 5rem;
+    margin: 5rem auto 5rem;
     padding-bottom: -1rem;
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
@@ -343,6 +373,13 @@ main {
     padding: 6.5rem 1rem 1.25rem 1rem;
     font-family: "roboto-regular", Arial;
     background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
+}
+@media only screen and (max-width: 465px) {
+    .profile-content-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 3rem 1rem 3rem;
+    }
 }
 .profile-content-greeting {
     margin-bottom: 0;
@@ -358,9 +395,11 @@ main {
     display: inline-block;
     width: 7.313rem;
     height: 7.313rem;
-    margin-left: 2rem;
+    margin-top: 3rem;
+    margin-left: 3.25rem;
     margin-bottom: -7.5rem;
     box-shadow: 0.1rem 0.1rem 0.5rem var(--darkest-grey);
+    border-radius: 1.5rem;
 }
 .quotation-container-background {
     position: relative;
@@ -369,7 +408,7 @@ main {
     align-items: center;
     width: 16.75rem;
     height: 7.313rem;
-    margin-right: 2rem;
+    margin-right: 3.25rem;
     margin-left: auto;
     padding: 0 1rem;
     font-size: 1rem;
@@ -377,8 +416,9 @@ main {
     color: var(--darker-grey);
     background-color: var(--light-grey);
     text-align: center;
+    border-radius: 1.5rem;
 }
-@media only screen and (max-width: 570px) {
+@media only screen and (max-width: 640px) {
     .profile-content-container {
         margin-top: -12.25rem;
         padding-top: 13.25rem;
@@ -411,7 +451,7 @@ q::after {
     align-items: center;
     width: 58.5%;
     height: 3rem;
-    margin: 1rem 0 1rem 20.752%;
+    margin: 3.5rem 0 3rem 20.752%;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     color: var(--light-mode);
@@ -419,9 +459,16 @@ q::after {
     border: none;
     border-radius: 50rem;
     text-decoration: none;
+    text-align: center;
 }
 .download-cv-button:hover {
     filter: brightness(90%);
+}
+@media only screen and (max-width: 600px) {
+    .download-cv-button {
+        width: 80%;
+        margin: 3.5rem auto 3rem;
+    }
 }
 .section-introduction-container {
     display: flex;
@@ -451,7 +498,8 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5rem 5rem;
+    width: 80%;
+    margin: 5rem auto;
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
 }
