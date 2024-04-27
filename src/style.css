@@ -515,7 +515,6 @@ hr {
 .portfolio-website-slider-container {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     margin-bottom: 2.5rem;
     width: 80%;
 }
@@ -528,15 +527,15 @@ hr {
 .left-arrow, .right-arrow {
     width: 3rem;
     height: 6.563rem;
-    margin: 0;
+    /* margin: 0; */
     background-color: var(--dark-grey);
 }
 .left-arrow {
     border-radius: 1.5rem 0 0 1.5rem;
 }
 .left-arrow > path {
-    width: 3rem;
-    height: 3rem;
+    /* width: 3rem;
+    height: 6.563rem; */
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
@@ -546,8 +545,8 @@ hr {
     border-radius: 0 1.5rem 1.5rem 0;
 }
 .right-arrow > path {
-    width: 3rem;
-    height: 3rem;
+    /* width: 3rem;
+    height: 3rem; */
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
