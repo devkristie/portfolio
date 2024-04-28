@@ -114,6 +114,10 @@ body::before {
 li {
     list-style-type: none;
 }
+.fa-moon {
+    color: var(--dark-mode);
+    font-size: 1.25rem;
+}
 .hamburger-menu {
     width: 2.5rem;
     height: 2.5rem;
@@ -804,6 +808,9 @@ a.footer-link-backtotop:hover {
     bottom: 0;
     background-image: linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color));
 }
+.footer-bottom > article > p {
+    display: inline;
+}
 .footer-icons {
     display: flex;
     flex-direction: row;
@@ -812,13 +819,20 @@ a.footer-link-backtotop:hover {
 .footer-icons a {
     margin-right: 1rem;
     color: var(--light-mode);
+    font-size: 1.5rem;
 }
-.footer-copyright {
+.fa-linkedin:hover, .fa-square-github:hover {
+    color: var(--primary-color);
+}
+.footer-copyright, .footer-copyright-year {
     display: inline;
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     font-family: "roboto-light", Arial;
-    color: var(--dark-grey);
+    color: var(--light-grey);
 }
 .footer-copyright-sign {
     font-size: 1.5rem;
+}
+.footer-copyright-year {
+    font-size: 0.65rem;
 }

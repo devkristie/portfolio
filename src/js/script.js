@@ -7,6 +7,7 @@ const showLessText = document.querySelectorAll(".show-more-button p");
 const laptopImageCode1 = document.querySelectorAll(".laptop-image-code1");
 const contactFormClicked = document.querySelectorAll(".form-input");
 const contactFormLabels = document.querySelectorAll("label");
+const copyrightUpdateYear = document.querySelector(".footer-copyright-year");
 
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
@@ -64,3 +65,6 @@ contactFormClicked.forEach((input, index) => {
     contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
   }
 });
+
+const updateDate = new Date();
+copyrightUpdateYear.textContent = updateDate.getFullYear();
