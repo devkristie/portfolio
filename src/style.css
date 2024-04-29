@@ -649,10 +649,37 @@ hr {
     text-align: center;
 }
 .technology-used-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     margin: auto auto 2rem;
+    padding: 1.5rem 0 0 0;
     background-color: var(--secondary-color);
     border-radius: 1.5rem;
+    text-align: center;
+}
+.technology-used-container div {
+    width: 5.5rem;
+    border: 1px solid var(--dark-mode); /*!temporary border*/
+}
+.technology-used-container i {
+    font-size: 2.5rem;
+    border: 1px solid var(--dark-mode); /*!temporary border*/
+}
+.technology-used-container figcaption {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--dark-mode); /*!temporary border*/
+}
+@media only screen and (min-width: 650px) {
+    .technology-used-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
 .contact-content {
     min-height: 100vh;
