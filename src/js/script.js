@@ -36,6 +36,57 @@ function handleScroll() {
 }
 window.addEventListener("scroll", handleScroll);
 
+const updateDate = new Date();
+copyrightUpdateYear.textContent = updateDate.getFullYear();
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to show the current image and hide others
+  function showImage(sliderIndex, imageIndex) {
+      const sliders = document.querySelectorAll('.portfolio-website-slider-container');
+      sliders.forEach((slider, i) => {
+          const images = slider.querySelectorAll('.image-slider');
+          if (i === sliderIndex) {
+              images.forEach((image, j) => {
+                  if (j === imageIndex) {
+                      image.style.display = 'block';
+                  } else {
+                      image.style.display = 'none';
+                  }
+              });
+          }
+      });
+  }
+
+  // Function to initialize slider functionality
+  function initializeSlider(sliderIndex) {
+      const leftArrow = document.querySelectorAll('.left-arrow')[sliderIndex];
+      const rightArrow = document.querySelectorAll('.right-arrow')[sliderIndex];
+      const images = document.querySelectorAll('.portfolio-website-slider-container')[sliderIndex].querySelectorAll('.image-slider');
+      let currentIndex = 0;
+
+      // Function to handle click on left arrow
+      leftArrow.addEventListener('click', function() {
+          currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+          showImage(sliderIndex, currentIndex);
+      });
+
+      // Function to handle click on right arrow
+      rightArrow.addEventListener('click', function() {
+          currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+          showImage(sliderIndex, currentIndex);
+      });
+
+      // Show the initial image
+      showImage(sliderIndex, currentIndex);
+  }
+
+  // Initialize each slider
+  const sliders = document.querySelectorAll('.portfolio-website-slider-container');
+  sliders.forEach((slider, index) => {
+      initializeSlider(index);
+  });
+});
+
 showMoreButton.forEach((button, index) => {
   button.addEventListener("click", () => {
     showMore[index].classList.toggle("show-more-accordion");
@@ -65,6 +116,3 @@ contactFormClicked.forEach((input, index) => {
     contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
   }
 });
-
-const updateDate = new Date();
-copyrightUpdateYear.textContent = updateDate.getFullYear();

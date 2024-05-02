@@ -538,6 +538,9 @@ hr {
     height: 6.563rem;
     /* margin: 0; */
     background-color: var(--dark-grey);
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .left-arrow {
     border-radius: 1.5rem 0 0 1.5rem;
