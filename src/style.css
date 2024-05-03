@@ -427,7 +427,7 @@ q::after {
 @media only screen and (max-width: 465px) {
     .profile-content-container {
         width: 100%;
-        margin: -12.25rem auto;
+        margin: 5rem auto;
         padding: 13.25rem 3rem 1rem 3rem;
     }
 }
