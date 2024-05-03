@@ -9,6 +9,17 @@ const contactFormClicked = document.querySelectorAll(".form-input");
 const contactFormLabels = document.querySelectorAll("label");
 const copyrightUpdateYear = document.querySelector(".footer-copyright-year");
 
+// smooth scroll, compatilble for older browsers
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {

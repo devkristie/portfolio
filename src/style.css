@@ -119,6 +119,7 @@ li {
     width: 2.5rem;
     height: 2.5rem;
     margin: 0 2rem 0 1rem;
+    cursor: pointer;
 }
 .hamburger-menu-topline {
     stroke: var(--dark-mode);
@@ -220,6 +221,11 @@ main {
     padding: 5rem 0;
     background: url("./assets/images/background-image-tag3.jpg") fixed no-repeat center center;
     background-size: contain;
+}
+.landing-page-title-container {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .landing-page-title p {
     margin: 0;
@@ -346,6 +352,9 @@ main {
     font-family: "tomorrow-light";
     color: var(--light-mode);
     letter-spacing: 0.75rem;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 @media only screen and (max-width: 400px) {
     .section-title {
@@ -387,6 +396,9 @@ main {
     background-color: var(--light-grey);
     text-align: center;
     border-radius: 1.5rem;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 q::before {
     position: absolute;
@@ -406,15 +418,6 @@ q::after {
     font-family: none;
     color: var(--darkest-grey);
 }
-@media only screen and (max-width: 640px) {
-    .profile-content-container {
-        margin-top: -12.25rem;
-        padding-top: 13.25rem;
-    }
-    .quotation-container-background {
-        margin-top: 8.75rem;
-    }
-}
 .profile-content-container {
     margin: -3.5rem 2rem 1rem;
     padding: 6.5rem 1rem 1.25rem 1rem;
@@ -424,8 +427,17 @@ q::after {
 @media only screen and (max-width: 465px) {
     .profile-content-container {
         width: 100%;
-        margin: 0 auto;
-        padding: 0 3rem 1rem 3rem;
+        margin: -12.25rem auto;
+        padding: 13.25rem 3rem 1rem 3rem;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .profile-content-container {
+        margin-top: -12.25rem;
+        padding-top: 13.25rem;
+    }
+    .quotation-container-background {
+        margin-top: 8.75rem;
     }
 }
 .profile-content-greeting {
@@ -453,6 +465,8 @@ q::after {
     text-decoration: none;
     border: none;
     border-radius: 50rem;
+    cursor: pointer;
+    transition: filter 1s;
 }
 .download-cv-button:hover {
     filter: brightness(90%);
@@ -479,11 +493,22 @@ q::after {
     margin-top: 4rem;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
+    color: var(--dark-mode); /* Set the text color */
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .section-introduction-container p {
     margin: 0.5rem 0;
     font-family: "roboto-regular", Arial;
+}
+.portfolio-introduction-inline-text::before {
+    content: "Ready to dive into my work? ";
+    color: var(--primary-color);
+    font-weight: 1000;
+    cursor: text;
 }
 .top-hr-element {
     margin-top: 1.75rem;
@@ -509,6 +534,9 @@ hr {
     background-image: linear-gradient(to bottom, var(--dark-mode), var(--primary-color));
     text-align: center;
     border-radius: 1.5rem 1.5rem 0 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .portfolio-website-slider-container {
     display: flex;
@@ -528,6 +556,7 @@ hr {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+    cursor: pointer;
 }
 .left-arrow {
     border-radius: 1.5rem 0 0 1.5rem;
@@ -580,9 +609,11 @@ hr {
     border-right: none;  
     border-bottom: none;  
     border-left: 0.01rem solid var(--light-mode);
+    transition: filter 0.5s;
 }
 .view-button:hover {
     filter: brightness(90%);
+    cursor: pointer;
 }
 @media only screen and (max-width: 650px) {
     .view-button {
@@ -599,10 +630,12 @@ hr {
     font-family: "roboto-regular", Arial;
     background-color: var(--light-grey);
     border-radius: 0 0 1.5rem 1.5rem;
+    cursor: pointer;
 }
 .portfolio-website-content-container > p {
     margin: -1rem 3rem;
     padding: 1rem 0;
+    cursor: text;
 }
 .show-more-button {
     display: flex;
@@ -614,15 +647,9 @@ hr {
     width: 10rem;
     padding: 1.5rem 0 0 2.5rem;
     font-family: "roboto-bold", Arial;
-}
-.show-more-accordion h4 {
-    display: none;
-}
-.show-more-accordion .hidden {
-    display: none;
-}
-.show-more-accordion .technology-used-container {
-    display: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 .show-more-arrow {
     width: 3rem;
@@ -633,9 +660,26 @@ hr {
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.25rem;
+    transition: transform 0.2s;
+}
+.show-more-accordion .hidden {
+    display: none;
+}
+.show-more-accordion-title {
+    font-family: "tomorrow-regular";
+    color: var(--primary-color);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    letter-spacing: 0.075rem;
+}
+.show-more-accordion h4 {
+    display: none;
+}
+.show-more-accordion .technology-used-container {
+    display: none;
 }
 .technologies-used-title {
     text-align: center;
+    cursor: text;
 }
 .technology-used-container {
     display: flex;
@@ -649,6 +693,7 @@ hr {
     background-color: var(--secondary-color);
     text-align: center;
     border-radius: 1.5rem;
+    cursor: auto;
 }
 .technology-used-container div {
     width: 5.5rem;
@@ -659,6 +704,7 @@ hr {
 .technology-used-container figcaption {
     margin-bottom: 1.5rem;
     font-family: "roboto-medium", Arial;
+    cursor: text;
 }
 @media only screen and (min-width: 650px) {
     .technology-used-container {
@@ -670,6 +716,10 @@ hr {
 .contact-content {
     min-height: 100vh;
     padding-bottom: 2.5rem;
+}
+.contact-introduction-thank-you-text {
+    color: var(--primary-color);
+    font-weight: 1000;
 }
 .contact-form-container {
     display: flex;
@@ -761,6 +811,8 @@ label {
     background-color: var(--secondary-color);
     border: none;
     border-radius: 50rem;
+    cursor: pointer;
+    transition: filter 0.5s;
 }
 .contact-form-button:hover {
     filter: brightness(90%);
@@ -789,12 +841,14 @@ ul {
     color: var(--primary-color);
     text-decoration: none;
     line-height: 2.5rem;
+    transition: color 0.5s;
 }
 .footer-links a:hover {
     color: var(--secondary-color);
 }
 a.footer-link-backtotop {
     color: var(--dark-mode);
+    transition: color 0.5s;
 }
 a.footer-link-backtotop:hover {
     color: var(--secondary-color);
@@ -806,6 +860,7 @@ a.footer-link-backtotop:hover {
 .absolute-footer-links a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.5s;
 }
 .absolute-footer-links a:hover {
     color: var(--secondary-color);
@@ -833,6 +888,9 @@ a.footer-link-backtotop:hover {
     margin-right: 1rem;
     font-size: 1.5rem;
     color: var(--light-mode);
+}
+.fa-linkedin, .fa-square-github {
+    transition: color 0.5s;
 }
 .fa-linkedin:hover, .fa-square-github:hover {
     color: var(--primary-color);
