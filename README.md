@@ -30,9 +30,9 @@ The portfolio is designed using Figma and built using HTML, CSS and JavaScript. 
 **Functionality Explanation:**
 
 1. Navigation Bar: The top navigation bar allows users to easily move between different sections of the website.
-2. Profile Section: The profile section on the homepage provides information about your services, along with an image of yourself and an inspiring quote.
-3. Portfolio Showcase: Visitors can explore the portfolio section to view websites you've created, showcasing your expertise and previous work.
-4. Contact Form: A contact form is available for users to reach out to you directly for inquiries or collaboration opportunities.
+2. Profile Section: The profile section on the homepage provides information about my services, along with an image of myself and an inspiring quote.
+3. Portfolio Showcase: Visitors can explore the portfolio section to view websites I've created, showcasing my expertise and previous work.
+4. Contact Form: A contact form is available for users to reach out to me directly for inquiries or collaboration opportunities.
 5. Footer Navigation: The footer includes additional navigation links for quick access to essential pages and provides credits for the project.
 
 ### User Instructions
@@ -56,15 +56,17 @@ This section is dedicated to providing clear instructions for non-coders on how 
 
 ### Known Issues
 
-Portfolio Section:
+**Portfolio Section:**
 
-- The website portfolio features a title stating 'Coming Soon'.
-- The image slider currently does not display any images.
+- The website portfolio features a title stating 'Coming Soon.'
+- The image slider currently does not display any images because there are none available at this time.
 - The View Website and View Source Code buttons are not functional yet as there are no websites available to showcase.
-- The 'Show More' accordion section contains placeholder text (Lorem Ipsum) and is awaiting content.
-- The 'Technologies Used' container is currently empty. I am actively working on resolving these issues to enhance the portfolio section.
+- The 'Show More' accordion section contains placeholder text (Lorem Ipsum) and is there for template purposes.
+- The 'Technologies Used' container is currently empty as there are no websites to showcase the technologies being used.
 
-Footer Section:
+I am actively working on resolving these issues to enhance the portfolio section and will provide updates as progress is made.
+
+**Footer Section:**
 
 The blog link currently redirects users back to the portfolio section of the page as the blog section is under development and coming soon. We apologize for any inconvenience this may cause and appreciate your understanding as we work on enhancing the website for a better user experience.
 
