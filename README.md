@@ -32,10 +32,10 @@ The project is deployed on 123reg for hosting services.
 
 - Responsive Design: Ensuring a responsive layout for optimal user experience on various devices.
 - Navigation Bar: Easy navigation for users to explore different sections of the website.
-- Portfolio Showcase: Displaying websites you've created to showcase your work and skills.
+- Portfolio Showcase: Displaying websites I've created to showcase my work and skills.
 - Profile Section: Personal touch with information about services, an image, and a quote to engage visitors.
-- Contact Form: Providing a convenient way for visitors to get in touch with you.
-- Footer: Including navigation links for easy access to important pages and giving credit where it's due. These elements work together to create a cohesive and informative website that effectively showcases your services and portfolio. For more details on customizing and utilizing these features, please refer to the project's documentation.
+- Contact Form: Providing a convenient way for visitors to get in touch with me.
+- Footer: Including navigation links for easy access to important pages and giving credit where it's due. These elements work together to create a cohesive and informative website that effectively showcases my services and portfolio.
 
 **Functionality Explanation:**
 
@@ -47,7 +47,7 @@ The project is deployed on 123reg for hosting services.
 
 ### User Instructions
 
-This section is dedicated to providing clear instructions for non-coders on how to use your product or project. Follow these steps to get started:
+This section is dedicated to providing clear instructions for non-coders on how to use my product or project. Follow these steps to get started:
 
 **Getting Started:**
 
