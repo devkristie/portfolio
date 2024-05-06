@@ -16,7 +16,17 @@ In this section, we delve into the technical intricacies of the project. While a
 
 **Conceptual Overview:**
 
-The portfolio is designed using Figma and built using HTML, CSS and JavaScript. The front-end is designed with responsiveness in mind, unsuring a seamless user experience across devices. The backend is supported by FormSubmit for handling the form submission. The project is deployed on 123reg for hosting services. For a more detailed technical breakdown, please refer to the project's documentation.
+Design:
+My frontend web development portfolio is designed using Figma and responsiveness in mind, ensuring a seamless user experience across devices.
+
+Frontend:
+It is built using HTML, CSS and JavaScript.
+
+Backend:
+The backend is supported by FormSubmit for handling the form submission.
+
+Deployment:
+The project is deployed on 123reg for hosting services.
 
 **Key Components:**
 
@@ -39,38 +49,42 @@ The portfolio is designed using Figma and built using HTML, CSS and JavaScript. 
 
 This section is dedicated to providing clear instructions for non-coders on how to use your product or project. Follow these steps to get started:
 
-1. **Getting Started:**
+**Getting Started:**
 
-   - To access the page navigation, simply click on the hamburger menu icon located at the top of the navigation bar. Utilize the links to seamlessly navigate through different sections of the page.
-   - To download my CV, click on the button positioned at the bottom of my profile section.
-   - Navigate through the website portfolio using the left and right arrows to preview images of each website. Click the "View Website" button to access the live website and the "View Source Code" button to preview its source code. Expand details about the website and technologies used by clicking on the "Show More" container or arrow. To minimize information displayed, click on the "Show Less" container or arrow.
-   - To inquire about my services or if you have any questions, please complete the form and click the submit button located at the form's bottom.
-   - Utilize the footer for easy website navigation or to return to the top of the page. Additionally, find links to the website credits and the copyright notice located at the bottom of the page.
+- To access the page navigation, simply click on the hamburger menu icon located at the top of the navigation bar. Utilize the links to seamlessly navigate through different sections of the page.
+- To download my CV, click on the button positioned at the bottom of my profile section.
+- Navigate through the website portfolio using the left and right arrows to preview images of each website. Click the "View Website" button to access the live website and the "View Source Code" button to preview its source code. Expand details about the website and technologies used by clicking on the "Show More" container or arrow. To minimize information displayed, click on the "Show Less" container or arrow.
+- To inquire about my services or if you have any questions, please complete the form and click the submit button located at the form's bottom.
+- Utilize the footer for easy website navigation or to return to the top of the page. Additionally, find links to the website credits and the copyright notice located at the bottom of the page.
 
-2. **Functionality Overview:**
+**Functionality Overview:**
 
-   - My product is designed to showcase my services and portfolio effectively. Users can easily navigate through different sections using the top navigation bar. Explore a personalized profile section with information about services, an image, and an inspiring quote. Dive into a portfolio showcase displaying websites I've created to demonstrate my skills. Interested visitors can reach out to me through a contact form. The footer provides convenient navigation, credits, and copyright information. Key actions include exploring services, viewing the portfolio, contacting me, and navigating the website seamlessly.
+- My product is designed to showcase my services and portfolio effectively. Users can easily navigate through different sections using the top navigation bar.
+- Explore a personalized profile section with information about services, an image, and an inspiring quote.
+- Dive into a portfolio showcase displaying websites I've created to demonstrate my skills. Interested visitors can reach out to me through a contact form.
+- The footer provides convenient navigation, credits, and copyright information. Key actions include exploring services, viewing the portfolio, contacting me, and navigating the website seamlessly.
 
-3. **Support:**
-   - If you have any questions or feedback, please don't hesitate to reach out to me via the contact form on the website. I value your input and am here to assist you with any inquiries you may have. Thank you for visiting our portfolio!</br>
+**Support:**
+
+- If you have questions or feedback, reach out via the contact form on the website. Thank you for visiting!
 
 ### Known Issues
 
 **Portfolio Section:**
 
-- The website portfolio features a title stating 'Coming Soon.'
-- The image slider currently does not display any images because there are none available at this time.
-- The View Website and View Source Code buttons are not functional yet as there are no websites available to showcase.
-- The 'Show More' accordion section contains placeholder text (Lorem Ipsum) and is there for template purposes.
-- The 'Technologies Used' container is currently empty as there are no websites to showcase the technologies being used.
+"Coming Soon" title, image slider, buttons, and placeholder text are under development.
 
 I am actively working on resolving these issues to enhance the portfolio section and will provide updates as progress is made.
 
 **Footer Section:**
 
-The blog link currently redirects users back to the portfolio section of the page as the blog section is under development and coming soon. We apologize for any inconvenience this may cause and appreciate your understanding as we work on enhancing the website for a better user experience.
+Blog link redirects to portfolio due to ongoing development.
 
-Thank you for your patience as we continue to improve the functionality and content of the portfolio.
+I apologize for any inconvenience this may cause and appreciate your understanding as I work on enhancing the website for a better user experience.
+
+Thank you for your patience as I continue to improve the functionality and content of the portfolio.
+
+### Credits And Acknowledgements
 
 **Explore My Profiles:**</br>
 
@@ -79,8 +93,12 @@ Thank you for your patience as we continue to improve the functionality and cont
 
 **Special Thanks To:**</br>
 
-- <a href="https://www.figma.com/" target="_blank" rel="noopener">Figma</a> - For enabling seamless design collaboration.</br>
-- <a href="https://fontawesome.com/" target="_blank" rel="noopener">FontAwesome</a> - Providing stylish icons for my projects.</br>
-- <a href="https://formsubmit.co/" target="_blank" rel="noopener">FormSubmit</a> - Simplifying form submissions for enhanced user interaction.
+- Figma - For enabling seamless design collaboration.</br>
+- FontAwesome - Providing stylish icons for my projects.</br>
+- FormSubmit - Simplifying form submissions for enhanced user interaction.
 
 I would like to acknowledge the assistance I received in enhancing the functionality of the image slider, show more accordion, smooth scroll for compatibility across all browsers, the SVG animation on the landing page, and the contact form label animation. Implementing these features posed a challenge, and I am thankful for the guidance offered by ChatGPT. The code snippets and explanations provided by ChatGPT played a crucial role in helping me navigate and overcome the obstacles I faced.
+
+### Additional Acknowledgments
+
+Additionally, I'd like to acknowledge personal circumstances affecting the project's timeline. I was away on holiday for one week. I was also working 40 hours a week and looking for a new job, when I started the new job, the commute to work was longer and I had less time to complete the website. Despite challenges, I persevered to complete the website. Thank you for your understanding.
