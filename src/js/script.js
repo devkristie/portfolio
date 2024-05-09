@@ -7,6 +7,7 @@ const showLessText = document.querySelectorAll(".show-more-button p");
 const laptopImageCode1 = document.querySelectorAll(".laptop-image-code1");
 const contactFormClicked = document.querySelectorAll(".form-input");
 const contactFormLabels = document.querySelectorAll("label");
+const contactFormInput = document.querySelectorAll("input");
 const copyrightUpdateYear = document.querySelector(".footer-copyright-year");
 
 // smooth scroll, compatilble for older browsers
@@ -126,4 +127,25 @@ contactFormClicked.forEach((input, index) => {
   if (input.value !== '') {
     contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
   }
+});
+
+const regexInput = {
+  name: /^(?!.*[.,'-]{2})[a-z.,'-]{2,30}[ ][a-z.,'-]{0,30}([ ]?)[a-z.,'-]{2,30}?$/i,
+  email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]{2,6}(\.[a-z]{2,6})?$/,
+  phone: /^\+44\d{10}$/g,
+};
+
+// Validation function
+function validate(field, regex) {
+  if (regex.test(field.value)) {
+    field.className = "form-input valid";
+  } else {
+    field.className = "form-input invalid";
+  };
+}
+
+contactFormInput.forEach((input) => {
+  input.addEventListener("keyup", (e) => {
+    validate(e.target, regexInput[e.target.attributes.name.value]);
+  });
 });

@@ -795,6 +795,24 @@ label {
 .form-input:hover {
     filter: brightness(96%);
 }
+.valid {
+    width: 100%;
+    height: 3rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+    font-family: "roboto-regular", Arial;
+    background-color: var(--lightest-grey);
+    border: 0.01rem solid var(--dark-mode);
+}
+.invalid {
+    width: 100%;
+    height: 3rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+    font-family: "roboto-regular", Arial;
+    background-color: var(--lightest-grey);
+    border: 0.01rem solid var(--dark-mode);
+}
 .form-input-message {
     height: 12.688rem;
     resize: none;
