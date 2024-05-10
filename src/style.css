@@ -825,6 +825,15 @@ label {
     font-family: "roboto-bold", Arial;
     color: var(--primary-color);
 }
+.form-validation-paragraph.name {
+    visibility: hidden;
+}
+.form-validation-paragraph.email {
+    visibility: hidden;
+}
+.form-validation-paragraph.phone {
+    visibility: hidden;
+}
 .contact-form-button {
     top: 0;
     left: 0;

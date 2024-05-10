@@ -135,13 +135,32 @@ const regexInput = {
   phone: /^\+44\d{10}$/g,
 };
 
+const formValidationParagraphName = document.querySelector(".form-validation-paragraph.name");
+const formValidationParagraphEmail = document.querySelector(".form-validation-paragraph.email");
+const formValidationParagraphPhone = document.querySelector(".form-validation-paragraph.phone");
+
 // Validation function
 function validate(field, regex) {
-  if (regex.test(field.value)) {
+  if (field.value.trim() === '') {
+    field.className = "form-input";
+    formValidationParagraphName.style.visibility = "hidden";
+    formValidationParagraphEmail.style.visibility = "hidden";
+    formValidationParagraphPhone.style.visibility = "hidden";
+  } else if (regex.test(field.value)) {
     field.className = "form-input valid";
+    formValidationParagraphName.style.visibility = "hidden";
+    formValidationParagraphEmail.style.visibility = "hidden";
+    formValidationParagraphPhone.style.visibility = "hidden";
   } else {
     field.className = "form-input invalid";
-  };
+    if (field.id === "fullname") {
+      formValidationParagraphName.style.visibility = "visible";
+    } else if (field.id === "email") {
+      formValidationParagraphEmail.style.visibility = "visible";
+    } else if (field.id === "phone") {
+      formValidationParagraphPhone.style.visibility = "visible";
+    }
+  }
 }
 
 contactFormInput.forEach((input) => {

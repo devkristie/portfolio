@@ -310,16 +310,16 @@
                             <i class="fa-regular fa-envelope fa-4x"></i>
                         </div>
                     </div>
-                    <form>
+                    <form autocomplete="off">
                         <label for="fullname">Full Name</label>
                         <input name="name" title="full name" class="form-input" id="fullname" placeholder="Enter your full name" required/>
-                        <p class="form-validation-paragraph">Name can only contain letters and .,'-</p>
+                        <p class="form-validation-paragraph name">Name can only contain letters and .,'-</p>
                         <label for="email">Email</label>
                         <input name="email" title="email address" class="form-input" id="email" placeholder="Enter your email address" required/>
-                        <p class="form-validation-paragraph">Please enter a valid email address</p>
+                        <p class="form-validation-paragraph email">Please enter a valid email address</p>
                         <label for="text">Phone (optional)</label>
-                        <input name="phone" title="phone" class="form-input valid" id="text" placeholder="Enter your phone number (optional)"/>
-                        <p class="form-validation-paragraph">Please start the number with +44</p>
+                        <input name="phone" title="phone" class="form-input" id="phone" placeholder="Enter your phone number (optional)"/>
+                        <p class="form-validation-paragraph phone">Please start the number with +44</p>
                         <label for="message">Message</label>
                         <textarea name="message" class="form-input form-input-message" id="message" placeholder="Type your message" required></textarea>
                         <button type="button" title="send" href="" class="contact-form-button">Submit</button>
