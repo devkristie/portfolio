@@ -138,14 +138,24 @@ const regexInput = {
 const formValidationParagraphName = document.querySelector(".form-validation-paragraph.name");
 const formValidationParagraphEmail = document.querySelector(".form-validation-paragraph.email");
 const formValidationParagraphPhone = document.querySelector(".form-validation-paragraph.phone");
+const submitButton = document.querySelector(".contact-form-button");
+const contactFormInputs = document.querySelectorAll('.form-input[required]');
 
 // Validation function
 function validate(field, regex) {
   if (field.value.trim() === '') {
     field.className = "form-input";
-    formValidationParagraphName.style.visibility = "hidden";
-    formValidationParagraphEmail.style.visibility = "hidden";
-    formValidationParagraphPhone.style.visibility = "hidden";
+    // Hide only the error message associated with the emptied field
+    const errorMessage = field.nextElementSibling;
+    errorMessage.style.visibility = 'hidden';
+    // Check if there are other invalid fields and show their error messages
+    const otherInvalidInputs = document.querySelectorAll('.form-input.invalid');
+    otherInvalidInputs.forEach(input => {
+      if (input !== field) {
+        const otherErrorMessage = input.nextElementSibling;
+        otherErrorMessage.style.visibility = 'visible';
+      }
+    });
   } else if (regex.test(field.value)) {
     field.className = "form-input valid";
     formValidationParagraphName.style.visibility = "hidden";
@@ -167,4 +177,41 @@ contactFormInput.forEach((input) => {
   input.addEventListener("keyup", (e) => {
     validate(e.target, regexInput[e.target.attributes.name.value]);
   });
+});
+
+// Add event listener to the submit button
+submitButton.addEventListener('click', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    let formIsValid = true;
+
+    // Check if any required input field is empty
+    contactFormInputs.forEach(input => {
+        if (input.value.trim() === '') {
+            formIsValid = false;
+            const errorMessage = input.nextElementSibling;
+            errorMessage.style.visibility = 'visible';
+        }
+    });
+
+    // If any required field is empty, prevent form submission
+    if (!formIsValid) {
+        return;
+    }
+
+    // Check if any input field is invalid
+    const invalidInputs = document.querySelectorAll('.form-input.invalid');
+
+    // If there are invalid input fields, display the error messages and prevent form submission
+    if (invalidInputs.length > 0) {
+        invalidInputs.forEach(input => {
+            const errorMessage = input.nextElementSibling; // Get the corresponding error message element
+            errorMessage.style.visibility = 'visible'; // Display the error message
+        });
+    } else {
+        // If all input fields are valid, submit the form
+        const form = document.querySelector('form');
+        form.submit();
+    }
 });
