@@ -9,10 +9,71 @@
         <meta name="author" content="">
         <meta name="keywords" content="">
         <title>Thank You!</title>
-        <link rel="stylsheet" href="portfolio-thank-you-page/thank-you-page-style.css">
+        <link rel="stylesheet" href="thank-you-page-style.css">
         <link rel="icon" href="">
+        <script src="https://kit.fontawesome.com/46c228a4ce.js" crossorigin="anonymous"></script>
+        <script src="thank-you-page-script.js" defer></script>
     </head>
     <body>
-        
+        <header class="top-navigation-bar">
+            <svg class="logo">
+                <path class="logo-path1" d="M12 7 Q7 7 7 13 Q7 18.5 4 19.5"/>
+                <path class="logo-path2" d="M4 19.5 Q7 21.5 7 23 Q7 31.5 12 31.5"/>
+                <path class="logo-path3" d="M22 9 L12 19.5 L22 29"/>
+                <circle class="logo-path4" cx="29" cy="7.5" r="2.5"/>
+                <circle class="logo-path5" cx="29" cy="15" r="2.5"/>
+                <path class="logo-path6" d="M41 9 L27.5 29.5"/>
+                <circle class="logo-path7" cx="40" cy="23" r="2.5"/>
+                <circle class="logo-path8" cx="40" cy="30.5" r="2.5"/>
+                <path class="logo-path9" d="M42 29 Q45 34 37.5 36.5"/>
+                <path class="logo-path10" d="M46.5 9 L56.5 19.5 L46.5 29"/>
+                <path class="logo-path11" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19"/>
+                <path class="logo-path12" d="M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5"/>
+            </svg>
+            <nav class="dark-mode-icon-container">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-moon"></i>
+                    </li>
+                </ul>
+            </nav>
+            <svg class="hamburger-menu">
+                <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5"/>
+                <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5"/>
+                <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5"/>
+            </svg>
+        </header>
+        <header class="accordion-navigation-bar-hide">
+            <nav class="accordion-navigation-bar-nav">
+                <ul class="accordion-navigation-bar-ul">
+                    <li class="accordion-navigation-bar-li">
+                        <a href="#home">Home</a>
+                        <a href="#profile">Profile</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#contact">Contact</a>
+                        <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener">Github</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section class="thank-you-page-content">
+            <header class="section-title-header">
+                <h1 class="section-title">CONTACT</h1>
+            </header>
+            <div class="thank-you-page-content-flex-container">
+                <svg class="thank-you-svg-animation">
+
+                </svg>
+                <p class="message-sent-paragraph">Your message has successfully been sent.</p>
+                <p class="message-sent-paragraph">I will follow up with you within 1-2 business days.</p>
+                <svg class="envelope-svg-animation">
+
+                </svg>
+            </div>
+            <div class="thank-you-page-button-flex-container">
+                <button type="button" title="send another message" class="button-container">Send Another Message</button>
+                <button type="button" title="back to portfolio" class="button-container">Back To Portfolio</button>
+            </div>
+        </section>
     </body>
 </html>
