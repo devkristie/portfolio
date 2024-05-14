@@ -223,9 +223,14 @@ li {
     align-items: center;
 }
 .thank-you-svg-animation {
-    min-width: 75%;
     border: 1px solid #f71c1c; /*!temporary border*/
     margin-top: 1.5rem;
+}
+.thank-you-writing1 {
+    stroke: var(--primary-color);
+    fill: none;
+    stroke-width: 0.75rem;
+    stroke-linecap: round;
 }
 .message-sent-paragraph {
     margin: 0.25rem;
