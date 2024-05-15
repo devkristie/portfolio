@@ -232,6 +232,12 @@ li {
     stroke-width: 0.75rem;
     stroke-linecap: round;
 }
+.thank-you-writing2 {
+    stroke: var(--primary-color);
+    fill: none;
+    stroke-width: 0.25rem;
+    stroke-linecap: round;
+}
 .message-sent-paragraph {
     margin: 0.25rem;
     font-size: 1rem;
