@@ -239,13 +239,26 @@ li {
     stroke-linecap: round;
 }
 .message-sent-paragraph {
-    margin: 0.25rem;
+    margin: 0.25rem 1rem;
     font-size: 1rem;
     font-family: "roboto-medium", Arial;
+    text-align: center;
 }
 .envelope-svg-animation {
     width: 15rem;
     border: 1px solid #f71c1c; /*!temporary border*/
+}
+.envelope-animation1 {
+    stroke: var(--secondary-color);
+    fill: none;
+    stroke-width: 0.5rem;
+    stroke-linecap: round;
+}
+.envelope-animation2 {
+    stroke: var(--darkest-grey);
+    fill: none;
+    stroke-width: 0.5rem;
+    stroke-linecap: round;
 }
 .thank-you-page-button-flex-container {
     display: flex;
