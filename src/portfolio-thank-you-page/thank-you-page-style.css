@@ -255,6 +255,11 @@ li {
     stroke-linecap: round;
 }
 .envelope-animation2 {
+    stroke: var(--light-mode);
+    fill: none;
+    stroke-width: 0.15rem;
+}
+.envelope-animation3 {
     stroke: var(--darkest-grey);
     fill: none;
     stroke-width: 0.5rem;
