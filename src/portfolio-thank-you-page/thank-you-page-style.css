@@ -223,7 +223,7 @@ li {
     align-items: center;
 }
 .thank-you-svg-animation {
-    border: 1px solid #f71c1c; /*!temporary border*/
+    /* border: 1px solid #f71c1c; !temporary border */
     margin-top: 1.5rem;
 }
 .thank-you-writing1 {
@@ -246,7 +246,8 @@ li {
 }
 .envelope-svg-animation {
     width: 15rem;
-    border: 1px solid #f71c1c; /*!temporary border*/
+    height: 7.5rem;
+    /* border: 1px solid #f71c1c; !temporary border */
 }
 .envelope-animation1 {
     stroke: var(--secondary-color);
