@@ -193,8 +193,8 @@ li {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 8.125rem;
-    margin-top: 4.95rem;
+    height: 8.150rem;
+    margin-top: 5rem;
     background-color: var(--darker-grey);
 }
 .section-title {
@@ -222,6 +222,8 @@ li {
     align-items: center;
 }
 .thank-you-svg-animation {
+    width: 75%;
+    height: 6.25rem;
     margin-top: 1.5rem;
 }
 .svg-gradient1 {
@@ -235,19 +237,30 @@ li {
 .thank-you-writing1 {
     stroke: var(--primary-color);
     fill: none;
-    stroke-width: 0.75rem;
+    stroke-width: 0.60rem;
     stroke-linecap: round;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    white-space: nowrap;
+}
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 .thank-you-writing2 {
     stroke: url(#thank-you-gradient);
     fill: none;
     stroke-width: 0.25rem;
     stroke-linecap: round;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
 }
 .message-sent-paragraph {
     margin: 1rem 1rem 0;
     font-size: 1rem;
     font-family: "roboto-medium", Arial;
+    color: var(--dark-mode);
     text-align: center;
 }
 .envelope-svg-animation {
@@ -297,4 +310,8 @@ li {
     background-color: var(--secondary-color);
     border: none;
     border-radius: 5rem;
+    cursor: pointer;
+}
+.button-container:hover {
+    filter: brightness(90%);
 }
