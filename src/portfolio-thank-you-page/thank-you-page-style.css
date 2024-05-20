@@ -32,7 +32,6 @@ body {
     left: 0;
     padding-left: 2rem;
     background-color: var(--primary-color);
-    /* z-index: 10; */
 }
 .logo {
     width: 5rem;
@@ -126,6 +125,7 @@ li {
 }
 .accordion-navigation-bar-hide {
     position: absolute;
+    right: 0;
     visibility: hidden;
 }
 .accordion-navigation-bar {
@@ -133,7 +133,6 @@ li {
     width: 100%;
     height: 2.5rem;
     top: 0;
-    left: 0;
     margin-top: 2.5rem;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--third-color));
 }
@@ -223,8 +222,15 @@ li {
     align-items: center;
 }
 .thank-you-svg-animation {
-    /* border: 1px solid #f71c1c; !temporary border */
     margin-top: 1.5rem;
+}
+.svg-gradient1 {
+    stop-color: var(--primary-color);
+    stop-opacity:1
+}
+.svg-gradient2 {
+    stop-color: var(--secondary-color);
+    stop-opacity:1
 }
 .thank-you-writing1 {
     stroke: var(--primary-color);
@@ -233,13 +239,13 @@ li {
     stroke-linecap: round;
 }
 .thank-you-writing2 {
-    stroke: var(--primary-color);
+    stroke: url(#thank-you-gradient);
     fill: none;
     stroke-width: 0.25rem;
     stroke-linecap: round;
 }
 .message-sent-paragraph {
-    margin: 0.25rem 1rem;
+    margin: 1rem 1rem 0;
     font-size: 1rem;
     font-family: "roboto-medium", Arial;
     text-align: center;
@@ -247,10 +253,9 @@ li {
 .envelope-svg-animation {
     width: 15rem;
     height: 7.5rem;
-    /* border: 1px solid #f71c1c; !temporary border */
 }
 .envelope-animation1 {
-    stroke: var(--secondary-color);
+    stroke: var(--dark-grey);
     fill: none;
     stroke-width: 0.5rem;
     stroke-linecap: round;
@@ -261,7 +266,7 @@ li {
     stroke-width: 0.15rem;
 }
 .envelope-animation3 {
-    stroke: var(--darkest-grey);
+    stroke: var(--light-grey);
     fill: none;
     stroke-width: 0.5rem;
     stroke-linecap: round;
@@ -269,11 +274,11 @@ li {
 .thank-you-page-button-flex-container {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 1rem;
     align-items: center;
     width: 100%;
-    margin-top: 1.5rem;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 565px) {
     .thank-you-page-button-flex-container {
         flex-direction: column;
     }
@@ -282,7 +287,7 @@ li {
     }
 }
 .button-container {
-    width: 40%;
+    width: 15.5rem;
     height: 2.5rem;
     margin: 0.5rem 0;
     padding: 0 2rem;
