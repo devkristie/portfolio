@@ -21,6 +21,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+const moonIcon = document.querySelector(".fa-moon");
+moonIcon.addEventListener("click", () => {
+  const popUp = document.createElement("div")
+  popUp.setAttribute("class", "dark-mode-popup");
+  popUp.textContent = "Hello";
+  document.body.appendChild(popUp);
+  const popUpAllowButton = document.createElement("button");
+  popUpAllowButton.setAttribute("class", "popUpAllow");
+  popUpAllowButton.textContent = "Allow";
+  document.body.appendChild(popUpAllowButton);
+  const popUpDeclineButton = document.createElement("button");
+  popUpDeclineButton.setAttribute("class", "popUpDecline");
+  popUpDeclineButton.textContent = "Decline";
+  document.body.appendChild(popUpDeclineButton);
+
+  // const mainDarkMode = document.querySelector("main");
+  // mainDarkMode.classList.toggle("main-dark-mode");
+  // const landingPageTitleP1 = document.querySelector(".p1");
+  // landingPageTitleP1.classList.toggle("p1-dark-mode");
+  // const landingPageTitleP2 = document.querySelector(".p2");
+  // landingPageTitleP2.classList.toggle("p2-dark-mode");
+  // const landingPageTitleP8 = document.querySelector(".p8");
+  // landingPageTitleP8.classList.toggle("p8-dark-mode");
+  // const footerDarkMode = document.querySelector(".footer-content");
+  // footerDarkMode.classList.toggle("footer-content-dark-mode");
+});
+// If using local storage you need to let the users know you are using localstorage to save the setting for dark mode
+
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {
@@ -47,9 +75,6 @@ function handleScroll() {
   });
 }
 window.addEventListener("scroll", handleScroll);
-
-const updateDate = new Date();
-copyrightUpdateYear.textContent = updateDate.getFullYear();
 
 document.addEventListener("DOMContentLoaded", function() {
   // Function to show the current image and hide others
@@ -215,3 +240,6 @@ submitButton.addEventListener('click', function(event) {
         form.submit();
     }
 });
+
+const updateDate = new Date();
+copyrightUpdateYear.textContent = updateDate.getFullYear();
