@@ -22,32 +22,124 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 const moonIcon = document.querySelector(".fa-moon");
-moonIcon.addEventListener("click", () => {
-  const popUp = document.createElement("div")
-  popUp.setAttribute("class", "dark-mode-popup");
-  popUp.textContent = "Hello";
-  document.body.appendChild(popUp);
-  const popUpAllowButton = document.createElement("button");
-  popUpAllowButton.setAttribute("class", "popUpAllow");
-  popUpAllowButton.textContent = "Allow";
-  document.body.appendChild(popUpAllowButton);
-  const popUpDeclineButton = document.createElement("button");
-  popUpDeclineButton.setAttribute("class", "popUpDecline");
-  popUpDeclineButton.textContent = "Decline";
-  document.body.appendChild(popUpDeclineButton);
 
-  // const mainDarkMode = document.querySelector("main");
-  // mainDarkMode.classList.toggle("main-dark-mode");
-  // const landingPageTitleP1 = document.querySelector(".p1");
-  // landingPageTitleP1.classList.toggle("p1-dark-mode");
-  // const landingPageTitleP2 = document.querySelector(".p2");
-  // landingPageTitleP2.classList.toggle("p2-dark-mode");
-  // const landingPageTitleP8 = document.querySelector(".p8");
-  // landingPageTitleP8.classList.toggle("p8-dark-mode");
-  // const footerDarkMode = document.querySelector(".footer-content");
-  // footerDarkMode.classList.toggle("footer-content-dark-mode");
+moonIcon.addEventListener("click", () => {
+  const darkModePreference = localStorage.getItem("darkModePreference");
+
+  if (darkModePreference === null) {
+    // Show the pop-up if no preference is set
+    const popUp = document.createElement("div");
+    popUp.setAttribute("class", "dark-mode-popup");
+
+    const paragraph1 = document.createElement("p");
+    paragraph1.setAttribute("class", "pop-up-paragraph1");
+    paragraph1.textContent = "Dark Mode Preference Storage Notice";
+    popUp.appendChild(paragraph1);
+    
+    const paragraph2 = document.createElement("p");
+    paragraph2.setAttribute("class", "pop-up-paragraph2");
+    paragraph2.textContent = "When you allow to enable dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.";
+    popUp.appendChild(paragraph2);
+    
+    const paragraph3 = document.createElement("p");
+    paragraph3.setAttribute("class", "pop-up-paragraph3");
+    paragraph3.textContent = "If you decline to enable dark mode, your data for it will not be saved in local storage, and the website will not remember your preference.";
+    popUp.appendChild(paragraph3);
+
+    const popUpAllowButton = document.createElement("button");
+    popUpAllowButton.setAttribute("class", "pop-up-allow");
+    popUpAllowButton.textContent = "Allow";
+    const popUpDeclineButton = document.createElement("button");
+    popUpDeclineButton.setAttribute("class", "pop-up-decline");
+    popUpDeclineButton.textContent = "Decline";
+
+    popUp.appendChild(popUpAllowButton);
+    popUp.appendChild(popUpDeclineButton);
+
+    document.body.appendChild(popUp);
+
+    popUpAllowButton.addEventListener("click", () => {
+      // Set dark mode preference in local storage
+      localStorage.setItem("darkModePreference", "enabled");
+
+      // Apply dark mode styles
+      enableDarkMode();
+
+      // Remove pop-up
+      document.body.removeChild(popUp);
+    });
+
+    popUpDeclineButton.addEventListener("click", () => {
+      // Remove pop-up without saving preference
+      document.body.removeChild(popUp);
+    });
+  } else {
+    // Toggle dark mode based on current state
+    if (darkModePreference === "enabled") {
+      disableDarkMode();
+      localStorage.setItem("darkModePreference", "disabled");
+    } else {
+      enableDarkMode();
+      localStorage.setItem("darkModePreference", "enabled");
+    }
+  }
 });
-// If using local storage you need to let the users know you are using localstorage to save the setting for dark mode
+
+function enableDarkMode() {
+  document.body.classList.add("dark-mode");
+  // Apply dark mode classes to other elements as needed
+  // Example:
+  const mainDarkMode = document.querySelector("main");
+  mainDarkMode.classList.add("main-dark-mode");
+  const landingPageTitleP1 = document.querySelector(".p1");
+  landingPageTitleP1.classList.add("p1-dark-mode");
+  const landingPageTitleP2 = document.querySelector(".p2");
+  landingPageTitleP2.classList.add("p2-dark-mode");
+  const landingPageTitleP3 = document.querySelector(".p3");
+  landingPageTitleP3.classList.add("p3-dark-mode");
+  const landingPageTitleP4 = document.querySelector(".p4");
+  landingPageTitleP4.classList.add("p4-dark-mode");
+  const landingPageTitleP5 = document.querySelector(".p5");
+  landingPageTitleP5.classList.add("p5-dark-mode");
+  const landingPageTitleP7 = document.querySelector(".p7");
+  landingPageTitleP7.classList.add("p7-dark-mode");
+  const landingPageTitleP8 = document.querySelector(".p8");
+  landingPageTitleP8.classList.add("p8-dark-mode");
+  const footerDarkMode = document.querySelector(".footer-content");
+  footerDarkMode.classList.add("footer-content-dark-mode");
+}
+
+function disableDarkMode() {
+  document.body.classList.remove("dark-mode");
+  // Remove dark mode classes from other elements as needed
+  // Example:
+  const mainDarkMode = document.querySelector("main");
+  mainDarkMode.classList.remove("main-dark-mode");
+  const landingPageTitleP1 = document.querySelector(".p1");
+  landingPageTitleP1.classList.remove("p1-dark-mode");
+  const landingPageTitleP2 = document.querySelector(".p2");
+  landingPageTitleP2.classList.remove("p2-dark-mode");
+  const landingPageTitleP3 = document.querySelector(".p3");
+  landingPageTitleP3.classList.remove("p3-dark-mode");
+  const landingPageTitleP4 = document.querySelector(".p4");
+  landingPageTitleP4.classList.remove("p4-dark-mode");
+  const landingPageTitleP5 = document.querySelector(".p5");
+  landingPageTitleP5.classList.remove("p5-dark-mode");
+  const landingPageTitleP7 = document.querySelector(".p7");
+  landingPageTitleP7.classList.remove("p7-dark-mode");
+  const landingPageTitleP8 = document.querySelector(".p8");
+  landingPageTitleP8.classList.remove("p8-dark-mode");
+  const footerDarkMode = document.querySelector(".footer-content");
+  footerDarkMode.classList.remove("footer-content-dark-mode");
+}
+
+// Apply dark mode if preference is already enabled
+document.addEventListener("DOMContentLoaded", () => {
+  const darkModePreference = localStorage.getItem("darkModePreference");
+  if (darkModePreference === "enabled") {
+    enableDarkMode();
+  }
+});
 
 hamburgerMenuIcon.addEventListener("click", showMenu);
 

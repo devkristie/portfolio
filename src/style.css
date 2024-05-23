@@ -17,7 +17,7 @@
     --dark-mode: #242424;
     --light-mode: #FEFEFE;
 }
-*, *::after, *::before {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 body {
@@ -35,40 +35,50 @@ body::before {
     background: url("./assets/images/1_image-code9.jpg") fixed no-repeat center;
     background-size: cover;
     filter: blur(1px); 
-    z-index: -2; 
+    z-index: -2;
 }
 .dark-mode-popup {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(15%, 20%);
+    transform: translate(0%, 20%);
+    margin-top: 5%;
     padding-top: 2%;
-    width: 77%;
-    height: 75%;
+    width: 100%;
+    height: 76%;
     background-color: var(--light-mode);
     border: 1px var(--dark-mode) solid;
-    border-radius: 5%;
+    border-radius: 2rem;
     text-align: center;
     z-index: 11;
 }
-.popUpAllow {
+.pop-up-paragraph1 {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: "tomorrow-regular", Arial;
+}
+.pop-up-paragraph2, .pop-up-paragraph3 {
+    padding: 0 2rem;
+    font-family: "roboto-regular", Arial;
+}
+.pop-up-allow {
     position: fixed;
     top: 75%;
-    left: 20%;
+    left: 15%;
     transform: translate(50%, 50%);
-    width: 15%;
+    width: 20%;
     height: 7%;
     color: var(--dark-mode);
     background-color: var(--primary-color);
     border: none;
     z-index: 12;
 }
-.popUpDecline {
+.pop-up-decline {
     position: fixed;
     top: 75%;
     right: 35%;
     transform: translate(50%, 50%);
-    width: 15%;
+    width: 20%;
     height: 7%;
     color: var(--dark-mode);
     background-color: var(--primary-color);
@@ -282,10 +292,13 @@ main {
     color: var(--lightest-grey);
 }
 .p2-dark-mode, .p8-dark-mode {
-    color: var(--primary-color);
+    color: #3F3F3F;
 }
 .p3, .p4, .p5 {
     padding-left: 2rem;
+}
+.p3-dark-mode, .p4-dark-mode, .p5-dark-mode, .p7-dark-mode {
+    color: var(--light-mode);
 }
 .p3, .p4, .p5, .p6, .p7 {
     font-size: 1.2rem;
