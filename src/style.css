@@ -272,7 +272,7 @@ main {
     width: 100vw;
     min-height: 100vh;
     padding: 5rem 0;
-    background: url("./assets/images/background-image-tag3.jpg") fixed no-repeat center center;
+    /** background: url("./assets/images/background-image-tag3.jpg") fixed no-repeat center center; */
     background-size: contain;
 }
 .landing-page-title-container {
@@ -386,6 +386,19 @@ main {
     fill: none;
     stroke-linecap: round;
     stroke-width: 1rem;
+}
+.laptop-image1-dark-mode {
+    fill: var(--light-mode);
+}
+.laptop-image2-dark-mode {
+    fill: #666666;
+}
+.laptop-image9-dark-mode {
+    stroke: var(--darker-grey);
+    fill: var(--light-mode);
+}
+.laptop-image10-dark-mode {
+    stroke: var(--light-mode);
 }
 .laptop-image-code1 {
     stroke: var(--primary-color);

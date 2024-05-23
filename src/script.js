@@ -105,6 +105,16 @@ function enableDarkMode() {
   landingPageTitleP7.classList.add("p7-dark-mode");
   const landingPageTitleP8 = document.querySelector(".p8");
   landingPageTitleP8.classList.add("p8-dark-mode");
+  const laptopImage1 = document.querySelector(".laptop-image1");
+  laptopImage1.classList.add("laptop-image1-dark-mode");
+  const laptopImage2 = document.querySelector(".laptop-image2");
+  laptopImage2.classList.add("laptop-image2-dark-mode");
+  const laptopImage9 = document.querySelectorAll(".laptop-image9");
+  laptopImage9.forEach((key) => {
+    key.classList.add("laptop-image9-dark-mode");
+  });
+  const laptopImage10 = document.querySelector(".laptop-image10");
+  laptopImage10.classList.add("laptop-image10-dark-mode");
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.add("footer-content-dark-mode");
 }
@@ -129,6 +139,16 @@ function disableDarkMode() {
   landingPageTitleP7.classList.remove("p7-dark-mode");
   const landingPageTitleP8 = document.querySelector(".p8");
   landingPageTitleP8.classList.remove("p8-dark-mode");
+  const laptopImage1 = document.querySelector(".laptop-image1");
+  laptopImage1.classList.remove("laptop-image1-dark-mode");
+  const laptopImage2 = document.querySelector(".laptop-image2");
+  laptopImage2.classList.remove("laptop-image2-dark-mode");
+  const laptopImage9 = document.querySelectorAll(".laptop-image9");
+  laptopImage9.forEach((key) => {
+    key.classList.remove("laptop-image9-dark-mode");
+  });
+  const laptopImage10 = document.querySelector(".laptop-image10");
+  laptopImage10.classList.remove("laptop-image10-dark-mode");
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.remove("footer-content-dark-mode");
 }
