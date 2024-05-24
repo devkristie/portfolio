@@ -88,9 +88,10 @@ moonIcon.addEventListener("click", () => {
 function enableDarkMode() {
   document.body.classList.add("dark-mode");
   // Apply dark mode classes to other elements as needed
-  // Example:
   const mainDarkMode = document.querySelector("main");
   mainDarkMode.classList.add("main-dark-mode");
+  const landingPageBackground = document.querySelector(".landing-page-title");
+  landingPageBackground.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
   const landingPageTitleP1 = document.querySelector(".p1");
   landingPageTitleP1.classList.add("p1-dark-mode");
   const landingPageTitleP2 = document.querySelector(".p2");
@@ -115,16 +116,39 @@ function enableDarkMode() {
   });
   const laptopImage10 = document.querySelector(".laptop-image10");
   laptopImage10.classList.add("laptop-image10-dark-mode");
+  const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
+  sectionTitles.forEach((title) => {
+    title.classList.add("h2-dark-mode");
+  });
+  const sectionParagraphs = document.querySelectorAll(".section-introduction-container p");
+  sectionParagraphs.forEach((paragraph) => {
+    paragraph.classList.add("p-dark-mode");
+    const thankYouParagraph = document.querySelector(".contact-introduction-thank-you-text");
+    thankYouParagraph.classList.remove("p-dark-mode");
+  });
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.add("footer-content-dark-mode");
+  const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
+  backToTopLinkDarkMode.classList.add("footer-link-back-to-top-dark-mode");
+  const absoluteFooterLinksDarkMode = document.querySelectorAll(".absolute-footer-links");
+  absoluteFooterLinksDarkMode.forEach((link) => {
+    link.classList.add("absolute-footer-links-dark-mode");
+  });
+  const footerBottomBackground = document.querySelector(".footer-bottom");
+  footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--primary-color))";
+  const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
+  footerIconsDarkMode.forEach((icon) => {
+    icon.style.color = "var(--dark-mode)";
+  });
 }
 
 function disableDarkMode() {
   document.body.classList.remove("dark-mode");
   // Remove dark mode classes from other elements as needed
-  // Example:
   const mainDarkMode = document.querySelector("main");
   mainDarkMode.classList.remove("main-dark-mode");
+  const landingPageBackground = document.querySelector(".landing-page-title");
+  landingPageBackground.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
   const landingPageTitleP1 = document.querySelector(".p1");
   landingPageTitleP1.classList.remove("p1-dark-mode");
   const landingPageTitleP2 = document.querySelector(".p2");
@@ -149,9 +173,30 @@ function disableDarkMode() {
   });
   const laptopImage10 = document.querySelector(".laptop-image10");
   laptopImage10.classList.remove("laptop-image10-dark-mode");
+  const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
+  sectionTitles.forEach((title) => {
+    title.classList.remove("h2-dark-mode");
+  });
+  const sectionParagraphs = document.querySelectorAll(".section-introduction-container p");
+  sectionParagraphs.forEach((paragraph) => {
+    paragraph.classList.remove("p-dark-mode");
+  });
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.remove("footer-content-dark-mode");
+  const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
+  backToTopLinkDarkMode.classList.remove("footer-link-back-to-top-dark-mode");
+  const absoluteFooterLinksDarkMode = document.querySelectorAll(".absolute-footer-links");
+  absoluteFooterLinksDarkMode.forEach((link) => {
+    link.classList.remove("absolute-footer-links-dark-mode");
+  });
+  const footerBottomBackground = document.querySelector(".footer-bottom");
+  footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color))";
+  const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
+  footerIconsDarkMode.forEach((icon) => {
+    icon.style.color = "var(--light-mode)";
+  });
 }
+//? add transition: color 0.5s; to all dark-mode CSS to change its affect
 
 // Apply dark mode if preference is already enabled
 document.addEventListener("DOMContentLoaded", () => {

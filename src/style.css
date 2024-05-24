@@ -272,7 +272,7 @@ main {
     width: 100vw;
     min-height: 100vh;
     padding: 5rem 0;
-    /** background: url("./assets/images/background-image-tag3.jpg") fixed no-repeat center center; */
+    background: url("./assets/images/landing-page-image1.png") fixed no-repeat center center;
     background-size: contain;
 }
 .landing-page-title-container {
@@ -575,9 +575,16 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
+.section-introduction-container h2.h2-dark-mode {
+    color: var(--light-mode);
+    text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
+}
 .section-introduction-container p {
     margin: 0.5rem 0;
     font-family: "roboto-regular", Arial;
+}
+.section-introduction-container p.p-dark-mode {
+    color: var(--light-mode);
 }
 .portfolio-introduction-inline-text::before {
     content: "Ready to dive into my work? ";
@@ -967,9 +974,15 @@ a.footer-link-backtotop {
 a.footer-link-backtotop:hover {
     color: var(--secondary-color);
 }
+a.footer-link-back-to-top-dark-mode {
+    color: var(--light-mode);
+}
 .absolute-footer-links {
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
+}
+.absolute-footer-links-dark-mode {
+    color: var(--light-mode);
 }
 .absolute-footer-links a {
     color: var(--primary-color);
