@@ -613,12 +613,18 @@ hr {
     margin: 0 0 2.5rem;
     font-family: "roboto-medium", Arial;
     color: var(--light-mode);
-    background-image: linear-gradient(to bottom, var(--dark-mode), var(--primary-color));
+    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color)); /*?should this be --dark-mode or --third-color*/
     text-align: center;
     border-radius: 1.5rem 1.5rem 0 0;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+.portfolio-website-title-container-dark-mode {
+    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
+}
+.portfolio-website-title-dark-mode {
+    color: var(--dark-mode);
 }
 .portfolio-website-slider-container {
     display: flex;
@@ -680,7 +686,24 @@ hr {
         align-items: center;
     }
 }
-.view-button {
+.view-button1 {
+    width: 100%;
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    color: var(--light-mode);
+    background-color: var(--secondary-color);
+    border-top: none;
+    border-right: 0.01rem solid var(--light-mode);  
+    border-bottom: none;  
+    border-left: none;
+    transition: filter 0.5s;
+}
+.view-button1:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+.view-button2 {
     width: 100%;
     padding: 0.25rem 1rem;
     font-size: 1rem;
@@ -693,12 +716,18 @@ hr {
     border-left: 0.01rem solid var(--light-mode);
     transition: filter 0.5s;
 }
-.view-button:hover {
+.view-button2:hover {
     filter: brightness(90%);
     cursor: pointer;
 }
 @media only screen and (max-width: 650px) {
-    .view-button {
+    .view-button1 {
+        border-top: none;
+        border-right: none;
+        border-bottom: 0.01rem solid var(--light-mode);        
+        border-left: none;
+    }
+    .view-button2 {
         border-top: 0.01rem solid var(--light-mode);
         border-right: none;
         border-bottom: none;        
@@ -1031,6 +1060,6 @@ a.footer-link-back-to-top-dark-mode {
 .footer-copyright-sign {
     font-size: 1.5rem;
 }
-.footer-copyright-year {
-    font-size: 0.65rem;
+.footer-copyright-dark-mode, .footer-copyright-year, .footer-copyright-sign-dark-mode {
+    color: var(--dark-mode);
 }

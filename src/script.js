@@ -116,6 +116,14 @@ function enableDarkMode() {
   });
   const laptopImage10 = document.querySelector(".laptop-image10");
   laptopImage10.classList.add("laptop-image10-dark-mode");
+  const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
+  portfolioWebsiteTitleBackgrounds.forEach((background) => {
+    background.classList.add("portfolio-website-title-container-dark-mode");
+  });
+  const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
+  portfolioWebsiteTitle.forEach((websiteTitle) => {
+    websiteTitle.classList.add("portfolio-website-title-dark-mode");
+  });
   const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
   sectionTitles.forEach((title) => {
     title.classList.add("h2-dark-mode");
@@ -140,6 +148,14 @@ function enableDarkMode() {
   footerIconsDarkMode.forEach((icon) => {
     icon.style.color = "var(--dark-mode)";
   });
+  const copyright = document.querySelectorAll(".footer-copyright");
+  copyright.forEach((copyright) => {
+    copyright.classList.add("footer-copyright-dark-mode");
+  });
+  const copyrightYear = document.querySelector(".footer-copyright-year");
+  copyrightYear.classList.add("footer-copyright-year-dark-mode");
+  const copyrightSign = document.querySelector(".footer-copyright-sign");
+  copyrightSign.classList.add("footer-copyright-sign-dark-mode");
 }
 
 function disableDarkMode() {
@@ -173,6 +189,14 @@ function disableDarkMode() {
   });
   const laptopImage10 = document.querySelector(".laptop-image10");
   laptopImage10.classList.remove("laptop-image10-dark-mode");
+  const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
+  portfolioWebsiteTitleBackgrounds.forEach((background) => {
+    background.classList.remove("portfolio-website-title-container-dark-mode");
+  });
+  const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
+  portfolioWebsiteTitle.forEach((websiteTitle) => {
+    websiteTitle.classList.remove("portfolio-website-title-dark-mode");
+  });
   const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
   sectionTitles.forEach((title) => {
     title.classList.remove("h2-dark-mode");
@@ -195,6 +219,15 @@ function disableDarkMode() {
   footerIconsDarkMode.forEach((icon) => {
     icon.style.color = "var(--light-mode)";
   });
+  const copyright = document.querySelectorAll(".footer-copyright");
+  copyright.forEach((copyright) => {
+    copyright.classList.remove("footer-copyright-dark-mode");
+  });
+  const copyrightYear = document.querySelector(".footer-copyright-year");
+  copyrightYear.classList.remove("footer-copyright-year-dark-mode");
+  const copyrightSign = document.querySelector(".footer-copyright-sign");
+  copyrightSign.classList.remove("footer-copyright-sign-dark-mode");
+
 }
 //? add transition: color 0.5s; to all dark-mode CSS to change its affect
 
