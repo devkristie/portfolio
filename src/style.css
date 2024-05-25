@@ -1060,6 +1060,6 @@ a.footer-link-back-to-top-dark-mode {
 .footer-copyright-sign {
     font-size: 1.5rem;
 }
-.footer-copyright-dark-mode, .footer-copyright-year, .footer-copyright-sign-dark-mode {
+.footer-copyright-dark-mode, .footer-copyright-year-dark-mode, .footer-copyright-sign-dark-mode {
     color: var(--dark-mode);
 }
