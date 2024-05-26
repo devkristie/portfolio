@@ -143,19 +143,20 @@ function enableDarkMode() {
     link.classList.add("absolute-footer-links-dark-mode");
   });
   const footerBottomBackground = document.querySelector(".footer-bottom");
-  footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--primary-color))";
-  const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
-  footerIconsDarkMode.forEach((icon) => {
-    icon.style.color = "var(--dark-mode)";
-  });
-  const copyright = document.querySelectorAll(".footer-copyright");
-  copyright.forEach((copyright) => {
-    copyright.classList.add("footer-copyright-dark-mode");
-  });
-  const copyrightYear = document.querySelector(".footer-copyright-year");
-  copyrightYear.classList.add("footer-copyright-year-dark-mode");
-  const copyrightSign = document.querySelector(".footer-copyright-sign");
-  copyrightSign.classList.add("footer-copyright-sign-dark-mode");
+  footerBottomBackground.classList.add("footer-bottom-dark-mode");
+  // footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--primary-color))";
+  // const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
+  // footerIconsDarkMode.forEach((icon) => {
+  //   icon.style.color = "var(--dark-mode)";
+  // });
+  // const copyright = document.querySelectorAll(".footer-copyright");
+  // copyright.forEach((copyright) => {
+  //   copyright.classList.add("footer-copyright-dark-mode");
+  // });
+  // const copyrightYear = document.querySelector(".footer-copyright-year");
+  // copyrightYear.classList.add("footer-copyright-year-dark-mode");
+  // const copyrightSign = document.querySelector(".footer-copyright-sign");
+  // copyrightSign.classList.add("footer-copyright-sign-dark-mode");
 }
 
 function disableDarkMode() {
@@ -214,20 +215,20 @@ function disableDarkMode() {
     link.classList.remove("absolute-footer-links-dark-mode");
   });
   const footerBottomBackground = document.querySelector(".footer-bottom");
-  footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color))";
-  const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
-  footerIconsDarkMode.forEach((icon) => {
-    icon.style.color = "var(--light-mode)";
-  });
-  const copyright = document.querySelectorAll(".footer-copyright");
-  copyright.forEach((copyright) => {
-    copyright.classList.remove("footer-copyright-dark-mode");
-  });
-  const copyrightYear = document.querySelector(".footer-copyright-year");
-  copyrightYear.classList.remove("footer-copyright-year-dark-mode");
-  const copyrightSign = document.querySelector(".footer-copyright-sign");
-  copyrightSign.classList.remove("footer-copyright-sign-dark-mode");
-
+  footerBottomBackground.classList.remove("footer-bottom-dark-mode");
+  // footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color))";
+  // const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
+  // footerIconsDarkMode.forEach((icon) => {
+  //   icon.style.color = "var(--light-mode)";
+  // });
+  // const copyright = document.querySelectorAll(".footer-copyright");
+  // copyright.forEach((copyright) => {
+  //   copyright.classList.remove("footer-copyright-dark-mode");
+  // });
+  // const copyrightYear = document.querySelector(".footer-copyright-year");
+  // copyrightYear.classList.remove("footer-copyright-year-dark-mode");
+  // const copyrightSign = document.querySelector(".footer-copyright-sign");
+  // copyrightSign.classList.remove("footer-copyright-sign-dark-mode");
 }
 //? add transition: color 0.5s; to all dark-mode CSS to change its affect
 

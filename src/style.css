@@ -1030,7 +1030,12 @@ a.footer-link-back-to-top-dark-mode {
     width: 100%;
     height: 5rem;
     bottom: 0;
-    background-image: linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color));
+    /* background-image: linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color)); */
+    background-color: var(--darker-grey);
+    border-top: 1rem solid var(--dark-mode)
+}
+.footer-bottom-dark-mode {
+    border-top: 1rem solid var(--light-mode);
 }
 .footer-bottom > article > p {
     display: inline;
