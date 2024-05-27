@@ -116,6 +116,10 @@ function enableDarkMode() {
   });
   const laptopImage10 = document.querySelector(".laptop-image10");
   laptopImage10.classList.add("laptop-image10-dark-mode");
+  const profileContainerBackground = document.querySelector(".profile-content-container-background");
+  profileContainerBackground.classList.add("profile-content-container-background-dark-mode");
+  const quotationBackground = document.querySelector(".quotation-container-background");
+  quotationBackground.classList.add("quotation-container-background-dark-mode");
   const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
   portfolioWebsiteTitleBackgrounds.forEach((background) => {
     background.classList.add("portfolio-website-title-container-dark-mode");
@@ -144,19 +148,6 @@ function enableDarkMode() {
   });
   const footerBottomBackground = document.querySelector(".footer-bottom");
   footerBottomBackground.classList.add("footer-bottom-dark-mode");
-  // footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--light-mode), var(--primary-color))";
-  // const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
-  // footerIconsDarkMode.forEach((icon) => {
-  //   icon.style.color = "var(--dark-mode)";
-  // });
-  // const copyright = document.querySelectorAll(".footer-copyright");
-  // copyright.forEach((copyright) => {
-  //   copyright.classList.add("footer-copyright-dark-mode");
-  // });
-  // const copyrightYear = document.querySelector(".footer-copyright-year");
-  // copyrightYear.classList.add("footer-copyright-year-dark-mode");
-  // const copyrightSign = document.querySelector(".footer-copyright-sign");
-  // copyrightSign.classList.add("footer-copyright-sign-dark-mode");
 }
 
 function disableDarkMode() {
@@ -190,6 +181,10 @@ function disableDarkMode() {
   });
   const laptopImage10 = document.querySelector(".laptop-image10");
   laptopImage10.classList.remove("laptop-image10-dark-mode");
+  const profileContainerBackground = document.querySelector(".profile-content-container-background");
+  profileContainerBackground.classList.remove("profile-content-container-background-dark-mode");
+  const quotationBackground = document.querySelector(".quotation-container-background");
+  quotationBackground.classList.remove("quotation-container-background-dark-mode");
   const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
   portfolioWebsiteTitleBackgrounds.forEach((background) => {
     background.classList.remove("portfolio-website-title-container-dark-mode");
@@ -216,19 +211,6 @@ function disableDarkMode() {
   });
   const footerBottomBackground = document.querySelector(".footer-bottom");
   footerBottomBackground.classList.remove("footer-bottom-dark-mode");
-  // footerBottomBackground.style.backgroundImage = "linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color))";
-  // const footerIconsDarkMode = document.querySelectorAll(".footer-icons a");
-  // footerIconsDarkMode.forEach((icon) => {
-  //   icon.style.color = "var(--light-mode)";
-  // });
-  // const copyright = document.querySelectorAll(".footer-copyright");
-  // copyright.forEach((copyright) => {
-  //   copyright.classList.remove("footer-copyright-dark-mode");
-  // });
-  // const copyrightYear = document.querySelector(".footer-copyright-year");
-  // copyrightYear.classList.remove("footer-copyright-year-dark-mode");
-  // const copyrightSign = document.querySelector(".footer-copyright-sign");
-  // copyrightSign.classList.remove("footer-copyright-sign-dark-mode");
 }
 //? add transition: color 0.5s; to all dark-mode CSS to change its affect
 

@@ -441,15 +441,18 @@ main {
     min-height: 100vh;
 }
 .profile-content-container-background {
-    display: block;
+    /* display: block; */
     width: 80%;
     margin: 5rem auto 5rem;
     padding-bottom: -1rem;
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
 }
+.profile-content-container-background-dark-mode {
+    background-color: var(--darkest-grey);
+}
 .profile-headshot {
-    display: inline-block;
+    /* display: inline-block; */
     width: 7.313rem;
     height: 7.313rem;
     margin: 3rem 0 -7.5rem 3.25rem;
@@ -471,9 +474,10 @@ main {
     background-color: var(--light-grey);
     text-align: center;
     border-radius: 1.5rem;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+}
+.quotation-container-background-dark-mode {
+    color: var(--light-grey);
+    background-color: var(--darker-grey);
 }
 q::before {
     position: absolute;
@@ -482,7 +486,7 @@ q::before {
     content: open-quote;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--darkest-grey);
+    color: var(--dark-grey);
 }
 q::after {
     position: absolute;
@@ -491,7 +495,7 @@ q::after {
     content: close-quote;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--darkest-grey);
+    color: var(--dark-grey);
 }
 .profile-content-container {
     margin: -3.5rem 2rem 1rem;
@@ -998,10 +1002,11 @@ ul {
 }
 a.footer-link-backtotop {
     color: var(--dark-mode);
-    transition: color 0.5s;
+    transition: color 0s;
 }
 a.footer-link-backtotop:hover {
     color: var(--secondary-color);
+    transition: color 0.5s;
 }
 a.footer-link-back-to-top-dark-mode {
     color: var(--light-mode);
@@ -1030,7 +1035,6 @@ a.footer-link-back-to-top-dark-mode {
     width: 100%;
     height: 5rem;
     bottom: 0;
-    /* background-image: linear-gradient(to top, var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--dark-mode), var(--primary-color)); */
     background-color: var(--darker-grey);
     border-top: 1rem solid var(--dark-mode)
 }
