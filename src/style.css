@@ -529,6 +529,9 @@ q::after {
     display: block;
     margin-top: 0;
 }
+.profile-content-container-dark-mode {
+    color: var(--light-mode);
+}
 .download-cv-button {
     display: flex;
     justify-content: center;
@@ -611,6 +614,9 @@ hr {
     margin: 5rem auto;
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
+}
+.portfolio-website-flex-container-dark-mode {
+    background-color: var(--darker-grey);
 }
 .portfolio-website-title-container {
     width: 100%;
@@ -747,6 +753,9 @@ hr {
     border-radius: 0 0 1.5rem 1.5rem;
     cursor: pointer;
 }
+.portfolio-website-content-container-accordion-dark-mode {
+    background-color: var(--darkest-grey);
+}
 .portfolio-website-content-container > p {
     margin: -1rem 3rem;
     padding: 1rem 0;
@@ -766,19 +775,27 @@ hr {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
+.show-more-button > .p-dark-mode {
+    color: var(--light-mode);
+}
 .show-more-arrow {
     width: 3rem;
     height: 3rem;
     margin: -1rem 0 2rem 0;
-    border: 0.01rem solid var(--light-grey);
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.25rem;
     transition: transform 0.2s;
 }
+.show-more-arrow-dark-mode {
+    stroke: var(--light-mode);
+}
 .show-more-accordion .hidden {
     display: none;
+}
+.hidden-dark-mode {
+    color: var(--light-mode);
 }
 .show-more-accordion-title {
     font-family: "tomorrow-regular";
@@ -795,6 +812,9 @@ hr {
 .technologies-used-title {
     text-align: center;
     cursor: text;
+}
+.technologies-used-title-dark-mode {
+    color: var(--light-mode);
 }
 .technology-used-container {
     display: flex;
@@ -848,6 +868,9 @@ hr {
     background-image: linear-gradient(to bottom, var(--light-grey), var(--light-mode));
     border-radius: 1.5rem 1.5rem 0 0;
 }
+.contact-form-top-background-dark-mode {
+    background-image: linear-gradient(to bottom, var(--darker-grey), var(--dark-mode));
+}
 .envelope-icon {
     display: flex;
     justify-content: center;
@@ -860,6 +883,10 @@ hr {
     background-clip: text;
     color: transparent;
     background-image: linear-gradient(to bottom, var(--dark-mode), var(--secondary-color));
+}
+.fa-envelope.dark-mode {
+    background-image: linear-gradient(to bottom, var(--light-mode), var(--secondary-color));
+
 }
 form {
     width: 100%;
@@ -878,6 +905,9 @@ label {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
     z-index: 1;
+}
+.label-dark-mode {
+    color: var(--dark-grey);
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: var(--lightest-grey);
@@ -900,12 +930,18 @@ label {
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
 }
+.form-input-dark-mode {
+    background-color: var(--darkest-grey);
+}
 .form-input:focus {
     filter: brightness(96%);
     outline-style: solid;
     outline-color: var(--secondary-color);
     caret-color: var(--lightest-grey);
     border: 0.09rem solid var(--secondary-color);
+}
+.form-input-dark-mode:focus {
+    caret-color: var(--darkest-grey);
 }
 .form-input:hover {
     filter: brightness(96%);
@@ -919,6 +955,9 @@ label {
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
 }
+.valid-dark-mode {
+    background-color: var(--darkest-grey);
+}
 .invalid {
     width: 100%;
     height: 3rem;
@@ -927,6 +966,9 @@ label {
     font-family: "roboto-regular", Arial;
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
+}
+.invalid-dark-mode {
+    background-color: var(--darkest-grey);
 }
 .form-input-message {
     height: 12.688rem;

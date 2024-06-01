@@ -120,13 +120,9 @@ function enableDarkMode() {
   profileContainerBackground.classList.add("profile-content-container-background-dark-mode");
   const quotationBackground = document.querySelector(".quotation-container-background");
   quotationBackground.classList.add("quotation-container-background-dark-mode");
-  const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
-  portfolioWebsiteTitleBackgrounds.forEach((background) => {
-    background.classList.add("portfolio-website-title-container-dark-mode");
-  });
-  const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
-  portfolioWebsiteTitle.forEach((websiteTitle) => {
-    websiteTitle.classList.add("portfolio-website-title-dark-mode");
+  const profileParagraphs = document.querySelectorAll(".profile-content-container p:not(.profile-content-greeting)");
+  profileParagraphs.forEach((paragraph) =>{
+    paragraph.classList.add("profile-content-container-dark-mode");
   });
   const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
   sectionTitles.forEach((title) => {
@@ -138,6 +134,47 @@ function enableDarkMode() {
     const thankYouParagraph = document.querySelector(".contact-introduction-thank-you-text");
     thankYouParagraph.classList.remove("p-dark-mode");
   });
+  const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
+  portfolioWebsiteTitleBackgrounds.forEach((background) => {
+    background.classList.add("portfolio-website-title-container-dark-mode");
+  });
+  const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
+  portfolioWebsiteTitle.forEach((websiteTitle) => {
+    websiteTitle.classList.add("portfolio-website-title-dark-mode");
+  });
+  const portfolioSliderBackground = document.querySelectorAll(".portfolio-website-flex-container");
+  portfolioSliderBackground.forEach((background) => {
+    background.classList.add("portfolio-website-flex-container-dark-mode");
+  });
+  const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-website-content-container-accordion");
+  portfolioWebsiteContentAccordion.forEach((background) => {
+    background.classList.add("portfolio-website-content-container-accordion-dark-mode");
+  });
+  const showMoreAccordionContent = document.querySelectorAll(".hidden");
+  showMoreAccordionContent.forEach((content) => {
+    content.classList.add("hidden-dark-mode");
+  });
+  const contactFormTopBackground = document.querySelector(".contact-form-top-background");
+  contactFormTopBackground.classList.add("contact-form-top-background-dark-mode");
+  const contactFormEnvelope = document.querySelector(".fa-envelope");
+  contactFormEnvelope.classList.add("dark-mode");
+  const formInputBackground = document.querySelectorAll(".form-input");
+  formInputBackground.forEach((input) => {
+    input.classList.add("form-input-dark-mode");    
+  });
+  document.querySelectorAll('.form-input').forEach((input) => {
+    input.classList.add("form-input-dark-mode");
+  });
+  document.querySelectorAll('.valid').forEach((input) => {
+    input.classList.add("valid-dark-mode");
+  });
+  document.querySelectorAll('.invalid').forEach((input) => {
+    input.classList.add("invalid-dark-mode");
+  });
+  const labels = document.querySelectorAll("label");
+  labels.forEach((label) => {
+    label.classList.add("label-dark-mode");
+  });
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.add("footer-content-dark-mode");
   const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
@@ -147,8 +184,8 @@ function enableDarkMode() {
     link.classList.add("absolute-footer-links-dark-mode");
   });
   const footerBottomBackground = document.querySelector(".footer-bottom");
-  footerBottomBackground.classList.add("footer-bottom-dark-mode");
-}
+    footerBottomBackground.classList.add("footer-bottom-dark-mode");
+  }
 
 function disableDarkMode() {
   document.body.classList.remove("dark-mode");
@@ -185,13 +222,9 @@ function disableDarkMode() {
   profileContainerBackground.classList.remove("profile-content-container-background-dark-mode");
   const quotationBackground = document.querySelector(".quotation-container-background");
   quotationBackground.classList.remove("quotation-container-background-dark-mode");
-  const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
-  portfolioWebsiteTitleBackgrounds.forEach((background) => {
-    background.classList.remove("portfolio-website-title-container-dark-mode");
-  });
-  const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
-  portfolioWebsiteTitle.forEach((websiteTitle) => {
-    websiteTitle.classList.remove("portfolio-website-title-dark-mode");
+  const profileParagraphs = document.querySelectorAll(".profile-content-container p:not(.profile-content-greeting)");
+  profileParagraphs.forEach((paragraph) =>{
+    paragraph.classList.remove("profile-content-container-dark-mode");
   });
   const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
   sectionTitles.forEach((title) => {
@@ -200,6 +233,47 @@ function disableDarkMode() {
   const sectionParagraphs = document.querySelectorAll(".section-introduction-container p");
   sectionParagraphs.forEach((paragraph) => {
     paragraph.classList.remove("p-dark-mode");
+  });
+  const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
+  portfolioWebsiteTitleBackgrounds.forEach((background) => {
+    background.classList.remove("portfolio-website-title-container-dark-mode");
+  });
+  const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
+  portfolioWebsiteTitle.forEach((websiteTitle) => {
+    websiteTitle.classList.remove("portfolio-website-title-dark-mode");
+  });
+  const portfolioSliderBackground = document.querySelectorAll(".portfolio-website-flex-container");
+  portfolioSliderBackground.forEach((background) => {
+    background.classList.remove("portfolio-website-flex-container-dark-mode");
+  });
+  const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-website-content-container-accordion");
+  portfolioWebsiteContentAccordion.forEach((background) => {
+    background.classList.remove("portfolio-website-content-container-accordion-dark-mode");
+  });
+  const showMoreAccordionContent = document.querySelectorAll(".hidden");
+  showMoreAccordionContent.forEach((content) => {
+    content.classList.remove("hidden-dark-mode");
+  });
+  const contactFormTopBackground = document.querySelector(".contact-form-top-background");
+  contactFormTopBackground.classList.remove("contact-form-top-background-dark-mode");
+  const contactFormEnvelope = document.querySelector(".fa-envelope");
+  contactFormEnvelope.classList.remove("dark-mode");
+  const formInputBackground = document.querySelectorAll(".form-input");
+  formInputBackground.forEach((input) => {
+    input.classList.remove("form-input-dark-mode");    
+  });
+  document.querySelectorAll('.form-input').forEach((input) => {
+    input.classList.remove("form-input-dark-mode");
+  });
+  document.querySelectorAll('.valid').forEach((input) => {
+    input.classList.remove("valid-dark-mode");
+  });
+  document.querySelectorAll('.invalid').forEach((input) => {
+    input.classList.remove("invalid-dark-mode");
+  });
+  const labels = document.querySelectorAll("label");
+  labels.forEach((label) => {
+    label.classList.remove("label-dark-mode");
   });
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.remove("footer-content-dark-mode");
@@ -342,36 +416,43 @@ const contactFormInputs = document.querySelectorAll('.form-input[required]');
 // Validation function
 function validate(field, regex) {
   if (field.value.trim() === '') {
-    field.className = "form-input";
-    // Hide only the error message associated with the emptied field
-    const errorMessage = field.nextElementSibling;
-    errorMessage.style.visibility = 'hidden';
-    // Check if there are other invalid fields and show their error messages
-    const otherInvalidInputs = document.querySelectorAll('.form-input.invalid');
-    otherInvalidInputs.forEach(input => {
-      if (input !== field) {
-        const otherErrorMessage = input.nextElementSibling;
-        otherErrorMessage.style.visibility = 'visible';
+      field.className = "form-input";
+      if (document.body.classList.contains("dark-mode")) {
+          field.classList.add("form-input-dark-mode");
       }
-    });
+      const errorMessage = field.nextElementSibling;
+      errorMessage.style.visibility = 'hidden';
+      const otherInvalidInputs = document.querySelectorAll('.form-input.invalid');
+      otherInvalidInputs.forEach(input => {
+          if (input !== field) {
+              const otherErrorMessage = input.nextElementSibling;
+              otherErrorMessage.style.visibility = 'visible';
+          }
+      });
   } else if (regex.test(field.value)) {
-    field.className = "form-input valid";
-    formValidationParagraphName.style.visibility = "hidden";
-    formValidationParagraphEmail.style.visibility = "hidden";
-    formValidationParagraphPhone.style.visibility = "hidden";
+      field.className = "form-input valid";
+      if (document.body.classList.contains("dark-mode")) {
+          field.classList.add("valid-dark-mode");
+      }
+      formValidationParagraphName.style.visibility = "hidden";
+      formValidationParagraphEmail.style.visibility = "hidden";
+      formValidationParagraphPhone.style.visibility = "hidden";
   } else {
-    field.className = "form-input invalid";
-    if (field.id === "fullname") {
-      formValidationParagraphName.style.visibility = "visible";
-    } else if (field.id === "email") {
-      formValidationParagraphEmail.style.visibility = "visible";
-    } else if (field.id === "phone") {
-      formValidationParagraphPhone.style.visibility = "visible";
-    }
+      field.className = "form-input invalid";
+      if (document.body.classList.contains("dark-mode")) {
+          field.classList.add("invalid-dark-mode");
+      }
+      if (field.id === "fullname") {
+          formValidationParagraphName.style.visibility = "visible";
+      } else if (field.id === "email") {
+          formValidationParagraphEmail.style.visibility = "visible";
+      } else if (field.id === "phone") {
+          formValidationParagraphPhone.style.visibility = "visible";
+      }
   }
 }
 
-contactFormInput.forEach((input) => {
+contactFormInputs.forEach((input) => {
   input.addEventListener("keyup", (e) => {
     validate(e.target, regexInput[e.target.attributes.name.value]);
   });
