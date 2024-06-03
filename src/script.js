@@ -1,3 +1,5 @@
+//!Find all single quotes and change them to double
+
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
 const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
 const showMoreButton = document.querySelectorAll(".show-more-button");
@@ -175,6 +177,27 @@ function enableDarkMode() {
   labels.forEach((label) => {
     label.classList.add("label-dark-mode");
   });
+  const placeholderStyle = `
+        /* Chrome/Opera/Safari */
+        ::-webkit-input-placeholder {
+            color: var(--darkest-grey);
+        }
+        /* Firefox 19+ */
+        ::-moz-placeholder {
+            color: var(--darkest-grey);
+        }
+        /* IE 10+ */
+        :-ms-input-placeholder {
+            color: var(--darkest-grey);
+        }
+        /* Firefox 18- */
+        :-moz-placeholder {
+            color: var(--darkest-grey);
+        }
+    `;
+    const styleElement = document.createElement("style");
+    styleElement.textContent = placeholderStyle;
+    document.head.appendChild(styleElement);
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.add("footer-content-dark-mode");
   const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
@@ -275,6 +298,27 @@ function disableDarkMode() {
   labels.forEach((label) => {
     label.classList.remove("label-dark-mode");
   });
+  const placeholderStyle = `
+  /* Chrome/Opera/Safari */
+  ::-webkit-input-placeholder {
+      color: var(--lightest-grey);
+  }
+  /* Firefox 19+ */
+  ::-moz-placeholder {
+      color: var(--lightest-grey);
+  }
+  /* IE 10+ */
+  :-ms-input-placeholder {
+      color: var(--lightest-grey);
+  }
+  /* Firefox 18- */
+  :-moz-placeholder {
+      color: var(--lightest-grey);
+  }
+`;
+const styleElement = document.createElement("style");
+styleElement.textContent = placeholderStyle;
+document.head.appendChild(styleElement);
   const footerDarkMode = document.querySelector(".footer-content");
   footerDarkMode.classList.remove("footer-content-dark-mode");
   const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
@@ -401,98 +445,123 @@ contactFormClicked.forEach((input, index) => {
   }
 });
 
-const regexInput = {
-  name: /^(?!.*[.,'-]{2})[a-z.,'-]{2,30}[ ][a-z.,'-]{0,30}([ ]?)[a-z.,'-]{2,30}?$/i,
-  email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]{2,6}(\.[a-z]{2,6})?$/,
-  phone: /^\+44\d{10}$/g,
-};
+document.addEventListener('DOMContentLoaded', function() {
+  const regexInput = {
+      name: /^(?!.*[.,'-]{2})[a-z.,'-]{2,30}[ ][a-z.,'-]{0,30}([ ]?)[a-z.,'-]{2,30}?$/i,
+      email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]{2,6}(\.[a-z]{2,6})?$/,
+      phone: /^\+44\d{10}$/
+  };
 
-const formValidationParagraphName = document.querySelector(".form-validation-paragraph.name");
-const formValidationParagraphEmail = document.querySelector(".form-validation-paragraph.email");
-const formValidationParagraphPhone = document.querySelector(".form-validation-paragraph.phone");
-const submitButton = document.querySelector(".contact-form-button");
-const contactFormInputs = document.querySelectorAll('.form-input[required]');
+  const formValidationParagraphName = document.querySelector(".form-validation-paragraph.name");
+  const formValidationParagraphEmail = document.querySelector(".form-validation-paragraph.email");
+  const formValidationParagraphPhone = document.querySelector(".form-validation-paragraph.phone");
+  const formValidationParagraphMessage = document.querySelector(".form-validation-paragraph.message");
+  const submitButton = document.querySelector(".contact-form-button");
+  const contactFormInputs = document.querySelectorAll('.form-input');
 
-// Validation function
-function validate(field, regex) {
-  if (field.value.trim() === '') {
-      field.className = "form-input";
-      if (document.body.classList.contains("dark-mode")) {
-          field.classList.add("form-input-dark-mode");
-      }
-      const errorMessage = field.nextElementSibling;
-      errorMessage.style.visibility = 'hidden';
-      const otherInvalidInputs = document.querySelectorAll('.form-input.invalid');
-      otherInvalidInputs.forEach(input => {
-          if (input !== field) {
-              const otherErrorMessage = input.nextElementSibling;
-              otherErrorMessage.style.visibility = 'visible';
+  // Validation function
+  function validate(field, regex) {
+      const isMessageField = field.id === "message";
+      const isPhoneField = field.id === "phone";
+      if (field.value.trim() === '') {
+          field.className = "form-input";
+          if (isMessageField) {
+              field.classList.add("form-input-message");
           }
-      });
-  } else if (regex.test(field.value)) {
-      field.className = "form-input valid";
-      if (document.body.classList.contains("dark-mode")) {
-          field.classList.add("valid-dark-mode");
-      }
-      formValidationParagraphName.style.visibility = "hidden";
-      formValidationParagraphEmail.style.visibility = "hidden";
-      formValidationParagraphPhone.style.visibility = "hidden";
-  } else {
-      field.className = "form-input invalid";
-      if (document.body.classList.contains("dark-mode")) {
-          field.classList.add("invalid-dark-mode");
-      }
-      if (field.id === "fullname") {
-          formValidationParagraphName.style.visibility = "visible";
-      } else if (field.id === "email") {
-          formValidationParagraphEmail.style.visibility = "visible";
-      } else if (field.id === "phone") {
-          formValidationParagraphPhone.style.visibility = "visible";
+          if (document.body.classList.contains("dark-mode")) {
+              field.classList.add("form-input-dark-mode");
+          }
+          const errorMessage = field.nextElementSibling;
+          if (!isPhoneField) {
+              errorMessage.style.visibility = 'hidden';
+          } else {
+              formValidationParagraphPhone.style.visibility = "hidden";
+          }
+      } else if (regex.test(field.value)) {
+          field.className = "form-input valid";
+          if (isMessageField) {
+              field.classList.add("form-input-message");
+          }
+          if (document.body.classList.contains("dark-mode")) {
+              field.classList.add("valid-dark-mode");
+          }
+          if (field.id === "fullname") {
+              formValidationParagraphName.style.visibility = "hidden";
+          } else if (field.id === "email") {
+              formValidationParagraphEmail.style.visibility = "hidden";
+          } else if (isPhoneField) {
+              formValidationParagraphPhone.style.visibility = "hidden";
+          } else if (isMessageField) {
+              formValidationParagraphMessage.style.visibility = "hidden";
+          }
+      } else {
+          field.className = "form-input invalid";
+          if (isMessageField) {
+              field.classList.add("form-input-message");
+          }
+          if (document.body.classList.contains("dark-mode")) {
+              field.classList.add("invalid-dark-mode");
+          }
+          if (field.id === "fullname") {
+              formValidationParagraphName.style.visibility = "visible";
+          } else if (field.id === "email") {
+              formValidationParagraphEmail.style.visibility = "visible";
+          } else if (isPhoneField) {
+              formValidationParagraphPhone.style.visibility = "visible";
+          } else if (isMessageField) {
+              formValidationParagraphMessage.style.visibility = "visible";
+          }
       }
   }
-}
 
-contactFormInputs.forEach((input) => {
-  input.addEventListener("keyup", (e) => {
-    validate(e.target, regexInput[e.target.attributes.name.value]);
+  // Attach event listeners to input fields
+  contactFormInputs.forEach((input) => {
+      input.addEventListener("keyup", (e) => {
+          const regex = regexInput[e.target.attributes.name.value];
+          if (regex) {
+              validate(e.target, regex);
+          } else {
+              validate(e.target, /.*/); // Use a default regex that always returns true
+          }
+      });
   });
-});
 
-// Add event listener to the submit button
-submitButton.addEventListener('click', function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+  // Add event listener to the submit button
+  submitButton.addEventListener('click', function(event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();
 
-    let formIsValid = true;
+      let formIsValid = true;
 
-    // Check if any required input field is empty
-    contactFormInputs.forEach(input => {
-        if (input.value.trim() === '') {
-            formIsValid = false;
-            const errorMessage = input.nextElementSibling;
-            errorMessage.style.visibility = 'visible';
-        }
-    });
+      // Check if any invalid messages are visible
+      const invalidMessages = document.querySelectorAll('.form-validation-paragraph.visible');
+      if (invalidMessages.length > 0) {
+          formIsValid = false;
+      }
 
-    // If any required field is empty, prevent form submission
-    if (!formIsValid) {
-        return;
-    }
+      // If any invalid messages are visible, prevent form submission
+      if (!formIsValid) {
+          return;
+      }
 
-    // Check if any input field is invalid
-    const invalidInputs = document.querySelectorAll('.form-input.invalid');
+      // Check if any required input field is empty
+      contactFormInputs.forEach(input => {
+          if (input.hasAttribute('required') && input.value.trim() === '') {
+              formIsValid = false;
+              const errorMessage = input.nextElementSibling;
+              errorMessage.style.visibility = 'visible';
+          }
+      });
 
-    // If there are invalid input fields, display the error messages and prevent form submission
-    if (invalidInputs.length > 0) {
-        invalidInputs.forEach(input => {
-            const errorMessage = input.nextElementSibling; // Get the corresponding error message element
-            errorMessage.style.visibility = 'visible'; // Display the error message
-        });
-    } else {
-        // If all input fields are valid, submit the form
-        const form = document.querySelector('form');
-        form.submit();
-    }
+      // If any required field is empty, prevent form submission
+      if (!formIsValid) {
+          return;
+      }
+
+      // If all input fields are valid, submit the form
+      const form = document.querySelector('form');
+      form.submit();
+  });
 });
 
 const updateDate = new Date();

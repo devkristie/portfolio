@@ -909,29 +909,21 @@ label {
 .label-dark-mode {
     color: var(--dark-grey);
 }
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: var(--lightest-grey);
-}
-::-moz-placeholder { /* Firefox 19+ */
-    color: var(--lightest-grey);
-}
-:-ms-input-placeholder { /* IE 10+ */
-    color: var(--lightest-grey);
-}
-:-moz-placeholder { /* Firefox 18- */
-    color: var(--lightest-grey);
-}
 .form-input {
     width: 100%;
     height: 3rem;
     padding: 1.5rem;
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
+    color: var(--dark-mode);
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
+    resize: none;
 }
 .form-input-dark-mode {
+    color: var(--light-mode);
     background-color: var(--darkest-grey);
+    border: 0.01rem solid var(--lightest-grey);
 }
 .form-input:focus {
     filter: brightness(96%);
@@ -956,7 +948,9 @@ label {
     border: 0.01rem solid var(--dark-mode);
 }
 .valid-dark-mode {
+    color: var(--light-mode);
     background-color: var(--darkest-grey);
+    border: 0.01rem solid var(--lightest-grey);
 }
 .invalid {
     width: 100%;
@@ -968,7 +962,9 @@ label {
     border: 0.01rem solid var(--dark-mode);
 }
 .invalid-dark-mode {
+    color: var(--light-mode);
     background-color: var(--darkest-grey);
+    border: 0.01rem solid var(--lightest-grey);
 }
 .form-input-message {
     height: 12.688rem;
