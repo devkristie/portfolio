@@ -156,6 +156,22 @@ function enableDarkMode() {
   showMoreAccordionContent.forEach((content) => {
     content.classList.add("hidden-dark-mode");
   });
+  const showMoreDarkMode = document.querySelectorAll(".show-more-button p");
+  showMoreDarkMode.forEach((show) => {
+    show.classList.add("p-dark-mode");
+  });
+  const showMoreArrowDarkMode = document.querySelectorAll(".show-more-arrow");
+  showMoreArrowDarkMode.forEach((show) => {
+    show.classList.add("show-more-arrow-dark-mode");
+  });
+  const technologiesUsedTitle = document.querySelectorAll(".technologies-used-title");
+  technologiesUsedTitle.forEach((title) => {
+    title.classList.add("technologies-used-title-dark-mode");
+  });
+  const technologiesUsedFigcaption = document.querySelectorAll(".technology-used-container figcaption");
+  technologiesUsedFigcaption.forEach((figcaption) => {
+    figcaption.classList.add("figcaption-dark-mode");
+  });
   const contactFormTopBackground = document.querySelector(".contact-form-top-background");
   contactFormTopBackground.classList.add("contact-form-top-background-dark-mode");
   const contactFormEnvelope = document.querySelector(".fa-envelope");
@@ -276,6 +292,22 @@ function disableDarkMode() {
   const showMoreAccordionContent = document.querySelectorAll(".hidden");
   showMoreAccordionContent.forEach((content) => {
     content.classList.remove("hidden-dark-mode");
+  });
+  const showMoreDarkMode = document.querySelectorAll(".show-more-button p");
+  showMoreDarkMode.forEach((show) => {
+    show.classList.remove("p-dark-mode");
+  });
+  const showMoreArrowDarkMode = document.querySelectorAll(".show-more-arrow");
+  showMoreArrowDarkMode.forEach((show) => {
+    show.classList.remove("show-more-arrow-dark-mode");
+  });
+  const technologiesUsedTitle = document.querySelectorAll(".technologies-used-title");
+  technologiesUsedTitle.forEach((title) => {
+    title.classList.remove("technologies-used-title-dark-mode");
+  });
+  const technologiesUsedFigcaption = document.querySelectorAll(".technology-used-container figcaption");
+  technologiesUsedFigcaption.forEach((figcaption) => {
+    figcaption.classList.remove("figcaption-dark-mode");
   });
   const contactFormTopBackground = document.querySelector(".contact-form-top-background");
   contactFormTopBackground.classList.remove("contact-form-top-background-dark-mode");
