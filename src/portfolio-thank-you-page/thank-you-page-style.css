@@ -21,6 +21,10 @@ body {
     margin: 0;
     overflow-x: hidden;
 }
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
 .top-navigation-bar {
     position: fixed;
     display: flex;
@@ -98,6 +102,7 @@ li {
 .fa-moon {
     font-size: 1.25rem;
     color: var(--dark-mode);
+    cursor: pointer;
 }
 .hamburger-menu {
     width: 2.5rem;
@@ -213,7 +218,7 @@ li {
     }
 }
 .thank-you-page-content {
-    min-height: 100vh;
+    min-height: 100%;
 }
 .thank-you-page-content-flex-container {
     display: flex;
@@ -263,26 +268,38 @@ li {
     color: var(--dark-mode);
     text-align: center;
 }
-.envelope-svg-animation {
+.message-sent-paragraph-dark-mode {
+    color: var(--light-mode);
+}
+.envelope-svg {
     width: 15rem;
     height: 7.5rem;
 }
-.envelope-animation1 {
+.envelope1 {
     stroke: var(--dark-grey);
     fill: none;
     stroke-width: 0.5rem;
     stroke-linecap: round;
 }
-.envelope-animation2 {
+.envelope1-dark-mode {
+    stroke: var(--darker-grey);
+}
+.envelope2 {
     stroke: var(--light-mode);
     fill: none;
     stroke-width: 0.15rem;
 }
-.envelope-animation3 {
+.envelope2-dark-mode {
+    stroke: var(--dark-mode);
+}
+.envelope3 {
     stroke: var(--light-grey);
     fill: none;
     stroke-width: 0.5rem;
     stroke-linecap: round;
+}
+.envelope3-dark-mode {
+    stroke: var(--darkest-grey);
 }
 .thank-you-page-button-flex-container {
     display: flex;

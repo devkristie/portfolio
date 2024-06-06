@@ -1,6 +1,60 @@
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
 const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
 
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("darkModePreference") === "enabled") {
+      enableDarkMode();
+  } else if (localStorage.getItem("darkModePreference") === "disabled") {
+      disableDarkMode();
+  }
+});
+
+const moonIcon = document.querySelector(".fa-moon");
+
+moonIcon.addEventListener("click", () => {
+  const darkModePreference = localStorage.getItem("darkModePreference");
+
+  if (darkModePreference === "enabled") {
+    disableDarkMode();
+    localStorage.setItem("darkModePreference", "disabled");
+  } else {
+    enableDarkMode();
+    localStorage.setItem("darkModePreference", "enabled");
+  }
+});
+
+function enableDarkMode() {
+  document.body.classList.add("dark-mode");
+  const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
+  messageParagraphs.forEach((paragraph) => {
+    paragraph.classList.add("message-sent-paragraph-dark-mode");
+  });
+  const envelope1 = document.querySelector(".envelope1");
+  envelope1.classList.add("envelope1-dark-mode");
+  const envelope2 = document.querySelector(".envelope2");
+  envelope2.classList.add("envelope2-dark-mode");
+  const envelope3 = document.querySelectorAll(".envelope3");
+  envelope3.forEach((line) => {
+    line.classList.add("envelope3-dark-mode");
+  });
+}
+
+function disableDarkMode() {
+  document.body.classList.remove("dark-mode");
+  const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
+  messageParagraphs.forEach((paragraph) => {
+    paragraph.classList.remove("message-sent-paragraph-dark-mode");
+  });
+  const envelope1 = document.querySelector(".envelope1");
+  envelope1.classList.remove("envelope1-dark-mode");
+  const envelope2 = document.querySelector(".envelope2");
+  envelope2.classList.remove("envelope2-dark-mode");
+  const envelope3 = document.querySelectorAll(".envelope3");
+  envelope3.forEach((line) => {
+    line.classList.remove("envelope3-dark-mode");
+  });
+}
+
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {
