@@ -940,6 +940,9 @@ label {
     border: 0.01rem solid var(--dark-mode);
     resize: none;
 }
+.form-input:placeholder-shown {
+    color: var(--lightest-grey);
+}
 .form-input-dark-mode {
     color: var(--light-mode);
     background-color: var(--darkest-grey);
