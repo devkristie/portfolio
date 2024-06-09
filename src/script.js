@@ -36,12 +36,12 @@ moonIcon.addEventListener("click", () => {
     
         const paragraph2 = document.createElement("p");
         paragraph2.setAttribute("class", "pop-up-paragraph2");
-        paragraph2.textContent = "When you allow to enable dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.";
+        paragraph2.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
         popUp.appendChild(paragraph2);
     
         const paragraph3 = document.createElement("p");
         paragraph3.setAttribute("class", "pop-up-paragraph3");
-        paragraph3.textContent = "If you decline to enable dark mode, your data for it will not be saved in local storage, and the website will not remember your preference.";
+        paragraph3.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
         popUp.appendChild(paragraph3);
 
         const popUpAllowButton = document.createElement("button");

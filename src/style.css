@@ -41,11 +41,9 @@ body::before {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(0%, 20%);
-    margin-top: 5%;
-    padding-top: 2%;
-    width: 100%;
-    height: 76%;
+    transform: translate(2.5%, 20%);
+    width: 95%;
+    height: 28rem;
     background-color: var(--light-mode);
     border: 1px var(--dark-mode) solid;
     border-radius: 2rem;
@@ -56,6 +54,7 @@ body::before {
     margin: 1rem;
     font-size: 1.5rem;
     font-family: "tomorrow-regular", Arial;
+    font-weight: 600;
 }
 .pop-up-paragraph2, .pop-up-paragraph3 {
     padding: 0 2rem;
@@ -64,25 +63,33 @@ body::before {
 .pop-up-allow {
     position: fixed;
     top: 75%;
-    left: 15%;
+    left: 5%;
     transform: translate(50%, 50%);
-    width: 20%;
-    height: 7%;
+    width: 25%;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
     color: var(--dark-mode);
     background-color: var(--primary-color);
     border: none;
+    border-radius: 5rem;
+    cursor: pointer;
     z-index: 12;
 }
 .pop-up-decline {
     position: fixed;
     top: 75%;
-    right: 35%;
+    right: 30%;
     transform: translate(50%, 50%);
-    width: 20%;
-    height: 7%;
+    width: 25%;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
     color: var(--dark-mode);
     background-color: var(--primary-color);
     border: none;
+    border-radius: 5rem;
+    cursor: pointer;
     z-index: 12;
 }
 .top-navigation-bar {
