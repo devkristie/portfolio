@@ -672,6 +672,31 @@ hr {
     stroke-linecap: round;
     stroke-width: 0.25rem;
 }
+.image-slider {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 6.563rem;
+    object-fit: cover;
+}
+.image-slider:first-child {
+    display: block;
+}
+/* @media only screen and (min-width: 1000px) {
+    .image-slider {
+        object-fit: cover;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .image-slider {
+        object-fit: fill;
+    }
+}
+@media only screen and (min-width: 1520px) {
+    .image-slider {
+        object-fit: fill;
+    }
+} */
 .right-arrow {
     border-radius: 0 1.5rem 1.5rem 0;
 }
@@ -680,15 +705,6 @@ hr {
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.25rem;
-}
-.image-slider {
-    position: absolute;
-    display: none;
-    width: 100%;
-    height: 6.563rem;
-}
-.image-slider:first-child {
-    display: block;
 }
 .portfolio-website-button-container {
     display: flex;

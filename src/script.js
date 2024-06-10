@@ -450,9 +450,11 @@ showMoreButton.forEach((button, index) => {
         if (showLessText[index].textContent === "Show More") {
             showLessText[index].textContent = "Show Less";
             showMoreArrow[index].style.transform = "rotate(180deg)";
+            showMoreArrow[index].style.margin = "-1rem 0.30rem 2rem 0";           
         } else {
             showLessText[index].textContent = "Show More";
             showMoreArrow[index].style.transform = "rotate(0deg)";
+            showMoreArrow[index].style.margin = "-1rem 0 2rem 0";
         }
     });
 });
