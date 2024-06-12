@@ -1,4 +1,6 @@
-const moonIcon = document.querySelector(".fa-moon");
+const moonIcon = document.querySelector(".dark-mode-icon-container ul");
+const moon = document.querySelector(".fa-moon");
+const sunIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
 const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
 const showMoreButton = document.querySelectorAll(".show-more-button");
@@ -85,6 +87,8 @@ moonIcon.addEventListener("click", () => {
 
 function enableDarkMode() {
     document.body.classList.add("dark-mode");
+    moonIcon.style.visibility = "hidden";
+    sunIcon.style.visibility = "visible";
     // Apply dark mode classes to other elements as needed
     const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.add("main-dark-mode");
@@ -224,6 +228,8 @@ function enableDarkMode() {
 
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
+    sunIcon.style.visibility = "hidden";
+    moonIcon.style.visibility = "visible";
     // Remove dark mode classes from other elements as needed
     const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.remove("main-dark-mode");
@@ -442,6 +448,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const leftArrows = document.querySelectorAll('.left-arrow');
+    const rightArrows = document.querySelectorAll('.right-arrow');
+
+    function updateViewBox() {
+        if (window.innerWidth <= 600) {
+            leftArrows.forEach(leftArrow => {
+                leftArrow.setAttribute('viewBox', '-28 19 10 49');
+            });
+            rightArrows.forEach(rightArrow => {
+                rightArrow.setAttribute('viewBox', '-28 19 10 49');
+            });
+        } else {
+            leftArrows.forEach(leftArrow => {
+                leftArrow.setAttribute('viewBox', '14 0 20 100');
+            });
+            rightArrows.forEach(rightArrow => {
+                rightArrow.setAttribute('viewBox', '14 0 20 100');
+            });
+        }
+    }
+
+    // Initial update
+    updateViewBox();
+
+    // Update on window resize
+    window.addEventListener('resize', updateViewBox);
+});
+
 showMoreButton.forEach((button, index) => {
     button.addEventListener("click", () => {
         showMore[index].classList.toggle("show-more-accordion");
@@ -520,9 +555,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 formValidationParagraphEmail.style.visibility = "hidden";
             } else if (isPhoneField) {
                 formValidationParagraphPhone.style.visibility = "hidden";
-            } else if (isMessageField) {
+            } /*else if (isMessageField) {
                 formValidationParagraphMessage.style.visibility = "hidden";
-            }
+            }*/
+           //! THIS NEEDS FIXING
         } else {
             field.className = "form-input invalid";
             if (isMessageField) {
