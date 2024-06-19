@@ -181,7 +181,7 @@ li {
 }
 .fa-sun {
     visibility: hidden;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--light-mode);
     cursor: pointer;
 }
@@ -1003,11 +1003,28 @@ label {
     font-family: "roboto-regular", Arial;
     color: var(--dark-mode);
     background-color: var(--lightest-grey);
+    /* caret-color: var(--darkest-grey); */
     border: 0.01rem solid var(--dark-mode);
     resize: none;
 }
 .form-input:placeholder-shown {
     color: var(--lightest-grey);
+}
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+    visibility: hidden;
+}
+/* Firefox 19+ */
+::-moz-placeholder {
+    visibility: hidden;
+}
+/* IE 10+ */
+:-ms-input-placeholder {
+    visibility: hidden;
+}
+/* Firefox 18- */
+:-moz-placeholder {
+    visibility: hidden;
 }
 .form-input-dark-mode {
     color: var(--light-mode);
@@ -1018,7 +1035,6 @@ label {
     filter: brightness(96%);
     outline-style: solid;
     outline-color: var(--secondary-color);
-    caret-color: var(--lightest-grey);
     border: 0.09rem solid var(--secondary-color);
 }
 .form-input-dark-mode:focus {
@@ -1075,6 +1091,15 @@ label {
 }
 .form-validation-paragraph.phone {
     visibility: hidden;
+}
+.h-captcha {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    visibility: visible !important; /*Hardcoded to stop the hCaptchs becoming hidden when the textarea becomes empty*/
+}
+.h-captcha iframe {
+    border: 0.01rem solid var(--darker-grey);
 }
 .contact-form-button {
     top: 0;

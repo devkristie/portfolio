@@ -214,6 +214,8 @@ function enableDarkMode() {
     const styleElement = document.createElement("style");
     styleElement.textContent = placeholderStyle;
     document.head.appendChild(styleElement);
+    const hCaptchaElement = document.querySelector(".h-captcha");
+    hCaptchaElement.style.filter = "invert(1) hue-rotate(180deg)";
     const footerDarkMode = document.querySelector(".footer-content");
     footerDarkMode.classList.add("footer-content-dark-mode");
     const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
@@ -353,6 +355,8 @@ function disableDarkMode() {
     const styleElement = document.createElement("style");
     styleElement.textContent = placeholderStyle;
     document.head.appendChild(styleElement);
+    const hCaptchaElement = document.querySelector(".h-captcha");
+    hCaptchaElement.style.filter = "invert(0) hue-rotate(0deg)";
     const footerDarkMode = document.querySelector(".footer-content");
     footerDarkMode.classList.remove("footer-content-dark-mode");
     const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
@@ -499,7 +503,7 @@ contactFormClicked.forEach((input, index) => {
         if (input.value !== "") {
             contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
         } else {
-            contactFormLabels[index].style.margin = "0.5rem";
+            contactFormLabels[index].style.margin = "0.25rem 0.5rem";
         }
         contactFormLabels[index].style.transition = "margin 0.35s ease";
     });
@@ -523,6 +527,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.querySelector(".contact-form-button");
     const contactFormInputs = document.querySelectorAll(".form-input");
 
+    // Ensure the submit button is always visible
+    submitButton.style.visibility = "visible";
+
+    // Function to set a session cookie
+    function setSessionCookie() {
+        const cookieValue = "sessionToken=uniqueSessionID123; path=/; SameSite=Lax";
+        document.cookie = cookieValue;
+        console.log("Cookie set:", document.cookie); // Debugging output
+    }
+
     // Validation function
     function validate(field, regex) {
         const isMessageField = field.id === "message";
@@ -537,9 +551,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             const errorMessage = field.nextElementSibling;
             if (!isPhoneField) {
-                errorMessage.style.visibility = "hidden";
+                if (errorMessage) {
+                    errorMessage.style.visibility = "hidden";
+                }
             } else {
-                formValidationParagraphPhone.style.visibility = "hidden";
+                if (formValidationParagraphPhone) {
+                    formValidationParagraphPhone.style.visibility = "hidden";
+                }
             }
         } else if (regex.test(field.value)) {
             field.className = "form-input valid";
@@ -550,15 +568,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 field.classList.add("valid-dark-mode");
             }
             if (field.id === "fullname") {
-                formValidationParagraphName.style.visibility = "hidden";
+                if (formValidationParagraphName) {
+                    formValidationParagraphName.style.visibility = "hidden";
+                }
             } else if (field.id === "email") {
-                formValidationParagraphEmail.style.visibility = "hidden";
+                if (formValidationParagraphEmail) {
+                    formValidationParagraphEmail.style.visibility = "hidden";
+                }
             } else if (isPhoneField) {
-                formValidationParagraphPhone.style.visibility = "hidden";
-            } /*else if (isMessageField) {
-                formValidationParagraphMessage.style.visibility = "hidden";
-            }*/
-           //! THIS NEEDS FIXING
+                if (formValidationParagraphPhone) {
+                    formValidationParagraphPhone.style.visibility = "hidden";
+                }
+            } else if (isMessageField) {
+                if (formValidationParagraphMessage) {
+                    formValidationParagraphMessage.style.visibility = "hidden";
+                }
+            }
         } else {
             field.className = "form-input invalid";
             if (isMessageField) {
@@ -568,14 +593,44 @@ document.addEventListener("DOMContentLoaded", function() {
                 field.classList.add("invalid-dark-mode");
             }
             if (field.id === "fullname") {
-                formValidationParagraphName.style.visibility = "visible";
+                if (formValidationParagraphName) {
+                    formValidationParagraphName.style.visibility = "visible";
+                }
             } else if (field.id === "email") {
-                formValidationParagraphEmail.style.visibility = "visible";
+                if (formValidationParagraphEmail) {
+                    formValidationParagraphEmail.style.visibility = "visible";
+                }
             } else if (isPhoneField) {
-                formValidationParagraphPhone.style.visibility = "visible";
+                if (formValidationParagraphPhone) {
+                    formValidationParagraphPhone.style.visibility = "visible";
+                }
             } else if (isMessageField) {
-                formValidationParagraphMessage.style.visibility = "visible";
+                if (formValidationParagraphMessage) {
+                    formValidationParagraphMessage.style.visibility = "visible";
+                }
             }
+        }
+
+        // Recheck the form validity to enable/disable the submit button
+        checkFormValidity();
+    }
+
+    // Function to check the overall form validity
+    function checkFormValidity() {
+        let formIsValid = true;
+
+        contactFormInputs.forEach(input => {
+            if (input.classList.contains("invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
+                formIsValid = false;
+            }
+        });
+
+        if (formIsValid) {
+            submitButton.disabled = false;
+            submitButton.style.visibility = "visible"; // Ensure the button is visible
+        } else {
+            submitButton.disabled = true;
+            submitButton.style.visibility = "visible"; // Ensure the button is visible
         }
     }
 
@@ -589,44 +644,104 @@ document.addEventListener("DOMContentLoaded", function() {
                 validate(e.target, /.*/); // Use a default regex that always returns true
             }
         });
-    });
 
-    // Add event listener to the submit button
-    submitButton.addEventListener("click", function(event) {
-        // Prevent the default form submission behavior
-        event.preventDefault();
-
-        let formIsValid = true;
-
-        // Check if any invalid messages are visible
-        const invalidMessages = document.querySelectorAll(".form-validation-paragraph.visible");
-        if (invalidMessages.length > 0) {
-            formIsValid = false;
-        }
-
-        // If any invalid messages are visible, prevent form submission
-        if (!formIsValid) {
-            return;
-        }
-
-        // Check if any required input field is empty
-        contactFormInputs.forEach(input => {
-            if (input.hasAttribute("required") && input.value.trim() === "") {
-                formIsValid = false;
-                const errorMessage = input.nextElementSibling;
-                errorMessage.style.visibility = "visible";
+        // Initial validation to set initial state
+        input.addEventListener("blur", (e) => {
+            const regex = regexInput[e.target.attributes.name.value];
+            if (regex) {
+                validate(e.target, regex);
+            } else {
+                validate(e.target, /.*/); // Use a default regex that always returns true
             }
         });
-
-        // If any required field is empty, prevent form submission
-        if (!formIsValid) {
-            return;
-        }
-
-        // If all input fields are valid, submit the form
-        const form = document.querySelector("form");
-        form.submit();
     });
+
+    // Initial check to set the submit button state
+    checkFormValidity();
+
+
+
+
+
+    // // Add event listener to the submit button
+    // submitButton.addEventListener("click", function(event) {
+    //     // Prevent the default form submission behavior
+    //     event.preventDefault();
+
+    //     let formIsValid = true;
+
+    //     // Check if any invalid messages are visible
+    //     const invalidMessages = document.querySelectorAll(".form-validation-paragraph.visible");
+    //     if (invalidMessages.length > 0) {
+    //         formIsValid = false;
+    //     }
+
+    //     // If any invalid messages are visible, prevent form submission
+    //     if (!formIsValid) {
+    //         return;
+    //     }
+
+    //     // Check if any required input field is empty
+    //     contactFormInputs.forEach(input => {
+    //         if (input.hasAttribute("required") && input.value.trim() === "") {
+    //             formIsValid = false;
+    //             const errorMessage = input.nextElementSibling;
+    //             if (errorMessage) {
+    //                 errorMessage.style.visibility = "visible";
+    //             }
+    //         }
+    //     });
+
+    //     // If any required field is empty, prevent form submission
+    //     if (!formIsValid) {
+    //         return;
+    //     }
+
+    //     // Check if hCaptcha is completed
+    //     const hCaptchaResponse = document.querySelector('textarea[name="h-captcha-response"]').value;
+    //     if (!hCaptchaResponse) {
+    //         formIsValid = false;
+    //         alert("Please complete the captcha.");
+    //         return;
+    //     }
+
+    //     // If all input fields are valid and hCaptcha is completed, submit the form
+    //     const form = document.querySelector("form");
+    //     form.submit();
+    // });
+
+
+
+        // Add event listener to the form submission
+        const form = document.querySelector("form");
+        if (form) {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+    
+                // Check if the form is valid
+                let formIsValid = true;
+                contactFormInputs.forEach(input => {
+                    if (input.classList.contains("invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
+                        formIsValid = false;
+                    }
+                });
+
+                // Check if hCaptcha is completed
+                const hCaptchaResponse = document.querySelector('textarea[name="h-captcha-response"]').value;
+                if (!hCaptchaResponse) {
+                    formIsValid = false;
+                    alert("Please complete the captcha.");
+                    return;
+                }
+    
+                if (formIsValid) {
+                    setSessionCookie(); // Set the session cookie
+                    form.submit(); // Manually submit the form
+                } else {
+                    console.log("Form is not valid. Cannot submit.");
+                }
+            });
+        }
 });
 
 const updateDate = new Date();

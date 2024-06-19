@@ -13,6 +13,7 @@
         <link rel="icon" href="assets/images/favicon.ico">
         <script src="https://kit.fontawesome.com/46c228a4ce.js" crossorigin="anonymous"></script>
         <script src="script.js" defer></script>
+        <script src="https://web3forms.com/client/script.js" async defer></script>
     </head>
     <body>
         <header class="top-navigation-bar">
@@ -311,23 +312,34 @@
                             <i class="fa-regular fa-envelope fa-4x"></i>
                         </div>
                     </div>
-                    <form autocomplete="off" action="https://formsubmit.co/5c8be2e6c56d2abbea0d7c1926804360" method="POST">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_subject" value="New Form Submission">
+                    <!-- <form action="https://www.formsubmit.co/5c8be2e6c56d2abbea0d7c1926804360" method="POST"> -->
+                    <form class="form-hcaptcha" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">                        
+                        <!-- <input type="hidden" name="_template" value="table"/>
+                        <input type="hidden" name="_subject" value="New Form Submission"/> -->
                         <label for="fullname">Full Name</label>
-                        <input name="name" title="full name" class="form-input" id="fullname" placeholder="Enter your full name" required/>
+                        <input autocomplete="off" name="name" title="full name" class="form-input" id="fullname" placeholder="Enter your full name" required/>
                         <p class="form-validation-paragraph name">Name can only contain letters and .,'-</p>
                         <label for="email">Email</label>
-                        <input inputmode="email" name="email" title="email address" class="form-input" id="email" placeholder="Enter your email address" required/>
+                        <input autocomplete="off" inputmode="email" name="email" title="email address" class="form-input" id="email" placeholder="Enter your email address" required/>
                         <p class="form-validation-paragraph email">Please enter a valid email address</p>
-                        <label for="text">Phone (optional)</label>
-                        <input type="text" name="phone" title="phone" class="form-input" id="phone" placeholder="Enter your phone number (optional)"/>
+                        <label for="phone">Phone (optional)</label>
+                        <input autocomplete="off" type="text" name="phone" title="phone" class="form-input" id="phone" placeholder="Enter your phone number (optional)"/>
                         <p class="form-validation-paragraph phone">Please start the number with +44</p>
                         <label for="message">Message</label>
-                        <textarea name="message" class="form-input form-input-message" id="message" placeholder="Type your message" required></textarea>
-                        <input type="hidden" name="_next" value="https://www.kristolio.co.uk/portfolio-thank-you-page/thank-you-page.html">
+                        <textarea autocomplete="off" name="message" class="form-input form-input-message" id="message" placeholder="Type your message" required></textarea>
+                        <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <button type="submit" title="send" href="" class="contact-form-button">Submit</button>
+                        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html">
+                        <!-- <input type="hidden" name="_next" value="./portfolio-thank-you-page/thank-you-page.html"/> -->
                     </form>
+                    <!--Should I update my Privacy Policy when enabling hCaptcha?
+
+Many parts of the world require disclosure of data processors. For reference, we have prepared the following text which hCaptcha customers are free to review in connection with their own transparency (privacy policy) obligations:
+
+    hCaptcha
+
+    We use the hCaptcha security service (hereinafter "hCaptcha") on our website. This service is provided by Intuition Machines, Inc., a Delaware US Corporation ("IMI"). hCaptcha is used to check whether user actions on our online service (such as submitting a login or contact form) meet our security requirements. To do this, hCaptcha analyzes the behavior of the website or mobile app visitor based on various characteristics. This analysis starts automatically as soon as the website or mobile app visitor enters a part of the website or app with hCaptcha enabled. For the analysis, hCaptcha evaluates various information (e.g. IP address, how long the visitor has been on the website or app, or mouse movements made by the user). The data collected during the analysis will be forwarded to IMI. hCaptcha analysis in the "invisible mode" may take place completely in the background. Website or app visitors are not advised that such an analysis is taking place if the user is not shown a challenge. Data processing is based on Art. 6(1)(b) of the GDPR: the processing of personal data is necessary for the performance of a contract to which the website visitor is party (for example, the website terms) or in order to take steps at the request of the website visitor prior to entering into a contract. Our online service (including our website, mobile apps, and any other apps or other forms of access offered by us) needs to ensure that it is interacting with a human, not a bot, and that activities performed by the user are not related to fraud or abuse. In addition, processing may also be based on Art. 6(1)(f) of the GDPR: our online service has a legitimate interest in protecting the service from abusive automated crawling, spam, and other forms of abuse that can harm our service or other users of our service. IMI acts as a "data processor" acting on behalf of its customers as defined under the GDPR, and a "service provider" for the purposes of the California Consumer Privacy Act (CCPA). For more information about hCaptcha’s privacy policy and terms of use, please visit the following links: https://www.hcaptcha.com/privacy and https://www.hcaptcha.com/terms-->
                 </div>
             </section>
         </main>
@@ -352,7 +364,7 @@
                         </li>                        
                     </ul>
                     <p class="absolute-footer-links">
-                        Form submission by - <a href="https://formsubmit.co/" target="_blank" rel="noopener">FormSubmit</a>
+                        Form submission by - <a href="https://web3forms.com/" target="_blank" rel="noopener">Web3forms</a>
                     </p>
                     <p class="absolute-footer-links">
                         Icons by - <a href="https://fontawesome.com/" target="_blank" rel="noopener">FontAwesome</a>
