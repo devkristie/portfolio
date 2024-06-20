@@ -1221,9 +1221,20 @@ a.footer-link-back-to-top-dark-mode {
     font-family: "roboto-light", Arial;
     color: var(--light-grey);
 }
+.footer-copyright-year {
+    font-family: "roboto-bold", Arial;
+}
 .footer-copyright-sign {
     font-size: 1.5rem;
+    font-family: "roboto-bold", Arial;
 }
 .footer-copyright-dark-mode, .footer-copyright-year-dark-mode, .footer-copyright-sign-dark-mode {
     color: var(--dark-mode);
+}
+.footer-bottom > article:nth-child(2) > a:nth-child(5) {
+    float: left;
+    font-size: 0.65rem;
+    font-family: "roboto-bold", Arial;
+    color: var(--light-grey);
+    text-decoration: none;
 }
