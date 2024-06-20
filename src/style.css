@@ -1,10 +1,10 @@
-/*css variables*/
 @font-face { font-family: "roboto-bold"; src: url(./assets/fonts/roboto-bold-webfont.woff2);}
 @font-face { font-family: "roboto-light"; src: url(./assets/fonts/roboto-light-webfont.woff2);}
 @font-face { font-family: "roboto-medium"; src: url(./assets/fonts/roboto-medium-webfont.woff2);}
 @font-face { font-family: "roboto-regular"; src: url(./assets/fonts/roboto-regular-webfont.woff2);}
 @font-face { font-family: "tomorrow-light"; src: url(./assets/fonts/tomorrow-light-webfont.woff2);}
 @font-face { font-family: "tomorrow-regular"; src: url(./assets/fonts/tomorrow-regular-webfont.woff2);}
+/*CSS Variables*/
 :root {
     --primary-color: #FFA724;
     --secondary-color: #A26D5F;
