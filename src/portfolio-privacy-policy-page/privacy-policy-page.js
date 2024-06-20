@@ -52,7 +52,6 @@ function disableDarkMode() {
 
 }
 
-
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {
