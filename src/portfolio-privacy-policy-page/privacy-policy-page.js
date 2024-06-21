@@ -38,9 +38,11 @@ function enableDarkMode() {
     document.body.classList.add("dark-mode");
     moonIcon.style.visibility = "hidden";
     sunIcon.style.visibility = "visible";
-
     // Add dark mode classes to specific elements
-
+    const policyPageContentTitle = document.querySelectorAll(".privacy-policy-page-content-container h2");
+    policyPageContentTitle.forEach((title) => {
+        title.classList.add("h2-dark-mode");
+    });
 }
 
 // Function to disable dark mode
@@ -49,7 +51,10 @@ function disableDarkMode() {
     sunIcon.style.visibility = "hidden";
     moonIcon.style.visibility = "visible";
     // Remove dark mode classes from specific elements
-
+    const policyPageContentTitle = document.querySelectorAll(".privacy-policy-page-content-container h2");
+    policyPageContentTitle.forEach((title) => {
+        title.classList.remove("h2-dark-mode");
+    });
 }
 
 hamburgerMenuIcon.addEventListener("click", showMenu);

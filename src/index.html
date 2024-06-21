@@ -1,3 +1,4 @@
+<!--?Need to check the portfolio JavaScript file code for the dark mode body color light mode and the classList.add/remove methods, this is to ensure there is no unnecessary classLists -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -55,7 +56,7 @@
                         <a href="#profile">Profile</a>
                         <a href="#portfolio">Portfolio</a>
                         <a href="#contact">Contact</a>
-                        <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener">Github</a>
+                        <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener" rel="noreferrer">Github</a>
                     </li>
                 </ul>
             </nav>
@@ -330,6 +331,8 @@
                         <textarea autocomplete="off" name="message" class="form-input form-input-message" id="message" placeholder="Type your message" required></textarea>
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <button type="submit" title="send" href="" class="contact-form-button">Submit</button>
+                        <label for="botcheck" class="visually-hidden">Leave this field empty</label>
+                        <input type="text" name="botcheck" class="botcheck-visually-hidden" id="botcheck" aria-hidden="true">
                         <input type="hidden" name="redirect" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html">
                         <!-- <input type="hidden" name="_next" value="./portfolio-thank-you-page/thank-you-page.html"/> -->
                     </form>
@@ -357,21 +360,21 @@
                         </li>                        
                     </ul>
                     <p class="absolute-footer-links">
-                        Form submission by - <a href="https://web3forms.com/" target="_blank" rel="noopener">Web3forms</a>
+                        Form submission by - <a href="https://web3forms.com/" target="_blank" rel="noopener" rel="noreferrer">Web3forms</a>
                     </p>
                     <p class="absolute-footer-links">
-                        Icons by - <a href="https://fontawesome.com/" target="_blank" rel="noopener">FontAwesome</a>
+                        Icons by - <a href="https://fontawesome.com/" target="_blank" rel="noopener" rel="noreferrer">FontAwesome</a>
                     </p>
                 </nav>
                 <nav class="footer-bottom">
                     <ul class="footer-icons">
                         <li>
-                            <a href="https://www.linkedin.com/in/kristie-larke/" title="linkedin" target="_blank" rel="noopener">
+                            <a href="https://www.linkedin.com/in/kristie-larke/" title="linkedin" target="_blank" rel="noopener" rel="noreferrer">
                                 <i class="fa-brands fa-linkedin" aria-describedby="kristie larke linkedin account icon"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/devkristie?tab=repositories" title="github" target="_blank" rel="noopener">
+                            <a href="https://github.com/devkristie?tab=repositories" title="github" target="_blank" rel="noopener" rel="noreferrer">
                                 <i class="fa-brands fa-square-github" aria-describedby="kristie larke github account repositories icon"></i>
                             </a>
                         </li>

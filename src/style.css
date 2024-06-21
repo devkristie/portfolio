@@ -467,7 +467,7 @@ main {
     min-height: 100vh;
 }
 .profile-content-container-background {
-    /* display: block; */
+    /*! display: block; Test to see if this is needed*/
     width: 80%;
     margin: 5rem auto 5rem;
     padding-bottom: -1rem;
@@ -600,7 +600,7 @@ q::after {
     margin-top: 4rem;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
-    color: var(--dark-mode); /* Set the text color */
+    color: var(--dark-mode);
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
     -webkit-user-select: none; /* Safari */
@@ -1119,6 +1119,9 @@ label {
 }
 .contact-form-button:hover {
     filter: brightness(90%);
+}
+.visually-hidden, .botcheck-visually-hidden {
+    display: none;
 }
 .footer-content {
     position: relative;
