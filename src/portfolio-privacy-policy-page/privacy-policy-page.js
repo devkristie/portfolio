@@ -39,10 +39,20 @@ function enableDarkMode() {
     moonIcon.style.visibility = "hidden";
     sunIcon.style.visibility = "visible";
     // Add dark mode classes to specific elements
+    const privacyPolicyBodyBackground = document.querySelector("body");
+    privacyPolicyBodyBackground.classList.add("dark-mode");
+    const privacyPolicyMainBackground = document.querySelector("main");
+    privacyPolicyMainBackground.classList.add("main-dark-mode");
     const policyPageContentTitle = document.querySelectorAll(".privacy-policy-page-content-container h2");
     policyPageContentTitle.forEach((title) => {
         title.classList.add("h2-dark-mode");
     });
+    const footerBackground = document.querySelector(".footer-content");
+    footerBackground.classList.add("footer-content-dark-mode");
+    const backToTopLink = document.querySelector("a.footer-link-backtotop");
+    backToTopLink.classList.add("footer-link-back-to-top-dark-mode");
+    const footerBottomBorder = document.querySelector(".footer-bottom");
+    footerBottomBorder.classList.add("footer-bottom-dark-mode");
 }
 
 // Function to disable dark mode
@@ -51,10 +61,18 @@ function disableDarkMode() {
     sunIcon.style.visibility = "hidden";
     moonIcon.style.visibility = "visible";
     // Remove dark mode classes from specific elements
+    const privacyPolicyMainBackground = document.querySelector("main");
+    privacyPolicyMainBackground.classList.remove("main-dark-mode");
     const policyPageContentTitle = document.querySelectorAll(".privacy-policy-page-content-container h2");
     policyPageContentTitle.forEach((title) => {
         title.classList.remove("h2-dark-mode");
     });
+    const footerBackground = document.querySelector(".footer-content");
+    footerBackground.classList.remove("footer-content-dark-mode");
+    const backToTopLink = document.querySelector("a.footer-link-backtotop");
+    backToTopLink.classList.remove("footer-link-back-to-top-dark-mode");
+    const footerBottomBorder = document.querySelector(".footer-bottom");
+    footerBottomBorder.classList.remove("footer-bottom-dark-mode");
 }
 
 hamburgerMenuIcon.addEventListener("click", showMenu);
