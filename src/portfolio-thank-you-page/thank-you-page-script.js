@@ -4,26 +4,83 @@ const sunIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
 const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
 
-document.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("darkModePreference") === "enabled") {
-        enableDarkMode();
-    } else if (localStorage.getItem("darkModePreference") === "disabled") {
-        disableDarkMode();
+// Smooth scroll, compatilble for older browsers
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute("href"));
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+
+moonIcon.addEventListener("click", () => {
+    const darkModePreference = localStorage.getItem("darkModePreference");
+
+    if (darkModePreference === null) {
+        // Show the pop-up if no preference is set
+        const popUp = document.createElement("div");
+        popUp.setAttribute("class", "dark-mode-popup");
+
+        const paragraph1 = document.createElement("p");
+        paragraph1.setAttribute("class", "pop-up-paragraph1");
+        paragraph1.textContent = "Dark Mode Preference Storage Notice";
+        popUp.appendChild(paragraph1);
+
+        const paragraph2 = document.createElement("p");
+        paragraph2.setAttribute("class", "pop-up-paragraph2");
+        paragraph2.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+        popUp.appendChild(paragraph2);
+
+        const paragraph3 = document.createElement("p");
+        paragraph3.setAttribute("class", "pop-up-paragraph3");
+        paragraph3.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+        popUp.appendChild(paragraph3);
+
+        const popUpAllowButton = document.createElement("button");
+        popUpAllowButton.setAttribute("class", "pop-up-allow");
+        popUpAllowButton.textContent = "Allow";
+        const popUpDeclineButton = document.createElement("button");
+        popUpDeclineButton.setAttribute("class", "pop-up-decline");
+        popUpDeclineButton.textContent = "Decline";
+
+        popUp.appendChild(popUpAllowButton);
+        popUp.appendChild(popUpDeclineButton);
+
+        document.body.appendChild(popUp);
+
+        popUpAllowButton.addEventListener("click", () => {
+            // Set dark mode preference in local storage
+            localStorage.setItem("darkModePreference", "enabled");
+
+            // Apply dark mode styles
+            enableDarkMode();
+
+            // Remove pop-up
+            document.body.removeChild(popUp);
+        });
+
+        popUpDeclineButton.addEventListener("click", () => {
+            // Remove pop-up without saving preference
+            document.body.removeChild(popUp);
+        });
+    } else {
+        // Toggle dark mode based on current state
+        if (darkModePreference === "enabled") {
+            disableDarkMode();
+            localStorage.setItem("darkModePreference", "disabled");
+        } else {
+            enableDarkMode();
+            localStorage.setItem("darkModePreference", "enabled");
+        }
     }
 });
 
-// Initialize localStorage if darkModePreference is not set
-if (!localStorage.getItem("darkModePreference")) {
-    localStorage.setItem("darkModePreference", "disabled"); // Set initial state
-}
-
-// Add event listeners to both icons
-moonIcon.addEventListener("click", toggleDarkMode);
-sunIcon.addEventListener("click", toggleDarkMode);
-
-// Function to toggle dark mode
-function toggleDarkMode() {
+sunIcon.addEventListener("click", () => {
     const darkModePreference = localStorage.getItem("darkModePreference");
+
+    // Toggle dark mode based on current state
     if (darkModePreference === "enabled") {
         disableDarkMode();
         localStorage.setItem("darkModePreference", "disabled");
@@ -31,15 +88,17 @@ function toggleDarkMode() {
         enableDarkMode();
         localStorage.setItem("darkModePreference", "enabled");
     }
-}
+});
 
-// Function to enable dark mode
 function enableDarkMode() {
     document.body.classList.add("dark-mode");
     moonIcon.style.visibility = "hidden";
     sunIcon.style.visibility = "visible";
-
-    // Add dark mode classes to specific elements
+    // Apply dark mode classes to other elements as needed
+    const thankYouPageContentBackground = document.querySelector(".thank-you-page-content");
+    thankYouPageContentBackground.classList.add("thank-you-page-content-dark-mode");
+    const messageParagraphContainer = document.querySelector(".message-sent-paragraph-container");
+    messageParagraphContainer.classList.add("message-sent-paragraph-container-dark-mode");
     const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
     messageParagraphs.forEach((paragraph) => {
         paragraph.classList.add("message-sent-paragraph-dark-mode");
@@ -52,14 +111,23 @@ function enableDarkMode() {
     envelope3.forEach((line) => {
         line.classList.add("envelope3-dark-mode");
     });
+    const footerContentBackground = document.querySelector(".footer-content");
+    footerContentBackground.classList.add("footer-content-dark-mode");
+    const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
+    backToTopLinkDarkMode.classList.add("footer-link-back-to-top-dark-mode");
+    const footerBottomBorder = document.querySelector(".footer-bottom");
+    footerBottomBorder.classList.add("footer-bottom-dark-mode");
 }
 
-// Function to disable dark mode
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
     sunIcon.style.visibility = "hidden";
     moonIcon.style.visibility = "visible";
-    // Remove dark mode classes from specific elements
+    // Remove dark mode classes from other elements as needed
+    const thankYouPageContentBackground = document.querySelector(".thank-you-page-content");
+    thankYouPageContentBackground.classList.remove("thank-you-page-content-dark-mode");
+    const messageParagraphContainer = document.querySelector(".message-sent-paragraph-container");
+    messageParagraphContainer.classList.remove("message-sent-paragraph-container-dark-mode");
     const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
     messageParagraphs.forEach((paragraph) => {
         paragraph.classList.remove("message-sent-paragraph-dark-mode");
@@ -72,7 +140,21 @@ function disableDarkMode() {
     envelope3.forEach((line) => {
         line.classList.remove("envelope3-dark-mode");
     });
+    const footerContentBackground = document.querySelector(".footer-content");
+    footerContentBackground.classList.remove("footer-content-dark-mode");
+    const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
+    backToTopLinkDarkMode.classList.remove("footer-link-back-to-top-dark-mode");
+    const footerBottomBorder = document.querySelector(".footer-bottom");
+    footerBottomBorder.classList.remove("footer-bottom-dark-mode");
 }
+
+// Apply dark mode if preference is already enabled
+document.addEventListener("DOMContentLoaded", () => {
+    const darkModePreference = localStorage.getItem("darkModePreference");
+    if (darkModePreference === "enabled") {
+        enableDarkMode();
+    }
+});
 
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
@@ -103,10 +185,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 // After the animation of the first element is finished, trigger the animation of the second element
                 element.addEventListener("animationend", function() {
                     thankYouWritingLine.forEach((lineElement) => {
-                        lineElement.style.animation = "draw 3s linear 5s forwards";
+                        lineElement.style.animation = "draw 2.5s linear 1.5s forwards"; //3s 5s
                     });
                 });
-            }, index * 1250);
+            }, index * 1000); //1250
         }
     });
 });
