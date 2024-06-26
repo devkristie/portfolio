@@ -1,3 +1,5 @@
+"use strict"
+
 const moonIcon = document.querySelector(".fa-moon");
 const moon = document.querySelector(".fa-moon");
 const sunIcon = document.querySelector(".fa-sun");

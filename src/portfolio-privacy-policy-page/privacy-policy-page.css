@@ -351,6 +351,7 @@ main {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.5s;
+    font-weight: 1000;
 }
 .privacy-policy-page-content-container a:hover {
     color: var(--secondary-color);

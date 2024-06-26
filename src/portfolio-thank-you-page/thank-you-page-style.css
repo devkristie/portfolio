@@ -445,9 +445,11 @@ li {
     border: none;
     border-radius: 5rem;
     cursor: pointer;
+    transition: background-color 0.5s;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
 }
 .button-container:hover {
-    filter: brightness(90%);
+    background-color: rgb(144.3, 92.9, 79.5);
 }
 .footer-content {
     position: relative;

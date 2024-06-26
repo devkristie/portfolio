@@ -73,8 +73,13 @@ body::before {
     background-color: var(--primary-color);
     border: none;
     border-radius: 5rem;
+    transition: background-color 0.5s;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     z-index: 12;
+}
+.pop-up-allow:hover {
+    background-color: rgb(235.0, 150.4, 5.3);
 }
 .pop-up-decline {
     position: fixed;
@@ -89,8 +94,13 @@ body::before {
     background-color: var(--primary-color);
     border: none;
     border-radius: 5rem;
+    transition: background-color 0.5s;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     z-index: 12;
+}
+.pop-up-decline:hover {
+    background-color: rgb(235.0, 150.4, 5.3);
 }
 .top-navigation-bar {
     position: fixed;
@@ -339,7 +349,7 @@ main {
 }
 .p2 {
     position: relative;
-    top: 0.5rem;
+    top: 0.65rem;
     left: 1rem;
     z-index: 3;
 }
@@ -347,8 +357,8 @@ main {
     position: absolute;
     display: inline-block;
     width: 13.5rem;
-    height: 2.4rem;
-    margin: 2rem 0 0 -9rem;
+    height: 1.80rem;
+    margin: 2.55rem 0 0 -8.9rem;
     background-color: var(--dark-grey);
     opacity: 50%;
     z-index: 2;
@@ -369,6 +379,10 @@ main {
 .p7 {
     position: relative;
     right: 0.25rem;
+}
+.p8 {
+    position: relative;
+    bottom: 0.95rem;
 }
 .laptop-image-container {
     height: 12.125rem;
@@ -439,6 +453,20 @@ main {
         stroke-dashoffset: 0;
     }
 }
+@media only screen and (min-width: 770px) {
+    .landing-page-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .landing-page-title-container {
+        margin-top: 1.25rem;
+    }
+    .laptop-image-container {
+        margin-top: 1rem;
+    }
+}
 .section-title-header {
     display: flex;
     justify-content: center;
@@ -467,7 +495,6 @@ main {
     min-height: 100vh;
 }
 .profile-content-container-background {
-    /*! display: block; Test to see if this is needed*/
     width: 80%;
     margin: 5rem auto 5rem;
     padding-bottom: -1rem;
@@ -573,10 +600,11 @@ q::after {
     border: none;
     border-radius: 50rem;
     cursor: pointer;
-    transition: filter 1s;
+    transition: background-color 0.5s;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
 }
 .download-cv-button:hover {
-    filter: brightness(90%);
+    background-color: rgb(144.3, 92.9, 79.5);
 }
 @media only screen and (max-width: 600px) {
     .download-cv-button {
@@ -773,11 +801,11 @@ hr {
     border-right: 0.01rem solid var(--light-mode);  
     border-bottom: none;  
     border-left: none;
-    transition: filter 0.5s;
+    transition: background-color 0.5s;
+    cursor: pointer;    
 }
 .view-button1:hover {
-    filter: brightness(90%);
-    cursor: pointer;
+    background-color: rgb(144.3, 92.9, 79.5);
 }
 .view-button2 {
     width: 100%;
@@ -790,11 +818,11 @@ hr {
     border-right: none;  
     border-bottom: none;  
     border-left: 0.01rem solid var(--light-mode);
-    transition: filter 0.5s;
+    transition: background-color 0.5s;
+    cursor: pointer;    
 }
 .view-button2:hover {
-    filter: brightness(90%);
-    cursor: pointer;
+    background-color: rgb(144.3, 92.9, 79.5);
 }
 @media only screen and (max-width: 650px) {
     .view-button1 {
@@ -1003,7 +1031,6 @@ label {
     font-family: "roboto-regular", Arial;
     color: var(--dark-mode);
     background-color: var(--lightest-grey);
-    /* caret-color: var(--darkest-grey); */
     border: 0.01rem solid var(--dark-mode);
     resize: none;
 }
@@ -1115,10 +1142,11 @@ label {
     border: none;
     border-radius: 50rem;
     cursor: pointer;
-    transition: filter 0.5s;
+    transition: background-color 0.5s;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
 }
 .contact-form-button:hover {
-    filter: brightness(90%);
+    background-color: rgb(144.3, 92.9, 79.5);
 }
 .visually-hidden, .botcheck-visually-hidden {
     display: none;
