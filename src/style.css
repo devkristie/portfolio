@@ -27,28 +27,28 @@ body {
 }
 body::before {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    content: "";
+    z-index: -2;
+    width: 100%;
+    height: 100%;
     background: url("./assets/images/1_image-code9.jpg") fixed no-repeat center;
     background-size: cover;
     filter: blur(1px); 
-    z-index: -2;
+    content: "";
 }
 .dark-mode-popup {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(2.5%, 20%);
+    z-index: 11;
     width: 95%;
     height: 28rem;
+    text-align: center;
     background-color: var(--light-mode);
     border: 1px var(--dark-mode) solid;
     border-radius: 2rem;
-    text-align: center;
-    z-index: 11;
+    transform: translate(2.5%, 20%);
 }
 .pop-up-paragraph1 {
     margin: 1rem;
@@ -64,19 +64,19 @@ body::before {
     position: fixed;
     top: 75%;
     left: 5%;
-    transform: translate(50%, 50%);
+    z-index: 12;
     width: 25%;
     height: 2.5rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--dark-mode);
     background-color: var(--primary-color);
+    color: var(--dark-mode);
     border: none;
     border-radius: 5rem;
-    transition: background-color 0.5s;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(50%, 50%);
+    transition: background-color 0.5s;
     cursor: pointer;
-    z-index: 12;
 }
 .pop-up-allow:hover {
     background-color: rgb(235.0, 150.4, 5.3);
@@ -85,34 +85,34 @@ body::before {
     position: fixed;
     top: 75%;
     right: 30%;
-    transform: translate(50%, 50%);
+    z-index: 12;
     width: 25%;
     height: 2.5rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--dark-mode);
     background-color: var(--primary-color);
+    color: var(--dark-mode);
     border: none;
     border-radius: 5rem;
-    transition: background-color 0.5s;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(50%, 50%);
+    transition: background-color 0.5s;
     cursor: pointer;
-    z-index: 12;
 }
 .pop-up-decline:hover {
     background-color: rgb(235.0, 150.4, 5.3);
 }
 .top-navigation-bar {
     position: fixed;
+    top: 0;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 2.5rem;
-    top: 0;
     padding-left: 2rem;
     background-color: var(--primary-color);
-    z-index: 10;
 }
 .logo {
     width: 5rem;
@@ -190,9 +190,9 @@ li {
     cursor: pointer;
 }
 .fa-sun {
-    visibility: hidden;
     font-size: 1.1rem;
     color: var(--light-mode);
+    visibility: hidden;
     cursor: pointer;
 }
 .fa-moon, .fa-sun {
@@ -231,12 +231,12 @@ li {
 }
 .accordion-navigation-bar {
     position: fixed;
+    top: 0;
+    z-index: 10;
     width: 100%;
     height: 2.5rem;
-    top: 0;
     margin-top: 2.5rem;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--third-color));
-    z-index: 10;
 }
 .accordion-navigation-bar-nav .accordion-navigation-bar-ul .accordion-navigation-bar-li {
     display: flex;
@@ -252,8 +252,8 @@ li {
 .accordion-navigation-bar-li a {
     padding: 0.1rem 1rem;
     font-family: "roboto-medium", Arial;
-    color: var(--dark-mode);
     text-decoration: none;
+    color: var(--dark-mode);
     transition: background 0.5s ease-in;
 }
 @media only screen and (max-width: 410px) {
@@ -287,8 +287,8 @@ li {
     }
 }
 .accordion-navigation-bar-li a:hover {
-    color: var(--light-mode);
     background-color: var(--secondary-color);
+    color: var(--light-mode);
 }
 main {
     background-color: var(--light-mode);
@@ -341,8 +341,8 @@ main {
 }
 .p1  {
     position: relative;
-    font-size: 2rem;
     z-index: 5;
+    font-size: 2rem;
 }
 .p1-dark-mode {
     color: var(--light-mode);
@@ -355,23 +355,23 @@ main {
 }
 .welcome-background-one {
     position: absolute;
+    z-index: 2;
     display: inline-block;
     width: 13.5rem;
     height: 1.80rem;
     margin: 2.55rem 0 0 -8.9rem;
     background-color: var(--dark-grey);
     opacity: 50%;
-    z-index: 2;
 }
 .welcome-background-two {
     position: absolute;
+    z-index: 1;
     display: inline-block;
     width: 15rem;
     height: 1rem;
     margin: 3.75rem 0 0 -8rem;
     background-color: var(--light-grey);
     opacity: 50%;
-    z-index: 1;
 }
 .p6 {
     color: var(--primary-color);
@@ -479,8 +479,8 @@ main {
     padding-top: 3.5rem;
     font-size: 2.813rem;
     font-family: "tomorrow-light";
-    color: var(--light-mode);
     letter-spacing: 0.75rem;
+    color: var(--light-mode);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -508,8 +508,8 @@ main {
     width: 7.313rem;
     height: 7.313rem;
     margin: 3rem 0 -7.5rem 3.25rem;
-    box-shadow: 0.1rem 0.1rem 0.5rem var(--darkest-grey);
     border-radius: 1.5rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem var(--darkest-grey);
 }
 .quotation-container-background {
     position: relative;
@@ -522,32 +522,32 @@ main {
     padding: 0 1rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--darker-grey);
-    background-color: var(--light-grey);
     text-align: center;
+    background-color: var(--light-grey);
+    color: var(--darker-grey);
     border-radius: 1.5rem;
 }
 .quotation-container-background-dark-mode {
-    color: var(--light-grey);
     background-color: var(--darker-grey);
+    color: var(--light-grey);
 }
 q::before {
     position: absolute;
     display: block;
     margin: -1.4rem 0 0 -1.6rem;
-    content: open-quote;
     font-size: 4.688rem;
     font-family: none;
     color: var(--dark-grey);
+    content: open-quote;
 }
 q::after {
     position: absolute;
     display: block;
     margin: -2rem 0 0 14.2rem;
-    content: close-quote;
     font-size: 4.688rem;
     font-family: none;
     color: var(--dark-grey);
+    content: close-quote;
 }
 .profile-content-container {
     margin: -3.5rem 2rem 1rem;
@@ -593,15 +593,15 @@ q::after {
     margin: 3.5rem 0 3rem 20.752%;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-mode);
-    background-color: var(--secondary-color);
     text-align: center;
     text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
     border: none;
     border-radius: 50rem;
-    cursor: pointer;
-    transition: background-color 0.5s;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s;
+    cursor: pointer;
 }
 .download-cv-button:hover {
     background-color: rgb(144.3, 92.9, 79.5);
@@ -628,16 +628,16 @@ q::after {
     margin-top: 4rem;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
-    color: var(--dark-mode);
-    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
+    color: var(--dark-mode);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
 .section-introduction-container h2.h2-dark-mode {
-    color: var(--light-mode);
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
+    color: var(--light-mode);
 }
 .section-introduction-container p {
     margin: 0.5rem 0;
@@ -647,9 +647,9 @@ q::after {
     color: var(--light-mode);
 }
 .portfolio-introduction-inline-text::before {
-    content: "Ready to dive into my work? ";
-    color: var(--primary-color);
     font-weight: 1000;
+    color: var(--primary-color);
+    content: "Ready to dive into my work? ";
     cursor: text;
 }
 .top-hr-element {
@@ -675,9 +675,9 @@ hr {
     width: 100%;
     margin: 0 0 2.5rem;
     font-family: "roboto-medium", Arial;
-    color: var(--light-mode);
-    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color)); /*?should this be --dark-mode or --third-color*/
     text-align: center;
+    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color)); /*?should this be --dark-mode or --third-color*/
+    color: var(--light-mode);
     border-radius: 1.5rem 1.5rem 0 0;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -714,10 +714,10 @@ hr {
     width: 3rem;
     height: 6.563rem;
     background-color: var(--dark-grey);
+    cursor: pointer;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    cursor: pointer;
 }
 .left-arrow {
     border-radius: 1.5rem 0 0 1.5rem;
@@ -734,8 +734,8 @@ hr {
     width: 100%;
     height: 6.563rem;
     object-fit: cover;
-    image-rendering: smooth;
     filter: blur(0.05rem);
+    image-rendering: smooth;
 }
 .image-slider:first-child {
     display: block;
@@ -763,8 +763,8 @@ hr {
         border-radius: 1.5rem 1.5rem 0 0;
     }
     .left-arrow > path {
-        transform-origin: center;
         transform: rotate(90deg);
+        transform-origin: center;
     }
     .right-arrow {
         width: 100%;
@@ -773,8 +773,8 @@ hr {
         border-radius: 0 0 1.5rem 1.5rem;
     }
     .right-arrow > path {
-        transform-origin: center;
         transform: rotate(90deg);
+        transform-origin: center;
     }
 }
 .portfolio-website-button-container {
@@ -795,8 +795,8 @@ hr {
     padding: 0.25rem 1rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-mode);
     background-color: var(--secondary-color);
+    color: var(--light-mode);
     border-top: none;
     border-right: 0.01rem solid var(--light-mode);  
     border-bottom: none;  
@@ -812,8 +812,8 @@ hr {
     padding: 0.25rem 1rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-mode);
     background-color: var(--secondary-color);
+    color: var(--light-mode);
     border-top: none;
     border-right: none;  
     border-bottom: none;  
@@ -876,11 +876,11 @@ hr {
     width: 3rem;
     height: 3rem;
     margin: -1rem 0 2rem 0;
+    transition: transform 0.2s;
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.25rem;
-    transition: transform 0.2s;
 }
 .show-more-arrow-dark-mode {
     stroke: var(--light-mode);
@@ -893,9 +893,9 @@ hr {
 }
 .show-more-accordion-title {
     font-family: "tomorrow-regular";
-    color: var(--primary-color);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     letter-spacing: 0.075rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    color: var(--primary-color);
 }
 .show-more-accordion h4 {
     display: none;
@@ -920,8 +920,8 @@ hr {
     width: 80%;
     margin: auto auto 3rem;
     padding: 1.5rem 0 0 0;
-    background-color: var(--secondary-color);
     text-align: center;
+    background-color: var(--secondary-color);
     border-radius: 1.5rem;
     cursor: auto;
 }
@@ -931,13 +931,12 @@ hr {
 .technology-used-container i {
     font-size: 2.5rem;
     filter: drop-shadow(0 -2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(2px 0 1px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(-2px 0 1px rgba(0, 0, 0, 0.5));
-
 }
 .fa-figma {
+    background-image: linear-gradient(to bottom, #F14E1C, #FF7362, #A25AFF, #19BCFE, #0ACF84);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to bottom, #F14E1C, #FF7362, #A25AFF, #19BCFE, #0ACF84);
 }
 .fa-html5 {
     color: #FF6522;
@@ -968,8 +967,8 @@ hr {
     padding-bottom: 2.5rem;
 }
 .contact-introduction-thank-you-text {
-    color: var(--primary-color);
     font-weight: 1000;
+    color: var(--primary-color);
 }
 .contact-form-container {
     display: flex;
@@ -994,10 +993,10 @@ hr {
     height: 100%;
 }
 .fa-envelope {
+    background-image: linear-gradient(to bottom, var(--dark-mode), var(--secondary-color));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to bottom, var(--dark-mode), var(--secondary-color));
 }
 .fa-envelope.dark-mode {
     background-image: linear-gradient(to bottom, var(--light-mode), var(--secondary-color));
@@ -1007,18 +1006,18 @@ form {
 }
 label {
     position: absolute;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     margin: 0.25rem 0.5rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--darker-grey);
-    text-align: center;
     letter-spacing: 0.02rem;
+    text-align: center;
+    color: var(--darker-grey);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    z-index: 1;
 }
 .label-dark-mode {
     color: var(--dark-grey);
@@ -1029,8 +1028,8 @@ label {
     padding: 1.5rem;
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
-    color: var(--dark-mode);
     background-color: var(--lightest-grey);
+    color: var(--dark-mode);
     border: 0.01rem solid var(--dark-mode);
     resize: none;
 }
@@ -1054,15 +1053,15 @@ label {
     visibility: hidden;
 }
 .form-input-dark-mode {
-    color: var(--light-mode);
     background-color: var(--darkest-grey);
+    color: var(--light-mode);
     border: 0.01rem solid var(--lightest-grey);
 }
 .form-input:focus {
     filter: brightness(96%);
+    border: 0.09rem solid var(--secondary-color);
     outline-style: solid;
     outline-color: var(--secondary-color);
-    border: 0.09rem solid var(--secondary-color);
 }
 .form-input-dark-mode:focus {
     caret-color: var(--darkest-grey);
@@ -1080,8 +1079,8 @@ label {
     border: 0.01rem solid var(--dark-mode);
 }
 .valid-dark-mode {
-    color: var(--light-mode);
     background-color: var(--darkest-grey);
+    color: var(--light-mode);
     border: 0.01rem solid var(--lightest-grey);
 }
 .invalid {
@@ -1094,14 +1093,14 @@ label {
     border: 0.01rem solid var(--dark-mode);
 }
 .invalid-dark-mode {
-    color: var(--light-mode);
     background-color: var(--darkest-grey);
+    color: var(--light-mode);
     border: 0.01rem solid var(--lightest-grey);
 }
 .form-input-message {
     height: 12.688rem;
-    resize: none;
     border-radius: 0 0 1.5rem 1.5rem;
+    resize: none;
 }
 .form-validation-paragraph {
     margin-top: 0.15rem;
@@ -1131,19 +1130,19 @@ label {
 .contact-form-button {
     top: 0;
     left: 0;
-    transform: translate(50%, 50%);
     width: 50%;
     height: 3rem;
     margin: 1.5rem 0 1.5rem 0;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-mode);
     background-color: var(--secondary-color);
+    color: var(--light-mode);
     border: none;
     border-radius: 50rem;
-    cursor: pointer;
-    transition: background-color 0.5s;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(50%, 50%);
+    transition: background-color 0.5s;
+    cursor: pointer;
 }
 .contact-form-button:hover {
     background-color: rgb(144.3, 92.9, 79.5);
@@ -1159,8 +1158,8 @@ label {
     align-items: center;
     min-height: 100vh;
     margin-top: 15rem;
-    background-color: var(--light-mode);
     text-align: center;
+    background-color: var(--light-mode);
 }
 .footer-content-dark-mode {
     background-color: var(--dark-mode);
@@ -1178,9 +1177,9 @@ ul {
 .footer-links a {
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--primary-color);
-    text-decoration: none;
     line-height: 2.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
     transition: color 0.5s;
 }
 .footer-links a:hover {
@@ -1205,8 +1204,8 @@ a.footer-link-back-to-top-dark-mode {
     color: var(--light-mode);
 }
 .absolute-footer-links a {
-    color: var(--primary-color);
     text-decoration: none;
+    color: var(--primary-color);
     transition: color 0.5s;
 }
 .absolute-footer-links a:hover {
@@ -1214,13 +1213,13 @@ a.footer-link-back-to-top-dark-mode {
 }
 .footer-bottom {
     position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
     height: 7.5rem;
-    bottom: 0;
     background-color: var(--darker-grey);
     border-top: 1rem solid var(--dark-mode)
 }
@@ -1266,6 +1265,6 @@ a.footer-link-back-to-top-dark-mode {
     float: left;
     font-size: 0.65rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-grey);
     text-decoration: none;
+    color: var(--light-grey);
 }
