@@ -30,28 +30,28 @@ body {
 }
 body::before {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    content: "";
+    z-index: -2;
+    width: 100%;
+    height: 100%;
     background: url("../assets/images/1_image-code9.jpg") fixed no-repeat center;
     background-size: cover;
     filter: blur(1px); 
-    z-index: -2;
+    content: "";
 }
 .dark-mode-popup {
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(2.5%, 20%);
+    z-index: 11;
     width: 95%;
     height: 28rem;
+    text-align: center;
     background-color: var(--light-mode);
     border: 1px var(--dark-mode) solid;
     border-radius: 2rem;
-    text-align: center;
-    z-index: 11;
+    transform: translate(2.5%, 20%);
 }
 .pop-up-paragraph1 {
     margin: 1rem;
@@ -67,46 +67,46 @@ body::before {
     position: fixed;
     top: 75%;
     left: 5%;
-    transform: translate(50%, 50%);
+    z-index: 12;
     width: 25%;
     height: 2.5rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--dark-mode);
     background-color: var(--primary-color);
+    color: var(--dark-mode);
     border: none;
     border-radius: 5rem;
+    transform: translate(50%, 50%);
     cursor: pointer;
-    z-index: 12;
 }
 .pop-up-decline {
     position: fixed;
     top: 75%;
     right: 30%;
-    transform: translate(50%, 50%);
+    z-index: 12;
     width: 25%;
     height: 2.5rem;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--dark-mode);
     background-color: var(--primary-color);
+    color: var(--dark-mode);
     border: none;
     border-radius: 5rem;
+    transform: translate(50%, 50%);
     cursor: pointer;
-    z-index: 12;
 }
 .top-navigation-bar {
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 2.5rem;
-    top: 0;
-    left: 0;
     padding-left: 2rem;
     background-color: var(--primary-color);
-    z-index: 10;
 }
 .logo {
     width: 5rem;
@@ -184,9 +184,9 @@ li {
     cursor: pointer;
 }
 .fa-sun {
-    visibility: hidden;
     font-size: 1.1rem;
     color: var(--light-mode);
+    visibility: hidden;
     cursor: pointer;
 }
 .fa-moon, .fa-sun {
@@ -225,12 +225,12 @@ li {
 }
 .accordion-navigation-bar {
     position: fixed;
+    top: 0;
+    z-index: 10;
     width: 100%;
     height: 2.5rem;
-    top: 0;
     margin-top: 2.5rem;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--third-color));
-    z-index: 10;
 }
 .accordion-navigation-bar-nav .accordion-navigation-bar-ul .accordion-navigation-bar-li {
     display: flex;
@@ -246,8 +246,8 @@ li {
 .accordion-navigation-bar-li a {
     padding: 0.1rem 1rem;
     font-family: "roboto-medium", Arial;
-    color: var(--dark-mode);
     text-decoration: none;
+    color: var(--dark-mode);
     transition: background 0.5s ease-in;
 }
 @media only screen and (max-width: 410px) {
@@ -281,12 +281,12 @@ li {
     }
 }
 .accordion-navigation-bar-li a:hover {
-    color: var(--light-mode);
     background-color: var(--secondary-color);
+    color: var(--light-mode);
 }
 main {
-    padding-bottom: 5rem;
     background-color: var(--light-mode);
+    padding-bottom: 5rem;
 }
 .main-dark-mode {
     background-color: var(--dark-mode);
@@ -308,12 +308,12 @@ main {
     padding-top: 3.5rem;
     font-size: 2.813rem;
     font-family: "tomorrow-light";
-    color: var(--light-mode);
     letter-spacing: 0.75rem;
+    text-align: center; /*? Is this needed*/
+    color: var(--light-mode);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    text-align: center;
 }
 @media only screen and (max-width: 400px) {
     .section-title {
@@ -332,12 +332,12 @@ main {
     margin: 4rem 0 1.75rem;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
-    color: var(--dark-mode);
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
+    color: var(--dark-mode);
 }
 .privacy-policy-page-content-container h2.h2-dark-mode {
-    color: var(--light-mode);
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
+    color: var(--light-mode);
 }
 .privacy-policy-page-content-container p {
     margin: 1rem 0;
@@ -348,10 +348,10 @@ main {
 .privacy-policy-page-content-container a {
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.5s;
     font-weight: 1000;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.5s;
 }
 .privacy-policy-page-content-container a:hover {
     color: var(--secondary-color);
@@ -364,8 +364,8 @@ main {
     align-items: center;
     min-height: 100vh;
     margin-top: 15rem;
-    background-color: var(--light-mode);
     text-align: center;
+    background-color: var(--light-mode);
 }
 .footer-content-dark-mode {
     background-color: var(--dark-mode);
@@ -383,9 +383,9 @@ main {
 .footer-links a {
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    color: var(--primary-color);
-    text-decoration: none;
     line-height: 2.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
     transition: color 0.5s;
 }
 .footer-links a:hover {
@@ -410,8 +410,8 @@ a.footer-link-back-to-top-dark-mode {
     color: var(--light-mode);
 }
 .absolute-footer-links a {
-    color: var(--primary-color);
     text-decoration: none;
+    color: var(--primary-color);
     transition: color 0.5s;
 }
 .absolute-footer-links a:hover {
@@ -419,13 +419,13 @@ a.footer-link-back-to-top-dark-mode {
 }
 .footer-bottom {
     position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
     height: 7.5rem;
-    bottom: 0;
     background-color: var(--darker-grey);
     border-top: 1rem solid var(--dark-mode);
 }
@@ -471,6 +471,6 @@ a.footer-link-back-to-top-dark-mode {
     float: left;
     font-size: 0.65rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-grey);
     text-decoration: none;
+    color: var(--light-grey);
 }
