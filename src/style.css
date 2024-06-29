@@ -509,7 +509,6 @@ main {
     height: 7.313rem;
     margin: 3rem 0 -7.5rem 3.25rem;
     border-radius: 1.5rem;
-    box-shadow: 0.1rem 0.1rem 0.5rem var(--darkest-grey);
 }
 .quotation-container-background {
     position: relative;

@@ -23,7 +23,7 @@ Frontend:
 It is built using HTML, CSS and JavaScript.
 
 Backend:
-The backend is supported by FormSubmit for handling the form submission.
+The backend is supported by Web3forms for handling the form submission.
 
 Deployment:
 The project is deployed on 123reg for hosting services.
@@ -36,6 +36,7 @@ The project is deployed on 123reg for hosting services.
 - Profile Section: Personal touch with information about services, an image, and a quote to engage visitors.
 - Contact Form: Providing a convenient way for visitors to get in touch with me.
 - Footer: Including navigation links for easy access to important pages and giving credit where it's due. These elements work together to create a cohesive and informative website that effectively showcases my services and portfolio.
+- Privacy Policy: Providing users with information regarding their privacy and cookie policies.
 
 **Functionality Explanation:**
 
@@ -44,6 +45,7 @@ The project is deployed on 123reg for hosting services.
 3. Portfolio Showcase: Visitors can explore the portfolio section to view websites I've created, showcasing my expertise and previous work.
 4. Contact Form: A contact form is available for users to reach out to me directly for inquiries or collaboration opportunities.
 5. Footer Navigation: The footer includes additional navigation links for quick access to essential pages and provides credits for the project.
+6. Privacy Policy: A privacy policy page provides users with information regarding their privacy and cookie policies.
 
 ### User Instructions
 
@@ -56,13 +58,16 @@ This section is dedicated to providing clear instructions for non-coders on how 
 - Navigate through the website portfolio using the left and right arrows to preview images of each website. Click the "View Website" button to access the live website and the "View Source Code" button to preview its source code. Expand details about the website and technologies used by clicking on the "Show More" container or arrow. To minimize information displayed, click on the "Show Less" container or arrow.
 - To inquire about my services or if you have any questions, please complete the form and click the submit button located at the form's bottom.
 - Utilize the footer for easy website navigation or to return to the top of the page. Additionally, find links to the website credits and the copyright notice located at the bottom of the page.
+- To review information regarding privacy and cookie policies, click on the Privacy Policy link located at the bottom of the page.
 
 **Functionality Overview:**
 
 - My product is designed to showcase my services and portfolio effectively. Users can easily navigate through different sections using the top navigation bar.
 - Explore a personalized profile section with information about services, an image, and an inspiring quote.
 - Dive into a portfolio showcase displaying websites I've created to demonstrate my skills. Interested visitors can reach out to me through a contact form.
-- The footer provides convenient navigation, credits, and copyright information. Key actions include exploring services, viewing the portfolio, contacting me, and navigating the website seamlessly.
+- The footer provides convenient navigation, credits, copyright information and the privacy policy link.
+
+Key actions include exploring services, viewing the portfolio, contacting me, and navigating the website seamlessly.
 
 **Support:**
 
@@ -88,17 +93,17 @@ Thank you for your patience as I continue to improve the functionality and conte
 
 **Explore My Profiles:**</br>
 
-- <a href="https://github.com/devkristie?tab=repositories" title="github" target="_blank" rel="noopener">GitHub</a> - Connect with me on GitHub for a glimpse into my repositories.</br>
-- <a href="https://www.linkedin.com/in/kristie-larke/" title="linkedin" target="_blank" rel="noopener">LinkedIn</a> - Visit my LinkedIn profile to learn more about my professional journey.
+- <a href="https://github.com/devkristie?tab=repositories" title="github" target="_blank" rel="noopener noreferrer">GitHub</a> - Connect with me on GitHub for a glimpse into my repositories.</br>
+- <a href="https://www.linkedin.com/in/kristie-larke/" title="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a> - Visit my LinkedIn profile to learn more about my professional journey.
 
 **Special Thanks To:**</br>
 
-- Figma - For enabling seamless design collaboration.</br>
-- FontAwesome - Providing stylish icons for my projects.</br>
-- FormSubmit - Simplifying form submissions for enhanced user interaction.
+- <a href="https://www.figma.com/" title="figma" target="_blank" rel="noopener noreferrer">Figma</a> - For enabling seamless design collaboration.</br>
+- <a href="https://fontawesome.com/" title="fontawesome" target="_blank" rel="noopener noreferrer">FontAwesome</a> - Providing stylish icons for my projects.</br>
+- <a href="https://web3forms.com/" title="web3forms" target="_blank" rel="noopener noreferrer">Web3forms</a> - Simplifying form submissions for enhanced user interaction.
 
-I would like to acknowledge the assistance I received in enhancing the functionality of the image slider, show more accordion, smooth scroll for compatibility across all browsers, the SVG animation on the landing page, and the contact form label animation. Implementing these features posed a challenge, and I am thankful for the guidance offered by ChatGPT. The code snippets and explanations provided by ChatGPT played a crucial role in helping me navigate and overcome the obstacles I faced.
+I would like to acknowledge the assistance I received in enhancing the functionality of the image slider, show more accordion, smooth scroll for compatibility across all browsers, the SVG animation on the landing page, the form submission and the contact form label animation. Implementing these features posed a challenge, and I am thankful for the guidance offered by ChatGPT. The code snippets and explanations provided by ChatGPT played a crucial role in helping me navigate and overcome the obstacles I faced.
 
 ### Additional Acknowledgments
 
-Additionally, I'd like to acknowledge personal circumstances affecting the project's timeline. I was away on holiday for one week. I was also working 40 hours a week and looking for a new job, when I started the new job, the commute to work was longer and I had less time to complete the website. Despite challenges, I persevered to complete the website. Thank you for your understanding.
+Additionally, I'd like to acknowledge personal circumstances affecting the project's timeline. I was away on holiday for one week. I was also working 40 hours a week and looking for a new job, when I started the new job, the commute to work was longer and I had less time to complete the website. I also had a problem with the form submission, the third party website was not working all of a sudden, so I had to find another to use and configure the form. Despite challenges, I persevered to complete the website. Thank you for your understanding.
