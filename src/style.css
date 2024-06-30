@@ -497,7 +497,7 @@ main {
 .profile-content-container-background {
     width: 80%;
     margin: 5rem auto 5rem;
-    padding-bottom: -1rem;
+    /* padding-bottom: -1rem; */
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
 }
@@ -549,11 +549,15 @@ q::after {
     content: close-quote;
 }
 .profile-content-container {
-    margin: -3.5rem 2rem 1rem;
+    margin: -3.5rem 2rem 0;
     padding: 6.5rem 1rem 1.25rem 1rem;
     font-family: "roboto-regular", Arial;
     background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
+    /* border: 1px solid var(--dark-grey); */
 }
+/* .profile-content-container-dark-mode {
+    border: 1px solid var(--darker-grey);
+} */
 @media only screen and (max-width: 465px) {
     .profile-content-container {
         width: 100%;
@@ -576,11 +580,16 @@ q::after {
     font-family: "tomorrow-regular", Arial;
     color: var(--primary-color);
 }
+.profile-content-greeting::after {
+    font-size: 3.5rem;
+    font-family: none;
+    content: ",";
+}
 .profile-content-container > p {
     display: block;
     margin-top: 0;
 }
-.profile-content-container-dark-mode {
+.profile-content-container-paragraph-dark-mode {
     color: var(--light-mode);
 }
 .download-cv-button {
@@ -627,6 +636,7 @@ q::after {
     margin-top: 4rem;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
+    letter-spacing: 0.02rem;
     text-align: center;
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     color: var(--dark-mode);

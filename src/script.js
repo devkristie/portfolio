@@ -140,9 +140,12 @@ function enableDarkMode() {
     const quotationBackground = document.querySelector(".quotation-container-background");
     quotationBackground.classList.add("quotation-container-background-dark-mode");
     
+    // const profileContainer = document.querySelector(".profile-content-container");
+    // profileContainer.classList.add("profile-content-container-dark-mode");
+
     const profileParagraphs = document.querySelectorAll(".profile-content-container p:not(.profile-content-greeting)");
     profileParagraphs.forEach((paragraph) =>{
-        paragraph.classList.add("profile-content-container-dark-mode");
+        paragraph.classList.add("profile-content-container-paragraph-dark-mode");
     });
     
     const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
@@ -321,12 +324,15 @@ function disableDarkMode() {
     const profileContainerBackground = document.querySelector(".profile-content-container-background");
     profileContainerBackground.classList.remove("profile-content-container-background-dark-mode");
     
+    // const profileContainer = document.querySelector(".profile-content-container");
+    // profileContainer.classList.remove("profile-content-container-dark-mode");
+
     const quotationBackground = document.querySelector(".quotation-container-background");
     quotationBackground.classList.remove("quotation-container-background-dark-mode");
     
     const profileParagraphs = document.querySelectorAll(".profile-content-container p:not(.profile-content-greeting)");
     profileParagraphs.forEach((paragraph) =>{
-        paragraph.classList.remove("profile-content-container-dark-mode");
+        paragraph.classList.remove("profile-content-container-paragraph-dark-mode");
     });
     
     const sectionTitles = document.querySelectorAll(".section-introduction-container h2");

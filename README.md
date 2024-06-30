@@ -23,7 +23,7 @@ Frontend:
 It is built using HTML, CSS and JavaScript.
 
 Backend:
-The backend is supported by Web3forms for handling the form submission.
+The backend is supported by Web3Forms for handling the form submission.
 
 Deployment:
 The project is deployed on 123reg for hosting services.
@@ -100,7 +100,7 @@ Thank you for your patience as I continue to improve the functionality and conte
 
 - <a href="https://www.figma.com/" title="figma" target="_blank" rel="noopener noreferrer">Figma</a> - For enabling seamless design collaboration.</br>
 - <a href="https://fontawesome.com/" title="fontawesome" target="_blank" rel="noopener noreferrer">FontAwesome</a> - Providing stylish icons for my projects.</br>
-- <a href="https://web3forms.com/" title="web3forms" target="_blank" rel="noopener noreferrer">Web3forms</a> - Simplifying form submissions for enhanced user interaction.
+- <a href="https://web3forms.com/" title="web3forms" target="_blank" rel="noopener noreferrer">Web3Forms</a> - Simplifying form submissions for enhanced user interaction.
 
 I would like to acknowledge the assistance I received in enhancing the functionality of the image slider, show more accordion, smooth scroll for compatibility across all browsers, the SVG animation on the landing page, the form submission and the contact form label animation. Implementing these features posed a challenge, and I am thankful for the guidance offered by ChatGPT. The code snippets and explanations provided by ChatGPT played a crucial role in helping me navigate and overcome the obstacles I faced.
 
