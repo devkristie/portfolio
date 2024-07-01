@@ -497,7 +497,6 @@ main {
 .profile-content-container-background {
     width: 80%;
     margin: 5rem auto 5rem;
-    /* padding-bottom: -1rem; */
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
 }
@@ -553,11 +552,36 @@ q::after {
     padding: 6.5rem 1rem 1.25rem 1rem;
     font-family: "roboto-regular", Arial;
     background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
-    /* border: 1px solid var(--dark-grey); */
 }
-/* .profile-content-container-dark-mode {
-    border: 1px solid var(--darker-grey);
-} */
+@media only screen and (min-width: 1180px) {
+    .profile-content-container-background {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    .profile-content-container {
+        margin: 0;
+        width: 50%;
+        padding: 1.5rem 3rem 0;
+        border-radius: 1.5rem 0 0 1.5rem;
+    }
+    .profile-headshot {
+        position: absolute;
+        display: flex;
+        align-self: center;
+        right: 0;
+        margin-right: 20%;
+        margin-bottom: 15rem;
+    }
+    .quotation-container-background {
+        position: absolute;
+        display: flex;
+        align-self: center;
+        right: -4.25rem;
+        margin-top: 12rem;
+        margin-right: 20%;
+    }
+}
 @media only screen and (max-width: 465px) {
     .profile-content-container {
         width: 100%;
