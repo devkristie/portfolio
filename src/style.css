@@ -6,7 +6,7 @@
 @font-face { font-family: "tomorrow-regular"; src: url(./assets/fonts/tomorrow-regular-webfont.woff2);}
 /*CSS Variables*/
 :root {
-    --primary-color: #FFA724;
+    --primary-color: #FF9900; /* Original primary colour: #FFA724 */
     --secondary-color: #A26D5F;
     --third-color: #FFCC7E;
     --darkest-grey: #404040;
@@ -236,7 +236,7 @@ li {
     width: 100%;
     height: 2.5rem;
     margin-top: 2.5rem;
-    background-image: linear-gradient(to bottom, var(--primary-color), var(--third-color));
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
 }
 .accordion-navigation-bar-nav .accordion-navigation-bar-ul .accordion-navigation-bar-li {
     display: flex;
@@ -560,8 +560,8 @@ q::after {
         flex-direction: row;
     }
     .profile-content-container {
-        margin: 0;
         width: 50%;
+        margin: 0;
         padding: 1.5rem 3rem 0;
         border-radius: 1.5rem 0 0 1.5rem;
     }
@@ -570,16 +570,14 @@ q::after {
         display: flex;
         align-self: center;
         right: 0;
-        margin-right: 20%;
-        margin-bottom: 15rem;
+        margin: 0 20% 15rem 0;
     }
     .quotation-container-background {
         position: absolute;
         display: flex;
         align-self: center;
         right: -4.25rem;
-        margin-top: 12rem;
-        margin-right: 20%;
+        margin: 12rem 20% 0 0;
     }
 }
 @media only screen and (max-width: 465px) {
@@ -706,7 +704,7 @@ hr {
 }
 .portfolio-website-title-container {
     width: 100%;
-    margin: 0 0 2.5rem;
+    margin: 0 0 5rem;
     font-family: "roboto-medium", Arial;
     text-align: center;
     background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color)); /*?should this be --dark-mode or --third-color*/
@@ -726,7 +724,7 @@ hr {
     display: flex;
     justify-content: center;
     width: 80%;
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
 }
 .portfolio-website-slider-container > figure {
     position: relative;
@@ -1295,9 +1293,13 @@ a.footer-link-back-to-top-dark-mode {
     color: var(--dark-mode);
 }
 .footer-bottom > article:nth-child(2) > a:nth-child(5) {
-    float: left;
+    float: right;
     font-size: 0.65rem;
     font-family: "roboto-bold", Arial;
     text-decoration: none;
     color: var(--light-grey);
+    transition: color 0.5s;
+}
+.footer-bottom > article:nth-child(2):hover > a:nth-child(5):hover {
+    color: var(--primary-color);  
 }

@@ -3,7 +3,7 @@
 @font-face { font-family: "tomorrow-light"; src: url(../assets/fonts/tomorrow-light-webfont.woff2);}
 /*CSS Variables*/
 :root {
-    --primary-color: #FFA724;
+    --primary-color: #FF9900;
     --secondary-color: #A26D5F;
     --third-color: #FFCC7E;
     --darkest-grey: #404040;
@@ -228,7 +228,7 @@ li {
     width: 100%;
     height: 2.5rem;
     margin-top: 2.5rem;
-    background-image: linear-gradient(to bottom, var(--primary-color), var(--third-color));
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
 }
 .accordion-navigation-bar-nav .accordion-navigation-bar-ul .accordion-navigation-bar-li {
     display: flex;
@@ -568,4 +568,8 @@ a.footer-link-back-to-top-dark-mode {
     font-family: "roboto-bold", Arial;
     text-decoration: none;
     color: var(--light-grey);
+    transition: color 0.5s;
+}
+.footer-bottom > article:nth-child(2):hover > a:nth-child(5):hover {
+    color: var(--primary-color);  
 }
