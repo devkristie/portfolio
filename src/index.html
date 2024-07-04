@@ -18,40 +18,38 @@
     </head>
     <body>
         <header class="top-navigation-bar">
-            <svg class="logo" aria-label="portfolio logo">
-                <path class="logo-path1" d="M12 7 Q7 7 7 13 Q7 18.5 4 19.5"/>
-                <path class="logo-path2" d="M4 19.5 Q7 21.5 7 23 Q7 31.5 12 31.5"/>
-                <path class="logo-path3" d="M22 9 L12 19.5 L22 29"/>
-                <circle class="logo-path4" cx="29" cy="7.5" r="2.5"/>
-                <circle class="logo-path5" cx="29" cy="15" r="2.5"/>
-                <path class="logo-path6" d="M41 9 L27.5 29.5"/>
-                <circle class="logo-path7" cx="40" cy="23" r="2.5"/>
-                <circle class="logo-path8" cx="40" cy="30.5" r="2.5"/>
-                <path class="logo-path9" d="M42 29 Q45 34 37.5 36.5"/>
-                <path class="logo-path10" d="M46.5 9 L56.5 19.5 L46.5 29"/>
-                <path class="logo-path11" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19"/>
-                <path class="logo-path12" d="M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5"/>
+            <svg class="logo-container" aria-label="Portfolio Logo">
+                <path class="logo-opening-curly-brace" d="M12 7 Q7 7 7 13 Q7 18.5 4 19.5 M4 19.5 Q7 21.5 7 23 Q7 31.5 12 31.5"/>
+                <path class="logo-less-than-sign" d="M22 9 L12 19.5 L22 29"/>
+                <circle class="logo-top-colon" cx="29" cy="7.5" r="2.5"/>
+                <circle class="logo-bottom-colon" cx="29" cy="15" r="2.5"/>
+                <path class="logo-forward-slash" d="M41 9 L27.5 29.5"/>
+                <circle class="logo-top-semicolon" cx="40" cy="23" r="2.5"/>
+                <circle class="logo-bottom-semicolon" cx="40" cy="30.5" r="2.5"/>
+                <path class="logo-bottom-semicolon-terminal" d="M42 29 Q45 34 37.5 36.5"/>
+                <path class="logo-more-than-sign" d="M46.5 9 L56.5 19.5 L46.5 29"/>
+                <path class="logo-closing-curly-brace" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19 M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5"/>
             </svg>
             <nav class="dark-mode-icon-container">
                 <ul>
                     <li>
-                        <i class="fa-solid fa-moon" aria-describedby="dark mode icon"></i>
+                        <i class="fa-solid fa-moon" aria-describedby="Dark mode icon"></i>
                     </li>
                     <li>
-                        <i class="fa-solid fa-sun" aria-describedby="dark mode icon"></i>
+                        <i class="fa-solid fa-sun" aria-describedby="Light mode icon"></i>
                     </li>
                 </ul>
             </nav>
-            <svg class="hamburger-menu" aria-label="navigation menu">
+            <svg class="hamburger-menu-container" aria-label="Navigation Menu">
                 <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5"/>
                 <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5"/>
                 <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5"/>
             </svg>
         </header>
-        <header class="accordion-navigation-bar-hide">
-            <nav class="accordion-navigation-bar-nav">
-                <ul class="accordion-navigation-bar-ul">
-                    <li class="accordion-navigation-bar-li">
+        <header class="top-navigation-bar-accordion-hidden">
+            <nav class="top-navigation-bar-accordion-nav">
+                <ul class="top-navigation-bar-accordion-ul">
+                    <li class="top-navigation-bar-accordion-li">
                         <a href="#home">Home</a>
                         <a href="#profile">Profile</a>
                         <a href="#portfolio">Portfolio</a>
@@ -63,78 +61,78 @@
         </header>
         <main>
             <a id="home"></a>
-            <section class="landing-page-title">
+            <section class="landing-page">
                 <div class="landing-page-title-container">
-                    <p class="p1">.welcome</p>
-                    <div class="welcome-background-one"></div>
-                    <div class="welcome-background-two"></div>
-                    <p class="p2">{</p>
-                    <p class="p3">to: my;</p>
-                    <p class="p4">front: end;</p>
-                    <p class="p5">development:</p>
-                    <p class="p6">portfolio</p>
-                    <p class="p7">;</p>
-                    <p class="p8">}</p>
+                    <p class="landing-page-title-welcome">.welcome</p>
+                    <div class="landing-page-title-welcome-background-one"></div>
+                    <div class="landing-page-title-welcome-background-two"></div>
+                    <p class="landing-page-title-opening-curly-brace">{</p>
+                    <p class="landing-page-title-property-value-to-my">to: my;</p>
+                    <p class="landing-page-title-property-value-front-end">front: end;</p>
+                    <p class="landing-page-title-property-development">development:</p>
+                    <p class="landing-page-title-value-portfolio">portfolio</p>
+                    <p class="landing-page-title-value-semicolon">;</p>
+                    <p class="landing-page-title-closing-curly-brace">}</p>
                 </div>
                 <div>
                     <svg class="laptop-image-container" aria-label="animated laptop image">
-                        <path class="laptop-image1" d="M32.5 0 Q25 0 25 7.5 L25 150 L275 150 L275 10 Q275 0 265 0 L50 0"/>
-                        <circle class="laptop-image2" cx="150" cy="5" r="2.5"/>
-                        <rect class="laptop-image3" x="35" y="10" width="230" height="140"/>
-                        <rect class="laptop-image4" x="45" y="15" width="220" height="135"/>
-                        <rect class="laptop-image5" x="70" y="15" width="25" height="7.5"/>
-                        <rect class="laptop-image6" x="70" y="22.5" width="195" height="127.5"/>
-                        <path class="laptop-image7" d="M70 125 L265 125"/>
-                        <path class="laptop-image8" d="M170 23 L170 125"/>
-                        <rect class="laptop-image9" x="35" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image9" x="55" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image9" x="75" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image9" x="95" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image9" x="115" y="145" width="70" height="5"/>
-                        <rect class="laptop-image9" x="187.5" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image9" x="207.5" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image9" x="227.5" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image9" x="247.5" y="145" width="17.5" height="5"/>
-                        <path class="laptop-image10" d="M10 157.5 L290 157.5"/>
-                        <path class="laptop-image-code1" d="M75 35 L85 35"/>
-                        <path class="laptop-image-code1" d="M80 40 L95 40"/>
-                        <path class="laptop-image-code1" d="M85 45 L120 45"/>
-                        <path class="laptop-image-code1" d="M80 50 L95 50"/>
-                        <path class="laptop-image-code1" d="M75 55 L85 55"/>
-                        <path class="laptop-image-code1" d="M80 60 L95 60"/>
-                        <path class="laptop-image-code1" d="M85 65 L90 65"/>
-                        <path class="laptop-image-code1" d="M90 70 L120 70"/>
-                        <path class="laptop-image-code1" d="M90 75 L115 75"/>
-                        <path class="laptop-image-code1" d="M90 80 L130 80"/>
-                        <path class="laptop-image-code1" d="M85 85 L90 85"/>
-                        <path class="laptop-image-code1" d="M80 90 L95 90"/>
-                        <path class="laptop-image-code1" d="M75 95 L85 95"/>
-                        <path class="laptop-image-code1" d="M75 100 L80 100"/>
-                        <path class="laptop-image-code1" d="M80 105 L85 105"/>
-                        <path class="laptop-image-code1" d="M85 110 L120 110"/>
-                        <path class="laptop-image-code1" d="M85 115 L100 115"/>
-                        <path class="laptop-image-code1" d="M80 120 L85 120"/>
-                        <path class="laptop-image-code1" d="M180 35 L183 35"/>
-                        <path class="laptop-image-code1" d="M188 35 L189 35"/>
-                        <path class="laptop-image-code1" d="M185 40 L200 40"/>
-                        <path class="laptop-image-code1" d="M185 45 L195 45"/>
-                        <path class="laptop-image-code1" d="M185 50 L202 50"/>
-                        <path class="laptop-image-code1" d="M185 55 L210 55"/>
-                        <path class="laptop-image-code1" d="M180 60 L181 60"/>
-                        <path class="laptop-image-code1" d="M180 65 L187 65"/>
-                        <path class="laptop-image-code1" d="M192 65 L193 65"/>
-                        <path class="laptop-image-code1" d="M185 70 L195 70"/>
-                        <path class="laptop-image-code1" d="M185 75 L199 75"/>
-                        <path class="laptop-image-code1" d="M185 80 L191 80"/>
-                        <path class="laptop-image-code1" d="M180 85 L181 85"/>
-                        <path class="laptop-image-code1" d="M180 90 L195 90"/>
-                        <path class="laptop-image-code1" d="M199 90 L200 90"/>
-                        <path class="laptop-image-code1" d="M185 95 L199 95"/>
-                        <path class="laptop-image-code1" d="M185 100 L205 100"/>
-                        <path class="laptop-image-code1" d="M185 105 L201 105"/>
-                        <path class="laptop-image-code1" d="M185 110 L198 110"/>
-                        <path class="laptop-image-code1" d="M185 115 L205 115"/>
-                        <path class="laptop-image-code1" d="M185 120 L202 120"/>
+                        <path class="laptop-image-top-shell" d="M32.5 0 Q25 0 25 7.5 L25 150 L275 150 L275 10 Q275 0 265 0 L50 0"/>
+                        <circle class="laptop-image-webcam" cx="150" cy="5" r="2.5"/>
+                        <rect class="laptop-image-vscode-activity-bar" x="35" y="10" width="230" height="140"/>
+                        <rect class="laptop-image-vscode-file-explorer" x="45" y="15" width="220" height="135"/>
+                        <rect class="laptop-image-vscode-file-tab" x="70" y="15" width="25" height="7.5"/>
+                        <rect class="laptop-image-vscode-editor" x="70" y="22.5" width="195" height="127.5"/>
+                        <path class="laptop-image-horizontal-screen-line" d="M70 125 L265 125"/>
+                        <path class="laptop-image-vertical-screen-line" d="M170 23 L170 125"/>
+                        <rect class="laptop-image-key" x="35" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="55" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="75" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="95" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="115" y="145" width="70" height="5"/>
+                        <rect class="laptop-image-key" x="187.5" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="207.5" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="227.5" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="247.5" y="145" width="17.5" height="5"/>
+                        <path class="laptop-image-bottom-shell" d="M10 157.5 L290 157.5"/>
+                        <path class="laptop-image-code" d="M75 35 L85 35"/>
+                        <path class="laptop-image-code" d="M80 40 L95 40"/>
+                        <path class="laptop-image-code" d="M85 45 L120 45"/>
+                        <path class="laptop-image-code" d="M80 50 L95 50"/>
+                        <path class="laptop-image-code" d="M75 55 L85 55"/>
+                        <path class="laptop-image-code" d="M80 60 L95 60"/>
+                        <path class="laptop-image-code" d="M85 65 L90 65"/>
+                        <path class="laptop-image-code" d="M90 70 L120 70"/>
+                        <path class="laptop-image-code" d="M90 75 L115 75"/>
+                        <path class="laptop-image-code" d="M90 80 L130 80"/>
+                        <path class="laptop-image-code" d="M85 85 L90 85"/>
+                        <path class="laptop-image-code" d="M80 90 L95 90"/>
+                        <path class="laptop-image-code" d="M75 95 L85 95"/>
+                        <path class="laptop-image-code" d="M75 100 L80 100"/>
+                        <path class="laptop-image-code" d="M80 105 L85 105"/>
+                        <path class="laptop-image-code" d="M85 110 L120 110"/>
+                        <path class="laptop-image-code" d="M85 115 L100 115"/>
+                        <path class="laptop-image-code" d="M80 120 L85 120"/>
+                        <path class="laptop-image-code" d="M180 35 L183 35"/>
+                        <path class="laptop-image-code" d="M188 35 L189 35"/>
+                        <path class="laptop-image-code" d="M185 40 L200 40"/>
+                        <path class="laptop-image-code" d="M185 45 L195 45"/>
+                        <path class="laptop-image-code" d="M185 50 L202 50"/>
+                        <path class="laptop-image-code" d="M185 55 L210 55"/>
+                        <path class="laptop-image-code" d="M180 60 L181 60"/>
+                        <path class="laptop-image-code" d="M180 65 L187 65"/>
+                        <path class="laptop-image-code" d="M192 65 L193 65"/>
+                        <path class="laptop-image-code" d="M185 70 L195 70"/>
+                        <path class="laptop-image-code" d="M185 75 L199 75"/>
+                        <path class="laptop-image-code" d="M185 80 L191 80"/>
+                        <path class="laptop-image-code" d="M180 85 L181 85"/>
+                        <path class="laptop-image-code" d="M180 90 L195 90"/>
+                        <path class="laptop-image-code" d="M199 90 L200 90"/>
+                        <path class="laptop-image-code" d="M185 95 L199 95"/>
+                        <path class="laptop-image-code" d="M185 100 L205 100"/>
+                        <path class="laptop-image-code" d="M185 105 L201 105"/>
+                        <path class="laptop-image-code" d="M185 110 L198 110"/>
+                        <path class="laptop-image-code" d="M185 115 L205 115"/>
+                        <path class="laptop-image-code" d="M185 120 L202 120"/>
                     </svg>
                 </div>
             </section>
@@ -173,9 +171,9 @@
                 </article>
                 <hr class="top-hr-element"/>
                 <div class="portfolio-website-flex-container">
-                    <div class="portfolio-website-title-container"> <!--*should this be a header?-->
+                    <header class="portfolio-website-title-container">
                         <h3>Coming Soon</h3>
-                    </div>
+                    </header>
                     <div class="portfolio-website-slider-container">
                         <svg class="left-arrow" viewBox="14 0 20 100" aria-label="image slider left arrow">
                             <path d="M28 45 L20 53 L28 60" />
@@ -200,20 +198,20 @@
                     <article class="portfolio-website-content-container-accordion">
                         <div class="show-more-button">
                             <p>Show More</p>
-                            <svg class="show-more-arrow" aria-label="show more arrow"> <!--!need to make it wider-->
+                            <svg class="show-more-arrow" aria-label="show more arrow">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
                                 <path d="M15.5 20 L23 20"/>
                             </svg>
                         </div>
                         <article class="show-more-accordion">
-                            <p class="hidden"><strong class="show-more-accordion-title">Eget gravida</strong> eget gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus</p>
-                            <p class="hidden">nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor</p>
+                            <p class="hidden"><strong class="show-more-accordion-title">Coming Soon</strong> - This website is currently under construction and in the design phase. I am working diligently to bring you a new and improved experience. Stay tuned for updates as I prepare for the launch.</p>
+                            <!-- <p class="hidden">nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor</p>
                             <p class="hidden">volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc</p>
                             <p class="hidden">eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum</p>
-                            <p class="hidden">nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit</p>
+                            <p class="hidden">nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit</p> -->
                             <h4 class="technologies-used-title">Technologies Used</h4>
                             <figure class="technology-used-container">
-                                <div>
+                                <!-- <div>
                                     <i class="fa-brands fa-figma"></i>
                                     <figcaption>Figma</figcaption>
                                 </div>
@@ -228,16 +226,16 @@
                                 <div>
                                     <i class="fa-brands fa-js"></i>
                                     <figcaption>JavaScript</figcaption>
-                                </div>
+                                </div> -->
                             </figure>
                         </article>
                     </article>
                 </div>
-                <hr/>
+                <!-- <hr/>
                 <div class="portfolio-website-flex-container">
-                    <div class="portfolio-website-title-container">
+                    <header class="portfolio-website-title-container">
                         <h3>Coming Soon</h3>
-                    </div>
+                    </header>
                     <div class="portfolio-website-slider-container">
                         <svg class="left-arrow" viewBox="14 0 20 100" aria-label="image slider left arrow">
                             <path d="M28 45 L20 53 L28 60" />
@@ -294,7 +292,7 @@
                             </figure>
                         </article>
                     </article>
-                </div>
+                </div> -->
             </section>
             <a id="contact" class="anchor"></a>
             <section class="contact-content">

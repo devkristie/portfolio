@@ -114,56 +114,44 @@ body::before {
     padding-left: 2rem;
     background-color: var(--primary-color);
 }
-.logo {
+.logo-container {
     width: 5rem;
     height: 2.5rem;
     margin-right: auto;
 }
-.logo-path1 {
+.logo-opening-curly-brace {
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.30rem;
 }
-.logo-path2 {
-    stroke: var(--dark-mode);
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 0.30rem;
-}
-.logo-path3 {
+.logo-less-than-sign {
     stroke: var(--darker-grey);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.30rem;
 }
-.logo-path4, .logo-path5, .logo-path7, .logo-path8 {
+.logo-top-colon, .logo-bottom-colon, .logo-top-semicolon, .logo-bottom-semicolon {
     fill: var(--lightest-grey);
 }
-.logo-path6 {
+.logo-forward-slash {
     stroke: var(--dark-grey);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.30rem;
 }
-.logo-path9 {
+.logo-bottom-semicolon-terminal {
     fill: var(--lightest-grey);
     stroke-linecap: round;
     stroke-width: 0.1rem;
 }
-.logo-path10 {
+.logo-more-than-sign {
     stroke: var(--darker-grey);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.30rem;
 }
-.logo-path11 {
-    stroke: var(--dark-mode);
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 0.30rem;
-}
-.logo-path12 {
+.logo-closing-curly-brace {
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
@@ -200,7 +188,7 @@ li {
     top: 0;
     left: 0;
 }
-.hamburger-menu {
+.hamburger-menu-container {
     width: 2.5rem;
     height: 2.5rem;
     margin: 0 2rem 0 1rem;
@@ -224,12 +212,12 @@ li {
     stroke-linecap: round;
     stroke-width: 0.30rem;
 }
-.accordion-navigation-bar-hide {
+.top-navigation-bar-accordion-hidden {
     position: absolute;
     right: 0;
     visibility: hidden;
 }
-.accordion-navigation-bar {
+.top-navigation-bar-accordion-visible {
     position: fixed;
     top: 0;
     z-index: 10;
@@ -238,18 +226,18 @@ li {
     margin-top: 2.5rem;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
 }
-.accordion-navigation-bar-nav .accordion-navigation-bar-ul .accordion-navigation-bar-li {
+.top-navigation-bar-accordion-nav .top-navigation-bar-accordion-ul .top-navigation-bar-accordion-li {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
     height: 2.5rem;
 }
-.accordion-navigation-bar-ul {
+.top-navigation-bar-accordion-ul {
     margin: 0;
     padding-left: 0;
 }
-.accordion-navigation-bar-li a {
+.top-navigation-bar-accordion-li a {
     padding: 0.1rem 1rem;
     font-family: "roboto-medium", Arial;
     text-decoration: none;
@@ -257,36 +245,36 @@ li {
     transition: background 0.5s ease-in;
 }
 @media only screen and (max-width: 410px) {
-    .accordion-navigation-bar-li a {
+    .top-navigation-bar-accordion-li a {
         display: flex;
         justify-content: space-between;
         width: 75%;
         padding: 0.1rem 0.70rem;
         text-align: center;
     }
-    .accordion-navigation-bar-li a:first-child {
+    .top-navigation-bar-accordion-li a:first-child {
         margin-left: 5rem;
     }
-    .accordion-navigation-bar-li a:last-child {
+    .top-navigation-bar-accordion-li a:last-child {
         margin-right: 5rem;
     }
 }
 @media only screen and (max-width: 355px) {
-    .accordion-navigation-bar-li a {
+    .top-navigation-bar-accordion-li a {
         display: flex;
         justify-content: space-between;
         width: 75%;
         padding: 0.1rem 0.30rem;
         text-align: center;
     }
-    .accordion-navigation-bar-li a:first-child {
+    .top-navigation-bar-accordion-li a:first-child {
         margin-left: 5rem;
     }
-    .accordion-navigation-bar-li a:last-child {
+    .top-navigation-bar-accordion-li a:last-child {
         margin-right: 5rem;
     }
 }
-.accordion-navigation-bar-li a:hover {
+.top-navigation-bar-accordion-li a:hover {
     background-color: var(--secondary-color);
     color: var(--light-mode);
 }
@@ -296,11 +284,7 @@ main {
 .main-dark-mode {
     background-color: var(--dark-mode);
 }
-.anchor {
-    position: absolute;
-    margin-top: -5rem;
-}
-.landing-page-title {
+.landing-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -316,44 +300,44 @@ main {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.landing-page-title p {
+.landing-page p {
     margin: 0;
     font-family: "roboto-bold", Arial;
 }
-.p1, .p2, .p5, .p6, .p7 {
+.landing-page-title-welcome, .landing-page-title-opening-curly-brace, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
     display: inline;
 }
-.p2, .p8 {
+.landing-page-title-opening-curly-brace, .landing-page-title-closing-curly-brace {
     font-size: 4rem;
     color: var(--lightest-grey);
 }
-.p2-dark-mode, .p8-dark-mode {
+.landing-page-title-opening-curly-brace-dark-mode, .landing-page-title-closing-curly-brace-dark-mode {
     color: #3F3F3F;
 }
-.p3, .p4, .p5 {
+.landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development {
     padding-left: 2rem;
 }
-.p3-dark-mode, .p4-dark-mode, .p5-dark-mode, .p7-dark-mode {
+.landing-page-title-property-value-to-my-dark-mode, .landing-page-title-property-value-front-end-dark-mode, .landing-page-title-property-development-dark-mode, .landing-page-title-value-semicolon-dark-mode {
     color: var(--light-mode);
 }
-.p3, .p4, .p5, .p6, .p7 {
+.landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
     font-size: 1.2rem;
 }
-.p1  {
+.landing-page-title-welcome  {
     position: relative;
     z-index: 5;
     font-size: 2rem;
 }
-.p1-dark-mode {
+.landing-page-title-welcome-dark-mode {
     color: var(--light-mode);
 }
-.p2 {
+.landing-page-title-opening-curly-brace {
     position: relative;
     top: 0.65rem;
     left: 1rem;
     z-index: 3;
 }
-.welcome-background-one {
+.landing-page-title-welcome-background-one {
     position: absolute;
     z-index: 2;
     display: inline-block;
@@ -363,7 +347,7 @@ main {
     background-color: var(--dark-grey);
     opacity: 50%;
 }
-.welcome-background-two {
+.landing-page-title-welcome-background-two {
     position: absolute;
     z-index: 1;
     display: inline-block;
@@ -373,14 +357,14 @@ main {
     background-color: var(--light-grey);
     opacity: 50%;
 }
-.p6 {
+.landing-page-title-value-portfolio {
     color: var(--primary-color);
 }
-.p7 {
+.landing-page-title-value-semicolon {
     position: relative;
     right: 0.25rem;
 }
-.p8 {
+.landing-page-title-closing-curly-brace {
     position: relative;
     bottom: 0.95rem;
 }
@@ -388,59 +372,59 @@ main {
     height: 12.125rem;
     margin-top: 2rem;
 }
-.laptop-image1 {
+.laptop-image-top-shell {
     fill: var(--dark-mode);
 }
-.laptop-image2 {
+.laptop-image-webcam {
     fill: var(--light-grey);
 }
-.laptop-image3 {
+.laptop-image-vscode-activity-bar {
     fill: var(--dark-grey);
 }
-.laptop-image4 {
+.laptop-image-vscode-file-explorer {
     fill: var(--darker-grey);
 }
-.laptop-image5 {
+.laptop-image-vscode-file-tab {
     fill: var(--darkest-grey);
 }
-.laptop-image6 {
+.laptop-image-vscode-editor {
     fill: var(--darkest-grey);
 }
-.laptop-image7 {
+.laptop-image-horizontal-screen-line {
     stroke: var(--dark-mode);
     fill: none;
     stroke-width: 0.05rem;
 }
-.laptop-image8 {
+.laptop-image-vertical-screen-line {
     stroke: var(--dark-mode);
     fill: none;
     stroke-width: 0.05rem;
 }
-.laptop-image9 {
+.laptop-image-key {
     stroke: var(--darker-grey);
     fill: var(--dark-mode);
     stroke-width: 0.03rem;
 }
-.laptop-image10 {
+.laptop-image-bottom-shell {
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
     stroke-width: 1rem;
 }
-.laptop-image1-dark-mode {
+.laptop-image-top-shell-dark-mode {
     fill: var(--light-mode);
 }
-.laptop-image2-dark-mode {
+.laptop-image-webcam-dark-mode {
     fill: #666666;
 }
-.laptop-image9-dark-mode {
+.laptop-image-key-dark-mode {
     stroke: var(--darker-grey);
     fill: var(--light-mode);
 }
-.laptop-image10-dark-mode {
+.laptop-image-bottom-shell-dark-mode {
     stroke: var(--light-mode);
 }
-.laptop-image-code1 {
+.laptop-image-code {
     stroke: var(--primary-color);
     fill: none;
     stroke-linecap: round;
@@ -454,7 +438,7 @@ main {
     }
 }
 @media only screen and (min-width: 770px) {
-    .landing-page-title {
+    .landing-page {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -466,6 +450,10 @@ main {
     .laptop-image-container {
         margin-top: 1rem;
     }
+}
+.anchor {
+    position: absolute;
+    margin-top: -5rem;
 }
 .section-title-header {
     display: flex;

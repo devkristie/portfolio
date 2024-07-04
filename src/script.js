@@ -3,13 +3,13 @@
 const moonIcon = document.querySelector(".dark-mode-icon-container ul");
 const moon = document.querySelector(".fa-moon");
 const sunIcon = document.querySelector(".fa-sun");
-const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
-const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
+const hamburgerMenuIcon = document.querySelector(".hamburger-menu-container");
+const topNavBarShow = document.querySelector(".top-navigation-bar-accordion-hidden");
 const showMoreButton = document.querySelectorAll(".show-more-button");
 const showMore = document.querySelectorAll(".show-more-accordion");
 const showMoreArrow = document.querySelectorAll(".show-more-arrow");
 const showLessText = document.querySelectorAll(".show-more-button p");
-const laptopImageCode1 = document.querySelectorAll(".laptop-image-code1");
+const laptopImageCode1 = document.querySelectorAll(".laptop-image-code");
 const contactFormClicked = document.querySelectorAll(".form-input");
 const contactFormLabels = document.querySelectorAll("label");
 const copyrightUpdateYear = document.querySelector(".footer-copyright-year");
@@ -96,43 +96,43 @@ function enableDarkMode() {
     const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.add("main-dark-mode");
 
-    const landingPageBackground = document.querySelector(".landing-page-title");
+    const landingPageBackground = document.querySelector(".landing-page");
     landingPageBackground.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
 
-    const landingPageTitleP1 = document.querySelector(".p1");
-    landingPageTitleP1.classList.add("p1-dark-mode");
+    const landingPageTitleP1 = document.querySelector(".landing-page-title-welcome");
+    landingPageTitleP1.classList.add("landing-page-title-welcome-dark-mode");
 
-    const landingPageTitleP2 = document.querySelector(".p2");
-    landingPageTitleP2.classList.add("p2-dark-mode");
+    const landingPageTitleP2 = document.querySelector(".landing-page-title-opening-curly-brace");
+    landingPageTitleP2.classList.add("landing-page-title-opening-curly-brace-dark-mode");
     
-    const landingPageTitleP3 = document.querySelector(".p3");
-    landingPageTitleP3.classList.add("p3-dark-mode");
+    const landingPageTitleP3 = document.querySelector(".landing-page-title-property-value-to-my");
+    landingPageTitleP3.classList.add("landing-page-title-property-value-to-my-dark-mode");
     
-    const landingPageTitleP4 = document.querySelector(".p4");
-    landingPageTitleP4.classList.add("p4-dark-mode");
+    const landingPageTitleP4 = document.querySelector(".landing-page-title-property-value-front-end");
+    landingPageTitleP4.classList.add("landing-page-title-property-value-front-end-dark-mode");
     
-    const landingPageTitleP5 = document.querySelector(".p5");
-    landingPageTitleP5.classList.add("p5-dark-mode");
+    const landingPageTitleP5 = document.querySelector(".landing-page-title-property-development");
+    landingPageTitleP5.classList.add("landing-page-title-property-development-dark-mode");
     
-    const landingPageTitleP7 = document.querySelector(".p7");
-    landingPageTitleP7.classList.add("p7-dark-mode");
+    const landingPageTitleP7 = document.querySelector(".landing-page-title-value-semicolon");
+    landingPageTitleP7.classList.add("landing-page-title-value-semicolon-dark-mode");
     
-    const landingPageTitleP8 = document.querySelector(".p8");
-    landingPageTitleP8.classList.add("p8-dark-mode");
+    const landingPageTitleP8 = document.querySelector(".landing-page-title-closing-curly-brace");
+    landingPageTitleP8.classList.add("landing-page-title-closing-curly-brace-dark-mode");
     
-    const laptopImage1 = document.querySelector(".laptop-image1");
-    laptopImage1.classList.add("laptop-image1-dark-mode");
+    const laptopImage1 = document.querySelector(".laptop-image-top-shell");
+    laptopImage1.classList.add("laptop-image-top-shell-dark-mode");
     
-    const laptopImage2 = document.querySelector(".laptop-image2");
-    laptopImage2.classList.add("laptop-image2-dark-mode");
+    const laptopImage2 = document.querySelector(".laptop-image-webcam");
+    laptopImage2.classList.add("laptop-image-webcam-dark-mode");
     
-    const laptopImage9 = document.querySelectorAll(".laptop-image9");
+    const laptopImage9 = document.querySelectorAll(".laptop-image-key");
     laptopImage9.forEach((key) => {
-        key.classList.add("laptop-image9-dark-mode");
+        key.classList.add("laptop-image-key-dark-mode");
     });
     
-    const laptopImage10 = document.querySelector(".laptop-image10");
-    laptopImage10.classList.add("laptop-image10-dark-mode");
+    const laptopImage10 = document.querySelector(".laptop-image-bottom-shell");
+    laptopImage10.classList.add("laptop-image-bottom-shell-dark-mode");
     
     const profileContainerBackground = document.querySelector(".profile-content-container-background");
     profileContainerBackground.classList.add("profile-content-container-background-dark-mode");
@@ -280,43 +280,43 @@ function disableDarkMode() {
     const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.remove("main-dark-mode");
     
-    const landingPageBackground = document.querySelector(".landing-page-title");
+    const landingPageBackground = document.querySelector(".landing-page");
     landingPageBackground.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
     
-    const landingPageTitleP1 = document.querySelector(".p1");
-    landingPageTitleP1.classList.remove("p1-dark-mode");
+    const landingPageTitleP1 = document.querySelector(".landing-page-title-welcome");
+    landingPageTitleP1.classList.remove("landing-page-title-welcome-dark-mode");
     
-    const landingPageTitleP2 = document.querySelector(".p2");
-    landingPageTitleP2.classList.remove("p2-dark-mode");
+    const landingPageTitleP2 = document.querySelector(".landing-page-title-opening-curly-brace");
+    landingPageTitleP2.classList.remove("landing-page-title-opening-curly-brace-dark-mode");
     
-    const landingPageTitleP3 = document.querySelector(".p3");
-    landingPageTitleP3.classList.remove("p3-dark-mode");
+    const landingPageTitleP3 = document.querySelector(".landing-page-title-property-value-to-my");
+    landingPageTitleP3.classList.remove("landing-page-title-property-value-to-my-dark-mode");
     
-    const landingPageTitleP4 = document.querySelector(".p4");
-    landingPageTitleP4.classList.remove("p4-dark-mode");
+    const landingPageTitleP4 = document.querySelector(".landing-page-title-property-value-front-end");
+    landingPageTitleP4.classList.remove("landing-page-title-property-value-front-end-dark-mode");
     
-    const landingPageTitleP5 = document.querySelector(".p5");
-    landingPageTitleP5.classList.remove("p5-dark-mode");
+    const landingPageTitleP5 = document.querySelector(".landing-page-title-property-development");
+    landingPageTitleP5.classList.remove("landing-page-title-property-development-dark-mode");
     
-    const landingPageTitleP7 = document.querySelector(".p7");
-    landingPageTitleP7.classList.remove("p7-dark-mode");
+    const landingPageTitleP7 = document.querySelector(".landing-page-title-value-semicolon");
+    landingPageTitleP7.classList.remove("landing-page-title-value-semicolon-dark-mode");
     
-    const landingPageTitleP8 = document.querySelector(".p8");
-    landingPageTitleP8.classList.remove("p8-dark-mode");
+    const landingPageTitleP8 = document.querySelector(".landing-page-title-closing-curly-brace");
+    landingPageTitleP8.classList.remove("landing-page-title-closing-curly-brace-dark-mode");
     
-    const laptopImage1 = document.querySelector(".laptop-image1");
-    laptopImage1.classList.remove("laptop-image1-dark-mode");
+    const laptopImage1 = document.querySelector(".laptop-image-top-shell");
+    laptopImage1.classList.remove("laptop-image-top-shell-dark-mode");
     
-    const laptopImage2 = document.querySelector(".laptop-image2");
-    laptopImage2.classList.remove("laptop-image2-dark-mode");
+    const laptopImage2 = document.querySelector(".laptop-image-webcam");
+    laptopImage2.classList.remove("laptop-image-webcam-dark-mode");
     
-    const laptopImage9 = document.querySelectorAll(".laptop-image9");
+    const laptopImage9 = document.querySelectorAll(".laptop-image-key");
     laptopImage9.forEach((key) => {
-        key.classList.remove("laptop-image9-dark-mode");
+        key.classList.remove("laptop-image-key-dark-mode");
     });
     
-    const laptopImage10 = document.querySelector(".laptop-image10");
-    laptopImage10.classList.remove("laptop-image10-dark-mode");
+    const laptopImage10 = document.querySelector(".laptop-image-bottom-shell");
+    laptopImage10.classList.remove("laptop-image-bottom-shell-dark-mode");
     
     const profileContainerBackground = document.querySelector(".profile-content-container-background");
     profileContainerBackground.classList.remove("profile-content-container-background-dark-mode");
@@ -464,8 +464,8 @@ document.addEventListener("DOMContentLoaded", () => {
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {
-    topNavBarShow.classList.toggle("accordion-navigation-bar-hide");
-    topNavBarShow.classList.toggle("accordion-navigation-bar");
+    topNavBarShow.classList.toggle("top-navigation-bar-accordion-hidden");
+    topNavBarShow.classList.toggle("top-navigation-bar-accordion-visible");
 }
 
 function isInViewport(element) {
