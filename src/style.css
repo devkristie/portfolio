@@ -455,7 +455,7 @@ main {
     position: absolute;
     margin-top: -5rem;
 }
-.section-title-header {
+.section-title-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -478,17 +478,17 @@ main {
         letter-spacing: 0.25rem;
     }
 }
-.profile-content {
+.profile-section-container {
     width: 100%;
     min-height: 100vh;
 }
-.profile-content-container-background {
+.profile-content-container {
     width: 80%;
     margin: 5rem auto 5rem;
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
 }
-.profile-content-container-background-dark-mode {
+.profile-content-container-dark-mode {
     background-color: var(--darkest-grey);
 }
 .profile-headshot {
@@ -497,7 +497,7 @@ main {
     margin: 3rem 0 -7.5rem 3.25rem;
     border-radius: 1.5rem;
 }
-.quotation-container-background {
+.profile-quotation-container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -513,7 +513,7 @@ main {
     color: var(--darker-grey);
     border-radius: 1.5rem;
 }
-.quotation-container-background-dark-mode {
+.profile-quotation-container-dark-mode {
     background-color: var(--darker-grey);
     color: var(--light-grey);
 }
@@ -535,19 +535,19 @@ q::after {
     color: var(--dark-grey);
     content: close-quote;
 }
-.profile-content-container {
+.profile-introduction-content-container {
     margin: -3.5rem 2rem 0;
     padding: 6.5rem 1rem 1.25rem 1rem;
     font-family: "roboto-regular", Arial;
     background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
 }
 @media only screen and (min-width: 1180px) {
-    .profile-content-container-background {
+    .profile-content-container {
         position: relative;
         display: flex;
         flex-direction: row;
     }
-    .profile-content-container {
+    .profile-introduction-content-container {
         width: 50%;
         margin: 0;
         padding: 1.5rem 3rem 0;
@@ -560,7 +560,7 @@ q::after {
         right: 0;
         margin: 0 20% 15rem 0;
     }
-    .quotation-container-background {
+    .profile-quotation-container {
         position: absolute;
         display: flex;
         align-self: center;
@@ -569,33 +569,33 @@ q::after {
     }
 }
 @media only screen and (max-width: 465px) {
-    .profile-content-container {
+    .profile-introduction-content-container {
         width: 100%;
         margin: 5rem auto;
         padding: 13.25rem 3rem 1rem 3rem;
     }
 }
 @media only screen and (max-width: 640px) {
-    .profile-content-container {
+    .profile-introduction-content-container {
         margin-top: -12.25rem;
         padding-top: 13.25rem;
     }
-    .quotation-container-background {
+    .profile-quotation-container {
         margin-top: 8.75rem;
     }
 }
-.profile-content-greeting {
+.profile-introduction-content-greeting {
     margin-bottom: 0;
     font-size: 2.813rem;
     font-family: "tomorrow-regular", Arial;
     color: var(--primary-color);
 }
-.profile-content-greeting::after {
+.profile-introduction-content-greeting::after {
     font-size: 3.5rem;
     font-family: none;
     content: ",";
 }
-.profile-content-container > p {
+.profile-introduction-content-container > p {
     display: block;
     margin-top: 0;
 }
@@ -642,7 +642,7 @@ q::after {
         width: 43.5%;
     }
 }
-.section-introduction-container h2 {
+.section-introduction-container > h2 {
     margin-top: 4rem;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
@@ -654,30 +654,45 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.section-introduction-container h2.h2-dark-mode {
+.section-introduction-container > h2.h2-dark-mode {
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
     color: var(--light-mode);
 }
-.section-introduction-container p {
+.section-introduction-container > p {
     margin: 0.5rem 0;
     font-family: "roboto-regular", Arial;
 }
-.section-introduction-container p.p-dark-mode {
+.section-introduction-container > p.p-dark-mode {
     color: var(--light-mode);
 }
-.portfolio-introduction-inline-text::before {
+.portfolio-introduction-container-p-highlighted-text::before {
     font-weight: 1000;
     color: var(--primary-color);
     content: "Ready to dive into my work? ";
     cursor: text;
 }
-.top-hr-element {
+.portfolio-top-hr {
     margin-top: 1.75rem;
 }
-hr {
+.portfolio-hr {
     margin: 0;
 }
-.portfolio-website-flex-container {
+.portfolio-websites-title-container {
+    width: 100%;
+    margin: 0 0 5rem;
+    font-family: "roboto-medium", Arial;
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
+    color: var(--light-mode);
+    border-radius: 1.5rem 1.5rem 0 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.portfolio-websites-title-container-dark-mode {
+    color: var(--dark-mode);
+}
+.portfolio-websites-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -687,49 +702,31 @@ hr {
     background-color: var(--lightest-grey);
     border-radius: 1.5rem;
 }
-.portfolio-website-flex-container-dark-mode {
+.portfolio-websites-container-dark-mode {
     background-color: var(--darker-grey);
 }
-.portfolio-website-title-container {
-    width: 100%;
-    margin: 0 0 5rem;
-    font-family: "roboto-medium", Arial;
-    text-align: center;
-    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color)); /*?should this be --dark-mode or --third-color*/
-    color: var(--light-mode);
-    border-radius: 1.5rem 1.5rem 0 0;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-.portfolio-website-title-container-dark-mode {
-    background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
-}
-.portfolio-website-title-dark-mode {
-    color: var(--dark-mode);
-}
-.portfolio-website-slider-container {
+.portfolio-websites-slider-container {
     display: flex;
     justify-content: center;
     width: 80%;
     margin-bottom: 5rem;
 }
-.portfolio-website-slider-container > figure {
+.portfolio-websites-slider-container > figure {
     position: relative;
     width: 100%;
     margin: 0;
 }
 @media only screen and (max-width: 770px) {
-    .portfolio-website-slider-container {
+    .portfolio-websites-slider-container {
         width: 100%;
     }
 }
 @media only screen and (min-width: 1200px) {
-    .portfolio-website-slider-container {
+    .portfolio-websites-slider-container {
         width: 50%;
     }
 }
-.left-arrow, .right-arrow {
+.portfolio-websites-slider-left-arrow, .portfolio-websites-slider-right-arrow {
     width: 3rem;
     height: 6.563rem;
     background-color: var(--dark-grey);
@@ -738,16 +735,16 @@ hr {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.left-arrow {
+.portfolio-websites-slider-left-arrow {
     border-radius: 1.5rem 0 0 1.5rem;
 }
-.left-arrow > path {
+.portfolio-websites-slider-left-arrow > path {
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
     stroke-width: 0.25rem;
 }
-.image-slider {
+.portfolio-websites-slider-image {
     position: absolute;
     display: none;
     width: 100%;
@@ -756,13 +753,13 @@ hr {
     filter: blur(0.05rem);
     image-rendering: smooth;
 }
-.image-slider:first-child {
+.portfolio-websites-slider-image:first-child {
     display: block;
 }
-.right-arrow {
+.portfolio-websites-slider-right-arrow {
     border-radius: 0 1.5rem 1.5rem 0;
 }
-.right-arrow > path {
+.portfolio-websites-slider-right-arrow > path {
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
@@ -776,22 +773,22 @@ hr {
     .portfolio-website-slider-container > figure {
         width: 100%;
     }
-    .left-arrow {
+    .portfolio-websites-slider-left-arrow {
         width: 100%;
         height: 3rem;
         border-radius: 1.5rem 1.5rem 0 0;
     }
-    .left-arrow > path {
+    .portfolio-websites-slider-left-arrow > path {
         transform: rotate(90deg);
         transform-origin: center;
     }
-    .right-arrow {
+    .portfolio-websites-slider-right-arrow {
         width: 100%;
         height: 3rem;
         margin-top: 6.5rem;
         border-radius: 0 0 1.5rem 1.5rem;
     }
-    .right-arrow > path {
+    .portfolio-websites-slider-right-arrow > path {
         transform: rotate(90deg);
         transform-origin: center;
     }

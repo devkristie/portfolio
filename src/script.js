@@ -134,13 +134,13 @@ function enableDarkMode() {
     const laptopImage10 = document.querySelector(".laptop-image-bottom-shell");
     laptopImage10.classList.add("laptop-image-bottom-shell-dark-mode");
     
-    const profileContainerBackground = document.querySelector(".profile-content-container-background");
-    profileContainerBackground.classList.add("profile-content-container-background-dark-mode");
+    const profileContainerBackground = document.querySelector(".profile-content-container");
+    profileContainerBackground.classList.add("profile-content-container-dark-mode");
     
-    const quotationBackground = document.querySelector(".quotation-container-background");
-    quotationBackground.classList.add("quotation-container-background-dark-mode");
+    const quotationBackground = document.querySelector(".profile-quotation-container");
+    quotationBackground.classList.add("profile-quotation-container-dark-mode");
     
-    const profileParagraphs = document.querySelectorAll(".profile-content-container p:not(.profile-content-greeting)");
+    const profileParagraphs = document.querySelectorAll(".profile-introduction-content-container p:not(.profile-content-greeting)");
     profileParagraphs.forEach((paragraph) =>{
         paragraph.classList.add("profile-content-container-paragraph-dark-mode");
     });
@@ -156,20 +156,15 @@ function enableDarkMode() {
         const thankYouParagraph = document.querySelector(".contact-introduction-thank-you-text");
         thankYouParagraph.classList.remove("p-dark-mode");
     });
-
-    const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
-    portfolioWebsiteTitleBackgrounds.forEach((background) => {
-        background.classList.add("portfolio-website-title-container-dark-mode");
-    });
     
-    const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
+    const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
     portfolioWebsiteTitle.forEach((websiteTitle) => {
-        websiteTitle.classList.add("portfolio-website-title-dark-mode");
+        websiteTitle.classList.add("portfolio-websites-title-container-dark-mode");
     });
     
-    const portfolioSliderBackground = document.querySelectorAll(".portfolio-website-flex-container");
+    const portfolioSliderBackground = document.querySelectorAll(".portfolio-websites-container");
     portfolioSliderBackground.forEach((background) => {
-        background.classList.add("portfolio-website-flex-container-dark-mode");
+        background.classList.add("portfolio-websites-container-dark-mode");
     });
     
     const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-website-content-container-accordion");
@@ -318,13 +313,13 @@ function disableDarkMode() {
     const laptopImage10 = document.querySelector(".laptop-image-bottom-shell");
     laptopImage10.classList.remove("laptop-image-bottom-shell-dark-mode");
     
-    const profileContainerBackground = document.querySelector(".profile-content-container-background");
-    profileContainerBackground.classList.remove("profile-content-container-background-dark-mode");
+    const profileContainerBackground = document.querySelector(".profile-content-container");
+    profileContainerBackground.classList.remove("profile-content-container-dark-mode");
 
-    const quotationBackground = document.querySelector(".quotation-container-background");
-    quotationBackground.classList.remove("quotation-container-background-dark-mode");
+    const quotationBackground = document.querySelector(".profile-quotation-container");
+    quotationBackground.classList.remove("profile-quotation-container-dark-mode");
     
-    const profileParagraphs = document.querySelectorAll(".profile-content-container p:not(.profile-content-greeting)");
+    const profileParagraphs = document.querySelectorAll(".profile-introduction-content-container p:not(.profile-content-greeting)");
     profileParagraphs.forEach((paragraph) =>{
         paragraph.classList.remove("profile-content-container-paragraph-dark-mode");
     });
@@ -339,19 +334,14 @@ function disableDarkMode() {
         paragraph.classList.remove("p-dark-mode");
     });
     
-    const portfolioWebsiteTitleBackgrounds = document.querySelectorAll(".portfolio-website-title-container");
-    portfolioWebsiteTitleBackgrounds.forEach((background) => {
-        background.classList.remove("portfolio-website-title-container-dark-mode");
-    });
-    
-    const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-website-title-container h3");
+    const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
     portfolioWebsiteTitle.forEach((websiteTitle) => {
-        websiteTitle.classList.remove("portfolio-website-title-dark-mode");
+        websiteTitle.classList.remove("portfolio-websites-title-container-dark-mode");
     });
     
-    const portfolioSliderBackground = document.querySelectorAll(".portfolio-website-flex-container");
+    const portfolioSliderBackground = document.querySelectorAll(".portfolio-websites-container");
     portfolioSliderBackground.forEach((background) => {
-        background.classList.remove("portfolio-website-flex-container-dark-mode");
+        background.classList.remove("portfolio-websites-container-dark-mode");
     });
     
     const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-website-content-container-accordion");
@@ -491,9 +481,9 @@ window.addEventListener("scroll", handleScroll);
 document.addEventListener("DOMContentLoaded", function() {
     // Function to show the current image and hide others
     function showImage(sliderIndex, imageIndex) {
-        const sliders = document.querySelectorAll(".portfolio-website-slider-container");
+        const sliders = document.querySelectorAll(".portfolio-websites-slider-container");
         sliders.forEach((slider, i) => {
-            const images = slider.querySelectorAll(".image-slider");
+            const images = slider.querySelectorAll(".portfolio-websites-slider-image");
             if (i === sliderIndex) {
                 images.forEach((image, j) => {
                     if (j === imageIndex) {
@@ -508,9 +498,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to initialize slider functionality
     function initializeSlider(sliderIndex) {
-        const leftArrow = document.querySelectorAll(".left-arrow")[sliderIndex];
-        const rightArrow = document.querySelectorAll(".right-arrow")[sliderIndex];
-        const images = document.querySelectorAll(".portfolio-website-slider-container")[sliderIndex].querySelectorAll('.image-slider');
+        const leftArrow = document.querySelectorAll(".portfolio-websites-slider-left-arrow")[sliderIndex];
+        const rightArrow = document.querySelectorAll(".portfolio-websites-slider-right-arrow")[sliderIndex];
+        const images = document.querySelectorAll(".portfolio-websites-slider-container")[sliderIndex].querySelectorAll('.portfolio-websites-slider-image');
         let currentIndex = 0;
 
         // Function to handle click on left arrow
@@ -530,15 +520,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Initialize each slider
-    const sliders = document.querySelectorAll(".portfolio-website-slider-container");
+    const sliders = document.querySelectorAll(".portfolio-websites-slider-container");
     sliders.forEach((slider, index) => {
         initializeSlider(index);
     });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const leftArrows = document.querySelectorAll('.left-arrow');
-    const rightArrows = document.querySelectorAll('.right-arrow');
+    const leftArrows = document.querySelectorAll('.portfolio-websites-slider-left-arrow');
+    const rightArrows = document.querySelectorAll('.portfolio-websites-slider-right-arrow');
 
     function updateViewBox() {
         if (window.innerWidth <= 600) {
