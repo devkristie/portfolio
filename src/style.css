@@ -677,6 +677,19 @@ q::after {
 .portfolio-hr {
     margin: 0;
 }
+.portfolio-websites-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 5rem auto;
+    background-color: var(--lightest-grey);
+    border-radius: 1.5rem;
+}
+.portfolio-websites-container-dark-mode {
+    background-color: var(--darker-grey);
+}
 .portfolio-websites-title-container {
     width: 100%;
     margin: 0 0 5rem;
@@ -692,29 +705,11 @@ q::after {
 .portfolio-websites-title-container-dark-mode {
     color: var(--dark-mode);
 }
-.portfolio-websites-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 5rem auto;
-    background-color: var(--lightest-grey);
-    border-radius: 1.5rem;
-}
-.portfolio-websites-container-dark-mode {
-    background-color: var(--darker-grey);
-}
 .portfolio-websites-slider-container {
     display: flex;
     justify-content: center;
     width: 80%;
     margin-bottom: 5rem;
-}
-.portfolio-websites-slider-container > figure {
-    position: relative;
-    width: 100%;
-    margin: 0;
 }
 @media only screen and (max-width: 770px) {
     .portfolio-websites-slider-container {
@@ -744,6 +739,11 @@ q::after {
     stroke-linecap: round;
     stroke-width: 0.25rem;
 }
+.portfolio-websites-slider-container > figure {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
 .portfolio-websites-slider-image {
     position: absolute;
     display: none;
@@ -766,12 +766,9 @@ q::after {
     stroke-width: 0.25rem;
 }
 @media only screen and (max-width: 601px) {
-    .portfolio-website-slider-container {
+    .portfolio-websites-slider-container {
         flex-direction: column;
         align-items: center;
-    }
-    .portfolio-website-slider-container > figure {
-        width: 100%;
     }
     .portfolio-websites-slider-left-arrow {
         width: 100%;
@@ -781,6 +778,9 @@ q::after {
     .portfolio-websites-slider-left-arrow > path {
         transform: rotate(90deg);
         transform-origin: center;
+    }
+    .portfolio-websites-slider-container > figure {
+        width: 100%;
     }
     .portfolio-websites-slider-right-arrow {
         width: 100%;
@@ -793,7 +793,7 @@ q::after {
         transform-origin: center;
     }
 }
-.portfolio-website-button-container {
+.portfolio-websites-button-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -801,12 +801,12 @@ q::after {
     background-color: var(--secondary-color);
 }
 @media only screen and (max-width: 650px) {
-    .portfolio-website-button-container {
+    .portfolio-websites-button-container {
         flex-direction: column;
         align-items: center;
     }
 }
-.view-button1 {
+.view-website-button {
     width: 100%;
     padding: 0.25rem 1rem;
     font-size: 1rem;
@@ -820,10 +820,10 @@ q::after {
     transition: background-color 0.5s;
     cursor: pointer;    
 }
-.view-button1:hover {
+.view-website-button:hover {
     background-color: rgb(144.3, 92.9, 79.5);
 }
-.view-button2 {
+.view-source-code-button {
     width: 100%;
     padding: 0.25rem 1rem;
     font-size: 1rem;
@@ -837,24 +837,24 @@ q::after {
     transition: background-color 0.5s;
     cursor: pointer;    
 }
-.view-button2:hover {
+.view-source-code-button:hover {
     background-color: rgb(144.3, 92.9, 79.5);
 }
 @media only screen and (max-width: 650px) {
-    .view-button1 {
+    .view-website-button {
         border-top: none;
         border-right: none;
         border-bottom: 0.01rem solid var(--light-mode);        
         border-left: none;
     }
-    .view-button2 {
+    .view-source-code-button {
         border-top: 0.01rem solid var(--light-mode);
         border-right: none;
         border-bottom: none;        
         border-left: none;
     }
 }
-.portfolio-website-content-container-accordion {
+.portfolio-websites-show-more-container {
     width: 100%;
     height: auto;
     padding: 0 0;
@@ -863,21 +863,16 @@ q::after {
     border-radius: 0 0 1.5rem 1.5rem;
     cursor: pointer;
 }
-.portfolio-website-content-container-accordion-dark-mode {
+.portfolio-websites-show-more-container-dark-mode {
     background-color: var(--darkest-grey);
 }
-.portfolio-website-content-container > p {
-    margin: -1rem 3rem;
-    padding: 1rem 0;
-    cursor: text;
-}
-.show-more-button {
+.portfolio-websites-show-more-container-accordion-button {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
-.show-more-button p {
+.portfolio-websites-show-more-container-accordion-button > p {
     width: 10rem;
     padding: 1.5rem 0 0 2.5rem;
     font-family: "roboto-bold", Arial;
@@ -885,10 +880,10 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.show-more-button > .p-dark-mode {
+.portfolio-websites-show-more-container-accordion-button > .p-dark-mode { /*? There os two .p-dark-modes, section title container and portfolio websites show more container accordion button, need to change this */
     color: var(--light-mode);
 }
-.show-more-arrow {
+.portfolio-websites-show-more-arrow {
     width: 3rem;
     height: 3rem;
     margin: -1rem 0 2rem 0;
@@ -898,36 +893,43 @@ q::after {
     stroke-linecap: round;
     stroke-width: 0.25rem;
 }
-.show-more-arrow-dark-mode {
+.portfolio-websites-show-more-arrow-dark-mode {
     stroke: var(--light-mode);
 }
-.show-more-accordion .hidden {
+/*Portfolio website container accordion content that is not displayed when the accordion is clicked on*/
+.portfolio-websites-show-more-container-accordion .portfolio-websites-show-more-container-accordion-paragraph {
     display: none;
 }
-.hidden-dark-mode {
+.portfolio-websites-show-more-container-accordion > h4 {
+    display: none;
+}
+.portfolio-websites-show-more-container-accordion .portfolio-websites-show-more-container-accordion-technology-used-container {
+    display: none;
+}
+/*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
+.portfolio-websites-show-more-container-accordion-paragraph {
+    margin: -1rem 3rem;
+    padding: 1rem 0;
+    cursor: text;
+}
+.portfolio-websites-show-more-container-accordion-paragraph-dark-mode {
     color: var(--light-mode);
 }
-.show-more-accordion-title {
+.portfolio-websites-show-more-container-accordion-paragraph-highlighted-text {
     font-family: "tomorrow-regular";
     letter-spacing: 0.075rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     color: var(--primary-color);
 }
-.show-more-accordion h4 {
-    display: none;
-}
-.show-more-accordion .technology-used-container {
-    display: none;
-}
-.technologies-used-title {
+.portfolio-websites-show-more-container-accordion-technologies-used-title {
     margin: 2.5rem 0;
     text-align: center;
     cursor: text;
 }
-.technologies-used-title-dark-mode {
+.portfolio-websites-show-more-container-accordion-technologies-used-title-dark-mode {
     color: var(--light-mode);
 }
-.technology-used-container {
+.portfolio-websites-show-more-container-accordion-technology-used-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -941,10 +943,17 @@ q::after {
     border-radius: 1.5rem;
     cursor: auto;
 }
-.technology-used-container div {
-    width: 5.5rem;
+@media only screen and (min-width: 650px) {
+    .portfolio-websites-show-more-container-accordion-technology-used-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
-.technology-used-container i {
+/* .portfolio-websites-show-more-container-accordion-technology-used-container + div {
+    width: 5.5rem;
+} */ /*? I dont think this is actually needed, need to check*/
+.portfolio-websites-show-more-container-accordion-technology-used-container > div > i {
     font-size: 2.5rem;
     filter: drop-shadow(0 -2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(2px 0 1px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(-2px 0 1px rgba(0, 0, 0, 0.5));
 }
@@ -963,20 +972,13 @@ q::after {
 .fa-js {
     color: #FCCB30;
 }
-.technology-used-container figcaption {
+.portfolio-websites-show-more-container-accordion-technology-used-container figcaption {
     margin: 0.5rem 0 1.5rem 0;
     font-family: "roboto-medium", Arial;
     cursor: text;
 }
-.figcaption-dark-mode {
+.portfolio-websites-show-more-container-accordion-technology-used-container-figcaption-dark-mode {
     color: var(--light-mode);
-}
-@media only screen and (min-width: 650px) {
-    .technology-used-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
 }
 .contact-content {
     min-height: 100vh;

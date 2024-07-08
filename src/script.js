@@ -5,10 +5,10 @@ const moon = document.querySelector(".fa-moon");
 const sunIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu-container");
 const topNavBarShow = document.querySelector(".top-navigation-bar-accordion-hidden");
-const showMoreButton = document.querySelectorAll(".show-more-button");
-const showMore = document.querySelectorAll(".show-more-accordion");
-const showMoreArrow = document.querySelectorAll(".show-more-arrow");
-const showLessText = document.querySelectorAll(".show-more-button p");
+const showMoreButton = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button");
+const showMore = document.querySelectorAll(".portfolio-websites-show-more-container-accordion");
+const showMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
+const showLessText = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button p");
 const laptopImageCode1 = document.querySelectorAll(".laptop-image-code");
 const contactFormClicked = document.querySelectorAll(".form-input");
 const contactFormLabels = document.querySelectorAll("label");
@@ -167,34 +167,34 @@ function enableDarkMode() {
         background.classList.add("portfolio-websites-container-dark-mode");
     });
     
-    const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-website-content-container-accordion");
+    const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-websites-show-more-container");
     portfolioWebsiteContentAccordion.forEach((background) => {
-        background.classList.add("portfolio-website-content-container-accordion-dark-mode");
+        background.classList.add("portfolio-websites-show-more-container-dark-mode");
     });
     
-    const showMoreAccordionContent = document.querySelectorAll(".hidden");
+    const showMoreAccordionContent = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-paragraph");
     showMoreAccordionContent.forEach((content) => {
-        content.classList.add("hidden-dark-mode");
+        content.classList.add("portfolio-websites-show-more-container-accordion-paragraph-dark-mode");
     });
     
-    const showMoreDarkMode = document.querySelectorAll(".show-more-button p");
+    const showMoreDarkMode = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button p");
     showMoreDarkMode.forEach((show) => {
         show.classList.add("p-dark-mode");
     });
     
-    const showMoreArrowDarkMode = document.querySelectorAll(".show-more-arrow");
+    const showMoreArrowDarkMode = document.querySelectorAll(".portfolio-websites-show-more-arrow");
     showMoreArrowDarkMode.forEach((show) => {
-        show.classList.add("show-more-arrow-dark-mode");
+        show.classList.add("portfolio-websites-show-more-arrow-dark-mode");
     });
     
-    const technologiesUsedTitle = document.querySelectorAll(".technologies-used-title");
+    const technologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-technologies-used-title");
     technologiesUsedTitle.forEach((title) => {
-        title.classList.add("technologies-used-title-dark-mode");
+        title.classList.add("portfolio-websites-show-more-container-accordion-technologies-used-title-dark-mode");
     });
     
-    const technologiesUsedFigcaption = document.querySelectorAll(".technology-used-container figcaption");
+    const technologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-technology-used-container figcaption");
     technologiesUsedFigcaption.forEach((figcaption) => {
-        figcaption.classList.add("figcaption-dark-mode");
+        figcaption.classList.add("portfolio-websites-show-more-container-accordion-technology-used-container-figcaption-dark-mode");
     });
     
     const contactFormTopBackground = document.querySelector(".contact-form-top-background");
@@ -344,34 +344,34 @@ function disableDarkMode() {
         background.classList.remove("portfolio-websites-container-dark-mode");
     });
     
-    const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-website-content-container-accordion");
+    const portfolioWebsiteContentAccordion = document.querySelectorAll(".portfolio-websites-show-more-container");
     portfolioWebsiteContentAccordion.forEach((background) => {
-        background.classList.remove("portfolio-website-content-container-accordion-dark-mode");
+        background.classList.remove("portfolio-websites-show-more-container-dark-mode");
     });
     
-    const showMoreAccordionContent = document.querySelectorAll(".hidden");
+    const showMoreAccordionContent = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-paragraph");
     showMoreAccordionContent.forEach((content) => {
-        content.classList.remove("hidden-dark-mode");
+        content.classList.remove("portfolio-websites-show-more-container-accordion-paragraph-dark-mode");
     });
     
-    const showMoreDarkMode = document.querySelectorAll(".show-more-button p");
+    const showMoreDarkMode = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button p");
     showMoreDarkMode.forEach((show) => {
         show.classList.remove("p-dark-mode");
     });
     
-    const showMoreArrowDarkMode = document.querySelectorAll(".show-more-arrow");
+    const showMoreArrowDarkMode = document.querySelectorAll(".portfolio-websites-show-more-arrow");
     showMoreArrowDarkMode.forEach((show) => {
-        show.classList.remove("show-more-arrow-dark-mode");
+        show.classList.remove("portfolio-websites-show-more-arrow-dark-mode");
     });
     
-    const technologiesUsedTitle = document.querySelectorAll(".technologies-used-title");
+    const technologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-technologies-used-title");
     technologiesUsedTitle.forEach((title) => {
-        title.classList.remove("technologies-used-title-dark-mode");
+        title.classList.remove("portfolio-websites-show-more-container-accordion-technologies-used-title-dark-mode");
     });
     
-    const technologiesUsedFigcaption = document.querySelectorAll(".technology-used-container figcaption");
+    const technologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-technology-used-container figcaption");
     technologiesUsedFigcaption.forEach((figcaption) => {
-        figcaption.classList.remove("figcaption-dark-mode");
+        figcaption.classList.remove("portfolio-websites-show-more-container-accordion-technology-used-container-figcaption-dark-mode");
     });
     
     const contactFormTopBackground = document.querySelector(".contact-form-top-background");
@@ -557,7 +557,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 showMoreButton.forEach((button, index) => {
     button.addEventListener("click", () => {
-        showMore[index].classList.toggle("show-more-accordion");
+        showMore[index].classList.toggle("portfolio-websites-show-more-container-accordion");
         showMore[index].classList.toggle("portfolio-website-content-container");
 
         if (showLessText[index].textContent === "Show More") {
