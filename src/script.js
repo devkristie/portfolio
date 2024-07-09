@@ -12,7 +12,7 @@ const showLessText = document.querySelectorAll(".portfolio-websites-show-more-co
 const laptopImageCode1 = document.querySelectorAll(".laptop-image-code");
 const contactFormClicked = document.querySelectorAll(".form-input");
 const contactFormLabels = document.querySelectorAll("label");
-const copyrightUpdateYear = document.querySelector(".footer-copyright-year");
+const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
 // Smooth scroll, compatilble for older browsers
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
@@ -140,7 +140,7 @@ function enableDarkMode() {
     const quotationBackground = document.querySelector(".profile-quotation-container");
     quotationBackground.classList.add("profile-quotation-container-dark-mode");
     
-    const profileParagraphs = document.querySelectorAll(".profile-introduction-content-container p:not(.profile-content-greeting)");
+    const profileParagraphs = document.querySelectorAll(".profile-introduction-content-container p:not(.profile-introduction-content-greeting)");
     profileParagraphs.forEach((paragraph) =>{
         paragraph.classList.add("profile-content-container-paragraph-dark-mode");
     });
@@ -153,7 +153,7 @@ function enableDarkMode() {
     const sectionParagraphs = document.querySelectorAll(".section-introduction-container p");
     sectionParagraphs.forEach((paragraph) => {
         paragraph.classList.add("p-dark-mode");
-        const thankYouParagraph = document.querySelector(".contact-introduction-thank-you-text");
+        const thankYouParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
         thankYouParagraph.classList.remove("p-dark-mode");
     });
     
@@ -197,11 +197,11 @@ function enableDarkMode() {
         figcaption.classList.add("portfolio-websites-show-more-container-accordion-technology-used-container-figcaption-dark-mode");
     });
     
-    const contactFormTopBackground = document.querySelector(".contact-form-top-background");
-    contactFormTopBackground.classList.add("contact-form-top-background-dark-mode");
+    const contactFormTopBackground = document.querySelector(".contact-form-top-header-container");
+    contactFormTopBackground.classList.add("contact-form-top-header-container-dark-mode");
     
     const contactFormEnvelope = document.querySelector(".fa-envelope");
-    contactFormEnvelope.classList.add("dark-mode");
+    contactFormEnvelope.classList.add("fa-envelope-dark-mode");
     
     const formInputBackground = document.querySelectorAll(".form-input");
     formInputBackground.forEach((input) => {
@@ -251,19 +251,19 @@ function enableDarkMode() {
     const hCaptchaElement = document.querySelector(".h-captcha");
     hCaptchaElement.style.filter = "invert(1) hue-rotate(180deg)";
     
-    const footerDarkMode = document.querySelector(".footer-content");
-    footerDarkMode.classList.add("footer-content-dark-mode");
+    const footerDarkMode = document.querySelector(".footer-section-container");
+    footerDarkMode.classList.add("footer-section-container-dark-mode");
     
-    const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
-    backToTopLinkDarkMode.classList.add("footer-link-back-to-top-dark-mode");
+    const backToTopLinkDarkMode = document.querySelector("a.footer-navigation-link-backtotop");
+    backToTopLinkDarkMode.classList.add("footer-navigation-link-backtotop-dark-mode");
     
-    const absoluteFooterLinksDarkMode = document.querySelectorAll(".absolute-footer-links");
+    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-navigation-absolute-link");
     absoluteFooterLinksDarkMode.forEach((link) => {
-        link.classList.add("absolute-footer-links-dark-mode");
+        link.classList.add("footer-navigation-absolute-link-dark-mode");
     });
     
-    const footerBottomBackground = document.querySelector(".footer-bottom");
-    footerBottomBackground.classList.add("footer-bottom-dark-mode");
+    const footerBottomBackground = document.querySelector(".footer-bottom-navigation-container");
+    footerBottomBackground.classList.add("footer-bottom-navigation-container-dark-mode");
 }
 
 function disableDarkMode() {
@@ -374,11 +374,11 @@ function disableDarkMode() {
         figcaption.classList.remove("portfolio-websites-show-more-container-accordion-technology-used-container-figcaption-dark-mode");
     });
     
-    const contactFormTopBackground = document.querySelector(".contact-form-top-background");
-    contactFormTopBackground.classList.remove("contact-form-top-background-dark-mode");
+    const contactFormTopBackground = document.querySelector(".contact-form-top-header-container");
+    contactFormTopBackground.classList.remove("contact-form-top-header-container-dark-mode");
     
     const contactFormEnvelope = document.querySelector(".fa-envelope");
-    contactFormEnvelope.classList.remove("dark-mode");
+    contactFormEnvelope.classList.remove("fa-envelope-dark-mode");
     
     const formInputBackground = document.querySelectorAll(".form-input");
     formInputBackground.forEach((input) => {
@@ -428,19 +428,19 @@ function disableDarkMode() {
     const hCaptchaElement = document.querySelector(".h-captcha");
     hCaptchaElement.style.filter = "invert(0) hue-rotate(0deg)";
     
-    const footerDarkMode = document.querySelector(".footer-content");
-    footerDarkMode.classList.remove("footer-content-dark-mode");
+    const footerDarkMode = document.querySelector(".footer-section-container");
+    footerDarkMode.classList.remove("footer-section-container-dark-mode");
     
-    const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
-    backToTopLinkDarkMode.classList.remove("footer-link-back-to-top-dark-mode");
+    const backToTopLinkDarkMode = document.querySelector("a.footer-navigation-link-backtotop");
+    backToTopLinkDarkMode.classList.remove("footer-navigation-link-backtotop-dark-mode");
     
-    const absoluteFooterLinksDarkMode = document.querySelectorAll(".absolute-footer-links");
+    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-navigation-absolute-link");
     absoluteFooterLinksDarkMode.forEach((link) => {
-        link.classList.remove("absolute-footer-links-dark-mode");
+        link.classList.remove("footer-navigation-absolute-link-dark-mode");
     });
     
-    const footerBottomBackground = document.querySelector(".footer-bottom");
-    footerBottomBackground.classList.remove("footer-bottom-dark-mode");
+    const footerBottomBackground = document.querySelector(".footer-bottom-navigation-container");
+    footerBottomBackground.classList.remove("footer-bottom-navigation-container-dark-mode");
 }
 
 // Apply dark mode if preference is already enabled
@@ -598,7 +598,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const formValidationParagraphEmail = document.querySelector(".form-validation-paragraph.email");
     const formValidationParagraphPhone = document.querySelector(".form-validation-paragraph.phone");
     const formValidationParagraphMessage = document.querySelector(".form-validation-paragraph.message");
-    const submitButton = document.querySelector(".contact-form-button");
+    const submitButton = document.querySelector(".contact-form-submit-button");
     const contactFormInputs = document.querySelectorAll(".form-input");
 
     // Ensure the submit button is always visible
