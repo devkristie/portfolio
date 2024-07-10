@@ -1,10 +1,10 @@
 "use strict"
 
-const moonIcon = document.querySelector(".dark-mode-icon-container ul");
+const moonIcon = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
 const moon = document.querySelector(".fa-moon");
 const sunIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu-container");
-const topNavBarShow = document.querySelector(".top-navigation-bar-accordion-hidden");
+const topNavBarShow = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 const showMoreButton = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button");
 const showMore = document.querySelectorAll(".portfolio-websites-show-more-container-accordion");
 const showMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
@@ -31,28 +31,28 @@ moonIcon.addEventListener("click", () => {
     if (darkModePreference === null) {
         // Show the pop-up if no preference is set
         const popUp = document.createElement("div");
-        popUp.setAttribute("class", "dark-mode-popup");
+        popUp.setAttribute("class", "dark-mode-popup-box-container");
 
         const paragraph1 = document.createElement("p");
-        paragraph1.setAttribute("class", "pop-up-paragraph1");
+        paragraph1.setAttribute("class", "dark-mode-pop-up-box-title");
         paragraph1.textContent = "Dark Mode Preference Storage Notice";
         popUp.appendChild(paragraph1);
     
         const paragraph2 = document.createElement("p");
-        paragraph2.setAttribute("class", "pop-up-paragraph2");
+        paragraph2.setAttribute("class", "dark-mode-pop-up-box-first-paragraph");
         paragraph2.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
         popUp.appendChild(paragraph2);
     
         const paragraph3 = document.createElement("p");
-        paragraph3.setAttribute("class", "pop-up-paragraph3");
+        paragraph3.setAttribute("class", "dark-mode-pop-up-box-second-paragraph");
         paragraph3.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
         popUp.appendChild(paragraph3);
 
         const popUpAllowButton = document.createElement("button");
-        popUpAllowButton.setAttribute("class", "pop-up-allow");
+        popUpAllowButton.setAttribute("class", "dark-mode-pop-up-box-allow-button");
         popUpAllowButton.textContent = "Allow";
         const popUpDeclineButton = document.createElement("button");
-        popUpDeclineButton.setAttribute("class", "pop-up-decline");
+        popUpDeclineButton.setAttribute("class", "dark-mode-pop-up-box-decline-button");
         popUpDeclineButton.textContent = "Decline";
 
         popUp.appendChild(popUpAllowButton);
@@ -140,7 +140,7 @@ function enableDarkMode() {
     const quotationBackground = document.querySelector(".profile-quotation-container");
     quotationBackground.classList.add("profile-quotation-container-dark-mode");
     
-    const profileParagraphs = document.querySelectorAll(".profile-introduction-content-container p:not(.profile-introduction-content-greeting)");
+    const profileParagraphs = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-content-greeting)");
     profileParagraphs.forEach((paragraph) =>{
         paragraph.classList.add("profile-content-container-paragraph-dark-mode");
     });
@@ -257,9 +257,9 @@ function enableDarkMode() {
     const backToTopLinkDarkMode = document.querySelector("a.footer-navigation-link-backtotop");
     backToTopLinkDarkMode.classList.add("footer-navigation-link-backtotop-dark-mode");
     
-    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-navigation-absolute-link");
+    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-absolute-links");
     absoluteFooterLinksDarkMode.forEach((link) => {
-        link.classList.add("footer-navigation-absolute-link-dark-mode");
+        link.classList.add("footer-absolute-links-dark-mode");
     });
     
     const footerBottomBackground = document.querySelector(".footer-bottom-navigation-container");
@@ -319,7 +319,7 @@ function disableDarkMode() {
     const quotationBackground = document.querySelector(".profile-quotation-container");
     quotationBackground.classList.remove("profile-quotation-container-dark-mode");
     
-    const profileParagraphs = document.querySelectorAll(".profile-introduction-content-container p:not(.profile-content-greeting)");
+    const profileParagraphs = document.querySelectorAll(".profile-introduction-container p:not(.profile-content-greeting)");
     profileParagraphs.forEach((paragraph) =>{
         paragraph.classList.remove("profile-content-container-paragraph-dark-mode");
     });
@@ -434,9 +434,9 @@ function disableDarkMode() {
     const backToTopLinkDarkMode = document.querySelector("a.footer-navigation-link-backtotop");
     backToTopLinkDarkMode.classList.remove("footer-navigation-link-backtotop-dark-mode");
     
-    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-navigation-absolute-link");
+    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-absolute-links");
     absoluteFooterLinksDarkMode.forEach((link) => {
-        link.classList.remove("footer-navigation-absolute-link-dark-mode");
+        link.classList.remove("footer-absolute-links-dark-mode");
     });
     
     const footerBottomBackground = document.querySelector(".footer-bottom-navigation-container");
@@ -454,8 +454,8 @@ document.addEventListener("DOMContentLoaded", () => {
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {
-    topNavBarShow.classList.toggle("top-navigation-bar-accordion-hidden");
-    topNavBarShow.classList.toggle("top-navigation-bar-accordion-visible");
+    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-hidden");
+    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-visible");
 }
 
 function isInViewport(element) {
