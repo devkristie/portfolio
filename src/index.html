@@ -47,9 +47,9 @@
             </svg>
         </header>
         <header class="top-navigation-bar-accordion-container-hidden">
-            <nav class="top-navigation-bar-accordion-nav">
-                <ul class="top-navigation-bar-accordion-ul">
-                    <li class="top-navigation-bar-accordion-li">
+            <nav>
+                <ul>
+                    <li class="top-navigation-bar-accordion-links">
                         <a href="#home">Home</a>
                         <a href="#profile">Profile</a>
                         <a href="#portfolio">Portfolio</a>
@@ -61,7 +61,7 @@
         </header>
         <main>
             <a id="home"></a>
-            <section class="landing-page">
+            <section class="landing-page-section-container">
                 <div class="landing-page-title-container">
                     <p class="landing-page-title-welcome">.welcome</p>
                     <div class="landing-page-title-welcome-background-one"></div>
@@ -315,24 +315,24 @@
                             <i class="fa-regular fa-envelope fa-4x"></i>
                         </div>
                     </div>
-                    <form action="https://api.web3forms.com/submit" method="POST"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
+                    <form action="https://api.web3forms.com/submit" class="contact-form" method="POST"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
                         <input type="hidden" name="access_key" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">                        
-                        <label for="fullname">Full Name</label>
-                        <input autocomplete="off" name="name" title="Full name" class="form-input" id="fullname" placeholder="Enter your full name" required/>
-                        <p class="form-validation-paragraph name">Name can only contain letters and .,'-</p>
-                        <label for="email">Email</label>
-                        <input autocomplete="off" inputmode="email" name="email" title="Email address" class="form-input" id="email" placeholder="Enter your email address" required/>
-                        <p class="form-validation-paragraph email">Please enter a valid email address</p>
-                        <label for="phone">Phone (optional)</label>
-                        <input autocomplete="off" type="text" name="phone" title="Phone number" class="form-input" id="phone" placeholder="Enter your phone number (optional)"/>
-                        <p class="form-validation-paragraph phone">Please start the number with +44</p>
-                        <label for="message">Message</label>
-                        <textarea autocomplete="off" name="message" class="form-input form-input-message" id="message" placeholder="Type your message" required></textarea>
+                        <label class="contact-form-label" for="fullname">Full Name</label>
+                        <input autocomplete="off" name="name" title="Full name" class="contact-form-input-box" id="fullname" placeholder="Enter your full name" required/>
+                        <p class="contact-form-validation-paragraph name">Name can only contain letters and .,'-</p>
+                        <label class="contact-form-label" for="email">Email</label>
+                        <input autocomplete="off" inputmode="email" name="email" title="Email address" class="contact-form-input-box" id="email" placeholder="Enter your email address" required/>
+                        <p class="contact-form-validation-paragraph email">Please enter a valid email address</p>
+                        <label class="contact-form-label" for="phone">Phone (optional)</label>
+                        <input autocomplete="off" type="text" name="phone" title="Phone number" class="contact-form-input-box" id="phone" placeholder="Enter your phone number (optional)"/>
+                        <p class="contact-form-validation-paragraph phone">Please start the number with +44</p>
+                        <label class="contact-form-label" for="message">Message</label>
+                        <textarea autocomplete="off" name="message" class="contact-form-input-box contact-form-input-box-message" id="message" placeholder="Type your message" required></textarea>
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <button type="submit" title="Submit form" class="contact-form-submit-button">Submit</button>
                         <label for="botcheck" class="visually-hidden">Leave this field empty</label>
                         <input type="text" name="botcheck" class="botcheck-visually-hidden" id="botcheck" aria-hidden="true">
-                        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html"> <!--?Need to change the link when it goes to production-->
+                        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html"><!--?Need to change the link when it goes to production-->
                     </form>
                 </article>
             </section>
@@ -340,8 +340,8 @@
         <footer>
             <section class="footer-section-container">
                 <nav class="footer-navigation-container">
-                    <ul class="footer-navigation-links">
-                        <li>
+                    <ul>
+                        <li class="footer-navigation-links">
                             <a href="#home" class="footer-navigation-link-backtotop">Back To Top</a>
                             <a href="#profile">Profile</a>
                             <a href="#portfolio">Portfolio</a>

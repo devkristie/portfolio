@@ -10,8 +10,8 @@ const showMore = document.querySelectorAll(".portfolio-websites-show-more-contai
 const showMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
 const showLessText = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button p");
 const laptopImageCode1 = document.querySelectorAll(".laptop-image-code");
-const contactFormClicked = document.querySelectorAll(".form-input");
-const contactFormLabels = document.querySelectorAll("label");
+const contactFormClicked = document.querySelectorAll(".contact-form-input-box");
+const contactFormLabels = document.querySelectorAll(".contact-form-label");
 const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
 // Smooth scroll, compatilble for older browsers
@@ -96,7 +96,7 @@ function enableDarkMode() {
     const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.add("main-dark-mode");
 
-    const landingPageBackground = document.querySelector(".landing-page");
+    const landingPageBackground = document.querySelector(".landing-page-section-container");
     landingPageBackground.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
 
     const landingPageTitleP1 = document.querySelector(".landing-page-title-welcome");
@@ -147,14 +147,14 @@ function enableDarkMode() {
     
     const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
     sectionTitles.forEach((title) => {
-        title.classList.add("h2-dark-mode");
+        title.classList.add("section-introduction-container-h2-dark-mode");
     });
     
     const sectionParagraphs = document.querySelectorAll(".section-introduction-container p");
     sectionParagraphs.forEach((paragraph) => {
-        paragraph.classList.add("p-dark-mode");
+        paragraph.classList.add("section-introduction-container-p-dark-mode");
         const thankYouParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
-        thankYouParagraph.classList.remove("p-dark-mode");
+        thankYouParagraph.classList.remove("section-introduction-container-p-dark-mode");
     });
     
     const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
@@ -179,7 +179,7 @@ function enableDarkMode() {
     
     const showMoreDarkMode = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button p");
     showMoreDarkMode.forEach((show) => {
-        show.classList.add("p-dark-mode");
+        show.classList.add("portfolio-websites-show-more-container-accordion-button-p-dark-mode");
     });
     
     const showMoreArrowDarkMode = document.querySelectorAll(".portfolio-websites-show-more-arrow");
@@ -203,26 +203,26 @@ function enableDarkMode() {
     const contactFormEnvelope = document.querySelector(".fa-envelope");
     contactFormEnvelope.classList.add("fa-envelope-dark-mode");
     
-    const formInputBackground = document.querySelectorAll(".form-input");
+    const formInputBackground = document.querySelectorAll(".contact-form-input-box");
     formInputBackground.forEach((input) => {
-        input.classList.add("form-input-dark-mode");    
+        input.classList.add("contact-form-input-box-dark-mode");    
     });
     
-    document.querySelectorAll(".form-input").forEach((input) => {
-        input.classList.add("form-input-dark-mode");
+    // document.querySelectorAll(".contact-form-input-box").forEach((input) => {
+    //     input.classList.add("contact-form-input-box-dark-mode");
+    // });
+    
+    document.querySelectorAll(".contact-form-valid").forEach((input) => {
+        input.classList.add("contact-form-valid-dark-mode");
     });
     
-    document.querySelectorAll(".valid").forEach((input) => {
-        input.classList.add("valid-dark-mode");
-    });
-    
-    document.querySelectorAll(".invalid").forEach((input) => {
-        input.classList.add("invalid-dark-mode");
+    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
+        input.classList.add("contact-form-invalid-dark-mode");
     });
     
     const labels = document.querySelectorAll("label");
     labels.forEach((label) => {
-        label.classList.add("label-dark-mode");
+        label.classList.add("contact-form-label-dark-mode");
     });
     
     const placeholderStyle = `
@@ -275,7 +275,7 @@ function disableDarkMode() {
     const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.remove("main-dark-mode");
     
-    const landingPageBackground = document.querySelector(".landing-page");
+    const landingPageBackground = document.querySelector(".landing-page-section-container");
     landingPageBackground.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
     
     const landingPageTitleP1 = document.querySelector(".landing-page-title-welcome");
@@ -326,12 +326,12 @@ function disableDarkMode() {
     
     const sectionTitles = document.querySelectorAll(".section-introduction-container h2");
     sectionTitles.forEach((title) => {
-        title.classList.remove("h2-dark-mode");
+        title.classList.remove("section-introduction-container-h2-dark-mode");
     });
     
     const sectionParagraphs = document.querySelectorAll(".section-introduction-container p");
     sectionParagraphs.forEach((paragraph) => {
-        paragraph.classList.remove("p-dark-mode");
+        paragraph.classList.remove("section-introduction-container-p-dark-mode");
     });
     
     const portfolioWebsiteTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
@@ -356,7 +356,7 @@ function disableDarkMode() {
     
     const showMoreDarkMode = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button p");
     showMoreDarkMode.forEach((show) => {
-        show.classList.remove("p-dark-mode");
+        show.classList.remove("portfolio-websites-show-more-container-accordion-button-p-dark-mode");
     });
     
     const showMoreArrowDarkMode = document.querySelectorAll(".portfolio-websites-show-more-arrow");
@@ -380,26 +380,26 @@ function disableDarkMode() {
     const contactFormEnvelope = document.querySelector(".fa-envelope");
     contactFormEnvelope.classList.remove("fa-envelope-dark-mode");
     
-    const formInputBackground = document.querySelectorAll(".form-input");
+    const formInputBackground = document.querySelectorAll(".contact-form-input-box");
     formInputBackground.forEach((input) => {
-        input.classList.remove("form-input-dark-mode");    
+        input.classList.remove("contact-form-input-box-dark-mode");    
     });
     
-    document.querySelectorAll(".form-input").forEach((input) => {
-        input.classList.remove("form-input-dark-mode");
+    // document.querySelectorAll(".contact-form-input-box").forEach((input) => {
+    //     input.classList.remove("contact-form-input-box-dark-mode");
+    // });
+    
+    document.querySelectorAll(".contact-form-valid").forEach((input) => {
+        input.classList.remove("contact-form-valid-dark-mode");
     });
     
-    document.querySelectorAll(".valid").forEach((input) => {
-        input.classList.remove("valid-dark-mode");
-    });
-    
-    document.querySelectorAll(".invalid").forEach((input) => {
-        input.classList.remove("invalid-dark-mode");
+    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
+        input.classList.remove("contact-form-invalid-dark-mode");
     });
     
     const labels = document.querySelectorAll("label");
     labels.forEach((label) => {
-        label.classList.remove("label-dark-mode");
+        label.classList.remove("contact-form-label-dark-mode");
     });
     
     const placeholderStyle = `
@@ -594,12 +594,12 @@ document.addEventListener("DOMContentLoaded", function() {
         phone: /^\+44\d{10}$/
     };
 
-    const formValidationParagraphName = document.querySelector(".form-validation-paragraph.name");
-    const formValidationParagraphEmail = document.querySelector(".form-validation-paragraph.email");
-    const formValidationParagraphPhone = document.querySelector(".form-validation-paragraph.phone");
-    const formValidationParagraphMessage = document.querySelector(".form-validation-paragraph.message");
+    const formValidationParagraphName = document.querySelector(".contact-form-validation-paragraph.name");
+    const formValidationParagraphEmail = document.querySelector(".contact-form-validation-paragraph.email");
+    const formValidationParagraphPhone = document.querySelector(".contact-form-validation-paragraph.phone");
+    // const formValidationParagraphMessage = document.querySelector(".form-validation-paragraph.message");
     const submitButton = document.querySelector(".contact-form-submit-button");
-    const contactFormInputs = document.querySelectorAll(".form-input");
+    const contactFormInputs = document.querySelectorAll(".contact-form-input-box");
 
     // Ensure the submit button is always visible
     submitButton.style.visibility = "visible";
@@ -616,12 +616,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const isMessageField = field.id === "message";
         const isPhoneField = field.id === "phone";
         if (field.value.trim() === "") {
-            field.className = "form-input";
+            field.className = "contact-form-input-box";
             if (isMessageField) {
-                field.classList.add("form-input-message");
+                field.classList.add("contact-form-input-box-message");
             }
             if (document.body.classList.contains("dark-mode")) {
-                field.classList.add("form-input-dark-mode");
+                field.classList.add("contact-form-input-box-dark-mode");
             }
             const errorMessage = field.nextElementSibling;
             if (!isPhoneField) {
@@ -634,12 +634,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         } else if (regex.test(field.value)) {
-            field.className = "form-input valid";
+            field.className = "contact-form-input-box contact-form-valid";
             if (isMessageField) {
-                field.classList.add("form-input-message");
+                field.classList.add("contact-form-input-box-message");
             }
             if (document.body.classList.contains("dark-mode")) {
-                field.classList.add("valid-dark-mode");
+                field.classList.add("contact-form-valid-dark-mode");
             }
             if (field.id === "fullname") {
                 if (formValidationParagraphName) {
@@ -653,18 +653,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (formValidationParagraphPhone) {
                     formValidationParagraphPhone.style.visibility = "hidden";
                 }
-            } else if (isMessageField) {
+            } /*else if (isMessageField) {
                 if (formValidationParagraphMessage) {
                     formValidationParagraphMessage.style.visibility = "hidden";
                 }
-            }
+            }*/
         } else {
-            field.className = "form-input invalid";
+            field.className = "contact-form-input-box contact-form-invalid";
             if (isMessageField) {
-                field.classList.add("form-input-message");
+                field.classList.add("contact-form-input-box-message");
             }
             if (document.body.classList.contains("dark-mode")) {
-                field.classList.add("invalid-dark-mode");
+                field.classList.add("contact-form-invalid-dark-mode");
             }
             if (field.id === "fullname") {
                 if (formValidationParagraphName) {
@@ -678,11 +678,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (formValidationParagraphPhone) {
                     formValidationParagraphPhone.style.visibility = "visible";
                 }
-            } else if (isMessageField) {
+            } /*else if (isMessageField) {
                 if (formValidationParagraphMessage) {
                     formValidationParagraphMessage.style.visibility = "visible";
                 }
-            }
+            }*/
         }
 
         // Recheck the form validity to enable/disable the submit button
@@ -694,7 +694,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let formIsValid = true;
 
         contactFormInputs.forEach(input => {
-            if (input.classList.contains("invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
+            if (input.classList.contains("contact-form-invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
                 formIsValid = false;
             }
         });
@@ -742,7 +742,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Check if the form is valid
                 let formIsValid = true;
                 contactFormInputs.forEach(input => {
-                    if (input.classList.contains("invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
+                    if (input.classList.contains("contact-form-invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
                         formIsValid = false;
                     }
                 });

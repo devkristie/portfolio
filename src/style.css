@@ -224,19 +224,14 @@ li {
     margin-top: 2.5rem;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
 }
-/* .top-navigation-bar-accordion-ul {
-    margin: 0;
-    padding-left: 0;
-    border: #0ACF84 1px solid;
-} */
-/*.top-navigation-bar-accordion-nav*/ /*.top-navigation-bar-accordion-ul*/ .top-navigation-bar-accordion-li {
+.top-navigation-bar-accordion-links {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
     height: 2.5rem;
 }
-.top-navigation-bar-accordion-li a {
+.top-navigation-bar-accordion-links > a {
     padding: 0.1rem 1rem;
     font-family: "roboto-medium", Arial;
     text-decoration: none;
@@ -244,36 +239,36 @@ li {
     transition: background 0.5s ease-in;
 }
 @media only screen and (max-width: 410px) {
-    .top-navigation-bar-accordion-li a {
+    .top-navigation-bar-accordion-links > a {
         display: flex;
         justify-content: space-between;
         width: 75%;
         padding: 0.1rem 0.70rem;
         text-align: center;
     }
-    .top-navigation-bar-accordion-li a:first-child {
+    .top-navigation-bar-accordion-links > a:first-child {
         margin-left: 5rem;
     }
-    .top-navigation-bar-accordion-li a:last-child {
+    .top-navigation-bar-accordion-links > a:last-child {
         margin-right: 5rem;
     }
 }
 @media only screen and (max-width: 355px) {
-    .top-navigation-bar-accordion-li a {
+    .top-navigation-bar-accordion-links > a {
         display: flex;
         justify-content: space-between;
         width: 75%;
         padding: 0.1rem 0.30rem;
         text-align: center;
     }
-    .top-navigation-bar-accordion-li a:first-child {
+    .top-navigation-bar-accordion-links > a:first-child {
         margin-left: 5rem;
     }
-    .top-navigation-bar-accordion-li a:last-child {
+    .top-navigation-bar-accordion-links > a:last-child {
         margin-right: 5rem;
     }
 }
-.top-navigation-bar-accordion-li a:hover {
+.top-navigation-bar-accordion-links > a:hover {
     background-color: var(--secondary-color);
     color: var(--light-mode);
 }
@@ -283,7 +278,7 @@ main {
 .main-dark-mode {
     background-color: var(--dark-mode);
 }
-.landing-page {
+.landing-page-section-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -299,28 +294,12 @@ main {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.landing-page p {
+.landing-page-section-container p {
     margin: 0;
     font-family: "roboto-bold", Arial;
 }
 .landing-page-title-welcome, .landing-page-title-opening-curly-brace, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
     display: inline;
-}
-.landing-page-title-opening-curly-brace, .landing-page-title-closing-curly-brace {
-    font-size: 4rem;
-    color: var(--lightest-grey);
-}
-.landing-page-title-opening-curly-brace-dark-mode, .landing-page-title-closing-curly-brace-dark-mode {
-    color: #3F3F3F;
-}
-.landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development {
-    padding-left: 2rem;
-}
-.landing-page-title-property-value-to-my-dark-mode, .landing-page-title-property-value-front-end-dark-mode, .landing-page-title-property-development-dark-mode, .landing-page-title-value-semicolon-dark-mode {
-    color: var(--light-mode);
-}
-.landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
-    font-size: 1.2rem;
 }
 .landing-page-title-welcome  {
     position: relative;
@@ -329,12 +308,6 @@ main {
 }
 .landing-page-title-welcome-dark-mode {
     color: var(--light-mode);
-}
-.landing-page-title-opening-curly-brace {
-    position: relative;
-    top: 0.65rem;
-    left: 1rem;
-    z-index: 3;
 }
 .landing-page-title-welcome-background-one {
     position: absolute;
@@ -356,6 +329,18 @@ main {
     background-color: var(--light-grey);
     opacity: 50%;
 }
+.landing-page-title-opening-curly-brace {
+    position: relative;
+    top: 0.65rem;
+    left: 1rem;
+    z-index: 3;
+}
+.landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development {
+    padding-left: 2rem;
+}
+.landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
+    font-size: 1.2rem;
+}
 .landing-page-title-value-portfolio {
     color: var(--primary-color);
 }
@@ -363,9 +348,19 @@ main {
     position: relative;
     right: 0.25rem;
 }
+.landing-page-title-property-value-to-my-dark-mode, .landing-page-title-property-value-front-end-dark-mode, .landing-page-title-property-development-dark-mode, .landing-page-title-value-semicolon-dark-mode {
+    color: var(--light-mode);
+}
+.landing-page-title-opening-curly-brace, .landing-page-title-closing-curly-brace {
+    font-size: 4rem;
+    color: var(--lightest-grey);
+}
 .landing-page-title-closing-curly-brace {
     position: relative;
     bottom: 0.95rem;
+}
+.landing-page-title-opening-curly-brace-dark-mode, .landing-page-title-closing-curly-brace-dark-mode {
+    color: #3F3F3F;
 }
 .laptop-image-container {
     height: 12.125rem;
@@ -437,7 +432,7 @@ main {
     }
 }
 @media only screen and (min-width: 770px) {
-    .landing-page {
+    .landing-page-section-container {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -546,12 +541,6 @@ q::after {
         display: flex;
         flex-direction: row;
     }
-    .profile-introduction-container {
-        width: 50%;
-        margin: 0;
-        padding: 1.5rem 3rem 0;
-        border-radius: 1.5rem 0 0 1.5rem;
-    }
     .profile-headshot {
         position: absolute;
         display: flex;
@@ -566,6 +555,12 @@ q::after {
         right: -4.25rem;
         margin: 12rem 20% 0 0;
     }
+    .profile-introduction-container {
+        width: 50%;
+        margin: 0;
+        padding: 1.5rem 3rem 0;
+        border-radius: 1.5rem 0 0 1.5rem;
+    }
 }
 @media only screen and (max-width: 465px) {
     .profile-introduction-container {
@@ -575,12 +570,12 @@ q::after {
     }
 }
 @media only screen and (max-width: 640px) {
+    .profile-quotation-container {
+        margin-top: 8.75rem;
+    }
     .profile-introduction-container {
         margin-top: -12.25rem;
         padding-top: 13.25rem;
-    }
-    .profile-quotation-container {
-        margin-top: 8.75rem;
     }
 }
 .profile-introduction-content-greeting {
@@ -653,7 +648,7 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.section-introduction-container > h2.h2-dark-mode {
+.section-introduction-container > .section-introduction-container-h2-dark-mode {
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
     color: var(--light-mode);
 }
@@ -661,7 +656,7 @@ q::after {
     margin: 0.5rem 0;
     font-family: "roboto-regular", Arial;
 }
-.section-introduction-container > p.p-dark-mode {
+.section-introduction-container > .section-introduction-container-p-dark-mode {
     color: var(--light-mode);
 }
 .portfolio-introduction-container-p-highlighted-text::before {
@@ -879,7 +874,7 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.portfolio-websites-show-more-container-accordion-button > .p-dark-mode { /*? There os two .p-dark-modes, section title container and portfolio websites show more container accordion button, need to change this */
+.portfolio-websites-show-more-container-accordion-button > .portfolio-websites-show-more-container-accordion-button-p-dark-mode {
     color: var(--light-mode);
 }
 .portfolio-websites-show-more-arrow {
@@ -949,9 +944,9 @@ q::after {
         justify-content: space-evenly;
     }
 }
-/* .portfolio-websites-show-more-container-accordion-technology-used-container + div {
-    width: 5.5rem;
-} */ /*? I dont think this is actually needed, need to check*/
+.portfolio-websites-show-more-container-accordion-technology-used-container > div {
+    width: 15.5rem;
+}
 .portfolio-websites-show-more-container-accordion-technology-used-container > div > i {
     font-size: 2.5rem;
     filter: drop-shadow(0 -2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(2px 0 1px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(-2px 0 1px rgba(0, 0, 0, 0.5));
@@ -1018,10 +1013,10 @@ q::after {
 .fa-envelope-dark-mode {
     background-image: linear-gradient(to bottom, var(--light-mode), var(--secondary-color));
 }
-form {
+.contact-form {
     width: 100%;
 }
-label {
+.contact-form-label {
     position: absolute;
     z-index: 1;
     display: flex;
@@ -1036,10 +1031,10 @@ label {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.label-dark-mode {
+.contact-form-label-dark-mode {
     color: var(--dark-grey);
 }
-.form-input {
+.contact-form-input-box {
     width: 100%;
     height: 3rem;
     padding: 1.5rem;
@@ -1050,7 +1045,7 @@ label {
     border: 0.01rem solid var(--dark-mode);
     resize: none;
 }
-.form-input:placeholder-shown {
+.contact-form-input-box:placeholder-shown {
     color: var(--lightest-grey);
 }
 /* Chrome/Opera/Safari */
@@ -1069,24 +1064,24 @@ label {
 :-moz-placeholder {
     visibility: hidden;
 }
-.form-input-dark-mode {
+.contact-form-input-box:hover {
+    filter: brightness(96%);
+}
+.contact-form-input-box-dark-mode {
     background-color: var(--darkest-grey);
     color: var(--light-mode);
     border: 0.01rem solid var(--lightest-grey);
 }
-.form-input:focus {
+.contact-form-input-box:focus {
     filter: brightness(96%);
     border: 0.09rem solid var(--secondary-color);
     outline-style: solid;
     outline-color: var(--secondary-color);
 }
-.form-input-dark-mode:focus {
+.contact-form-input-box-dark-mode:focus {
     caret-color: var(--darkest-grey);
 }
-.form-input:hover {
-    filter: brightness(96%);
-}
-.valid {
+.contact-form-valid {
     width: 100%;
     height: 3rem;
     padding: 1.5rem;
@@ -1095,12 +1090,12 @@ label {
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
 }
-.valid-dark-mode {
+.contact-form-valid-dark-mode {
     background-color: var(--darkest-grey);
     color: var(--light-mode);
     border: 0.01rem solid var(--lightest-grey);
 }
-.invalid {
+.contact-form-invalid {
     width: 100%;
     height: 3rem;
     padding: 1.5rem;
@@ -1109,31 +1104,31 @@ label {
     background-color: var(--lightest-grey);
     border: 0.01rem solid var(--dark-mode);
 }
-.invalid-dark-mode {
+.contact-form-invalid-dark-mode {
     background-color: var(--darkest-grey);
     color: var(--light-mode);
     border: 0.01rem solid var(--lightest-grey);
 }
-.form-input-message {
-    height: 12.688rem;
-    border-radius: 0 0 1.5rem 1.5rem;
-    resize: none;
-}
-.form-validation-paragraph {
+.contact-form-validation-paragraph {
     margin-top: 0.15rem;
     padding: 0 0 1rem 0.5rem;
     font-size: 0.90rem;
     font-family: "roboto-bold", Arial;
     color: var(--primary-color);
 }
-.form-validation-paragraph.name {
+.contact-form-validation-paragraph.name {
     visibility: hidden;
 }
-.form-validation-paragraph.email {
+.contact-form-validation-paragraph.email {
     visibility: hidden;
 }
-.form-validation-paragraph.phone {
+.contact-form-validation-paragraph.phone {
     visibility: hidden;
+}
+.contact-form-input-box-message {
+    height: 12.688rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    resize: none;
 }
 .h-captcha {
     display: flex;
@@ -1184,12 +1179,9 @@ label {
 .footer-navigation-container {
     margin-bottom: 6.5rem;
 }
-ul {
+.footer-navigation-container > ul {
     margin: 0 0 2rem 0;
     padding: 0;
-}
-.footer-navigation-links li a:first-child {
-    margin-bottom: 1rem;
 }
 .footer-navigation-links a {
     display: flex;
@@ -1205,6 +1197,7 @@ ul {
     color: var(--secondary-color);
 }
 a.footer-navigation-link-backtotop {
+    margin-bottom: 1rem;
     color: var(--dark-mode);
     transition: color 0s;
 }
