@@ -142,7 +142,7 @@
                     <h1 class="section-title">PROFLIE</h1>
                 </header>
                 <div class="profile-content-container">
-                    <img src="./assets/images/37_kristie-headshot3.jpg" alt="a professional headshot of me, wearing a black blazer jacket and a torquoise top. mousey blonde, curly hair. minimal makeup, looking straight at the camera, smiling naturally." class="profile-headshot">
+                    <img class="profile-headshot" src="./assets/images/37_kristie-headshot3.jpg" alt="a professional headshot of me, wearing a black blazer jacket and a torquoise top. mousey blonde, curly hair. minimal makeup, looking straight at the camera, smiling naturally.">
                     <div class="profile-quotation-container">
                         <q>Elevate your online presence, captivate your audience, and leave a lasting digital footprint with a website that embodies excellence.</q>
                     </div>
@@ -192,8 +192,8 @@
                         </svg>
                     </div>
                     <div class="portfolio-websites-button-container">
-                        <button type="button" title="View website" href="" class="portfolio-websites-view-website-button">View Website</button>
-                        <button type="button" title="View source code" href="" class="portfolio-websites-view-source-code-button">View Source Code</button>
+                        <button class="portfolio-websites-view-website-button" type="button" title="View website" href="">View Website</button>
+                        <button class="portfolio-websites-view-source-code-button" type="button" title="View source code" href="">View Source Code</button>
                     </div>
                     <article class="portfolio-websites-show-more-container">
                         <div class="portfolio-websites-show-more-container-accordion-button">
@@ -256,8 +256,8 @@
                         </svg>
                     </div>
                     <div class="portfolio-websites-button-container">
-                        <button type="button" title="View website" href="" class="portfolio-websites-view-website-button">View Website</button>
-                        <button type="button" title="View source code" href="" class="portfolio-websites-view-source-code-button">View Source Code</button>
+                        <button class="portfolio-websites-view-website-button" type="button" title="View website" href="">View Website</button>
+                        <button class="portfolio-websites-view-source-code-button" type="button" title="View source code" href="">View Source Code</button>
                     </div>
                     <article class="portfolio-websites-show-more-container">
                         <div class="portfolio-websites-show-more-container-accordion-button">
@@ -315,24 +315,24 @@
                             <i class="fa-regular fa-envelope fa-4x"></i>
                         </div>
                     </div>
-                    <form action="https://api.web3forms.com/submit" class="contact-form" method="POST"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
-                        <input type="hidden" name="access_key" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">                        
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
+                        <input name="access_key" type="hidden" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">                        
                         <label class="contact-form-label" for="fullname">Full Name</label>
-                        <input autocomplete="off" name="name" title="Full name" class="contact-form-input-box" id="fullname" placeholder="Enter your full name" required/>
+                        <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="Enter your full name" autocomplete="off" required/>
                         <p class="contact-form-validation-paragraph name">Name can only contain letters and .,'-</p>
                         <label class="contact-form-label" for="email">Email</label>
-                        <input autocomplete="off" inputmode="email" name="email" title="Email address" class="contact-form-input-box" id="email" placeholder="Enter your email address" required/>
+                        <input id="email" class="contact-form-input-box" name="email" title="Email address" placeholder="Enter your email address" inputmode="email" autocomplete="off" required/>
                         <p class="contact-form-validation-paragraph email">Please enter a valid email address</p>
                         <label class="contact-form-label" for="phone">Phone (optional)</label>
-                        <input autocomplete="off" type="text" name="phone" title="Phone number" class="contact-form-input-box" id="phone" placeholder="Enter your phone number (optional)"/>
+                        <input id="phone" class="contact-form-input-box" name="phone" title="Phone number" type="text" placeholder="Enter your phone number (optional)" autocomplete="off"/>
                         <p class="contact-form-validation-paragraph phone">Please start the number with +44</p>
                         <label class="contact-form-label" for="message">Message</label>
-                        <textarea autocomplete="off" name="message" class="contact-form-input-box contact-form-input-box-message" id="message" placeholder="Type your message" required></textarea>
+                        <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="Type your message" autocomplete="off" required></textarea>
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
-                        <button type="submit" title="Submit form" class="contact-form-submit-button">Submit</button>
-                        <label for="botcheck" class="visually-hidden">Leave this field empty</label>
-                        <input type="text" name="botcheck" class="botcheck-visually-hidden" id="botcheck" aria-hidden="true">
-                        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html"><!--?Need to change the link when it goes to production-->
+                        <button class="contact-form-submit-button" title="Submit form" type="submit">Submit</button>
+                        <label class="visually-hidden" for="botcheck">Leave this field empty</label>
+                        <input id="botcheck" class="botcheck-visually-hidden" name="botcheck" type="text" aria-hidden="true">
+                        <input name="redirect" type="hidden" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html"><!--?Need to change the link when it goes to production-->
                     </form>
                 </article>
             </section>
@@ -342,7 +342,7 @@
                 <nav class="footer-navigation-container">
                     <ul>
                         <li class="footer-navigation-links">
-                            <a href="#home" class="footer-navigation-link-backtotop">Back To Top</a>
+                            <a class="footer-navigation-link-backtotop" href="#home">Back To Top</a>
                             <a href="#profile">Profile</a>
                             <a href="#portfolio">Portfolio</a>
                             <a href="#contact">Contact</a>
@@ -372,7 +372,7 @@
                         <p class="footer-bottom-copyright-year"></p> <!--Automatically updated in the script.js file-->
                         <p class="footer-bottom-copyright"> - Kristie Larke, All rights reserved</p>
                         </br>
-                        <a href="./portfolio-privacy-policy-page/privacy-policy-page.html" class="footer-bottom-privacy-policy-link">Privacy Policy</a>
+                        <a class="footer-bottom-privacy-policy-link" href="./portfolio-privacy-policy-page/privacy-policy-page.html">Privacy Policy</a>
                     </article>
                 </nav>
             </section>
