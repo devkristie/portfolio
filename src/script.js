@@ -1,14 +1,14 @@
 "use strict"
 
-const moonIcon = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
-const moon = document.querySelector(".fa-moon");
-const sunIcon = document.querySelector(".fa-sun");
-const hamburgerMenuIcon = document.querySelector(".hamburger-menu-container");
-const topNavBarShow = document.querySelector(".top-navigation-bar-accordion-container-hidden");
-const showMoreButton = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button");
-const showMore = document.querySelectorAll(".portfolio-websites-show-more-container-accordion");
-const showMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
-const showLessText = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-button p");
+const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
+// const moonIcon = document.querySelector(".fa-moon");
+const lightModeIcon = document.querySelector(".fa-sun");
+const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
+const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
+const portfolioWebsitesShowMoreAccordionContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
+const portfolioWebsitesShowMoreAccordionContainerShowLessText = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button p");
+const portfolioWebsitesShowMoreAccordionContainerShowMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
+const portfolioWebsitesShowMoreAccordionContainer = document.querySelectorAll(".portfolio-websites-show-more-accordion-container");
 const laptopImageCode1 = document.querySelectorAll(".laptop-image-code");
 const contactFormClicked = document.querySelectorAll(".contact-form-input-box");
 const contactFormLabels = document.querySelectorAll(".contact-form-label");
@@ -25,7 +25,7 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
-moonIcon.addEventListener("click", () => {
+darkModeIconContainer.addEventListener("click", () => {
     const darkModePreference = localStorage.getItem("darkModePreference");
 
     if (darkModePreference === null) {
@@ -89,8 +89,8 @@ moonIcon.addEventListener("click", () => {
 
 function enableDarkMode() {
     document.body.classList.add("dark-mode");
-    moonIcon.style.visibility = "hidden";
-    sunIcon.style.visibility = "visible";
+    darkModeIconContainer.style.visibility = "hidden";
+    lightModeIcon.style.visibility = "visible";
 
     // Apply dark mode classes to other elements as needed
     const mainDarkMode = document.querySelector("main");
@@ -210,7 +210,7 @@ function enableDarkMode() {
     
     // document.querySelectorAll(".contact-form-input-box").forEach((input) => {
     //     input.classList.add("contact-form-input-box-dark-mode");
-    // });
+    // }); //!Delete this at the end if it is not needed
     
     document.querySelectorAll(".contact-form-valid").forEach((input) => {
         input.classList.add("contact-form-valid-dark-mode");
@@ -268,8 +268,8 @@ function enableDarkMode() {
 
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
-    sunIcon.style.visibility = "hidden";
-    moonIcon.style.visibility = "visible";
+    lightModeIcon.style.visibility = "hidden";
+    darkModeIconContainer.style.visibility = "visible";
     
     // Remove dark mode classes from other elements as needed
     const mainDarkMode = document.querySelector("main");
@@ -387,7 +387,7 @@ function disableDarkMode() {
     
     // document.querySelectorAll(".contact-form-input-box").forEach((input) => {
     //     input.classList.remove("contact-form-input-box-dark-mode");
-    // });
+    // }); //!Delete this at the end if it is not needed
     
     document.querySelectorAll(".contact-form-valid").forEach((input) => {
         input.classList.remove("contact-form-valid-dark-mode");
@@ -451,11 +451,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-hamburgerMenuIcon.addEventListener("click", showMenu);
+hamburgerMenuIconContainer.addEventListener("click", showMenu);
 
 function showMenu() {
-    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-hidden");
-    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-visible");
+    topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
+    topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 }
 
 function isInViewport(element) {
@@ -555,19 +555,19 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', updateViewBox);
 });
 
-showMoreButton.forEach((button, index) => {
+portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
     button.addEventListener("click", () => {
-        showMore[index].classList.toggle("portfolio-websites-show-more-container-accordion");
-        showMore[index].classList.toggle("portfolio-website-content-container");
+        portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
+        portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-website-content-container");
 
-        if (showLessText[index].textContent === "Show More") {
-            showLessText[index].textContent = "Show Less";
-            showMoreArrow[index].style.transform = "rotate(180deg)";
-            showMoreArrow[index].style.margin = "-1rem 0.30rem 2rem 0";           
+        if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
+            portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
+            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(180deg)";
+            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1rem 0.30rem 2rem 0";           
         } else {
-            showLessText[index].textContent = "Show More";
-            showMoreArrow[index].style.transform = "rotate(0deg)";
-            showMoreArrow[index].style.margin = "-1rem 0 2rem 0";
+            portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
+            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
+            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1rem 0 2rem 0";
         }
     });
 });
@@ -657,7 +657,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (formValidationParagraphMessage) {
                     formValidationParagraphMessage.style.visibility = "hidden";
                 }
-            }*/
+            }*/ //!Delete this at the end if it is not needed
         } else {
             field.className = "contact-form-input-box contact-form-invalid";
             if (isMessageField) {
@@ -682,7 +682,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (formValidationParagraphMessage) {
                     formValidationParagraphMessage.style.visibility = "visible";
                 }
-            }*/
+            }*/ //!Delete this at the end if it is not needed
         }
 
         // Recheck the form validity to enable/disable the submit button
