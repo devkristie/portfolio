@@ -874,7 +874,7 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.portfolio-websites-show-more-accordion-container-button > .portfolio-websites-show-more-container-accordion-button-p-dark-mode {
+/*.portfolio-websites-show-more-accordion-container-button > */.portfolio-websites-show-more-container-accordion-button-p-dark-mode {
     color: var(--light-mode);
 }
 .portfolio-websites-show-more-arrow {

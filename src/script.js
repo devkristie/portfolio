@@ -5,17 +5,17 @@ const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-m
 const lightModeIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
+const laptopImageCode = document.querySelectorAll(".laptop-image-code");
 const portfolioWebsitesShowMoreAccordionContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
 const portfolioWebsitesShowMoreAccordionContainerShowLessText = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button p");
 const portfolioWebsitesShowMoreAccordionContainerShowMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
 const portfolioWebsitesShowMoreAccordionContainer = document.querySelectorAll(".portfolio-websites-show-more-accordion-container");
-const laptopImageCode1 = document.querySelectorAll(".laptop-image-code");
-const contactFormClicked = document.querySelectorAll(".contact-form-input-box");
+const contactFormInputs = document.querySelectorAll(".contact-form-input-box");
 const contactFormLabels = document.querySelectorAll(".contact-form-label");
 const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
-// Smooth scroll, compatilble for older browsers
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
+// Smooth anchor scroll, compatilble for older browsers
+document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
         const targetElement = document.querySelector(this.getAttribute("href"));
@@ -29,38 +29,38 @@ darkModeIconContainer.addEventListener("click", () => {
     const darkModePreference = localStorage.getItem("darkModePreference");
 
     if (darkModePreference === null) {
-        // Show the pop-up if no preference is set
-        const popUp = document.createElement("div");
-        popUp.setAttribute("class", "dark-mode-popup-box-container");
+        // Show the dark mode pop-up box if no preference is set
+        const darkModePopUpBox = document.createElement("div");
+        darkModePopUpBox.setAttribute("class", "dark-mode-popup-box-container");
 
-        const paragraph1 = document.createElement("p");
-        paragraph1.setAttribute("class", "dark-mode-pop-up-box-title");
-        paragraph1.textContent = "Dark Mode Preference Storage Notice";
-        popUp.appendChild(paragraph1);
+        const darkModePopUpBoxTitle = document.createElement("p");
+        darkModePopUpBoxTitle.setAttribute("class", "dark-mode-pop-up-box-title");
+        darkModePopUpBoxTitle.textContent = "Dark Mode Preference Storage Notice";
+        darkModePopUpBox.appendChild(darkModePopUpBoxTitle);
     
-        const paragraph2 = document.createElement("p");
-        paragraph2.setAttribute("class", "dark-mode-pop-up-box-first-paragraph");
-        paragraph2.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
-        popUp.appendChild(paragraph2);
+        const darkModePopUpBoxFirstParagraph = document.createElement("p");
+        darkModePopUpBoxFirstParagraph.setAttribute("class", "dark-mode-pop-up-box-first-paragraph");
+        darkModePopUpBoxFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+        darkModePopUpBox.appendChild(darkModePopUpBoxFirstParagraph);
     
-        const paragraph3 = document.createElement("p");
-        paragraph3.setAttribute("class", "dark-mode-pop-up-box-second-paragraph");
-        paragraph3.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
-        popUp.appendChild(paragraph3);
+        const darkModePopUpBoxSecondParagraph = document.createElement("p");
+        darkModePopUpBoxSecondParagraph.setAttribute("class", "dark-mode-pop-up-box-second-paragraph");
+        darkModePopUpBoxSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+        darkModePopUpBox.appendChild(darkModePopUpBoxSecondParagraph);
 
-        const popUpAllowButton = document.createElement("button");
-        popUpAllowButton.setAttribute("class", "dark-mode-pop-up-box-allow-button");
-        popUpAllowButton.textContent = "Allow";
-        const popUpDeclineButton = document.createElement("button");
-        popUpDeclineButton.setAttribute("class", "dark-mode-pop-up-box-decline-button");
-        popUpDeclineButton.textContent = "Decline";
+        const darkModePopUpBoxAllowButton = document.createElement("button");
+        darkModePopUpBoxAllowButton.setAttribute("class", "dark-mode-pop-up-box-allow-button");
+        darkModePopUpBoxAllowButton.textContent = "Allow";
+        const darkModePopUpBoxDeclineButton = document.createElement("button");
+        darkModePopUpBoxDeclineButton.setAttribute("class", "dark-mode-pop-up-box-decline-button");
+        darkModePopUpBoxDeclineButton.textContent = "Decline";
 
-        popUp.appendChild(popUpAllowButton);
-        popUp.appendChild(popUpDeclineButton);
+        darkModePopUpBox.appendChild(darkModePopUpBoxAllowButton);
+        darkModePopUpBox.appendChild(darkModePopUpBoxDeclineButton);
 
-        document.body.appendChild(popUp);
+        document.body.appendChild(darkModePopUpBox);
 
-    popUpAllowButton.addEventListener("click", () => {
+    darkModePopUpBoxAllowButton.addEventListener("click", () => {
         // Set dark mode preference in local storage
         localStorage.setItem("darkModePreference", "enabled");
 
@@ -68,12 +68,12 @@ darkModeIconContainer.addEventListener("click", () => {
         enableDarkMode();
 
         // Remove pop-up
-        document.body.removeChild(popUp);
+        document.body.removeChild(darkModePopUpBox);
     });
 
-    popUpDeclineButton.addEventListener("click", () => {
+    darkModePopUpBoxDeclineButton.addEventListener("click", () => {
         // Remove pop-up without saving preference
-        document.body.removeChild(popUp);
+        document.body.removeChild(darkModePopUpBox);
     });
     } else {
         // Toggle dark mode based on current state
@@ -88,7 +88,7 @@ darkModeIconContainer.addEventListener("click", () => {
 });
 
 function enableDarkMode() {
-    document.body.classList.add("dark-mode");
+    // document.body.classList.add("dark-mode");
     darkModeIconContainer.style.visibility = "hidden";
     lightModeIcon.style.visibility = "visible";
 
@@ -172,6 +172,10 @@ function enableDarkMode() {
         background.classList.add("portfolio-websites-show-more-container-dark-mode");
     });
     
+    portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMore) => {
+        showMore.classList.add("portfolio-websites-show-more-container-accordion-button-p-dark-mode");
+    });
+
     const showMoreAccordionContent = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-paragraph");
     showMoreAccordionContent.forEach((content) => {
         content.classList.add("portfolio-websites-show-more-container-accordion-paragraph-dark-mode");
@@ -348,7 +352,11 @@ function disableDarkMode() {
     portfolioWebsiteContentAccordion.forEach((background) => {
         background.classList.remove("portfolio-websites-show-more-container-dark-mode");
     });
-    
+
+    portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMore) => {
+        showMore.classList.remove("portfolio-websites-show-more-container-accordion-button-p-dark-mode");
+    });
+
     const showMoreAccordionContent = document.querySelectorAll(".portfolio-websites-show-more-container-accordion-paragraph");
     showMoreAccordionContent.forEach((content) => {
         content.classList.remove("portfolio-websites-show-more-container-accordion-paragraph-dark-mode");
@@ -468,7 +476,7 @@ function isInViewport(element) {
     );
 }
 function handleScroll() {
-    laptopImageCode1.forEach((element, index) => {
+    laptopImageCode.forEach((element, index) => {
         if (isInViewport(element)) {
             setTimeout(() => {
                 element.style.animation = "draw 15s linear forwards";
@@ -572,7 +580,7 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
     });
 });
 
-contactFormClicked.forEach((input, index) => {
+contactFormInputs.forEach((input, index) => {
     input.addEventListener("input", () => {
         if (input.value !== "") {
             contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
@@ -599,7 +607,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const formValidationParagraphPhone = document.querySelector(".contact-form-validation-paragraph.phone");
     // const formValidationParagraphMessage = document.querySelector(".form-validation-paragraph.message");
     const submitButton = document.querySelector(".contact-form-submit-button");
-    const contactFormInputs = document.querySelectorAll(".contact-form-input-box");
+    // const contactFormInputs = document.querySelectorAll(".contact-form-input-box");
 
     // Ensure the submit button is always visible
     submitButton.style.visibility = "visible";
