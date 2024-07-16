@@ -1,7 +1,6 @@
 "use strict"
 
 const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
-// const moonIcon = document.querySelector(".fa-moon");
 const lightModeIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
@@ -204,21 +203,7 @@ function enableDarkMode() {
         input.classList.add("contact-form-input-box-dark-mode");    
     });
 
-    document.body.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
-    
-    document.querySelectorAll(".contact-form-valid").forEach((input) => {
-        input.classList.add("contact-form-valid-dark-mode");
-    });
-    
-    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
-        input.classList.add("contact-form-invalid-dark-mode");
-    });
-    
-    contactFormLabels.forEach((label) => {
-        label.classList.add("contact-form-label-dark-mode");
-    });
-    
-    const placeholderStyle = `
+    const placeholderColor = `
     /* Chrome/Opera/Safari */
         ::-webkit-input-placeholder {
             color: var(--darkest-grey);
@@ -237,26 +222,40 @@ function enableDarkMode() {
         }
     `;
     
-    const styleElement = document.createElement("style");
-    styleElement.textContent = placeholderStyle;
-    document.head.appendChild(styleElement);
+    const stylePlaceholderColor = document.createElement("style");
+    stylePlaceholderColor.textContent = placeholderColor;
+    document.head.appendChild(stylePlaceholderColor);
+
+    document.body.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
     
-    const hCaptchaElement = document.querySelector(".h-captcha");
-    hCaptchaElement.style.filter = "invert(1) hue-rotate(180deg)";
+    document.querySelectorAll(".contact-form-valid").forEach((input) => {
+        input.classList.add("contact-form-valid-dark-mode");
+    });
     
-    const footerDarkMode = document.querySelector(".footer-section-container");
-    footerDarkMode.classList.add("footer-section-container-dark-mode");
+    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
+        input.classList.add("contact-form-invalid-dark-mode");
+    });
     
-    const backToTopLinkDarkMode = document.querySelector("a.footer-navigation-link-backtotop");
-    backToTopLinkDarkMode.classList.add("footer-navigation-link-backtotop-dark-mode");
+    contactFormLabels.forEach((label) => {
+        label.classList.add("contact-form-label-dark-mode");
+    });
     
-    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-absolute-links");
-    absoluteFooterLinksDarkMode.forEach((link) => {
+    const hCaptchaColor = document.querySelector(".h-captcha");
+    hCaptchaColor.style.filter = "invert(1) hue-rotate(180deg)";
+    
+    const footerSectionContainer = document.querySelector(".footer-section-container");
+    footerSectionContainer.classList.add("footer-section-container-dark-mode");
+    
+    const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
+    footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
+    
+    const footerAbsoluteLink = document.querySelectorAll(".footer-absolute-links");
+    footerAbsoluteLink.forEach((link) => {
         link.classList.add("footer-absolute-links-dark-mode");
     });
     
-    const footerBottomBackground = document.querySelector(".footer-bottom-navigation-container");
-    footerBottomBackground.classList.add("footer-bottom-navigation-container-dark-mode");
+    const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
+    footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
 }
 
 function disableDarkMode() {
@@ -374,21 +373,7 @@ function disableDarkMode() {
         input.classList.remove("contact-form-input-box-dark-mode");    
     });
 
-    document.body.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
-    
-    document.querySelectorAll(".contact-form-valid").forEach((input) => {
-        input.classList.remove("contact-form-valid-dark-mode");
-    });
-    
-    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
-        input.classList.remove("contact-form-invalid-dark-mode");
-    });
-    
-    contactFormLabels.forEach((label) => {
-        label.classList.remove("contact-form-label-dark-mode");
-    });
-    
-    const placeholderStyle = `
+    const placeholderColor = `
     /* Chrome/Opera/Safari */
         ::-webkit-input-placeholder {
             color: var(--lightest-grey);
@@ -407,26 +392,40 @@ function disableDarkMode() {
         }
     `;
     
-    const styleElement = document.createElement("style");
-    styleElement.textContent = placeholderStyle;
-    document.head.appendChild(styleElement);
+    const stylePlaceholderColor = document.createElement("style");
+    stylePlaceholderColor.textContent = placeholderColor;
+    document.head.appendChild(stylePlaceholderColor);
+
+    document.body.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
     
-    const hCaptchaElement = document.querySelector(".h-captcha");
-    hCaptchaElement.style.filter = "invert(0) hue-rotate(0deg)";
+    document.querySelectorAll(".contact-form-valid").forEach((input) => {
+        input.classList.remove("contact-form-valid-dark-mode");
+    });
     
-    const footerDarkMode = document.querySelector(".footer-section-container");
-    footerDarkMode.classList.remove("footer-section-container-dark-mode");
+    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
+        input.classList.remove("contact-form-invalid-dark-mode");
+    });
     
-    const backToTopLinkDarkMode = document.querySelector("a.footer-navigation-link-backtotop");
-    backToTopLinkDarkMode.classList.remove("footer-navigation-link-backtotop-dark-mode");
+    contactFormLabels.forEach((label) => {
+        label.classList.remove("contact-form-label-dark-mode");
+    });
     
-    const absoluteFooterLinksDarkMode = document.querySelectorAll(".footer-absolute-links");
-    absoluteFooterLinksDarkMode.forEach((link) => {
+    const hCaptchaColor = document.querySelector(".h-captcha");
+    hCaptchaColor.style.filter = "invert(0) hue-rotate(0deg)";
+    
+    const footerSectionContainer = document.querySelector(".footer-section-container");
+    footerSectionContainer.classList.remove("footer-section-container-dark-mode");
+    
+    const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
+    footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
+    
+    const footerAbsoluteLink = document.querySelectorAll(".footer-absolute-links");
+    footerAbsoluteLink.forEach((link) => {
         link.classList.remove("footer-absolute-links-dark-mode");
     });
     
-    const footerBottomBackground = document.querySelector(".footer-bottom-navigation-container");
-    footerBottomBackground.classList.remove("footer-bottom-navigation-container-dark-mode");
+    const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
+    footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
 }
 
 // Apply dark mode if preference is already enabled
@@ -465,71 +464,60 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 
 document.addEventListener("DOMContentLoaded", function() {
+    const portfolioWebsitesSliderContainers = document.querySelectorAll(".portfolio-websites-slider-container");
+    const leftArrows = document.querySelectorAll(".portfolio-websites-slider-left-arrow");
+    const rightArrows = document.querySelectorAll(".portfolio-websites-slider-right-arrow");
+
     // Function to show the current image and hide others
-    function showImage(sliderIndex, imageIndex) {
-        const sliders = document.querySelectorAll(".portfolio-websites-slider-container");
-        sliders.forEach((slider, i) => {
-            const images = slider.querySelectorAll(".portfolio-websites-slider-image");
-            if (i === sliderIndex) {
-                images.forEach((image, j) => {
-                    if (j === imageIndex) {
-                        image.style.display = "block";
-                    } else {
-                          image.style.display = "none";
-                    }
-                });
-            }
+    function showImage(images, imageIndex) {
+        images.forEach((image, i) => {
+            image.style.display = (i === imageIndex) ? "block" : "none";
         });
     }
 
     // Function to initialize slider functionality
-    function initializeSlider(sliderIndex) {
-        const leftArrow = document.querySelectorAll(".portfolio-websites-slider-left-arrow")[sliderIndex];
-        const rightArrow = document.querySelectorAll(".portfolio-websites-slider-right-arrow")[sliderIndex];
-        const images = document.querySelectorAll(".portfolio-websites-slider-container")[sliderIndex].querySelectorAll('.portfolio-websites-slider-image');
+    function initializeSlider(sliderContainer, sliderContainerIndex) {
+        const leftArrowElement = leftArrows[sliderContainerIndex];
+        const rightArrowElement = rightArrows[sliderContainerIndex];
+        const portfolioWebsitesSliderImages = sliderContainer.querySelectorAll(".portfolio-websites-slider-image");
         let currentIndex = 0;
 
         // Function to handle click on left arrow
-        leftArrow.addEventListener("click", function() {
-            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            showImage(sliderIndex, currentIndex);
+        leftArrowElement.addEventListener("click", function() {
+            currentIndex = (currentIndex === 0) ? portfolioWebsitesSliderImages.length - 1 : currentIndex - 1;
+            showImage(portfolioWebsitesSliderImages, currentIndex);
         });
 
         // Function to handle click on right arrow
-        rightArrow.addEventListener("click", function() {
-            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            showImage(sliderIndex, currentIndex);
+        rightArrowElement.addEventListener("click", function() {
+            currentIndex = (currentIndex === portfolioWebsitesSliderImages.length - 1) ? 0 : currentIndex + 1;
+            showImage(portfolioWebsitesSliderImages, currentIndex);
         });
 
         // Show the initial image
-        showImage(sliderIndex, currentIndex);
+        showImage(portfolioWebsitesSliderImages, currentIndex);
     }
 
     // Initialize each slider
-    const sliders = document.querySelectorAll(".portfolio-websites-slider-container");
-    sliders.forEach((slider, index) => {
-        initializeSlider(index);
+    portfolioWebsitesSliderContainers.forEach((sliderContainer, sliderContainerIndex) => {
+        initializeSlider(sliderContainer, sliderContainerIndex);
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    const leftArrows = document.querySelectorAll('.portfolio-websites-slider-left-arrow');
-    const rightArrows = document.querySelectorAll('.portfolio-websites-slider-right-arrow');
-
+    // Function to update viewBox attributes based on window width
     function updateViewBox() {
         if (window.innerWidth <= 600) {
-            leftArrows.forEach(leftArrow => {
-                leftArrow.setAttribute('viewBox', '-28 19 10 49');
+            leftArrows.forEach((arrow) => {
+                arrow.setAttribute("viewBox", "-28 19 10 49");
             });
-            rightArrows.forEach(rightArrow => {
-                rightArrow.setAttribute('viewBox', '-28 19 10 49');
+            rightArrows.forEach((arrow) => {
+                arrow.setAttribute("viewBox", "-28 19 10 49");
             });
         } else {
-            leftArrows.forEach(leftArrow => {
-                leftArrow.setAttribute('viewBox', '14 0 20 100');
+            leftArrows.forEach((arrow) => {
+                arrow.setAttribute("viewBox", "14 0 20 100");
             });
-            rightArrows.forEach(rightArrow => {
-                rightArrow.setAttribute('viewBox', '14 0 20 100');
+            rightArrows.forEach((arrow) => {
+                arrow.setAttribute("viewBox", "14 0 20 100");
             });
         }
     }
@@ -538,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateViewBox();
 
     // Update on window resize
-    window.addEventListener('resize', updateViewBox);
+    window.addEventListener("resize", updateViewBox);
 });
 
 portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
