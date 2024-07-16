@@ -238,12 +238,12 @@ li {
     color: var(--dark-mode);
     transition: background 0.5s ease-in;
 }
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 355px) {
     .top-navigation-bar-accordion-links > a {
         display: flex;
         justify-content: space-between;
         width: 75%;
-        padding: 0.1rem 0.70rem;
+        padding: 0.1rem 0.30rem;
         text-align: center;
     }
     .top-navigation-bar-accordion-links > a:first-child {
@@ -253,12 +253,12 @@ li {
         margin-right: 5rem;
     }
 }
-@media only screen and (max-width: 355px) {
+@media only screen and (max-width: 410px) {
     .top-navigation-bar-accordion-links > a {
         display: flex;
         justify-content: space-between;
         width: 75%;
-        padding: 0.1rem 0.30rem;
+        padding: 0.1rem 0.70rem;
         text-align: center;
     }
     .top-navigation-bar-accordion-links > a:first-child {
@@ -535,6 +535,68 @@ q::after {
     font-family: "roboto-regular", Arial;
     background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
 }
+.profile-introduction-container-greeting {
+    margin-bottom: 0;
+    font-size: 2.813rem;
+    font-family: "tomorrow-regular", Arial;
+    color: var(--primary-color);
+}
+.profile-introduction-container-greeting::after {
+    font-size: 3.5rem;
+    font-family: none;
+    content: ",";
+}
+.profile-introduction-container > p {
+    display: block;
+    margin-top: 0;
+}
+.profile-introduction-container-paragraph-dark-mode {
+    color: var(--light-mode);
+}
+.profile-introduction-download-cv-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58.5%;
+    height: 3rem;
+    margin: 3.5rem 0 3rem 20.752%;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+    border: none;
+    border-radius: 50rem;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+.profile-introduction-download-cv-button:hover {
+    background-color: rgb(144.3, 92.9, 79.5);
+}
+@media only screen and (max-width: 465px) {
+    .profile-introduction-container {
+        width: 100%;
+        margin: 5rem auto;
+        padding: 13.25rem 3rem 1rem 3rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .profile-introduction-download-cv-button {
+        width: 80%;
+        margin: 3.5rem auto 3rem;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .profile-quotation-container {
+        margin-top: 8.75rem;
+    }
+    .profile-introduction-container {
+        margin-top: -12.25rem;
+        padding-top: 13.25rem;
+    }
+}
 @media only screen and (min-width: 1180px) {
     .profile-content-container {
         position: relative;
@@ -560,68 +622,6 @@ q::after {
         margin: 0;
         padding: 1.5rem 3rem 0;
         border-radius: 1.5rem 0 0 1.5rem;
-    }
-}
-@media only screen and (max-width: 465px) {
-    .profile-introduction-container {
-        width: 100%;
-        margin: 5rem auto;
-        padding: 13.25rem 3rem 1rem 3rem;
-    }
-}
-@media only screen and (max-width: 640px) {
-    .profile-quotation-container {
-        margin-top: 8.75rem;
-    }
-    .profile-introduction-container {
-        margin-top: -12.25rem;
-        padding-top: 13.25rem;
-    }
-}
-.profile-introduction-content-greeting {
-    margin-bottom: 0;
-    font-size: 2.813rem;
-    font-family: "tomorrow-regular", Arial;
-    color: var(--primary-color);
-}
-.profile-introduction-content-greeting::after {
-    font-size: 3.5rem;
-    font-family: none;
-    content: ",";
-}
-.profile-introduction-container > p {
-    display: block;
-    margin-top: 0;
-}
-.profile-content-container-paragraph-dark-mode {
-    color: var(--light-mode);
-}
-.profile-introduction-download-cv-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 58.5%;
-    height: 3rem;
-    margin: 3.5rem 0 3rem 20.752%;
-    font-size: 1rem;
-    font-family: "roboto-bold", Arial;
-    text-align: center;
-    text-decoration: none;
-    background-color: var(--secondary-color);
-    color: var(--light-mode);
-    border: none;
-    border-radius: 50rem;
-    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.5s;
-    cursor: pointer;
-}
-.profile-introduction-download-cv-button:hover {
-    background-color: rgb(144.3, 92.9, 79.5);
-}
-@media only screen and (max-width: 600px) {
-    .profile-introduction-download-cv-button {
-        width: 80%;
-        margin: 3.5rem auto 3rem;
     }
 }
 .section-introduction-container {
@@ -696,7 +696,7 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.portfolio-websites-title-container-dark-mode {
+.portfolio-websites-title-container-h3-dark-mode {
     color: var(--dark-mode);
 }
 .portfolio-websites-slider-container {
@@ -874,7 +874,7 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-/*.portfolio-websites-show-more-accordion-container-button > */.portfolio-websites-show-more-container-accordion-button-p-dark-mode {
+/*.portfolio-websites-show-more-accordion-container-button > */.portfolio-websites-show-more-accordion-container-button-p-dark-mode {
     color: var(--light-mode);
 }
 .portfolio-websites-show-more-arrow {
@@ -891,39 +891,39 @@ q::after {
     stroke: var(--light-mode);
 }
 /*Portfolio website container accordion content that is not displayed when the accordion is clicked on*/
-.portfolio-websites-show-more-accordion-container .portfolio-websites-show-more-container-accordion-paragraph {
+.portfolio-websites-show-more-accordion-container .portfolio-websites-show-more-accordion-container-paragraph {
     display: none;
 }
 .portfolio-websites-show-more-accordion-container > h4 {
     display: none;
 }
-.portfolio-websites-show-more-accordion-container .portfolio-websites-show-more-container-accordion-technology-used-container {
+.portfolio-websites-show-more-accordion-container .portfolio-websites-show-more-accordion-container-technology-used-container {
     display: none;
 }
 /*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
-.portfolio-websites-show-more-container-accordion-paragraph {
+.portfolio-websites-show-more-accordion-container-paragraph {
     margin: -1rem 3rem;
     padding: 1rem 0;
     cursor: text;
 }
-.portfolio-websites-show-more-container-accordion-paragraph-dark-mode {
+.portfolio-websites-show-more-accordion-container-paragraph-dark-mode {
     color: var(--light-mode);
 }
-.portfolio-websites-show-more-container-accordion-paragraph-highlighted-text {
+.portfolio-websites-show-more-accordion-container-paragraph-highlighted-text {
     font-family: "tomorrow-regular";
     letter-spacing: 0.075rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     color: var(--primary-color);
 }
-.portfolio-websites-show-more-container-accordion-technologies-used-title {
+.portfolio-websites-show-more-accordion-container-technologies-used-title {
     margin: 2.5rem 0;
     text-align: center;
     cursor: text;
 }
-.portfolio-websites-show-more-container-accordion-technologies-used-title-dark-mode {
+.portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode {
     color: var(--light-mode);
 }
-.portfolio-websites-show-more-container-accordion-technology-used-container {
+.portfolio-websites-show-more-accordion-container-technology-used-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -938,16 +938,16 @@ q::after {
     cursor: auto;
 }
 @media only screen and (min-width: 650px) {
-    .portfolio-websites-show-more-container-accordion-technology-used-container {
+    .portfolio-websites-show-more-accordion-container-technology-used-container {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
     }
 }
-.portfolio-websites-show-more-container-accordion-technology-used-container > div {
+.portfolio-websites-show-more-accordion-container-technology-used-container > div {
     width: 15.5rem;
 }
-.portfolio-websites-show-more-container-accordion-technology-used-container > div > i {
+.portfolio-websites-show-more-accordion-container-technology-used-container > div > i {
     font-size: 2.5rem;
     filter: drop-shadow(0 -2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(2px 0 1px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 1px rgba(0, 0, 0, 0.5)) drop-shadow(-2px 0 1px rgba(0, 0, 0, 0.5));
 }
@@ -966,12 +966,12 @@ q::after {
 .fa-js {
     color: #FCCB30;
 }
-.portfolio-websites-show-more-container-accordion-technology-used-container figcaption {
+.portfolio-websites-show-more-accordion-container-technology-used-container figcaption {
     margin: 0.5rem 0 1.5rem 0;
     font-family: "roboto-medium", Arial;
     cursor: text;
 }
-.portfolio-websites-show-more-container-accordion-technology-used-container-figcaption-dark-mode {
+.portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode {
     color: var(--light-mode);
 }
 .contact-section-container {
