@@ -874,7 +874,7 @@ q::after {
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-/*.portfolio-websites-show-more-accordion-container-button > */.portfolio-websites-show-more-accordion-container-button-p-dark-mode {
+.portfolio-websites-show-more-accordion-container-button-p-dark-mode {
     color: var(--light-mode);
 }
 .portfolio-websites-show-more-arrow {
@@ -1245,6 +1245,7 @@ a.footer-navigation-link-backtotop-dark-mode {
     display: flex;
     flex-direction: row;
     margin: 0;
+    padding: 0;
 }
 .footer-bottom-left-icons a {
     margin-right: 1rem;

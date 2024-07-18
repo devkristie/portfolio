@@ -86,86 +86,97 @@ darkModeIconContainer.addEventListener("click", () => {
     }
 });
 
+const mainDarkMode = document.querySelector("main");
+const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
+const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
+const landingPageTitleOpeningCurlyBrace = document.querySelector(".landing-page-title-opening-curly-brace");
+const landingPageTitleToMy = document.querySelector(".landing-page-title-property-value-to-my");
+const landingPageTitleFrontEnd = document.querySelector(".landing-page-title-property-value-front-end");
+const landingPageTitleDevelopment = document.querySelector(".landing-page-title-property-development");
+const landingPageTitleSemicolon = document.querySelector(".landing-page-title-value-semicolon");
+const landingPageTitleClosingCurlyBrace = document.querySelector(".landing-page-title-closing-curly-brace");
+const laptopImageTopShell = document.querySelector(".laptop-image-top-shell");
+const laptopImageWebcam = document.querySelector(".laptop-image-webcam");
+const laptopImageKey = document.querySelectorAll(".laptop-image-key");
+const laptopImageBottomShell = document.querySelector(".laptop-image-bottom-shell");
+const profileContentContainer = document.querySelector(".profile-content-container");
+const profileQuotationContainer = document.querySelector(".profile-quotation-container");
+const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
+const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
+const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
+const portfolioWebsitesTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
+const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
+const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
+const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
+const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
+const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technology-used-container figcaption");
+const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
+const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
+const hCaptchaColor = document.querySelector(".h-captcha");
+const footerSectionContainer = document.querySelector(".footer-section-container");
+const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
+const footerAbsoluteLink = document.querySelectorAll(".footer-absolute-links");
+const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
+
 function enableDarkMode() {
     darkModeIconContainer.style.visibility = "hidden";
     lightModeIcon.style.visibility = "visible";
 
     // Apply dark mode classes to other elements as needed
-    const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.add("main-dark-mode");
 
-    const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
     landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
 
-    const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
     landingPageTitleWelcome.classList.add("landing-page-title-welcome-dark-mode");
 
-    const landingPageTitleOpeningCurlyBrace = document.querySelector(".landing-page-title-opening-curly-brace");
     landingPageTitleOpeningCurlyBrace.classList.add("landing-page-title-opening-curly-brace-dark-mode");
     
-    const landingPageTitleToMy = document.querySelector(".landing-page-title-property-value-to-my");
     landingPageTitleToMy.classList.add("landing-page-title-property-value-to-my-dark-mode");
     
-    const landingPageTitleFrontEnd = document.querySelector(".landing-page-title-property-value-front-end");
     landingPageTitleFrontEnd.classList.add("landing-page-title-property-value-front-end-dark-mode");
     
-    const landingPageTitleDevelopment = document.querySelector(".landing-page-title-property-development");
     landingPageTitleDevelopment.classList.add("landing-page-title-property-development-dark-mode");
     
-    const landingPageTitleSemicolon = document.querySelector(".landing-page-title-value-semicolon");
     landingPageTitleSemicolon.classList.add("landing-page-title-value-semicolon-dark-mode");
     
-    const landingPageTitleClosingCurlyBrace = document.querySelector(".landing-page-title-closing-curly-brace");
     landingPageTitleClosingCurlyBrace.classList.add("landing-page-title-closing-curly-brace-dark-mode");
     
-    const laptopImageTopShell = document.querySelector(".laptop-image-top-shell");
     laptopImageTopShell.classList.add("laptop-image-top-shell-dark-mode");
     
-    const laptopImageWebcam = document.querySelector(".laptop-image-webcam");
     laptopImageWebcam.classList.add("laptop-image-webcam-dark-mode");
     
-    const laptopImageKey = document.querySelectorAll(".laptop-image-key");
     laptopImageKey.forEach((key) => {
         key.classList.add("laptop-image-key-dark-mode");
     });
     
-    const laptopImageBottomShell = document.querySelector(".laptop-image-bottom-shell");
     laptopImageBottomShell.classList.add("laptop-image-bottom-shell-dark-mode");
     
-    const profileContentContainer = document.querySelector(".profile-content-container");
     profileContentContainer.classList.add("profile-content-container-dark-mode");
     
-    const profileQuotationContainer = document.querySelector(".profile-quotation-container");
     profileQuotationContainer.classList.add("profile-quotation-container-dark-mode");
     
-    const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
     profileIntrodutionContainerParagraph.forEach((paragraph) =>{
         paragraph.classList.add("profile-introduction-container-paragraph-dark-mode");
     });
     
-    const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
     sectionIntroductionContainerTitle.forEach((title) => {
         title.classList.add("section-introduction-container-h2-dark-mode");
     });
     
-    const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
     sectionIntroductionContainerParagraph.forEach((paragraph) => {
         paragraph.classList.add("section-introduction-container-p-dark-mode");
         const thankYouForVisitingMyPortfolioParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
         thankYouForVisitingMyPortfolioParagraph.classList.remove("section-introduction-container-p-dark-mode");
     });
     
-    const portfolioWebsitesTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
     portfolioWebsitesTitle.forEach((websiteTitle) => {
         websiteTitle.classList.add("portfolio-websites-title-container-h3-dark-mode");
     });
     
-    const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
     portfolioWebsitesContainer.forEach((background) => {
         background.classList.add("portfolio-websites-container-dark-mode");
     });
     
-    const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     portfolioWebsitesShowMoreContainer.forEach((background) => {
         background.classList.add("portfolio-websites-show-more-container-dark-mode");
     });
@@ -178,25 +189,20 @@ function enableDarkMode() {
         showMoreArrow.classList.add("portfolio-websites-show-more-arrow-dark-mode");
     });
 
-    const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
     portfolioWebsitesShowMoreAccordionContainerParagraph.forEach((paragraph) => {
         paragraph.classList.add("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
     });
     
-    const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
     portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
         title.classList.add("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
     });
     
-    const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technology-used-container figcaption");
     portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
         figcaption.classList.add("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
     });
     
-    const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     contactFormTopHeaderContainer.classList.add("contact-form-top-header-container-dark-mode");
     
-    const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
     contactFormEnvelopeIcon.classList.add("fa-envelope-dark-mode");
     
     contactFormInputs.forEach((input) => {
@@ -240,21 +246,16 @@ function enableDarkMode() {
         label.classList.add("contact-form-label-dark-mode");
     });
     
-    const hCaptchaColor = document.querySelector(".h-captcha");
     hCaptchaColor.style.filter = "invert(1) hue-rotate(180deg)";
     
-    const footerSectionContainer = document.querySelector(".footer-section-container");
     footerSectionContainer.classList.add("footer-section-container-dark-mode");
     
-    const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
     footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
     
-    const footerAbsoluteLink = document.querySelectorAll(".footer-absolute-links");
     footerAbsoluteLink.forEach((link) => {
         link.classList.add("footer-absolute-links-dark-mode");
     });
     
-    const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
     footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
 }
 
@@ -263,79 +264,58 @@ function disableDarkMode() {
     darkModeIconContainer.style.visibility = "visible";
     
     // Remove dark mode classes from other elements as needed
-    const mainDarkMode = document.querySelector("main");
     mainDarkMode.classList.remove("main-dark-mode");
     
-    const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
     landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
     
-    const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
     landingPageTitleWelcome.classList.remove("landing-page-title-welcome-dark-mode");
     
-    const landingPageTitleOpeningCurlyBrace = document.querySelector(".landing-page-title-opening-curly-brace");
     landingPageTitleOpeningCurlyBrace.classList.remove("landing-page-title-opening-curly-brace-dark-mode");
     
-    const landingPageTitleToMy = document.querySelector(".landing-page-title-property-value-to-my");
     landingPageTitleToMy.classList.remove("landing-page-title-property-value-to-my-dark-mode");
     
-    const landingPageTitleFrontEnd = document.querySelector(".landing-page-title-property-value-front-end");
     landingPageTitleFrontEnd.classList.remove("landing-page-title-property-value-front-end-dark-mode");
     
-    const landingPageTitleDevelopment = document.querySelector(".landing-page-title-property-development");
     landingPageTitleDevelopment.classList.remove("landing-page-title-property-development-dark-mode");
     
-    const landingPageTitleSemicolon = document.querySelector(".landing-page-title-value-semicolon");
     landingPageTitleSemicolon.classList.remove("landing-page-title-value-semicolon-dark-mode");
     
-    const landingPageTitleClosingCurlyBrace = document.querySelector(".landing-page-title-closing-curly-brace");
     landingPageTitleClosingCurlyBrace.classList.remove("landing-page-title-closing-curly-brace-dark-mode");
     
-    const laptopImageTopShell = document.querySelector(".laptop-image-top-shell");
     laptopImageTopShell.classList.remove("laptop-image-top-shell-dark-mode");
     
-    const laptopImageWebcam = document.querySelector(".laptop-image-webcam");
     laptopImageWebcam.classList.remove("laptop-image-webcam-dark-mode");
     
-    const laptopImageKey = document.querySelectorAll(".laptop-image-key");
     laptopImageKey.forEach((key) => {
         key.classList.remove("laptop-image-key-dark-mode");
     });
     
-    const laptopImageBottomShell = document.querySelector(".laptop-image-bottom-shell");
     laptopImageBottomShell.classList.remove("laptop-image-bottom-shell-dark-mode");
     
-    const profileContentContainer = document.querySelector(".profile-content-container");
     profileContentContainer.classList.remove("profile-content-container-dark-mode");
 
-    const profileQuotationContainer = document.querySelector(".profile-quotation-container");
     profileQuotationContainer.classList.remove("profile-quotation-container-dark-mode");
     
-    const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
     profileIntrodutionContainerParagraph.forEach((paragraph) =>{
         paragraph.classList.remove("profile-introduction-container-paragraph-dark-mode");
     });
     
-    const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
     sectionIntroductionContainerTitle.forEach((title) => {
         title.classList.remove("section-introduction-container-h2-dark-mode");
     });
     
-    const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
     sectionIntroductionContainerParagraph.forEach((paragraph) => {
         paragraph.classList.remove("section-introduction-container-p-dark-mode");
     });
     
-    const portfolioWebsitesTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
     portfolioWebsitesTitle.forEach((websiteTitle) => {
         websiteTitle.classList.remove("portfolio-websites-title-container-h3-dark-mode");
     });
     
-    const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
     portfolioWebsitesContainer.forEach((background) => {
         background.classList.remove("portfolio-websites-container-dark-mode");
     });
     
-    const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     portfolioWebsitesShowMoreContainer.forEach((background) => {
         background.classList.remove("portfolio-websites-show-more-container-dark-mode");
     });
@@ -348,25 +328,20 @@ function disableDarkMode() {
         showMoreArrow.classList.remove("portfolio-websites-show-more-arrow-dark-mode");
     });
 
-    const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
     portfolioWebsitesShowMoreAccordionContainerParagraph.forEach((paragraph) => {
         paragraph.classList.remove("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
     });
     
-    const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
     portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
         title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
     });
     
-    const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technology-used-container figcaption");
     portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
         figcaption.classList.remove("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
     });
     
-    const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
     
-    const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
     contactFormEnvelopeIcon.classList.remove("fa-envelope-dark-mode");
     
     contactFormInputs.forEach((input) => {
@@ -410,21 +385,16 @@ function disableDarkMode() {
         label.classList.remove("contact-form-label-dark-mode");
     });
     
-    const hCaptchaColor = document.querySelector(".h-captcha");
     hCaptchaColor.style.filter = "invert(0) hue-rotate(0deg)";
     
-    const footerSectionContainer = document.querySelector(".footer-section-container");
     footerSectionContainer.classList.remove("footer-section-container-dark-mode");
     
-    const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
     footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
     
-    const footerAbsoluteLink = document.querySelectorAll(".footer-absolute-links");
     footerAbsoluteLink.forEach((link) => {
         link.classList.remove("footer-absolute-links-dark-mode");
     });
     
-    const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
     footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
 }
 
