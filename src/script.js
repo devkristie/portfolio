@@ -86,6 +86,8 @@ darkModeIconContainer.addEventListener("click", () => {
     }
 });
 
+//Dark mode variables
+const bodyDarkMode = document.querySelector("body");
 const mainDarkMode = document.querySelector("main");
 const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
 const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
@@ -112,6 +114,8 @@ const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = documen
 const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technology-used-container figcaption");
 const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
 const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
+const contactFormValid = document.querySelectorAll(".contact-form-valid");
+const contactFormInvalid = document.querySelectorAll(".contact-form-invalid");
 const hCaptchaColor = document.querySelector(".h-captcha");
 const footerSectionContainer = document.querySelector(".footer-section-container");
 const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
@@ -209,7 +213,7 @@ function enableDarkMode() {
         input.classList.add("contact-form-input-box-dark-mode");    
     });
 
-    const placeholderColor = `
+    const placeholderColorDark = `
     /* Chrome/Opera/Safari */
         ::-webkit-input-placeholder {
             color: var(--darkest-grey);
@@ -228,17 +232,17 @@ function enableDarkMode() {
         }
     `;
     
-    const stylePlaceholderColor = document.createElement("style");
-    stylePlaceholderColor.textContent = placeholderColor;
-    document.head.appendChild(stylePlaceholderColor);
+    const stylePlaceholderColorDark = document.createElement("style");
+    stylePlaceholderColorDark.textContent = placeholderColorDark;
+    document.head.appendChild(stylePlaceholderColorDark);
 
-    document.body.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
+    bodyDarkMode.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
     
-    document.querySelectorAll(".contact-form-valid").forEach((input) => {
+    contactFormValid.forEach((input) => {
         input.classList.add("contact-form-valid-dark-mode");
     });
     
-    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
+    contactFormInvalid.forEach((input) => {
         input.classList.add("contact-form-invalid-dark-mode");
     });
     
@@ -348,7 +352,7 @@ function disableDarkMode() {
         input.classList.remove("contact-form-input-box-dark-mode");    
     });
 
-    const placeholderColor = `
+    const placeholderColorLight = `
     /* Chrome/Opera/Safari */
         ::-webkit-input-placeholder {
             color: var(--lightest-grey);
@@ -367,17 +371,17 @@ function disableDarkMode() {
         }
     `;
     
-    const stylePlaceholderColor = document.createElement("style");
-    stylePlaceholderColor.textContent = placeholderColor;
-    document.head.appendChild(stylePlaceholderColor);
+    const stylePlaceholderColorLight = document.createElement("style");
+    stylePlaceholderColorLight.textContent = placeholderColorLight;
+    document.head.appendChild(stylePlaceholderColorLight);
 
-    document.body.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
+    bodyDarkMode.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
     
-    document.querySelectorAll(".contact-form-valid").forEach((input) => {
+    contactFormValid.forEach((input) => {
         input.classList.remove("contact-form-valid-dark-mode");
     });
     
-    document.querySelectorAll(".contact-form-invalid").forEach((input) => {
+    contactFormInvalid.forEach((input) => {
         input.classList.remove("contact-form-invalid-dark-mode");
     });
     

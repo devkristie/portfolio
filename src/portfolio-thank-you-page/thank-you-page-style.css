@@ -93,7 +93,7 @@ body::before {
     transform: translate(50%, 50%);
     cursor: pointer;
 }
-.top-navigation-bar {
+.top-navigation-bar-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -106,7 +106,7 @@ body::before {
     padding-left: 2rem;
     background-color: var(--primary-color);
 }
-.logo {
+.top-navigation-bar-logo-container {
     width: 5rem;
     height: 2.5rem;
     margin-right: auto;
