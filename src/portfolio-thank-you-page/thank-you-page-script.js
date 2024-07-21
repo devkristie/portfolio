@@ -4,7 +4,7 @@ const moonIcon = document.querySelector(".fa-moon");
 const moon = document.querySelector(".fa-moon");
 const sunIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
-const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
+const topNavBarShow = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 
 // Smooth scroll, compatilble for older browsers
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
@@ -97,24 +97,24 @@ function enableDarkMode() {
     moonIcon.style.visibility = "hidden";
     sunIcon.style.visibility = "visible";
     // Apply dark mode classes to other elements as needed
-    const thankYouPageContentBackground = document.querySelector(".thank-you-page-content");
-    thankYouPageContentBackground.classList.add("thank-you-page-content-dark-mode");
+    const thankYouPageContentBackground = document.querySelector(".thank-you-page-landing-page-section-container");
+    thankYouPageContentBackground.classList.add("thank-you-page-landing-page-section-container-dark-mode");
     const messageParagraphContainer = document.querySelector(".message-sent-paragraph-container");
     messageParagraphContainer.classList.add("message-sent-paragraph-container-dark-mode");
     const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
     messageParagraphs.forEach((paragraph) => {
         paragraph.classList.add("message-sent-paragraph-dark-mode");
     });
-    const envelope1 = document.querySelector(".envelope1");
-    envelope1.classList.add("envelope1-dark-mode");
-    const envelope2 = document.querySelector(".envelope2");
-    envelope2.classList.add("envelope2-dark-mode");
-    const envelope3 = document.querySelectorAll(".envelope3");
+    const envelope1 = document.querySelector(".message-sent-envelope-svg-envelope");
+    envelope1.classList.add("message-sent-envelope-svg-envelope-dark-mode");
+    const envelope2 = document.querySelector(".message-sent-envelope-svg-envelope-end-gap");
+    envelope2.classList.add("message-sent-envelope-svg-envelope-end-gap-dark-mode");
+    const envelope3 = document.querySelectorAll(".message-sent-envelope-svg-envelope-line");
     envelope3.forEach((line) => {
-        line.classList.add("envelope3-dark-mode");
+        line.classList.add("message-sent-envelope-svg-envelope-line-dark-mode");
     });
-    const footerContentBackground = document.querySelector(".footer-content");
-    footerContentBackground.classList.add("footer-content-dark-mode");
+    const footerContentBackground = document.querySelector(".thank-you-page-footer-section-container");
+    footerContentBackground.classList.add("thank-you-page-footer-section-container-dark-mode");
     const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
     backToTopLinkDarkMode.classList.add("footer-link-back-to-top-dark-mode");
     const footerBottomBorder = document.querySelector(".footer-bottom");
@@ -126,24 +126,24 @@ function disableDarkMode() {
     sunIcon.style.visibility = "hidden";
     moonIcon.style.visibility = "visible";
     // Remove dark mode classes from other elements as needed
-    const thankYouPageContentBackground = document.querySelector(".thank-you-page-content");
-    thankYouPageContentBackground.classList.remove("thank-you-page-content-dark-mode");
+    const thankYouPageContentBackground = document.querySelector(".thank-you-page-landing-page-section-container");
+    thankYouPageContentBackground.classList.remove("thank-you-page-landing-page-section-container-dark-mode");
     const messageParagraphContainer = document.querySelector(".message-sent-paragraph-container");
     messageParagraphContainer.classList.remove("message-sent-paragraph-container-dark-mode");
     const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
     messageParagraphs.forEach((paragraph) => {
         paragraph.classList.remove("message-sent-paragraph-dark-mode");
     });
-    const envelope1 = document.querySelector(".envelope1");
-    envelope1.classList.remove("envelope1-dark-mode");
-    const envelope2 = document.querySelector(".envelope2");
-    envelope2.classList.remove("envelope2-dark-mode");
-    const envelope3 = document.querySelectorAll(".envelope3");
+    const envelope1 = document.querySelector(".message-sent-envelope-svg-envelope");
+    envelope1.classList.remove("message-sent-envelope-svg-envelope-dark-mode");
+    const envelope2 = document.querySelector(".message-sent-envelope-svg-envelope-end-gap");
+    envelope2.classList.remove("message-sent-envelope-svg-envelope-end-gap-dark-mode");
+    const envelope3 = document.querySelectorAll(".message-sent-envelope-svg-envelope-line");
     envelope3.forEach((line) => {
-        line.classList.remove("envelope3-dark-mode");
+        line.classList.remove("message-sent-envelope-svg-envelope-line-dark-mode");
     });
-    const footerContentBackground = document.querySelector(".footer-content");
-    footerContentBackground.classList.remove("footer-content-dark-mode");
+    const footerContentBackground = document.querySelector(".thank-you-page-footer-section-container");
+    footerContentBackground.classList.remove("thank-you-page-footer-section-container-dark-mode");
     const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
     backToTopLinkDarkMode.classList.remove("footer-link-back-to-top-dark-mode");
     const footerBottomBorder = document.querySelector(".footer-bottom");
@@ -161,12 +161,12 @@ document.addEventListener("DOMContentLoaded", () => {
 hamburgerMenuIcon.addEventListener("click", showMenu);
 
 function showMenu() {
-    topNavBarShow.classList.toggle("accordion-navigation-bar-hide");
-    topNavBarShow.classList.toggle("accordion-navigation-bar");
+    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-hidden");
+    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-visible");
 }
 
-const thankYouWriting = document.querySelectorAll(".thank-you-writing1");
-const thankYouWritingLine = document.querySelectorAll(".thank-you-writing2");
+const thankYouWriting = document.querySelectorAll(".thank-you-message-svg-animation-writing");
+const thankYouWritingLine = document.querySelectorAll(".thank-you-message-svg-animation-writing-underline");
 
 document.addEventListener("DOMContentLoaded", function() {
     function isInViewport(element) {
