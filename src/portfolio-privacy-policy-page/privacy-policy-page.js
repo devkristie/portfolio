@@ -1,10 +1,10 @@
 "use strict"
 
-const moonIcon = document.querySelector(".fa-moon");
-const moon = document.querySelector(".fa-moon");
-const sunIcon = document.querySelector(".fa-sun");
-const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
-const topNavBarShow = document.querySelector(".accordion-navigation-bar-hide");
+const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
+const lightModeIcon = document.querySelector(".fa-sun");
+const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
+const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
+const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
 // Smooth scroll, compatilble for older browsers
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
@@ -17,42 +17,45 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
-moonIcon.addEventListener("click", () => {
+darkModeIconContainer.addEventListener("click", () => {
+    // Show the dark mode pop-up box if no preference is set
     const darkModePreference = localStorage.getItem("darkModePreference");
+    let darkModePopUpBox = document.querySelector(".dark-mode-pop-up-box-container");
 
-    if (darkModePreference === null) {
-        // Show the pop-up if no preference is set
-        const popUp = document.createElement("div");
-        popUp.setAttribute("class", "dark-mode-popup");
+    if (darkModePreference === null && !darkModePopUpBox) {
+        // Show the pop-up if no preference is set and it doesn't already exist
+        darkModePopUpBox = document.createElement("aside");
+        darkModePopUpBox.setAttribute("class", "dark-mode-pop-up-box-container");
 
-        const paragraph1 = document.createElement("p");
-        paragraph1.setAttribute("class", "pop-up-paragraph1");
-        paragraph1.textContent = "Dark Mode Preference Storage Notice";
-        popUp.appendChild(paragraph1);
+        const darkModePopUpBoxTitle = document.createElement("p");
+        darkModePopUpBoxTitle.setAttribute("class", "dark-mode-pop-up-box-title");
+        darkModePopUpBoxTitle.textContent = "Dark Mode Preference Storage Notice";
+        darkModePopUpBox.appendChild(darkModePopUpBoxTitle);
 
-        const paragraph2 = document.createElement("p");
-        paragraph2.setAttribute("class", "pop-up-paragraph2");
-        paragraph2.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
-        popUp.appendChild(paragraph2);
+        const darkModePopUpBoxFirstParagraph = document.createElement("p");
+        darkModePopUpBoxFirstParagraph.setAttribute("class", "dark-mode-pop-up-box-first-paragraph");
+        darkModePopUpBoxFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+        darkModePopUpBox.appendChild(darkModePopUpBoxFirstParagraph);
 
-        const paragraph3 = document.createElement("p");
-        paragraph3.setAttribute("class", "pop-up-paragraph3");
-        paragraph3.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
-        popUp.appendChild(paragraph3);
+        const darkModePopUpBoxSecondParagraph = document.createElement("p");
+        darkModePopUpBoxSecondParagraph.setAttribute("class", "dark-mode-pop-up-box-second-paragraph");
+        darkModePopUpBoxSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+        darkModePopUpBox.appendChild(darkModePopUpBoxSecondParagraph);
 
-        const popUpAllowButton = document.createElement("button");
-        popUpAllowButton.setAttribute("class", "pop-up-allow");
-        popUpAllowButton.textContent = "Allow";
-        const popUpDeclineButton = document.createElement("button");
-        popUpDeclineButton.setAttribute("class", "pop-up-decline");
-        popUpDeclineButton.textContent = "Decline";
+        const darkModePopUpBoxAllowButton = document.createElement("button");
+        darkModePopUpBoxAllowButton.setAttribute("class", "dark-mode-pop-up-box-allow-button");
+        darkModePopUpBoxAllowButton.textContent = "Allow";
 
-        popUp.appendChild(popUpAllowButton);
-        popUp.appendChild(popUpDeclineButton);
+        const darkModePopUpBoxDeclineButton = document.createElement("button");
+        darkModePopUpBoxDeclineButton.setAttribute("class", "dark-mode-pop-up-box-decline-button");
+        darkModePopUpBoxDeclineButton.textContent = "Decline";
 
-        document.body.appendChild(popUp);
+        darkModePopUpBox.appendChild(darkModePopUpBoxAllowButton);
+        darkModePopUpBox.appendChild(darkModePopUpBoxDeclineButton);
 
-        popUpAllowButton.addEventListener("click", () => {
+        document.body.appendChild(darkModePopUpBox);
+
+        darkModePopUpBoxAllowButton.addEventListener("click", () => {
             // Set dark mode preference in local storage
             localStorage.setItem("darkModePreference", "enabled");
 
@@ -60,14 +63,14 @@ moonIcon.addEventListener("click", () => {
             enableDarkMode();
 
             // Remove pop-up
-            document.body.removeChild(popUp);
+            document.body.removeChild(darkModePopUpBox);
         });
 
-        popUpDeclineButton.addEventListener("click", () => {
+        darkModePopUpBoxDeclineButton.addEventListener("click", () => {
             // Remove pop-up without saving preference
-            document.body.removeChild(popUp);
+            document.body.removeChild(darkModePopUpBox);
         });
-    } else {
+    } else if (darkModePreference !== null) {
         // Toggle dark mode based on current state
         if (darkModePreference === "enabled") {
             disableDarkMode();
@@ -79,57 +82,52 @@ moonIcon.addEventListener("click", () => {
     }
 });
 
-sunIcon.addEventListener("click", () => {
-    const darkModePreference = localStorage.getItem("darkModePreference");
-
-    // Toggle dark mode based on current state
-    if (darkModePreference === "enabled") {
-        disableDarkMode();
-        localStorage.setItem("darkModePreference", "disabled");
-    } else {
-        enableDarkMode();
-        localStorage.setItem("darkModePreference", "enabled");
-    }
-});
+//Dark mode variables
+const bodyDarkMode = document.querySelector("body");
+const mainDarkMode = document.querySelector("main");
+const policyPageSubheading = document.querySelectorAll(".privacy-policy-page-content-container h2");
+const footerSectionContainer = document.querySelector(".footer-section-container");
+const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
+const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
 function enableDarkMode() {
-    document.body.classList.add("dark-mode");
-    moonIcon.style.visibility = "hidden";
-    sunIcon.style.visibility = "visible";
+    darkModeIconContainer.style.visibility = "hidden";
+    lightModeIcon.style.visibility = "visible";
+
     // Apply dark mode classes to other elements as needed
-    const privacyPolicyBodyBackground = document.querySelector("body");
-    privacyPolicyBodyBackground.classList.add("dark-mode");
-    const privacyPolicyMainBackground = document.querySelector("main");
-    privacyPolicyMainBackground.classList.add("main-dark-mode");
-    const policyPageContentTitle = document.querySelectorAll(".privacy-policy-page-content-container h2");
-    policyPageContentTitle.forEach((title) => {
-        title.classList.add("h2-dark-mode");
+    bodyDarkMode.classList.add("body-dark-mode");
+    
+    mainDarkMode.classList.add("main-dark-mode");
+
+    policyPageSubheading.forEach((subheading) => {
+        subheading.classList.add("h2-dark-mode");
     });
-    const footerBackground = document.querySelector(".footer-content");
-    footerBackground.classList.add("footer-content-dark-mode");
-    const backToTopLink = document.querySelector("a.footer-link-backtotop");
-    backToTopLink.classList.add("footer-link-back-to-top-dark-mode");
-    const footerBottomBorder = document.querySelector(".footer-bottom");
-    footerBottomBorder.classList.add("footer-bottom-dark-mode");
+
+    footerSectionContainer.classList.add("footer-section-container-dark-mode");
+    
+    footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
+    
+    footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
 }
 
 function disableDarkMode() {
-    document.body.classList.remove("dark-mode");
-    sunIcon.style.visibility = "hidden";
-    moonIcon.style.visibility = "visible";
+    lightModeIcon.style.visibility = "hidden";
+    darkModeIconContainer.style.visibility = "visible";
+
     // Remove dark mode classes from other elements as needed
-    const privacyPolicyMainBackground = document.querySelector("main");
-    privacyPolicyMainBackground.classList.remove("main-dark-mode");
-    const policyPageContentTitle = document.querySelectorAll(".privacy-policy-page-content-container h2");
-    policyPageContentTitle.forEach((title) => {
-        title.classList.remove("h2-dark-mode");
+    bodyDarkMode.classList.remove("body-dark-mode");
+    
+    mainDarkMode.classList.remove("main-dark-mode");
+
+    policyPageSubheading.forEach((subheading) => {
+        subheading.classList.remove("h2-dark-mode");
     });
-    const footerBackground = document.querySelector(".footer-content");
-    footerBackground.classList.remove("footer-content-dark-mode");
-    const backToTopLink = document.querySelector("a.footer-link-backtotop");
-    backToTopLink.classList.remove("footer-link-back-to-top-dark-mode");
-    const footerBottomBorder = document.querySelector(".footer-bottom");
-    footerBottomBorder.classList.remove("footer-bottom-dark-mode");
+
+    footerSectionContainer.classList.remove("footer-section-container-dark-mode");
+
+    footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
+    
+    footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
 }
 
 // Apply dark mode if preference is already enabled
@@ -140,9 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-hamburgerMenuIcon.addEventListener("click", showMenu);
+hamburgerMenuIconContainer.addEventListener("click", showMenu);
 
 function showMenu() {
-    topNavBarShow.classList.toggle("accordion-navigation-bar-hide");
-    topNavBarShow.classList.toggle("accordion-navigation-bar");
+    topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
+    topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 }
+
+const updateDate = new Date();
+copyrightUpdateYear.textContent = updateDate.getFullYear();

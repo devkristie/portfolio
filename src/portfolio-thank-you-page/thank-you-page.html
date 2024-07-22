@@ -9,6 +9,7 @@
         <meta name="author" content="Kristie Larke">
         <meta name="keywords" content="Thank You, Kristie Larke, Frontend Web Developer, Contact, Portfolio">
         <title>Thank You for Contacting Me - Frontend Developer Portfolio, Kristie Larke</title>
+        <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="./thank-you-page-style.css">
         <link rel="icon" href="../assets/images/favicon.ico">
         <script src="https://kit.fontawesome.com/46c228a4ce.js" crossorigin="anonymous"></script>
@@ -32,13 +33,11 @@
                 <ul>
                     <li>
                         <i class="fa-solid fa-moon" aria-describedby="Dark mode icon"></i>
-                    </li>
-                    <li>
                         <i class="fa-solid fa-sun" aria-describedby="Light mode icon"></i>
                     </li>
                 </ul>
             </nav>
-            <svg class="hamburger-menu">
+            <svg class="hamburger-menu-container">
                 <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5"/>
                 <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5"/>
                 <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5"/>
@@ -48,10 +47,10 @@
             <nav>
                 <ul>
                     <li class="top-navigation-bar-accordion-links">
-                        <a href="https://www.kristolio.co.uk/#home">Home</a>
-                        <a href="https://www.kristolio.co.uk/#profile">Profile</a>
-                        <a href="https://www.kristolio.co.uk/#portfolio">Portfolio</a>
-                        <a href="https://www.kristolio.co.uk/#contact">Contact</a>
+                        <a href="https://www.kristolio.co.uk/#home" rel="noopener noreferrer">Home</a>
+                        <a href="https://www.kristolio.co.uk/#profile" rel="noopener noreferrer">Profile</a>
+                        <a href="https://www.kristolio.co.uk/#portfolio" rel="noopener noreferrer">Portfolio</a>
+                        <a href="https://www.kristolio.co.uk/#contact" rel="noopener noreferrer">Contact</a>
                         <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">Github</a>
                     </li>
                 </ul>
@@ -99,57 +98,49 @@
                 </div>
                 <div class="thank-you-page-button-container">
                     <a href="https://www.kristolio.co.uk" rel="noopener noreferrer">
-                        <button class="thank-you-page-button" type="button" title="back to portfolio">Back To Portfolio</button>
+                        <button class="thank-you-page-button" type="button" title="Back to portfolio">Back To Portfolio</button>
                     </a>
                     <a href="https://www.kristolio.co.uk/#contact" rel="noopener noreferrer">
-                        <button class="thank-you-page-button" type="button" title="send another message">Send Another Message</button>
+                        <button class="thank-you-page-button" type="button" title="Send another message">Send Another Message</button>
                     </a>
                 </div>
             </section>
         </main>
         <footer>
-            <section class="thank-you-page-footer-section-container">
-                <nav class="thank-you-page-footer-navigation-container">
-                    <ul class="thank-you-page-footer-navigation-links">
-                        <li>
-                            <a href="#home" class="footer-link-backtotop">Back To Top</a>
-                        </li>
-                        <li>
-                            <a href="https://www.kristiolio.co.uk/portfolio">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="https://www.kristiolio.co.uk/portfolio/#contact">Contact</a>
-                        </li>
-                        <li>
-                            <a href="https://www.kristiolio.co.uk/portfolio">Blog (Coming Soon)</a>
+            <section class="footer-section-container">
+                <nav class="footer-navigation-container">
+                    <ul>
+                        <li class="footer-navigation-links">
+                            <a class="footer-navigation-link-backtotop" href="#home">Back To Top</a>
+                            <a href="https://www.kristiolio.co.uk/#portfolio" rel="noopener noreferrer">Portfolio</a>
+                            <a href="https://www.kristiolio.co.uk/#contact" rel="noopener noreferrer">Contact</a>
+                            <a href="https://www.kristiolio.co.uk/#portfolio" rel="noopener noreferrer">Blog (Coming Soon)</a>
                         </li>                        
                     </ul>
-                    <p class="absolute-footer-links">
+                    <p class="footer-absolute-links">
                         Form submission by - <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer">Web3Forms</a>
                     </p>
-                    <p class="absolute-footer-links">
+                    <p class="footer-absolute-links">
                         Icons by - <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">FontAwesome</a>
                     </p>
                 </nav>
-                <nav class="footer-bottom">
-                    <ul class="footer-icons">
+                <nav class="footer-bottom-navigation-container">
+                    <ul class="footer-bottom-left-icons">
                         <li>
-                            <a href="https://www.linkedin.com/in/kristie-larke/" title="linkedin" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-linkedin" aria-describedby="kristie larke linkedin account icon"></i>
+                            <a href="https://www.linkedin.com/in/kristie-larke/" title="Linkedin" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-linkedin" aria-describedby="Kristie Larke Linkedin account icon"></i>
                             </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/devkristie?tab=repositories" title="github" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-square-github" aria-describedby="kristie larke github account repositories icon"></i>
+                            <a href="https://github.com/devkristie?tab=repositories" title="GitHub" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-square-github" aria-describedby="Kristie Larke GitHub account repositories icon"></i>
                             </a>
                         </li>
                     </ul>
                     <article>
-                        <p class="footer-copyright footer-copyright-sign">©</p>
-                        <p class="footer-copyright-year"></p> <!--automatically updated in the script.js file-->
-                        <p class="footer-copyright"> - Kristie Larke, All rights reserved.</p>
+                        <p class="footer-bottom-copyright-sign">©</p>
+                        <p class="footer-bottom-copyright-year"></p> <!--Automatically updated in the script.js file-->
+                        <p class="footer-bottom-copyright"> - Kristie Larke, All rights reserved.</p>
                         </br>
-                        <a href="../portfolio-privacy-policy-page/privacy-policy-page.html">Privacy Policy</a>
+                        <a class="footer-bottom-privacy-policy-link" href="../portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
                     </article>
                 </nav>
             </section>

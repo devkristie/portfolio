@@ -1,10 +1,10 @@
 "use strict"
 
-const moonIcon = document.querySelector(".fa-moon");
-const moon = document.querySelector(".fa-moon");
-const sunIcon = document.querySelector(".fa-sun");
-const hamburgerMenuIcon = document.querySelector(".hamburger-menu");
-const topNavBarShow = document.querySelector(".top-navigation-bar-accordion-container-hidden");
+const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
+const lightModeIcon = document.querySelector(".fa-sun");
+const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
+const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
+const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
 // Smooth scroll, compatilble for older browsers
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
@@ -17,42 +17,45 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
-moonIcon.addEventListener("click", () => {
+darkModeIconContainer.addEventListener("click", () => {
+    // Show the dark mode pop-up box if no preference is set
     const darkModePreference = localStorage.getItem("darkModePreference");
+    let darkModePopUpBox = document.querySelector(".dark-mode-pop-up-box-container");
 
-    if (darkModePreference === null) {
-        // Show the pop-up if no preference is set
-        const popUp = document.createElement("div");
-        popUp.setAttribute("class", "dark-mode-popup");
+    if (darkModePreference === null && !darkModePopUpBox) {
+        // Show the pop-up if no preference is set and it doesn't already exist
+        darkModePopUpBox = document.createElement("aside");
+        darkModePopUpBox.setAttribute("class", "dark-mode-pop-up-box-container");
 
-        const paragraph1 = document.createElement("p");
-        paragraph1.setAttribute("class", "pop-up-paragraph1");
-        paragraph1.textContent = "Dark Mode Preference Storage Notice";
-        popUp.appendChild(paragraph1);
+        const darkModePopUpBoxTitle = document.createElement("p");
+        darkModePopUpBoxTitle.setAttribute("class", "dark-mode-pop-up-box-title");
+        darkModePopUpBoxTitle.textContent = "Dark Mode Preference Storage Notice";
+        darkModePopUpBox.appendChild(darkModePopUpBoxTitle);
 
-        const paragraph2 = document.createElement("p");
-        paragraph2.setAttribute("class", "pop-up-paragraph2");
-        paragraph2.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
-        popUp.appendChild(paragraph2);
+        const darkModePopUpBoxFirstParagraph = document.createElement("p");
+        darkModePopUpBoxFirstParagraph.setAttribute("class", "dark-mode-pop-up-box-first-paragraph");
+        darkModePopUpBoxFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+        darkModePopUpBox.appendChild(darkModePopUpBoxFirstParagraph);
 
-        const paragraph3 = document.createElement("p");
-        paragraph3.setAttribute("class", "pop-up-paragraph3");
-        paragraph3.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
-        popUp.appendChild(paragraph3);
+        const darkModePopUpBoxSecondParagraph = document.createElement("p");
+        darkModePopUpBoxSecondParagraph.setAttribute("class", "dark-mode-pop-up-box-second-paragraph");
+        darkModePopUpBoxSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+        darkModePopUpBox.appendChild(darkModePopUpBoxSecondParagraph);
 
-        const popUpAllowButton = document.createElement("button");
-        popUpAllowButton.setAttribute("class", "pop-up-allow");
-        popUpAllowButton.textContent = "Allow";
-        const popUpDeclineButton = document.createElement("button");
-        popUpDeclineButton.setAttribute("class", "pop-up-decline");
-        popUpDeclineButton.textContent = "Decline";
+        const darkModePopUpBoxAllowButton = document.createElement("button");
+        darkModePopUpBoxAllowButton.setAttribute("class", "dark-mode-pop-up-box-allow-button");
+        darkModePopUpBoxAllowButton.textContent = "Allow";
 
-        popUp.appendChild(popUpAllowButton);
-        popUp.appendChild(popUpDeclineButton);
+        const darkModePopUpBoxDeclineButton = document.createElement("button");
+        darkModePopUpBoxDeclineButton.setAttribute("class", "dark-mode-pop-up-box-decline-button");
+        darkModePopUpBoxDeclineButton.textContent = "Decline";
 
-        document.body.appendChild(popUp);
+        darkModePopUpBox.appendChild(darkModePopUpBoxAllowButton);
+        darkModePopUpBox.appendChild(darkModePopUpBoxDeclineButton);
 
-        popUpAllowButton.addEventListener("click", () => {
+        document.body.appendChild(darkModePopUpBox);
+
+        darkModePopUpBoxAllowButton.addEventListener("click", () => {
             // Set dark mode preference in local storage
             localStorage.setItem("darkModePreference", "enabled");
 
@@ -60,14 +63,14 @@ moonIcon.addEventListener("click", () => {
             enableDarkMode();
 
             // Remove pop-up
-            document.body.removeChild(popUp);
+            document.body.removeChild(darkModePopUpBox);
         });
 
-        popUpDeclineButton.addEventListener("click", () => {
+        darkModePopUpBoxDeclineButton.addEventListener("click", () => {
             // Remove pop-up without saving preference
-            document.body.removeChild(popUp);
+            document.body.removeChild(darkModePopUpBox);
         });
-    } else {
+    } else if (darkModePreference !== null) {
         // Toggle dark mode based on current state
         if (darkModePreference === "enabled") {
             disableDarkMode();
@@ -79,75 +82,76 @@ moonIcon.addEventListener("click", () => {
     }
 });
 
-sunIcon.addEventListener("click", () => {
-    const darkModePreference = localStorage.getItem("darkModePreference");
-
-    // Toggle dark mode based on current state
-    if (darkModePreference === "enabled") {
-        disableDarkMode();
-        localStorage.setItem("darkModePreference", "disabled");
-    } else {
-        enableDarkMode();
-        localStorage.setItem("darkModePreference", "enabled");
-    }
-});
+//Dark mode variables
+const bodyDarkMode = document.querySelector("body");
+const thankYouPageLandingPageSectionContainer = document.querySelector(".thank-you-page-landing-page-section-container");
+const messageSentParagraphContainer = document.querySelector(".message-sent-paragraph-container");
+const messageSentParagraph = document.querySelectorAll(".message-sent-paragraph");
+const messageSentEnvelopeSVGEnvelope = document.querySelector(".message-sent-envelope-svg-envelope");
+const messageSentEnvelopeSVGEnvelopeEndGap = document.querySelector(".message-sent-envelope-svg-envelope-end-gap");
+const messageSentEnvelopeSVGEnvelopeLine = document.querySelectorAll(".message-sent-envelope-svg-envelope-line");
+const footerSectionContainer = document.querySelector(".footer-section-container");
+const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
+const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
 function enableDarkMode() {
-    document.body.classList.add("dark-mode");
-    moonIcon.style.visibility = "hidden";
-    sunIcon.style.visibility = "visible";
+    darkModeIconContainer.style.visibility = "hidden";
+    lightModeIcon.style.visibility = "visible";
+
     // Apply dark mode classes to other elements as needed
-    const thankYouPageContentBackground = document.querySelector(".thank-you-page-landing-page-section-container");
-    thankYouPageContentBackground.classList.add("thank-you-page-landing-page-section-container-dark-mode");
-    const messageParagraphContainer = document.querySelector(".message-sent-paragraph-container");
-    messageParagraphContainer.classList.add("message-sent-paragraph-container-dark-mode");
-    const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
-    messageParagraphs.forEach((paragraph) => {
+    bodyDarkMode.classList.add("body-dark-mode");
+    
+    thankYouPageLandingPageSectionContainer.classList.add("thank-you-page-landing-page-section-container-dark-mode");
+    
+    messageSentParagraphContainer.classList.add("message-sent-paragraph-container-dark-mode");
+    
+    messageSentParagraph.forEach((paragraph) => {
         paragraph.classList.add("message-sent-paragraph-dark-mode");
     });
-    const envelope1 = document.querySelector(".message-sent-envelope-svg-envelope");
-    envelope1.classList.add("message-sent-envelope-svg-envelope-dark-mode");
-    const envelope2 = document.querySelector(".message-sent-envelope-svg-envelope-end-gap");
-    envelope2.classList.add("message-sent-envelope-svg-envelope-end-gap-dark-mode");
-    const envelope3 = document.querySelectorAll(".message-sent-envelope-svg-envelope-line");
-    envelope3.forEach((line) => {
+    
+    messageSentEnvelopeSVGEnvelope.classList.add("message-sent-envelope-svg-envelope-dark-mode");
+    
+    messageSentEnvelopeSVGEnvelopeEndGap.classList.add("message-sent-envelope-svg-envelope-end-gap-dark-mode");
+    
+    messageSentEnvelopeSVGEnvelopeLine.forEach((line) => {
         line.classList.add("message-sent-envelope-svg-envelope-line-dark-mode");
     });
-    const footerContentBackground = document.querySelector(".thank-you-page-footer-section-container");
-    footerContentBackground.classList.add("thank-you-page-footer-section-container-dark-mode");
-    const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
-    backToTopLinkDarkMode.classList.add("footer-link-back-to-top-dark-mode");
-    const footerBottomBorder = document.querySelector(".footer-bottom");
-    footerBottomBorder.classList.add("footer-bottom-dark-mode");
+    
+    footerSectionContainer.classList.add("footer-section-container-dark-mode");
+    
+    footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
+    
+    footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
 }
 
 function disableDarkMode() {
-    document.body.classList.remove("dark-mode");
-    sunIcon.style.visibility = "hidden";
-    moonIcon.style.visibility = "visible";
+    lightModeIcon.style.visibility = "hidden";
+    darkModeIconContainer.style.visibility = "visible";
+
     // Remove dark mode classes from other elements as needed
-    const thankYouPageContentBackground = document.querySelector(".thank-you-page-landing-page-section-container");
-    thankYouPageContentBackground.classList.remove("thank-you-page-landing-page-section-container-dark-mode");
-    const messageParagraphContainer = document.querySelector(".message-sent-paragraph-container");
-    messageParagraphContainer.classList.remove("message-sent-paragraph-container-dark-mode");
-    const messageParagraphs = document.querySelectorAll(".message-sent-paragraph");
-    messageParagraphs.forEach((paragraph) => {
+    bodyDarkMode.classList.remove("body-dark-mode");
+
+    thankYouPageLandingPageSectionContainer.classList.remove("thank-you-page-landing-page-section-container-dark-mode");
+    
+    messageSentParagraphContainer.classList.remove("message-sent-paragraph-container-dark-mode");
+    
+    messageSentParagraph.forEach((paragraph) => {
         paragraph.classList.remove("message-sent-paragraph-dark-mode");
     });
-    const envelope1 = document.querySelector(".message-sent-envelope-svg-envelope");
-    envelope1.classList.remove("message-sent-envelope-svg-envelope-dark-mode");
-    const envelope2 = document.querySelector(".message-sent-envelope-svg-envelope-end-gap");
-    envelope2.classList.remove("message-sent-envelope-svg-envelope-end-gap-dark-mode");
-    const envelope3 = document.querySelectorAll(".message-sent-envelope-svg-envelope-line");
-    envelope3.forEach((line) => {
+    
+    messageSentEnvelopeSVGEnvelope.classList.remove("message-sent-envelope-svg-envelope-dark-mode");
+    
+    messageSentEnvelopeSVGEnvelopeEndGap.classList.remove("message-sent-envelope-svg-envelope-end-gap-dark-mode");
+    
+    messageSentEnvelopeSVGEnvelopeLine.forEach((line) => {
         line.classList.remove("message-sent-envelope-svg-envelope-line-dark-mode");
     });
-    const footerContentBackground = document.querySelector(".thank-you-page-footer-section-container");
-    footerContentBackground.classList.remove("thank-you-page-footer-section-container-dark-mode");
-    const backToTopLinkDarkMode = document.querySelector("a.footer-link-backtotop");
-    backToTopLinkDarkMode.classList.remove("footer-link-back-to-top-dark-mode");
-    const footerBottomBorder = document.querySelector(".footer-bottom");
-    footerBottomBorder.classList.remove("footer-bottom-dark-mode");
+    
+    footerSectionContainer.classList.remove("footer-section-container-dark-mode");
+    
+    footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
+    
+    footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
 }
 
 // Apply dark mode if preference is already enabled
@@ -158,15 +162,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-hamburgerMenuIcon.addEventListener("click", showMenu);
+hamburgerMenuIconContainer.addEventListener("click", showMenu);
 
 function showMenu() {
-    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-hidden");
-    topNavBarShow.classList.toggle("top-navigation-bar-accordion-container-visible");
+    topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
+    topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 }
 
-const thankYouWriting = document.querySelectorAll(".thank-you-message-svg-animation-writing");
-const thankYouWritingLine = document.querySelectorAll(".thank-you-message-svg-animation-writing-underline");
+const thankYouMessageSVGAnimationWriting = document.querySelectorAll(".thank-you-message-svg-animation-writing");
+const thankYouMessageSVGAnimationWritingUnderline = document.querySelectorAll(".thank-you-message-svg-animation-writing-underline");
 
 document.addEventListener("DOMContentLoaded", function() {
     function isInViewport(element) {
@@ -179,18 +183,21 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     }
 
-    thankYouWriting.forEach((element, index) => {
+    thankYouMessageSVGAnimationWriting.forEach((element, index) => {
         if (isInViewport(element)) {
             setTimeout(() => {
                 element.style.animation = "draw 10s linear 2s forwards";
 
                 // After the animation of the first element is finished, trigger the animation of the second element
                 element.addEventListener("animationend", function() {
-                    thankYouWritingLine.forEach((lineElement) => {
-                        lineElement.style.animation = "draw 2.5s linear 1.5s forwards"; //3s 5s
+                    thankYouMessageSVGAnimationWritingUnderline.forEach((lineElement) => {
+                        lineElement.style.animation = "draw 2.5s linear 1.5s forwards";
                     });
                 });
-            }, index * 1000); //1250
+            }, index * 1000);
         }
     });
 });
+
+const updateDate = new Date();
+copyrightUpdateYear.textContent = updateDate.getFullYear();

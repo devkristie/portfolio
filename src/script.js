@@ -25,23 +25,25 @@ document.querySelectorAll("a[href^='#']").forEach((anchor) => {
 });
 
 darkModeIconContainer.addEventListener("click", () => {
+    // Show the dark mode pop-up box if no preference is set
     const darkModePreference = localStorage.getItem("darkModePreference");
+    let darkModePopUpBox = document.querySelector(".dark-mode-pop-up-box-container");
 
-    if (darkModePreference === null) {
-        // Show the dark mode pop-up box if no preference is set
-        const darkModePopUpBox = document.createElement("aside");
-        darkModePopUpBox.setAttribute("class", "dark-mode-popup-box-container");
+    if (darkModePreference === null && !darkModePopUpBox) {
+        // Show the pop-up if no preference is set and it doesn't already exist
+        darkModePopUpBox = document.createElement("aside");
+        darkModePopUpBox.setAttribute("class", "dark-mode-pop-up-box-container");
 
         const darkModePopUpBoxTitle = document.createElement("p");
         darkModePopUpBoxTitle.setAttribute("class", "dark-mode-pop-up-box-title");
         darkModePopUpBoxTitle.textContent = "Dark Mode Preference Storage Notice";
         darkModePopUpBox.appendChild(darkModePopUpBoxTitle);
-    
+
         const darkModePopUpBoxFirstParagraph = document.createElement("p");
         darkModePopUpBoxFirstParagraph.setAttribute("class", "dark-mode-pop-up-box-first-paragraph");
         darkModePopUpBoxFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
         darkModePopUpBox.appendChild(darkModePopUpBoxFirstParagraph);
-    
+
         const darkModePopUpBoxSecondParagraph = document.createElement("p");
         darkModePopUpBoxSecondParagraph.setAttribute("class", "dark-mode-pop-up-box-second-paragraph");
         darkModePopUpBoxSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
@@ -50,6 +52,7 @@ darkModeIconContainer.addEventListener("click", () => {
         const darkModePopUpBoxAllowButton = document.createElement("button");
         darkModePopUpBoxAllowButton.setAttribute("class", "dark-mode-pop-up-box-allow-button");
         darkModePopUpBoxAllowButton.textContent = "Allow";
+
         const darkModePopUpBoxDeclineButton = document.createElement("button");
         darkModePopUpBoxDeclineButton.setAttribute("class", "dark-mode-pop-up-box-decline-button");
         darkModePopUpBoxDeclineButton.textContent = "Decline";
@@ -59,22 +62,22 @@ darkModeIconContainer.addEventListener("click", () => {
 
         document.body.appendChild(darkModePopUpBox);
 
-    darkModePopUpBoxAllowButton.addEventListener("click", () => {
-        // Set dark mode preference in local storage
-        localStorage.setItem("darkModePreference", "enabled");
+        darkModePopUpBoxAllowButton.addEventListener("click", () => {
+            // Set dark mode preference in local storage
+            localStorage.setItem("darkModePreference", "enabled");
 
-        // Apply dark mode styles
-        enableDarkMode();
+            // Apply dark mode styles
+            enableDarkMode();
 
-        // Remove pop-up
-        document.body.removeChild(darkModePopUpBox);
-    });
+            // Remove pop-up
+            document.body.removeChild(darkModePopUpBox);
+        });
 
-    darkModePopUpBoxDeclineButton.addEventListener("click", () => {
-        // Remove pop-up without saving preference
-        document.body.removeChild(darkModePopUpBox);
-    });
-    } else {
+        darkModePopUpBoxDeclineButton.addEventListener("click", () => {
+            // Remove pop-up without saving preference
+            document.body.removeChild(darkModePopUpBox);
+        });
+    } else if (darkModePreference !== null) {
         // Toggle dark mode based on current state
         if (darkModePreference === "enabled") {
             disableDarkMode();
