@@ -514,11 +514,11 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
         if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
             portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
             portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(180deg)";
-            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1rem 0.30rem 2rem 0";           
+            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0.30em 2em 0";           
         } else {
             portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
             portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
-            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1rem 0 2rem 0";
+            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
         }
     });
 });
@@ -526,15 +526,15 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
 contactFormInputs.forEach((input, index) => {
     input.addEventListener("input", () => {
         if (input.value !== "") {
-            contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
+            contactFormLabels[index].style.margin = "-1.5em 0.5em";
         } else {
-            contactFormLabels[index].style.margin = "0.25rem 0.5rem";
+            contactFormLabels[index].style.margin = "0.25em 0.5em";
         }
         contactFormLabels[index].style.transition = "margin 0.35s ease";
     });
     // Check input values on page load
     if (input.value !== "") {
-        contactFormLabels[index].style.margin = "-1.5rem 0.5rem";
+        contactFormLabels[index].style.margin = "-1.5em 0.5em";
     }
 });
 

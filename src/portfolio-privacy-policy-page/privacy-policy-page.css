@@ -4,34 +4,32 @@
 }
 #home {
     position: absolute;
-    margin-top: -5rem;
+    margin-top: -5em;
 }
 .section-title-container {
-    margin-top: 5rem;
+    margin-top: 5em;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 533px) {
     .section-title {
-        letter-spacing: 0.25rem;
-    }
-}
-@media only screen and (max-width: 535px) {
-    .section-title {
-        padding-top: 0.35rem;
+        padding-top: 0.35em;
+        padding-left: 0.63em;
     }
 }
 .privacy-policy-page-content-container {
-    margin: 0 10%;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 5em;
 }
 .privacy-policy-page-content-container h2 {
-    margin: 4rem 0 1.75rem;
-    padding-left: 0.5rem;
+    margin: 2.7em 0 1.27em;
+    padding-left: 0.33em;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.01em;
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--lightest-grey);
     color: var(--dark-mode);
-    border-left: 0.5rem solid var(--secondary-color);
+    border-left: 8px solid var(--secondary-color);
 }
 .privacy-policy-page-content-container h2.h2-dark-mode {
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
@@ -39,10 +37,10 @@
     color: var(--light-mode);
 }
 .privacy-policy-page-content-container p {
-    margin: 1rem 0;
+    margin: 1em 0;
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
-    line-height: 1.35rem;
+    line-height: 1.35;
 }
 .privacy-policy-page-content-container a {
     font-size: 1rem;
