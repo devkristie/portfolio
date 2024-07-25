@@ -29,7 +29,7 @@ body::before {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -2;
+    z-index: -1;
     width: 100%;
     height: 100%;
     background: url("./assets/images/1_image-code9.jpg") fixed no-repeat center;
@@ -37,11 +37,11 @@ body::before {
     filter: blur(1.5px); 
     content: "";
 }
-.dark-mode-pop-up-box-container {
+.dark-mode-modal-container {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 11;
+    z-index: 6;
     width: 95%;
     height: 448px;
     text-align: center;
@@ -50,21 +50,20 @@ body::before {
     border-radius: 32px;
     transform: translate(2.5%, 20%);
 }
-.dark-mode-pop-up-box-title {
+.dark-mode-modal-title {
     margin: 0.7em;
     font-size: 1.5rem;
     font-family: "tomorrow-regular", Arial;
     font-weight: 600;
 }
-.dark-mode-pop-up-box-first-paragraph, .dark-mode-pop-up-box-second-paragraph {
+.dark-mode-modal-first-paragraph, .dark-mode-modal-second-paragraph {
     padding: 0 1.75em;
     font-family: "roboto-regular", Arial;
 }
-.dark-mode-pop-up-box-allow-button {
+.dark-mode-modal-allow-button {
     position: fixed;
     top: 75%;
     left: 5%;
-    z-index: 12;
     width: 25%;
     height: 40px;
     font-size: 1rem;
@@ -78,14 +77,13 @@ body::before {
     transition: background-color 0.5s;
     cursor: pointer;
 }
-.dark-mode-pop-up-box-allow-button:hover {
+.dark-mode-modal-allow-button:hover {
     background-color: rgb(235.0, 150.4, 5.3);
 }
-.dark-mode-pop-up-box-decline-button {
+.dark-mode-modal-decline-button {
     position: fixed;
     top: 75%;
     right: 30%;
-    z-index: 12;
     width: 25%;
     height: 40px;
     font-size: 1rem;
@@ -99,13 +97,13 @@ body::before {
     transition: background-color 0.5s;
     cursor: pointer;
 }
-.dark-mode-pop-up-box-decline-button:hover {
+.dark-mode-modal-decline-button:hover {
     background-color: rgb(235.0, 150.4, 5.3);
 }
 .top-navigation-bar-container {
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 5;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -214,7 +212,7 @@ li {
 .top-navigation-bar-accordion-container-visible {
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 5;
     width: 100%;
     height: 40px;
     margin-top: 2.5em;
@@ -303,7 +301,7 @@ main {
 }
 .landing-page-title-welcome  {
     position: relative;
-    z-index: 5;
+    z-index: 4;
     font-size: 2rem;
 }
 .landing-page-title-welcome-dark-mode {
@@ -807,6 +805,8 @@ q::after {
     padding: 0.25em 1em;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
+    text-align: center;
+    text-decoration: none;
     background-color: var(--secondary-color);
     color: var(--light-mode);
     border-top: none;
@@ -824,6 +824,8 @@ q::after {
     padding: 0.25em 1em;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
+    text-align: center;
+    text-decoration: none;
     background-color: var(--secondary-color);
     color: var(--light-mode);
     border-top: none;
@@ -947,7 +949,12 @@ q::after {
     }
 }
 .portfolio-websites-show-more-accordion-container-technology-used-container > div {
-    width: 15.5em;
+    width: 12.5em;
+}
+@media only screen and (max-width: 390px) {
+    .portfolio-websites-show-more-accordion-container-technology-used-container > div {
+        width: 50%;
+    }
 }
 .portfolio-websites-show-more-accordion-container-technology-used-container > div > i {
     font-size: 2.5rem;
@@ -1277,7 +1284,7 @@ a.footer-navigation-link-backtotop-dark-mode {
     color: var(--light-grey);
 }
 .footer-bottom-privacy-policy-link {
-    float: right;
+    float: center;
     font-size: 0.65rem;
     font-family: "roboto-bold", Arial;
     text-decoration: none;

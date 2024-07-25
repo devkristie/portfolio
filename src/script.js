@@ -27,42 +27,42 @@ document.querySelectorAll("a[href^='#']").forEach((anchor) => {
 darkModeIconContainer.addEventListener("click", () => {
     // Show the dark mode pop-up box if no preference is set
     const darkModePreference = localStorage.getItem("darkModePreference");
-    let darkModePopUpBox = document.querySelector(".dark-mode-pop-up-box-container");
+    let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
 
-    if (darkModePreference === null && !darkModePopUpBox) {
+    if (darkModePreference === null && !darkModeModalContainer) {
         // Show the pop-up if no preference is set and it doesn't already exist
-        darkModePopUpBox = document.createElement("aside");
-        darkModePopUpBox.setAttribute("class", "dark-mode-pop-up-box-container");
+        darkModeModalContainer = document.createElement("aside");
+        darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
 
-        const darkModePopUpBoxTitle = document.createElement("p");
-        darkModePopUpBoxTitle.setAttribute("class", "dark-mode-pop-up-box-title");
-        darkModePopUpBoxTitle.textContent = "Dark Mode Preference Storage Notice";
-        darkModePopUpBox.appendChild(darkModePopUpBoxTitle);
+        const darkModeModalTitle = document.createElement("p");
+        darkModeModalTitle.setAttribute("class", "dark-mode-modal-title");
+        darkModeModalTitle.textContent = "Dark Mode Preference Storage Notice";
+        darkModeModalContainer.appendChild(darkModeModalTitle);
 
-        const darkModePopUpBoxFirstParagraph = document.createElement("p");
-        darkModePopUpBoxFirstParagraph.setAttribute("class", "dark-mode-pop-up-box-first-paragraph");
-        darkModePopUpBoxFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
-        darkModePopUpBox.appendChild(darkModePopUpBoxFirstParagraph);
+        const darkModeModalFirstParagraph = document.createElement("p");
+        darkModeModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
+        darkModeModalFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+        darkModeModalContainer.appendChild(darkModeModalFirstParagraph);
 
-        const darkModePopUpBoxSecondParagraph = document.createElement("p");
-        darkModePopUpBoxSecondParagraph.setAttribute("class", "dark-mode-pop-up-box-second-paragraph");
-        darkModePopUpBoxSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
-        darkModePopUpBox.appendChild(darkModePopUpBoxSecondParagraph);
+        const darkModeModalSecondParagraph = document.createElement("p");
+        darkModeModalSecondParagraph.setAttribute("class", "dark-mode-modal-second-paragraph");
+        darkModeModalSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+        darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
 
-        const darkModePopUpBoxAllowButton = document.createElement("button");
-        darkModePopUpBoxAllowButton.setAttribute("class", "dark-mode-pop-up-box-allow-button");
-        darkModePopUpBoxAllowButton.textContent = "Allow";
+        const darkModeModalAllowButton = document.createElement("button");
+        darkModeModalAllowButton.setAttribute("class", "dark-mode-modal-allow-button");
+        darkModeModalAllowButton.textContent = "Allow";
 
-        const darkModePopUpBoxDeclineButton = document.createElement("button");
-        darkModePopUpBoxDeclineButton.setAttribute("class", "dark-mode-pop-up-box-decline-button");
-        darkModePopUpBoxDeclineButton.textContent = "Decline";
+        const darkModeModalDeclineButton = document.createElement("button");
+        darkModeModalDeclineButton.setAttribute("class", "dark-mode-modal-decline-button");
+        darkModeModalDeclineButton.textContent = "Decline";
 
-        darkModePopUpBox.appendChild(darkModePopUpBoxAllowButton);
-        darkModePopUpBox.appendChild(darkModePopUpBoxDeclineButton);
+        darkModeModalContainer.appendChild(darkModeModalAllowButton);
+        darkModeModalContainer.appendChild(darkModeModalDeclineButton);
 
-        document.body.appendChild(darkModePopUpBox);
+        document.body.appendChild(darkModeModalContainer);
 
-        darkModePopUpBoxAllowButton.addEventListener("click", () => {
+        darkModeModalAllowButton.addEventListener("click", () => {
             // Set dark mode preference in local storage
             localStorage.setItem("darkModePreference", "enabled");
 
@@ -70,12 +70,12 @@ darkModeIconContainer.addEventListener("click", () => {
             enableDarkMode();
 
             // Remove pop-up
-            document.body.removeChild(darkModePopUpBox);
+            document.body.removeChild(darkModeModalContainer);
         });
 
-        darkModePopUpBoxDeclineButton.addEventListener("click", () => {
+        darkModeModalDeclineButton.addEventListener("click", () => {
             // Remove pop-up without saving preference
-            document.body.removeChild(darkModePopUpBox);
+            document.body.removeChild(darkModeModalContainer);
         });
     } else if (darkModePreference !== null) {
         // Toggle dark mode based on current state
