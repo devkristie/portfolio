@@ -1148,6 +1148,19 @@ q::after {
 .h-captcha iframe {
     border: 0.16px solid var(--darker-grey);
 }
+.hcaptcha-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    width: 95%;
+    height: 448px;
+    text-align: center;
+    background-color: var(--light-mode);
+    border: 1px var(--dark-mode) solid;
+    border-radius: 32px;
+    transform: translate(2.5%, 20%);
+}
 .contact-form-submit-button {
     top: 0;
     left: 0;

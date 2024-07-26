@@ -667,7 +667,38 @@ document.addEventListener("DOMContentLoaded", function() {
             const hCaptchaResponse = document.querySelector('textarea[name="h-captcha-response"]').value;
             if (!hCaptchaResponse) {
                 formIsValid = false;
-                alert("Please complete the captcha.");
+
+                let hcaptchaModalContainer = document.querySelector(".hcaptcha-modal-container");
+
+                // Check if the modal already exists
+                if (!hcaptchaModalContainer) {
+                // Create the modal
+                
+                    hcaptchaModalContainer = document.createElement("aside");
+                    hcaptchaModalContainer.setAttribute("class", "hcaptcha-modal-container");
+            
+                    const hcpatchaModalTitle = document.createElement("p");
+                    hcpatchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
+                    hcpatchaModalTitle.textContent = "Alert";
+                    hcaptchaModalContainer.appendChild(hcpatchaModalTitle);
+            
+                    const hcaptchaModalFirstParagraph = document.createElement("p");
+                    hcaptchaModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
+                    hcaptchaModalFirstParagraph.textContent = "Please make sure you are human!";
+                    hcaptchaModalContainer.appendChild(hcaptchaModalFirstParagraph);
+            
+                    const hcpatchaModalOkButton = document.createElement("button");
+                    hcpatchaModalOkButton.setAttribute("class", "hcaptcha-modal-ok-button");
+                    hcpatchaModalOkButton.textContent = "Ok";
+            
+                    hcaptchaModalContainer.appendChild(hcpatchaModalOkButton);
+            
+                    document.body.appendChild(hcaptchaModalContainer);
+            
+                    hcpatchaModalOkButton.addEventListener("click", () => {
+                        document.body.removeChild(hcaptchaModalContainer);
+                    }); 
+                }
                 return;
             }
 
