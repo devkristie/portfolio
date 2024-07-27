@@ -28,9 +28,16 @@ darkModeIconContainer.addEventListener("click", () => {
     // Show the dark mode pop-up box if no preference is set
     const darkModePreference = localStorage.getItem("darkModePreference");
     let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
+    let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
 
     if (darkModePreference === null && !darkModeModalContainer) {
         // Show the pop-up if no preference is set and it doesn't already exist
+
+        // Create the overlay
+        darkModeModalOverlay = document.createElement("div");
+        darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
+
+        // Create the modal
         darkModeModalContainer = document.createElement("aside");
         darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
 
@@ -60,6 +67,7 @@ darkModeIconContainer.addEventListener("click", () => {
         darkModeModalContainer.appendChild(darkModeModalAllowButton);
         darkModeModalContainer.appendChild(darkModeModalDeclineButton);
 
+        document.body.appendChild(darkModeModalOverlay);
         document.body.appendChild(darkModeModalContainer);
 
         darkModeModalAllowButton.addEventListener("click", () => {
@@ -70,11 +78,13 @@ darkModeIconContainer.addEventListener("click", () => {
             enableDarkMode();
 
             // Remove pop-up
+            document.body.removeChild(darkModeModalOverlay);
             document.body.removeChild(darkModeModalContainer);
         });
 
         darkModeModalDeclineButton.addEventListener("click", () => {
             // Remove pop-up without saving preference
+            document.body.removeChild(darkModeModalOverlay);
             document.body.removeChild(darkModeModalContainer);
         });
     } else if (darkModePreference !== null) {
@@ -666,38 +676,43 @@ document.addEventListener("DOMContentLoaded", function() {
             // Check if hCaptcha is completed
             const hCaptchaResponse = document.querySelector('textarea[name="h-captcha-response"]').value;
             if (!hCaptchaResponse) {
-                formIsValid = false;
+                let formIsValid = false;
 
                 let hcaptchaModalContainer = document.querySelector(".hcaptcha-modal-container");
+                let hcaptchaModalOverlay = document.querySelector(".hcaptcha-modal-overlay");
 
-                // Check if the modal already exists
-                if (!hcaptchaModalContainer) {
-                // Create the modal
-                
+                // Check if the modal and overlay already exist
+                if (!hcaptchaModalContainer && !hcaptchaModalOverlay) {
+                    // Create the overlay
+                    hcaptchaModalOverlay = document.createElement("div");
+                    hcaptchaModalOverlay.setAttribute("class", "hcaptcha-modal-overlay");
+                    
+                    // Create the modal
                     hcaptchaModalContainer = document.createElement("aside");
                     hcaptchaModalContainer.setAttribute("class", "hcaptcha-modal-container");
-            
-                    const hcpatchaModalTitle = document.createElement("p");
-                    hcpatchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
-                    hcpatchaModalTitle.textContent = "Alert";
-                    hcaptchaModalContainer.appendChild(hcpatchaModalTitle);
-            
+
+                    const hcaptchaModalTitle = document.createElement("p");
+                    hcaptchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
+                    hcaptchaModalTitle.textContent = "Alert!";
+                    hcaptchaModalContainer.appendChild(hcaptchaModalTitle);
+
                     const hcaptchaModalFirstParagraph = document.createElement("p");
-                    hcaptchaModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
+                    hcaptchaModalFirstParagraph.setAttribute("class", "hcaptcha-modal-first-paragraph");
                     hcaptchaModalFirstParagraph.textContent = "Please make sure you are human!";
                     hcaptchaModalContainer.appendChild(hcaptchaModalFirstParagraph);
-            
-                    const hcpatchaModalOkButton = document.createElement("button");
-                    hcpatchaModalOkButton.setAttribute("class", "hcaptcha-modal-ok-button");
-                    hcpatchaModalOkButton.textContent = "Ok";
-            
-                    hcaptchaModalContainer.appendChild(hcpatchaModalOkButton);
-            
+
+                    const hcaptchaModalOkButton = document.createElement("button");
+                    hcaptchaModalOkButton.setAttribute("class", "hcaptcha-modal-ok-button");
+                    hcaptchaModalOkButton.textContent = "Ok";
+                    hcaptchaModalContainer.appendChild(hcaptchaModalOkButton);
+
+                    document.body.appendChild(hcaptchaModalOverlay);
                     document.body.appendChild(hcaptchaModalContainer);
-            
-                    hcpatchaModalOkButton.addEventListener("click", () => {
+
+                    hcaptchaModalOkButton.addEventListener("click", () => {
+                        document.body.removeChild(hcaptchaModalOverlay);
                         document.body.removeChild(hcaptchaModalContainer);
-                    }); 
+                    });
                 }
                 return;
             }
