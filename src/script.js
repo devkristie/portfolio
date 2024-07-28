@@ -223,7 +223,13 @@ function enableDarkMode() {
     contactFormEnvelopeIcon.classList.add("fa-envelope-dark-mode");
     
     contactFormInputs.forEach((input) => {
-        input.classList.add("contact-form-input-box-dark-mode");    
+        input.classList.add("contact-form-input-box-dark-mode");
+        if (input.classList.contains("contact-form-invalid")) {
+            input.classList.add("contact-form-invalid-dark-mode");
+        }
+        if (input.classList.contains("contact-form-valid")) {
+            input.classList.add("contact-form-valid-dark-mode");
+        }
     });
 
     const placeholderColorDark = `
@@ -251,13 +257,13 @@ function enableDarkMode() {
 
     bodyDarkMode.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
     
-    contactFormValid.forEach((input) => {
-        input.classList.add("contact-form-valid-dark-mode");
-    });
+    // contactFormValid.forEach((input) => {
+    //     input.classList.add("contact-form-valid-dark-mode");
+    // });
     
-    contactFormInvalid.forEach((input) => {
-        input.classList.add("contact-form-invalid-dark-mode");
-    });
+    // contactFormInvalid.forEach((input) => {
+    //     input.classList.add("contact-form-invalid-dark-mode");
+    // });
     
     contactFormLabels.forEach((label) => {
         label.classList.add("contact-form-label-dark-mode");
@@ -362,7 +368,13 @@ function disableDarkMode() {
     contactFormEnvelopeIcon.classList.remove("fa-envelope-dark-mode");
     
     contactFormInputs.forEach((input) => {
-        input.classList.remove("contact-form-input-box-dark-mode");    
+        input.classList.remove("contact-form-input-box-dark-mode");  
+        if (input.classList.contains("contact-form-invalid")) {
+            input.classList.remove("contact-form-invalid-dark-mode");
+        }
+        if (input.classList.contains("contact-form-valid")) {
+            input.classList.remove("contact-form-valid-dark-mode");
+        }
     });
 
     const placeholderColorLight = `
@@ -390,13 +402,13 @@ function disableDarkMode() {
 
     bodyDarkMode.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
     
-    contactFormValid.forEach((input) => {
-        input.classList.remove("contact-form-valid-dark-mode");
-    });
+    // contactFormValid.forEach((input) => {
+    //     input.classList.remove("contact-form-valid-dark-mode");
+    // });
     
-    contactFormInvalid.forEach((input) => {
-        input.classList.remove("contact-form-invalid-dark-mode");
-    });
+    // contactFormInvalid.forEach((input) => {
+    //     input.classList.remove("contact-form-invalid-dark-mode");
+    // });
     
     contactFormLabels.forEach((label) => {
         label.classList.remove("contact-form-label-dark-mode");
@@ -582,7 +594,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (isMessageField) {
                 field.classList.add("contact-form-input-box-message");
             }
-            if (document.body.classList.contains("dark-mode")) {
+            if (document.body.classList.contains("dark-mode")) { //This is needed to stop the form input fields toggling from light mode/dark mode when the user empties the text from the input field
                 field.classList.add("contact-form-input-box-dark-mode");
             }
             if (!isPhoneField && field.nextElementSibling) {
@@ -596,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (isMessageField) {
                 field.classList.add("contact-form-input-box-message");
             }
-            if (document.body.classList.contains("dark-mode")) {
+            if (document.body.classList.contains("dark-mode")) { //This is needed to stop the form input fields toggling from light mode/dark mode when the user empties the text from the input field
                 field.classList.add("contact-form-valid-dark-mode");
             }
             if (field.id === "fullname" && contactFormValidationParagraphName) {
@@ -614,6 +626,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             if (document.body.classList.contains("dark-mode")) {
                 field.classList.add("contact-form-invalid-dark-mode");
+
             }
             if (field.id === "fullname" && contactFormValidationParagraphName) {
                 contactFormValidationParagraphName.style.visibility = "visible";
