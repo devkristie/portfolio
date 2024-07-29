@@ -21,9 +21,16 @@ darkModeIconContainer.addEventListener("click", () => {
     // Show the dark mode pop-up box if no preference is set
     const darkModePreference = localStorage.getItem("darkModePreference");
     let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
+    let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
 
     if (darkModePreference === null && !darkModeModalContainer) {
         // Show the pop-up if no preference is set and it doesn't already exist
+
+        // Create the overlay
+        darkModeModalOverlay = document.createElement("div");
+        darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
+
+        // Create the modal
         darkModeModalContainer = document.createElement("aside");
         darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
 
@@ -53,6 +60,7 @@ darkModeIconContainer.addEventListener("click", () => {
         darkModeModalContainer.appendChild(darkModeModalAllowButton);
         darkModeModalContainer.appendChild(darkModeModalDeclineButton);
 
+        document.body.appendChild(darkModeModalOverlay);
         document.body.appendChild(darkModeModalContainer);
 
         darkModeModalAllowButton.addEventListener("click", () => {
@@ -63,11 +71,13 @@ darkModeIconContainer.addEventListener("click", () => {
             enableDarkMode();
 
             // Remove pop-up
+            document.body.removeChild(darkModeModalOverlay);
             document.body.removeChild(darkModeModalContainer);
         });
 
         darkModeModalDeclineButton.addEventListener("click", () => {
             // Remove pop-up without saving preference
+            document.body.removeChild(darkModeModalOverlay);
             document.body.removeChild(darkModeModalContainer);
         });
     } else if (darkModePreference !== null) {

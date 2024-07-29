@@ -326,7 +326,9 @@
                         <label class="contact-form-label" for="message">Message</label>
                         <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="Type your message" autocomplete="off" required></textarea>
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
-                        <button class="contact-form-submit-button" title="Submit form" type="submit">Submit</button>
+                        <div class="contact-form-submit-button-container">
+                            <button class="contact-form-submit-button" title="Submit form" type="submit">Submit</button>
+                        </div>
                         <label class="visually-hidden" for="botcheck">Leave this field empty</label>
                         <input id="botcheck" class="botcheck-visually-hidden" name="botcheck" type="text" aria-hidden="true">
                         <input name="redirect" type="hidden" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html"><!--?Need to change the link when it goes to production-->

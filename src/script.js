@@ -695,7 +695,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let hcaptchaModalOverlay = document.querySelector(".hcaptcha-modal-overlay");
 
                 // Check if the modal and overlay already exist
-                if (!hcaptchaModalContainer && !hcaptchaModalOverlay) {
+                if (!hcaptchaModalContainer) {
                     // Create the overlay
                     hcaptchaModalOverlay = document.createElement("div");
                     hcaptchaModalOverlay.setAttribute("class", "hcaptcha-modal-overlay");
