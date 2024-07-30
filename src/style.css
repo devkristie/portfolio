@@ -60,10 +60,11 @@ body::before {
     transform: translate(2.5%, 20%);
 }
 .dark-mode-modal-title {
-    margin: 0.7em;
+    margin: 1em 0 1em 0;
     font-size: 1.5rem;
     font-family: "tomorrow-regular", Arial;
-    font-weight: 600;
+    font-weight: 900;
+    color: var(--secondary-color);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -71,9 +72,15 @@ body::before {
 .dark-mode-modal-first-paragraph, .dark-mode-modal-second-paragraph {
     padding: 0 1.75em;
     font-family: "roboto-regular", Arial;
+    color: var(--darkest-grey);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+@media only screen and (min-width: 474px) {
+    .dark-mode-modal-first-paragraph, .dark-mode-modal-second-paragraph {
+        margin-top: 3.25em;
+    }
 }
 .dark-mode-modal-allow-button {
     position: fixed;
@@ -114,6 +121,48 @@ body::before {
 }
 .dark-mode-modal-decline-button:hover {
     background-color: rgb(235.0, 150.4, 5.3);
+}
+@media only screen and (orientation: landscape) and (max-height: 550px) {
+    .dark-mode-modal-container {
+        height: 80%;
+        overflow-y: auto;
+    }
+    .dark-mode-modal-first-paragraph, .dark-mode-modal-second-paragraph {
+        margin-top: 0em;
+    }
+    .dark-mode-modal-allow-button {
+        position: relative;
+        top: 0;
+        margin-right: 25%;
+        margin-bottom: 3.5em;
+    }
+    .dark-mode-modal-decline-button {
+        position: relative;
+        top: 0;
+        margin-left: 25%;
+        margin-bottom: 3.5em;
+    }
+}
+@media only screen and (orientation: portrait) and (max-height: 550px) {
+    .dark-mode-modal-container {
+        height: 80%;
+        overflow-y: auto;
+    }
+    .dark-mode-modal-first-paragraph, .dark-mode-modal-second-paragraph {
+        margin-top: 0em;
+    }
+    .dark-mode-modal-allow-button {
+        position: relative;
+        top: 0;
+        margin-right: 25%;
+        margin-bottom: 3.5em;
+    }
+    .dark-mode-modal-decline-button {
+        position: relative;
+        top: 0;
+        margin-left: 25%;
+        margin-bottom: 3.5em;
+    }
 }
 .top-navigation-bar-container {
     position: fixed;
@@ -1190,6 +1239,7 @@ q::after {
     font-size: 1.5rem;
     font-family: "tomorrow-regular", Arial;
     font-weight: 600;
+    color: var(--secondary-color);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -1197,6 +1247,7 @@ q::after {
 .hcaptcha-modal-first-paragraph {
     padding: 0 1.75em;
     font-family: "roboto-regular", Arial;
+    color: var(--darkest-grey);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -1246,6 +1297,11 @@ q::after {
 } 
 .visually-hidden, .botcheck-visually-hidden {
     display: none;
+}
+@media only screen and (orientation: landscape) and (max-height: 450px) {
+    .hcaptcha-modal-container {
+        height: 185px;
+    }
 }
 .footer-section-container {
     position: relative;
