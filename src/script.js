@@ -437,6 +437,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
 
+// Add keydown event listener for accessibility
+hamburgerMenuIconContainer.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault(); // Prevent scrolling on space key
+        showMenu();
+    }
+});
+
 function showMenu() {
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
@@ -482,17 +490,35 @@ document.addEventListener("DOMContentLoaded", function() {
         let currentIndex = 0;
 
         // Function to handle click on left arrow
-        leftArrowElement.addEventListener("click", function() {
+        function handleLeftArrow() {
             currentIndex = (currentIndex === 0) ? portfolioWebsitesSliderImages.length - 1 : currentIndex - 1;
             showImage(portfolioWebsitesSliderImages, currentIndex);
-        });
+        }
 
         // Function to handle click on right arrow
-        rightArrowElement.addEventListener("click", function() {
+        function handleRightArrow() {
             currentIndex = (currentIndex === portfolioWebsitesSliderImages.length - 1) ? 0 : currentIndex + 1;
             showImage(portfolioWebsitesSliderImages, currentIndex);
+        }
+
+        // Add event listeners for click
+        leftArrowElement.addEventListener("click", handleLeftArrow);
+        rightArrowElement.addEventListener("click", handleRightArrow);
+
+        // Add event listeners for keyboard accessibility
+        leftArrowElement.addEventListener("keydown", function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault(); // Prevent default space action
+                handleLeftArrow();
+            }
         });
 
+rightArrowElement.addEventListener("keydown", function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault(); // Prevent default space action
+        handleRightArrow();
+    }
+});
         // Show the initial image
         showImage(portfolioWebsitesSliderImages, currentIndex);
     }
@@ -531,7 +557,6 @@ document.addEventListener("DOMContentLoaded", function() {
 portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
     button.addEventListener("click", () => {
         portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
-        // portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-website-content-container");
 
         if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
             portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
@@ -541,6 +566,22 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
             portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
             portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
             portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
+        }
+    });
+    button.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault(); // Prevent default behavior for space key which is scrolling
+            portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
+
+            if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
+                portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
+                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(180deg)";
+                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0.30em 2em 0";           
+            } else {
+                portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
+                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
+                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
+            }
         }
     });
 });
@@ -576,6 +617,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ensure the submit button is always visible
     contactFormSubmitButton.style.visibility = "visible";
+
+     // Add event listener for keydown events on the button
+     contactFormSubmitButton.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault(); // Prevent default behavior for Space key (scrolling)
+            contactFormSubmitButton.click(); // Trigger the button's click event
+        }
+    });
 
     // Function to set a session cookie
     function setSessionCookie() {
