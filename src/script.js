@@ -1,7 +1,7 @@
 "use strict"
 
-const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
-const lightModeIcon = document.querySelector(".fa-sun");
+// const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container");
+// const lightModeIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 const laptopImageCode = document.querySelectorAll(".laptop-image-code");
@@ -24,80 +24,80 @@ document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     });
 });
 
-darkModeIconContainer.addEventListener("click", () => {
-    // Show the dark mode pop-up box if no preference is set
-    const darkModePreference = localStorage.getItem("darkModePreference");
-    let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
-    let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
+document.addEventListener("DOMContentLoaded", () => {
+    const darkModeToggleButton = document.querySelector(".dark-mode-toggle-button");
+    const darkModeIcon = darkModeToggleButton.querySelector(".fa-moon");
+    const lightModeIcon = darkModeToggleButton.querySelector(".fa-sun");
 
-    if (darkModePreference === null && !darkModeModalContainer) {
-        // Show the pop-up if no preference is set and it doesn't already exist
+    const toggleDarkMode = () => {
+        const darkModePreference = localStorage.getItem("darkModePreference");
 
-        // Create the overlay
-        darkModeModalOverlay = document.createElement("div");
-        darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
-
-        // Create the modal
-        darkModeModalContainer = document.createElement("aside");
-        darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
-
-        const darkModeModalTitle = document.createElement("p");
-        darkModeModalTitle.setAttribute("class", "dark-mode-modal-title");
-        darkModeModalTitle.textContent = "Dark Mode Preference Storage Notice";
-        darkModeModalContainer.appendChild(darkModeModalTitle);
-
-        const darkModeModalFirstParagraph = document.createElement("p");
-        darkModeModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
-        darkModeModalFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
-        darkModeModalContainer.appendChild(darkModeModalFirstParagraph);
-
-        const darkModeModalSecondParagraph = document.createElement("p");
-        darkModeModalSecondParagraph.setAttribute("class", "dark-mode-modal-second-paragraph");
-        darkModeModalSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
-        darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
-
-        const darkModeModalAllowButton = document.createElement("button");
-        darkModeModalAllowButton.setAttribute("class", "dark-mode-modal-allow-button");
-        darkModeModalAllowButton.textContent = "Allow";
-
-        const darkModeModalDeclineButton = document.createElement("button");
-        darkModeModalDeclineButton.setAttribute("class", "dark-mode-modal-decline-button");
-        darkModeModalDeclineButton.textContent = "Decline";
-
-        darkModeModalContainer.appendChild(darkModeModalAllowButton);
-        darkModeModalContainer.appendChild(darkModeModalDeclineButton);
-
-        document.body.appendChild(darkModeModalOverlay);
-        document.body.appendChild(darkModeModalContainer);
-
-        darkModeModalAllowButton.addEventListener("click", () => {
-            // Set dark mode preference in local storage
-            localStorage.setItem("darkModePreference", "enabled");
-
-            // Apply dark mode styles
-            enableDarkMode();
-
-            // Remove pop-up
-            document.body.removeChild(darkModeModalOverlay);
-            document.body.removeChild(darkModeModalContainer);
-        });
-
-        darkModeModalDeclineButton.addEventListener("click", () => {
-            // Remove pop-up without saving preference
-            document.body.removeChild(darkModeModalOverlay);
-            document.body.removeChild(darkModeModalContainer);
-        });
-    } else if (darkModePreference !== null) {
-        // Toggle dark mode based on current state
-        if (darkModePreference === "enabled") {
-            disableDarkMode();
-            localStorage.setItem("darkModePreference", "disabled");
+        if (darkModePreference === null) {
+            showDarkModeModal();
         } else {
-            enableDarkMode();
-            localStorage.setItem("darkModePreference", "enabled");
+            if (darkModePreference === "enabled") {
+                disableDarkMode();
+                localStorage.setItem("darkModePreference", "disabled");
+            } else {
+                enableDarkMode();
+                localStorage.setItem("darkModePreference", "enabled");
+            }
         }
-    }
-});
+    };
+
+    const showDarkModeModal = () => {
+        let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
+        let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
+
+        if (!darkModeModalContainer) {
+            darkModeModalOverlay = document.createElement("div");
+            darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
+
+            darkModeModalContainer = document.createElement("aside");
+            darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
+
+            const darkModeModalTitle = document.createElement("p");
+            darkModeModalTitle.setAttribute("class", "dark-mode-modal-title");
+            darkModeModalTitle.textContent = "Dark Mode Preference Storage Notice";
+            darkModeModalContainer.appendChild(darkModeModalTitle);
+
+            const darkModeModalFirstParagraph = document.createElement("p");
+            darkModeModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
+            darkModeModalFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+            darkModeModalContainer.appendChild(darkModeModalFirstParagraph);
+
+            const darkModeModalSecondParagraph = document.createElement("p");
+            darkModeModalSecondParagraph.setAttribute("class", "dark-mode-modal-second-paragraph");
+            darkModeModalSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+            darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
+
+            const darkModeModalAllowButton = document.createElement("button");
+            darkModeModalAllowButton.setAttribute("class", "dark-mode-modal-allow-button");
+            darkModeModalAllowButton.textContent = "Allow";
+
+            const darkModeModalDeclineButton = document.createElement("button");
+            darkModeModalDeclineButton.setAttribute("class", "dark-mode-modal-decline-button");
+            darkModeModalDeclineButton.textContent = "Decline";
+
+            darkModeModalContainer.appendChild(darkModeModalAllowButton);
+            darkModeModalContainer.appendChild(darkModeModalDeclineButton);
+
+            document.body.appendChild(darkModeModalOverlay);
+            document.body.appendChild(darkModeModalContainer);
+
+            darkModeModalAllowButton.addEventListener("click", () => {
+                localStorage.setItem("darkModePreference", "enabled");
+                enableDarkMode();
+                document.body.removeChild(darkModeModalOverlay);
+                document.body.removeChild(darkModeModalContainer);
+            });
+
+            darkModeModalDeclineButton.addEventListener("click", () => {
+                document.body.removeChild(darkModeModalOverlay);
+                document.body.removeChild(darkModeModalContainer);
+            });
+        }
+    };
 
 //Dark mode variables
 const bodyDarkMode = document.querySelector("body");
@@ -127,311 +127,320 @@ const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = documen
 const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technology-used-container figcaption");
 const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
 const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
-const contactFormValid = document.querySelectorAll(".contact-form-valid");
-const contactFormInvalid = document.querySelectorAll(".contact-form-invalid");
+// const contactFormValid = document.querySelectorAll(".contact-form-valid");
+// const contactFormInvalid = document.querySelectorAll(".contact-form-invalid");
 const hCaptchaColor = document.querySelector(".h-captcha");
 const footerSectionContainer = document.querySelector(".footer-section-container");
 const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
 const footerAbsoluteLink = document.querySelectorAll(".footer-absolute-links");
 const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
-function enableDarkMode() {
-    darkModeIconContainer.style.visibility = "hidden";
-    lightModeIcon.style.visibility = "visible";
+    function enableDarkMode() {
+        darkModeIcon.style.visibility = "hidden";
+        lightModeIcon.style.visibility = "visible";
 
-    // Apply dark mode classes to other elements as needed
-    mainDarkMode.classList.add("main-dark-mode");
+        // Apply dark mode classes to other elements as needed
+        mainDarkMode.classList.add("main-dark-mode");
 
-    landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
+        landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
 
-    landingPageTitleWelcome.classList.add("landing-page-title-welcome-dark-mode");
+        landingPageTitleWelcome.classList.add("landing-page-title-welcome-dark-mode");
 
-    landingPageTitleOpeningCurlyBrace.classList.add("landing-page-title-opening-curly-brace-dark-mode");
-    
-    landingPageTitleToMy.classList.add("landing-page-title-property-value-to-my-dark-mode");
-    
-    landingPageTitleFrontEnd.classList.add("landing-page-title-property-value-front-end-dark-mode");
-    
-    landingPageTitleDevelopment.classList.add("landing-page-title-property-development-dark-mode");
-    
-    landingPageTitleSemicolon.classList.add("landing-page-title-value-semicolon-dark-mode");
-    
-    landingPageTitleClosingCurlyBrace.classList.add("landing-page-title-closing-curly-brace-dark-mode");
-    
-    laptopImageTopShell.classList.add("laptop-image-top-shell-dark-mode");
-    
-    laptopImageWebcam.classList.add("laptop-image-webcam-dark-mode");
-    
-    laptopImageKey.forEach((key) => {
-        key.classList.add("laptop-image-key-dark-mode");
-    });
-    
-    laptopImageBottomShell.classList.add("laptop-image-bottom-shell-dark-mode");
-    
-    profileContentContainer.classList.add("profile-content-container-dark-mode");
-    
-    profileQuotationContainer.classList.add("profile-quotation-container-dark-mode");
-    
-    profileIntrodutionContainerParagraph.forEach((paragraph) =>{
-        paragraph.classList.add("profile-introduction-container-paragraph-dark-mode");
-    });
-    
-    sectionIntroductionContainerTitle.forEach((title) => {
-        title.classList.add("section-introduction-container-h2-dark-mode");
-    });
-    
-    sectionIntroductionContainerParagraph.forEach((paragraph) => {
-        paragraph.classList.add("section-introduction-container-p-dark-mode");
-        const thankYouForVisitingMyPortfolioParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
-        thankYouForVisitingMyPortfolioParagraph.classList.remove("section-introduction-container-p-dark-mode");
-    });
-    
-    portfolioWebsitesTitle.forEach((websiteTitle) => {
-        websiteTitle.classList.add("portfolio-websites-title-container-h3-dark-mode");
-    });
-    
-    portfolioWebsitesContainer.forEach((background) => {
-        background.classList.add("portfolio-websites-container-dark-mode");
-    });
-    
-    portfolioWebsitesShowMoreContainer.forEach((background) => {
-        background.classList.add("portfolio-websites-show-more-container-dark-mode");
-    });
-    
-    portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMoreText) => {
-        showMoreText.classList.add("portfolio-websites-show-more-accordion-container-button-p-dark-mode");
-    });
+        landingPageTitleOpeningCurlyBrace.classList.add("landing-page-title-opening-curly-brace-dark-mode");
+        
+        landingPageTitleToMy.classList.add("landing-page-title-property-value-to-my-dark-mode");
+        
+        landingPageTitleFrontEnd.classList.add("landing-page-title-property-value-front-end-dark-mode");
+        
+        landingPageTitleDevelopment.classList.add("landing-page-title-property-development-dark-mode");
+        
+        landingPageTitleSemicolon.classList.add("landing-page-title-value-semicolon-dark-mode");
+        
+        landingPageTitleClosingCurlyBrace.classList.add("landing-page-title-closing-curly-brace-dark-mode");
+        
+        laptopImageTopShell.classList.add("laptop-image-top-shell-dark-mode");
+        
+        laptopImageWebcam.classList.add("laptop-image-webcam-dark-mode");
+        
+        laptopImageKey.forEach((key) => {
+            key.classList.add("laptop-image-key-dark-mode");
+        });
+        
+        laptopImageBottomShell.classList.add("laptop-image-bottom-shell-dark-mode");
+        
+        profileContentContainer.classList.add("profile-content-container-dark-mode");
+        
+        profileQuotationContainer.classList.add("profile-quotation-container-dark-mode");
+        
+        profileIntrodutionContainerParagraph.forEach((paragraph) =>{
+            paragraph.classList.add("profile-introduction-container-paragraph-dark-mode");
+        });
+        
+        sectionIntroductionContainerTitle.forEach((title) => {
+            title.classList.add("section-introduction-container-h2-dark-mode");
+        });
+        
+        sectionIntroductionContainerParagraph.forEach((paragraph) => {
+            paragraph.classList.add("section-introduction-container-p-dark-mode");
+            const thankYouForVisitingMyPortfolioParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
+            thankYouForVisitingMyPortfolioParagraph.classList.remove("section-introduction-container-p-dark-mode");
+        });
+        
+        portfolioWebsitesTitle.forEach((websiteTitle) => {
+            websiteTitle.classList.add("portfolio-websites-title-container-h3-dark-mode");
+        });
+        
+        portfolioWebsitesContainer.forEach((background) => {
+            background.classList.add("portfolio-websites-container-dark-mode");
+        });
+        
+        portfolioWebsitesShowMoreContainer.forEach((background) => {
+            background.classList.add("portfolio-websites-show-more-container-dark-mode");
+        });
+        
+        portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMoreText) => {
+            showMoreText.classList.add("portfolio-websites-show-more-accordion-container-button-p-dark-mode");
+        });
 
-    portfolioWebsitesShowMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
-        showMoreArrow.classList.add("portfolio-websites-show-more-arrow-dark-mode");
-    });
+        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
+            showMoreArrow.classList.add("portfolio-websites-show-more-arrow-dark-mode");
+        });
 
-    portfolioWebsitesShowMoreAccordionContainerParagraph.forEach((paragraph) => {
-        paragraph.classList.add("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
-    });
-    
-    portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
-        title.classList.add("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
-    });
-    
-    portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
-        figcaption.classList.add("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
-    });
-    
-    contactFormTopHeaderContainer.classList.add("contact-form-top-header-container-dark-mode");
-    
-    contactFormEnvelopeIcon.classList.add("fa-envelope-dark-mode");
-    
-    contactFormInputs.forEach((input) => {
-        input.classList.add("contact-form-input-box-dark-mode");
-        if (input.classList.contains("contact-form-invalid")) {
-            input.classList.add("contact-form-invalid-dark-mode");
+        portfolioWebsitesShowMoreAccordionContainerParagraph.forEach((paragraph) => {
+            paragraph.classList.add("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
+        });
+        
+        portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
+            title.classList.add("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
+        });
+        
+        portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
+            figcaption.classList.add("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
+        });
+        
+        contactFormTopHeaderContainer.classList.add("contact-form-top-header-container-dark-mode");
+        
+        contactFormEnvelopeIcon.classList.add("fa-envelope-dark-mode");
+        
+        contactFormInputs.forEach((input) => {
+            input.classList.add("contact-form-input-box-dark-mode");
+            if (input.classList.contains("contact-form-invalid")) {
+                input.classList.add("contact-form-invalid-dark-mode");
+            }
+            if (input.classList.contains("contact-form-valid")) {
+                input.classList.add("contact-form-valid-dark-mode");
+            }
+        });
+
+        const placeholderColorDark = `
+        /* Chrome/Opera/Safari */
+            ::-webkit-input-placeholder {
+                color: var(--darkest-grey);
+            }
+        /* Firefox 19+ */
+            ::-moz-placeholder {
+                color: var(--darkest-grey);
+            }
+        /* IE 10+ */
+            :-ms-input-placeholder {
+                color: var(--darkest-grey);
+            }
+        /* Firefox 18- */
+            :-moz-placeholder {
+                color: var(--darkest-grey);
+            }
+        `;
+        
+        const stylePlaceholderColorDark = document.createElement("style");
+        stylePlaceholderColorDark.textContent = placeholderColorDark;
+        document.head.appendChild(stylePlaceholderColorDark);
+
+        bodyDarkMode.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
+        
+        // contactFormValid.forEach((input) => {
+        //     input.classList.add("contact-form-valid-dark-mode");
+        // });
+        
+        // contactFormInvalid.forEach((input) => {
+        //     input.classList.add("contact-form-invalid-dark-mode");
+        // });
+        
+        contactFormLabels.forEach((label) => {
+            label.classList.add("contact-form-label-dark-mode");
+        });
+        
+        hCaptchaColor.style.filter = "invert(1) hue-rotate(180deg)";
+        
+        footerSectionContainer.classList.add("footer-section-container-dark-mode");
+        
+        footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
+        
+        footerAbsoluteLink.forEach((link) => {
+            link.classList.add("footer-absolute-links-dark-mode");
+        });
+        
+        footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
+    }
+
+    function disableDarkMode() {
+        lightModeIcon.style.visibility = "hidden";
+        darkModeIcon.style.visibility = "visible";
+        
+        // Remove dark mode classes from other elements as needed
+        mainDarkMode.classList.remove("main-dark-mode");
+        
+        landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
+        
+        landingPageTitleWelcome.classList.remove("landing-page-title-welcome-dark-mode");
+        
+        landingPageTitleOpeningCurlyBrace.classList.remove("landing-page-title-opening-curly-brace-dark-mode");
+        
+        landingPageTitleToMy.classList.remove("landing-page-title-property-value-to-my-dark-mode");
+        
+        landingPageTitleFrontEnd.classList.remove("landing-page-title-property-value-front-end-dark-mode");
+        
+        landingPageTitleDevelopment.classList.remove("landing-page-title-property-development-dark-mode");
+        
+        landingPageTitleSemicolon.classList.remove("landing-page-title-value-semicolon-dark-mode");
+        
+        landingPageTitleClosingCurlyBrace.classList.remove("landing-page-title-closing-curly-brace-dark-mode");
+        
+        laptopImageTopShell.classList.remove("laptop-image-top-shell-dark-mode");
+        
+        laptopImageWebcam.classList.remove("laptop-image-webcam-dark-mode");
+        
+        laptopImageKey.forEach((key) => {
+            key.classList.remove("laptop-image-key-dark-mode");
+        });
+        
+        laptopImageBottomShell.classList.remove("laptop-image-bottom-shell-dark-mode");
+        
+        profileContentContainer.classList.remove("profile-content-container-dark-mode");
+
+        profileQuotationContainer.classList.remove("profile-quotation-container-dark-mode");
+        
+        profileIntrodutionContainerParagraph.forEach((paragraph) =>{
+            paragraph.classList.remove("profile-introduction-container-paragraph-dark-mode");
+        });
+        
+        sectionIntroductionContainerTitle.forEach((title) => {
+            title.classList.remove("section-introduction-container-h2-dark-mode");
+        });
+        
+        sectionIntroductionContainerParagraph.forEach((paragraph) => {
+            paragraph.classList.remove("section-introduction-container-p-dark-mode");
+        });
+        
+        portfolioWebsitesTitle.forEach((websiteTitle) => {
+            websiteTitle.classList.remove("portfolio-websites-title-container-h3-dark-mode");
+        });
+        
+        portfolioWebsitesContainer.forEach((background) => {
+            background.classList.remove("portfolio-websites-container-dark-mode");
+        });
+        
+        portfolioWebsitesShowMoreContainer.forEach((background) => {
+            background.classList.remove("portfolio-websites-show-more-container-dark-mode");
+        });
+
+        portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMoreText) => {
+            showMoreText.classList.remove("portfolio-websites-show-more-accordion-container-button-p-dark-mode");
+        });
+
+        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
+            showMoreArrow.classList.remove("portfolio-websites-show-more-arrow-dark-mode");
+        });
+
+        portfolioWebsitesShowMoreAccordionContainerParagraph.forEach((paragraph) => {
+            paragraph.classList.remove("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
+        });
+        
+        portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
+            title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
+        });
+        
+        portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
+            figcaption.classList.remove("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
+        });
+        
+        contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
+        
+        contactFormEnvelopeIcon.classList.remove("fa-envelope-dark-mode");
+        
+        contactFormInputs.forEach((input) => {
+            input.classList.remove("contact-form-input-box-dark-mode");  
+            if (input.classList.contains("contact-form-invalid")) {
+                input.classList.remove("contact-form-invalid-dark-mode");
+            }
+            if (input.classList.contains("contact-form-valid")) {
+                input.classList.remove("contact-form-valid-dark-mode");
+            }
+        });
+
+        const placeholderColorLight = `
+        /* Chrome/Opera/Safari */
+            ::-webkit-input-placeholder {
+                color: var(--lightest-grey);
+            }
+        /* Firefox 19+ */
+            ::-moz-placeholder {
+                color: var(--lightest-grey);
+            }
+        /* IE 10+ */
+            :-ms-input-placeholder {
+                color: var(--lightest-grey);
+            }
+        /* Firefox 18- */
+            :-moz-placeholder {
+                color: var(--lightest-grey);
+            }
+        `;
+        
+        const stylePlaceholderColorLight = document.createElement("style");
+        stylePlaceholderColorLight.textContent = placeholderColorLight;
+        document.head.appendChild(stylePlaceholderColorLight);
+
+        bodyDarkMode.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
+        
+        // contactFormValid.forEach((input) => {
+        //     input.classList.remove("contact-form-valid-dark-mode");
+        // });
+        
+        // contactFormInvalid.forEach((input) => {
+        //     input.classList.remove("contact-form-invalid-dark-mode");
+        // });
+        
+        contactFormLabels.forEach((label) => {
+            label.classList.remove("contact-form-label-dark-mode");
+        });
+        
+        hCaptchaColor.style.filter = "invert(0) hue-rotate(0deg)";
+        
+        footerSectionContainer.classList.remove("footer-section-container-dark-mode");
+        
+        footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
+        
+        footerAbsoluteLink.forEach((link) => {
+            link.classList.remove("footer-absolute-links-dark-mode");
+        });
+        
+        footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
+    }
+
+    darkModeToggleButton.addEventListener("click", toggleDarkMode);
+    darkModeToggleButton.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault(); // Prevent the default space scroll behavior
+            toggleDarkMode();
         }
-        if (input.classList.contains("contact-form-valid")) {
-            input.classList.add("contact-form-valid-dark-mode");
-        }
     });
 
-    const placeholderColorDark = `
-    /* Chrome/Opera/Safari */
-        ::-webkit-input-placeholder {
-            color: var(--darkest-grey);
-        }
-    /* Firefox 19+ */
-        ::-moz-placeholder {
-            color: var(--darkest-grey);
-        }
-    /* IE 10+ */
-        :-ms-input-placeholder {
-            color: var(--darkest-grey);
-        }
-    /* Firefox 18- */
-        :-moz-placeholder {
-            color: var(--darkest-grey);
-        }
-    `;
-    
-    const stylePlaceholderColorDark = document.createElement("style");
-    stylePlaceholderColorDark.textContent = placeholderColorDark;
-    document.head.appendChild(stylePlaceholderColorDark);
-
-    bodyDarkMode.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
-    
-    // contactFormValid.forEach((input) => {
-    //     input.classList.add("contact-form-valid-dark-mode");
-    // });
-    
-    // contactFormInvalid.forEach((input) => {
-    //     input.classList.add("contact-form-invalid-dark-mode");
-    // });
-    
-    contactFormLabels.forEach((label) => {
-        label.classList.add("contact-form-label-dark-mode");
-    });
-    
-    hCaptchaColor.style.filter = "invert(1) hue-rotate(180deg)";
-    
-    footerSectionContainer.classList.add("footer-section-container-dark-mode");
-    
-    footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
-    
-    footerAbsoluteLink.forEach((link) => {
-        link.classList.add("footer-absolute-links-dark-mode");
-    });
-    
-    footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
-}
-
-function disableDarkMode() {
-    lightModeIcon.style.visibility = "hidden";
-    darkModeIconContainer.style.visibility = "visible";
-    
-    // Remove dark mode classes from other elements as needed
-    mainDarkMode.classList.remove("main-dark-mode");
-    
-    landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
-    
-    landingPageTitleWelcome.classList.remove("landing-page-title-welcome-dark-mode");
-    
-    landingPageTitleOpeningCurlyBrace.classList.remove("landing-page-title-opening-curly-brace-dark-mode");
-    
-    landingPageTitleToMy.classList.remove("landing-page-title-property-value-to-my-dark-mode");
-    
-    landingPageTitleFrontEnd.classList.remove("landing-page-title-property-value-front-end-dark-mode");
-    
-    landingPageTitleDevelopment.classList.remove("landing-page-title-property-development-dark-mode");
-    
-    landingPageTitleSemicolon.classList.remove("landing-page-title-value-semicolon-dark-mode");
-    
-    landingPageTitleClosingCurlyBrace.classList.remove("landing-page-title-closing-curly-brace-dark-mode");
-    
-    laptopImageTopShell.classList.remove("laptop-image-top-shell-dark-mode");
-    
-    laptopImageWebcam.classList.remove("laptop-image-webcam-dark-mode");
-    
-    laptopImageKey.forEach((key) => {
-        key.classList.remove("laptop-image-key-dark-mode");
-    });
-    
-    laptopImageBottomShell.classList.remove("laptop-image-bottom-shell-dark-mode");
-    
-    profileContentContainer.classList.remove("profile-content-container-dark-mode");
-
-    profileQuotationContainer.classList.remove("profile-quotation-container-dark-mode");
-    
-    profileIntrodutionContainerParagraph.forEach((paragraph) =>{
-        paragraph.classList.remove("profile-introduction-container-paragraph-dark-mode");
-    });
-    
-    sectionIntroductionContainerTitle.forEach((title) => {
-        title.classList.remove("section-introduction-container-h2-dark-mode");
-    });
-    
-    sectionIntroductionContainerParagraph.forEach((paragraph) => {
-        paragraph.classList.remove("section-introduction-container-p-dark-mode");
-    });
-    
-    portfolioWebsitesTitle.forEach((websiteTitle) => {
-        websiteTitle.classList.remove("portfolio-websites-title-container-h3-dark-mode");
-    });
-    
-    portfolioWebsitesContainer.forEach((background) => {
-        background.classList.remove("portfolio-websites-container-dark-mode");
-    });
-    
-    portfolioWebsitesShowMoreContainer.forEach((background) => {
-        background.classList.remove("portfolio-websites-show-more-container-dark-mode");
-    });
-
-    portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMoreText) => {
-        showMoreText.classList.remove("portfolio-websites-show-more-accordion-container-button-p-dark-mode");
-    });
-
-    portfolioWebsitesShowMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
-        showMoreArrow.classList.remove("portfolio-websites-show-more-arrow-dark-mode");
-    });
-
-    portfolioWebsitesShowMoreAccordionContainerParagraph.forEach((paragraph) => {
-        paragraph.classList.remove("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
-    });
-    
-    portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
-        title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
-    });
-    
-    portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
-        figcaption.classList.remove("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
-    });
-    
-    contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
-    
-    contactFormEnvelopeIcon.classList.remove("fa-envelope-dark-mode");
-    
-    contactFormInputs.forEach((input) => {
-        input.classList.remove("contact-form-input-box-dark-mode");  
-        if (input.classList.contains("contact-form-invalid")) {
-            input.classList.remove("contact-form-invalid-dark-mode");
-        }
-        if (input.classList.contains("contact-form-valid")) {
-            input.classList.remove("contact-form-valid-dark-mode");
-        }
-    });
-
-    const placeholderColorLight = `
-    /* Chrome/Opera/Safari */
-        ::-webkit-input-placeholder {
-            color: var(--lightest-grey);
-        }
-    /* Firefox 19+ */
-        ::-moz-placeholder {
-            color: var(--lightest-grey);
-        }
-    /* IE 10+ */
-        :-ms-input-placeholder {
-            color: var(--lightest-grey);
-        }
-    /* Firefox 18- */
-        :-moz-placeholder {
-            color: var(--lightest-grey);
-        }
-    `;
-    
-    const stylePlaceholderColorLight = document.createElement("style");
-    stylePlaceholderColorLight.textContent = placeholderColorLight;
-    document.head.appendChild(stylePlaceholderColorLight);
-
-    bodyDarkMode.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
-    
-    // contactFormValid.forEach((input) => {
-    //     input.classList.remove("contact-form-valid-dark-mode");
-    // });
-    
-    // contactFormInvalid.forEach((input) => {
-    //     input.classList.remove("contact-form-invalid-dark-mode");
-    // });
-    
-    contactFormLabels.forEach((label) => {
-        label.classList.remove("contact-form-label-dark-mode");
-    });
-    
-    hCaptchaColor.style.filter = "invert(0) hue-rotate(0deg)";
-    
-    footerSectionContainer.classList.remove("footer-section-container-dark-mode");
-    
-    footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
-    
-    footerAbsoluteLink.forEach((link) => {
-        link.classList.remove("footer-absolute-links-dark-mode");
-    });
-    
-    footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
-}
-
-// Apply dark mode if preference is already enabled
-document.addEventListener("DOMContentLoaded", () => {
+    // Apply dark mode if preference is already enabled
     const darkModePreference = localStorage.getItem("darkModePreference");
     if (darkModePreference === "enabled") {
         enableDarkMode();
+    } else {
+        disableDarkMode();
     }
 });
 

@@ -219,7 +219,7 @@ body::before {
     stroke-linecap: round;
     stroke-width: 4.8px;
 }
-.top-navigation-bar-dark-mode-icon-container {
+/* .top-navigation-bar-dark-mode-icon-container {
     position: relative;
     width: 20px;
     height: 20px;
@@ -243,6 +243,33 @@ li {
     position: absolute;
     top: 0;
     left: 0;
+} */ /*!Keeping this commented out code in case it is needed in the future*/
+.dark-mode-toggle-button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+/*Focus outline for accessibility */
+.dark-mode-toggle-button:focus-visible {
+    box-shadow: 0 0 0 1.25px #0561DA, 0 0 0 2.25px #FFF;
+}
+.fa-moon {
+    font-size: 1.25rem;
+    color: var(--dark-mode);
+}
+.fa-sun {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.1rem;
+    color: var(--light-mode);
+    visibility: hidden;
 }
 .hamburger-menu-container {
     width: 40px;

@@ -29,14 +29,18 @@
                 <path class="logo-more-than-sign" d="M46.5 9 L56.5 19.5 L46.5 29"/>
                 <path class="logo-closing-curly-brace" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19 M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5"/>
             </svg>
-            <nav class="top-navigation-bar-dark-mode-icon-container">
+            <button class="dark-mode-toggle-button" type="button" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon" aria-describedby="Dark mode icon"></i>
+                <i class="fa-solid fa-sun" aria-describedby="Light mode icon"></i>
+            </button>
+            <!-- <nav class="top-navigation-bar-dark-mode-icon-container" aria-label="Toggle dark mode" tabindex="0">
                 <ul>
                     <li>
-                        <i class="fa-solid fa-moon" aria-describedby="Dark mode icon"></i>
-                        <i class="fa-solid fa-sun" aria-describedby="Light mode icon"></i>
+                        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                        <i class="fa-solid fa-sun" aria-hidden="true"></i>
                     </li>
                 </ul>
-            </nav>
+            </nav> --> <!--!Keeping this commented out code in case it is needed in the future-->
             <svg class="hamburger-menu-container" aria-label="Navigation Menu" role="button" tabindex="0">
                 <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5"/>
                 <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5"/>
@@ -139,7 +143,7 @@
                     <h1 class="section-title">PROFLIE</h1>
                 </header>
                 <div class="profile-content-container">
-                    <img class="profile-headshot" src="./assets/images/37_kristie-headshot3.jpg" alt="a professional headshot of me, wearing a black blazer jacket and a torquoise top. mousey blonde, curly hair. minimal makeup, looking straight at the camera, smiling naturally.">
+                    <img class="profile-headshot" src="./assets/images/37_kristie-headshot3.jpg" alt="A professional headshot of Kristie.">
                     <div class="profile-quotation-container">
                         <q>Elevate your online presence, captivate your audience, and leave a lasting digital footprint with a website that embodies excellence.</q>
                     </div>
@@ -327,7 +331,7 @@
                         <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="Type your message" autocomplete="off" required></textarea>
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <div class="contact-form-submit-button-container" tabindex="0">
-                            <button class="contact-form-submit-button" title="Submit form" type="submit" tabindex="0">Submit</button>
+                            <button class="contact-form-submit-button" title="Submit form" type="submit" role="button" tabindex="0">Submit</button>
                         </div>
                         <label class="visually-hidden" for="botcheck">Leave this field empty</label>
                         <input id="botcheck" class="botcheck-visually-hidden" name="botcheck" type="text" aria-hidden="true">
