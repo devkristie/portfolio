@@ -1,5 +1,10 @@
 "use strict"
 
+// Monitor all focusable elements
+document.addEventListener('focusin', (event) => {
+    console.log('Focused element:', event.target);
+}, true); // Using capture phase to catch all focus events
+
 // const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container");
 // const lightModeIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
@@ -104,6 +109,8 @@ const bodyDarkMode = document.querySelector("body");
 const mainDarkMode = document.querySelector("main");
 const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
 const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
+const landingPageTitleBackgoundOne = document.querySelector(".landing-page-title-welcome-background-one");
+const landingPageTitleBackgoundTwo = document.querySelector(".landing-page-title-welcome-background-two");
 const landingPageTitleOpeningCurlyBrace = document.querySelector(".landing-page-title-opening-curly-brace");
 const landingPageTitleToMy = document.querySelector(".landing-page-title-property-value-to-my");
 const landingPageTitleFrontEnd = document.querySelector(".landing-page-title-property-value-front-end");
@@ -145,6 +152,10 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
 
         landingPageTitleWelcome.classList.add("landing-page-title-welcome-dark-mode");
+
+        landingPageTitleBackgoundOne.classList.add("landing-page-title-welcome-background-one-dark-mode");
+
+        landingPageTitleBackgoundTwo.classList.add("landing-page-title-welcome-background-two-dark-mode");
 
         landingPageTitleOpeningCurlyBrace.classList.add("landing-page-title-opening-curly-brace-dark-mode");
         
@@ -292,7 +303,11 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
         
         landingPageTitleWelcome.classList.remove("landing-page-title-welcome-dark-mode");
+
+        landingPageTitleBackgoundOne.classList.remove("landing-page-title-welcome-background-one-dark-mode");
         
+        landingPageTitleBackgoundTwo.classList.remove("landing-page-title-welcome-background-two-dark-mode");
+
         landingPageTitleOpeningCurlyBrace.classList.remove("landing-page-title-opening-curly-brace-dark-mode");
         
         landingPageTitleToMy.classList.remove("landing-page-title-property-value-to-my-dark-mode");

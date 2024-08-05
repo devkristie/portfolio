@@ -29,10 +29,12 @@
                 <path class="logo-more-than-sign" d="M46.5 9 L56.5 19.5 L46.5 29"/>
                 <path class="logo-closing-curly-brace" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19 M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5"/>
             </svg>
-            <button class="dark-mode-toggle-button" type="button" aria-label="Toggle dark mode">
-                <i class="fa-solid fa-moon" aria-describedby="Dark mode icon"></i>
-                <i class="fa-solid fa-sun" aria-describedby="Light mode icon"></i>
+            <button class="dark-mode-toggle-button" type="button" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" aria-describedby="darkModeIcon"></i>
+                <i class="fa-solid fa-sun" aria-describedby="lightModeIcon"></i>
             </button>
+            <span id="darkModeIcon" class="sr-only">Dark Mode Icon</span>
+            <span id="lightModeIcon" class="sr-only">Light Mode Icon</span>
             <!-- <nav class="top-navigation-bar-dark-mode-icon-container" aria-label="Toggle dark mode" tabindex="0">
                 <ul>
                     <li>
@@ -69,90 +71,90 @@
             </nav>
         </header>
         <main>
-            <a id="home" href="#home" aria-label="Back To Top"></a>
+            <a id="home" href="#home" aria-label="Top Of The Page" tabindex="-1"></a>
             <section class="landing-page-section-container">
-                <div class="landing-page-title-container">
-                    <p class="landing-page-title-welcome">.welcome</p>
-                    <div class="landing-page-title-welcome-background-one"></div>
-                    <div class="landing-page-title-welcome-background-two"></div>
-                    <p class="landing-page-title-opening-curly-brace">{</p>
+                <header class="landing-page-title-container" aria-labelledby="welcome-title">
+                    <p id="welcome-title" class="landing-page-title-welcome">.welcome</p>
+                    <div class="landing-page-title-welcome-background-one" aria-hidden="true"></div>
+                    <div class="landing-page-title-welcome-background-two" aria-hidden="true"></div>
+                    <p class="landing-page-title-opening-curly-brace" aria-hidden="true">{</p>
                     <p class="landing-page-title-property-value-to-my">to: my;</p>
                     <p class="landing-page-title-property-value-front-end">front: end;</p>
                     <p class="landing-page-title-property-development">development:</p>
                     <p class="landing-page-title-value-portfolio">portfolio</p>
                     <p class="landing-page-title-value-semicolon">;</p>
-                    <p class="landing-page-title-closing-curly-brace">}</p>
-                </div>
+                    <p class="landing-page-title-closing-curly-brace" aria-hidden="true">}</p>
+                </header>
                 <div>
-                    <svg class="laptop-image-container" aria-label="animated laptop image">
-                        <path class="laptop-image-top-shell" d="M32.5 0 Q25 0 25 7.5 L25 150 L275 150 L275 10 Q275 0 265 0 L50 0"/>
-                        <circle class="laptop-image-webcam" cx="150" cy="5" r="2.5"/>
-                        <rect class="laptop-image-vscode-activity-bar" x="35" y="10" width="230" height="140"/>
-                        <rect class="laptop-image-vscode-file-explorer" x="45" y="15" width="220" height="135"/>
-                        <rect class="laptop-image-vscode-file-tab" x="70" y="15" width="25" height="7.5"/>
-                        <rect class="laptop-image-vscode-editor" x="70" y="22.5" width="195" height="127.5"/>
-                        <path class="laptop-image-horizontal-screen-line" d="M70 125 L265 125"/>
-                        <path class="laptop-image-vertical-screen-line" d="M170 23 L170 125"/>
-                        <rect class="laptop-image-key" x="35" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image-key" x="55" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image-key" x="75" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image-key" x="95" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image-key" x="115" y="145" width="70" height="5"/>
-                        <rect class="laptop-image-key" x="187.5" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image-key" x="207.5" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image-key" x="227.5" y="145" width="17.5" height="5"/>
-                        <rect class="laptop-image-key" x="247.5" y="145" width="17.5" height="5"/>
-                        <path class="laptop-image-bottom-shell" d="M10 157.5 L290 157.5"/>
-                        <path class="laptop-image-code" d="M75 35 L85 35"/>
-                        <path class="laptop-image-code" d="M80 40 L95 40"/>
-                        <path class="laptop-image-code" d="M85 45 L120 45"/>
-                        <path class="laptop-image-code" d="M80 50 L95 50"/>
-                        <path class="laptop-image-code" d="M75 55 L85 55"/>
-                        <path class="laptop-image-code" d="M80 60 L95 60"/>
-                        <path class="laptop-image-code" d="M85 65 L90 65"/>
-                        <path class="laptop-image-code" d="M90 70 L120 70"/>
-                        <path class="laptop-image-code" d="M90 75 L115 75"/>
-                        <path class="laptop-image-code" d="M90 80 L130 80"/>
-                        <path class="laptop-image-code" d="M85 85 L90 85"/>
-                        <path class="laptop-image-code" d="M80 90 L95 90"/>
-                        <path class="laptop-image-code" d="M75 95 L85 95"/>
-                        <path class="laptop-image-code" d="M75 100 L80 100"/>
-                        <path class="laptop-image-code" d="M80 105 L85 105"/>
-                        <path class="laptop-image-code" d="M85 110 L120 110"/>
-                        <path class="laptop-image-code" d="M85 115 L100 115"/>
-                        <path class="laptop-image-code" d="M80 120 L85 120"/>
-                        <path class="laptop-image-code" d="M180 35 L183 35"/>
-                        <path class="laptop-image-code" d="M188 35 L189 35"/>
-                        <path class="laptop-image-code" d="M185 40 L200 40"/>
-                        <path class="laptop-image-code" d="M185 45 L195 45"/>
-                        <path class="laptop-image-code" d="M185 50 L202 50"/>
-                        <path class="laptop-image-code" d="M185 55 L210 55"/>
-                        <path class="laptop-image-code" d="M180 60 L181 60"/>
-                        <path class="laptop-image-code" d="M180 65 L187 65"/>
-                        <path class="laptop-image-code" d="M192 65 L193 65"/>
-                        <path class="laptop-image-code" d="M185 70 L195 70"/>
-                        <path class="laptop-image-code" d="M185 75 L199 75"/>
-                        <path class="laptop-image-code" d="M185 80 L191 80"/>
-                        <path class="laptop-image-code" d="M180 85 L181 85"/>
-                        <path class="laptop-image-code" d="M180 90 L195 90"/>
-                        <path class="laptop-image-code" d="M199 90 L200 90"/>
-                        <path class="laptop-image-code" d="M185 95 L199 95"/>
-                        <path class="laptop-image-code" d="M185 100 L205 100"/>
-                        <path class="laptop-image-code" d="M185 105 L201 105"/>
-                        <path class="laptop-image-code" d="M185 110 L198 110"/>
-                        <path class="laptop-image-code" d="M185 115 L205 115"/>
-                        <path class="laptop-image-code" d="M185 120 L202 120"/>
+                    <svg class="laptop-image-container" aria-label="Illustration of a laptop with code on the screen.">
+                        <path class="laptop-image-top-shell" d="M32.5 0 Q25 0 25 7.5 L25 150 L275 150 L275 10 Q275 0 265 0 L50 0" aria-hidden="true"/>
+                        <circle class="laptop-image-webcam" cx="150" cy="5" r="2.5" aria-hidden="true"/>
+                        <rect class="laptop-image-vscode-activity-bar" x="35" y="10" width="230" height="140" aria-hidden="true"/>
+                        <rect class="laptop-image-vscode-file-explorer" x="45" y="15" width="220" height="135" aria-hidden="true"/>
+                        <rect class="laptop-image-vscode-file-tab" x="70" y="15" width="25" height="7.5" aria-hidden="true"/>
+                        <rect class="laptop-image-vscode-editor" x="70" y="22.5" width="195" height="127.5" aria-hidden="true"/>
+                        <path class="laptop-image-horizontal-screen-line" d="M70 125 L265 125" aria-hidden="true"/>
+                        <path class="laptop-image-vertical-screen-line" d="M170 23 L170 125" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="35" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="55" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="75" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="95" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="115" y="145" width="70" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="187.5" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="207.5" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="227.5" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <rect class="laptop-image-key" x="247.5" y="145" width="17.5" height="5" aria-hidden="true"/>
+                        <path class="laptop-image-bottom-shell" d="M10 157.5 L290 157.5" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M75 35 L85 35" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M80 40 L95 40" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M85 45 L120 45" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M80 50 L95 50" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M75 55 L85 55" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M80 60 L95 60" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M85 65 L90 65" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M90 70 L120 70" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M90 75 L115 75" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M90 80 L130 80" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M85 85 L90 85" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M80 90 L95 90" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M75 95 L85 95" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M75 100 L80 100" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M80 105 L85 105" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M85 110 L120 110" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M85 115 L100 115" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M80 120 L85 120" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M180 35 L183 35" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M188 35 L189 35" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 40 L200 40" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 45 L195 45" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 50 L202 50" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 55 L210 55" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M180 60 L181 60" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M180 65 L187 65" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M192 65 L193 65" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 70 L195 70" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 75 L199 75" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 80 L191 80" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M180 85 L181 85" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M180 90 L195 90" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M199 90 L200 90" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 95 L199 95" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 100 L205 100" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 105 L201 105" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 110 L198 110" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 115 L205 115" aria-hidden="true"/>
+                        <path class="laptop-image-code" d="M185 120 L202 120" aria-hidden="true"/>
                     </svg>
                 </div>
             </section>
-            <a id="profile" class="anchor"></a>
+            <a id="profile" class="anchor" href="#profile" aria-label="Profile Section" tabindex="-1"></a>
             <section class="profile-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">PROFLIE</h1>
                 </header>
                 <div class="profile-content-container">
                     <img class="profile-headshot" src="./assets/images/37_kristie-headshot3.jpg" alt="A professional headshot of Kristie.">
-                    <div class="profile-quotation-container">
+                    <div class="profile-quotation-container" role="blockquote">
                         <q>Elevate your online presence, captivate your audience, and leave a lasting digital footprint with a website that embodies excellence.</q>
                     </div>
                     <article class="profile-introduction-container">
@@ -166,7 +168,7 @@
                     </article>
                 </div>
             </section>
-            <a id="portfolio" class="anchor"></a>
+            <a id="portfolio" class="anchor" href="#portfolio" aria-label="Portfolio Section" tabindex="-1"></a>
             <section>
                 <header class="section-title-container">
                     <h1 class="section-title">PORTFOLIO</h1>
@@ -307,7 +309,7 @@
                     </article>
                 </div> -->
             </section>
-            <a id="contact" class="anchor"></a>
+            <a id="contact" class="anchor" href="#contact" aria-label="Contact Section" tabindex="-1"></a>
             <section class="contact-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">CONTACT</h1>
