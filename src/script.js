@@ -537,12 +537,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-rightArrowElement.addEventListener("keydown", function(event) {
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault(); // Prevent default space action
-        handleRightArrow();
-    }
-});
+        rightArrowElement.addEventListener("keydown", function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault(); // Prevent default space action
+                handleRightArrow();
+            }
+        });
+
         // Show the initial image
         showImage(portfolioWebsitesSliderImages, currentIndex);
     }
@@ -556,17 +557,17 @@ rightArrowElement.addEventListener("keydown", function(event) {
     function updateViewBox() {
         if (window.innerWidth <= 600) {
             leftArrows.forEach((arrow) => {
-                arrow.setAttribute("viewBox", "-28 19 10 49");
+                arrow.querySelector("svg").setAttribute("viewBox", "-28 19 10 49");
             });
             rightArrows.forEach((arrow) => {
-                arrow.setAttribute("viewBox", "-28 19 10 49");
+                arrow.querySelector("svg").setAttribute("viewBox", "-28 19 10 49");
             });
         } else {
             leftArrows.forEach((arrow) => {
-                arrow.setAttribute("viewBox", "14 0 20 100");
+                arrow.querySelector("svg").setAttribute("viewBox", "14 0 20 100");
             });
             rightArrows.forEach((arrow) => {
-                arrow.setAttribute("viewBox", "14 0 20 100");
+                arrow.querySelector("svg").setAttribute("viewBox", "14 0 20 100");
             });
         }
     }
@@ -576,6 +577,20 @@ rightArrowElement.addEventListener("keydown", function(event) {
 
     // Update on window resize
     window.addEventListener("resize", updateViewBox);
+});
+
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.addEventListener('click', function() {
+        // Find the live region and update its content
+        const liveRegion = document.getElementById('tab-announcement');
+        if (liveRegion) {
+            liveRegion.textContent = 'Opening a new tab.';
+            setTimeout(() => {
+                // Clear the announcement after a short delay
+                liveRegion.textContent = '';
+            }, 3000);
+        }
+    });
 });
 
 portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {

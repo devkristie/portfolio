@@ -18,16 +18,16 @@
     <body>
         <header class="top-navigation-bar-container">
             <svg class="top-navigation-bar-logo-container" aria-label="Portfolio Logo">
-                <path class="logo-opening-curly-brace" d="M12 7 Q7 7 7 13 Q7 18.5 4 19.5 M4 19.5 Q7 21.5 7 23 Q7 31.5 12 31.5"/>
-                <path class="logo-less-than-sign" d="M22 9 L12 19.5 L22 29"/>
-                <circle class="logo-top-colon" cx="29" cy="7.5" r="2.5"/>
-                <circle class="logo-bottom-colon" cx="29" cy="15" r="2.5"/>
-                <path class="logo-forward-slash" d="M41 9 L27.5 29.5"/>
-                <circle class="logo-top-semicolon" cx="40" cy="23" r="2.5"/>
-                <circle class="logo-bottom-semicolon" cx="40" cy="30.5" r="2.5"/>
-                <path class="logo-bottom-semicolon-terminal" d="M42 29 Q45 34 37.5 36.5"/>
-                <path class="logo-more-than-sign" d="M46.5 9 L56.5 19.5 L46.5 29"/>
-                <path class="logo-closing-curly-brace" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19 M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5"/>
+                <path class="logo-opening-curly-brace" d="M12 7 Q7 7 7 13 Q7 18.5 4 19.5 M4 19.5 Q7 21.5 7 23 Q7 31.5 12 31.5" aria-hidden="true"/>
+                <path class="logo-less-than-sign" d="M22 9 L12 19.5 L22 29" aria-hidden="true"/>
+                <circle class="logo-top-colon" cx="29" cy="7.5" r="2.5" aria-hidden="true"/>
+                <circle class="logo-bottom-colon" cx="29" cy="15" r="2.5" aria-hidden="true"/>
+                <path class="logo-forward-slash" d="M41 9 L27.5 29.5" aria-hidden="true"/>
+                <circle class="logo-top-semicolon" cx="40" cy="23" r="2.5" aria-hidden="true"/>
+                <circle class="logo-bottom-semicolon" cx="40" cy="30.5" r="2.5" aria-hidden="true"/>
+                <path class="logo-bottom-semicolon-terminal" d="M42 29 Q45 34 37.5 36.5" aria-hidden="true"/>
+                <path class="logo-more-than-sign" d="M46.5 9 L56.5 19.5 L46.5 29" aria-hidden="true"/>
+                <path class="logo-closing-curly-brace" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19 M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5" aria-hidden="true"/>
             </svg>
             <button class="dark-mode-toggle-button" type="button" aria-label="Toggle Dark Mode">
                 <i class="fa-solid fa-moon" aria-describedby="darkModeIcon"></i>
@@ -44,9 +44,9 @@
                 </ul>
             </nav> --> <!--!Keeping this commented out code in case it is needed in the future-->
             <svg class="hamburger-menu-container" aria-label="Navigation Menu" role="button" tabindex="0">
-                <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5"/>
-                <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5"/>
-                <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5"/>
+                <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
+                <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
+                <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true"/>
             </svg>
         </header>
         <header class="top-navigation-bar-accordion-container-hidden">
@@ -71,7 +71,12 @@
             </nav>
         </header>
         <main>
-            <a id="home" href="#home" aria-label="Top Of The Page" tabindex="-1"></a>
+            <!-- Hidden labels for screen readers -->
+            <div id="home-label" class="sr-only">Top Of The Page</div>
+            <div id="profile-label" class="sr-only">Profile Section</div>
+            <div id="portfolio-label" class="sr-only">Portfolio Section</div>
+            <div id="contact-label" class="sr-only">Contact Section</div>
+            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div>
             <section class="landing-page-section-container">
                 <header class="landing-page-title-container" aria-labelledby="welcome-title">
                     <p id="welcome-title" class="landing-page-title-welcome">.welcome</p>
@@ -147,16 +152,16 @@
                     </svg>
                 </div>
             </section>
-            <a id="profile" class="anchor" href="#profile" aria-label="Profile Section" tabindex="-1"></a>
+            <div id="profile" class="anchor" role="region" aria-labelledby="profile-label" tabindex="-1"></div>
             <section class="profile-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">PROFLIE</h1>
                 </header>
                 <div class="profile-content-container">
                     <img class="profile-headshot" src="./assets/images/37_kristie-headshot3.jpg" alt="A professional headshot of Kristie.">
-                    <div class="profile-quotation-container" role="blockquote">
+                    <blockquote class="profile-quotation-container">
                         <q>Elevate your online presence, captivate your audience, and leave a lasting digital footprint with a website that embodies excellence.</q>
-                    </div>
+                    </blockquote>
                     <article class="profile-introduction-container">
                         <p class="profile-introduction-container-greeting">Hello</p>
                         <p>I'm Kristie, a passionate Frontend Web Developer based in the United Kingdom. With over 6 years of hands-on experience, I specialize in creating captivating and user-friendly websites that leave a lasting impression.</p>
@@ -168,7 +173,7 @@
                     </article>
                 </div>
             </section>
-            <a id="portfolio" class="anchor" href="#portfolio" aria-label="Portfolio Section" tabindex="-1"></a>
+            <div id="portfolio" class="anchor" role="region" aria-labelledby="portfolio-label" tabindex="-1"></div>
             <section>
                 <header class="section-title-container">
                     <h1 class="section-title">PORTFOLIO</h1>
@@ -178,7 +183,8 @@
                     <p>As a skilled frontend developer, I specialize in creating immersive user experiences with a focus on responsive design and modern web technologies.</p>
                     <p>Projects are the building blocks of my frontend development journey, allowing me to apply my knowledge and deliver innovative solutions tailored to clients' needs.</p>
                     <p>I am passionate about crafting seamless user experiences by blending creativity, functionality, and accessibility. Each project is an opportunity to make a positive impact through intuitive and visually compelling interfaces.</p>
-                    <p class="portfolio-introduction-container-p-highlighted-text">Browse through the projects below to get a taste of my frontend expertise. Feel free to click on any project to learn more about the challenges faced, my contributions, and the solutions implemented.</pclass>
+                    <span class="sr-only">Ready to dive into my work? </span> <!--For screen readers only-->
+                    <p class="portfolio-introduction-container-p-highlighted-text">Browse through the projects below to get a taste of my frontend expertise. Feel free to click on any project to learn more about the challenges faced, my contributions, and the solutions implemented.</p>
                 </article>
                 <hr class="portfolio-top-hr"/>
                 <div class="portfolio-websites-container">
@@ -186,25 +192,36 @@
                         <h3>Coming Soon</h3>
                     </header>
                     <div class="portfolio-websites-slider-container">
-                        <svg class="portfolio-websites-slider-left-arrow" viewBox="14 0 20 100" aria-label="Image Slider Left Arrow" tabindex="0">
-                            <path d="M28 45 L20 53 L28 60" />
-                            <path d="M28 45 L28 53"/>
-                        </svg>
-                        <figure>
-                            <img src="assets/images/1_1.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_2.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_3.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_4.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_5.jpg" alt="" class="portfolio-websites-slider-image"/>
+                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous Slide">
+                            <svg viewBox="14 0 20 100" role="img" aria-label="Left Arrow">
+                                <path d="M28 45 L20 53 L28 60" />
+                                <path d="M28 45 L28 53"/>
+                            </svg>
+                        </button>
+                        <figure aria-label="Image slider showcasing various projects">
+                            <img class="portfolio-websites-slider-image" src="assets/images/1_1.jpg" alt="Description of image 1"/>
+                            <img class="portfolio-websites-slider-image" src="assets/images/1_2.jpg" alt="Description of image 2"/>
+                            <img class="portfolio-websites-slider-image" src="assets/images/1_3.jpg" alt="Description of image 3"/>
+                            <img class="portfolio-websites-slider-image" src="assets/images/1_4.jpg" alt="Description of image 4"/>
+                            <img class="portfolio-websites-slider-image" src="assets/images/1_5.jpg" alt="Description of image 5"/>
                         </figure>
-                        <svg class="portfolio-websites-slider-right-arrow" viewBox="14 0 20 100" aria-label="Image Slider Right Arrow" tabindex="0">
-                            <path d="M20 45 L28 53 L20 60" />
-                            <path d="M20 45 L20 53"/>
-                        </svg>
+                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next Slide">
+                            <svg viewBox="14 0 20 100" role="img" aria-label="Right Arrow">
+                                <path d="M20 45 L28 53 L20 60" />
+                                <path d="M20 45 L20 53"/>
+                            </svg>
+                        </button>
                     </div>
-                    <nav class="portfolio-websites-button-container">
-                        <a class="portfolio-websites-view-website-button" href="#portfolio" title="View website" rel="noopener noreferrer">View Website</a>
-                        <a class="portfolio-websites-view-source-code-button" href="#portfolio" title="View source code" rel="noopener noreferrer">View Source Code</a>
+                    <nav class="portfolio-websites-button-container" aria-label="Portfolio Navigation">
+                        <div class="sr-only" id="tab-announcement" aria-live="assertive" role="alert"></div> <!--Visually hidden announcement-->
+                        <a class="portfolio-websites-view-website-button" href="#portfolio" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                            View Website
+                            <span class="sr-only">(opens in a new tab)</span>
+                        </a>
+                        <a class="portfolio-websites-view-source-code-button" href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                            View Source Code
+                            <span class="sr-only">(opens in a new tab)</span>
+                        </a>
                     </nav>
                     <article class="portfolio-websites-show-more-container">
                         <div class="portfolio-websites-show-more-accordion-container-button" role="button" tabindex="0">
@@ -309,7 +326,7 @@
                     </article>
                 </div> -->
             </section>
-            <a id="contact" class="anchor" href="#contact" aria-label="Contact Section" tabindex="-1"></a>
+            <div id="contact" class="anchor" role="region" aria-labelledby="contact-label" tabindex="-1"></div>
             <section class="contact-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">CONTACT</h1>
