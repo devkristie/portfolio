@@ -1376,7 +1376,7 @@ q::after {
     .contact-form-submit-button {
         min-width: 150px;
     }
-} 
+}
 .visually-hidden, .botcheck-visually-hidden {
     display: none;
 }
@@ -1405,6 +1405,7 @@ q::after {
 .footer-navigation-container > ul {
     margin: 0 0 2em 0;
     padding: 0;
+    list-style-type: none;
 }
 .footer-navigation-links a {
     display: flex;
@@ -1469,6 +1470,7 @@ a.footer-navigation-link-backtotop-dark-mode {
     flex-direction: row;
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 .footer-bottom-left-icons a {
     margin-right: 0.7em;

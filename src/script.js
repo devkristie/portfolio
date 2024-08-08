@@ -640,49 +640,36 @@ contactFormInputs.forEach((input, index) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Regex patterns for validating different input fields
+document.addEventListener("DOMContentLoaded", function () {
     const regexInput = {
         name: /^(?!.*[.,'-]{2})[a-z.,'-]{2,30}[ ][a-z.,'-]{0,30}([ ]?)[a-z.,'-]{2,30}?$/i,
         email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]{2,6}(\.[a-z]{2,6})?$/,
         phone: /^\+44\d{10}$/
     };
 
-    // Select validation message paragraphs and submit button
     const contactFormValidationParagraphName = document.querySelector(".contact-form-validation-paragraph.name");
     const contactFormValidationParagraphEmail = document.querySelector(".contact-form-validation-paragraph.email");
     const contactFormValidationParagraphPhone = document.querySelector(".contact-form-validation-paragraph.phone");
     const contactFormSubmitButton = document.querySelector(".contact-form-submit-button");
+    const form = document.querySelector("form"); // Added form reference
 
-    // Ensure the submit button is always visible
     contactFormSubmitButton.style.visibility = "visible";
 
-     // Add event listener for keydown events on the button
-     contactFormSubmitButton.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault(); // Prevent default behavior for Space key (scrolling)
-            contactFormSubmitButton.click(); // Trigger the button's click event
-        }
-    });
-
-    // Function to set a session cookie
     function setSessionCookie() {
         const cookieValue = "sessionToken=uniqueSessionID123; path=/; SameSite=Lax";
         document.cookie = cookieValue;
     }
 
-    // Validation function
     function validate(field, regex) {
         const isMessageField = field.id === "message";
         const isPhoneField = field.id === "phone";
 
         if (field.value.trim() === "") {
-            // If the field is empty, reset its class and hide error messages
             field.className = "contact-form-input-box";
             if (isMessageField) {
                 field.classList.add("contact-form-input-box-message");
             }
-            if (document.body.classList.contains("dark-mode")) { //This is needed to stop the form input fields toggling from light mode/dark mode when the user empties the text from the input field
+            if (document.body.classList.contains("dark-mode")) {
                 field.classList.add("contact-form-input-box-dark-mode");
             }
             if (!isPhoneField && field.nextElementSibling) {
@@ -691,12 +678,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 contactFormValidationParagraphPhone.style.visibility = "hidden";
             }
         } else if (regex.test(field.value)) {
-            // If the field value matches the regex, mark it as valid and hide error messages
             field.className = "contact-form-input-box contact-form-valid";
             if (isMessageField) {
                 field.classList.add("contact-form-input-box-message");
             }
-            if (document.body.classList.contains("dark-mode")) { //This is needed to stop the form input fields toggling from light mode/dark mode when the user empties the text from the input field
+            if (document.body.classList.contains("dark-mode")) {
                 field.classList.add("contact-form-valid-dark-mode");
             }
             if (field.id === "fullname" && contactFormValidationParagraphName) {
@@ -707,14 +693,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 contactFormValidationParagraphPhone.style.visibility = "hidden";
             }
         } else {
-            // If the field value does not match the regex, mark it as invalid and show error messages
             field.className = "contact-form-input-box contact-form-invalid";
             if (isMessageField) {
                 field.classList.add("contact-form-input-box-message");
             }
             if (document.body.classList.contains("dark-mode")) {
                 field.classList.add("contact-form-invalid-dark-mode");
-
             }
             if (field.id === "fullname" && contactFormValidationParagraphName) {
                 contactFormValidationParagraphName.style.visibility = "visible";
@@ -725,11 +709,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        // Recheck the form validity to enable/disable the submit button
         checkFormValidity();
     }
 
-    // Function to check the overall form validity
     function checkFormValidity() {
         let formIsValid = true;
 
@@ -739,12 +721,68 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Enable or disable the submit button based on the form validity
-        contactFormSubmitButton.disabled = !formIsValid;
-        contactFormSubmitButton.style.visibility = "visible";
+        contactFormSubmitButton.setAttribute("aria-disabled", !formIsValid);
     }
 
-    // Attach event listeners to input fields for validation
+    function handleFormSubmission(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        let formIsValid = true;
+
+        contactFormInputs.forEach(input => {
+            if (input.classList.contains("contact-form-invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
+                formIsValid = false;
+            }
+        });
+
+        const hCaptchaResponse = document.querySelector('textarea[name="h-captcha-response"]').value;
+        if (!hCaptchaResponse) {
+            formIsValid = false;
+
+            let hcaptchaModalContainer = document.querySelector(".hcaptcha-modal-container");
+            let hcaptchaModalOverlay = document.querySelector(".hcaptcha-modal-overlay");
+
+            if (!hcaptchaModalContainer) {
+                hcaptchaModalOverlay = document.createElement("div");
+                hcaptchaModalOverlay.setAttribute("class", "hcaptcha-modal-overlay");
+
+                hcaptchaModalContainer = document.createElement("aside");
+                hcaptchaModalContainer.setAttribute("class", "hcaptcha-modal-container");
+
+                const hcaptchaModalTitle = document.createElement("p");
+                hcaptchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
+                hcaptchaModalTitle.textContent = "Alert!";
+                hcaptchaModalContainer.appendChild(hcaptchaModalTitle);
+
+                const hcaptchaModalFirstParagraph = document.createElement("p");
+                hcaptchaModalFirstParagraph.setAttribute("class", "hcaptcha-modal-first-paragraph");
+                hcaptchaModalFirstParagraph.textContent = "Please make sure you are human!";
+                hcaptchaModalContainer.appendChild(hcaptchaModalFirstParagraph);
+
+                const hcaptchaModalOkButton = document.createElement("button");
+                hcaptchaModalOkButton.setAttribute("class", "hcaptcha-modal-ok-button");
+                hcaptchaModalOkButton.textContent = "Ok";
+                hcaptchaModalContainer.appendChild(hcaptchaModalOkButton);
+
+                document.body.appendChild(hcaptchaModalOverlay);
+                document.body.appendChild(hcaptchaModalContainer);
+
+                hcaptchaModalOkButton.addEventListener("click", () => {
+                    document.body.removeChild(hcaptchaModalOverlay);
+                    document.body.removeChild(hcaptchaModalContainer);
+                });
+            }
+
+            return;
+        }
+
+        if (formIsValid) {
+            setSessionCookie();
+            form.submit(); // Fixed: Use form.submit() directly for submission
+        }
+    }
+
     contactFormInputs.forEach((input) => {
         input.addEventListener("keyup", (e) => {
             const regex = regexInput[e.target.attributes.name.value];
@@ -757,73 +795,22 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Initial check to set the submit button state
+    contactFormSubmitButton.addEventListener("click", (event) => {
+        if (contactFormSubmitButton.getAttribute("aria-disabled") === "true") {
+            event.preventDefault();
+        } else {
+            handleFormSubmission(event);
+        }
+    });
+
+    contactFormSubmitButton.addEventListener("keydown", (event) => {
+        if ((event.key === "Enter" || event.key === " ") && contactFormSubmitButton.getAttribute("aria-disabled") !== "true") {
+            event.preventDefault();
+            handleFormSubmission(event);
+        }
+    });
+
     checkFormValidity();
-
-    // Add event listener to the form submission
-    const form = document.querySelector("form");
-    if (form) {
-        form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Check if the form is valid
-            let formIsValid = true;
-            contactFormInputs.forEach(input => {
-                if (input.classList.contains("contact-form-invalid") || (input.hasAttribute("required") && input.value.trim() === "")) {
-                    formIsValid = false;
-                }
-            });
-
-            // Check if hCaptcha is completed
-            const hCaptchaResponse = document.querySelector('textarea[name="h-captcha-response"]').value;
-            if (!hCaptchaResponse) {
-                let formIsValid = false;
-
-                let hcaptchaModalContainer = document.querySelector(".hcaptcha-modal-container");
-                let hcaptchaModalOverlay = document.querySelector(".hcaptcha-modal-overlay");
-
-                // Check if the modal and overlay already exist
-                if (!hcaptchaModalContainer) {
-                    // Create the overlay
-                    hcaptchaModalOverlay = document.createElement("div");
-                    hcaptchaModalOverlay.setAttribute("class", "hcaptcha-modal-overlay");
-                    
-                    // Create the modal
-                    hcaptchaModalContainer = document.createElement("aside");
-                    hcaptchaModalContainer.setAttribute("class", "hcaptcha-modal-container");
-
-                    const hcaptchaModalTitle = document.createElement("p");
-                    hcaptchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
-                    hcaptchaModalTitle.textContent = "Alert!";
-                    hcaptchaModalContainer.appendChild(hcaptchaModalTitle);
-
-                    const hcaptchaModalFirstParagraph = document.createElement("p");
-                    hcaptchaModalFirstParagraph.setAttribute("class", "hcaptcha-modal-first-paragraph");
-                    hcaptchaModalFirstParagraph.textContent = "Please make sure you are human!";
-                    hcaptchaModalContainer.appendChild(hcaptchaModalFirstParagraph);
-
-                    const hcaptchaModalOkButton = document.createElement("button");
-                    hcaptchaModalOkButton.setAttribute("class", "hcaptcha-modal-ok-button");
-                    hcaptchaModalOkButton.textContent = "Ok";
-                    hcaptchaModalContainer.appendChild(hcaptchaModalOkButton);
-
-                    document.body.appendChild(hcaptchaModalOverlay);
-                    document.body.appendChild(hcaptchaModalContainer);
-
-                    hcaptchaModalOkButton.addEventListener("click", () => {
-                        document.body.removeChild(hcaptchaModalOverlay);
-                        document.body.removeChild(hcaptchaModalContainer);
-                    });
-                }
-                return;
-            }
-
-            if (formIsValid) {
-                setSessionCookie(); // Set the session cookie
-                form.submit(); // Manually submit the form
-            }
-        });
-    }
 });
 
 const updateDate = new Date();
