@@ -255,6 +255,25 @@ li {
     top: 0;
     left: 0;
 } */ /*!Keeping this commented out code in case it is needed in the future*/
+.contrast-toggle-button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0.1em 1em 0 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+/*Focus outline for accessibility */
+.contrast-toggle-button:focus-visible {
+    box-shadow: 0 0 0 1.25px #0561DA, 0 0 0 2.25px #FFF;
+}
+.fa-circle-half-stroke {
+    font-size: 1.12rem;
+    color: var(--dark-mode);
+}
 .dark-mode-toggle-button {
     position: relative;
     width: 20px;
@@ -271,12 +290,12 @@ li {
     box-shadow: 0 0 0 1.25px #0561DA, 0 0 0 2.25px #FFF;
 }
 .fa-moon {
-    font-size: 1.25rem;
+    font-size: 1.30rem;
     color: var(--dark-mode);
 }
 .fa-sun {
     position: absolute;
-    top: 0;
+    top: 0.075em;
     left: 0;
     font-size: 1.1rem;
     color: var(--light-mode);
@@ -454,6 +473,8 @@ main {
     font-size: 1.2rem;
 }
 .landing-page-title-value-portfolio {
+    padding: 0 0.2em 0.2em 0.2em;
+    background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
 .landing-page-title-value-semicolon {
@@ -588,6 +609,7 @@ main {
 .profile-section-container {
     width: 100%;
     min-height: 100vh;
+    padding-bottom: 0.01em;
 }
 .profile-content-container {
     width: 80%;
@@ -649,10 +671,13 @@ q::after {
     background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
 }
 .profile-introduction-container-greeting {
+    display: inline;
+    width: auto;
     margin: 0 0 0.18em -0.05em;
-    padding-top: 0.17em;
+    padding: 0.2em;
     font-size: 2.813rem;
     font-family: "tomorrow-regular", Arial;
+    background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
 .profile-introduction-container-greeting::after {
@@ -660,7 +685,7 @@ q::after {
     font-family: none;
     content: ",";
 }
-.profile-introduction-container > p {
+profile-introduction-container-paragraph {
     display: block;
     margin-top: 0;
 }
@@ -742,6 +767,7 @@ q::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     width: 80%;
     margin: auto;
 }
@@ -774,7 +800,10 @@ q::after {
     color: var(--light-mode);
 }
 .portfolio-introduction-container-p-highlighted-text::before {
+    margin-right: 0.2em;
+    padding: 0 0.2em 0.2em 0.4em;
     font-weight: 1000;
+    background-color: var(--darkest-grey);
     color: var(--primary-color);
     content: "Ready to dive into my work? ";
     cursor: text;
@@ -819,19 +848,16 @@ q::after {
     width: 80%;
     margin-bottom: 5em;
 }
-
 @media only screen and (max-width: 770px) {
     .portfolio-websites-slider-container {
         width: 100%;
     }
 }
-
 @media only screen and (min-width: 1200px) {
     .portfolio-websites-slider-container {
         width: 50%;
     }
 }
-
 .portfolio-websites-slider-left-arrow, 
 .portfolio-websites-slider-right-arrow {
     width: 48px;
@@ -847,11 +873,9 @@ q::after {
     justify-content: center;
     border: none;
 }
-
 .portfolio-websites-slider-left-arrow {
     border-radius: 24px 0 0 24px;
 }
-
 .portfolio-websites-slider-left-arrow > svg > path {
     width: 24px; /* Adjust SVG size as needed */
     height: 24px; /* Ensure SVG is proportional */
@@ -860,11 +884,9 @@ q::after {
     stroke-linecap: round;
     stroke-width: 4px;
 }
-
 .portfolio-websites-slider-right-arrow {
     border-radius: 0 24px 24px 0;
 }
-
 .portfolio-websites-slider-right-arrow > svg > path {
     width: 24px; /* Adjust SVG size as needed */
     height: 24px; /* Ensure SVG is proportional */
@@ -873,13 +895,11 @@ q::after {
     stroke-linecap: round;
     stroke-width: 4px;
 }
-
 .portfolio-websites-slider-container > figure {
     position: relative;
     width: 100%;
     margin: 0;
 }
-
 .portfolio-websites-slider-image {
     position: absolute;
     display: none;
@@ -889,39 +909,32 @@ q::after {
     filter: blur(0.8px);
     image-rendering: smooth;
 }
-
 .portfolio-websites-slider-image:first-child {
     display: block;
 }
-
 @media only screen and (max-width: 601px) {
     .portfolio-websites-slider-container {
         flex-direction: column;
         align-items: center;
     }
-
     .portfolio-websites-slider-left-arrow {
         width: 100%;
         height: 48px;
         border-radius: 24px 24px 0 0;
     }
-
     .portfolio-websites-slider-left-arrow > svg > path {
         transform: rotate(90deg);
         transform-origin: center;
     }
-
     .portfolio-websites-slider-container > figure {
         width: 100%;
     }
-
     .portfolio-websites-slider-right-arrow {
         width: 100%;
         height: 48px;
         margin-top: 7.9em;
         border-radius: 0 0 24px 24px;
     }
-
     .portfolio-websites-slider-right-arrow > svg > path {
         transform: rotate(90deg);
         transform-origin: center;
@@ -932,7 +945,6 @@ q::after {
         height: 48px; /* Size for larger screens */
     }
 }
-
 .portfolio-websites-button-container {
     display: flex;
     flex-direction: row;
@@ -1060,9 +1072,10 @@ q::after {
     color: var(--light-mode);
 }
 .portfolio-websites-show-more-accordion-container-paragraph-highlighted-text {
+    padding: 0.2em;
     font-family: "tomorrow-regular";
     letter-spacing: 0.075em;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
 .portfolio-websites-show-more-accordion-container-technologies-used-title {
@@ -1134,7 +1147,9 @@ q::after {
     padding-bottom: 2.5em;
 }
 .contact-introduction-container-p-highlighted-text {
+    padding: 0.2em;
     font-weight: 1000;
+    background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
 .contact-form-container {
@@ -1400,7 +1415,7 @@ q::after {
     background-color: var(--dark-mode);
 }
 .footer-navigation-container {
-    margin-bottom: 6.5em;
+    margin-bottom: 7em;
 }
 .footer-navigation-container > ul {
     margin: 0 0 2em 0;
