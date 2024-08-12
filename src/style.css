@@ -1,3 +1,4 @@
+/*This is at the top to ensure it renders as quickly as possible*/
 .sr-only {
     position: absolute;
     width: 1px;
@@ -6,9 +7,14 @@
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
+    color: var(--dark-mode);
     border: 0;
     white-space: nowrap;
-} /*This is at the top to ensure it renders as quickly as possible*/
+}
+.sr-only-dark-mode {
+    color: var(--light-mode);
+}
+/*Fonts*/
 @font-face { font-family: "roboto-bold"; src: url(./assets/fonts/roboto-bold-webfont.woff2);}
 @font-face { font-family: "roboto-light"; src: url(./assets/fonts/roboto-light-webfont.woff2);}
 @font-face { font-family: "roboto-medium"; src: url(./assets/fonts/roboto-medium-webfont.woff2);}
@@ -230,32 +236,7 @@ body::before {
     stroke-linecap: round;
     stroke-width: 4.8px;
 }
-/* .top-navigation-bar-dark-mode-icon-container {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin: 0;
-}
-li {
-    list-style-type: none;
-}
-.fa-moon {
-    font-size: 1.25rem;
-    color: var(--dark-mode);
-    cursor: pointer;
-}
-.fa-sun {
-    font-size: 1.1rem;
-    color: var(--light-mode);
-    visibility: hidden;
-    cursor: pointer;
-}
-.fa-moon, .fa-sun {
-    position: absolute;
-    top: 0;
-    left: 0;
-} */ /*!Keeping this commented out code in case it is needed in the future*/
-.contrast-toggle-button {
+/* .contrast-toggle-button {
     position: relative;
     width: 20px;
     height: 20px;
@@ -265,15 +246,15 @@ li {
     border: none;
     outline: none;
     cursor: pointer;
-}
+} */
 /*Focus outline for accessibility */
-.contrast-toggle-button:focus-visible {
+/* .contrast-toggle-button:focus-visible {
     box-shadow: 0 0 0 1.25px #0561DA, 0 0 0 2.25px #FFF;
 }
 .fa-circle-half-stroke {
     font-size: 1.12rem;
     color: var(--dark-mode);
-}
+} */
 .dark-mode-toggle-button {
     position: relative;
     width: 20px;
@@ -300,6 +281,18 @@ li {
     font-size: 1.1rem;
     color: var(--light-mode);
     visibility: hidden;
+}
+#darkModeIcon {
+    color: var(--dark-mode);
+}
+#lightModeIcon {
+    color: var(--dark-mode);
+}
+.sr-only-darkModeIcon-dark-mode {
+    color: var(--light-mode);
+}
+.sr-only-lightModeIcon-dark-mode {
+    color: var(--light-mode);
 }
 .hamburger-menu-container {
     width: 40px;
@@ -438,7 +431,7 @@ main {
     position: absolute;
     z-index: 2;
     display: inline-block;
-    width: 200px;
+    width: 205px;
     height: 28.8px;
     margin: 2.55em 0 0 -8.9em;
     background-color: var(--light-grey);
@@ -451,7 +444,7 @@ main {
     position: absolute;
     z-index: 1;
     display: inline-block;
-    width: 225px;
+    width: 227.5px;
     height: 16px;
     margin: 3.75em 0 0 -8em;
     background-color: var(--lightest-grey);
@@ -479,7 +472,7 @@ main {
 }
 .landing-page-title-value-semicolon {
     position: relative;
-    right: 4px;
+    right: 2.5px;
 }
 .landing-page-title-property-value-to-my-dark-mode, .landing-page-title-property-value-front-end-dark-mode, .landing-page-title-property-development-dark-mode, .landing-page-title-value-semicolon-dark-mode {
     color: var(--light-mode);
@@ -639,20 +632,26 @@ main {
     font-family: "roboto-bold", Arial;
     text-align: center;
     background-color: var(--light-grey);
-    color: var(--darker-grey);
+    color: var(--darkest-grey);
     border-radius: 24px;
 }
 .profile-quotation-container-dark-mode {
     background-color: var(--darker-grey);
-    color: var(--light-grey);
+    color: var(--lightest-grey);
+}
+q {
+    font-weight: 900;
+    color: var(--darkest-grey);
+}
+.q-dark-mode {
+    color: var(--lightest-grey);
 }
 q::before {
     position: absolute;
     display: block;
-    margin: -0.3em 0 0 -0.34em;
+    margin: -0.3em 0 0 -0.50em;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--dark-grey);
     content: open-quote;
 }
 q::after {
@@ -661,7 +660,6 @@ q::after {
     margin: -0.43em 0 0 3.03em;
     font-size: 4.688rem;
     font-family: none;
-    color: var(--dark-grey);
     content: close-quote;
 }
 .profile-introduction-container {
@@ -767,7 +765,7 @@ profile-introduction-container-paragraph {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 80%;
     margin: auto;
 }
@@ -803,6 +801,7 @@ profile-introduction-container-paragraph {
     margin-right: 0.2em;
     padding: 0 0.2em 0.2em 0.4em;
     font-weight: 1000;
+    line-height: 1.75;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
     content: "Ready to dive into my work? ";
@@ -833,14 +832,11 @@ profile-introduction-container-paragraph {
     font-family: "roboto-medium", Arial;
     text-align: center;
     background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
-    color: var(--light-mode);
+    color: var(--dark-mode);
     border-radius: 24px 24px 0 0;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-}
-.portfolio-websites-title-container-h3-dark-mode {
-    color: var(--dark-mode);
 }
 .portfolio-websites-slider-container {
     display: flex;
@@ -877,8 +873,8 @@ profile-introduction-container-paragraph {
     border-radius: 24px 0 0 24px;
 }
 .portfolio-websites-slider-left-arrow > svg > path {
-    width: 24px; /* Adjust SVG size as needed */
-    height: 24px; /* Ensure SVG is proportional */
+    width: 24px;
+    height: 24px;
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
@@ -888,8 +884,8 @@ profile-introduction-container-paragraph {
     border-radius: 0 24px 24px 0;
 }
 .portfolio-websites-slider-right-arrow > svg > path {
-    width: 24px; /* Adjust SVG size as needed */
-    height: 24px; /* Ensure SVG is proportional */
+    width: 24px;
+    height: 24px;
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
@@ -1136,21 +1132,23 @@ profile-introduction-container-paragraph {
 }
 .portfolio-websites-show-more-accordion-container-technology-used-container figcaption {
     margin: 0.5em 0 1.5em 0;
-    font-family: "roboto-medium", Arial;
-    cursor: text;
-}
-.portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode {
+    font-family: "roboto-regular", Arial;
     color: var(--light-mode);
+    cursor: text;
 }
 .contact-section-container {
     min-height: 100vh;
     padding-bottom: 2.5em;
 }
-.contact-introduction-container-p-highlighted-text {
-    padding: 0.2em;
+.contact-introduction-container-p-highlighted-text::before {
+    margin-right: 0.2em;
+    padding: 0 0.2em 0.2em 0.4em;
     font-weight: 1000;
+    line-height: 1.75;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
+    content: "Thank you for visiting my portfolio! ";
+    cursor: text;
 }
 .contact-form-container {
     display: flex;
@@ -1202,7 +1200,7 @@ profile-introduction-container-paragraph {
     user-select: none; /* Standard syntax */
 }
 .contact-form-label-dark-mode {
-    color: var(--dark-grey);
+    color: var(--light-grey);
 }
 .contact-form-input-box {
     width: 100%;
@@ -1415,34 +1413,53 @@ profile-introduction-container-paragraph {
     background-color: var(--dark-mode);
 }
 .footer-navigation-container {
-    margin-bottom: 7em;
+    width: 80%;
+    margin: 5em 0 12.5em 0;
+    padding: 2em 0 0.75em 0;
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
+    border-radius: 25px;
 }
 .footer-navigation-container > ul {
     margin: 0 0 2em 0;
     padding: 0;
     list-style-type: none;
 }
+.footer-navigation-links {
+    margin-bottom: 2em;
+}
 .footer-navigation-links a {
-    display: flex;
-    flex-direction: column;
+    padding: 0.1em 1em 0.2em;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    line-height: 2.5;
     text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.5s;
+    color: var(--dark-mode);
+    transition:background-color 0.5s;
 }
 .footer-navigation-links a:hover {
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
 }
 a.footer-navigation-link-backtotop {
-    margin-bottom: 1em;
-    color: var(--dark-mode);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 48px;
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+    border-radius: 800px;
     transition: color 0.5s;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s;
+    cursor: pointer;
 }
 a.footer-navigation-link-backtotop:hover {
-    color: var(--secondary-color);
-    transition: color 0.5s;
+    background-color: rgb(144.3, 92.9, 79.5);
+}
+@media only screen and (max-width: 600px) {
+    a.footer-navigation-link-backtotop {
+      min-width: 150px;
+    }
 }
 a.footer-navigation-link-backtotop-dark-mode {
     color: var(--light-mode);
@@ -1450,17 +1467,26 @@ a.footer-navigation-link-backtotop-dark-mode {
 .footer-absolute-links {
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
+    color: var(--darkest-grey);
 }
-.footer-absolute-links-dark-mode {
-    color: var(--light-mode);
+@media only screen and (max-width: 450px) {
+    .footer-absolute-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.50em;
+    }
 }
 .footer-absolute-links a {
+    padding: 0.1em 1em;
+    font-weight: 900;
     text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.5s;
+    color: var(--dark-mode);
+    transition: background-color 0.5s;
 }
 .footer-absolute-links a:hover {
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
 }
 .footer-bottom-navigation-container {
     position: absolute;
@@ -1502,7 +1528,7 @@ a.footer-navigation-link-backtotop-dark-mode {
 .footer-bottom-copyright-sign {
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-grey);
+    color: var(--light-mode);
 }
 .footer-bottom-copyright-year {
     font-family: "roboto-bold", Arial;
@@ -1512,14 +1538,14 @@ a.footer-navigation-link-backtotop-dark-mode {
 }
 .footer-bottom-copyright-year, .footer-bottom-copyright {
     font-size: 0.65rem;
-    color: var(--light-grey);
+    color: var(--light-mode);
 }
 .footer-bottom-privacy-policy-link {
     float: center;
     font-size: 0.65rem;
     font-family: "roboto-bold", Arial;
     text-decoration: none;
-    color: var(--light-grey);
+    color: var(--light-mode);
     transition: color 0.5s;
 }
 .footer-bottom-privacy-policy-link:hover {

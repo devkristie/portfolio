@@ -1,12 +1,11 @@
 "use strict"
 
 // Monitor all focusable elements
-document.addEventListener('focusin', (event) => {
-    console.log('Focused element:', event.target);
-}, true); // Using capture phase to catch all focus events
+// document.addEventListener('focusin', (event) => {
+//     console.log('Focused element:', event.target);
+// }, true); 
+// Using capture phase to catch all focus events
 
-// const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container");
-// const lightModeIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 const laptopImageCode = document.querySelectorAll(".laptop-image-code");
@@ -105,6 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 //Dark mode variables
+const screenReadersOnlyText = document.querySelectorAll(".sr-only");
+const screenReadersOnlydarkModeIcon = document.querySelector("#darkModeIcon");
+const screenReadersOnlylightModeIcon = document.querySelector("#darkModeIcon");
 const bodyDarkMode = document.querySelector("body");
 const mainDarkMode = document.querySelector("main");
 const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
@@ -123,23 +125,19 @@ const laptopImageKey = document.querySelectorAll(".laptop-image-key");
 const laptopImageBottomShell = document.querySelector(".laptop-image-bottom-shell");
 const profileContentContainer = document.querySelector(".profile-content-container");
 const profileQuotationContainer = document.querySelector(".profile-quotation-container");
+const profileQuotationMark = document.querySelector("q");
 const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
 const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
 const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
-const portfolioWebsitesTitle = document.querySelectorAll(".portfolio-websites-title-container h3");
 const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
 const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
 const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
 const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
-const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technology-used-container figcaption");
 const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
 const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
-// const contactFormValid = document.querySelectorAll(".contact-form-valid");
-// const contactFormInvalid = document.querySelectorAll(".contact-form-invalid");
 const hCaptchaColor = document.querySelector(".h-captcha");
 const footerSectionContainer = document.querySelector(".footer-section-container");
 const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
-const footerAbsoluteLink = document.querySelectorAll(".footer-absolute-links");
 const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
     function enableDarkMode() {
@@ -147,6 +145,14 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         lightModeIcon.style.visibility = "visible";
 
         // Apply dark mode classes to other elements as needed
+        screenReadersOnlyText.forEach((text) => {
+            text.classList.add("sr-only-dark-mode");
+        });
+
+        screenReadersOnlydarkModeIcon.classList.add("sr-only-darkModeIcon-dark-mode");
+
+        screenReadersOnlylightModeIcon.classList.add("sr-only-lightModeIcon-dark-mode");
+
         mainDarkMode.classList.add("main-dark-mode");
 
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
@@ -183,6 +189,8 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         
         profileQuotationContainer.classList.add("profile-quotation-container-dark-mode");
         
+        profileQuotationMark.classList.add("q-dark-mode");
+
         profileIntrodutionContainerParagraph.forEach((paragraph) =>{
             paragraph.classList.add("profile-introduction-container-paragraph-dark-mode");
         });
@@ -195,10 +203,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
             paragraph.classList.add("section-introduction-container-p-dark-mode");
             const thankYouForVisitingMyPortfolioParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
             thankYouForVisitingMyPortfolioParagraph.classList.remove("section-introduction-container-p-dark-mode");
-        });
-        
-        portfolioWebsitesTitle.forEach((websiteTitle) => {
-            websiteTitle.classList.add("portfolio-websites-title-container-h3-dark-mode");
         });
         
         portfolioWebsitesContainer.forEach((background) => {
@@ -223,10 +227,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         
         portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
             title.classList.add("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
-        });
-        
-        portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
-            figcaption.classList.add("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
         });
         
         contactFormTopHeaderContainer.classList.add("contact-form-top-header-container-dark-mode");
@@ -268,14 +268,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
 
         bodyDarkMode.classList.add("dark-mode"); //For the contact form input field to add the dark mode background when the form is valid and invalid
         
-        // contactFormValid.forEach((input) => {
-        //     input.classList.add("contact-form-valid-dark-mode");
-        // });
-        
-        // contactFormInvalid.forEach((input) => {
-        //     input.classList.add("contact-form-invalid-dark-mode");
-        // });
-        
         contactFormLabels.forEach((label) => {
             label.classList.add("contact-form-label-dark-mode");
         });
@@ -286,10 +278,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         
         footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
         
-        footerAbsoluteLink.forEach((link) => {
-            link.classList.add("footer-absolute-links-dark-mode");
-        });
-        
         footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
     }
 
@@ -298,6 +286,14 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         darkModeIcon.style.visibility = "visible";
         
         // Remove dark mode classes from other elements as needed
+        screenReadersOnlyText.forEach((text) => {
+            text.classList.remove("sr-only-dark-mode");
+        });
+
+        screenReadersOnlydarkModeIcon.classList.remove("sr-only-darkModeIcon-dark-mode");
+
+        screenReadersOnlylightModeIcon.classList.remove("sr-only-lightModeIcon-dark-mode");
+
         mainDarkMode.classList.remove("main-dark-mode");
         
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
@@ -332,6 +328,8 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         
         profileContentContainer.classList.remove("profile-content-container-dark-mode");
 
+        profileQuotationMark.classList.remove("q-dark-mode");
+
         profileQuotationContainer.classList.remove("profile-quotation-container-dark-mode");
         
         profileIntrodutionContainerParagraph.forEach((paragraph) =>{
@@ -344,10 +342,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         
         sectionIntroductionContainerParagraph.forEach((paragraph) => {
             paragraph.classList.remove("section-introduction-container-p-dark-mode");
-        });
-        
-        portfolioWebsitesTitle.forEach((websiteTitle) => {
-            websiteTitle.classList.remove("portfolio-websites-title-container-h3-dark-mode");
         });
         
         portfolioWebsitesContainer.forEach((background) => {
@@ -372,10 +366,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         
         portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
             title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
-        });
-        
-        portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedFigcaption.forEach((figcaption) => {
-            figcaption.classList.remove("portfolio-websites-show-more-accordion-container-technology-used-container-figcaption-dark-mode");
         });
         
         contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
@@ -417,14 +407,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
 
         bodyDarkMode.classList.remove("dark-mode"); //For the contact form input field to remove the dark mode background when the form is valid and invalid
         
-        // contactFormValid.forEach((input) => {
-        //     input.classList.remove("contact-form-valid-dark-mode");
-        // });
-        
-        // contactFormInvalid.forEach((input) => {
-        //     input.classList.remove("contact-form-invalid-dark-mode");
-        // });
-        
         contactFormLabels.forEach((label) => {
             label.classList.remove("contact-form-label-dark-mode");
         });
@@ -434,10 +416,6 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         footerSectionContainer.classList.remove("footer-section-container-dark-mode");
         
         footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
-        
-        footerAbsoluteLink.forEach((link) => {
-            link.classList.remove("footer-absolute-links-dark-mode");
-        });
         
         footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
     }
