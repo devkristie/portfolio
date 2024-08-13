@@ -133,6 +133,7 @@ const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-website
 const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
 const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
 const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
+const contactFormSectionIntroduction = document.querySelector(".contact-introduction-container-p-highlighted-text");
 const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
 const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
 const hCaptchaColor = document.querySelector(".h-captcha");
@@ -228,6 +229,8 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
             title.classList.add("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
         });
+
+        contactFormSectionIntroduction.classList.add("contact-form-section-introduction-dark-mode");
         
         contactFormTopHeaderContainer.classList.add("contact-form-top-header-container-dark-mode");
         
@@ -367,6 +370,8 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
         portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
             title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
         });
+
+        contactFormSectionIntroduction.classList.remove("contact-form-section-introduction-dark-mode");
         
         contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
         
@@ -629,7 +634,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactFormValidationParagraphEmail = document.querySelector(".contact-form-validation-paragraph.email");
     const contactFormValidationParagraphPhone = document.querySelector(".contact-form-validation-paragraph.phone");
     const contactFormSubmitButton = document.querySelector(".contact-form-submit-button");
-    const form = document.querySelector("form"); // Added form reference
+    const form = document.querySelector("form");
 
     contactFormSubmitButton.style.visibility = "visible";
 

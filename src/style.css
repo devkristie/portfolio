@@ -14,6 +14,18 @@
 .sr-only-dark-mode {
     color: var(--light-mode);
 }
+.sr-only-new-tab {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    color: var(--light-mode);
+    border: 0;
+    white-space: nowrap;
+}
 /*Fonts*/
 @font-face { font-family: "roboto-bold"; src: url(./assets/fonts/roboto-bold-webfont.woff2);}
 @font-face { font-family: "roboto-light"; src: url(./assets/fonts/roboto-light-webfont.woff2);}
@@ -236,25 +248,6 @@ body::before {
     stroke-linecap: round;
     stroke-width: 4.8px;
 }
-/* .contrast-toggle-button {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin: 0.1em 1em 0 0;
-    padding: 0;
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-} */
-/*Focus outline for accessibility */
-/* .contrast-toggle-button:focus-visible {
-    box-shadow: 0 0 0 1.25px #0561DA, 0 0 0 2.25px #FFF;
-}
-.fa-circle-half-stroke {
-    font-size: 1.12rem;
-    color: var(--dark-mode);
-} */
 .dark-mode-toggle-button {
     position: relative;
     width: 20px;
@@ -627,7 +620,7 @@ main {
     width: 268px;
     height: 117.01px;
     margin: 0 3.25em 0 auto;
-    padding: 0 1em;
+    padding: 0 1em 0.1em;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
     text-align: center;
@@ -640,7 +633,8 @@ main {
     color: var(--lightest-grey);
 }
 q {
-    font-weight: 900;
+    padding: 1em;
+    line-height: 1.2em;
     color: var(--darkest-grey);
 }
 .q-dark-mode {
@@ -649,17 +643,19 @@ q {
 q::before {
     position: absolute;
     display: block;
-    margin: -0.3em 0 0 -0.50em;
+    margin: 0.125em 0 0 -0.615em;
     font-size: 4.688rem;
     font-family: none;
+    font-weight: 900;
     content: open-quote;
 }
 q::after {
     position: absolute;
     display: block;
-    margin: -0.43em 0 0 3.03em;
+    margin: 0 0 0 2.83em;
     font-size: 4.688rem;
     font-family: none;
+    font-weight: 900;
     content: close-quote;
 }
 .profile-introduction-container {
@@ -716,8 +712,7 @@ profile-introduction-container-paragraph {
     .profile-introduction-container {
         width: 100%;
         margin: 5em auto;
-        padding: 13.25em 3em 1em 3em;
-    }
+    } 
 }
 @media only screen and (max-width: 600px) {
     .profile-introduction-download-cv-button {
@@ -725,13 +720,13 @@ profile-introduction-container-paragraph {
         margin: 3.5em auto 3em;
     }
 } 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 685px) {
     .profile-quotation-container {
-        margin-top: 8.75em;
+        margin-top: 10.75em;
     }
     .profile-introduction-container {
-        margin-top: -12.25em;
-        padding-top: 13.25em;
+        margin-top: -14.25em;
+        padding-top: 17.25em;
     }
 }
 @media only screen and (min-width: 1180px) {
@@ -1067,6 +1062,11 @@ profile-introduction-container-paragraph {
 .portfolio-websites-show-more-accordion-container-paragraph-dark-mode {
     color: var(--light-mode);
 }
+@media only screen and (max-width: 465px) {
+    .portfolio-websites-show-more-accordion-container-paragraph {
+        margin: 0 1em;
+    }
+}
 .portfolio-websites-show-more-accordion-container-paragraph-highlighted-text {
     padding: 0.2em;
     font-family: "tomorrow-regular";
@@ -1149,6 +1149,9 @@ profile-introduction-container-paragraph {
     color: var(--primary-color);
     content: "Thank you for visiting my portfolio! ";
     cursor: text;
+}
+.contact-form-section-introduction-dark-mode {
+    color: var(--light-mode);
 }
 .contact-form-container {
     display: flex;
@@ -1240,13 +1243,13 @@ profile-introduction-container-paragraph {
     color: var(--light-mode);
     border: 0.16px solid var(--lightest-grey);
 }
-.contact-form-input-box:focus {
+.contact-form-input-box:focus-visible {
     filter: brightness(0.96);
     border: 1.44px solid var(--secondary-color);
     outline-style: solid;
     outline-color: var(--secondary-color);
 }
-.contact-form-input-box-dark-mode:focus {
+.contact-form-input-box-dark-mode:focus-visible {
     caret-color: var(--darkest-grey);
 }
 .contact-form-valid {
@@ -1278,10 +1281,11 @@ profile-introduction-container-paragraph {
     border: 0.16px solid var(--lightest-grey);
 }
 .contact-form-validation-paragraph {
-    margin-top: 0.17em;
-    padding: 0 0 1.11em 0.6em;
+    margin: 0 0 2.11em 0;
+    padding: 0 0 0.2em 0.6em;
     font-size: 0.90rem;
     font-family: "roboto-bold", Arial;
+    background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
 .contact-form-validation-paragraph.name {
@@ -1295,6 +1299,7 @@ profile-introduction-container-paragraph {
 }
 .contact-form-input-box-message {
     height: 203.01px;
+    padding: 0.9em 0 0 1.5em;
     border-radius: 0 0 24px 24px;
     resize: none;
 }
@@ -1311,10 +1316,10 @@ profile-introduction-container-paragraph {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 6;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 50% opacity */
-    z-index: 6; /* Ensure the overlay is on top of other elements */
+    background: rgba(0, 0, 0, 0.5);
 }
 .hcaptcha-modal-container {
     position: fixed;
