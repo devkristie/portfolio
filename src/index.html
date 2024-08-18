@@ -16,37 +16,41 @@
         <script src="https://web3forms.com/client/script.js" async defer></script>
     </head>
     <body>
-        <header class="top-navigation-bar-container">
-            <svg class="top-navigation-bar-logo-container" aria-label="Portfolio Logo">
-                <path class="logo-opening-curly-brace" d="M12 7 Q7 7 7 13 Q7 18.5 4 19.5 M4 19.5 Q7 21.5 7 23 Q7 31.5 12 31.5" aria-hidden="true"/>
-                <path class="logo-less-than-sign" d="M22 9 L12 19.5 L22 29" aria-hidden="true"/>
-                <circle class="logo-top-colon" cx="29" cy="7.5" r="2.5" aria-hidden="true"/>
-                <circle class="logo-bottom-colon" cx="29" cy="15" r="2.5" aria-hidden="true"/>
-                <path class="logo-forward-slash" d="M41 9 L27.5 29.5" aria-hidden="true"/>
-                <circle class="logo-top-semicolon" cx="40" cy="23" r="2.5" aria-hidden="true"/>
-                <circle class="logo-bottom-semicolon" cx="40" cy="30.5" r="2.5" aria-hidden="true"/>
-                <path class="logo-bottom-semicolon-terminal" d="M42 29 Q45 34 37.5 36.5" aria-hidden="true"/>
-                <path class="logo-more-than-sign" d="M46.5 9 L56.5 19.5 L46.5 29" aria-hidden="true"/>
-                <path class="logo-closing-curly-brace" d="M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19 M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5" aria-hidden="true"/>
-            </svg>
-            <!-- <button class="contrast-toggle-button" type="button" aria-label="Toggle Contrast">
-                <i class="fa-solid fa-circle-half-stroke" aria-describedby="ContrastIcon"></i>
-            </button>
-            <span id="ContrastIcon" class="sr-only">Dark Mode Icon</span> -->
-            <button class="dark-mode-toggle-button" type="button" aria-label="Toggle Dark Mode">
-                <i class="fa-solid fa-moon" aria-describedby="darkModeIcon"></i>
-                <i class="fa-solid fa-sun" aria-describedby="lightModeIcon"></i>
-            </button>
-            <span id="darkModeIcon" class="sr-only">Dark Mode Icon</span>
-            <span id="lightModeIcon" class="sr-only">Light Mode Icon</span>
-            <svg class="hamburger-menu-container" aria-label="Navigation Menu" role="button" tabindex="0">
-                <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
-                <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
-                <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true"/>
-            </svg>
+        <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
+            <a href="index.html" aria-label="Frontend Web Development Portfolio Logo Homepage"><!--!Need to change the link to wwww.kristolio.co.uk when going into production-->
+                <svg class="top-navigation-bar-logo-container" aria-hidden="true">
+                    <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
+                    <path class="logo-less-than-sign" d="M22 11 L12 21.5 L22 31"/>
+                    <circle class="logo-top-colon" cx="29" cy="9.5" r="2.5"/>
+                    <circle class="logo-bottom-colon" cx="29" cy="17" r="2.5"/>
+                    <path class="logo-forward-slash" d="M41 11 L27.5 31.5"/>
+                    <circle class="logo-top-semicolon" cx="40" cy="25" r="2.5"/>
+                    <circle class="logo-bottom-semicolon" cx="40" cy="32.5" r="2.5"/>
+                    <path class="logo-bottom-semicolon-terminal" d="M42 31 Q45 36 37.5 38.5"/>
+                    <path class="logo-more-than-sign" d="M46.5 11 L56.5 21.5 L46.5 31"/>
+                    <path class="logo-closing-curly-brace" d="M56.5 9 Q61.5 8.5 61.5 17 Q61.5 19 64.5 21 M64.5 21 Q61.5 23 61.5 27 Q61.5 33.5 56.5 33.5"/>
+                </svg>
+            </a>
+            <div class="navigation-right">
+                <button class="dark-mode-toggle-button" type="button" aria-label="Enable Dark Mode" id="darkModeToggleButton">
+                    <!-- <i class="fa-solid fa-moon" role="img" aria-label="Dark Mode"></i>
+                    <i class="fa-solid fa-sun" role="img" aria-label="Light Mode"></i> -->
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                </button>
+                <!-- <span id="darkModeIcon" class="sr-only">Dark Mode Icon</span>
+                <span id="lightModeIcon" class="sr-only">Light Mode Icon</span> -->
+                <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div>
+                <svg class="hamburger-menu-container" aria-label="Hamburger Navigation Menu" role="button" aria-expanded="false" tabindex="0">
+                    <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
+                    <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
+                    <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true"/>
+                </svg>
+                <div id="dynamicAnnouncer" aria-live="polite" class="sr-only"></div>
+            </div>
         </header>
         <header class="top-navigation-bar-accordion-container-hidden">
-            <nav aria-label="Main navigation" role="navigation">
+            <nav aria-label="Main" role="navigation">
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
                         <a href="#home">Home</a>
@@ -69,89 +73,87 @@
         <main>
             <!-- Hidden labels for screen readers -->
             <div id="home-label" class="sr-only">Top Of The Page</div>
-            <div id="profile-label" class="sr-only">Profile Section</div>
-            <div id="portfolio-label" class="sr-only">Portfolio Section</div>
-            <div id="contact-label" class="sr-only">Contact Section</div>
             <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div>
             <section class="landing-page-section-container">
                 <header class="landing-page-title-container" aria-labelledby="welcome-title">
-                    <p id="welcome-title" class="landing-page-title-welcome">.welcome</p>
+                    <p id="welcome-title" class="landing-page-title-welcome"><span class="landing-page-title-welcome" aria-hidden="true">.</span>welcome</p>
                     <div class="landing-page-title-welcome-background-one" aria-hidden="true"></div>
                     <div class="landing-page-title-welcome-background-two" aria-hidden="true"></div>
                     <p class="landing-page-title-opening-curly-brace" aria-hidden="true">{</p>
-                    <p class="landing-page-title-property-value-to-my">to: my;</p>
-                    <p class="landing-page-title-property-value-front-end">front: end;</p>
-                    <p class="landing-page-title-property-development">development:</p>
+                    <p class="landing-page-title-property-value-to-my">to<span aria-hidden="true">:</span> my<span aria-hidden="true">;</span></p>
+                    <p class="landing-page-title-property-value-front-end">front<span aria-hidden="true">:</span> end<span aria-hidden="true">;</span></p>
+                    <p class="landing-page-title-property-development">development<span aria-hidden="true">:</span></p>
                     <p class="landing-page-title-value-portfolio">portfolio</p>
-                    <p class="landing-page-title-value-semicolon">;</p>
+                    <p class="landing-page-title-value-semicolon" aria-hidden="true">;</p>
                     <p class="landing-page-title-closing-curly-brace" aria-hidden="true">}</p>
                 </header>
                 <div>
-                    <svg class="laptop-image-container" aria-label="Illustration of a laptop with code on the screen.">
+                    <svg class="laptop-image-container" aria-label="Illustration of a laptop with code on the screen." aria-hidden="true">
                         <path class="laptop-image-top-shell" d="M32.5 0 Q25 0 25 7.5 L25 150 L275 150 L275 10 Q275 0 265 0 L50 0" aria-hidden="true"/>
-                        <circle class="laptop-image-webcam" cx="150" cy="5" r="2.5" aria-hidden="true"/>
-                        <rect class="laptop-image-vscode-activity-bar" x="35" y="10" width="230" height="140" aria-hidden="true"/>
-                        <rect class="laptop-image-vscode-file-explorer" x="45" y="15" width="220" height="135" aria-hidden="true"/>
-                        <rect class="laptop-image-vscode-file-tab" x="70" y="15" width="25" height="7.5" aria-hidden="true"/>
-                        <rect class="laptop-image-vscode-editor" x="70" y="22.5" width="195" height="127.5" aria-hidden="true"/>
-                        <path class="laptop-image-horizontal-screen-line" d="M70 125 L265 125" aria-hidden="true"/>
-                        <path class="laptop-image-vertical-screen-line" d="M170 23 L170 125" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="35" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="55" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="75" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="95" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="115" y="145" width="70" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="187.5" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="207.5" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="227.5" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <rect class="laptop-image-key" x="247.5" y="145" width="17.5" height="5" aria-hidden="true"/>
-                        <path class="laptop-image-bottom-shell" d="M10 157.5 L290 157.5" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M75 35 L85 35" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M80 40 L95 40" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M85 45 L120 45" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M80 50 L95 50" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M75 55 L85 55" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M80 60 L95 60" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M85 65 L90 65" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M90 70 L120 70" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M90 75 L115 75" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M90 80 L130 80" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M85 85 L90 85" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M80 90 L95 90" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M75 95 L85 95" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M75 100 L80 100" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M80 105 L85 105" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M85 110 L120 110" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M85 115 L100 115" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M80 120 L85 120" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M180 35 L183 35" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M188 35 L189 35" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 40 L200 40" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 45 L195 45" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 50 L202 50" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 55 L210 55" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M180 60 L181 60" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M180 65 L187 65" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M192 65 L193 65" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 70 L195 70" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 75 L199 75" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 80 L191 80" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M180 85 L181 85" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M180 90 L195 90" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M199 90 L200 90" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 95 L199 95" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 100 L205 100" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 105 L201 105" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 110 L198 110" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 115 L205 115" aria-hidden="true"/>
-                        <path class="laptop-image-code" d="M185 120 L202 120" aria-hidden="true"/>
+                        <circle class="laptop-image-webcam" cx="150" cy="5" r="2.5"/>
+                        <rect class="laptop-image-vscode-activity-bar" x="35" y="10" width="230" height="140"/>
+                        <rect class="laptop-image-vscode-file-explorer" x="45" y="15" width="220" height="135"/>
+                        <rect class="laptop-image-vscode-file-tab" x="70" y="15" width="25" height="7.5"/>
+                        <rect class="laptop-image-vscode-editor" x="70" y="22.5" width="195" height="127.5"/>
+                        <path class="laptop-image-horizontal-screen-line" d="M70 125 L265 125"/>
+                        <path class="laptop-image-vertical-screen-line" d="M170 23 L170 125"/>
+                        <rect class="laptop-image-key" x="35" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="55" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="75" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="95" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="115" y="145" width="70" height="5"/>
+                        <rect class="laptop-image-key" x="187.5" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="207.5" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="227.5" y="145" width="17.5" height="5"/>
+                        <rect class="laptop-image-key" x="247.5" y="145" width="17.5" height="5"/>
+                        <path class="laptop-image-bottom-shell" d="M10 157.5 L290 157.5"/>
+                        <path class="laptop-image-code" d="M75 35 L85 35"/>
+                        <path class="laptop-image-code" d="M80 40 L95 40"/>
+                        <path class="laptop-image-code" d="M85 45 L120 45"/>
+                        <path class="laptop-image-code" d="M80 50 L95 50"/>
+                        <path class="laptop-image-code" d="M75 55 L85 55"/>
+                        <path class="laptop-image-code" d="M80 60 L95 60"/>
+                        <path class="laptop-image-code" d="M85 65 L90 65"/>
+                        <path class="laptop-image-code" d="M90 70 L120 70"/>
+                        <path class="laptop-image-code" d="M90 75 L115 75"/>
+                        <path class="laptop-image-code" d="M90 80 L130 80"/>
+                        <path class="laptop-image-code" d="M85 85 L90 85"/>
+                        <path class="laptop-image-code" d="M80 90 L95 90"/>
+                        <path class="laptop-image-code" d="M75 95 L85 95"/>
+                        <path class="laptop-image-code" d="M75 100 L80 100"/>
+                        <path class="laptop-image-code" d="M80 105 L85 105"/>
+                        <path class="laptop-image-code" d="M85 110 L120 110"/>
+                        <path class="laptop-image-code" d="M85 115 L100 115"/>
+                        <path class="laptop-image-code" d="M80 120 L85 120"/>
+                        <path class="laptop-image-code" d="M180 35 L183 35"/>
+                        <path class="laptop-image-code" d="M188 35 L189 35"/>
+                        <path class="laptop-image-code" d="M185 40 L200 40"/>
+                        <path class="laptop-image-code" d="M185 45 L195 45"/>
+                        <path class="laptop-image-code" d="M185 50 L202 50"/>
+                        <path class="laptop-image-code" d="M185 55 L210 55"/>
+                        <path class="laptop-image-code" d="M180 60 L181 60"/>
+                        <path class="laptop-image-code" d="M180 65 L187 65"/>
+                        <path class="laptop-image-code" d="M192 65 L193 65"/>
+                        <path class="laptop-image-code" d="M185 70 L195 70"/>
+                        <path class="laptop-image-code" d="M185 75 L199 75"/>
+                        <path class="laptop-image-code" d="M185 80 L191 80"/>
+                        <path class="laptop-image-code" d="M180 85 L181 85"/>
+                        <path class="laptop-image-code" d="M180 90 L195 90"/>
+                        <path class="laptop-image-code" d="M199 90 L200 90"/>
+                        <path class="laptop-image-code" d="M185 95 L199 95"/>
+                        <path class="laptop-image-code" d="M185 100 L205 100"/>
+                        <path class="laptop-image-code" d="M185 105 L201 105"/>
+                        <path class="laptop-image-code" d="M185 110 L198 110"/>
+                        <path class="laptop-image-code" d="M185 115 L205 115"/>
+                        <path class="laptop-image-code" d="M185 120 L202 120"/>
                     </svg>
                 </div>
             </section>
             <div id="profile" class="anchor" role="region" aria-labelledby="profile-label" tabindex="-1"></div>
+            <div id="profile-label" class="sr-only">Profile Section</div>
             <section class="profile-section-container">
                 <header class="section-title-container">
-                    <h1 class="section-title">PROFLIE</h1>
+                    <h1 class="section-title" aria-label="Profile">Profile</h1> <!--!Add to the README.md file: the problem with hovering over the profile text and it being capitalized in the NVDA speech viewer, due to the CSS property text-transform uppercase regardless of the aria-label-->
                 </header>
                 <div class="profile-content-container">
                     <img class="profile-headshot" src="./assets/images/37_kristie-headshot3.jpg" alt="A professional headshot of Kristie.">
@@ -165,11 +167,12 @@
                         <p class="profile-introduction-container-paragraph">Whether you're an entrepreneur, small business owner, or a creative individual looking to establish your online presence, I offer tailored web development solutions that align with your goals. I bring a blend of technical expertise, creativity, and attention to detail to every project I undertake.</p>
                         <p class="profile-introduction-container-paragraph">If you're in need of a new website, a website redesign, or have any questions about my services, I would be delighted to hear from you. Let's collaborate and create a digital platform that showcases your brand, engages your audience, and drives results.</p>
                         <p class="profile-introduction-container-paragraph">Contact me today to explore the possibilities and take your online presence to new heights.</p>
-                        <a class="profile-introduction-download-cv-button" href="assets/downloads/1_kristie-larke-web-development-resume-portfolio.pdf" download="1_kristie-larke-web-development-resume-portfolio.pdf">Download CV</a>
+                        <a class="profile-introduction-download-cv-button" href="assets/downloads/1_kristie-larke-web-development-resume-portfolio.pdf" download="1_kristie-larke-web-development-resume-portfolio.pdf"><i class="fa-solid fa-download"></i>Download CV</a>
                     </article>
                 </div>
             </section>
             <div id="portfolio" class="anchor" role="region" aria-labelledby="portfolio-label" tabindex="-1"></div>
+            <div id="portfolio-label" class="sr-only">Portfolio Section</div>
             <section>
                 <header class="section-title-container">
                     <h1 class="section-title">PORTFOLIO</h1>
@@ -323,6 +326,7 @@
                 </div> -->
             </section>
             <div id="contact" class="anchor" role="region" aria-labelledby="contact-label" tabindex="-1"></div>
+            <div id="contact-label" class="sr-only">Contact Section</div>
             <section class="contact-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">CONTACT</h1>

@@ -1,10 +1,10 @@
 "use strict"
 
-// Monitor all focusable elements
-// document.addEventListener('focusin', (event) => {
-//     console.log('Focused element:', event.target);
-// }, true); 
-// Using capture phase to catch all focus events
+//Monitor all focusable elements
+document.addEventListener('focusin', (event) => {
+    console.log('Focused element:', event.target);
+}, true); 
+//Using capture phase to catch all focus events
 
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggleButton = document.querySelector(".dark-mode-toggle-button");
     const darkModeIcon = darkModeToggleButton.querySelector(".fa-moon");
     const lightModeIcon = darkModeToggleButton.querySelector(".fa-sun");
+    const darkModeStatus = document.getElementById("darkModeStatus");
 
     const toggleDarkMode = () => {
         const darkModePreference = localStorage.getItem("darkModePreference");
@@ -103,56 +104,58 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-//Dark mode variables
-const screenReadersOnlyText = document.querySelectorAll(".sr-only");
-const screenReadersOnlydarkModeIcon = document.querySelector("#darkModeIcon");
-const screenReadersOnlylightModeIcon = document.querySelector("#darkModeIcon");
-const bodyDarkMode = document.querySelector("body");
-const mainDarkMode = document.querySelector("main");
-const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
-const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
-const landingPageTitleBackgoundOne = document.querySelector(".landing-page-title-welcome-background-one");
-const landingPageTitleBackgoundTwo = document.querySelector(".landing-page-title-welcome-background-two");
-const landingPageTitleOpeningCurlyBrace = document.querySelector(".landing-page-title-opening-curly-brace");
-const landingPageTitleToMy = document.querySelector(".landing-page-title-property-value-to-my");
-const landingPageTitleFrontEnd = document.querySelector(".landing-page-title-property-value-front-end");
-const landingPageTitleDevelopment = document.querySelector(".landing-page-title-property-development");
-const landingPageTitleSemicolon = document.querySelector(".landing-page-title-value-semicolon");
-const landingPageTitleClosingCurlyBrace = document.querySelector(".landing-page-title-closing-curly-brace");
-const laptopImageTopShell = document.querySelector(".laptop-image-top-shell");
-const laptopImageWebcam = document.querySelector(".laptop-image-webcam");
-const laptopImageKey = document.querySelectorAll(".laptop-image-key");
-const laptopImageBottomShell = document.querySelector(".laptop-image-bottom-shell");
-const profileContentContainer = document.querySelector(".profile-content-container");
-const profileQuotationContainer = document.querySelector(".profile-quotation-container");
-const profileQuotationMark = document.querySelector("q");
-const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
-const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
-const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
-const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
-const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
-const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
-const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
-const contactFormSectionIntroduction = document.querySelector(".contact-introduction-container-p-highlighted-text");
-const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
-const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
-const hCaptchaColor = document.querySelector(".h-captcha");
-const footerSectionContainer = document.querySelector(".footer-section-container");
-const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
-const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
+    //Dark mode variables
+    const screenReadersOnlyText = document.querySelectorAll(".sr-only");
+    // const screenReadersOnlydarkModeIcon = document.querySelector("#darkModeIcon");
+    // const screenReadersOnlylightModeIcon = document.querySelector("#darkModeIcon");
+    const bodyDarkMode = document.querySelector("body");
+    const mainDarkMode = document.querySelector("main");
+    const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
+    const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
+    const landingPageTitleBackgoundOne = document.querySelector(".landing-page-title-welcome-background-one");
+    const landingPageTitleBackgoundTwo = document.querySelector(".landing-page-title-welcome-background-two");
+    const landingPageTitleOpeningCurlyBrace = document.querySelector(".landing-page-title-opening-curly-brace");
+    const landingPageTitleToMy = document.querySelector(".landing-page-title-property-value-to-my");
+    const landingPageTitleFrontEnd = document.querySelector(".landing-page-title-property-value-front-end");
+    const landingPageTitleDevelopment = document.querySelector(".landing-page-title-property-development");
+    const landingPageTitleSemicolon = document.querySelector(".landing-page-title-value-semicolon");
+    const landingPageTitleClosingCurlyBrace = document.querySelector(".landing-page-title-closing-curly-brace");
+    const laptopImageTopShell = document.querySelector(".laptop-image-top-shell");
+    const laptopImageWebcam = document.querySelector(".laptop-image-webcam");
+    const laptopImageKey = document.querySelectorAll(".laptop-image-key");
+    const laptopImageBottomShell = document.querySelector(".laptop-image-bottom-shell");
+    const profileContentContainer = document.querySelector(".profile-content-container");
+    const profileQuotationContainer = document.querySelector(".profile-quotation-container");
+    const profileQuotationMark = document.querySelector("q");
+    const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
+    const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
+    const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
+    const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
+    const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
+    const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
+    const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
+    const contactFormSectionIntroduction = document.querySelector(".contact-introduction-container-p-highlighted-text");
+    const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
+    const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
+    const hCaptchaColor = document.querySelector(".h-captcha");
+    const footerSectionContainer = document.querySelector(".footer-section-container");
+    const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
+    const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
     function enableDarkMode() {
         darkModeIcon.style.visibility = "hidden";
         lightModeIcon.style.visibility = "visible";
+        darkModeStatus.textContent = "Dark mode enabled";
+        darkModeToggleButton.setAttribute("aria-label", "Disable Dark Mode");
 
         // Apply dark mode classes to other elements as needed
         screenReadersOnlyText.forEach((text) => {
             text.classList.add("sr-only-dark-mode");
         });
 
-        screenReadersOnlydarkModeIcon.classList.add("sr-only-darkModeIcon-dark-mode");
+        // screenReadersOnlydarkModeIcon.classList.add("sr-only-darkModeIcon-dark-mode");
 
-        screenReadersOnlylightModeIcon.classList.add("sr-only-lightModeIcon-dark-mode");
+        // screenReadersOnlylightModeIcon.classList.add("sr-only-lightModeIcon-dark-mode");
 
         mainDarkMode.classList.add("main-dark-mode");
 
@@ -287,15 +290,17 @@ const footerBottomNavigationContainer = document.querySelector(".footer-bottom-n
     function disableDarkMode() {
         lightModeIcon.style.visibility = "hidden";
         darkModeIcon.style.visibility = "visible";
+        darkModeStatus.textContent = "Light mode enabled";
+        darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
         
         // Remove dark mode classes from other elements as needed
         screenReadersOnlyText.forEach((text) => {
             text.classList.remove("sr-only-dark-mode");
         });
 
-        screenReadersOnlydarkModeIcon.classList.remove("sr-only-darkModeIcon-dark-mode");
+        // screenReadersOnlydarkModeIcon.classList.remove("sr-only-darkModeIcon-dark-mode");
 
-        screenReadersOnlylightModeIcon.classList.remove("sr-only-lightModeIcon-dark-mode");
+        // screenReadersOnlylightModeIcon.classList.remove("sr-only-lightModeIcon-dark-mode");
 
         mainDarkMode.classList.remove("main-dark-mode");
         
@@ -452,10 +457,37 @@ hamburgerMenuIconContainer.addEventListener('keydown', function(event) {
     }
 });
 
+// Function to show or hide the menu
 function showMenu() {
+    // Select the hamburger menu button
+    const menuButton = document.querySelector('.hamburger-menu-container');
+    
+    // Get the current state of the aria-expanded attribute
+    const ariaExpanded = menuButton.getAttribute('aria-expanded');
+    
+    // Determine the new state
+    const newAriaExpanded = ariaExpanded === 'true' ? 'false' : 'true';
+    
+    // Toggle the menu's visibility
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
+
+    // Update the aria-expanded attribute to the new state
+    menuButton.setAttribute('aria-expanded', newAriaExpanded);
+
+    // Optionally announce the change for screen readers
+    const dynamicAnnouncer = document.getElementById('dynamicAnnouncer');
+    dynamicAnnouncer.textContent = newAriaExpanded === 'true' ? 'Menu opened' : 'Menu closed';
 }
+
+// Event listeners for hamburger menu
+hamburgerMenuIconContainer.addEventListener("click", showMenu);
+hamburgerMenuIconContainer.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault(); // Prevent scrolling on space key
+        showMenu();
+    }
+});
 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
