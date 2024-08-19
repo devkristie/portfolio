@@ -621,6 +621,7 @@ main {
 .profile-quotation-container {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 268px;
@@ -639,7 +640,7 @@ main {
     color: var(--lightest-grey);
 }
 q {
-    padding: 1em;
+    padding: 0 1em 0;
     line-height: 1.2em;
     color: var(--darkest-grey);
 }
@@ -658,11 +659,14 @@ q::before {
 q::after {
     position: absolute;
     display: block;
-    margin: 0 0 0 2.83em;
+    margin: 0.28em 0 0 2.84em;
     font-size: 4.688rem;
     font-family: none;
     font-weight: 900;
     content: close-quote;
+}
+cite {
+    font-style: normal;
 }
 .profile-introduction-container {
     margin: -3.5em 2em 0;
@@ -691,6 +695,10 @@ profile-introduction-container-paragraph {
 }
 .profile-introduction-container-paragraph-dark-mode {
     color: var(--light-mode);
+}
+.fa-download, .fa-paper-plane, .fa-arrow-up-long {
+    margin-right: 0.3em;
+    font-size: 1rem;
 }
 .profile-introduction-download-cv-button {
     display: flex;
