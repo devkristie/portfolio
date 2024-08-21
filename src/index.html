@@ -50,7 +50,7 @@
             </div>
         </header>
         <header class="top-navigation-bar-accordion-container-hidden">
-            <nav aria-label="Main" role="navigation">
+            <nav aria-label="Main"><!--! role="navigation" Deleted this but keeping it for reference in case it is needed in the future-->
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
                         <a href="#home">Home</a>
@@ -223,7 +223,7 @@
                             </svg>
                         </button>
                     </div>
-                    <nav class="portfolio-websites-button-container" aria-label="Portfolio Navigation">
+                    <nav class="portfolio-websites-button-container" aria-label="Portfolio navigation buttons">
                         <div class="sr-only" id="tab-announcement" aria-live="assertive" role="alert"></div> <!--Visually hidden announcement-->
                         <a class="portfolio-websites-view-website-button" href="#portfolio" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
                             View Website
@@ -235,14 +235,15 @@
                         </a>
                     </nav>
                     <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" tabindex="0">
-                            <p>Show More</p>
-                            <svg class="portfolio-websites-show-more-arrow" aria-label="Show More Arrow">
+                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" tabindex="0">
+                            <p aria-live="polite" aria-atomic="true">Show More</p>
+                            <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
                                 <path d="M15.5 20 L23 20"/>
                             </svg>
                         </div>
-                        <article class="portfolio-websites-show-more-accordion-container">
+                        <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
+                        <article class="portfolio-websites-show-more-accordion-container" aria-expanded="false">
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">
                                 <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Coming Soon!</strong> 
                              This website is currently under construction and in the design phase. I am working diligently to bring you a new and improved experience. Stay tuned for updates as I prepare for the launch.</p>
@@ -355,19 +356,24 @@
                             <i class="fa-regular fa-envelope fa-4x"></i>
                         </div>
                     </div>
-                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact Kristie"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
                         <input name="access_key" type="hidden" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">                        
+                        
                         <label class="contact-form-label" for="fullname">Full Name</label>
                         <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="e.g., John Doe" autocomplete="off" required/>
                         <p class="contact-form-validation-paragraph name">Name can only contain letters and .,'-</p>
+                        
                         <label class="contact-form-label" for="email">Email</label>
                         <input id="email" class="contact-form-input-box" name="email" title="Email address" placeholder="e.g., example@gmail.com" inputmode="email" autocomplete="off" required/>
                         <p class="contact-form-validation-paragraph email">Please enter a valid email address</p>
+                        
                         <label class="contact-form-label" for="phone">Phone (optional)</label>
                         <input id="phone" class="contact-form-input-box" name="phone" title="Phone number" type="text" placeholder="e.g., +447546662899" autocomplete="off"/>
                         <p class="contact-form-validation-paragraph phone">Please start the number with +44</p>
+                        
                         <label class="contact-form-label" for="message">Message</label>
                         <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="Dear Kristie, I am writing to..." autocomplete="off" required></textarea>
+                        
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <div class="contact-form-submit-button-container">
                             <button class="contact-form-submit-button" title="Submit form" type="submit" role="button"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Submit</button>

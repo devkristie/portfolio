@@ -610,6 +610,22 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
 
 portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
     button.addEventListener("click", () => {
+
+        const showMoreContainerButton = document.querySelector('.portfolio-websites-show-more-accordion-container-button');
+        
+        // Get the current state of the aria-expanded attribute
+        const ariaExpanded = showMoreContainerButton.getAttribute('aria-expanded');
+            
+        // Determine the new state
+        const newAriaExpanded = ariaExpanded === 'true' ? 'false' : 'true';
+
+        // Update the aria-expanded attribute to the new state
+        showMoreContainerButton.setAttribute('aria-expanded', newAriaExpanded);
+        
+        // Optionally announce the change for screen readers
+        const dynamicShowMoreAnnouncer = document.getElementById('dynamicShowMoreAnnouncer');
+        dynamicShowMoreAnnouncer.textContent = newAriaExpanded === 'true' ? 'Details and technologies used are now shown' : 'Details and technologies used are now hidden';
+
         portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
 
         if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
@@ -622,7 +638,24 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
             portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
         }
     });
+ 
     button.addEventListener("keydown", (event) => {
+
+        const showMoreContainerButton = document.querySelector('.portfolio-websites-show-more-accordion-container-button');
+        
+        // Get the current state of the aria-expanded attribute
+        const ariaExpanded = showMoreContainerButton.getAttribute('aria-expanded');
+            
+        // Determine the new state
+        const newAriaExpanded = ariaExpanded === 'true' ? 'false' : 'true';
+
+        // Update the aria-expanded attribute to the new state
+        showMoreContainerButton.setAttribute('aria-expanded', newAriaExpanded);
+        
+        // Optionally announce the change for screen readers
+        const dynamicShowMoreAnnouncer = document.getElementById('dynamicShowMoreAnnouncer');
+        dynamicShowMoreAnnouncer.textContent = newAriaExpanded === 'true' ? 'Details and technologies used are now shown' : 'Details and technologies used are now hidden';
+
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault(); // Prevent default behavior for space key which is scrolling
             portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
@@ -638,7 +671,7 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
             }
         }
     });
-});
+});   
 
 contactFormInputs.forEach((input, index) => {
     input.addEventListener("input", () => {
