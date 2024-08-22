@@ -234,8 +234,8 @@
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
                     </nav>
-                    <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" tabindex="0">
+                    <article class="portfolio-websites-show-more-container" tabindex="0">
+                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false">
                             <p aria-live="polite" aria-atomic="true">Show More</p>
                             <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
@@ -243,7 +243,7 @@
                             </svg>
                         </div>
                         <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
-                        <article class="portfolio-websites-show-more-accordion-container" aria-expanded="false">
+                        <article class="portfolio-websites-show-more-accordion-container">
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">
                                 <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Coming Soon!</strong> 
                              This website is currently under construction and in the design phase. I am working diligently to bring you a new and improved experience. Stay tuned for updates as I prepare for the launch.</p>
@@ -360,11 +360,11 @@
                         <input name="access_key" type="hidden" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">                        
                         
                         <label class="contact-form-label" for="fullname">Full Name</label>
-                        <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="e.g., John Doe" autocomplete="off" required/>
+                        <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="e.g., John Doe" autocomplete="off" aria-required="true" required/>
                         <p class="contact-form-validation-paragraph name">Name can only contain letters and .,'-</p>
                         
                         <label class="contact-form-label" for="email">Email</label>
-                        <input id="email" class="contact-form-input-box" name="email" title="Email address" placeholder="e.g., example@gmail.com" inputmode="email" autocomplete="off" required/>
+                        <input id="email" class="contact-form-input-box" name="email" title="Email address" placeholder="e.g., example@gmail.com" inputmode="email" autocomplete="off" aria-required="true" required/>
                         <p class="contact-form-validation-paragraph email">Please enter a valid email address</p>
                         
                         <label class="contact-form-label" for="phone">Phone (optional)</label>
@@ -372,7 +372,7 @@
                         <p class="contact-form-validation-paragraph phone">Please start the number with +44</p>
                         
                         <label class="contact-form-label" for="message">Message</label>
-                        <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="Dear Kristie, I am writing to..." autocomplete="off" required></textarea>
+                        <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="Dear Kristie, I am writing to..." autocomplete="off" aria-required="true" required></textarea>
                         
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <div class="contact-form-submit-button-container">

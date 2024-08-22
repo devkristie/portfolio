@@ -608,70 +608,58 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
     });
 });
 
+// Common function to toggle the accordion and update aria-expanded
+function toggleAccordion(button, index) {
+    // Get the current state of the aria-expanded attribute
+    const ariaExpanded = button.getAttribute('aria-expanded');
+    
+    // Determine the new state
+    let newAriaExpanded;
+    if (ariaExpanded === 'true') {
+        newAriaExpanded = 'false';
+    } else {
+        newAriaExpanded = 'true';
+    }
+    // Update the aria-expanded attribute to the new state on the specific button
+    button.setAttribute('aria-expanded', newAriaExpanded);
+
+    const dynamicShowMoreAnnouncer = document.getElementById('dynamicShowMoreAnnouncer');
+    if (newAriaExpanded === 'true') {
+        dynamicShowMoreAnnouncer.textContent = 'Details and technologies used are now shown';
+    } else {
+        dynamicShowMoreAnnouncer.textContent = 'Details and technologies used are now hidden';
+    }
+    
+    // Toggle the accordion container visibility
+    portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
+
+    // Update the button text and arrow state
+    if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
+        portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
+        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(180deg)";
+        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0.30em 2em 0";           
+    } else {
+        portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
+        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
+        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
+    }
+}
+
+// Attach event listeners
 portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
+    // Click event listener
     button.addEventListener("click", () => {
-
-        const showMoreContainerButton = document.querySelector('.portfolio-websites-show-more-accordion-container-button');
-        
-        // Get the current state of the aria-expanded attribute
-        const ariaExpanded = showMoreContainerButton.getAttribute('aria-expanded');
-            
-        // Determine the new state
-        const newAriaExpanded = ariaExpanded === 'true' ? 'false' : 'true';
-
-        // Update the aria-expanded attribute to the new state
-        showMoreContainerButton.setAttribute('aria-expanded', newAriaExpanded);
-        
-        // Optionally announce the change for screen readers
-        const dynamicShowMoreAnnouncer = document.getElementById('dynamicShowMoreAnnouncer');
-        dynamicShowMoreAnnouncer.textContent = newAriaExpanded === 'true' ? 'Details and technologies used are now shown' : 'Details and technologies used are now hidden';
-
-        portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
-
-        if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
-            portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
-            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(180deg)";
-            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0.30em 2em 0";           
-        } else {
-            portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
-            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
-            portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
-        }
+        toggleAccordion(button, index);
     });
- 
+
+    // Keydown event listener
     button.addEventListener("keydown", (event) => {
-
-        const showMoreContainerButton = document.querySelector('.portfolio-websites-show-more-accordion-container-button');
-        
-        // Get the current state of the aria-expanded attribute
-        const ariaExpanded = showMoreContainerButton.getAttribute('aria-expanded');
-            
-        // Determine the new state
-        const newAriaExpanded = ariaExpanded === 'true' ? 'false' : 'true';
-
-        // Update the aria-expanded attribute to the new state
-        showMoreContainerButton.setAttribute('aria-expanded', newAriaExpanded);
-        
-        // Optionally announce the change for screen readers
-        const dynamicShowMoreAnnouncer = document.getElementById('dynamicShowMoreAnnouncer');
-        dynamicShowMoreAnnouncer.textContent = newAriaExpanded === 'true' ? 'Details and technologies used are now shown' : 'Details and technologies used are now hidden';
-
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault(); // Prevent default behavior for space key which is scrolling
-            portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
-
-            if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
-                portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
-                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(180deg)";
-                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0.30em 2em 0";           
-            } else {
-                portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
-                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
-                portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
-            }
+            toggleAccordion(button, index);
         }
     });
-});   
+});
 
 contactFormInputs.forEach((input, index) => {
     input.addEventListener("input", () => {
