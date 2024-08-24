@@ -234,8 +234,8 @@
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
                     </nav>
-                    <article class="portfolio-websites-show-more-container" tabindex="0">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false">
+                    <article class="portfolio-websites-show-more-container">
+                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false" tabindex="0">
                             <p aria-live="polite" aria-atomic="true">Show More</p>
                             <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
@@ -350,39 +350,43 @@
                     <p class="contact-introduction-container-p-highlighted-text" aria-hidden="true">If you'd like to inquire about my services, discuss a potential project, or simply want to connect, please use the form below to send me a message. </p>
                     <p>I'll make sure to respond promptly, and I'm excited to learn more about how I can assist you with your frontend needs.</p>
                 </article>
-                <article class="contact-form-container">
+                <section class="contact-form-container">
                     <div class="contact-form-top-header-container">
                         <div class="contact-form-top-header-envelope-container">
                             <i class="fa-regular fa-envelope fa-4x"></i>
                         </div>
                     </div>
-                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact Kristie"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
-                        <input name="access_key" type="hidden" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">                        
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact Kristie Larke"> <!--!Removed class="form-hcaptcha" keeping it in a comment just in case it is needed-->
+                        <input name="access_key" type="hidden" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">
                         
                         <label class="contact-form-label" for="fullname">Full Name</label>
-                        <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="e.g., John Doe" autocomplete="off" aria-required="true" required/>
-                        <p class="contact-form-validation-paragraph name">Name can only contain letters and .,'-</p>
-                        
+                        <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="e.g., John Doe" pattern="^(?:[a-zA-Z]{2,}\s[a-zA-Z]{2,})(?:\s[a-zA-Z]{2,})?$" autocomplete="off" aria-describedby="fullname-error" required/>
+                        <p class="contact-form-validation-paragraph name" aria-hidden="true">Name can only contain letters and .,'-</p>
+                        <p id="fullname-error" class="sr-only">Please ensure that the full name only contains letters, full stops, commas, apostrophes and hyphens.</p>
+
                         <label class="contact-form-label" for="email">Email</label>
-                        <input id="email" class="contact-form-input-box" name="email" title="Email address" placeholder="e.g., example@gmail.com" inputmode="email" autocomplete="off" aria-required="true" required/>
-                        <p class="contact-form-validation-paragraph email">Please enter a valid email address</p>
+                        <input id="email" class="contact-form-input-box" name="email" title="Email address" placeholder="e.g., example@gmail.com" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,6}(\.[a-zA-Z]{2,6})?$" inputmode="email" autocomplete="off" aria-describedby="email-error" required/>
+                        <p class="contact-form-validation-paragraph email" aria-hidden="true">Please enter a valid email address</p>
+                        <p id="email-error" class="sr-only">Please ensure that the email address entered, is valid.</p>
                         
                         <label class="contact-form-label" for="phone">Phone (optional)</label>
-                        <input id="phone" class="contact-form-input-box" name="phone" title="Phone number" type="text" placeholder="e.g., +447546662899" autocomplete="off"/>
-                        <p class="contact-form-validation-paragraph phone">Please start the number with +44</p>
-                        
+                        <input id="phone" class="contact-form-input-box" name="phone" title="Phone number" type="text" placeholder="e.g., +447546662899" pattern="^\+44\d{10}$" autocomplete="off" aria-describedby="phone-error"/>
+                        <p class="contact-form-validation-paragraph phone" aria-hidden="true">Please start the number with +44</p>
+                        <p id="phone-error" class="sr-only">Please ensure the phone number starts with +4&#8203;4</p>
+
                         <label class="contact-form-label" for="message">Message</label>
-                        <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="Dear Kristie, I am writing to..." autocomplete="off" aria-required="true" required></textarea>
-                        
+                        <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="e.g., Dear Kristie, I am writing to you with regards to your services. Yours kindly, John Doe." autocomplete="off" aria-describedby="message-help" required></textarea>
+                        <p id="message-help" class="sr-only">Please enter the message you would like to send to Kristie Larke.</p>
+
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <div class="contact-form-submit-button-container">
-                            <button class="contact-form-submit-button" title="Submit form" type="submit" role="button"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Submit</button>
+                            <button class="contact-form-submit-button" title="Submit form" type="submit" aria-label="Submit form"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Submit</button>
                         </div>
                         <label class="visually-hidden" for="botcheck">Leave this field empty</label>
                         <input id="botcheck" class="botcheck-visually-hidden" name="botcheck" type="text" aria-hidden="true">
                         <input name="redirect" type="hidden" value="http://127.0.0.1:5500/src/portfolio-thank-you-page/thank-you-page.html"><!--?Need to change the link when it goes to production-->
                     </form>
-                </article>
+                </section>
             </section>
         </main>
         <footer>
