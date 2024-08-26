@@ -50,7 +50,7 @@
             </div>
         </header>
         <header class="top-navigation-bar-accordion-container-hidden">
-            <nav aria-label="Main"><!--! role="navigation" Deleted this but keeping it for reference in case it is needed in the future-->
+            <nav aria-label="Main">
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
                         <a href="#home">Home</a>
@@ -407,33 +407,36 @@
                         </li>
                         <li class="footer-navigation-links">
                             <a href="#portfolio">Blog (Coming Soon)</a>
-                        </li>                        
+                        </li>
+                        <li class="footer-absolute-links">
+                            <span aria-hidden="true">Form submission by:</span>
+                            <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer">
+                                <span class="sr-only">Form submission by:</span> Web3Forms
+                            </a>                        
+                        </li>
+                        <li class="footer-absolute-links">
+                            <span aria-hidden="true">Icons by:</span>
+                            <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">
+                                <span class="sr-only">Icons by:</span> FontAwesome
+                            </a>
+                        </li>
                     </ul>
-                    <p class="footer-absolute-links">Form submission by : 
-                        <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer">Web3Forms</a>
-                    </p>
-                    <p class="footer-absolute-links">Icons by : 
-                        <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">FontAwesome</a>
-                    </p>
                 </nav>
                 <nav class="footer-bottom-navigation-container">
                     <ul class="footer-bottom-left-icons">
                         <li>
-                            <a href="https://www.linkedin.com/in/kristie-larke/" title="Kristie Larke LinkedIn Profile" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's LinkedIn profile">
-                                <i class="fa-brands fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/kristie-larke/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's LinkedIn profile">
+                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/devkristie?tab=repositories" title="Kristie Larke GitHub Repositories" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's GitHub repositories">
-                                <i class="fa-brands fa-square-github"></i>
+                            <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's GitHub repositories">
+                                <i class="fa-brands fa-square-github" aria-hidden="true"></i>
                             </a>
                         </li>
                     </ul>
                     <article>
-                        <p class="footer-bottom-copyright-sign">©</p>
-                        <p class="footer-bottom-copyright-year"></p> <!--Automatically updated in the script.js file-->
-                        <p class="footer-bottom-copyright"> - Kristie Larke, All rights reserved.</p>
-                        </br>
+                        <p class="footer-bottom-copyright-sign">© <span class="footer-bottom-copyright-year"></span><span class="footer-bottom-copyright"> - Kristie Larke, All rights reserved.</span></p> <!--Footer bottom copyright year is automatically updated in the script.js file-->
                         <a class="footer-bottom-privacy-policy-link" href="./portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
                     </article>
                 </nav>

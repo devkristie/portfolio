@@ -138,8 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
     const hCaptchaColor = document.querySelector(".h-captcha");
-    const footerSectionContainer = document.querySelector(".footer-section-container");
-    const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
+    const footerContainerBackground = document.querySelector(".footer-navigation-container");
+    const footerNavigationLinks = document.querySelectorAll(".footer-navigation-links a");
+    const footerAbsoluteLinksSpanElements = document.querySelectorAll(".footer-absolute-links");
+    const footerAbsoluteLinks = document.querySelectorAll(".footer-absolute-links a");
+    const footerBottomContainerBorder = document.querySelector(".footer-section-container");
+    // const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
     const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
     function enableDarkMode() {
@@ -280,9 +284,23 @@ document.addEventListener("DOMContentLoaded", () => {
         
         hCaptchaColor.style.filter = "invert(1) hue-rotate(180deg)";
         
-        footerSectionContainer.classList.add("footer-section-container-dark-mode");
+        footerContainerBackground.classList.add("footer-navigation-container-dark-mode");
+
+        footerNavigationLinks.forEach((link) => {
+            link.classList.add("footer-navigation-links-dark-mode");
+        });
+
+        footerAbsoluteLinksSpanElements.forEach((span) => {
+            span.classList.add("footer-absolute-links-dark-mode");
+        });
+
+        footerAbsoluteLinks.forEach((link) => {
+            link.classList.add("footer-absolute-links-dark-mode");
+        });
+
+        footerBottomContainerBorder.classList.add("footer-section-container-dark-mode");
         
-        footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
+        // footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
         
         footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
     }
@@ -423,9 +441,23 @@ document.addEventListener("DOMContentLoaded", () => {
         
         hCaptchaColor.style.filter = "invert(0) hue-rotate(0deg)";
         
-        footerSectionContainer.classList.remove("footer-section-container-dark-mode");
+        footerContainerBackground.classList.remove("footer-navigation-container-dark-mode");
+
+        footerNavigationLinks.forEach((link) => {
+            link.classList.remove("footer-navigation-links-dark-mode");
+        });
+
+        footerAbsoluteLinksSpanElements.forEach((span) => {
+            span.classList.remove("footer-absolute-links-dark-mode");
+        });
+
+        footerAbsoluteLinks.forEach((link) => {
+            link.classList.remove("footer-absolute-links-dark-mode");
+        });
+
+        footerBottomContainerBorder.classList.remove("footer-section-container-dark-mode");
         
-        footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
+        // footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
         
         footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
     }
