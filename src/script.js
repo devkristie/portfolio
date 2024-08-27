@@ -106,8 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Dark mode variables
     const screenReadersOnlyText = document.querySelectorAll(".sr-only");
-    // const screenReadersOnlydarkModeIcon = document.querySelector("#darkModeIcon");
-    // const screenReadersOnlylightModeIcon = document.querySelector("#darkModeIcon");
     const bodyDarkMode = document.querySelector("body");
     const mainDarkMode = document.querySelector("main");
     const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
@@ -143,7 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const footerAbsoluteLinksSpanElements = document.querySelectorAll(".footer-absolute-links");
     const footerAbsoluteLinks = document.querySelectorAll(".footer-absolute-links a");
     const footerBottomContainerBorder = document.querySelector(".footer-section-container");
-    // const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
     const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
     function enableDarkMode() {
@@ -156,10 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
         screenReadersOnlyText.forEach((text) => {
             text.classList.add("sr-only-dark-mode");
         });
-
-        // screenReadersOnlydarkModeIcon.classList.add("sr-only-darkModeIcon-dark-mode");
-
-        // screenReadersOnlylightModeIcon.classList.add("sr-only-lightModeIcon-dark-mode");
 
         mainDarkMode.classList.add("main-dark-mode");
 
@@ -299,9 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         footerBottomContainerBorder.classList.add("footer-section-container-dark-mode");
-        
-        // footerBackToTopLink.classList.add("footer-navigation-link-backtotop-dark-mode");
-        
+                
         footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
     }
 
@@ -315,10 +306,6 @@ document.addEventListener("DOMContentLoaded", () => {
         screenReadersOnlyText.forEach((text) => {
             text.classList.remove("sr-only-dark-mode");
         });
-
-        // screenReadersOnlydarkModeIcon.classList.remove("sr-only-darkModeIcon-dark-mode");
-
-        // screenReadersOnlylightModeIcon.classList.remove("sr-only-lightModeIcon-dark-mode");
 
         mainDarkMode.classList.remove("main-dark-mode");
         
@@ -456,9 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         footerBottomContainerBorder.classList.remove("footer-section-container-dark-mode");
-        
-        // footerBackToTopLink.classList.remove("footer-navigation-link-backtotop-dark-mode");
-        
+                
         footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
     }
 

@@ -31,8 +31,9 @@
 @font-face { font-family: "roboto-light"; src: url(./assets/fonts/roboto-light-webfont.woff2);}
 @font-face { font-family: "roboto-medium"; src: url(./assets/fonts/roboto-medium-webfont.woff2);}
 @font-face { font-family: "roboto-regular"; src: url(./assets/fonts/roboto-regular-webfont.woff2);}
-@font-face { font-family: "tomorrow-light"; src: url(./assets/fonts/tomorrow-light-webfont.woff2);}
+/* @font-face { font-family: "tomorrow-light"; src: url(./assets/fonts/tomorrow-light-webfont.woff2);} */
 @font-face { font-family: "tomorrow-regular"; src: url(./assets/fonts/tomorrow-regular-webfont.woff2);}
+@font-face { font-family: "jersey-regular"; src: url(./assets/fonts/Jersey10-Regular.ttf);}
 /*CSS Variables*/
 :root {
     --primary-color: #FF9900; /* Original primary colour: #FFA724 */
@@ -279,10 +280,7 @@ body::before {
     color: var(--light-mode);
     visibility: hidden;
 }
-#darkModeIcon {
-    color: var(--dark-mode);
-}
-#lightModeIcon {
+#darkModeStatus {
     color: var(--dark-mode);
 }
 .sr-only-darkModeIcon-dark-mode {
@@ -459,6 +457,7 @@ main {
 }
 .landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development {
     padding-left: 2em;
+    color: var(--darkest-grey);
 }
 .landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
     font-size: 1.2rem;
@@ -471,20 +470,22 @@ main {
 .landing-page-title-value-semicolon {
     position: relative;
     right: 2.5px;
+    color: var(--darkest-grey);
 }
 .landing-page-title-property-value-to-my-dark-mode, .landing-page-title-property-value-front-end-dark-mode, .landing-page-title-property-development-dark-mode, .landing-page-title-value-semicolon-dark-mode {
-    color: var(--light-mode);
+    color: var(--light-grey);
 }
 .landing-page-title-opening-curly-brace, .landing-page-title-closing-curly-brace {
     font-size: 4rem;
     color: var(--darker-grey);
+    filter: contrast(0.55);
 }
 .landing-page-title-closing-curly-brace {
     position: relative;
     bottom: 15.2px;
 }
 .landing-page-title-opening-curly-brace-dark-mode, .landing-page-title-closing-curly-brace-dark-mode {
-    color: var(--light-grey);
+    color: var(--dark-grey);
 }
 .laptop-image-container {
     height: 194px;
@@ -582,22 +583,29 @@ main {
     background-color: var(--darker-grey);
 }
 .section-title {
-    padding-top: 1.25em;
-    font-size: 2.813rem;
-    font-family: "tomorrow-light";
-    letter-spacing: 0.25em;
+    /* padding-top: 1.25em;    
+    font-size: 2.813rem;    
+    font-family: tomorrow-light;
+    letter-spacing: 0.25em; */
+
+    /* padding-top: 1.10em; */
+    font-size: 4.5rem;
+    font-family: "jersey-regular";
+    letter-spacing: 0.05em;
+    text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
+
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     color: var(--light-mode);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-@media only screen and (max-width: 400px) {
+/* @media only screen and (max-width: 400px) {
     .section-title {
         letter-spacing: 0.075em;
     }
-}
+} */
 .profile-section-container {
     width: 100%;
     min-height: 100vh;
@@ -670,31 +678,34 @@ cite {
 }
 .profile-introduction-container {
     margin: -3.5em 2em 0;
-    padding: 6.5em 1em 1.25em 1em;
+    padding: 6.5em 1.15em 1.25em 1.15em;
     font-family: "roboto-regular", Arial;
     background-image: linear-gradient(to bottom, rgba(162, 109, 95, 100%), rgba(162, 109, 95, 75%), rgba(255, 255, 255, 0%));
 }
 .profile-introduction-container-greeting {
     display: inline;
     width: auto;
-    margin: 0 0 0.18em -0.05em;
+    margin: 0 0 0.18em 0.06em;
     padding: 0.2em;
-    font-size: 2.813rem;
-    font-family: "tomorrow-regular", Arial;
+    font-size: 1.5rem;
+    font-family: "roboto-bold", Arial;
+    letter-spacing: 0.01em;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
 .profile-introduction-container-greeting::after {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-family: none;
     content: ",";
 }
 profile-introduction-container-paragraph {
     display: block;
     margin-top: 0;
+    color: var(--darkest-grey);
 }
 .profile-introduction-container-paragraph-dark-mode {
     color: var(--light-mode);
+    filter: contrast(0.625);
 }
 .fa-download, .fa-paper-plane, .fa-arrow-up-long {
     margin-right: 0.3em;
@@ -765,7 +776,7 @@ profile-introduction-container-paragraph {
     .profile-introduction-container {
         width: 50%;
         margin: 0;
-        padding: 1.5em 3em 0;
+        padding: 2.5em 3em 0;
         border-radius: 24px 0 0 24px;
     }
 }
@@ -801,15 +812,17 @@ profile-introduction-container-paragraph {
 .section-introduction-container > p {
     margin: 0.5em 0;
     font-family: "roboto-regular", Arial;
+    color: var(--darkest-grey);
 }
 .section-introduction-container > .section-introduction-container-p-dark-mode {
-    color: var(--light-mode);
+    color: var(--light-grey);
 }
 .portfolio-introduction-container-p-highlighted-text::before {
     margin-right: 0.2em;
     padding: 0 0.2em 0.2em 0.4em;
     font-weight: 1000;
     line-height: 1.75;
+    letter-spacing: 0.01em;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
     content: "Ready to dive into my work? ";
@@ -1070,10 +1083,11 @@ profile-introduction-container-paragraph {
 .portfolio-websites-show-more-accordion-container-paragraph {
     margin: -1em 3em;
     padding: 1em 0;
+    color: var(--darkest-grey);
     cursor: text;
 }
 .portfolio-websites-show-more-accordion-container-paragraph-dark-mode {
-    color: var(--light-mode);
+    color: var(--light-grey);
 }
 @media only screen and (max-width: 465px) {
     .portfolio-websites-show-more-accordion-container-paragraph {
@@ -1082,8 +1096,9 @@ profile-introduction-container-paragraph {
 }
 .portfolio-websites-show-more-accordion-container-paragraph-highlighted-text {
     padding: 0.2em;
-    font-family: "tomorrow-regular";
-    letter-spacing: 0.075em;
+    font-family: "roboto-regular", Arial;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
@@ -1158,13 +1173,14 @@ profile-introduction-container-paragraph {
     padding: 0 0.2em 0.2em 0.4em;
     font-weight: 1000;
     line-height: 1.75;
+    letter-spacing: 0.01em;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
     content: "Thank you for visiting my portfolio! ";
     cursor: text;
 }
 .contact-form-section-introduction-dark-mode {
-    color: var(--light-mode);
+    color: var(--light-grey);
 }
 .contact-form-container {
     display: flex;
@@ -1496,15 +1512,16 @@ a.footer-navigation-link-backtotop:hover {
 .footer-absolute-links-dark-mode {
     color: var(--light-grey);
 }
-.footer-absolute-links:nth-child(7) {
-    margin-top: 0.5rem;
+.footer-absolute-links:nth-child(7), .footer-absolute-links:nth-child(8) {
+    margin-top: 1rem;
 }
 @media only screen and (max-width: 450px) {
     .footer-absolute-links {
         display: flex;
         flex-direction: column;
         align-items: center;
-        line-height: 1.50em;
+        margin-bottom: 1em;
+        line-height: 1.75em;
     }
 }
 .footer-absolute-links a {
@@ -1559,19 +1576,18 @@ a.footer-navigation-link-backtotop:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
 .footer-bottom-copyright-sign {
-    margin: 0.5em 0;
+    margin: 0 0 0.5em 0;
     font-size: 1.89rem;
     font-family: "roboto-bold", Arial;
-    color: var(--light-mode);
+    color: var(--light-grey);
 }
 .footer-bottom-copyright-year {
-    font-family: "roboto-bold", Arial;
-}
-.footer-bottom-copyright {
-    font-family: "roboto-light", Arial;
+    font-weight: 600;
+    filter: contrast(0.8);
 }
 .footer-bottom-copyright-year, .footer-bottom-copyright {
     font-size: 1rem;
+    font-family: "roboto-light", Arial;
     color: var(--light-mode);
 }
 .footer-bottom-privacy-policy-link {
