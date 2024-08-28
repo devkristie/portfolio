@@ -811,6 +811,7 @@ profile-introduction-container-paragraph {
 }
 .section-introduction-container > p {
     margin: 0.5em 0;
+    font-size: 1rem;
     font-family: "roboto-regular", Arial;
     color: var(--darkest-grey);
 }
@@ -849,9 +850,11 @@ profile-introduction-container-paragraph {
 }
 .portfolio-websites-title-container {
     width: 100%;
-    margin: 0 0 5em;
+    margin: 0 0 3.85em;
+    font-size: 1.3rem;
     font-family: "roboto-medium", Arial;
     text-align: center;
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
     color: var(--dark-mode);
     border-radius: 24px 24px 0 0;

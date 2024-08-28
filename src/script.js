@@ -50,59 +50,96 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const showDarkModeModal = () => {
-        let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
-        let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
+const showDarkModeModal = () => {
+    let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
+    let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
 
-        if (!darkModeModalContainer) {
-            darkModeModalOverlay = document.createElement("div");
-            darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
+    if (!darkModeModalContainer) {
+        darkModeModalOverlay = document.createElement("div");
+        darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
+        darkModeModalOverlay.setAttribute("role", "presentation");
 
-            darkModeModalContainer = document.createElement("aside");
-            darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
+        darkModeModalContainer = document.createElement("aside");
+        darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
+        darkModeModalContainer.setAttribute("role", "dialog");
+        darkModeModalContainer.setAttribute("tabindex", "-1");
 
-            const darkModeModalTitle = document.createElement("p");
-            darkModeModalTitle.setAttribute("class", "dark-mode-modal-title");
-            darkModeModalTitle.textContent = "Dark Mode Preference Storage Notice";
-            darkModeModalContainer.appendChild(darkModeModalTitle);
+        const darkModeModalTitle = document.createElement("p");
+        darkModeModalTitle.setAttribute("class", "dark-mode-modal-title");
+        darkModeModalTitle.textContent = "Dark Mode Preference Storage Notice";
+        darkModeModalContainer.appendChild(darkModeModalTitle);
 
-            const darkModeModalFirstParagraph = document.createElement("p");
-            darkModeModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
-            darkModeModalFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
-            darkModeModalContainer.appendChild(darkModeModalFirstParagraph);
+        const darkModeModalFirstParagraph = document.createElement("p");
+        darkModeModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
+        darkModeModalFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+        darkModeModalContainer.appendChild(darkModeModalFirstParagraph);
 
-            const darkModeModalSecondParagraph = document.createElement("p");
-            darkModeModalSecondParagraph.setAttribute("class", "dark-mode-modal-second-paragraph");
-            darkModeModalSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
-            darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
+        const darkModeModalSecondParagraph = document.createElement("p");
+        darkModeModalSecondParagraph.setAttribute("class", "dark-mode-modal-second-paragraph");
+        darkModeModalSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+        darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
 
-            const darkModeModalAllowButton = document.createElement("button");
-            darkModeModalAllowButton.setAttribute("class", "dark-mode-modal-allow-button");
-            darkModeModalAllowButton.textContent = "Allow";
+        const darkModeModalAllowButton = document.createElement("button");
+        darkModeModalAllowButton.setAttribute("class", "dark-mode-modal-allow-button");
+        darkModeModalAllowButton.textContent = "Allow";
+        darkModeModalAllowButton.setAttribute("aria-label", "Allow dark mode preference to be saved");
 
-            const darkModeModalDeclineButton = document.createElement("button");
-            darkModeModalDeclineButton.setAttribute("class", "dark-mode-modal-decline-button");
-            darkModeModalDeclineButton.textContent = "Decline";
+        const darkModeModalDeclineButton = document.createElement("button");
+        darkModeModalDeclineButton.setAttribute("class", "dark-mode-modal-decline-button");
+        darkModeModalDeclineButton.textContent = "Decline";
+        darkModeModalDeclineButton.setAttribute("aria-label", "Decline dark mode preference to be saved");
 
-            darkModeModalContainer.appendChild(darkModeModalAllowButton);
-            darkModeModalContainer.appendChild(darkModeModalDeclineButton);
+        darkModeModalContainer.appendChild(darkModeModalAllowButton);
+        darkModeModalContainer.appendChild(darkModeModalDeclineButton);
 
-            document.body.appendChild(darkModeModalOverlay);
-            document.body.appendChild(darkModeModalContainer);
+        document.body.appendChild(darkModeModalOverlay);
+        document.body.appendChild(darkModeModalContainer);
 
-            darkModeModalAllowButton.addEventListener("click", () => {
-                localStorage.setItem("darkModePreference", "enabled");
-                enableDarkMode();
-                document.body.removeChild(darkModeModalOverlay);
-                document.body.removeChild(darkModeModalContainer);
-            });
+        // Manage focus: move focus to the modal
+        darkModeModalContainer.focus();
 
-            darkModeModalDeclineButton.addEventListener("click", () => {
-                document.body.removeChild(darkModeModalOverlay);
-                document.body.removeChild(darkModeModalContainer);
-            });
-        }
-    };
+        darkModeModalAllowButton.addEventListener("click", () => {
+            localStorage.setItem("darkModePreference", "enabled");
+            enableDarkMode();
+            closeModal();
+        });
+
+        darkModeModalDeclineButton.addEventListener("click", () => {
+            closeModal();
+        });
+
+        // Function to close the modal and return focus
+        const closeModal = () => {
+            document.body.removeChild(darkModeModalOverlay);
+            document.body.removeChild(darkModeModalContainer);
+            darkModeToggleButton.focus(); // Return focus to the dark mode icon
+        };
+
+        // Trap focus within the modal
+        const focusableElements = [darkModeModalAllowButton, darkModeModalDeclineButton];
+        let currentFocusIndex = -1;
+        
+        darkModeModalContainer.addEventListener("keydown", (e) => {
+            if (e.key === "Tab") {
+                e.preventDefault();
+                // If the container is focused and tab is pressed, move to the "Allow" button
+                if (currentFocusIndex === -1) {
+                    currentFocusIndex = 0;
+                } else {
+                    // Move focus to the next or previous element
+                    if (e.shiftKey) {
+                        currentFocusIndex = (currentFocusIndex === 0) ? focusableElements.length - 1 : currentFocusIndex - 1;
+                    } else {
+                        currentFocusIndex = (currentFocusIndex === focusableElements.length - 1) ? 0 : currentFocusIndex + 1;
+                    }
+                }
+                focusableElements[currentFocusIndex].focus();
+            } else if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+    }
+};
 
     //Dark mode variables
     const screenReadersOnlyText = document.querySelectorAll(".sr-only");
@@ -795,39 +832,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let hcaptchaModalContainer = document.querySelector(".hcaptcha-modal-container");
             let hcaptchaModalOverlay = document.querySelector(".hcaptcha-modal-overlay");
-
+    
             if (!hcaptchaModalContainer) {
                 hcaptchaModalOverlay = document.createElement("div");
                 hcaptchaModalOverlay.setAttribute("class", "hcaptcha-modal-overlay");
-
+                hcaptchaModalOverlay.setAttribute("role", "presentation");
+    
                 hcaptchaModalContainer = document.createElement("aside");
                 hcaptchaModalContainer.setAttribute("class", "hcaptcha-modal-container");
-
+                hcaptchaModalContainer.setAttribute("role", "dialog");
+                // hcaptchaModalContainer.setAttribute("aria-labelledby", "hcaptchaModalTitle");
+                hcaptchaModalContainer.setAttribute("tabindex", "-1");
+    
                 const hcaptchaModalTitle = document.createElement("p");
+                // hcaptchaModalTitle.setAttribute("id", "hcaptchaModalTitle");
                 hcaptchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
                 hcaptchaModalTitle.textContent = "Alert!";
                 hcaptchaModalContainer.appendChild(hcaptchaModalTitle);
-
+    
                 const hcaptchaModalFirstParagraph = document.createElement("p");
                 hcaptchaModalFirstParagraph.setAttribute("class", "hcaptcha-modal-first-paragraph");
-                hcaptchaModalFirstParagraph.textContent = "Please make sure you are human!";
+                hcaptchaModalFirstParagraph.textContent = "Please make sure you are human! Ensure hCaptcha checkbox is ticked.";
                 hcaptchaModalContainer.appendChild(hcaptchaModalFirstParagraph);
-
+    
                 const hcaptchaModalOkButton = document.createElement("button");
                 hcaptchaModalOkButton.setAttribute("class", "hcaptcha-modal-ok-button");
                 hcaptchaModalOkButton.textContent = "Ok";
+                hcaptchaModalOkButton.setAttribute("aria-label", "Ok (closes the alert modal)");
+    
                 hcaptchaModalContainer.appendChild(hcaptchaModalOkButton);
-
+    
                 document.body.appendChild(hcaptchaModalOverlay);
                 document.body.appendChild(hcaptchaModalContainer);
-
+    
+                // Focus management
+                hcaptchaModalContainer.focus();
+    
                 hcaptchaModalOkButton.addEventListener("click", () => {
+                    closeModal();
+                });
+    
+                // Function to close the modal and return focus
+                function closeModal() {
                     document.body.removeChild(hcaptchaModalOverlay);
                     document.body.removeChild(hcaptchaModalContainer);
+                    contactFormSubmitButton.focus(); // Return focus to the submit button
+                }
+    
+                // Trap focus within the modal
+                hcaptchaModalContainer.addEventListener("keydown", (e) => {
+                    if (e.key === "Tab") {
+                        e.preventDefault(); // Prevent tabbing out of the modal
+                        hcaptchaModalOkButton.focus(); // Ensure focus stays on the Ok button
+                    } else if (e.key === "Escape") {
+                        closeModal();
+                    }
                 });
             }
-
-            return;
         }
 
         if (formIsValid) {
