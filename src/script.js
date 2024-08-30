@@ -1,10 +1,10 @@
 "use strict"
 
-//Monitor all focusable elements
+//!Monitor all focusable elements
 document.addEventListener('focusin', (event) => {
     console.log('Focused element:', event.target);
 }, true); 
-//Using capture phase to catch all focus events
+//!Using capture phase to catch all focus events
 
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
@@ -62,6 +62,7 @@ const showDarkModeModal = () => {
         darkModeModalContainer = document.createElement("aside");
         darkModeModalContainer.setAttribute("class", "dark-mode-modal-container");
         darkModeModalContainer.setAttribute("role", "dialog");
+        darkModeModalContainer.setAttribute("aria-label", "Dark mode modal");
         darkModeModalContainer.setAttribute("tabindex", "-1");
 
         const darkModeModalTitle = document.createElement("p");
@@ -76,7 +77,7 @@ const showDarkModeModal = () => {
 
         const darkModeModalSecondParagraph = document.createElement("p");
         darkModeModalSecondParagraph.setAttribute("class", "dark-mode-modal-second-paragraph");
-        darkModeModalSecondParagraph.textContent = 'If you click "Decline," your data for it will not be saved in local storage, and the website will not remember your preference.';
+        darkModeModalSecondParagraph.textContent = 'If you click "Decline" your data for it will not be saved in local storage, and the website will not remember your preference.';
         darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
 
         const darkModeModalAllowButton = document.createElement("button");
@@ -178,7 +179,6 @@ const showDarkModeModal = () => {
     const footerAbsoluteLinksSpanElements = document.querySelectorAll(".footer-absolute-links");
     const footerAbsoluteLinks = document.querySelectorAll(".footer-absolute-links a");
     const footerBottomContainerBorder = document.querySelector(".footer-section-container");
-    const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
     function enableDarkMode() {
         darkModeIcon.style.visibility = "hidden";
@@ -329,8 +329,6 @@ const showDarkModeModal = () => {
         });
 
         footerBottomContainerBorder.classList.add("footer-section-container-dark-mode");
-                
-        footerBottomNavigationContainer.classList.add("footer-bottom-navigation-container-dark-mode");
     }
 
     function disableDarkMode() {
@@ -480,8 +478,6 @@ const showDarkModeModal = () => {
         });
 
         footerBottomContainerBorder.classList.remove("footer-section-container-dark-mode");
-                
-        footerBottomNavigationContainer.classList.remove("footer-bottom-navigation-container-dark-mode");
     }
 
     darkModeToggleButton.addEventListener("click", toggleDarkMode);
@@ -504,8 +500,8 @@ const showDarkModeModal = () => {
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
 
 // Add keydown event listener for accessibility
-hamburgerMenuIconContainer.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' || event.key === ' ') {
+hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Prevent scrolling on space key
         showMenu();
     }
@@ -514,30 +510,30 @@ hamburgerMenuIconContainer.addEventListener('keydown', function(event) {
 // Function to show or hide the menu
 function showMenu() {
     // Select the hamburger menu button
-    const menuButton = document.querySelector('.hamburger-menu-container');
+    const menuButton = document.querySelector(".hamburger-menu-container");
     
     // Get the current state of the aria-expanded attribute
-    const ariaExpanded = menuButton.getAttribute('aria-expanded');
+    const ariaExpanded = menuButton.getAttribute("aria-expanded");
     
     // Determine the new state
-    const newAriaExpanded = ariaExpanded === 'true' ? 'false' : 'true';
+    const newAriaExpanded = ariaExpanded === "true" ? "false" : "true";
     
     // Toggle the menu's visibility
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
     // Update the aria-expanded attribute to the new state
-    menuButton.setAttribute('aria-expanded', newAriaExpanded);
+    menuButton.setAttribute("aria-expanded", newAriaExpanded);
 
     // Optionally announce the change for screen readers
-    const dynamicAnnouncer = document.getElementById('dynamicAnnouncer');
-    dynamicAnnouncer.textContent = newAriaExpanded === 'true' ? 'Menu opened' : 'Menu closed';
+    const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
+    dynamicAnnouncer.textContent = newAriaExpanded === "true" ? "Menu opened" : "Menu closed";
 }
 
 // Event listeners for hamburger menu
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
-hamburgerMenuIconContainer.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter' || event.key === ' ') {
+hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Prevent scrolling on space key
         showMenu();
     }
@@ -600,14 +596,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Add event listeners for keyboard accessibility
         leftArrowElement.addEventListener("keydown", function(event) {
-            if (event.key === 'Enter' || event.key === ' ') {
+            if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault(); // Prevent default space action
                 handleLeftArrow();
             }
         });
 
         rightArrowElement.addEventListener("keydown", function(event) {
-            if (event.key === 'Enter' || event.key === ' ') {
+            if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault(); // Prevent default space action
                 handleRightArrow();
             }
@@ -649,14 +645,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.querySelectorAll('a[target="_blank"]').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener("click", function() {
         // Find the live region and update its content
-        const liveRegion = document.getElementById('tab-announcement');
+        const liveRegion = document.getElementById("tab-announcement");
         if (liveRegion) {
-            liveRegion.textContent = 'Opening a new tab.';
+            liveRegion.textContent = "Opening a new tab.";
             setTimeout(() => {
                 // Clear the announcement after a short delay
-                liveRegion.textContent = '';
+                liveRegion.textContent = "";
             }, 3000);
         }
     });
@@ -665,23 +661,23 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
 // Common function to toggle the accordion and update aria-expanded
 function toggleAccordion(button, index) {
     // Get the current state of the aria-expanded attribute
-    const ariaExpanded = button.getAttribute('aria-expanded');
+    const ariaExpanded = button.getAttribute("aria-expanded");
     
     // Determine the new state
     let newAriaExpanded;
-    if (ariaExpanded === 'true') {
-        newAriaExpanded = 'false';
+    if (ariaExpanded === "true") {
+        newAriaExpanded = "false";
     } else {
-        newAriaExpanded = 'true';
+        newAriaExpanded = "true";
     }
     // Update the aria-expanded attribute to the new state on the specific button
-    button.setAttribute('aria-expanded', newAriaExpanded);
+    button.setAttribute("aria-expanded", newAriaExpanded);
 
-    const dynamicShowMoreAnnouncer = document.getElementById('dynamicShowMoreAnnouncer');
-    if (newAriaExpanded === 'true') {
-        dynamicShowMoreAnnouncer.textContent = 'Details and technologies used are now shown';
+    const dynamicShowMoreAnnouncer = document.getElementById("dynamicShowMoreAnnouncer");
+    if (newAriaExpanded === "true") {
+        dynamicShowMoreAnnouncer.textContent = "Details and technologies used are now shown";
     } else {
-        dynamicShowMoreAnnouncer.textContent = 'Details and technologies used are now hidden';
+        dynamicShowMoreAnnouncer.textContent = "Details and technologies used are now hidden";
     }
     
     // Toggle the accordion container visibility
@@ -841,7 +837,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 hcaptchaModalContainer = document.createElement("aside");
                 hcaptchaModalContainer.setAttribute("class", "hcaptcha-modal-container");
                 hcaptchaModalContainer.setAttribute("role", "dialog");
-                // hcaptchaModalContainer.setAttribute("aria-labelledby", "hcaptchaModalTitle");
+                hcaptchaModalContainer.setAttribute("aria-label", "hCaptcha modal");
                 hcaptchaModalContainer.setAttribute("tabindex", "-1");
     
                 const hcaptchaModalTitle = document.createElement("p");
@@ -852,8 +848,13 @@ document.addEventListener("DOMContentLoaded", function () {
     
                 const hcaptchaModalFirstParagraph = document.createElement("p");
                 hcaptchaModalFirstParagraph.setAttribute("class", "hcaptcha-modal-first-paragraph");
-                hcaptchaModalFirstParagraph.textContent = "Please make sure you are human! Ensure hCaptcha checkbox is ticked.";
+                hcaptchaModalFirstParagraph.textContent = "Please make sure you are human!";
                 hcaptchaModalContainer.appendChild(hcaptchaModalFirstParagraph);
+
+                const hcaptchaModalSecondParagraph = document.createElement("p");
+                hcaptchaModalSecondParagraph.setAttribute("class", "hcaptcha-modal-second-paragraph");
+                hcaptchaModalSecondParagraph.textContent = "Ensure hCaptcha checkbox is ticked.";
+                hcaptchaModalContainer.appendChild(hcaptchaModalSecondParagraph);
     
                 const hcaptchaModalOkButton = document.createElement("button");
                 hcaptchaModalOkButton.setAttribute("class", "hcaptcha-modal-ok-button");

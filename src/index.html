@@ -278,58 +278,81 @@
                         <h3>Coming Soon</h3>
                     </header>
                     <div class="portfolio-websites-slider-container">
-                        <svg class="portfolio-websites-slider-left-arrow" viewBox="14 0 20 100" aria-label="Image Slider Left Arrow">
-                            <path d="M28 45 L20 53 L28 60" />
-                            <path d="M28 45 L28 53"/>
-                        </svg>
-                        <figure>
-                            <img src="assets/images/1_1.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_2.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_3.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_4.jpg" alt="" class="portfolio-websites-slider-image"/>
-                            <img src="assets/images/1_5.jpg" alt="" class="portfolio-websites-slider-image"/>
+                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous Slide">
+                            <svg viewBox="14 0 20 100" role="img" aria-label="Left Arrow">
+                                <path d="M28 45 L20 53 L28 60" />
+                                <path d="M28 45 L28 53"/>
+                            </svg>
+                        </button>
+                        <figure aria-label="Image slider showcasing various projects">
+                            <div class="portfolio-websites-slider-images">
+                                <div aria-live="polite" aria-atomic="true">
+                                    <img class="portfolio-websites-slider-image" src="assets/images/1_1.jpg" alt="Description of image 1"/>
+                                </div>
+                                <div aria-live="polite" aria-atomic="true">
+                                    <img class="portfolio-websites-slider-image" src="assets/images/1_2.jpg" alt="Description of image 2"/>
+                                </div>
+                                <div aria-live="polite" aria-atomic="true">
+                                    <img class="portfolio-websites-slider-image" src="assets/images/1_3.jpg" alt="Description of image 3"/>
+                                </div>
+                                <div aria-live="polite" aria-atomic="true">
+                                    <img class="portfolio-websites-slider-image" src="assets/images/1_4.jpg" alt="Description of image 4"/>
+                                </div>
+                                <div aria-live="polite" aria-atomic="true">
+                                    <img class="portfolio-websites-slider-image" src="assets/images/1_5.jpg" alt="Description of image 5"/>
+                                </div>
                         </figure>
-                        <svg class="portfolio-websites-slider-right-arrow" viewBox="14 0 20 100" aria-label="Image Slider Right Arrow">
-                            <path d="M20 45 L28 53 L20 60" />
-                            <path d="M20 45 L20 53"/>
-                        </svg>
+                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next Slide">
+                            <svg viewBox="14 0 20 100" role="img" aria-label="Right Arrow">
+                                <path d="M20 45 L28 53 L20 60" />
+                                <path d="M20 45 L20 53"/>
+                            </svg>
+                        </button>
                     </div>
-                    <nav class="portfolio-websites-button-container">
-                        <a class="portfolio-websites-view-website-button" href="#portfolio" title="View website" rel="noopener noreferrer">View Website</a>
-                        <a class="portfolio-websites-view-source-code-button" href="#portfolio" title="View source code" rel="noopener noreferrer">View Source Code</a>
+                    <nav class="portfolio-websites-button-container" aria-label="Portfolio navigation buttons">
+                        <div class="sr-only" id="tab-announcement" aria-live="assertive" role="alert"></div> Visually hidden announcement -->
+                        <!-- <a class="portfolio-websites-view-website-button" href="#portfolio" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                            View Website
+                            <span class="sr-only-new-tab">(opens in a new tab)</span>
+                        </a>
+                        <a class="portfolio-websites-view-source-code-button" href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                            View Source Code
+                            <span class="sr-only-new-tab">(opens in a new tab)</span>
+                        </a>
                     </nav>
                     <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" tabindex="0">
-                            <p>Show More</p>
-                            <svg class="portfolio-websites-show-more-arrow" aria-label="Show More Arrow">
-                                <path d="M15.5 20 L22.75 28 L30 20" />
-                                <path d="M15.5 20 L22.75 20"/>
+                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false" tabindex="0">
+                            <p aria-live="polite" aria-atomic="true">Show More</p>
+                            <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
+                                <path d="M15.5 20 L23 28.5 L30 20" />
+                                <path d="M15.5 20 L23 20"/>
                             </svg>
                         </div>
+                        <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
                         <article class="portfolio-websites-show-more-accordion-container">
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">
-                                <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Eget gravida</strong> 
-                            eget gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus</p>
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor</p>
+                                <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Coming Soon!</strong> 
+                             This website is currently under construction and in the design phase. I am working diligently to bring you a new and improved experience. Stay tuned for updates as I prepare for the launch.</p> -->
+                            <!-- <p class="portfolio-websites-show-more-accordion-container-paragraph">nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor</p>
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc</p>
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum</p>
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit</p>
-                            <h4 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h4>
-                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container">
+                            <p class="portfolio-websites-show-more-accordion-container-paragraph">nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit</p> -->
+                            <!-- <h4 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h4>
+                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container" aria-label="Technologies Used Icons">
                                 <div>
-                                    <i class="fa-brands fa-figma"></i>
+                                    <i class="fa-brands fa-figma" aria-hidden="true"></i>
                                     <figcaption>Figma</figcaption>
                                 </div>
                                 <div>
-                                    <i class="fa-brands fa-html5"></i>
+                                    <i class="fa-brands fa-html5" aria-hidden="true"></i>
                                     <figcaption>HTML</figcaption>
                                 </div>
                                 <div>
-                                    <i class="fa-brands fa-css3-alt"></i>
+                                    <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
                                     <figcaption>CSS</figcaption>
                                 </div>
                                 <div>
-                                    <i class="fa-brands fa-js"></i>
+                                    <i class="fa-brands fa-js" aria-hidden="true"></i>
                                     <figcaption>JavaScript</figcaption>
                                 </div>
                             </figure>

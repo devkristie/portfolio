@@ -32,7 +32,7 @@
 @font-face { font-family: "roboto-medium"; src: url(./assets/fonts/roboto-medium-webfont.woff2);}
 @font-face { font-family: "roboto-regular"; src: url(./assets/fonts/roboto-regular-webfont.woff2);}
 /* @font-face { font-family: "tomorrow-light"; src: url(./assets/fonts/tomorrow-light-webfont.woff2);} */
-@font-face { font-family: "tomorrow-regular"; src: url(./assets/fonts/tomorrow-regular-webfont.woff2);}
+/* @font-face { font-family: "tomorrow-regular"; src: url(./assets/fonts/tomorrow-regular-webfont.woff2);} */
 @font-face { font-family: "jersey-regular"; src: url(./assets/fonts/Jersey10-Regular.ttf);}
 /*CSS Variables*/
 :root {
@@ -73,7 +73,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--light-mode);
     z-index: 6; 
 }
 .dark-mode-modal-container {
@@ -85,14 +85,12 @@ body::before {
     height: 448px;
     text-align: center;
     background-color: var(--light-mode);
-    border: 1px solid var(--dark-mode);
-    border-radius: 32px;
     transform: translate(2.5%, 20%);
 }
 .dark-mode-modal-title {
     margin: 1em 0 1em 0;
     font-size: 1.5rem;
-    font-family: "tomorrow-regular", Arial;
+    font-family: "roboto-bold", Arial;
     font-weight: 900;
     color: var(--secondary-color);
     -webkit-user-select: none; /* Safari */
@@ -101,6 +99,7 @@ body::before {
 }
 .dark-mode-modal-first-paragraph, .dark-mode-modal-second-paragraph {
     padding: 0 1.75em;
+    font-size: 1rem;
     font-family: "roboto-regular", Arial;
     color: var(--darkest-grey);
     -webkit-user-select: none; /* Safari */
@@ -457,6 +456,7 @@ main {
 }
 .landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development {
     padding-left: 2em;
+    /*? padding-bottom: 0.1em; */
     color: var(--darkest-grey);
 }
 .landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
@@ -1350,7 +1350,7 @@ profile-introduction-container-paragraph {
     z-index: 6;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--light-mode);
 }
 .hcaptcha-modal-container {
     position: fixed;
@@ -1361,21 +1361,19 @@ profile-introduction-container-paragraph {
     height: 248px;
     text-align: center;
     background-color: var(--light-mode);
-    border: 1px solid var(--dark-mode);
-    border-radius: 32px;
     transform: translate(2.5%, 36%);
 }
 .hcaptcha-modal-title {
-    margin: 0.7em;
+    margin: 1em 0 1em 0;
     font-size: 1.5rem;
-    font-family: "tomorrow-regular", Arial;
-    font-weight: 600;
+    font-family: "roboto-bold", Arial;
+    font-weight: 900;
     color: var(--secondary-color);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-.hcaptcha-modal-first-paragraph {
+.hcaptcha-modal-first-paragraph, .hcaptcha-modal-second-paragraph {
     padding: 0 1.75em;
     font-family: "roboto-regular", Arial;
     color: var(--darkest-grey);
@@ -1504,9 +1502,6 @@ a.footer-navigation-link-backtotop:hover {
       min-width: 150px;
     }
 }
-/* a.footer-navigation-link-backtotop-dark-mode {
-    color: var(--light-mode);
-} */
 .footer-absolute-links {
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
@@ -1552,11 +1547,6 @@ a.footer-navigation-link-backtotop:hover {
     height: 200px;
     background-color: var(--darker-grey);
     border-top: 16px solid var(--primary-color);
-    /* border-top: 16px solid var(--dark-mode); */
-}
-.footer-bottom-navigation-container-dark-mode {
-    border-top: 16px solid var(--primary-color);
-    /* border-top: 16px solid var(--light-mode); */
 }
 .footer-bottom-left-icons {
     display: flex;
