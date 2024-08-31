@@ -31,8 +31,8 @@
 @font-face { font-family: "roboto-light"; src: url(./assets/fonts/roboto-light-webfont.woff2);}
 @font-face { font-family: "roboto-medium"; src: url(./assets/fonts/roboto-medium-webfont.woff2);}
 @font-face { font-family: "roboto-regular"; src: url(./assets/fonts/roboto-regular-webfont.woff2);}
-/* @font-face { font-family: "tomorrow-light"; src: url(./assets/fonts/tomorrow-light-webfont.woff2);} */
-/* @font-face { font-family: "tomorrow-regular"; src: url(./assets/fonts/tomorrow-regular-webfont.woff2);} */
+/*! @font-face { font-family: "tomorrow-light"; src: url(./assets/fonts/tomorrow-light-webfont.woff2);} */
+/*! @font-face { font-family: "tomorrow-regular"; src: url(./assets/fonts/tomorrow-regular-webfont.woff2);} */
 @font-face { font-family: "jersey-regular"; src: url(./assets/fonts/Jersey10-Regular.ttf);}
 /*CSS Variables*/
 :root {
@@ -208,7 +208,7 @@ body::before {
 .top-navigation-bar-logo-container {
     width: 68px;
     height: 40px;
-    /* margin-right: auto; */
+    /*! margin-right: auto; */
 }
 .logo-opening-curly-brace {
     stroke: var(--dark-mode);
@@ -287,6 +287,9 @@ body::before {
 }
 .sr-only-lightModeIcon-dark-mode {
     color: var(--light-mode);
+}
+.dynamic-announcer-dark-mode {
+    color: var(--dark-mode);
 }
 .hamburger-menu-container {
     width: 40px;
@@ -583,25 +586,25 @@ main {
     background-color: var(--darker-grey);
 }
 .section-title {
-    /* padding-top: 1.25em;    
+    /*! padding-top: 1.25em;    
     font-size: 2.813rem;    
     font-family: tomorrow-light;
     letter-spacing: 0.25em; */
 
-    /* padding-top: 1.10em; */
+    /*! padding-top: 1.10em; */
     font-size: 4.5rem;
     font-family: "jersey-regular";
     letter-spacing: 0.05em;
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
 
     text-align: center;
-    /* text-transform: uppercase; */
+    /*! text-transform: uppercase; */
     color: var(--light-mode);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-/* @media only screen and (max-width: 400px) {
+/*! @media only screen and (max-width: 400px) {
     .section-title {
         letter-spacing: 0.075em;
     }
@@ -1073,15 +1076,29 @@ profile-introduction-container-paragraph {
     stroke: var(--light-mode);
 }
 /*Portfolio website container accordion content that is not displayed when the accordion is clicked on*/
-.portfolio-websites-show-more-accordion-container .portfolio-websites-show-more-accordion-container-paragraph {
-    display: none;
+/* Initially hide the accordion content */
+.portfolio-websites-show-more-accordion-container {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s linear;
 }
-.portfolio-websites-show-more-accordion-container > h4 {
+/* Optional, just for visibility of the container */
+/* .portfolio-websites-show-more-container, .portfolio-websites-show-more-accordion-container-technology-used-container, .portfolio-websites-show-more-accordion-container > h4 { */
+    /* padding: 0 0; */
+    /* background-color: var(--light-grey); */
+    /* border-radius: 0 0 24px 24px; */
+/* } */
+
+/* Dark mode */
+/* .portfolio-websites-show-more-container-dark-mode {
+    background-color: var(--darkest-grey);
+} */
+/* .portfolio-websites-show-more-accordion-container > h4 {
     display: none;
 }
 .portfolio-websites-show-more-accordion-container .portfolio-websites-show-more-accordion-container-technology-used-container {
     display: none;
-}
+} */
 /*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
 .portfolio-websites-show-more-accordion-container-paragraph {
     margin: -1em 3em;
@@ -1181,6 +1198,9 @@ profile-introduction-container-paragraph {
     color: var(--primary-color);
     content: "Thank you for visiting my portfolio! ";
     cursor: text;
+}
+.contact-introduction-container-p-highlighted-text-dark-mode {
+    color: var(--light-grey);
 }
 .contact-form-section-introduction-dark-mode {
     color: var(--light-grey);
@@ -1450,7 +1470,7 @@ profile-introduction-container-paragraph {
     width: 80%;
     margin: 5em 0 17.5em 0;
     padding: 2em 0 0.75em 0;
-    /* background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color)); */
+    /*! background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color)); */
     background-color: var(--light-grey);
     border-radius: 25px;
 }

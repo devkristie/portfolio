@@ -8,6 +8,7 @@ document.addEventListener('focusin', (event) => {
 
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
+const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
 const laptopImageCode = document.querySelectorAll(".laptop-image-code");
 const portfolioWebsitesShowMoreAccordionContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
 const portfolioWebsitesShowMoreAccordionContainerShowLessText = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button p");
@@ -170,7 +171,7 @@ const showDarkModeModal = () => {
     const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
     const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
-    const contactFormSectionIntroduction = document.querySelector(".contact-introduction-container-p-highlighted-text");
+    //! const contactFormSectionIntroduction = document.querySelector(".contact-introduction-container-p-highlighted-text");
     const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
     const hCaptchaColor = document.querySelector(".h-captcha");
@@ -192,6 +193,8 @@ const showDarkModeModal = () => {
         });
 
         mainDarkMode.classList.add("main-dark-mode");
+
+        dynamicAnnouncer.classList.add("dynamic-announcer-dark-mode");
 
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
 
@@ -239,8 +242,8 @@ const showDarkModeModal = () => {
         
         sectionIntroductionContainerParagraph.forEach((paragraph) => {
             paragraph.classList.add("section-introduction-container-p-dark-mode");
-            const thankYouForVisitingMyPortfolioParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
-            thankYouForVisitingMyPortfolioParagraph.classList.remove("section-introduction-container-p-dark-mode");
+            //! const thankYouForVisitingMyPortfolioParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
+            //! thankYouForVisitingMyPortfolioParagraph.classList.add("section-introduction-container-p-dark-mode");
         });
         
         portfolioWebsitesContainer.forEach((background) => {
@@ -267,7 +270,7 @@ const showDarkModeModal = () => {
             title.classList.add("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
         });
 
-        contactFormSectionIntroduction.classList.add("contact-form-section-introduction-dark-mode");
+        //! contactFormSectionIntroduction.classList.add("contact-form-section-introduction-dark-mode");
         
         contactFormTopHeaderContainer.classList.add("contact-form-top-header-container-dark-mode");
         
@@ -343,6 +346,8 @@ const showDarkModeModal = () => {
         });
 
         mainDarkMode.classList.remove("main-dark-mode");
+
+        dynamicAnnouncer.classList.remove("dynamic-announcer-dark-mode");
         
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
         
@@ -416,7 +421,7 @@ const showDarkModeModal = () => {
             title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
         });
 
-        contactFormSectionIntroduction.classList.remove("contact-form-section-introduction-dark-mode");
+        //! contactFormSectionIntroduction.classList.remove("contact-form-section-introduction-dark-mode");
         
         contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
         
@@ -526,7 +531,6 @@ function showMenu() {
     menuButton.setAttribute("aria-expanded", newAriaExpanded);
 
     // Optionally announce the change for screen readers
-    const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
     dynamicAnnouncer.textContent = newAriaExpanded === "true" ? "Menu opened" : "Menu closed";
 }
 
@@ -680,8 +684,26 @@ function toggleAccordion(button, index) {
         dynamicShowMoreAnnouncer.textContent = "Details and technologies used are now hidden";
     }
     
-    // Toggle the accordion container visibility
-    portfolioWebsitesShowMoreAccordionContainer[index].classList.toggle("portfolio-websites-show-more-accordion-container");
+    const accordionContainer = portfolioWebsitesShowMoreAccordionContainer[index];
+    const contentHeight = accordionContainer.scrollHeight;
+
+    if (newAriaExpanded === "true") {
+        // Expand: Set the height to the full content height
+        accordionContainer.style.height = contentHeight + "px";
+
+        // After transition, reset height to auto
+        setTimeout(() => {
+            accordionContainer.style.height = "auto";
+        }, 250); // For setTimeout to work it needs to match with the transition duration in CSS
+    } else {
+        // Collapse: Set the height back to 0
+        accordionContainer.style.height = accordionContainer.scrollHeight + "px"; // Recalculate height in case it was set to auto
+
+        // Force reflow to apply the height setting
+        accordionContainer.offsetHeight;
+
+        accordionContainer.style.height = "0px";
+    }
 
     // Update the button text and arrow state
     if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
@@ -841,7 +863,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 hcaptchaModalContainer.setAttribute("tabindex", "-1");
     
                 const hcaptchaModalTitle = document.createElement("p");
-                // hcaptchaModalTitle.setAttribute("id", "hcaptchaModalTitle");
+                //! hcaptchaModalTitle.setAttribute("id", "hcaptchaModalTitle");
                 hcaptchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
                 hcaptchaModalTitle.textContent = "Alert!";
                 hcaptchaModalContainer.appendChild(hcaptchaModalTitle);
