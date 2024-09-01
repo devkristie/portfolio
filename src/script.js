@@ -101,8 +101,19 @@ const showDarkModeModal = () => {
         darkModeModalContainer.focus();
 
         darkModeModalAllowButton.addEventListener("click", () => {
+            // Temporarily disable the aria-live region
+            const ariaLiveElement = document.querySelector('[aria-live]');
+            const previousAriaLiveValue = ariaLiveElement.getAttribute('aria-live');
+            ariaLiveElement.setAttribute('aria-live', 'off');
+
             localStorage.setItem("darkModePreference", "enabled");
+
             enableDarkMode();
+                // Re-enable the aria-live region
+                setTimeout(() => {
+                ariaLiveElement.setAttribute('aria-live', previousAriaLiveValue);
+            }, 500); // Delay re-enabling slightly to ensure dark mode changes have been applied
+            
             closeModal();
         });
 
@@ -114,7 +125,14 @@ const showDarkModeModal = () => {
         const closeModal = () => {
             document.body.removeChild(darkModeModalOverlay);
             document.body.removeChild(darkModeModalContainer);
-            darkModeToggleButton.focus(); // Return focus to the dark mode icon
+            // Temporarily hide the button from screen readers
+            darkModeToggleButton.setAttribute("aria-hidden", "true");
+
+            // Use a timeout to briefly delay refocusing the button
+            setTimeout(() => {
+                darkModeToggleButton.removeAttribute("aria-hidden"); // Re-enable for screen readers
+                darkModeToggleButton.focus({ preventScroll: true }); // Reapply focus
+            }, 100);
         };
 
         // Trap focus within the modal
@@ -184,8 +202,8 @@ const showDarkModeModal = () => {
     function enableDarkMode() {
         darkModeIcon.style.visibility = "hidden";
         lightModeIcon.style.visibility = "visible";
-        darkModeStatus.textContent = "Dark mode enabled";
-        darkModeToggleButton.setAttribute("aria-label", "Disable Dark Mode");
+        darkModeStatus.textContent = "Dark mode is now enabled";
+        darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
 
         // Apply dark mode classes to other elements as needed
         screenReadersOnlyText.forEach((text) => {
@@ -337,7 +355,7 @@ const showDarkModeModal = () => {
     function disableDarkMode() {
         lightModeIcon.style.visibility = "hidden";
         darkModeIcon.style.visibility = "visible";
-        darkModeStatus.textContent = "Light mode enabled";
+        darkModeStatus.textContent = "Light mode is now enabled";
         darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
         
         // Remove dark mode classes from other elements as needed
@@ -531,7 +549,7 @@ function showMenu() {
     menuButton.setAttribute("aria-expanded", newAriaExpanded);
 
     // Optionally announce the change for screen readers
-    dynamicAnnouncer.textContent = newAriaExpanded === "true" ? "Menu opened" : "Menu closed";
+    dynamicAnnouncer.textContent = newAriaExpanded === "true" ? "Hamburger navigation menu opened" : "Hamburger navigation menu closed";
 }
 
 // Event listeners for hamburger menu
