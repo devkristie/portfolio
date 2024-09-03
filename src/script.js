@@ -910,14 +910,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 hcaptchaModalContainer.focus();
     
                 hcaptchaModalOkButton.addEventListener("click", () => {
-                    closeModal();
+                    closeHcaptchaModal();
                 });
     
                 // Function to close the modal and return focus
-                function closeModal() {
+                function closeHcaptchaModal() {
                     document.body.removeChild(hcaptchaModalOverlay);
                     document.body.removeChild(hcaptchaModalContainer);
-                    contactFormSubmitButton.focus(); // Return focus to the submit button
+
+                    contactFormSubmitButton.removeAttribute("aria-label");
+                    
+                    setTimeout(() => {
+                        contactFormSubmitButton.focus({ preventScroll: true });
+                    }, 50);
+                    
+                    contactFormSubmitButton.addEventListener("blur", () => {
+                    contactFormSubmitButton.setAttribute("aria-label", "Submit Form");
+
+                    });
                 }
     
                 // Trap focus within the modal
@@ -926,7 +936,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         e.preventDefault(); // Prevent tabbing out of the modal
                         hcaptchaModalOkButton.focus(); // Ensure focus stays on the Ok button
                     } else if (e.key === "Escape") {
-                        closeModal();
+                        closeHcaptchaModal();
                     }
                 });
             }
