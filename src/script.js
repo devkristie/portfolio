@@ -189,7 +189,6 @@ const showDarkModeModal = () => {
     const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
     const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
-    //! const contactFormSectionIntroduction = document.querySelector(".contact-introduction-container-p-highlighted-text");
     const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
     const hCaptchaColor = document.querySelector(".h-captcha");
@@ -260,8 +259,6 @@ const showDarkModeModal = () => {
         
         sectionIntroductionContainerParagraph.forEach((paragraph) => {
             paragraph.classList.add("section-introduction-container-p-dark-mode");
-            //! const thankYouForVisitingMyPortfolioParagraph = document.querySelector(".contact-introduction-container-p-highlighted-text");
-            //! thankYouForVisitingMyPortfolioParagraph.classList.add("section-introduction-container-p-dark-mode");
         });
         
         portfolioWebsitesContainer.forEach((background) => {
@@ -287,8 +284,6 @@ const showDarkModeModal = () => {
         portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
             title.classList.add("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
         });
-
-        //! contactFormSectionIntroduction.classList.add("contact-form-section-introduction-dark-mode");
         
         contactFormTopHeaderContainer.classList.add("contact-form-top-header-container-dark-mode");
         
@@ -438,8 +433,6 @@ const showDarkModeModal = () => {
         portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle.forEach((title) => {
             title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
         });
-
-        //! contactFormSectionIntroduction.classList.remove("contact-form-section-introduction-dark-mode");
         
         contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
         
@@ -925,9 +918,86 @@ document.addEventListener("DOMContentLoaded", function () {
                     }, 50);
                     
                     contactFormSubmitButton.addEventListener("blur", () => {
-                    contactFormSubmitButton.setAttribute("aria-label", "Submit Form");
-
+                        contactFormSubmitButton.setAttribute("aria-label", "Submit Form");
                     });
+                    //! This one worked the best out of all the attempts but still announces the button element
+
+                    
+    // // Remove the modal elements from the DOM
+    // document.body.removeChild(hcaptchaModalOverlay);
+    // document.body.removeChild(hcaptchaModalContainer);
+
+    // // Use a timeout to ensure the DOM is updated before setting focus
+    // setTimeout(() => {
+    //     // Temporarily hide the button from screen readers
+    //     contactFormSubmitButton.setAttribute('aria-hidden', 'true');
+    //     contactFormSubmitButton.style.visibility = 'hidden';
+
+    //     // Set focus to the Submit Form button
+    //     contactFormSubmitButton.focus({ preventScroll: true });
+
+    //     // Restore visibility and ARIA attributes after focus is set
+    //     setTimeout(() => {
+    //         contactFormSubmitButton.style.visibility = '';
+    //         contactFormSubmitButton.removeAttribute('aria-hidden');
+    //     }, 100); // Adjust timing if necessary
+    // }, 0); // Short delay to allow DOM updates
+//! This works by only announcing the submit form button once on the screen reader, but has no focus ring
+
+
+    // // Remove the modal elements from the DOM
+    // document.body.removeChild(hcaptchaModalOverlay);
+    // document.body.removeChild(hcaptchaModalContainer);
+
+    // // Use a timeout to ensure the DOM is updated before setting focus
+    // setTimeout(() => {
+    //     // Temporarily hide the button from screen readers
+    //     contactFormSubmitButton.setAttribute('aria-hidden', 'true');
+    //     contactFormSubmitButton.style.visibility = 'hidden';
+
+    //     // Set focus to the Submit Form button
+    //     contactFormSubmitButton.focus({ preventScroll: true });
+
+    //     // Restore visibility and ARIA attributes after focus is set
+    //     setTimeout(() => {
+    //         contactFormSubmitButton.style.visibility = '';
+    //         contactFormSubmitButton.removeAttribute('aria-hidden');
+            
+    //         // Ensure focus ring is visible by temporarily adding a class
+    //         contactFormSubmitButton.classList.add('focus-visible');
+    //         setTimeout(() => {
+    //             contactFormSubmitButton.classList.remove('focus-visible');
+    //         }, 100); // Ensure this matches the duration of your focus ring CSS
+    //     }, 0); // Adjust timing if necessary
+    // }, 0); // Short delay to allow DOM updates
+//! This works by only announcing the submit form button once on the screen reader, but again has no focus ring
+
+
+    // // Remove the modal elements from the DOM
+    // document.body.removeChild(hcaptchaModalOverlay);
+    // document.body.removeChild(hcaptchaModalContainer);
+
+    // // Temporarily hide the button from screen readers
+    // contactFormSubmitButton.setAttribute('aria-hidden', 'true');
+    // contactFormSubmitButton.style.visibility = 'hidden';
+
+    // // Use requestAnimationFrame to ensure the DOM has been updated before focusing
+    // requestAnimationFrame(() => {
+    //     contactFormSubmitButton.focus({ preventScroll: true });
+
+    //     // Restore visibility and ARIA attributes after focus is set
+    //     contactFormSubmitButton.style.visibility = '';
+    //     contactFormSubmitButton.removeAttribute('aria-hidden');
+
+    //     // Apply focus styles
+    //     contactFormSubmitButton.classList.add('focus-visible');
+    //     setTimeout(() => {
+    //         contactFormSubmitButton.classList.remove('focus-visible');
+    //     }, 100); // Ensure this matches the duration of your focus ring CSS
+    // });
+//! This works by only announcing the submit form button once on the screen reader, but has permement focus
+
+
                 }
     
                 // Trap focus within the modal

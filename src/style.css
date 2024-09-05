@@ -387,6 +387,12 @@ body::before {
 .top-navigation-bar-accordion-links > li:hover > a {
     color: var(--light-mode);
 }
+.top-navigation-bar-accordion-links > li:focus-within {
+    background-color: var(--secondary-color);
+}
+.top-navigation-bar-accordion-links > li:focus-within > a {
+    color: var(--light-mode);
+}
 main {
     background-color: var(--light-mode);
 }
@@ -459,7 +465,7 @@ main {
 }
 .landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development {
     padding-left: 2em;
-    /*? padding-bottom: 0.1em; */
+    padding-bottom: 0.1em;
     color: var(--darkest-grey);
 }
 .landing-page-title-property-value-to-my, .landing-page-title-property-value-front-end, .landing-page-title-property-development, .landing-page-title-value-portfolio, .landing-page-title-value-semicolon {
@@ -735,6 +741,9 @@ profile-introduction-container-paragraph {
 .profile-introduction-download-cv-button:hover {
     background-color: rgb(144.3, 92.9, 79.5);
 }
+.profile-introduction-download-cv-button:focus {
+    background-color: rgb(144.3, 92.9, 79.5);
+}
 @media only screen and (max-width: 465px) {
     .profile-introduction-container {
         width: 100%;
@@ -1000,6 +1009,9 @@ profile-introduction-container-paragraph {
 .portfolio-websites-view-website-button:hover {
     background-color: rgb(144.3, 92.9, 79.5);
 }
+.portfolio-websites-view-website-button:focus {
+    background-color: rgb(144.3, 92.9, 79.5);
+}
 .portfolio-websites-view-source-code-button {
     width: 100%;
     padding: 0.25em 1em;
@@ -1017,6 +1029,9 @@ profile-introduction-container-paragraph {
     cursor: pointer;
 }
 .portfolio-websites-view-source-code-button:hover {
+    background-color: rgb(144.3, 92.9, 79.5);
+}
+.portfolio-websites-view-source-code-button:focus {
     background-color: rgb(144.3, 92.9, 79.5);
 }
 @media only screen and (max-width: 650px) {
@@ -1082,18 +1097,18 @@ profile-introduction-container-paragraph {
     overflow: hidden;
     transition: height 0.25s linear;
 }
-/* Optional, just for visibility of the container */
-/* .portfolio-websites-show-more-container, .portfolio-websites-show-more-accordion-container-technology-used-container, .portfolio-websites-show-more-accordion-container > h4 { */
-    /* padding: 0 0; */
-    /* background-color: var(--light-grey); */
-    /* border-radius: 0 0 24px 24px; */
-/* } */
+/*! Optional, just for visibility of the container */
+/*! .portfolio-websites-show-more-container, .portfolio-websites-show-more-accordion-container-technology-used-container, .portfolio-websites-show-more-accordion-container > h4 { */
+    /*! padding: 0 0; */
+    /*! background-color: var(--light-grey); */
+    /*! border-radius: 0 0 24px 24px; */
+/*! } */
 
-/* Dark mode */
-/* .portfolio-websites-show-more-container-dark-mode {
+/*! Dark mode */
+/*! .portfolio-websites-show-more-container-dark-mode {
     background-color: var(--darkest-grey);
 } */
-/* .portfolio-websites-show-more-accordion-container > h4 {
+/*! .portfolio-websites-show-more-accordion-container > h4 {
     display: none;
 }
 .portfolio-websites-show-more-accordion-container .portfolio-websites-show-more-accordion-container-technology-used-container {
@@ -1294,13 +1309,13 @@ profile-introduction-container-paragraph {
     color: var(--light-mode);
     border: 0.16px solid var(--lightest-grey);
 }
-.contact-form-input-box:focus, .contact-form-input-box:focus-visible {
+.contact-form-input-box:focus {
     filter: brightness(0.96);
     border: 1.44px solid var(--secondary-color);
     outline-style: solid;
     outline-color: var(--secondary-color);
 }
-.contact-form-input-box-dark-mode:focus, .contact-form-input-box-dark-mode:focus-visible {
+.contact-form-input-box-dark-mode:focus {
     caret-color: var(--darkest-grey);
 }
 .contact-form-valid {
@@ -1418,6 +1433,9 @@ profile-introduction-container-paragraph {
 .hcaptcha-modal-ok-button:hover {
     background-color: rgb(235.0, 150.4, 5.3);
 }
+.hcaptcha-modal-ok-button:focus {
+    background-color: rgb(235.0, 150.4, 5.3);
+}
 .contact-form-submit-button-container {
     display: flex;
     justify-content: center;
@@ -1437,6 +1455,9 @@ profile-introduction-container-paragraph {
     cursor: pointer;
 }
 .contact-form-submit-button:hover {
+    background-color: rgb(144.3, 92.9, 79.5);
+}
+.contact-form-submit-button:focus {
     background-color: rgb(144.3, 92.9, 79.5);
 }
 @media only screen and (max-width: 600px) {
@@ -1497,6 +1518,10 @@ profile-introduction-container-paragraph {
     background-color: var(--secondary-color);
     color: var(--light-mode);
 }
+.footer-navigation-links a:focus {
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+}
 .footer-navigation-links a.footer-navigation-links-dark-mode {
     color: var(--light-mode);
 }
@@ -1515,6 +1540,9 @@ a.footer-navigation-link-backtotop {
     cursor: pointer;
 }
 a.footer-navigation-link-backtotop:hover {
+    background-color: rgb(144.3, 92.9, 79.5);
+}
+a.footer-navigation-link-backtotop:focus {
     background-color: rgb(144.3, 92.9, 79.5);
 }
 @media only screen and (max-width: 600px) {
@@ -1550,6 +1578,10 @@ a.footer-navigation-link-backtotop:hover {
     transition: background-color 1s;
 }
 .footer-absolute-links a:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+}
+.footer-absolute-links a:focus {
     background-color: var(--secondary-color);
     color: var(--light-mode);
 }
@@ -1613,5 +1645,8 @@ a.footer-navigation-link-backtotop:hover {
     transition: box-shadow 0.5s;
 }
 .footer-bottom-privacy-policy-link:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.2);
+}
+.footer-bottom-privacy-policy-link:focus {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
