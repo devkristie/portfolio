@@ -205,6 +205,30 @@ body::before {
     padding-left: 2em;
     background-color: var(--primary-color);
 }
+.top-navigation-bar-skip-to-main-content-link {
+    position: absolute;
+    left: -187px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 1em;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+    -webkit-clip-path: polygon(0 0, 93% 0, 98.5% 50%, 93% 100%, 0 100%, 0 50%);
+    clip-path: polygon(0 0, 93% 0, 98.5% 50%, 93% 100%, 0 100%, 0 50%);
+    transition: left 0.5s linear;
+}
+.top-navigation-bar-skip-to-main-content-link:focus {
+    left: 0;
+    border: 2.5px solid #0561DA;
+    outline-style: solid;
+    outline-color: #FFF;
+    outline-offset: -2.5px;
+    transition: left 0.5s linear;
+}
 .top-navigation-bar-logo-container {
     width: 68px;
     height: 40px;
