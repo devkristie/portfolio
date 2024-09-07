@@ -29,6 +29,22 @@ document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     });
 });
 
+document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
+    const portfolioSection = document.querySelector(".portfolio-skip-to-main-tab");
+    portfolioSection.setAttribute("tabindex", "-1");
+    portfolioSection.focus();
+
+    const targetSection = document.querySelector("#portfolio-start");
+
+    if (targetSection) {
+        const scrollOffset = 80;
+        window.scrollTo({
+            top: targetSection.offsetTop - scrollOffset, // Scroll to the top of the section
+            behavior: "smooth" // Smooth scroll behavior
+        });
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggleButton = document.querySelector(".dark-mode-toggle-button");
     const darkModeIcon = darkModeToggleButton.querySelector(".fa-moon");
