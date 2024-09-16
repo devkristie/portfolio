@@ -30,14 +30,14 @@ document.querySelectorAll("a[href^='#']").forEach((anchor) => {
 });
 
 document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
-    const portfolioSection = document.querySelector(".portfolio-skip-to-main-tab");
+    const portfolioSection = document.querySelector(".portfolio-section-container");
     portfolioSection.setAttribute("tabindex", "-1");
     portfolioSection.focus();
 
     const targetSection = document.querySelector("#portfolio-start");
 
     if (targetSection) {
-        const scrollOffset = 80;
+        const scrollOffset = 79;
         window.scrollTo({
             top: targetSection.offsetTop - scrollOffset, // Scroll to the top of the section
             behavior: "smooth" // Smooth scroll behavior
@@ -193,8 +193,14 @@ const showDarkModeModal = () => {
     const landingPageTitleClosingCurlyBrace = document.querySelector(".landing-page-title-closing-curly-brace");
     const laptopImageTopShell = document.querySelector(".laptop-image-top-shell");
     const laptopImageWebcam = document.querySelector(".laptop-image-webcam");
-    const laptopImageKey = document.querySelectorAll(".laptop-image-key");
     const laptopImageBottomShell = document.querySelector(".laptop-image-bottom-shell");
+    const laptopImageBottomShellHinge = document.querySelector(".laptop-image-bottom-shell-hinge");
+    const laptopImageKey = document.querySelectorAll(".laptop-image-key");
+    const laptopImageMousepad = document.querySelector(".laptop-image-mousepad");
+    const laptopImageMousepadLineHorizontal = document.querySelector(".laptop-image-mousepad-line-horizontal");
+    const laptopImageMousepadLineVertical = document.querySelector(".laptop-image-mousepad-line-vertical");
+    const laptopImageBottomShellUnderneath = document.querySelector(".laptop-image-bottom-shell-underneath");
+    const laptopImageBottomShellUnderneathGrip = document.querySelector(".laptop-image-bottom-shell-underneath-grip");
     const profileContentContainer = document.querySelector(".profile-content-container");
     const profileQuotationContainer = document.querySelector(".profile-quotation-container");
     const profileQuotationMark = document.querySelector("q");
@@ -253,12 +259,24 @@ const showDarkModeModal = () => {
         
         laptopImageWebcam.classList.add("laptop-image-webcam-dark-mode");
         
+        laptopImageBottomShell.classList.add("laptop-image-bottom-shell-dark-mode");
+
+        laptopImageBottomShellHinge.classList.add("laptop-image-bottom-shell-hinge-dark-mode");
+
         laptopImageKey.forEach((key) => {
             key.classList.add("laptop-image-key-dark-mode");
         });
+
+        laptopImageMousepad.classList.add("laptop-image-mousepad-dark-mode");
+
+        laptopImageMousepadLineHorizontal.classList.add("laptop-image-mousepad-line-horizontal-dark-mode");
+
+        laptopImageMousepadLineVertical.classList.add("laptop-image-mousepad-line-vertical-dark-mode");
+
+        laptopImageBottomShellUnderneath.classList.add("laptop-image-bottom-shell-underneath-dark-mode");
         
-        laptopImageBottomShell.classList.add("laptop-image-bottom-shell-dark-mode");
-        
+        laptopImageBottomShellUnderneathGrip.classList.add("laptop-image-bottom-shell-underneath-grip-dark-mode");
+
         profileContentContainer.classList.add("profile-content-container-dark-mode");
         
         profileQuotationContainer.classList.add("profile-quotation-container-dark-mode");
@@ -402,12 +420,24 @@ const showDarkModeModal = () => {
         
         laptopImageWebcam.classList.remove("laptop-image-webcam-dark-mode");
         
+        laptopImageBottomShell.classList.remove("laptop-image-bottom-shell-dark-mode");
+
+        laptopImageBottomShellHinge.classList.remove("laptop-image-bottom-shell-hinge-dark-mode");
+
         laptopImageKey.forEach((key) => {
             key.classList.remove("laptop-image-key-dark-mode");
         });
+
+        laptopImageMouspead.classList.remove("laptop-image-mousepad-dark-mode");
+
+        laptopImageMousepadLineHorizontal.classList.remove("laptop-image-mousepad-line-horizontal-dark-mode");
+
+        laptopImageMousepadLineVertical.classList.remove("laptop-image-mousepad-line-vertical-dark-mode");
         
-        laptopImageBottomShell.classList.remove("laptop-image-bottom-shell-dark-mode");
+        laptopImageBottomShellUnderneath.classList.remove("laptop-image-bottom-shell-underneath-dark-mode");
         
+        laptopImageBottomShellUnderneathGrip.classList.remove("laptop-image-bottom-shell-underneath-grip-dark-mode");
+
         profileContentContainer.classList.remove("profile-content-container-dark-mode");
 
         profileQuotationMark.classList.remove("q-dark-mode");
@@ -760,20 +790,43 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
     });
 });
 
+// contactFormInputs.forEach((input, index) => {
+//     input.addEventListener("input", () => {
+//         if (input.value !== "") {
+//             contactFormLabels[index].style.margin = "-1.5em 0.5em";
+//         } else {
+//             contactFormLabels[index].style.margin = "0.25em 0.5em";
+//         }
+//         contactFormLabels[index].style.transition = "margin 0.35s ease";
+//     });
+//     // Check input values on page load
+//     if (input.value !== "") {
+//         contactFormLabels[index].style.margin = "-1.5em 0.5em";
+//     }
+// });
+//! This works
+
 contactFormInputs.forEach((input, index) => {
-    input.addEventListener("input", () => {
+    const originalPlaceholder = input.placeholder;
+    input.placeholder = "";
+    input.addEventListener("focus", () => {
+        contactFormLabels[index].style.margin = "-1.5em 0.5em";
+        contactFormLabels[index].style.transition = "margin 0.35s ease";
+        input.placeholder = originalPlaceholder; 
+    });
+    input.addEventListener("blur", () => {
+        contactFormLabels[index].style.margin = "0.25em 0.5em";
+        contactFormLabels[index].style.transition = "margin 0.35s ease";
+        input.placeholder = ""; 
+
         if (input.value !== "") {
             contactFormLabels[index].style.margin = "-1.5em 0.5em";
         } else {
             contactFormLabels[index].style.margin = "0.25em 0.5em";
         }
-        contactFormLabels[index].style.transition = "margin 0.35s ease";
     });
-    // Check input values on page load
-    if (input.value !== "") {
-        contactFormLabels[index].style.margin = "-1.5em 0.5em";
-    }
 });
+//! Experiemental for people who have contrast changed in the settings
 
 document.addEventListener("DOMContentLoaded", function () {
     const regexInput = {
@@ -1035,10 +1088,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     contactFormInputs.forEach((input) => {
-        input.addEventListener("keyup", (e) => {
-            const regex = regexInput[e.target.attributes.name.value];
-            validate(e.target, regex || /.*/);
-        });
+        //? input.addEventListener("keyup", (e) => {
+        //?     const regex = regexInput[e.target.attributes.name.value];
+        //?     validate(e.target, regex || /.*/);
+        //? });
 
         input.addEventListener("blur", (e) => {
             const regex = regexInput[e.target.attributes.name.value];

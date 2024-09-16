@@ -450,7 +450,8 @@ main {
 .landing-page-title-welcome  {
     position: relative;
     z-index: 4;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    color: var(--dark-mode);
 }
 .landing-page-title-welcome-dark-mode {
     color: var(--light-mode);
@@ -459,9 +460,9 @@ main {
     position: absolute;
     z-index: 2;
     display: inline-block;
-    width: 205px;
+    width: 215px;
     height: 28.8px;
-    margin: 2.55em 0 0 -8.9em;
+    margin: 2.55em 0 0 -9.8em;
     background-color: var(--light-grey);
     opacity: 0.5;
 }
@@ -472,9 +473,9 @@ main {
     position: absolute;
     z-index: 1;
     display: inline-block;
-    width: 227.5px;
+    width: 235.5px;
     height: 16px;
-    margin: 3.75em 0 0 -8em;
+    margin: 3.75em 0 0 -9.35em;
     background-color: var(--lightest-grey);
     opacity: 0.75;
 }
@@ -521,14 +522,22 @@ main {
     color: var(--dark-grey);
 }
 .laptop-image-container {
-    height: 194px;
-    margin-top: 2em;
+    height: 204px;
+    /*? margin-top: 2em; */
 }
 .laptop-image-top-shell {
+    stroke: var(--dark-grey);
     fill: var(--dark-mode);
+    stroke-width: 1px;
+}
+.laptop-image-top-shell-dark-mode {
+    fill: var(--light-mode);
 }
 .laptop-image-webcam {
     fill: var(--light-grey);
+}
+.laptop-image-webcam-dark-mode {
+    fill: #666666;
 }
 .laptop-image-vscode-activity-bar {
     fill: var(--dark-grey);
@@ -552,30 +561,6 @@ main {
     fill: none;
     stroke-width: 0.8px;
 }
-.laptop-image-key {
-    stroke: var(--darker-grey);
-    fill: var(--dark-mode);
-    stroke-width: 0.48px;
-}
-.laptop-image-bottom-shell {
-    stroke: var(--dark-mode);
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 16px;
-}
-.laptop-image-top-shell-dark-mode {
-    fill: var(--light-mode);
-}
-.laptop-image-webcam-dark-mode {
-    fill: #666666;
-}
-.laptop-image-key-dark-mode {
-    stroke: var(--darker-grey);
-    fill: var(--light-mode);
-}
-.laptop-image-bottom-shell-dark-mode {
-    stroke: var(--light-mode);
-}
 .laptop-image-code {
     stroke: var(--primary-color);
     fill: none;
@@ -589,6 +574,70 @@ main {
         stroke-dashoffset: 0;
     }
 }
+.laptop-image-bottom-shell {
+    stroke: var(--dark-grey);
+    fill: var(--dark-mode);
+    stroke-linecap: round;
+    stroke-width: 1px;
+}
+.laptop-image-bottom-shell-dark-mode {
+    stroke: var(--dark-grey);
+    fill: var(--light-mode);
+}
+.laptop-image-bottom-shell-hinge {
+    stroke: var(--darker-grey);
+    fill: var(--dark-mode);
+    stroke-linecap: round;
+    stroke-width: 1px;
+}
+.laptop-image-bottom-shell-hinge-dark-mode {
+    stroke: var(--dark-grey);
+    fill: var(--light-mode);
+}
+.laptop-image-key {
+    stroke: var(--dark-grey);
+    fill: var(--darkest-grey);
+    stroke-linecap: round;
+    stroke-width: 0.025em;
+}
+.laptop-image-key-dark-mode {
+    stroke: var(--darker-grey);
+    fill: var(--light-grey);
+}
+.laptop-image-mousepad {
+    fill: var(--darkest-grey);
+    stroke-linecap: round;
+    filter: brightness(0.90);
+}
+.laptop-image-mousepad-dark-mode {
+    fill: var(--lightest-grey);
+}
+.laptop-image-mousepad-line-horizontal, .laptop-image-mousepad-line-vertical {
+    stroke: var(--dark-mode);
+    fill: none;
+    stroke-width: 0.025em;
+}
+.laptop-image-mousepad-line-horizontal-dark-mode, .laptop-image-mousepad-line-vertical-dark-mode {
+    stroke: var(--dark-grey);
+}
+.laptop-image-bottom-shell-underneath {
+    stroke: var(--dark-grey);
+    fill: var(--dark-mode);
+    stroke-linecap: round;
+    stroke-width: 1px;
+}
+.laptop-image-bottom-shell-underneath-dark-mode {
+    stroke: var(--dark-grey);
+    fill: var(--light-mode);
+}
+.laptop-image-bottom-shell-underneath-grip {
+    fill: var(--darker-grey);
+    stroke-linecap: round;
+    filter: brightness(0.90);
+}
+.laptop-image-bottom-shell-underneath-grip-dark-mode {
+    fill: var(--lightest-grey);
+}
 @media only screen and (min-width: 770px) {
     .landing-page-section-container {
         display: flex;
@@ -597,7 +646,7 @@ main {
         align-items: center;
     }
     .landing-page-title-container {
-        margin-top: 1.25em;
+        margin-top: 0.36em;
     }
     .laptop-image-container {
         margin-top: 1em;
@@ -816,6 +865,9 @@ profile-introduction-container-paragraph {
         border-radius: 24px 0 0 24px;
     }
 }
+.portfolio-section-container {
+    padding-bottom: 5em;
+}
 .section-introduction-container {
     display: flex;
     flex-direction: column;
@@ -877,7 +929,7 @@ profile-introduction-container-paragraph {
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin: 5em auto;
+    margin: 5em auto 0;
     background-color: var(--lightest-grey);
     border-radius: 24px;
 }
