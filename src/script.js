@@ -118,16 +118,16 @@ const showDarkModeModal = () => {
 
         darkModeModalAllowButton.addEventListener("click", () => {
             // Temporarily disable the aria-live region
-            const ariaLiveElement = document.querySelector('[aria-live]');
-            const previousAriaLiveValue = ariaLiveElement.getAttribute('aria-live');
-            ariaLiveElement.setAttribute('aria-live', 'off');
+            const ariaLiveElement = document.querySelector("[aria-live]");
+            const previousAriaLiveValue = ariaLiveElement.getAttribute("aria-live");
+            ariaLiveElement.setAttribute("aria-live", "off");
 
             localStorage.setItem("darkModePreference", "enabled");
 
             enableDarkMode();
                 // Re-enable the aria-live region
                 setTimeout(() => {
-                ariaLiveElement.setAttribute('aria-live', previousAriaLiveValue);
+                ariaLiveElement.setAttribute("aria-live", previousAriaLiveValue);
             }, 500); // Delay re-enabling slightly to ensure dark mode changes have been applied
             
             closeModal();
@@ -428,7 +428,7 @@ const showDarkModeModal = () => {
             key.classList.remove("laptop-image-key-dark-mode");
         });
 
-        laptopImageMouspead.classList.remove("laptop-image-mousepad-dark-mode");
+        laptopImageMousepad.classList.remove("laptop-image-mousepad-dark-mode");
 
         laptopImageMousepadLineHorizontal.classList.remove("laptop-image-mousepad-line-horizontal-dark-mode");
 
@@ -572,7 +572,7 @@ hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
 // Function to show or hide the menu
 function showMenu() {
     // Select the hamburger menu button
-    const menuButton = document.querySelector(".hamburger-menu-container");
+    const menuButton = hamburgerMenuIconContainer;
     
     // Get the current state of the aria-expanded attribute
     const ariaExpanded = menuButton.getAttribute("aria-expanded");
@@ -1065,7 +1065,6 @@ document.addEventListener("DOMContentLoaded", function () {
     //     }, 100); // Ensure this matches the duration of your focus ring CSS
     // });
 //! This works by only announcing the submit form button once on the screen reader, but has permement focus
-
 
                 }
     
