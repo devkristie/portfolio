@@ -1,0 +1,104 @@
+/*
+Modal CSS Order:
+1. The modal CSS blocks are organized to follow the structure of the HTML, starting with elements that appear at the top and progressing downward.
+2. If there is any group selectors, they appear at the top of the structured order.
+3. If there are any pseudo selectors or group pseudo selectors, they appear underneath the selectors they relate to.
+*/
+.dark-mode-modal-overlay,
+.hcaptcha-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6; 
+    width: 100%;
+    height: 100%;
+    background: var(--light-mode);
+}
+.dark-mode-modal-container,
+.hcaptcha-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: 95%;
+    text-align: center;
+    background-color: var(--light-mode);
+}
+.dark-mode-modal-title,
+.hcaptcha-modal-title {
+    margin: 1em 0 1em 0;
+    font-size: 1.5rem;
+    font-family: "roboto-bold", Arial;
+    font-weight: 900;
+    color: var(--secondary-color);
+}
+.dark-mode-modal-first-paragraph,
+.dark-mode-modal-second-paragraph,
+.hcaptcha-modal-first-paragraph,
+.hcaptcha-modal-second-paragraph {
+    padding: 0 1.75em;
+    font-family: "roboto-regular", Arial;
+    color: var(--darkest-grey);
+}
+.dark-mode-modal-first-paragraph,
+.dark-mode-modal-second-paragraph {
+    font-size: 1rem;
+}
+
+.dark-mode-modal-allow-button,
+.dark-mode-modal-decline-button {
+    position: fixed;
+    top: 75%;
+    width: 25%;
+    height: 40px;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    background-color: var(--primary-color);
+    color: var(--dark-mode);
+    border: none;
+    border-radius: 80px;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(50%, 50%);
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+.dark-mode-modal-allow-button:hover,
+.dark-mode-modal-allow-button:focus,
+.dark-mode-modal-decline-button:hover,
+.dark-mode-modal-decline-button:focus {
+    background-color: rgb(235.0, 150.4, 5.3);
+}
+.dark-mode-modal-container {
+    height: 448px;
+    transform: translate(2.5%, 20%);
+}
+.dark-mode-modal-allow-button {
+    left: 5%;
+}
+.dark-mode-modal-decline-button {
+    right: 30%;
+}
+
+.hcaptcha-modal-container {
+    /*? height: 248px; */
+    height: 185px;
+    transform: translate(2.5%, 36%);
+}
+.hcaptcha-modal-ok-button {
+    width: 25%;
+    height: 40px;
+    margin-top: 0.7em;
+    font-size: 1rem;
+    font-family: "roboto-bold", Arial;
+    background-color: var(--primary-color);
+    color: var(--dark-mode);
+    border: none;
+    border-radius: 80px;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+.hcaptcha-modal-ok-button:hover,
+.hcaptcha-modal-ok-button:focus {
+    background-color: rgb(235.0, 150.4, 5.3);
+}

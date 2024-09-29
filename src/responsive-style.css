@@ -1,0 +1,256 @@
+/*
+Responsive CSS Order:
+1. The media query blocks are organized to follow the structure of the HTML, starting with elements that appear at the top and progressing downward.
+2. If there is any group selectors in the media query block, they appear on the top of the media query block.
+3. If there are any pseudo selectors or group pseudo selectors, they appear underneath the selectors they relate to.
+4. Media queries are organized from the largest to the smallest screen sizes, with larger screen styles defined first and smaller screen styles overriding them as needed.
+*/
+@media only screen and (orientation: landscape) and (max-height: 550px) {
+    .dark-mode-modal-container {
+        height: 80%;
+        overflow-y: auto;
+    }
+    .dark-mode-modal-first-paragraph,
+    .dark-mode-modal-second-paragraph {
+        margin-top: 0em;
+    }
+    .dark-mode-modal-allow-button,
+    .dark-mode-modal-decline-button {
+        position: relative;
+        top: 0;
+        margin-bottom: 3.5em;
+    }
+    .dark-mode-modal-allow-button {
+        margin-right: 25%;
+    }
+    .dark-mode-modal-decline-button {
+        margin-left: 25%;
+    }
+}
+@media only screen and (orientation: portrait) and (max-height: 550px) {
+    .dark-mode-modal-container {
+        height: 80%;
+        overflow-y: auto;
+    }
+    .dark-mode-modal-first-paragraph,
+    .dark-mode-modal-second-paragraph {
+        margin-top: 0em;
+    }
+    .dark-mode-modal-allow-button {
+        position: relative;
+        top: 0;
+        margin-right: 25%;
+        margin-bottom: 3.5em;
+    }
+    .dark-mode-modal-decline-button {
+        position: relative;
+        top: 0;
+        margin-left: 25%;
+        margin-bottom: 3.5em;
+    }
+}
+@media only screen and (min-width: 474px) {
+    .dark-mode-modal-first-paragraph,
+    .dark-mode-modal-second-paragraph {
+        margin-top: 3.25em;
+    }
+}
+@media only screen and (orientation: landscape) and (max-height: 450px) {
+    .hcaptcha-modal-container {
+        /*? height: 185px; */
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .top-navigation-bar-accordion-links > li {
+        width: 75%;
+        padding: 0.1em 0.70em;
+        text-align: center;
+    }
+    .top-navigation-bar-accordion-links > li:first-child {
+        margin-left: 5em;
+    }
+    .top-navigation-bar-accordion-links > li:last-child {
+        margin-right: 5em;
+    }
+}
+@media only screen and (max-width: 355px) {
+    .top-navigation-bar-accordion-links > li {
+        padding: 0.1em 0.30em;
+    }
+}
+
+@media only screen and (min-width: 770px) {
+    .landing-page-section-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .landing-page-title-container {
+        margin-top: 0.36em;
+    }
+    .laptop-image-container {
+        margin-top: 1em;
+    }
+}
+
+@media only screen and (min-width: 1180px) {
+    .profile-content-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    .profile-headshot {
+        position: absolute;
+        display: flex;
+        align-self: center;
+        right: 0;
+        margin: 0 20% 15em 0;
+    }
+    .profile-quotation-container {
+        position: absolute;
+        display: flex;
+        align-self: center;
+        right: -68px;
+        margin: 12em 20% 0 0;
+    }
+    .profile-introduction-container {
+        width: 50%;
+        margin: 0;
+        padding: 2.5em 3em 0;
+        border-radius: 24px 0 0 24px;
+    }
+}
+@media only screen and (max-width: 685px) {
+    .profile-quotation-container {
+        margin-top: 10.75em;
+    }
+    .profile-introduction-container {
+        margin-top: -14.25em;
+        padding-top: 17.25em;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .profile-introduction-download-cv-button {
+        min-width: 150px;
+        margin: 3.5em auto 3em;
+    }
+}
+@media only screen and (max-width: 465px) {
+    .profile-introduction-container {
+        width: 100%;
+        margin: 5em auto;
+    } 
+}
+@media only screen and (min-width: 1000px) {
+    .section-introduction-container {
+        width: 43.5%;
+    }
+}
+
+/*! @media only screen and (max-width: 400px) {
+    .section-title {
+        letter-spacing: 0.075em;
+    }
+} */
+@media only screen and (min-width: 1200px) {
+    .portfolio-websites-slider-container {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .portfolio-websites-slider-container {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .portfolio-websites-button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .portfolio-websites-view-website-button,
+    .portfolio-websites-view-source-code-button {
+        border-right: none;
+        border-left: none;
+    }
+    .portfolio-websites-view-website-button {
+        border-top: none;
+        border-bottom: 0.16px solid var(--light-mode);        
+    }
+    .portfolio-websites-view-source-code-button {
+        border-top: 0.16px solid var(--light-mode);
+        border-bottom: none;        
+    }
+}
+@media only screen and (max-width: 601px) {
+    .portfolio-websites-slider-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .portfolio-websites-slider-left-arrow,
+    .portfolio-websites-slider-right-arrow {
+        width: 100%;
+        height: 48px;
+    }
+    .portfolio-websites-slider-left-arrow svg,
+    .portfolio-websites-slider-right-arrow svg {
+        width: 48px; /* Size for larger screens */
+        height: 48px; /* Size for larger screens */
+    }
+    .portfolio-websites-slider-left-arrow > svg > path,
+    .portfolio-websites-slider-right-arrow > svg > path {
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+    .portfolio-websites-slider-left-arrow {
+        border-radius: 24px 24px 0 0;
+    }
+    .portfolio-websites-slider-container > figure {
+        width: 100%;
+    }
+    .portfolio-websites-slider-right-arrow {
+        margin-top: 7.9em;
+        border-radius: 0 0 24px 24px;
+    }
+}
+
+/*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
+@media only screen and (min-width: 650px) {
+    .portfolio-websites-show-more-accordion-container-technology-used-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+@media only screen and (max-width: 465px) {
+    .portfolio-websites-show-more-accordion-container-paragraph {
+        margin: 0 1em;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .portfolio-websites-show-more-accordion-container-technology-used-container > div {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-form-submit-button {
+        min-width: 150px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    a.footer-navigation-link-backtotop {
+      min-width: 150px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .footer-absolute-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1em;
+        line-height: 1.75em;
+    }
+}

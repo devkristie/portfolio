@@ -1,0 +1,150 @@
+/*
+Dark Mode CSS Order:
+1. The dark mode CSS blocks are organized to follow the structure of the HTML, starting with elements that appear at the top and progressing downward.
+2. If there is any group selectors, they appear at the top of the structured order.
+3. If there are any pseudo selectors or group pseudo selectors, they appear underneath the selectors they relate to.
+*/
+.sr-only-dark-mode {
+    color: var(--light-mode);
+}
+#darkModeStatus,
+.dynamic-announcer-dark-mode {
+    color: var(--dark-mode);
+}
+.sr-only-darkModeIcon-dark-mode,
+.sr-only-lightModeIcon-dark-mode {
+    color: var(--light-mode);
+}
+
+.main-dark-mode {
+    background-color: var(--dark-mode);
+}
+
+.landing-page-title-opening-curly-brace-dark-mode,
+.landing-page-title-closing-curly-brace-dark-mode {
+    color: var(--dark-grey);
+}
+.landing-page-title-property-value-to-my-dark-mode,
+.landing-page-title-property-value-front-end-dark-mode,
+.landing-page-title-property-development-dark-mode,
+.landing-page-title-value-semicolon-dark-mode {
+    color: var(--light-grey);
+}
+.landing-page-title-welcome-dark-mode {
+    color: var(--light-mode);
+}
+.landing-page-title-welcome-background-one-dark-mode {
+    background-color: var(--darker-grey);
+}
+.landing-page-title-welcome-background-two-dark-mode {
+    background-color: var(--darkest-grey);
+}
+
+.laptop-image-mousepad-line-horizontal-dark-mode,
+.laptop-image-mousepad-line-vertical-dark-mode {
+    stroke: var(--dark-grey);
+}
+.laptop-image-bottom-shell-dark-mode,
+.laptop-image-bottom-shell-hinge-dark-mode,
+.laptop-image-bottom-shell-underneath-dark-mode {
+    stroke: var(--dark-grey);
+    fill: var(--light-mode);
+}
+.laptop-image-mousepad-dark-mode,
+.laptop-image-bottom-shell-underneath-grip-dark-mode {
+    fill: var(--lightest-grey);
+}
+.laptop-image-top-shell-dark-mode {
+    fill: var(--light-mode);
+}
+.laptop-image-webcam-dark-mode {
+    fill: #666666;
+}
+.laptop-image-key-dark-mode {
+    stroke: var(--darker-grey);
+    fill: var(--light-grey);
+}
+
+.profile-content-container-dark-mode {
+    background-color: var(--darkest-grey);
+}
+.profile-quotation-container-dark-mode {
+    background-color: var(--darker-grey);
+    color: var(--lightest-grey);
+}
+.q-dark-mode {
+    color: var(--lightest-grey);
+}
+.profile-introduction-container-paragraph-dark-mode {
+    color: var(--light-mode);
+    filter: contrast(0.625);
+}
+.section-introduction-container > .section-introduction-container-h2-dark-mode {
+    text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
+    color: var(--light-mode);
+}
+.section-introduction-container > .section-introduction-container-p-dark-mode {
+    color: var(--light-grey);
+}
+.portfolio-websites-container-dark-mode {
+    background-color: var(--darker-grey);
+}
+.portfolio-websites-show-more-container-dark-mode {
+    background-color: var(--darkest-grey);
+}
+.portfolio-websites-show-more-accordion-container-button-p-dark-mode {
+    color: var(--light-mode);
+}
+.portfolio-websites-show-more-arrow-dark-mode {
+    stroke: var(--light-mode);
+}
+/*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
+.portfolio-websites-show-more-accordion-container-paragraph-dark-mode {
+    color: var(--light-grey);
+}
+.contact-introduction-container-p-highlighted-text-dark-mode {
+    color: var(--light-grey);
+}
+.portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode {
+    color: var(--light-mode);
+}
+
+.contact-form-valid-dark-mode,
+.contact-form-invalid-dark-mode {
+    background-color: var(--darkest-grey);
+    color: var(--light-mode);
+    border: 0.16px solid var(--lightest-grey);
+}
+.contact-form-top-header-container-dark-mode {
+    background-image: linear-gradient(to bottom, var(--darker-grey), var(--dark-mode));
+}
+.fa-envelope-dark-mode {
+    background-image: linear-gradient(to bottom, var(--light-mode), var(--secondary-color));
+}
+.contact-form-label-dark-mode {
+    color: var(--light-grey);
+}
+.contact-form-input-box-dark-mode {
+    background-color: var(--darkest-grey);
+    color: var(--light-mode);
+    border: 0.16px solid var(--lightest-grey);
+}
+.contact-form-input-box-dark-mode:focus {
+    caret-color: var(--darkest-grey);
+}
+
+.footer-section-container-dark-mode {
+    background-color: var(--dark-mode);
+}
+.footer-navigation-container-dark-mode {
+    background-color: var(--darkest-grey);
+}
+.footer-navigation-links a.footer-navigation-links-dark-mode {
+    color: var(--light-mode);
+}
+.footer-absolute-links-dark-mode {
+    color: var(--light-grey);
+}
+.footer-absolute-links a.footer-absolute-links-dark-mode {
+    color: var(--light-mode);
+}
