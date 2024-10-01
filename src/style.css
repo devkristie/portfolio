@@ -699,7 +699,7 @@ cite {
     height: 105.01px;
     object-fit: cover;
     filter: blur(0.8px);
-    image-rendering: smooth;
+    image-rendering: auto;
 }
 .portfolio-websites-slider-image:first-child {
     display: block;

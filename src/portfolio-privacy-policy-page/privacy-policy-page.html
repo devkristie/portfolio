@@ -18,55 +18,104 @@
         <script src="./privacy-policy-page.js" defer></script>
     </head>
     <body>
-        <header class="top-navigation-bar-container">
-            <svg class="top-navigation-bar-logo-container">
-                <path class="logo-opening-curly-brace" d="M12 7 Q7 7 7 13 Q7 18.5 4 19.5 M4 19.5 Q7 21.5 7 23 Q7 31.5 12 31.5"/>
-                <path class="logo-less-than-sign" d="M22 9 L12 19.5 L22 29"/>
-                <circle class="logo-top-colon" cx="29" cy="7.5" r="2.5"/>
-                <circle class="logo-bottom-colon" cx="29" cy="15" r="2.5"/>
-                <path class="logo-forward-slash" d="M41 9 L27.5 29.5"/>
-                <circle class="logo-top-semicolon" cx="40" cy="23" r="2.5"/>
-                <circle class="logo-bottom-semicolon" cx="40" cy="30.5" r="2.5"/>
-                <path class="logo-bottom-semicolon-terminal" d="M42 29 Q45 34 37.5 36.5"/>
-                <path class="logo-more-than-sign" d="M46.5 9 L56.5 19.5 L46.5 29"/>
-                <path class="logo-closing-curly-brace" d="M64.5 19 Q61.5 21 61.5 25 Q61.5 31.5 56.5 31.5 M56.5 7 Q61.5 6.5 61.5 15 Q61.5 18 64.5 19"/>
-            </svg>
-            <nav class="top-navigation-bar-dark-mode-icon-container">
-                <ul>
-                    <li>
-                        <i class="fa-solid fa-moon" aria-describedby="Dark mode icon"></i>
-                        <i class="fa-solid fa-sun" aria-describedby="Light mode icon"></i>
-                    </li>
-                </ul>
-            </nav>
-            <svg class="hamburger-menu-container">
-                <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5"/>
-                <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5"/>
-                <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5"/>
-            </svg>
+        <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
+            <a class="top-navigation-bar-skip-to-main-content-link" href="#portfolio-start">Skip To Main Content</a>
+            <a href="index.html" aria-label="Frontend Web Development Portfolio Logo Homepage"><!--!Need to change the link to wwww.kristolio.co.uk when going into production-->
+                <svg class="top-navigation-bar-logo-container" aria-hidden="true">
+                    <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
+                    <path class="logo-less-than-sign" d="M22 11 L12 21.5 L22 31"/>
+                    <circle class="logo-top-colon" cx="29" cy="9.5" r="2.5"/>
+                    <circle class="logo-bottom-colon" cx="29" cy="17" r="2.5"/>
+                    <path class="logo-forward-slash" d="M41 11 L27.5 31.5"/>
+                    <circle class="logo-top-semicolon" cx="40" cy="25" r="2.5"/>
+                    <circle class="logo-bottom-semicolon" cx="40" cy="32.5" r="2.5"/>
+                    <path class="logo-bottom-semicolon-terminal" d="M42 31 Q45 36 37.5 38.5"/>
+                    <path class="logo-more-than-sign" d="M46.5 11 L56.5 21.5 L46.5 31"/>
+                    <path class="logo-closing-curly-brace" d="M56.5 9 Q61.5 8.5 61.5 17 Q61.5 19 64.5 21 M64.5 21 Q61.5 23 61.5 27 Q61.5 33.5 56.5 33.5"/>
+                </svg>
+            </a>
+            <div class="navigation-right">
+                <button class="dark-mode-toggle-button" type="button" aria-label="Enable Dark Mode">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                </button>
+                <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div>
+                <svg class="hamburger-menu-container" aria-label="Hamburger Navigation Menu" role="button" aria-expanded="false" tabindex="0">
+                    <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
+                    <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
+                    <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true"/>
+                </svg>
+                <div id="dynamicAnnouncer" aria-live="polite" class="sr-only"></div>
+            </div>
         </header>
         <header class="top-navigation-bar-accordion-container-hidden">
-            <nav>
-                <ul>
-                    <li class="top-navigation-bar-accordion-links">
-                        <a href="https://www.kristolio.co.uk/#home" rel="noopener noreferrer">Home</a>
-                        <a href="https://www.kristolio.co.uk/#profile" rel="noopener noreferrer">Profile</a>
-                        <a href="https://www.kristolio.co.uk/#portfolio" rel="noopener noreferrer">Portfolio</a>
-                        <a href="https://www.kristolio.co.uk/#contact" rel="noopener noreferrer">Contact</a>
-                        <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">Github</a>
+            <nav aria-label="Main">
+                <ul class="top-navigation-bar-accordion-links">
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#profile">Profile</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">
+                            Github
+                            <span class="sr-only-new-tab">(opens in a new tab)</span>
+                        </a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-            <a id="home"></a>
+            <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Hidden label for screen readers -->
+            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Hidden label for screen readers -->
             <section>
                 <header class="section-title-container">
-                    <h1 class="section-title">PRIVACY POLICY</h1>
+                    <h1 class="section-title">Privacy Policy</h1>
                 </header>
+                <nav class="privacy-policy-content-navigation-container">
+                    <h2>Contents</h2>
+                    <ul class="privacy-policy-content-navigation-links">
+                        <li>
+                            <a href="#introduction">Introduction</a>
+                        </li>
+                        <li>
+                            <a href="#use-of-hcaptcha">Use Of hCaptcha</a>
+                        </li>
+                        <li>
+                            <a href="#use-of-web3forms">Use Of Web3Forms</a>
+                        </li>
+                        <li>
+                            <a href="#cookies">Cookies</a>
+                        </li>
+                        <li>
+                            <a href="#data-security">Data Security</a>
+                        </li>
+                        <li>
+                            <a href="#your-rights">Your Rights</a>
+                        </li>
+                        <li>
+                            <a href="#changes-to-this-privacy-policy">Privacy Policy Changes</a>
+                        </li>
+                        <li>
+                            <a href="#contact-information">Contact Information</a>
+                        </li>
+                    </ul>
+                </nav>
                 <article class="privacy-policy-page-content-container">
+                    <div id="introduction" class="anchor" role="region" aria-labelledby="introduction-label" tabindex="-1"></div>
+                    <div id="introduction-label" class="sr-only">Introduction</div>        
                     <h2>Introduction</h2>
                     <p>Welcome to my portfolio website privacy policy page. This privacy policy explains how I collect, use, and protect your personal information when you visit my website and use my services. By accessing this website, you agree to the terms outlined in this policy.</p>
+                    
+                    <div id="use-of-hcaptcha" class="anchor" role="region" aria-labelledby="use-of-hcaptcha-label" tabindex="-1"></div>
+                    <div id="use-of-hcaptcha-label" class="sr-only">Introduction</div>        
                     <h2>Use Of hCaptcha</h2>
                     <p>I use the hCaptcha security service (hereinafter "hCaptcha") on my website. This service is provided by Intuition Machines, Inc., a Delaware US Corporation ("IMI"). hCaptcha is used to check whether user actions on my online service (such as submitting a login or contact form) meet security requirements. To do this, hCaptcha analyzes the behavior of the website or mobile app visitor based on various characteristics. This analysis starts automatically as soon as the website or mobile app visitor enters a part of the website or app with hCaptcha enabled. For the analysis, hCaptcha evaluates various information (e.g., IP address, how long the visitor has been on the website or app, or mouse movements made by the user). The data collected during the analysis will be forwarded to IMI. hCaptcha analysis in the "invisible mode" may take place completely in the background. Website or app visitors are not advised that such an analysis is taking place if the user is not shown a challenge.</p>
                     <p>Data processing is based on Art. 6(1)(b) of the GDPR: the processing of personal data is necessary for the performance of a contract to which the website visitor is party (for example, the website terms) or in order to take steps at the request of the website visitor prior to entering into a contract. My online service (including my website, mobile apps, and any other apps or other forms of access offered by me) needs to ensure that it is interacting with a human, not a bot, and that activities performed by the user are not related to fraud or abuse. In addition, processing may also be based on Art. 6(1)(f) of the GDPR: my online service has a legitimate interest in protecting the service from abusive automated crawling, spam, and other forms of abuse that can harm the service or other users of the service.</p>
@@ -75,6 +124,9 @@
                         <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener noreferrer">hCaptcha Privacy Policy</a> and
                         <a href="https://www.hcaptcha.com/terms" target="_blank" rel="noopener noreferrer">hCaptcha Terms Of Service</a>.
                     </p>
+                    
+                    <div id="use-of-web3forms" class="anchor" role="region" aria-labelledby="use-of-web3forms-label" tabindex="-1"></div>
+                    <div id="use-of-web3forms-label" class="sr-only">Introduction</div>        
                     <h2>Use Of Web3Forms</h2>
                     <p>In addition to hCaptcha, my website uses Web3Forms to handle form submissions. When you submit a form on my website, the data you provide (such as your name, email address, and message) is sent to Web3Forms and then forwarded to my email.</p>
                     <p>Web3Forms processes the data in accordance with their privacy policy and terms of service. This includes using security measures to protect your data and ensuring compliance with relevant data protection laws.</p>
@@ -82,17 +134,32 @@
                         <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">Web3Forms Privacy Policy</a> and 
                         <a href="https://web3forms.com/terms" target="_blank" rel="noopener noreferrer">Web3Forms Terms Of Service</a>.
                     </p>
+                    
+                    <div id="cookies" class="anchor" role="region" aria-labelledby="cookies-label" tabindex="-1"></div>
+                    <div id="cookies-label" class="sr-only">Introduction</div>        
                     <h2>Cookies</h2>
                     <p>My website utilizes cookies to enhance user experience. By accessing this website, you consent to the use of cookies as outlined in this privacy policy. Cookies, which are small data files stored on your device, are employed for specific purposes on my site. These include facilitating dark mode preferences and enhancing security for form submissions. While some cookies are essential for the website's functionality, others serve these specific functions to improve user experience and ensure data security.</p>
+                    
+                    <div id="data-security" class="anchor" role="region" aria-labelledby="data-security-label" tabindex="-1"></div>
+                    <div id="data-security-label" class="sr-only">Introduction</div>        
                     <h2>Data Security</h2>
                     <p>I take the security of your personal information seriously and implement appropriate technical and organizational measures to protect it from unauthorized access, disclosure, alteration, or destruction.</p>
+                    
+                    <div id="your-rights" class="anchor" role="region" aria-labelledby="your-rights-label" tabindex="-1"></div>
+                    <div id="your-rights-label" class="sr-only">Introduction</div>        
                     <h2>Your Rights</h2>
                     <p>You have the right to access, correct, or delete your personal information that I hold. If you wish to exercise these rights, please contact me.</p>
-                    <h2>Changes To This Privacy Policy</h2>
+                    
+                    <div id="changes-to-this-privacy-policy" class="anchor" role="region" aria-labelledby="changes-to-this-privacy-policy-label" tabindex="-1"></div>
+                    <div id="changes-to-this-privacy-policy-label" class="sr-only">Introduction</div>        
+                    <h2>Privacy Policy Changes</h2>
                     <p>I may update this privacy policy from time to time to reflect changes in my practices or applicable laws. I will notify you of any significant changes by posting the new policy on this page.</p>
+                    
+                    <div id="contact-information" class="anchor" role="region" aria-labelledby="contact-information-label" tabindex="-1"></div>
+                    <div id="contact-information-label" class="sr-only">Introduction</div>        
                     <h2>Contact Information</h2>
                     <p>If you have any questions about this privacy policy or my data practices, please 
-                        <a href="https://www.kristolio.co.uk/#contact">contact</a> me.
+                        <a href="https://www.kristolio.co.uk/#contact">Contact</a> me.
                     </p>
                 </article>
             </section>
@@ -102,36 +169,54 @@
                 <nav class="footer-navigation-container">
                     <ul>
                         <li class="footer-navigation-links">
-                            <a class="footer-navigation-link-backtotop" href="#home">Back To Top</a>
-                            <a href="https://www.kristiolio.co.uk/#portfolio" rel="noopener noreferrer">Portfolio</a>
-                            <a href="https://www.kristiolio.co.uk/#contact" rel="noopener noreferrer">Contact</a>
-                            <a href="https://www.kristiolio.co.uk/#portfolio" rel="noopener noreferrer">Blog (Coming Soon)</a>
-                        </li>                        
+                            <a class="footer-navigation-link-backtotop" href="#home"><i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i>Back To Top</a>
+                        </li>
+                        <li class="footer-navigation-links">
+                            <a href="#profile">Profile</a>
+                        </li>
+                        <li class="footer-navigation-links">
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="footer-navigation-links">
+                            <a href="#contact">Contact</a>
+                        </li>
+                        <li class="footer-navigation-links">
+                            <a href="#portfolio">Blog (Coming Soon)</a>
+                        </li>
+                        <li class="footer-absolute-links">
+                            <span aria-hidden="true">Icons by -</span>
+                            <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">
+                                <span class="sr-only">Icons by: </span>
+                                Font Awesome
+                                <span class="sr-only">(opens in a new tab)</span>
+                            </a>
+                        </li>
+                        <li class="footer-absolute-links">
+                            <span aria-hidden="true">Fonts by -</span>
+                            <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">
+                                <span class="sr-only">Fonts by: </span>
+                                Google Fonts
+                                <span class="sr-only">(opens in a new tab)</span>
+                            </a>
+                        </li>
                     </ul>
-                    <p class="footer-absolute-links">
-                        Form submission by - <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer">Web3Forms</a>
-                    </p>
-                    <p class="footer-absolute-links">
-                        Icons by - <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">FontAwesome</a>
-                    </p>
                 </nav>
                 <nav class="footer-bottom-navigation-container">
-                    <ul class="footer-bottom-left-icons">
+                    <ul class="footer-bottom-icons">
                         <li>
-                            <a href="https://www.linkedin.com/in/kristie-larke/" title="Linkedin" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-linkedin" aria-describedby="Kristie Larke Linkedin account icon"></i>
+                            <a href="https://www.linkedin.com/in/kristie-larke/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's LinkedIn profile">
+                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                             </a>
-                            <a href="https://github.com/devkristie?tab=repositories" title="Github" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-square-github" aria-describedby="Kristie Larke GitHub account repositories icon"></i>
+                        </li>
+                        <li>
+                            <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's GitHub repositories">
+                                <i class="fa-brands fa-square-github" aria-hidden="true"></i>
                             </a>
                         </li>
                     </ul>
                     <article>
-                        <p class="footer-bottom-copyright-sign">©</p>
-                        <p class="footer-bottom-copyright-year"></p> <!--Automatically updated in the script.js file-->
-                        <p class="footer-bottom-copyright"> - Kristie Larke, All rights reserved.</p>
-                        </br>
-                        <a class="footer-bottom-privacy-policy-link" href="../portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
+                        <p class="footer-bottom-copyright-sign">© <span class="footer-bottom-copyright-year"></span><span class="footer-bottom-copyright"> - Kristie Larke, All Rights Reserved.</span></p> <!--Footer bottom copyright year is automatically updated in the script.js file-->
+                        <a class="footer-bottom-privacy-policy-link" href="./portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
                     </article>
                 </nav>
             </section>

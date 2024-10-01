@@ -139,7 +139,7 @@ Responsive CSS Order:
 @media only screen and (max-width: 465px) {
     .profile-introduction-container {
         width: 100%;
-        margin: 5em auto;
+        margin: -14.25em auto 0;
     } 
 }
 @media only screen and (min-width: 1000px) {
@@ -147,12 +147,12 @@ Responsive CSS Order:
         width: 43.5%;
     }
 }
-
-/*! @media only screen and (max-width: 400px) {
+ /*? @media only screen and (max-width: 400px) {
     .section-title {
         letter-spacing: 0.075em;
     }
 } */
+
 @media only screen and (min-width: 1200px) {
     .portfolio-websites-slider-container {
         width: 50%;

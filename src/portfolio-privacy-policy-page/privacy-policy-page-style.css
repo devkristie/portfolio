@@ -1,3 +1,6 @@
+body::before { /*This is to stop the filter blur showing at the top of the section title container*/
+    margin-top: 0.25em;
+}
 .body-dark-mode {
     background-color: var(--dark-mode);
     color: var(--light-mode);
@@ -7,17 +10,96 @@
     margin-top: -5em;
 }
 .section-title-container {
-    margin-top: 5em;
+    margin-top: 4.95em;
 }
-@media only screen and (max-width: 533px) {
+@media only screen and (max-width: 600px) {
     .section-title {
-        padding-top: 0.35em;
+        width: 75%;
+        line-height: 0.75em;
     }
+}
+.privacy-policy-content-navigation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 5em auto;
+    background-color: var(--light-grey);
+    border-radius: 24px;
+}
+.privacy-policy-content-navigation-container-dark-mode {
+    background-color: var(--darkest-grey);
+}
+.privacy-policy-content-navigation-container h2 {
+    width: 80%;
+    margin: 1.5em 0 0;
+    padding-left: 0.33em;
+    font-size: 1.5rem;
+    font-family: "roboto-bold", Arial;
+    letter-spacing: 0.01em;
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
+    background-color: var(--lightest-grey);
+    color: var(--dark-mode);
+    border-left: 3px solid var(--secondary-color);
+}
+.privacy-policy-content-navigation-container h2.navigation-h2-dark-mode {
+    background-color: var(--darker-grey);
+    color: var(--light-mode);
+    /* filter: brightness(0.85); */
+}
+.privacy-policy-content-navigation-links {
+    padding: 0;
+    list-style-type: none;
+}
+.privacy-policy-content-navigation-links li::before {
+    display: inline-block;
+    margin: 0 0.25em 0.15em 0;
+    font-size: 1.5em;
+    vertical-align: middle;
+    color: var(--darker-grey);
+    content: "•";
+}
+.privacy-policy-content-navigation-links li.navigation-li-dark-mode::before {
+    display: inline-block;
+    margin: 0 0.25em 0.15em 0;
+    font-size: 1.5em;
+    vertical-align: middle;
+    color: var(--dark-grey);
+    content: "•";
+}
+.privacy-policy-content-navigation-links a {
+    padding: 0.2em 1em;
+    font-size: 1em;
+    font-family: "roboto-bold", Arial;
+    line-height: 2.5em;
+    text-decoration: none;
+    color: var(--dark-mode);
+    transition: background-color 1s;
+}
+.privacy-policy-content-navigation-links a.navigation-a-dark-mode {
+    color: var(--lightest-grey);
+}
+.privacy-policy-content-navigation-links a:hover,
+.privacy-policy-content-navigation-links a:focus {
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
 }
 .privacy-policy-page-content-container {
     width: 80%;
     margin: 0 auto;
     padding-bottom: 5em;
+}
+#introduction {
+    margin-top: -4.99em;
+}
+#use-of-hcaptcha,
+#use-of-web3forms,
+#cookies,
+#data-security,
+#your-rights,
+#changes-to-this-privacy-policy,
+#contact-information {
+    margin-top: -1.949em;
 }
 .privacy-policy-page-content-container h2 {
     margin: 2.7em 0 1.27em;
@@ -28,11 +110,11 @@
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--lightest-grey);
     color: var(--dark-mode);
-    border-left: 8px solid var(--secondary-color);
+    border-left: 3px solid var(--secondary-color);
 }
 .privacy-policy-page-content-container h2.h2-dark-mode {
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
-    background-color: var(--darkest-grey);
+    background-color: var(--darker-grey);
     color: var(--light-mode);
 }
 .privacy-policy-page-content-container p {
@@ -40,15 +122,22 @@
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
     line-height: 1.35;
+    color: var(--darkest-grey);
+}
+.privacy-policy-page-content-container p.p-dark-mode {
+    color: var(--light-grey);
 }
 .privacy-policy-page-content-container a {
-    font-size: 1rem;
+    padding: 0 0.2em;
     font-family: "roboto-regular", Arial;
-    font-weight: 1000;
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.5s;
+    font-weight: 900;
+    color: var(--darkest-grey);
+    transition: background-color 1.25s;
 }
 .privacy-policy-page-content-container a:hover {
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+}
+.privacy-policy-page-content-container a.a-dark-mode {
+    color: var(--lightest-grey);
 }

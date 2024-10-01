@@ -838,6 +838,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactFormValidationParagraphName = document.querySelector(".contact-form-validation-paragraph.name");
     const contactFormValidationParagraphEmail = document.querySelector(".contact-form-validation-paragraph.email");
     const contactFormValidationParagraphPhone = document.querySelector(".contact-form-validation-paragraph.phone");
+    const messageField = document.querySelector("#message");
     const contactFormSubmitButton = document.querySelector(".contact-form-submit-button");
     const form = document.querySelector("form");
 
@@ -860,9 +861,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (document.body.classList.contains("dark-mode")) {
                 field.classList.add("contact-form-input-box-dark-mode");
             }
-            if (!isPhoneField && field.nextElementSibling) {
-                field.nextElementSibling.style.visibility = "hidden";
-            } else if (isPhoneField && contactFormValidationParagraphPhone) {
+            // if (!isPhoneField && field.nextElementSibling) {
+            //     field.nextElementSibling.style.visibility = "hidden";
+            // } 
+            else if (isPhoneField && contactFormValidationParagraphPhone) {
                 contactFormValidationParagraphPhone.style.visibility = "hidden";
             }
         } else if (regex.test(field.value)) {
@@ -890,14 +892,34 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             if (field.id === "fullname" && contactFormValidationParagraphName) {
                 contactFormValidationParagraphName.style.visibility = "visible";
+                announceError("fullname-error", "Please ensure that the full name only contains letters, full stops, commas, apostrophes, or hyphens.");
             } else if (field.id === "email" && contactFormValidationParagraphEmail) {
                 contactFormValidationParagraphEmail.style.visibility = "visible";
+                announceError("email-error", "Please ensure that the email address entered is valid.");
             } else if (isPhoneField && contactFormValidationParagraphPhone) {
                 contactFormValidationParagraphPhone.style.visibility = "visible";
+                announceError("phone-error", "Please ensure the phone number starts with + 4 4.");
             }
+            messageField.addEventListener("blur", function () {
+                if (messageField.value.trim() === "") {
+                    announceError("message-help", "Please enter the message you would like to send to Kristie Larke.");
+                }
+            });
         }
 
         checkFormValidity();
+    }
+
+    // Function to announce errors to screen reader
+    function announceError(errorId, message) {
+        const errorElement = document.getElementById(errorId);
+        
+        // Temporarily clear the message
+        errorElement.textContent = '';  
+        setTimeout(() => {
+            errorElement.textContent = message;  
+            errorElement.setAttribute("aria-hidden", "false");
+        }, 100);
     }
 
     function checkFormValidity() {

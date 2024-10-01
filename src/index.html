@@ -468,22 +468,22 @@
                         
                         <label class="contact-form-label" for="fullname">Full Name</label>
                         <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="e.g., John Doe" pattern="^(?:[a-zA-Z]{2,}\s[a-zA-Z]{2,})(?:\s[a-zA-Z]{2,})?$" autocomplete="off" aria-describedby="fullname-error" required/>
-                        <p class="contact-form-validation-paragraph name" aria-hidden="true">Name can only contain letters and .,'-</p>
-                        <p id="fullname-error" class="sr-only">Please ensure that the full name only contains letters, full stops, commas, apostrophes and hyphens.</p>
+                        <p class="contact-form-validation-paragraph name" aria-hidden="true">Name can only contain letters or . , ' -</p>
+                        <p id="fullname-error" class="sr-only" aria-live="assertive" aria-atomic="true">Please ensure that the full name only contains letters, full stops, commas, apostrophes or hyphens.</p>
 
                         <label class="contact-form-label" for="email">Email</label>
                         <input id="email" class="contact-form-input-box" name="email" title="Email address" placeholder="e.g., example@gmail.com" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,6}(\.[a-zA-Z]{2,6})?$" inputmode="email" autocomplete="off" aria-describedby="email-error" required/>
                         <p class="contact-form-validation-paragraph email" aria-hidden="true">Please enter a valid email address</p>
-                        <p id="email-error" class="sr-only">Please ensure that the email address entered, is valid.</p>
+                        <p id="email-error" class="sr-only" aria-live="assertive" aria-atomic="true">Please ensure that the email address entered, is valid.</p>
                         
                         <label class="contact-form-label" for="phone">Phone (optional)</label>
-                        <input id="phone" class="contact-form-input-box" name="phone" title="Phone number" type="text" placeholder="e.g., +447546662899" pattern="^\+44\d{10}$" autocomplete="off" aria-describedby="phone-error"/>
+                        <input id="phone" class="contact-form-input-box" name="phone" title="Phone number" type="text" placeholder="e.g., +447546662899" pattern="^\+44\d{10}$" autocomplete="off" aria-describedby="phone-error" maxlength="13"/>
                         <p class="contact-form-validation-paragraph phone" aria-hidden="true">Please start the number with +44</p>
-                        <p id="phone-error" class="sr-only">Please ensure the phone number starts with +4&#8203;4</p>
+                        <p id="phone-error" class="sr-only" aria-live="assertive" aria-atomic="true">Please ensure the phone number starts with +4&#8203;4</p>
 
                         <label class="contact-form-label" for="message">Message</label>
                         <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="e.g., Dear Kristie, I am writing to you with regards to your services. Yours kindly, John Doe." autocomplete="off" aria-describedby="message-help" required></textarea>
-                        <p id="message-help" class="sr-only">Please enter the message you would like to send to Kristie Larke.</p>
+                        <p id="message-help" class="sr-only" aria-live="assertive" aria-atomic="true">Please enter the message you would like to send to Kristie Larke.</p>
 
                         <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
                         <div class="contact-form-submit-button-container">
