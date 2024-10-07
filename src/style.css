@@ -479,6 +479,7 @@ main {
     width: 80%;
     margin: 5em auto;
     background-color: var(--lightest-grey);
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
 }
 .profile-headshot {
     width: 117.01px;
@@ -630,6 +631,7 @@ cite {
     margin: 5em auto 0;
     background-color: var(--lightest-grey);
     border-radius: 24px;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
 }
 .portfolio-websites-slider-left-arrow, 
 .portfolio-websites-slider-right-arrow {
@@ -828,6 +830,10 @@ cite {
     min-height: 100vh;
     padding-bottom: 2.5em;
 }
+.contact-form-top-header-container,
+.form-background {
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+}
 .contact-form-valid,
 .contact-form-invalid {
     width: 100%;
@@ -875,6 +881,11 @@ cite {
 .contact-form {
     width: 100%;
 }
+.form-background {
+    height: 31.9em;
+    background-color: #fbfbfb;
+    border-radius: 0 0 24px 24px;
+}
 .contact-form-label {
     position: absolute;
     z-index: 1;
@@ -896,6 +907,8 @@ cite {
     background-color: var(--lightest-grey);
     color: var(--dark-mode);
     border: 0.16px solid var(--dark-mode);
+    border-right: none;
+    border-left: none;
 }
 .contact-form-input-box:placeholder-shown {
     color: var(--lightest-grey);
@@ -1006,6 +1019,7 @@ cite {
     padding: 2em 0 0.75em 0;
     background-color: var(--light-grey);
     border-radius: 25px;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.75);
 }
 .footer-navigation-container > ul {
     margin: 0 0 1em 0;

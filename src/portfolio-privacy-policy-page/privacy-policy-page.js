@@ -1,7 +1,6 @@
 "use strict"
 
 const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
-const lightModeIcon = document.querySelector(".fa-sun");
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
@@ -321,12 +320,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     // Apply dark mode if preference is already enabled
-    document.addEventListener("DOMContentLoaded", () => {
-        const darkModePreference = localStorage.getItem("darkModePreference");
-        if (darkModePreference === "enabled") {
-            enableDarkMode();
-        }
-    });
+    const darkModePreference = localStorage.getItem("darkModePreference");
+    if (darkModePreference === "enabled") {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
 });
 
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
@@ -369,6 +368,7 @@ hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
         showMenu();
     }
 });
+//! THIS NEEDS FIXING: The menu does not open or close when pressing space or tab!
 
 const updateDate = new Date();
 copyrightUpdateYear.textContent = updateDate.getFullYear();

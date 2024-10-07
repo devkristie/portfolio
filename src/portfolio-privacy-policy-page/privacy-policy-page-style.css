@@ -134,7 +134,8 @@ body::before { /*This is to stop the filter blur showing at the top of the secti
     color: var(--darkest-grey);
     transition: background-color 1.25s;
 }
-.privacy-policy-page-content-container a:hover {
+.privacy-policy-page-content-container a:hover,
+.privacy-policy-page-content-container a:focus {
     background-color: var(--secondary-color);
     color: var(--light-mode);
 }
