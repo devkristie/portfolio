@@ -29,12 +29,13 @@ document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     });
 });
 
+//Skip to main content z-index
 document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
     const portfolioSection = document.querySelector(".portfolio-section-container");
     portfolioSection.setAttribute("tabindex", "-1");
     portfolioSection.focus();
 
-    const targetSection = document.querySelector("#portfolio-start");
+    const targetSection = document.querySelector("#skip-to-main-content-start");
 
     if (targetSection) {
         const scrollOffset = 79;
@@ -861,9 +862,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (document.body.classList.contains("dark-mode")) {
                 field.classList.add("contact-form-input-box-dark-mode");
             }
-            // if (!isPhoneField && field.nextElementSibling) {
-            //     field.nextElementSibling.style.visibility = "hidden";
-            // } 
+            if (!isPhoneField && field.nextElementSibling) { // Hiddes the validation message when there is nothing in the input box and the user pressed tab to go to the next input box.
+                field.nextElementSibling.style.visibility = "hidden";
+            } 
             else if (isPhoneField && contactFormValidationParagraphPhone) {
                 contactFormValidationParagraphPhone.style.visibility = "hidden";
             }

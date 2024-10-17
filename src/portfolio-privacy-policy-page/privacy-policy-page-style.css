@@ -26,6 +26,7 @@ body::before { /*This is to stop the filter blur showing at the top of the secti
     margin: 5em auto;
     background-color: var(--light-grey);
     border-radius: 24px;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.75);
 }
 .privacy-policy-content-navigation-container-dark-mode {
     background-color: var(--darkest-grey);

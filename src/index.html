@@ -19,7 +19,7 @@
     </head>
     <body>
         <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
-            <a class="top-navigation-bar-skip-to-main-content-link" href="#portfolio-start">Skip To Main Content</a>
+            <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a>
             <a href="index.html" aria-label="Frontend Web Development Portfolio Logo Homepage"><!--!Need to change the link to wwww.kristolio.co.uk when going into production-->
                 <svg class="top-navigation-bar-logo-container" aria-hidden="true">
                     <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
@@ -236,7 +236,7 @@
             <div id="profile-label" class="sr-only">Profile Section</div>
             <section class="profile-section-container">
                 <header class="section-title-container">
-                    <h1 class="section-title" aria-label="Profile">Profile</h1> <!--!Add to the README.md file: the problem with hovering over the profile text and it being capitalized in the NVDA speech viewer, due to the CSS property text-transform uppercase regardless of the aria-label-->
+                    <h1 class="section-title" aria-label="Profile">Profile</h1> <!--!Is the aria-label needed? I don't think it is, need to test it.-->
                 </header>
                 <div class="profile-content-container">
                     <img class="profile-headshot" src="./assets/images/37_kristie-headshot3.jpg" alt="A professional headshot of Kristie.">
@@ -251,13 +251,15 @@
                         <p class="profile-introduction-container-paragraph">Whether you're an entrepreneur, small business owner, or a creative individual looking to establish your online presence, I offer tailored web development solutions that align with your goals. I bring a blend of technical expertise, creativity, and attention to detail to every project I undertake.</p>
                         <p class="profile-introduction-container-paragraph">If you're in need of a new website, a website redesign, or have any questions about my services, I would be delighted to hear from you. Let's collaborate and create a digital platform that showcases your brand, engages your audience, and drives results.</p>
                         <p class="profile-introduction-container-paragraph">Contact me today to explore the possibilities and take your online presence to new heights.</p>
-                        <a class="profile-introduction-download-cv-button" href="assets/downloads/1_kristie-larke-web-development-resume-portfolio.pdf" download="1_kristie-larke-web-development-resume-portfolio.pdf" aria-label="Download Kristie Larke's Web Development CV"><i class="fa-solid fa-download" aria-hidden="true"></i>Download CV</a>
+                        <a class="profile-introduction-download-cv-button" href="assets/downloads/1_kristie-larke-web-development-resume-portfolio.pdf" download="1_kristie-larke-web-development-resume-portfolio.pdf" aria-label="Download Kristie Larke's Web Development CV">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>Download CV
+                        </a>
                     </article>
                 </div>
             </section>
             <div id="portfolio" class="anchor" role="region" aria-labelledby="portfolio-label" tabindex="-1"></div>
             <div id="portfolio-label" class="sr-only">Portfolio Section</div>
-            <section id="portfolio-start" class="portfolio-section-container">
+            <section id="skip-to-main-content-start" class="portfolio-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">Portfolio</h1>
                 </header>
@@ -266,7 +268,8 @@
                     <p>As a skilled frontend developer, I specialize in creating immersive user experiences with a focus on responsive design and modern web technologies.</p>
                     <p>Projects are the building blocks of my frontend development journey, allowing me to apply my knowledge and deliver innovative solutions tailored to clients' needs.</p>
                     <p>I am passionate about crafting seamless user experiences by blending creativity, functionality, and accessibility. Each project is an opportunity to make a positive impact through intuitive and visually compelling interfaces.</p>
-                    <p><span class="section-introduction-container-p-highlighted-text">Ready to dive into my work?</span> 
+                    <p>
+                        <span class="section-introduction-container-p-highlighted-text">Ready to dive into my work?</span> 
                         Browse through the projects below to get a taste of my frontend expertise. Feel free to click on any project to learn more about the challenges faced, my contributions, and the solutions implemented.
                     </p>
                 </article>
@@ -453,8 +456,10 @@
                 </header>
                 <article class="section-introduction-container">
                     <h2>Ready To Get Started?</h2>
-                    <p><span class="section-introduction-container-p-highlighted-text">Thank you for visiting my portfolio!</span> 
-                        If you'd like to inquire about my services, discuss a potential project, or simply want to connect, please use the form below to send me a message.</p>
+                    <p>
+                        <span class="section-introduction-container-p-highlighted-text">Thank you for visiting my portfolio!</span> 
+                        If you'd like to inquire about my services, discuss a potential project, or simply want to connect, please use the form below to send me a message.
+                    </p>
                     <p>I'll make sure to respond promptly, and I'm excited to learn more about how I can assist you with your frontend needs.</p>
                 </article>
                 <section class="contact-form-container">
@@ -504,7 +509,9 @@
                 <nav class="footer-navigation-container">
                     <ul>
                         <li class="footer-navigation-links">
-                            <a class="footer-navigation-link-backtotop" href="#home"><i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i>Back To Top</a>
+                            <a class="footer-navigation-link-backtotop" href="#home">
+                                <i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i>Back To Top
+                            </a>
                         </li>
                         <li class="footer-navigation-links">
                             <a href="#profile">Profile</a>

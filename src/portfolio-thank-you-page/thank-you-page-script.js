@@ -19,11 +19,11 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
 
 //? Need to fix the HTML link to this
 document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
-    const portfolioSection = document.querySelector(".portfolio-section-container");
-    portfolioSection.setAttribute("tabindex", "-1");
-    portfolioSection.focus();
+    const mainSection = document.querySelector(".thank-you-page-landing-page-section-container");
+    mainSection.setAttribute("tabindex", "-1");
+    mainSection.focus();
 
-    const targetSection = document.querySelector("#portfolio-start");
+    const targetSection = document.querySelector("#skip-to-main-content-start");
 
     if (targetSection) {
         const scrollOffset = 79;

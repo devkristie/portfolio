@@ -19,7 +19,7 @@
     </head>
     <body>
         <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
-            <a class="top-navigation-bar-skip-to-main-content-link" href="#portfolio-start">Skip To Main Content</a>
+            <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a>
             <a href="index.html" aria-label="Frontend Web Development Portfolio Logo Homepage"><!--!Need to change the link to wwww.kristolio.co.uk when going into production-->
                 <svg class="top-navigation-bar-logo-container" aria-hidden="true">
                     <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
@@ -75,7 +75,7 @@
         <main>
             <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Hidden label for screen readers -->
             <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Hidden label for screen readers -->
-            <section class="thank-you-page-landing-page-section-container">
+            <section id="skip-to-main-content-start" class="thank-you-page-landing-page-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">Contact</h1>
                 </header>
@@ -132,7 +132,9 @@
                 <nav class="footer-navigation-container">
                     <ul>
                         <li class="footer-navigation-links">
-                            <a class="footer-navigation-link-backtotop" href="#home"><i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i>Back To Top</a>
+                            <a class="footer-navigation-link-backtotop" href="#home">
+                                <i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i>Back To Top
+                            </a>
                         </li>
                         <li class="footer-navigation-links">
                             <a href="#profile">Profile</a>
