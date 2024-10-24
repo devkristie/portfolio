@@ -79,8 +79,9 @@
                 <header class="section-title-container">
                     <h1 class="section-title">Contact</h1>
                 </header>
-                <div class="thank-you-page-content-container">
-                    <svg class="thank-you-message-svg-animation" viewBox="0 0 600 120" aria-label="Thank you">
+                <div id="aria-label-thank-you" class="sr-only">Thank You</div>
+                <div class="thank-you-page-content-container" aria-labelledby="aria-label-thank-you">
+                    <svg class="thank-you-message-svg-animation" viewBox="0 0 600 120" aria-hidden="true">
                         <defs>
                             <linearGradient id="thank-you-message-svg-animation-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
                                 <stop class="svg-animation-gradient-primary-color" offset="0%"/>
@@ -105,7 +106,7 @@
                         <p class="message-sent-paragraph">Your message has successfully been sent.</p>
                         <p class="message-sent-paragraph">I will follow up with you within 1-2 business days.</p>
                     </article>
-                    <svg class="message-sent-envelope-svg" aria-label="Message sent envelope icon">
+                    <svg class="message-sent-envelope-svg" aria-label="Message sent envelope icon" aria-hidden="true">
                         <path class="message-sent-envelope-svg-envelope" d="M201 40 L201 80 Q200 90 190 90 L140 90 Q120 90 120 80 L120 40 Q120 30 130 30 L180 30 Q205 30 200 40 Q200 45 165 70 L130 40"/>
                         <path class="message-sent-envelope-svg-envelope-end-gap" d="M206 43.5 L195 53.5"/>
                         <path class="message-sent-envelope-svg-envelope-line" d="M105 40 L30 40"/>

@@ -1,3 +1,7 @@
+main { /*This is to stop the filter blur from the image, showing at the top of the section title container*/
+    display: inline-block;
+    width: 100%;
+}
 .body-dark-mode {
     background-color: var(--dark-mode);
     color: var(--light-mode);
