@@ -111,7 +111,7 @@ body::before {
     height: 40px;
     padding: 0 1em;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
     text-decoration: none;
     background-color: var(--secondary-color);
     color: var(--light-mode);
@@ -497,7 +497,8 @@ main {
     margin: 0 3.25em 0 auto;
     padding: 0 1em 0.1em;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-regular", Arial;
+    font-weight: 600;
     text-align: center;
     background-color: var(--light-grey);
     color: var(--darkest-grey);
@@ -563,7 +564,9 @@ cite {
     height: 48px;
     margin: 3.5em auto 3.80em;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
+    font-weight: 600;
+    letter-spacing: 0.025em;
     text-decoration: none;
     background-color: var(--secondary-color);
     color: var(--light-mode);
@@ -609,7 +612,7 @@ cite {
 }
 .section-introduction-container-p-highlighted-text {
     padding: 0 0.2em 0.2em;
-    font-weight: 1000;
+    font-weight: 600;
     line-height: 1.65;
     letter-spacing: 0.01em;
     background-color: var(--darkest-grey);
@@ -659,7 +662,9 @@ cite {
     width: 100%;
     padding: 0.25em 1em;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-regular", Arial;
+    font-weight: 600;
+    letter-spacing: 0.025em;
     text-align: center;
     text-decoration: none;
     background-color: var(--secondary-color);
@@ -882,7 +887,7 @@ cite {
     width: 100%;
 }
 .form-background {
-    height: 31.9em;
+    height: 33.045em;
     background-color: #fbfbfb;
     border-radius: 0 0 24px 24px;
 }
@@ -893,7 +898,8 @@ cite {
     flex-direction: column;
     margin: 0.25em 0.5em;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-regular", Arial;
+    font-weight: 600;
     letter-spacing: 0.02em;
     text-align: center;
     color: var(--darker-grey);
@@ -941,14 +947,16 @@ cite {
 .contact-form-validation-paragraph {
     margin: 0 0 2.11em 0;
     padding: 0 0 0.2em 0.6em;
-    font-size: 0.90rem;
-    font-family: "roboto-bold", Arial;
+    font-size: 1rem;
+    font-family: "roboto-regular", Arial;
+    font-weight: 600;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
 .contact-form-input-box-message {
     height: 203.01px;
     padding: 0.9em 0 0 1.5em;
+    /* border-bottom: none; */ /*?Not sure if this is needed?*/
     border-radius: 0 0 24px 24px;
     resize: none;
 }
@@ -970,7 +978,9 @@ cite {
     height: 48px;
     margin: 3em 0 0 0;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
+    font-weight: 600;
+    letter-spacing: 0.025em;
     background-color: var(--secondary-color);
     color: var(--light-mode);
     border: none;
@@ -985,7 +995,7 @@ cite {
 }
 
 .footer-section-container {
-    position: relative;
+    /* position: relative; */ /*?Dont thing this is needed?*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -997,7 +1007,7 @@ cite {
 }
 .footer-absolute-links:nth-child(7),
 .footer-absolute-links:nth-child(8) {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .footer-bottom-copyright-year,
 .footer-bottom-copyright {
@@ -1015,14 +1025,14 @@ cite {
 }
 .footer-navigation-container {
     width: 80%;
-    margin: 5em 0 17.5em 0;
-    padding: 2em 0 0.75em 0;
+    margin: 5em 0 17.5em;
+    padding: 2em 0;
     background-color: var(--light-grey);
     border-radius: 25px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.75);
 }
 .footer-navigation-container > ul {
-    margin: 0 0 1em 0;
+    margin: 0;
     padding: 0;
     list-style-type: none;
 }
@@ -1030,9 +1040,9 @@ cite {
     margin-bottom: 2em;
 }
 .footer-navigation-links a {
-    padding: 0.1em 1em 0.2em;
+    padding: 0.1em 1em;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
     text-decoration: none;
     color: var(--dark-mode);
     transition: background-color 1s;
@@ -1048,6 +1058,9 @@ a.footer-navigation-link-backtotop {
     align-items: center;
     width: 25vw;
     height: 48px;
+    font-family: "roboto-medium", Arial;
+    font-weight: 600;
+    letter-spacing: 0.025em;
     background-color: var(--secondary-color);
     color: var(--light-mode);
     border-radius: 800px;
@@ -1067,7 +1080,7 @@ a.footer-navigation-link-backtotop:focus {
 }
 .footer-absolute-links a {
     padding: 0.1em 1em;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
     text-decoration: none;
     color: var(--dark-mode);
     transition: background-color 1s;
@@ -1090,6 +1103,9 @@ a.footer-navigation-link-backtotop:focus {
     background-color: var(--darker-grey);
     border-top: 16px solid var(--primary-color);
 }
+.footer-bottom-navigation-container ul {
+    margin: 0 auto;
+}
 .footer-bottom-icons {
     display: flex;
     flex-direction: row;
@@ -1105,9 +1121,9 @@ a.footer-navigation-link-backtotop:focus {
     color: var(--light-mode);
 }
 .footer-bottom-copyright-sign {
-    margin: 0 0 0.5em 0;
+    margin: 0;
     font-size: 1.89rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
     color: var(--light-grey);
 }
 .footer-bottom-copyright-year {
@@ -1115,15 +1131,16 @@ a.footer-navigation-link-backtotop:focus {
     filter: contrast(0.8);
 }
 .footer-bottom-privacy-policy-link {
-    padding: 0.2rem 1rem;
+    padding: 0.1em 1em;
     float: center;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
     text-decoration: none;
     color: var(--light-mode);
-    transition: box-shadow 0.5s;
+    transition: background-color 1s;
 }
 .footer-bottom-privacy-policy-link:hover,
 .footer-bottom-privacy-policy-link:focus {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.2);
+    background-color: var(--light-grey);
+    color: var(--dark-mode);
 }

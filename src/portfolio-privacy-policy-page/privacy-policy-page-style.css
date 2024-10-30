@@ -1,9 +1,9 @@
-main { /*This is to stop the filter blur from the image, showing at the top of the section title container*/
-    display: inline-block;
-}
 .body-dark-mode {
     background-color: var(--dark-mode);
     color: var(--light-mode);
+}
+main { /*This is to stop the filter blur from the body::before image, showing at the top of the section title container*/
+    display: inline-block;
 }
 #home {
     position: absolute;
@@ -15,6 +15,7 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
 @media only screen and (max-width: 600px) {
     .section-title {
         width: 75%;
+        padding-bottom: 0.1em;
         line-height: 0.75em;
     }
 }
@@ -46,7 +47,6 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
 .privacy-policy-content-navigation-container h2.navigation-h2-dark-mode {
     background-color: var(--darker-grey);
     color: var(--light-mode);
-    /* filter: brightness(0.85); */
 }
 .privacy-policy-content-navigation-links {
     padding: 0;
@@ -70,8 +70,8 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
 }
 .privacy-policy-content-navigation-links a {
     padding: 0.2em 1em;
-    font-size: 1.05em;
-    font-family: "roboto-bold", Arial;
+    font-size: 1em;
+    font-family: "roboto-medium", Arial;
     line-height: 2.5em;
     text-decoration: none;
     color: var(--dark-mode);
@@ -89,18 +89,6 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
     width: 80%;
     margin: 0 auto;
     padding-bottom: 5em;
-}
-#introduction {
-    margin-top: -4.99em;
-}
-#use-of-hcaptcha,
-#use-of-web3forms,
-#cookies,
-#data-security,
-#your-rights,
-#changes-to-this-privacy-policy,
-#contact-information {
-    margin-top: -1.949em;
 }
 .privacy-policy-page-content-container h2 {
     margin: 2.7em 0 1.27em;
@@ -143,21 +131,3 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
 .privacy-policy-page-content-container a.a-dark-mode {
     color: var(--lightest-grey);
 }
-/*Thought this was needed to fix the footer bottom container issue, I don't think it is needed anymore, keeping it for final tests in case it is needed.*/
-/*This is to stop the footers contents aligning different to the portfolio pages, bottom footer.*/
-/* .footer-bottom-navigation-container {
-    padding-bottom: 0.1em;
-}
-.footer-bottom-navigation-container article {
-    position: relative;
-    bottom: -0.01em;
-}
-.footer-bottom-copyright-sign {
-    position: relative;
-    margin: 0 0 0.5em 0;
-}
-.footer-bottom-copyright-year, .footer-bottom-copyright {
-    position: relative;
-    margin: 0 0 0.4em 0;
-} */
-

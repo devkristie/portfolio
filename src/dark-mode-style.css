@@ -121,6 +121,9 @@ Dark Mode CSS Order:
 .fa-envelope-dark-mode {
     background-image: linear-gradient(to bottom, var(--light-mode), var(--secondary-color));
 }
+.form-background-dark-mode {
+    background-color: #2F2F2F;
+}
 .contact-form-label-dark-mode {
     color: var(--light-grey);
 }
@@ -128,6 +131,9 @@ Dark Mode CSS Order:
     background-color: var(--darkest-grey);
     color: var(--light-mode);
     border: 0.16px solid var(--lightest-grey);
+    border-right: none;
+    border-left: none;
+    /* border-bottom: none; */ /*?Not sure if this is needed?*/
 }
 .contact-form-input-box-dark-mode:focus {
     caret-color: var(--darkest-grey);

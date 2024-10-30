@@ -17,7 +17,6 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
-//? Need to fix the HTML link to this
 document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
     const mainSection = document.querySelector(".thank-you-page-landing-page-section-container");
     mainSection.setAttribute("tabindex", "-1");
@@ -169,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //Dark mode variables
 const screenReadersOnlyText = document.querySelectorAll(".sr-only");
 const screenReadersOnlyTopOfPageText = document.querySelector("#home-label");
-const bodyDarkMode = document.querySelector("body");
+const mainDarkMode = document.querySelector("main");
 const thankYouPageLandingPageSectionContainer = document.querySelector(".thank-you-page-landing-page-section-container");
 const messageSentParagraphContainer = document.querySelector(".message-sent-paragraph-container");
 const messageSentParagraph = document.querySelectorAll(".message-sent-paragraph");
@@ -197,7 +196,7 @@ function enableDarkMode() {
     screenReadersOnlyTopOfPageText.classList.toggle("sr-only-dark-mode"); //This is used to stop the accessibility contrast issue.
 
     // Apply dark mode classes to other elements as needed
-    bodyDarkMode.classList.add("body-dark-mode");
+    mainDarkMode.classList.add("main-dark-mode");
 
     dynamicAnnouncer.classList.add("dynamic-announcer-dark-mode");
     
@@ -249,7 +248,7 @@ function disableDarkMode() {
     });
 
     // Remove dark mode classes from other elements as needed
-    bodyDarkMode.classList.remove("body-dark-mode");
+    mainDarkMode.classList.remove("main-dark-mode");
 
     dynamicAnnouncer.classList.remove("dynamic-announcer-dark-mode");
 
@@ -307,9 +306,8 @@ function disableDarkMode() {
     }
 });
 
+// Event listener for both click and keydown (Enter/Space)
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
-
-// Add keydown event listener for accessibility
 hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
     if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Prevent scrolling on space key
@@ -319,35 +317,22 @@ hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
 
 // Function to show or hide the menu
 function showMenu() {
-    // Select the hamburger menu button
-    const menuButton = hamburgerMenuIconContainer;
-    
     // Get the current state of the aria-expanded attribute
-    const ariaExpanded = menuButton.getAttribute("aria-expanded");
-    
-    // Determine the new state
+    const ariaExpanded = hamburgerMenuIconContainer.getAttribute("aria-expanded");
     const newAriaExpanded = ariaExpanded === "true" ? "false" : "true";
-    
-    // Toggle the menu's visibility
+
+    // Toggle menu visibility classes
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    // Update the aria-expanded attribute to the new state
-    menuButton.setAttribute("aria-expanded", newAriaExpanded);
+    // Update the aria-expanded attribute
+    hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
 
-    // Optionally announce the change for screen readers
-    dynamicAnnouncer.textContent = newAriaExpanded === "true" ? "Hamburger navigation menu opened" : "Hamburger navigation menu closed";
-}
-
-// Event listeners for hamburger menu
-hamburgerMenuIconContainer.addEventListener("click", showMenu);
-hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
-    if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault(); // Prevent scrolling on space key
-        showMenu();
-    }
-});
-//! THIS NEEDS FIXING: The menu does not open or close when pressing space or tab!
+    // Announce the change for screen readers
+    dynamicAnnouncer.textContent = newAriaExpanded === "true" 
+        ? "Hamburger navigation menu opened" 
+        : "Hamburger navigation menu closed";
+}   
 
 const thankYouMessageSVGAnimationWriting = document.querySelectorAll(".thank-you-message-svg-animation-writing");
 const thankYouMessageSVGAnimationWritingUnderline = document.querySelectorAll(".thank-you-message-svg-animation-writing-underline");

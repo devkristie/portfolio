@@ -100,19 +100,34 @@ Responsive CSS Order:
         display: flex;
         flex-direction: row;
     }
+     /*?Changed the layout of the profile headshot and quotation container, need to try and make it as centered in the grey part of the profile container as possible.
+     The CSS on top of each declaration block is the original code, the declarations under that are the changed properties and values.*/
     .profile-headshot {
         position: absolute;
         display: flex;
         align-self: center;
-        right: 0;
-        margin: 0 20% 15em 0;
+        /* right: 0; */
+        /* margin: 0 20% 15em 0; */
+
+
+
+        /* right: -68px; */
+        right: -73px;
+        margin: 0 20% 11em 0;
+        width: 268px;
+        height: 268px
     }
     .profile-quotation-container {
         position: absolute;
         display: flex;
         align-self: center;
-        right: -68px;
-        margin: 12em 20% 0 0;
+        /* right: -68px; */
+        /* margin: 12em 20% 0 0; */
+
+
+
+        right: -73px;
+        margin: 18em 20% 0 0;
     }
     .profile-introduction-container {
         width: 50%;
@@ -147,18 +162,12 @@ Responsive CSS Order:
         width: 43.5%;
     }
 }
- /*? @media only screen and (max-width: 400px) {
-    .section-title {
-        letter-spacing: 0.075em;
-    }
-} */
 
 @media only screen and (min-width: 1200px) {
     .portfolio-websites-slider-container {
         width: 50%;
     }
 }
-
 @media only screen and (max-width: 770px) {
     .portfolio-websites-slider-container {
         width: 100%;
@@ -239,6 +248,15 @@ Responsive CSS Order:
         min-width: 150px;
     }
 }
+@media only screen and (max-width: 375px) {
+    .form-background {
+        height: 31.38em;
+    }
+    .contact-form-validation-paragraph {
+        font-size: 0.85rem;
+        color: var(--light-mode);
+    }
+}
 
 @media only screen and (max-width: 600px) {
     a.footer-navigation-link-backtotop {
@@ -246,11 +264,15 @@ Responsive CSS Order:
     }
 }
 @media only screen and (max-width: 450px) {
-    .footer-absolute-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 1em;
-        line-height: 1.75em;
+    .footer-absolute-links span {
+        display: block;
+        margin-bottom: 0.5em;
+    }
+}
+@media only screen and (max-width: 330px) { /*For the smallest screens*/
+    .footer-bottom-copyright-sign {
+        margin:auto auto 0.5em;
+        width: 80%;
+        line-height: 0.5em;
     }
 }

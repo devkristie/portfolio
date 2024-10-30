@@ -183,7 +183,7 @@ const showDarkModeModal = () => {
     const bodyDarkMode = document.querySelector("body");
     const mainDarkMode = document.querySelector("main");
     const landingPageBackgroundImage = document.querySelector(".landing-page-section-container");
-    const landingPageTitleWelcome = document.querySelector(".landing-page-title-welcome");
+    const landingPageTitleWelcome = document.querySelectorAll(".landing-page-title-welcome");
     const landingPageTitleBackgoundOne = document.querySelector(".landing-page-title-welcome-background-one");
     const landingPageTitleBackgoundTwo = document.querySelector(".landing-page-title-welcome-background-two");
     const landingPageTitleOpeningCurlyBrace = document.querySelector(".landing-page-title-opening-curly-brace");
@@ -214,6 +214,7 @@ const showDarkModeModal = () => {
     const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
     const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
+    const contactFormBackground = document.querySelector(".form-background");
     const hCaptchaColor = document.querySelector(".h-captcha");
     const footerContainerBackground = document.querySelector(".footer-navigation-container");
     const footerNavigationLinks = document.querySelectorAll(".footer-navigation-links a");
@@ -238,7 +239,9 @@ const showDarkModeModal = () => {
 
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
 
-        landingPageTitleWelcome.classList.add("landing-page-title-welcome-dark-mode");
+        landingPageTitleWelcome.forEach((title) => {
+            title.classList.add("landing-page-title-welcome-dark-mode");
+        });
 
         landingPageTitleBackgoundOne.classList.add("landing-page-title-welcome-background-one-dark-mode");
 
@@ -324,6 +327,8 @@ const showDarkModeModal = () => {
         
         contactFormEnvelopeIcon.classList.add("fa-envelope-dark-mode");
         
+        contactFormBackground.classList.add("form-background-dark-mode");
+
         contactFormInputs.forEach((input) => {
             input.classList.add("contact-form-input-box-dark-mode");
             if (input.classList.contains("contact-form-invalid")) {
@@ -399,7 +404,9 @@ const showDarkModeModal = () => {
         
         landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
         
-        landingPageTitleWelcome.classList.remove("landing-page-title-welcome-dark-mode");
+        landingPageTitleWelcome.forEach((title) => {
+            title.classList.remove("landing-page-title-welcome-dark-mode");
+        });
 
         landingPageTitleBackgoundOne.classList.remove("landing-page-title-welcome-background-one-dark-mode");
         
@@ -484,6 +491,8 @@ const showDarkModeModal = () => {
         contactFormTopHeaderContainer.classList.remove("contact-form-top-header-container-dark-mode");
         
         contactFormEnvelopeIcon.classList.remove("fa-envelope-dark-mode");
+
+        contactFormBackground.classList.remove("form-background-dark-mode");
         
         contactFormInputs.forEach((input) => {
             input.classList.remove("contact-form-input-box-dark-mode");  
@@ -560,9 +569,8 @@ const showDarkModeModal = () => {
     }
 });
 
+// Event listener for both click and keydown (Enter/Space)
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
-
-// Add keydown event listener for accessibility
 hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
     if (event.key === "Enter" || event.key === " ") {
         event.preventDefault(); // Prevent scrolling on space key
@@ -572,34 +580,22 @@ hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
 
 // Function to show or hide the menu
 function showMenu() {
-    // Select the hamburger menu button
-    const menuButton = hamburgerMenuIconContainer;
-    
     // Get the current state of the aria-expanded attribute
-    const ariaExpanded = menuButton.getAttribute("aria-expanded");
-    
-    // Determine the new state
+    const ariaExpanded = hamburgerMenuIconContainer.getAttribute("aria-expanded");
     const newAriaExpanded = ariaExpanded === "true" ? "false" : "true";
-    
-    // Toggle the menu's visibility
+
+    // Toggle menu visibility classes
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    // Update the aria-expanded attribute to the new state
-    menuButton.setAttribute("aria-expanded", newAriaExpanded);
+    // Update the aria-expanded attribute
+    hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
 
-    // Optionally announce the change for screen readers
-    dynamicAnnouncer.textContent = newAriaExpanded === "true" ? "Hamburger navigation menu opened" : "Hamburger navigation menu closed";
+    // Announce the change for screen readers
+    dynamicAnnouncer.textContent = newAriaExpanded === "true" 
+        ? "Hamburger navigation menu opened" 
+        : "Hamburger navigation menu closed";
 }
-
-// Event listeners for hamburger menu
-hamburgerMenuIconContainer.addEventListener("click", showMenu);
-hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
-    if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault(); // Prevent scrolling on space key
-        showMenu();
-    }
-});
 
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();

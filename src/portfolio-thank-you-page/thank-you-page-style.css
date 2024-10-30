@@ -1,17 +1,17 @@
-main { /*This is to stop the filter blur from the image, showing at the top of the section title container*/
-    display: inline-block;
-    width: 100%;
-}
-.body-dark-mode {
+.main-dark-mode {
     background-color: var(--dark-mode);
     color: var(--light-mode);
+}
+main { /*This is to stop the filter blur from the body::before image, showing at the top of the section title container*/
+    display: inline-block;
+    width: 100%;
 }
 #home {
     position: absolute;
     margin-top: -5em;
 }
 .section-title-container {
-    margin-top: 5em;
+    margin-top: 4.95em;
 }
 .thank-you-page-landing-page-section-container {
     min-height: 100%;
@@ -90,12 +90,21 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
     width: 80%;
     margin: 0.75em 0;
     font-size: 1rem;
-    font-family: "roboto-medium", Arial;
+    font-family: "roboto-regular", Arial;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     text-align: center;
-    color: var(--dark-mode);
+    color: var(--darkest-grey);
+}
+p.message-sent-paragraph:nth-child(2) {
+    margin-top: 0;
+    color: var(--darker-grey);
 }
 .message-sent-paragraph-dark-mode {
     color: var(--light-mode);
+}
+p.message-sent-paragraph-dark-mode:nth-child(2) {
+    color: var(--light-grey);
 }
 .message-sent-envelope-svg {
     width: 240px;
@@ -134,7 +143,7 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
     width: 100%;
     margin-top: 1em;
 }
-@media only screen and (max-width: 565px) {
+@media only screen and (max-width: 780px) {
     .thank-you-page-button-container {
         flex-direction: column;
     }
@@ -143,12 +152,18 @@ main { /*This is to stop the filter blur from the image, showing at the top of t
     }
 }
 .thank-you-page-button {
-    width: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 275px;
     height: 48px;
     margin: 0 0 2em 0;
     padding: 0 2em;
     font-size: 1rem;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-medium", Arial;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-decoration: none;
     background-color: var(--secondary-color);
     color: var(--light-mode);
     border: none;
