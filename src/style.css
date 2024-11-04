@@ -72,6 +72,7 @@ CSS Order:
 
 body {
     position: relative;
+    min-width: 313px; /*Needed to stop the website breaking when it reaches the width of 313px*/
     margin: 0;
     overflow-x: hidden;
 }
@@ -92,11 +93,11 @@ body::before {
 .top-navigation-bar-accordion-container-visible {
     position: fixed;
     top: 0;
-    z-index: 5;
     width: 100%;
     height: 40px;
 }
 .top-navigation-bar-container {
+    z-index: 6;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -221,6 +222,7 @@ body::before {
     visibility: hidden;
 }
 .top-navigation-bar-accordion-container-visible {
+    z-index: 5;
     margin-top: 2.5em;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
 }
@@ -264,10 +266,14 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     padding: 5em 0;
-    background: url("./assets/images/landing-page-image1.png") fixed no-repeat center center;
+    background: url("./assets/images/landing-page-image3.png") fixed no-repeat center;
+    background-size: contain;
+}
+.landing-page-section-container-dark-mode {
+    background: url("./assets/images/landing-page-image4.png") fixed no-repeat center;
     background-size: contain;
 }
 .landing-page-section-container p {
@@ -449,19 +455,11 @@ main {
     background-color: var(--darker-grey);
 }
 .section-title {
-    /*! padding-top: 1.25em;    
-    font-size: 2.813rem;    
-    font-family: tomorrow-light;
-    letter-spacing: 0.25em; */
-
-    /*! padding-top: 1.10em; */
     font-size: 4.5rem;
-    font-family: "jersey-regular";
+    font-family: "jersey-regular", Arial;
     letter-spacing: 0.05em;
-    text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
-
     text-align: center;
-    /*! text-transform: uppercase; */
+    text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
     color: var(--light-mode);
 }
 
@@ -956,7 +954,6 @@ cite {
 .contact-form-input-box-message {
     height: 203.01px;
     padding: 0.9em 0 0 1.5em;
-    /* border-bottom: none; */ /*?Not sure if this is needed?*/
     border-radius: 0 0 24px 24px;
     resize: none;
 }
@@ -995,7 +992,6 @@ cite {
 }
 
 .footer-section-container {
-    /* position: relative; */ /*?Dont thing this is needed?*/
     display: flex;
     flex-direction: column;
     justify-content: center;

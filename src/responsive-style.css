@@ -7,18 +7,17 @@ Responsive CSS Order:
 */
 @media only screen and (orientation: landscape) and (max-height: 550px) {
     .dark-mode-modal-container {
-        height: 80%;
-        overflow-y: auto;
+        position: absolute;
+        margin-top: -2.25em;
+        height: 328px;
+        overflow-y: scroll;
     }
-    .dark-mode-modal-first-paragraph,
     .dark-mode-modal-second-paragraph {
-        margin-top: 0em;
+        margin-bottom: 10em;
     }
     .dark-mode-modal-allow-button,
     .dark-mode-modal-decline-button {
-        position: relative;
-        top: 0;
-        margin-bottom: 3.5em;
+        margin-top: 7.55em;
     }
     .dark-mode-modal-allow-button {
         margin-right: 25%;
@@ -27,38 +26,74 @@ Responsive CSS Order:
         margin-left: 25%;
     }
 }
-@media only screen and (orientation: portrait) and (max-height: 550px) {
+@media only screen and (orientation: portrait) and (max-height: 650px) {
     .dark-mode-modal-container {
-        height: 80%;
+        position: absolute;
+        margin-top: -4em;
+        height: 468px;
         overflow-y: auto;
     }
-    .dark-mode-modal-first-paragraph,
     .dark-mode-modal-second-paragraph {
-        margin-top: 0em;
+        margin-bottom: 10em;
     }
     .dark-mode-modal-allow-button {
         position: relative;
-        top: 0;
-        margin-right: 25%;
-        margin-bottom: 3.5em;
+        margin: 1em 25% 0 0;
     }
     .dark-mode-modal-decline-button {
         position: relative;
-        top: 0;
-        margin-left: 25%;
-        margin-bottom: 3.5em;
+        margin: 1em 0 0 25%;
     }
 }
-@media only screen and (min-width: 474px) {
+@media only screen and (orientation: landscape) and (max-height: 550px) and (min-width: 550px) {
+    .dark-mode-modal-allow-button, .dark-mode-modal-decline-button {
+      margin-top: 0.5em;
+    }
+  }
+@media only screen and (min-width: 950px) {
     .dark-mode-modal-first-paragraph,
     .dark-mode-modal-second-paragraph {
         margin-top: 3.25em;
     }
 }
-@media only screen and (orientation: landscape) and (max-height: 450px) {
+@media only screen and (orientation: landscape) and (max-height: 550px) {
     .hcaptcha-modal-container {
-        /*? height: 185px; */
+        margin-top: -3em;
+        height: 255px;
+        padding-bottom: 10em;
         overflow-y: auto;
+    }
+}
+@media only screen and (orientation: landscape) and (min-height: 550px) {
+    .hcaptcha-modal-container {
+        height: 255px;
+    }
+}
+@media only screen and (orientation: portrait) and (max-height: 650px) {
+    .hcaptcha-modal-container {
+        margin-top: -3em;
+        height: 255px;
+        padding-bottom: 10em;
+        overflow-y: auto;
+    }
+}
+@media only screen and (orientation: portrait) and (min-height: 650px) {
+    .hcaptcha-modal-container {
+        height: 255px;
+    }
+}
+@media only screen and (orientation: portrait) and (max-width: 332px) {
+    .hcaptcha-modal-container {
+        height: 275px;       
+    }
+}
+
+@media only screen and (max-width: 313px) {
+    body::before {
+        background: var(--darker-grey);
+    }
+    .footer-section-container {
+        margin-top: 8.125em;
     }
 }
 
@@ -91,6 +126,11 @@ Responsive CSS Order:
     }
     .laptop-image-container {
         margin-top: 1em;
+    }
+}
+@media only screen and (max-width: 599px) {
+    .landing-page-section-container {
+        background: transparent;
     }
 }
 

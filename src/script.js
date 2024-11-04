@@ -90,12 +90,12 @@ const showDarkModeModal = () => {
 
         const darkModeModalFirstParagraph = document.createElement("p");
         darkModeModalFirstParagraph.setAttribute("class", "dark-mode-modal-first-paragraph");
-        darkModeModalFirstParagraph.textContent = 'When you click "Allow" for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
+        darkModeModalFirstParagraph.textContent = 'When you click the "Allow" button below for dark mode, your preference for it will be saved in local storage so that the website can remember your choice for future visits.';
         darkModeModalContainer.appendChild(darkModeModalFirstParagraph);
 
         const darkModeModalSecondParagraph = document.createElement("p");
         darkModeModalSecondParagraph.setAttribute("class", "dark-mode-modal-second-paragraph");
-        darkModeModalSecondParagraph.textContent = 'If you click "Decline" your data for it will not be saved in local storage, and the website will not remember your preference.';
+        darkModeModalSecondParagraph.textContent = 'If you click the "Decline" button below, your data for it will not be saved in local storage, and the website will not remember your preference.';
         darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
 
         const darkModeModalAllowButton = document.createElement("button");
@@ -237,7 +237,7 @@ const showDarkModeModal = () => {
 
         dynamicAnnouncer.classList.add("dynamic-announcer-dark-mode");
 
-        landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image2.png')";
+        landingPageBackgroundImage.classList.add("landing-page-section-container-dark-mode");
 
         landingPageTitleWelcome.forEach((title) => {
             title.classList.add("landing-page-title-welcome-dark-mode");
@@ -402,8 +402,8 @@ const showDarkModeModal = () => {
 
         dynamicAnnouncer.classList.remove("dynamic-announcer-dark-mode");
         
-        landingPageBackgroundImage.style.backgroundImage = "url('./assets/images/landing-page-image1.png')";
-        
+        landingPageBackgroundImage.classList.remove("landing-page-section-container-dark-mode");
+
         landingPageTitleWelcome.forEach((title) => {
             title.classList.remove("landing-page-title-welcome-dark-mode");
         });
@@ -587,6 +587,10 @@ function showMenu() {
     // Toggle menu visibility classes
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
+
+    topNavigationBarAccordionContainer.style.transition = "margin-top 0.1s";
+    const topNavigationBarAccordionContainerAnimation = document.querySelector(".top-navigation-bar-accordion-container-visible");
+    topNavigationBarAccordionContainerAnimation.style.transition = "all linear 0.1s";
 
     // Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);

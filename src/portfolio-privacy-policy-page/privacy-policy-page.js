@@ -360,6 +360,10 @@ function showMenu() {
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
+    topNavigationBarAccordionContainer.style.transition = "margin-top 0.1s";
+    const topNavigationBarAccordionContainerAnimation = document.querySelector(".top-navigation-bar-accordion-container-visible");
+    topNavigationBarAccordionContainerAnimation.style.transition = "all linear 0.1s";
+
     // Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
 

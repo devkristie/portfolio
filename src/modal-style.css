@@ -22,7 +22,8 @@ Modal CSS Order:
     z-index: 7;
     width: 95%;
     text-align: center;
-    background-color: var(--light-mode);
+    background-color: var(--lightest-grey);
+    border-radius: 24px;
 }
 .dark-mode-modal-title,
 .hcaptcha-modal-title {
@@ -69,7 +70,8 @@ Modal CSS Order:
     background-color: rgb(235.0, 150.4, 5.3);
 }
 .dark-mode-modal-container {
-    height: 448px;
+    padding-bottom: 10em;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
     transform: translate(2.5%, 20%);
 }
 .dark-mode-modal-allow-button {
@@ -80,9 +82,9 @@ Modal CSS Order:
 }
 
 .hcaptcha-modal-container {
-    /*? height: 248px; */
-    height: 185px;
-    transform: translate(2.5%, 36%);
+    background-color: var(--lightest-grey);
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(2.5%, 27%);
 }
 .hcaptcha-modal-ok-button {
     width: 25%;
