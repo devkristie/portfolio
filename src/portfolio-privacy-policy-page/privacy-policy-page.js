@@ -12,7 +12,7 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
     mainSection.setAttribute("tabindex", "-1");
     mainSection.focus();
 
-    const targetSection = document.querySelector("#skip-to-main-content-start");
+    const targetSection = document.getElementById("skip-to-main-content-start");
 
     if (targetSection) {
         const scrollOffset = 79;
@@ -25,16 +25,16 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
 
 //Smooth scroll contents navigation links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(event) {
+    link.addEventListener("click", function(event) {
         event.preventDefault(); // Prevent default anchor behavior
-        const targetId = this.getAttribute('href').substring(1);  // Get the ID without '#'
-        const targetElement = document.getElementById(targetId);  // Get the target h2
-                                            
-        if (targetElement) {
+        const targetId = this.getAttribute("href").substring(1);  // Get the ID without '#'
+        const targetHeadingElement = document.getElementById(targetId);  // Get the target h2
+
+        if (targetHeadingElement) {
             const scrollOffset = 79; // Defines the offset
 
             // Smoothly scroll to the target element with offset
-            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - scrollOffset;
+            const targetPosition = targetHeadingElement.getBoundingClientRect().top + window.scrollY - scrollOffset;
 
             window.scrollTo({
                 top: targetPosition,
@@ -42,7 +42,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
             });
 
             // Focus the target element after the scroll completes (delay for smoothness)
-            setTimeout(() => targetElement.focus(), 400);
+            setTimeout(() => targetHeadingElement.focus(), 400);
         }
     });
 });
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
         let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
 
-        if (!darkModeModalContainer) {
+        if (darkModeModalContainer === null) {
             darkModeModalOverlay = document.createElement("div");
             darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
             darkModeModalOverlay.setAttribute("role", "presentation");
@@ -178,7 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     };
-
 
     //Dark mode variables
     const screenReadersOnlyText = document.querySelectorAll(".sr-only");
@@ -360,9 +359,7 @@ function showMenu() {
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    topNavigationBarAccordionContainer.style.transition = "margin-top 0.1s";
-    const topNavigationBarAccordionContainerAnimation = document.querySelector(".top-navigation-bar-accordion-container-visible");
-    topNavigationBarAccordionContainerAnimation.style.transition = "all linear 0.1s";
+    topNavigationBarAccordionContainer.style.transition = "all ease-in-out 0.4s";
 
     // Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);

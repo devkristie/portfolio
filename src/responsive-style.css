@@ -232,6 +232,38 @@ Responsive CSS Order:
         border-bottom: none;        
     }
 }
+@media only screen and (max-width: 600px) {
+    .portfolio-websites-slider-left-arrow {
+        background-image: linear-gradient(to top, var(--dark-grey), var(--dark-grey), var(--darker-grey));
+        box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
+    }
+    .portfolio-websites-slider-right-arrow {
+        background-image: linear-gradient(to bottom, var(--dark-grey), var(--dark-grey), var(--darker-grey));
+        box-shadow: inset 5px -5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
+    }
+    .portfolio-websites-slider-left-arrow:hover,
+    .portfolio-websites-slider-left-arrow:focus-visible,
+    .portfolio-websites-slider-left-arrow:active {
+        background-image: linear-gradient(to top, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
+        box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
+    }
+    .portfolio-websites-slider-right-arrow:hover,
+    .portfolio-websites-slider-right-arrow:focus-visible,
+    .portfolio-websites-slider-right-arrow:active {
+        background-image: linear-gradient(to bottom, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
+        box-shadow: inset 5px -5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
+    }
+    .portfolio-websites-slider-left-arrow-dark-mode:hover,
+    .portfolio-websites-slider-left-arrow-dark-mode:focus-visible,
+    .portfolio-websites-slider-left-arrow-dark-mode:active {
+        background-image: linear-gradient(to top, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
+    }
+    .portfolio-websites-slider-right-arrow-dark-mode:hover,
+    .portfolio-websites-slider-right-arrow-dark-mode:focus-visible,
+    .portfolio-websites-slider-right-arrow-dark-mode:active {
+        background-image: linear-gradient(to bottom, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
+}
+}
 @media only screen and (max-width: 601px) {
     .portfolio-websites-slider-container {
         flex-direction: column;

@@ -35,7 +35,7 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
     portfolioSection.setAttribute("tabindex", "-1");
     portfolioSection.focus();
 
-    const targetSection = document.querySelector("#skip-to-main-content-start");
+    const targetSection = document.getElementById("skip-to-main-content-start");
 
     if (targetSection) {
         const scrollOffset = 79;
@@ -72,7 +72,7 @@ const showDarkModeModal = () => {
     let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
     let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
 
-    if (!darkModeModalContainer) {
+    if (darkModeModalContainer === null) {
         darkModeModalOverlay = document.createElement("div");
         darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
         darkModeModalOverlay.setAttribute("role", "presentation");
@@ -204,11 +204,13 @@ const showDarkModeModal = () => {
     const laptopImageBottomShellUnderneathGrip = document.querySelector(".laptop-image-bottom-shell-underneath-grip");
     const profileContentContainer = document.querySelector(".profile-content-container");
     const profileQuotationContainer = document.querySelector(".profile-quotation-container");
-    const profileQuotationMark = document.querySelector("q");
+    const profileQuotationMark = document.querySelector(".profile-quotation-container-quotation-marks");
     const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
     const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
     const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
     const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
+    const portfolioWebsitesSliderLeftArrowDarkMode = document.querySelectorAll(".portfolio-websites-slider-left-arrow");
+    const portfolioWebsitesSliderRightArrowDarkMode = document.querySelectorAll(".portfolio-websites-slider-right-arrow");
     const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     const portfolioWebsitesShowMoreAccordionContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
     const portfolioWebsitesShowMoreAccordionContainerTechnologiesUsedTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
@@ -285,7 +287,7 @@ const showDarkModeModal = () => {
         
         profileQuotationContainer.classList.add("profile-quotation-container-dark-mode");
         
-        profileQuotationMark.classList.add("q-dark-mode");
+        profileQuotationMark.classList.add("profile-quotation-container-quotation-marks-dark-mode");
 
         profileIntrodutionContainerParagraph.forEach((paragraph) =>{
             paragraph.classList.add("profile-introduction-container-paragraph-dark-mode");
@@ -301,6 +303,14 @@ const showDarkModeModal = () => {
         
         portfolioWebsitesContainer.forEach((background) => {
             background.classList.add("portfolio-websites-container-dark-mode");
+        });
+
+        portfolioWebsitesSliderLeftArrowDarkMode.forEach((arrow) => {
+            arrow.classList.add("portfolio-websites-slider-left-arrow-dark-mode");
+        });
+
+        portfolioWebsitesSliderRightArrowDarkMode.forEach((arrow) => {
+            arrow.classList.add("portfolio-websites-slider-right-arrow-dark-mode");
         });
         
         portfolioWebsitesShowMoreContainer.forEach((background) => {
@@ -448,7 +458,7 @@ const showDarkModeModal = () => {
 
         profileContentContainer.classList.remove("profile-content-container-dark-mode");
 
-        profileQuotationMark.classList.remove("q-dark-mode");
+        profileQuotationMark.classList.remove("profile-quotation-container-quotation-marks-dark-mode");
 
         profileQuotationContainer.classList.remove("profile-quotation-container-dark-mode");
         
@@ -466,6 +476,14 @@ const showDarkModeModal = () => {
         
         portfolioWebsitesContainer.forEach((background) => {
             background.classList.remove("portfolio-websites-container-dark-mode");
+        });
+
+        portfolioWebsitesSliderLeftArrowDarkMode.forEach((arrow) => {
+            arrow.classList.remove("portfolio-websites-slider-left-arrow-dark-mode");
+        });
+
+        portfolioWebsitesSliderRightArrowDarkMode.forEach((arrow) => {
+            arrow.classList.remove("portfolio-websites-slider-right-arrow-dark-mode");
         });
         
         portfolioWebsitesShowMoreContainer.forEach((background) => {
@@ -580,6 +598,7 @@ hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
 
 // Function to show or hide the menu
 function showMenu() {
+
     // Get the current state of the aria-expanded attribute
     const ariaExpanded = hamburgerMenuIconContainer.getAttribute("aria-expanded");
     const newAriaExpanded = ariaExpanded === "true" ? "false" : "true";
@@ -588,9 +607,7 @@ function showMenu() {
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    topNavigationBarAccordionContainer.style.transition = "margin-top 0.1s";
-    const topNavigationBarAccordionContainerAnimation = document.querySelector(".top-navigation-bar-accordion-container-visible");
-    topNavigationBarAccordionContainerAnimation.style.transition = "all linear 0.1s";
+    topNavigationBarAccordionContainer.style.transition = "all ease-in-out 0.4s";
 
     // Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
@@ -805,7 +822,7 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
 //         contactFormLabels[index].style.margin = "-1.5em 0.5em";
 //     }
 // });
-//! This works
+//! This works but not sure if it will be used, need to test it with the new code below
 
 contactFormInputs.forEach((input, index) => {
     const originalPlaceholder = input.placeholder;
@@ -839,11 +856,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactFormValidationParagraphName = document.querySelector(".contact-form-validation-paragraph.name");
     const contactFormValidationParagraphEmail = document.querySelector(".contact-form-validation-paragraph.email");
     const contactFormValidationParagraphPhone = document.querySelector(".contact-form-validation-paragraph.phone");
-    const messageField = document.querySelector("#message");
+    const messageField = document.getElementById("message");
     const contactFormSubmitButton = document.querySelector(".contact-form-submit-button");
-    const form = document.querySelector("form");
+    const contactFormSubmission = document.querySelector("form");
 
-    contactFormSubmitButton.style.visibility = "visible";
+    //?contactFormSubmitButton.style.visibility = "visible";
 
     function setSessionCookie() {
         const cookieValue = "sessionToken=uniqueSessionID123; path=/; SameSite=Lax";
@@ -948,13 +965,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const hCaptchaResponse = document.querySelector('textarea[name="h-captcha-response"]').value;
-        if (!hCaptchaResponse) {
+        if (hCaptchaResponse === "") {
             formIsValid = false;
 
             let hcaptchaModalContainer = document.querySelector(".hcaptcha-modal-container");
             let hcaptchaModalOverlay = document.querySelector(".hcaptcha-modal-overlay");
     
-            if (!hcaptchaModalContainer) {
+            if (hcaptchaModalContainer === null) {
                 hcaptchaModalOverlay = document.createElement("div");
                 hcaptchaModalOverlay.setAttribute("class", "hcaptcha-modal-overlay");
                 hcaptchaModalOverlay.setAttribute("role", "presentation");
@@ -1105,7 +1122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (formIsValid) {
             setSessionCookie();
-            form.submit(); // Fixed: Use form.submit() directly for submission
+            contactFormSubmission.submit(); // Fixed: Use contactFormSubmission.submit() directly for submission
         }
     }
 

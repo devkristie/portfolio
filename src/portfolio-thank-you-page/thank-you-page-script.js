@@ -17,12 +17,13 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
+//Skip to main content z-index
 document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
     const mainSection = document.querySelector(".thank-you-page-landing-page-section-container");
     mainSection.setAttribute("tabindex", "-1");
     mainSection.focus();
 
-    const targetSection = document.querySelector("#skip-to-main-content-start");
+    const targetSection = document.getElementById("skip-to-main-content-start");
 
     if (targetSection) {
         const scrollOffset = 79;
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
         let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
 
-        if (!darkModeModalContainer) {
+        if (darkModeModalContainer === null) {
             darkModeModalOverlay = document.createElement("div");
             darkModeModalOverlay.setAttribute("class", "dark-mode-modal-overlay");
             darkModeModalOverlay.setAttribute("role", "presentation");
@@ -167,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Dark mode variables
 const screenReadersOnlyText = document.querySelectorAll(".sr-only");
-const screenReadersOnlyTopOfPageText = document.querySelector("#home-label");
+const screenReadersOnlyTopOfPageText = document.getElementById("home-label");
 const mainDarkMode = document.querySelector("main");
 const thankYouPageLandingPageSectionContainer = document.querySelector(".thank-you-page-landing-page-section-container");
 const messageSentParagraphContainer = document.querySelector(".message-sent-paragraph-container");
@@ -325,9 +326,7 @@ function showMenu() {
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    topNavigationBarAccordionContainer.style.transition = "margin-top 0.1s";
-    const topNavigationBarAccordionContainerAnimation = document.querySelector(".top-navigation-bar-accordion-container-visible");
-    topNavigationBarAccordionContainerAnimation.style.transition = "all linear 0.1s";
+    topNavigationBarAccordionContainer.style.transition = "all ease-in-out 0.4s";
 
     // Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);

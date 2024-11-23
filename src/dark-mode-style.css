@@ -72,7 +72,7 @@ Dark Mode CSS Order:
     background-color: var(--darker-grey);
     color: var(--lightest-grey);
 }
-.q-dark-mode {
+.profile-quotation-container-quotation-marks-dark-mode {
     color: var(--lightest-grey);
 }
 .profile-introduction-container-paragraph-dark-mode {

@@ -83,7 +83,7 @@ body::before {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: url("./assets/images/1_image-code9.jpg") fixed no-repeat center;
+    background: url("./assets/images/parallax-image-code.jpg") fixed no-repeat center;
     background-size: cover;
     filter: blur(1.5px); 
     content: "";
@@ -215,18 +215,20 @@ body::before {
     stroke-linecap: round;
     stroke-width: 4.8px;
 }
-
 .top-navigation-bar-accordion-container-hidden {
-    position: absolute;
-    right: 0;
-    visibility: hidden;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    margin-top: -2.5em;
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
 }
 .top-navigation-bar-accordion-container-visible {
     z-index: 5;
     margin-top: 2.5em;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
 }
-.top-navigation-bar-accordion-container-visible > nav:nth-child(1) > ul:nth-child(1) {
+.top-navigation-bar-accordion-container-hidden nav:nth-child(1) ul:nth-child(1),
+.top-navigation-bar-accordion-container-visible nav:nth-child(1) ul:nth-child(1) {
     margin: 0;
     padding: 0;
 }
@@ -237,23 +239,23 @@ body::before {
     width: 100%;
     height: 40px;
 }
-.top-navigation-bar-accordion-links > li {
+.top-navigation-bar-accordion-links li {
     padding: 0.1em 1em;
     font-family: "roboto-medium", Arial;
     transition: background 0.5s ease-in;
     cursor: pointer;
     list-style-type: none;
 }
-.top-navigation-bar-accordion-links > li:hover,
-.top-navigation-bar-accordion-links > li:focus-within {
+.top-navigation-bar-accordion-links li:hover,
+.top-navigation-bar-accordion-links li:focus-within {
     background-color: var(--secondary-color);
 }
-.top-navigation-bar-accordion-links > li > a {
+.top-navigation-bar-accordion-links li a {
     text-decoration: none;
     color: var(--dark-mode);
 }
-.top-navigation-bar-accordion-links > li:hover > a,
-.top-navigation-bar-accordion-links > li:focus-within > a {
+.top-navigation-bar-accordion-links li:hover a,
+.top-navigation-bar-accordion-links li:focus-within a {
     color: var(--light-mode);
 }
 
@@ -269,11 +271,11 @@ main {
     width: 100%;
     min-height: 100vh;
     padding: 5em 0;
-    background: url("./assets/images/landing-page-image3.png") fixed no-repeat center;
+    background: url("./assets/images/landing-page-image.png") fixed no-repeat center;
     background-size: contain;
 }
 .landing-page-section-container-dark-mode {
-    background: url("./assets/images/landing-page-image4.png") fixed no-repeat center;
+    background: url("./assets/images/landing-page-image-dark-mode.png") fixed no-repeat center;
     background-size: contain;
 }
 .landing-page-section-container p {
@@ -501,28 +503,28 @@ main {
     background-color: var(--light-grey);
     color: var(--darkest-grey);
 }
-q {
+.profile-quotation-container-quotation-marks {
     padding: 0 1em 0;
     line-height: 1.2em;
     color: var(--darkest-grey);
 }
-q::before,
-q::after {
+.profile-quotation-container-quotation-marks::before,
+.profile-quotation-container-quotation-marks::after {
     position: absolute;
     display: block;
     font-size: 4.688rem;
     font-family: none;
     font-weight: 900;
 }
-q::before {
+.profile-quotation-container-quotation-marks::before {
     margin: 0.125em 0 0 -0.615em;
     content: open-quote;
 }
-q::after {
+.profile-quotation-container-quotation-marks::after {
     margin: 0.28em 0 0 2.84em;
     content: close-quote;
 }
-cite {
+#profile-quotation-container-cite {
     font-style: normal;
 }
 .profile-introduction-container {
@@ -642,18 +644,47 @@ cite {
     width: 48px;
     height: 105.01px;
     padding: 0.85em;
-    background-color: var(--dark-grey);
     border: none;
     cursor: pointer;
 }
-.portfolio-websites-slider-left-arrow > svg > path,
-.portfolio-websites-slider-right-arrow > svg > path {
+.portfolio-websites-slider-left-arrow:hover,
+.portfolio-websites-slider-left-arrow:focus-visible,
+.portfolio-websites-slider-left-arrow:active {
+    background-image: linear-gradient(to left, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
+    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
+}
+.portfolio-websites-slider-right-arrow:hover,
+.portfolio-websites-slider-right-arrow:focus-visible,
+.portfolio-websites-slider-right-arrow:active {
+    background-image: linear-gradient(to right, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
+}
+.portfolio-websites-slider-left-arrow-dark-mode:hover,
+.portfolio-websites-slider-left-arrow-dark-mode:focus-visible,
+.portfolio-websites-slider-left-arrow-dark-mode:active {
+    background-image: linear-gradient(to left, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
+}
+.portfolio-websites-slider-right-arrow-dark-mode:hover,
+.portfolio-websites-slider-right-arrow-dark-mode:focus-visible,
+.portfolio-websites-slider-right-arrow-dark-mode:active {
+    background-image: linear-gradient(to right, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
+}
+.portfolio-websites-slider-left-arrow svg path,
+.portfolio-websites-slider-right-arrow svg path {
     width: 24px;
     height: 24px;
     stroke: var(--dark-mode);
     fill: none;
     stroke-linecap: round;
     stroke-width: 4px;
+}
+.portfolio-websites-slider-left-arrow:hover svg path,
+.portfolio-websites-slider-right-arrow:hover svg path,
+.portfolio-websites-slider-left-arrow:focus-visible svg path,
+.portfolio-websites-slider-right-arrow:focus-visible svg path,
+.portfolio-websites-slider-left-arrow:active svg path,
+.portfolio-websites-slider-right-arrow:active svg path {
+    stroke: var(--light-mode);
 }
 .portfolio-websites-view-website-button,
 .portfolio-websites-view-source-code-button {
@@ -687,10 +718,14 @@ cite {
     margin-bottom: 5em;
 }
 .portfolio-websites-slider-left-arrow {
+    background-image: linear-gradient(to left, var(--dark-grey), var(--dark-grey), var(--darker-grey));
     border-radius: 24px 0 0 24px;
+    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
 }
 .portfolio-websites-slider-right-arrow {
+    background-image: linear-gradient(to right, var(--dark-grey), var(--dark-grey), var(--darker-grey));
     border-radius: 0 24px 24px 0;
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.5), -5px 0px 0px rgba(255, 255, 255, 0.5);
 }
 .portfolio-websites-slider-container > figure {
     position: relative;
@@ -984,6 +1019,7 @@ cite {
     border-radius: 800px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
     transition: background-color 0.5s;
+    /*? visibility: visible; */
     cursor: pointer;
 }
 .contact-form-submit-button:hover,
