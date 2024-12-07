@@ -11,14 +11,14 @@ const topNavigationBarAccordionContainer = document.querySelector(".top-navigati
 const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
 const laptopImageCode = document.querySelectorAll(".laptop-image-code");
 const portfolioWebsitesShowMoreAccordionContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
-const portfolioWebsitesShowMoreAccordionContainerShowLessText = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button p");
-const portfolioWebsitesShowMoreAccordionContainerShowMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
+const showMoreAccordionContainerShowLessText = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button p");
+const showMoreAccordionContainerShowMoreArrow = document.querySelectorAll(".portfolio-websites-show-more-arrow");
 const portfolioWebsitesShowMoreAccordionContainer = document.querySelectorAll(".portfolio-websites-show-more-accordion-container");
 const contactFormInputs = document.querySelectorAll(".contact-form-input-box");
 const contactFormLabels = document.querySelectorAll(".contact-form-label");
 const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
-// Smooth anchor scroll, compatilble for older browsers
+//Smooth anchor scroll, compatilble for older browsers
 document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
@@ -114,11 +114,11 @@ const showDarkModeModal = () => {
         document.body.appendChild(darkModeModalOverlay);
         document.body.appendChild(darkModeModalContainer);
 
-        // Manage focus: move focus to the modal
+        //Manage focus: move focus to the modal
         darkModeModalContainer.focus();
 
         darkModeModalAllowButton.addEventListener("click", () => {
-            // Temporarily disable the aria-live region
+            //Temporarily disable the aria-live region
             const ariaLiveElement = document.querySelector("[aria-live]");
             const previousAriaLiveValue = ariaLiveElement.getAttribute("aria-live");
             ariaLiveElement.setAttribute("aria-live", "off");
@@ -138,32 +138,32 @@ const showDarkModeModal = () => {
             closeModal();
         });
 
-        // Function to close the modal and return focus
+        //Function to close the modal and return focus
         const closeModal = () => {
             document.body.removeChild(darkModeModalOverlay);
             document.body.removeChild(darkModeModalContainer);
-            // Temporarily hide the button from screen readers
+            //Temporarily hide the button from screen readers
             darkModeToggleButton.setAttribute("aria-hidden", "true");
 
-            // Use a timeout to briefly delay refocusing the button
+            //Use a timeout to briefly delay refocusing the button
             setTimeout(() => {
                 darkModeToggleButton.removeAttribute("aria-hidden"); // Re-enable for screen readers
                 darkModeToggleButton.focus({ preventScroll: true }); // Reapply focus
             }, 100);
         };
 
-        // Trap focus within the modal
+        //Trap focus within the modal
         const focusableElements = [darkModeModalAllowButton, darkModeModalDeclineButton];
         let currentFocusIndex = -1;
         
         darkModeModalContainer.addEventListener("keydown", (e) => {
             if (e.key === "Tab") {
                 e.preventDefault();
-                // If the container is focused and tab is pressed, move to the "Allow" button
+                //If the container is focused and tab is pressed, move to the "Allow" button
                 if (currentFocusIndex === -1) {
                     currentFocusIndex = 0;
                 } else {
-                    // Move focus to the next or previous element
+                    //Move focus to the next or previous element
                     if (e.shiftKey) {
                         currentFocusIndex = (currentFocusIndex === 0) ? focusableElements.length - 1 : currentFocusIndex - 1;
                     } else {
@@ -225,12 +225,12 @@ const showDarkModeModal = () => {
     const footerBottomContainerBorder = document.querySelector(".footer-section-container");
 
     function enableDarkMode() {
-        darkModeIcon.style.visibility = "hidden";
-        lightModeIcon.style.visibility = "visible";
+        darkModeIcon.classList.add("fa-moon-visibility-hidden");
+        lightModeIcon.classList.add("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Dark mode is now enabled";
         darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
 
-        // Apply dark mode classes to other elements as needed
+        //Apply dark mode classes to other elements as needed
         screenReadersOnlyText.forEach((text) => {
             text.classList.add("sr-only-dark-mode");
         });
@@ -317,11 +317,11 @@ const showDarkModeModal = () => {
             background.classList.add("portfolio-websites-show-more-container-dark-mode");
         });
         
-        portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMoreText) => {
+        showMoreAccordionContainerShowLessText.forEach((showMoreText) => {
             showMoreText.classList.add("portfolio-websites-show-more-accordion-container-button-p-dark-mode");
         });
 
-        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
+        showMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
             showMoreArrow.classList.add("portfolio-websites-show-more-arrow-dark-mode");
         });
 
@@ -368,6 +368,7 @@ const showDarkModeModal = () => {
             }
         `;
         
+        //In order to change the colour of the placeholder font for dark mode, I had to add the internal style element to the head element of the document.
         const stylePlaceholderColorDark = document.createElement("style");
         stylePlaceholderColorDark.textContent = placeholderColorDark;
         document.head.appendChild(stylePlaceholderColorDark);
@@ -378,7 +379,7 @@ const showDarkModeModal = () => {
             label.classList.add("contact-form-label-dark-mode");
         });
         
-        hCaptchaColor.style.filter = "invert(1) hue-rotate(180deg)";
+        hCaptchaColor.classList.add("h-captcha-dark-mode");
         
         footerContainerBackground.classList.add("footer-navigation-container-dark-mode");
 
@@ -398,12 +399,12 @@ const showDarkModeModal = () => {
     }
 
     function disableDarkMode() {
-        lightModeIcon.style.visibility = "hidden";
-        darkModeIcon.style.visibility = "visible";
+        darkModeIcon.classList.remove("fa-moon-visibility-hidden");
+        lightModeIcon.classList.remove("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Light mode is now enabled";
         darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
         
-        // Remove dark mode classes from other elements as needed
+        //Remove dark mode classes from other elements as needed
         screenReadersOnlyText.forEach((text) => {
             text.classList.remove("sr-only-dark-mode");
         });
@@ -490,11 +491,11 @@ const showDarkModeModal = () => {
             background.classList.remove("portfolio-websites-show-more-container-dark-mode");
         });
 
-        portfolioWebsitesShowMoreAccordionContainerShowLessText.forEach((showMoreText) => {
+        showMoreAccordionContainerShowLessText.forEach((showMoreText) => {
             showMoreText.classList.remove("portfolio-websites-show-more-accordion-container-button-p-dark-mode");
         });
 
-        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
+        showMoreAccordionContainerShowMoreArrow.forEach((showMoreArrow) => {
             showMoreArrow.classList.remove("portfolio-websites-show-more-arrow-dark-mode");
         });
 
@@ -541,6 +542,7 @@ const showDarkModeModal = () => {
             }
         `;
         
+        //In order to change the colour of the placeholder font for dark mode, I had to add the internal style element to the head element of the document.
         const stylePlaceholderColorLight = document.createElement("style");
         stylePlaceholderColorLight.textContent = placeholderColorLight;
         document.head.appendChild(stylePlaceholderColorLight);
@@ -551,7 +553,7 @@ const showDarkModeModal = () => {
             label.classList.remove("contact-form-label-dark-mode");
         });
         
-        hCaptchaColor.style.filter = "invert(0) hue-rotate(0deg)";
+        hCaptchaColor.classList.remove("h-captcha-dark-mode");
         
         footerContainerBackground.classList.remove("footer-navigation-container-dark-mode");
 
@@ -578,7 +580,7 @@ const showDarkModeModal = () => {
         }
     });
 
-    // Apply dark mode if preference is already enabled
+    //Apply dark mode if preference is already enabled
     const darkModePreference = localStorage.getItem("darkModePreference");
     if (darkModePreference === "enabled") {
         enableDarkMode();
@@ -587,7 +589,7 @@ const showDarkModeModal = () => {
     }
 });
 
-// Event listener for both click and keydown (Enter/Space)
+//Event listener for both click and keydown (Enter/Space)
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
 hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
     if (event.key === "Enter" || event.key === " ") {
@@ -596,28 +598,50 @@ hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
     }
 });
 
-// Function to show or hide the menu
+//Function to show or hide the menu
 function showMenu() {
 
-    // Get the current state of the aria-expanded attribute
+    //Get the current state of the aria-expanded attribute
     const ariaExpanded = hamburgerMenuIconContainer.getAttribute("aria-expanded");
     const newAriaExpanded = ariaExpanded === "true" ? "false" : "true";
 
-    // Toggle menu visibility classes
+    //Toggle menu visibility classes
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    topNavigationBarAccordionContainer.style.transition = "all ease-in-out 0.4s";
+    //Add animation to the top navigation bar
+    topNavigationBarAccordionContainer.classList.add("top-navigation-bar-accordion-container-animation");
 
-    // Update the aria-expanded attribute
+        if (topNavigationBarAccordionContainer.classList.contains("top-navigation-bar-accordion-container-hidden")) {
+            
+            topNavigationBarAccordionContainer.classList.add("temporarily");
+           
+        } else if (topNavigationBarAccordionContainer.classList.contains("top-navigation-bar-accordion-container-visible")) {
+          
+            topNavigationBarAccordionContainer.classList.remove("temporarily");
+        
+        }
+
+    //Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
 
-    // Announce the change for screen readers
+    //Announce the change for screen readers
     dynamicAnnouncer.textContent = newAriaExpanded === "true" 
         ? "Hamburger navigation menu opened" 
         : "Hamburger navigation menu closed";
+
+    //Hamburger menu SVG icon animation
+    const hamburgerMenuBottomLine = document.querySelector(".hamburger-menu-bottomline");
+
+    hamburgerMenuBottomLine.getAttribute("d");
+    if (newAriaExpanded === "true") {
+        hamburgerMenuBottomLine.setAttribute("d", "M7.5 30.5 L35 30.5");
+    } else {
+        hamburgerMenuBottomLine.setAttribute("d", "M17.5 30.5 L35 30.5");
+    }
 }
 
+//Function to trigger the laptop SVG image code animation when the user scrolls.
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -631,7 +655,7 @@ function handleScroll() {
     laptopImageCode.forEach((element, index) => {
         if (isInViewport(element)) {
             setTimeout(() => {
-                element.style.animation = "draw 15s linear forwards";
+                element.classList.add("laptop-image-code-animation");
             }, index * 500);
         }
     });
@@ -643,37 +667,43 @@ document.addEventListener("DOMContentLoaded", function() {
     const leftArrows = document.querySelectorAll(".portfolio-websites-slider-left-arrow");
     const rightArrows = document.querySelectorAll(".portfolio-websites-slider-right-arrow");
 
-    // Function to show the current image and hide others
+    //Function to show the current image and hide others
     function showImage(images, imageIndex) {
         images.forEach((image, i) => {
-            image.style.display = (i === imageIndex) ? "block" : "none";
+            if (i === imageIndex) {
+                image.classList.add("image-visible");
+                image.classList.remove("image-hidden");
+            } else {
+                image.classList.add("image-hidden");
+                image.classList.remove("image-visible");
+            }
         });
     }
 
-    // Function to initialize slider functionality
+    //Function to initialize slider functionality
     function initializeSlider(sliderContainer, sliderContainerIndex) {
         const leftArrowElement = leftArrows[sliderContainerIndex];
         const rightArrowElement = rightArrows[sliderContainerIndex];
         const portfolioWebsitesSliderImages = sliderContainer.querySelectorAll(".portfolio-websites-slider-image");
         let currentIndex = 0;
 
-        // Function to handle click on left arrow
+        //Function to handle click on left arrow
         function handleLeftArrow() {
             currentIndex = (currentIndex === 0) ? portfolioWebsitesSliderImages.length - 1 : currentIndex - 1;
             showImage(portfolioWebsitesSliderImages, currentIndex);
         }
 
-        // Function to handle click on right arrow
+        //Function to handle click on right arrow
         function handleRightArrow() {
             currentIndex = (currentIndex === portfolioWebsitesSliderImages.length - 1) ? 0 : currentIndex + 1;
             showImage(portfolioWebsitesSliderImages, currentIndex);
         }
 
-        // Add event listeners for click
+        //Add event listeners for click
         leftArrowElement.addEventListener("click", handleLeftArrow);
         rightArrowElement.addEventListener("click", handleRightArrow);
 
-        // Add event listeners for keyboard accessibility
+        //Add event listeners for keyboard accessibility
         leftArrowElement.addEventListener("keydown", function(event) {
             if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault(); // Prevent default space action
@@ -688,16 +718,16 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Show the initial image
+        //Show the initial image
         showImage(portfolioWebsitesSliderImages, currentIndex);
     }
 
-    // Initialize each slider
+    //Initialize each slider
     portfolioWebsitesSliderContainers.forEach((sliderContainer, sliderContainerIndex) => {
         initializeSlider(sliderContainer, sliderContainerIndex);
     });
 
-    // Function to update viewBox attributes based on window width
+    //Function to update viewBox attributes based on window width
     function updateViewBox() {
         if (window.innerWidth <= 600) {
             leftArrows.forEach((arrow) => {
@@ -716,40 +746,40 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Initial update
+    //Initial update
     updateViewBox();
 
-    // Update on window resize
+    //Update on window resize
     window.addEventListener("resize", updateViewBox);
 });
 
 document.querySelectorAll('a[target="_blank"]').forEach(link => {
     link.addEventListener("click", function() {
-        // Find the live region and update its content
+        //Find the live region and update its content
         const liveRegion = document.getElementById("tab-announcement");
         if (liveRegion) {
             liveRegion.textContent = "Opening a new tab.";
             setTimeout(() => {
-                // Clear the announcement after a short delay
+                //Clear the announcement after a short delay
                 liveRegion.textContent = "";
             }, 3000);
         }
     });
 });
 
-// Common function to toggle the accordion and update aria-expanded
+//Common function to toggle the accordion and update aria-expanded
 function toggleAccordion(button, index) {
-    // Get the current state of the aria-expanded attribute
+    //Get the current state of the aria-expanded attribute
     const ariaExpanded = button.getAttribute("aria-expanded");
     
-    // Determine the new state
+    //Determine the new state
     let newAriaExpanded;
     if (ariaExpanded === "true") {
         newAriaExpanded = "false";
     } else {
         newAriaExpanded = "true";
     }
-    // Update the aria-expanded attribute to the new state on the specific button
+    //Update the aria-expanded attribute to the new state on the specific button
     button.setAttribute("aria-expanded", newAriaExpanded);
 
     const dynamicShowMoreAnnouncer = document.getElementById("dynamicShowMoreAnnouncer");
@@ -762,44 +792,49 @@ function toggleAccordion(button, index) {
     const accordionContainer = portfolioWebsitesShowMoreAccordionContainer[index];
     const contentHeight = accordionContainer.scrollHeight;
 
+    //I had to use a dynamic inline style in this conditional statement, because of the difference in the height of the container when it expands with the animation.
     if (newAriaExpanded === "true") {
-        // Expand: Set the height to the full content height
+        //Expand: Set the height to the full content height
         accordionContainer.style.height = contentHeight + "px";
 
-        // After transition, reset height to auto
+        //After transition, reset height to auto
         setTimeout(() => {
             accordionContainer.style.height = "auto";
         }, 250); // For setTimeout to work it needs to match with the transition duration in CSS
     } else {
-        // Collapse: Set the height back to 0
+        //Collapse: Set the height back to 0
         accordionContainer.style.height = accordionContainer.scrollHeight + "px"; // Recalculate height in case it was set to auto
 
-        // Force reflow to apply the height setting
+        //Force reflow to apply the height setting
         accordionContainer.offsetHeight;
 
+        //Collapse the height
         accordionContainer.style.height = "0px";
     }
 
-    // Update the button text and arrow state
-    if (portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent === "Show More") {
-        portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show Less";
-        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(180deg)";
-        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0.30em 2em 0";           
+    const showMoreArrowAnimation = showMoreAccordionContainerShowMoreArrow[index];
+    const showLessTextAnimation = showMoreAccordionContainerShowLessText[index];
+
+    //Update the button text and arrow state
+    if (showLessTextAnimation.textContent === "Show More") {
+        showLessTextAnimation.textContent = "Show Less";
+        showMoreArrowAnimation.classList.add("arrow-rotated");
+        showMoreArrowAnimation.classList.remove("arrow-normal");           
     } else {
-        portfolioWebsitesShowMoreAccordionContainerShowLessText[index].textContent = "Show More";
-        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.transform = "rotate(0deg)";
-        portfolioWebsitesShowMoreAccordionContainerShowMoreArrow[index].style.margin = "-1em 0 2em 0";
+        showLessTextAnimation.textContent = "Show More";
+        showMoreArrowAnimation.classList.remove("arrow-rotated");
+        showMoreArrowAnimation.classList.add("arrow-normal");
     }
 }
 
-// Attach event listeners
+//Attach event listeners
 portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
-    // Click event listener
+    //Click event listener
     button.addEventListener("click", () => {
         toggleAccordion(button, index);
     });
 
-    // Keydown event listener
+    //Keydown event listener
     button.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault(); // Prevent default behavior for space key which is scrolling
@@ -822,29 +857,28 @@ portfolioWebsitesShowMoreAccordionContainerButton.forEach((button, index) => {
 //         contactFormLabels[index].style.margin = "-1.5em 0.5em";
 //     }
 // });
-//! This works but not sure if it will be used, need to test it with the new code below
+//!This works but not sure if it will be used, need to test it with the new code below
 
 contactFormInputs.forEach((input, index) => {
     const originalPlaceholder = input.placeholder;
     input.placeholder = "";
     input.addEventListener("focus", () => {
-        contactFormLabels[index].style.margin = "-1.5em 0.5em";
-        contactFormLabels[index].style.transition = "margin 0.35s ease";
+        contactFormLabels[index].classList.add("label-focused");
+        contactFormLabels[index].classList.remove("label-blurred");
         input.placeholder = originalPlaceholder; 
     });
     input.addEventListener("blur", () => {
-        contactFormLabels[index].style.margin = "0.25em 0.5em";
-        contactFormLabels[index].style.transition = "margin 0.35s ease";
-        input.placeholder = ""; 
-
         if (input.value !== "") {
-            contactFormLabels[index].style.margin = "-1.5em 0.5em";
+            contactFormLabels[index].classList.add("label-focused");
+            contactFormLabels[index].classList.remove("label-blurred");
         } else {
-            contactFormLabels[index].style.margin = "0.25em 0.5em";
+            contactFormLabels[index].classList.add("label-blurred");
+            contactFormLabels[index].classList.remove("label-focused");
         }
+        input.placeholder = "";
     });
 });
-//! Experiemental for people who have contrast changed in the settings
+//!Experiemental for people who have contrast changed in the settings
 
 document.addEventListener("DOMContentLoaded", function () {
     const regexInput = {
@@ -859,8 +893,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const messageField = document.getElementById("message");
     const contactFormSubmitButton = document.querySelector(".contact-form-submit-button");
     const contactFormSubmission = document.querySelector("form");
-
-    //?contactFormSubmitButton.style.visibility = "visible";
 
     function setSessionCookie() {
         const cookieValue = "sessionToken=uniqueSessionID123; path=/; SameSite=Lax";
@@ -880,10 +912,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 field.classList.add("contact-form-input-box-dark-mode");
             }
             if (!isPhoneField && field.nextElementSibling) { // Hiddes the validation message when there is nothing in the input box and the user pressed tab to go to the next input box.
-                field.nextElementSibling.style.visibility = "hidden";
+                field.nextElementSibling.classList.remove("validation-visible");
+                field.nextElementSibling.classList.add("validation-hidden");
             } 
             else if (isPhoneField && contactFormValidationParagraphPhone) {
-                contactFormValidationParagraphPhone.style.visibility = "hidden";
+                field.nextElementSibling.classList.remove("validation-visible");
+                field.nextElementSibling.classList.add("validation-hidden");
             }
         } else if (regex.test(field.value)) {
             field.className = "contact-form-input-box contact-form-valid";
@@ -894,11 +928,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 field.classList.add("contact-form-valid-dark-mode");
             }
             if (field.id === "fullname" && contactFormValidationParagraphName) {
-                contactFormValidationParagraphName.style.visibility = "hidden";
+                contactFormValidationParagraphName.classList.remove("validation-visible");
+                contactFormValidationParagraphName.classList.add("validation-hidden");
             } else if (field.id === "email" && contactFormValidationParagraphEmail) {
-                contactFormValidationParagraphEmail.style.visibility = "hidden";
+                contactFormValidationParagraphEmail.classList.remove("validation-visible");
+                contactFormValidationParagraphEmail.classList.add("validation-hidden");
             } else if (isPhoneField && contactFormValidationParagraphPhone) {
-                contactFormValidationParagraphPhone.style.visibility = "hidden";
+                contactFormValidationParagraphPhone.classList.remove("validation-visible");
+                contactFormValidationParagraphPhone.classList.add("validation-hidden");
             }
         } else {
             field.className = "contact-form-input-box contact-form-invalid";
@@ -909,13 +946,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 field.classList.add("contact-form-invalid-dark-mode");
             }
             if (field.id === "fullname" && contactFormValidationParagraphName) {
-                contactFormValidationParagraphName.style.visibility = "visible";
+                contactFormValidationParagraphName.classList.remove("validation-hidden");
+                contactFormValidationParagraphName.classList.add("validation-visible");
                 announceError("fullname-error", "Please ensure that the full name only contains letters, full stops, commas, apostrophes, or hyphens.");
             } else if (field.id === "email" && contactFormValidationParagraphEmail) {
-                contactFormValidationParagraphEmail.style.visibility = "visible";
+                contactFormValidationParagraphEmail.classList.remove("validation-hidden");
+                contactFormValidationParagraphEmail.classList.add("validation-visible");
                 announceError("email-error", "Please ensure that the email address entered is valid.");
             } else if (isPhoneField && contactFormValidationParagraphPhone) {
-                contactFormValidationParagraphPhone.style.visibility = "visible";
+                contactFormValidationParagraphPhone.classList.remove("validation-hidden");
+                contactFormValidationParagraphPhone.classList.add("validation-visible");
                 announceError("phone-error", "Please ensure the phone number starts with + 4 4.");
             }
             messageField.addEventListener("blur", function () {
@@ -928,11 +968,11 @@ document.addEventListener("DOMContentLoaded", function () {
         checkFormValidity();
     }
 
-    // Function to announce errors to screen reader
+    //Function to announce errors to screen reader
     function announceError(errorId, message) {
         const errorElement = document.getElementById(errorId);
         
-        // Temporarily clear the message
+        //Temporarily clear the message
         errorElement.textContent = '';  
         setTimeout(() => {
             errorElement.textContent = message;  
@@ -983,7 +1023,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 hcaptchaModalContainer.setAttribute("tabindex", "-1");
     
                 const hcaptchaModalTitle = document.createElement("p");
-                //! hcaptchaModalTitle.setAttribute("id", "hcaptchaModalTitle");
                 hcaptchaModalTitle.setAttribute("class", "hcaptcha-modal-title");
                 hcaptchaModalTitle.textContent = "Alert!";
                 hcaptchaModalContainer.appendChild(hcaptchaModalTitle);
@@ -1008,14 +1047,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.appendChild(hcaptchaModalOverlay);
                 document.body.appendChild(hcaptchaModalContainer);
     
-                // Focus management
+                //Focus management
                 hcaptchaModalContainer.focus();
     
                 hcaptchaModalOkButton.addEventListener("click", () => {
                     closeHcaptchaModal();
                 });
     
-                // Function to close the modal and return focus
+                //Function to close the modal and return focus
                 function closeHcaptchaModal() {
                     document.body.removeChild(hcaptchaModalOverlay);
                     document.body.removeChild(hcaptchaModalContainer);
@@ -1029,90 +1068,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     contactFormSubmitButton.addEventListener("blur", () => {
                         contactFormSubmitButton.setAttribute("aria-label", "Submit Form");
                     });
-                    //! This one worked the best out of all the attempts but still announces the button element
-
-                    
-    // // Remove the modal elements from the DOM
-    // document.body.removeChild(hcaptchaModalOverlay);
-    // document.body.removeChild(hcaptchaModalContainer);
-
-    // // Use a timeout to ensure the DOM is updated before setting focus
-    // setTimeout(() => {
-    //     // Temporarily hide the button from screen readers
-    //     contactFormSubmitButton.setAttribute('aria-hidden', 'true');
-    //     contactFormSubmitButton.style.visibility = 'hidden';
-
-    //     // Set focus to the Submit Form button
-    //     contactFormSubmitButton.focus({ preventScroll: true });
-
-    //     // Restore visibility and ARIA attributes after focus is set
-    //     setTimeout(() => {
-    //         contactFormSubmitButton.style.visibility = '';
-    //         contactFormSubmitButton.removeAttribute('aria-hidden');
-    //     }, 100); // Adjust timing if necessary
-    // }, 0); // Short delay to allow DOM updates
-//! This works by only announcing the submit form button once on the screen reader, but has no focus ring
-
-
-    // // Remove the modal elements from the DOM
-    // document.body.removeChild(hcaptchaModalOverlay);
-    // document.body.removeChild(hcaptchaModalContainer);
-
-    // // Use a timeout to ensure the DOM is updated before setting focus
-    // setTimeout(() => {
-    //     // Temporarily hide the button from screen readers
-    //     contactFormSubmitButton.setAttribute('aria-hidden', 'true');
-    //     contactFormSubmitButton.style.visibility = 'hidden';
-
-    //     // Set focus to the Submit Form button
-    //     contactFormSubmitButton.focus({ preventScroll: true });
-
-    //     // Restore visibility and ARIA attributes after focus is set
-    //     setTimeout(() => {
-    //         contactFormSubmitButton.style.visibility = '';
-    //         contactFormSubmitButton.removeAttribute('aria-hidden');
-            
-    //         // Ensure focus ring is visible by temporarily adding a class
-    //         contactFormSubmitButton.classList.add('focus-visible');
-    //         setTimeout(() => {
-    //             contactFormSubmitButton.classList.remove('focus-visible');
-    //         }, 100); // Ensure this matches the duration of your focus ring CSS
-    //     }, 0); // Adjust timing if necessary
-    // }, 0); // Short delay to allow DOM updates
-//! This works by only announcing the submit form button once on the screen reader, but again has no focus ring
-
-
-    // // Remove the modal elements from the DOM
-    // document.body.removeChild(hcaptchaModalOverlay);
-    // document.body.removeChild(hcaptchaModalContainer);
-
-    // // Temporarily hide the button from screen readers
-    // contactFormSubmitButton.setAttribute('aria-hidden', 'true');
-    // contactFormSubmitButton.style.visibility = 'hidden';
-
-    // // Use requestAnimationFrame to ensure the DOM has been updated before focusing
-    // requestAnimationFrame(() => {
-    //     contactFormSubmitButton.focus({ preventScroll: true });
-
-    //     // Restore visibility and ARIA attributes after focus is set
-    //     contactFormSubmitButton.style.visibility = '';
-    //     contactFormSubmitButton.removeAttribute('aria-hidden');
-
-    //     // Apply focus styles
-    //     contactFormSubmitButton.classList.add('focus-visible');
-    //     setTimeout(() => {
-    //         contactFormSubmitButton.classList.remove('focus-visible');
-    //     }, 100); // Ensure this matches the duration of your focus ring CSS
-    // });
-//! This works by only announcing the submit form button once on the screen reader, but has permement focus
-
+                    //! This works, however announces the button element twice.
                 }
     
-                // Trap focus within the modal
+                //Trap focus within the modal
                 hcaptchaModalContainer.addEventListener("keydown", (e) => {
                     if (e.key === "Tab") {
-                        e.preventDefault(); // Prevent tabbing out of the modal
-                        hcaptchaModalOkButton.focus(); // Ensure focus stays on the Ok button
+                        e.preventDefault(); //Prevent tabbing out of the modal
+                        hcaptchaModalOkButton.focus(); //Ensure focus stays on the Ok button
                     } else if (e.key === "Escape") {
                         closeHcaptchaModal();
                     }
@@ -1122,7 +1085,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (formIsValid) {
             setSessionCookie();
-            contactFormSubmission.submit(); // Fixed: Use contactFormSubmission.submit() directly for submission
+            contactFormSubmission.submit(); //Fixed: Use contactFormSubmission.submit() directly for submission
         }
     }
 

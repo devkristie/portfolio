@@ -192,6 +192,9 @@ body::before {
     font-size: 1.30rem;
     color: var(--dark-mode);
 }
+.fa-moon-visibility-hidden {
+    visibility: hidden;
+}
 .fa-sun {
     position: absolute;
     top: 0.075em;
@@ -199,6 +202,9 @@ body::before {
     font-size: 1.1rem;
     color: var(--light-mode);
     visibility: hidden;
+}
+.fa-sun-visibility-visible {
+    visibility: visible;
 }
 
 .hamburger-menu-container {
@@ -215,12 +221,22 @@ body::before {
     stroke-linecap: round;
     stroke-width: 4.8px;
 }
+.hamburger-menu-bottomline {
+    transition: all ease-in-out 0.4s;
+}
 .top-navigation-bar-accordion-container-hidden {
     position: fixed;
     z-index: 5;
     width: 100%;
     margin-top: -2.5em;
     background-image: linear-gradient(to bottom, var(--primary-color), var(--primary-color), var(--third-color));
+    transition: all ease-in-out 0.4s;
+}
+.top-navigation-bar-accordion-container-hidden.temporarily {
+    visibility: hidden;
+}
+.top-navigation-bar-accordion-container-animation {
+    transition: all ease-in-out 0.4s;
 }
 .top-navigation-bar-accordion-container-visible {
     z-index: 5;
@@ -270,7 +286,7 @@ main {
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    padding: 5em 0;
+    padding: 4em 0 5em 0;
     background: url("./assets/images/landing-page-image.png") fixed no-repeat center;
     background-size: contain;
 }
@@ -280,7 +296,7 @@ main {
 }
 .landing-page-section-container p {
     margin: 0;
-    font-family: "roboto-bold", Arial;
+    font-family: "roboto-bold", "Tahoma", Arial;
 }
 .landing-page-title-welcome,
 .landing-page-title-opening-curly-brace,
@@ -418,6 +434,9 @@ main {
         stroke-dashoffset: 0;
     }
 }
+.laptop-image-code-animation {
+    animation: draw 15s linear forwards;
+}
 .laptop-image-bottom-shell {
     stroke: var(--dark-grey);
 }
@@ -453,7 +472,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 130px;
+    height: 136px;
     background-color: var(--darker-grey);
 }
 .section-title {
@@ -568,8 +587,8 @@ main {
     font-weight: 600;
     letter-spacing: 0.025em;
     text-decoration: none;
-    background-color: var(--secondary-color);
-    color: var(--light-mode);
+    background-color: var(--primary-color);
+    color: var(--darkest-grey);
     border: none;
     border-radius: 800px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
@@ -578,7 +597,7 @@ main {
 }
 .profile-introduction-download-cv-button:hover,
 .profile-introduction-download-cv-button:focus {
-    background-color: rgb(144.3, 92.9, 79.5);
+    background-color: var(--third-color);
 }
 
 .portfolio-section-container {
@@ -642,7 +661,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 48px;
-    height: 105.01px;
+    height: 300.01px;
     padding: 0.85em;
     border: none;
     cursor: pointer;
@@ -689,24 +708,24 @@ main {
 .portfolio-websites-view-website-button,
 .portfolio-websites-view-source-code-button {
     width: 100%;
-    padding: 0.25em 1em;
+    padding: 0.63em 1em;
     font-size: 1rem;
     font-family: "roboto-regular", Arial;
     font-weight: 600;
     letter-spacing: 0.025em;
     text-align: center;
     text-decoration: none;
-    background-color: var(--secondary-color);
     color: var(--light-mode);
     border-top: none;
-    border-bottom: none;  
+    border-bottom: none;
+    border-radius: 24px;
     transition: background-color 0.5s;
     cursor: pointer;
 }
 .portfolio-websites-title-container {
     width: 100%;
-    margin: 0 0 3.85em;
-    font-size: 1.3rem;
+    margin: 0 0 2.85em;
+    font-size: 1.75rem;
     font-family: "roboto-medium", Arial;
     background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
     border-radius: 24px 24px 0 0;
@@ -719,12 +738,12 @@ main {
 }
 .portfolio-websites-slider-left-arrow {
     background-image: linear-gradient(to left, var(--dark-grey), var(--dark-grey), var(--darker-grey));
-    border-radius: 24px 0 0 24px;
+    border-radius: 50% 0 0 50%;
     box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
 }
 .portfolio-websites-slider-right-arrow {
     background-image: linear-gradient(to right, var(--dark-grey), var(--dark-grey), var(--darker-grey));
-    border-radius: 0 24px 24px 0;
+    border-radius: 0 50% 50% 0;
     box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.5), -5px 0px 0px rgba(255, 255, 255, 0.5);
 }
 .portfolio-websites-slider-container > figure {
@@ -736,7 +755,7 @@ main {
     position: absolute;
     display: none;
     width: 100%;
-    height: 105.01px;
+    height: 300.01px;
     object-fit: cover;
     filter: blur(0.8px);
     image-rendering: auto;
@@ -744,26 +763,43 @@ main {
 .portfolio-websites-slider-image:first-child {
     display: block;
 }
+/*These declaration blocks are for the JavaScript slider functionality*/
+.portfolio-websites-slider-image.image-visible {
+    display: block;
+}
+.portfolio-websites-slider-image.image-hidden {
+    display: none;
+}
+
 .portfolio-websites-button-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
-    background-color: var(--secondary-color);
+    z-index: 1;
+    margin-bottom: -0.75em;
+    width: 80%;
+    background-color: transparent;
 }
 .portfolio-websites-view-website-button {
-    border-right: 0.16px solid var(--light-mode);  
+    margin: 0 5% 0 0;
+    background-color: var(--dark-mode);
+    color: var(--lightest-grey);
+    border: 0.16px solid var(--light-mode);  
 }
 .portfolio-websites-view-website-button:hover,
 .portfolio-websites-view-website-button:focus {
-    background-color: rgb(144.3, 92.9, 79.5);
+    background-color: var(--third-color);
+    color: var(--dark-mode);
 }
 .portfolio-websites-view-source-code-button {
-    border-left: 0.16px solid var(--light-mode);
+    margin: 0 0 0 5%;
+    background-color: var(--secondary-color);
+    border: 0.16px solid var(--lightest-grey);
 }
 .portfolio-websites-view-source-code-button:hover,
 .portfolio-websites-view-source-code-button:focus {
-    background-color: rgb(144.3, 92.9, 79.5);
+    background-color: var(--third-color);
+    color: var(--dark-mode);    
 }
 .portfolio-websites-show-more-container {
     width: 100%;
@@ -782,7 +818,7 @@ main {
 }
 .portfolio-websites-show-more-accordion-container-button > p {
     width: 160px;
-    padding: 1.5em 0 0 2.5em;
+    padding: 2.5em 0 0 2.5em;
     font-family: "roboto-bold", Arial;
 }
 .portfolio-websites-show-more-arrow {
@@ -794,6 +830,14 @@ main {
     fill: none;
     stroke-linecap: round;
     stroke-width: 4px;
+}
+.arrow-rotated {
+    transform: rotate(180deg);
+    margin: -1em 0.30em 2em 0;
+}
+.arrow-normal {
+    transform: rotate(0deg);
+    margin: -1em 0 2em 0;
 }
 /*Portfolio website container accordion content that is not displayed when the accordion is clicked on*/
 .portfolio-websites-show-more-accordion-container {
@@ -868,10 +912,6 @@ main {
     min-height: 100vh;
     padding-bottom: 2.5em;
 }
-.contact-form-top-header-container,
-.form-background {
-    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
-}
 .contact-form-valid,
 .contact-form-invalid {
     width: 100%;
@@ -899,9 +939,10 @@ main {
 }
 .contact-form-top-header-container {
     width: 100%;
-    height: 92px;
+    height: 136px;
     background-image: linear-gradient(to bottom, var(--light-grey), var(--light-mode));
     border-radius: 24px 24px 0 0;
+    box-shadow: 1.5px 2.5px 3px rgba(0, 0, 0, 0.5);
 }
 .contact-form-top-header-envelope-container {
     display: flex;
@@ -920,9 +961,13 @@ main {
     width: 100%;
 }
 .form-background {
-    height: 33.045em;
-    background-color: #fbfbfb;
+    height: 44em;
+    padding-top: 3.5em;
+    background-color: var(--light-grey);
+    border-top: 75.8px solid var(--primary-color);
     border-radius: 0 0 24px 24px;
+    box-shadow: 1.5px 2.5px 3px rgba(0, 0, 0, 0.5);
+    transition: padding 0.25s linear;
 }
 .contact-form-label {
     position: absolute;
@@ -935,7 +980,15 @@ main {
     font-weight: 600;
     letter-spacing: 0.02em;
     text-align: center;
-    color: var(--darker-grey);
+    color: var(--dark-mode);
+}
+.label-focused {
+    margin: -1.5em 0.5em;
+    transition: margin 0.35s ease;
+}
+.label-blurred {
+    margin: 0.25em 0.5em;
+    transition: margin 0.35s ease;
 }
 .contact-form-input-box {
     width: 100%;
@@ -969,6 +1022,7 @@ main {
     visibility: hidden;
 }
 .contact-form-input-box:focus {
+    padding-left: 1.45em;
     border: 1.44px solid var(--secondary-color);
     outline-style: solid;
     outline-color: var(--secondary-color);
@@ -986,9 +1040,16 @@ main {
     background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
+.contact-form-validation-paragraph.validation-hidden {
+    visibility: hidden;
+}
+.contact-form-validation-paragraph.validation-visible {
+    visibility: visible;
+}
 .contact-form-input-box-message {
     height: 203.01px;
     padding: 0.9em 0 0 1.5em;
+    border-bottom: 16px solid var(--primary-color);
     border-radius: 0 0 24px 24px;
     resize: none;
 }
@@ -1014,7 +1075,7 @@ main {
     font-weight: 600;
     letter-spacing: 0.025em;
     background-color: var(--secondary-color);
-    color: var(--light-mode);
+    color: var(--lightest-grey);
     border: none;
     border-radius: 800px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
@@ -1024,7 +1085,8 @@ main {
 }
 .contact-form-submit-button:hover,
 .contact-form-submit-button:focus {
-    background-color: rgb(144.3, 92.9, 79.5);
+    background-color: var(--third-color);
+    color: var(--dark-mode);
 }
 
 .footer-section-container {
@@ -1093,8 +1155,8 @@ a.footer-navigation-link-backtotop {
     font-family: "roboto-medium", Arial;
     font-weight: 600;
     letter-spacing: 0.025em;
-    background-color: var(--secondary-color);
-    color: var(--light-mode);
+    background-color: var(--darker-grey);
+    color: var(--lightest-grey);
     border-radius: 800px;
     transition: color 0.5s;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
@@ -1103,7 +1165,8 @@ a.footer-navigation-link-backtotop {
 }
 a.footer-navigation-link-backtotop:hover,
 a.footer-navigation-link-backtotop:focus {
-    background-color: rgb(144.3, 92.9, 79.5);
+    background-color: var(--primary-color);
+    color: var(--dark-mode);
 }
 .footer-absolute-links {
     font-size: 1rem;

@@ -199,8 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
     function enableDarkMode() {
-        darkModeIcon.style.visibility = "hidden";
-        lightModeIcon.style.visibility = "visible";
+        darkModeIcon.classList.add("fa-moon-visibility-hidden");
+        lightModeIcon.classList.add("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Dark mode is now enabled";
         darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
 
@@ -261,8 +261,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function disableDarkMode() {
-        lightModeIcon.style.visibility = "hidden";
-        darkModeIcon.style.visibility = "visible";
+        darkModeIcon.classList.remove("fa-moon-visibility-hidden");
+        lightModeIcon.classList.remove("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Light mode is now enabled";
         darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
         
@@ -359,7 +359,8 @@ function showMenu() {
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    topNavigationBarAccordionContainer.style.transition = "all ease-in-out 0.4s";
+    // Add animation to the top navigation bar
+    topNavigationBarAccordionContainer.classList.add("top-navigation-bar-accordion-container-animation");
 
     // Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
@@ -368,6 +369,16 @@ function showMenu() {
     dynamicAnnouncer.textContent = newAriaExpanded === "true" 
         ? "Hamburger navigation menu opened" 
         : "Hamburger navigation menu closed";
+
+    //Hamburger menu SVG icon animation
+    const hamburgerMenuBottomLine = document.querySelector(".hamburger-menu-bottomline");
+
+    hamburgerMenuBottomLine.getAttribute("d");
+    if (newAriaExpanded === "true") {
+        hamburgerMenuBottomLine.setAttribute("d", "M7.5 30.5 L35 30.5");
+    } else {
+        hamburgerMenuBottomLine.setAttribute("d", "M17.5 30.5 L35 30.5");
+    }
 }
 
 const updateDate = new Date();

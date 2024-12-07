@@ -173,7 +173,7 @@ const mainDarkMode = document.querySelector("main");
 const thankYouPageLandingPageSectionContainer = document.querySelector(".thank-you-page-landing-page-section-container");
 const messageSentParagraphContainer = document.querySelector(".message-sent-paragraph-container");
 const messageSentParagraph = document.querySelectorAll(".message-sent-paragraph");
-const messageSentEnvelopeSVGEnvelope = document.querySelector(".message-sent-envelope-svg-envelope");
+// const messageSentEnvelopeSVGEnvelope = document.querySelector(".message-sent-envelope-svg-envelope");
 const messageSentEnvelopeSVGEnvelopeEndGap = document.querySelector(".message-sent-envelope-svg-envelope-end-gap");
 const messageSentEnvelopeSVGEnvelopeLine = document.querySelectorAll(".message-sent-envelope-svg-envelope-line");
 const footerSectionContainer = document.querySelector(".footer-section-container");
@@ -185,8 +185,8 @@ const footerNavigationAbsoluteLinks = document.querySelectorAll(".footer-absolut
 const footerBottomNavigationContainer = document.querySelector(".footer-bottom-navigation-container");
 
 function enableDarkMode() {
-    darkModeIcon.style.visibility = "hidden";
-    lightModeIcon.style.visibility = "visible";
+    darkModeIcon.classList.add("fa-moon-visibility-hidden");
+    lightModeIcon.classList.add("fa-sun-visibility-visible");
     darkModeStatus.textContent = "Dark mode is now enabled";
     darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
 
@@ -209,7 +209,7 @@ function enableDarkMode() {
         paragraph.classList.add("message-sent-paragraph-dark-mode");
     });
     
-    messageSentEnvelopeSVGEnvelope.classList.add("message-sent-envelope-svg-envelope-dark-mode");
+    // messageSentEnvelopeSVGEnvelope.classList.add("message-sent-envelope-svg-envelope-dark-mode");
     
     messageSentEnvelopeSVGEnvelopeEndGap.classList.add("message-sent-envelope-svg-envelope-end-gap-dark-mode");
     
@@ -239,8 +239,8 @@ function enableDarkMode() {
 }
 
 function disableDarkMode() {
-    lightModeIcon.style.visibility = "hidden";
-    darkModeIcon.style.visibility = "visible";
+    darkModeIcon.classList.remove("fa-moon-visibility-hidden");
+    lightModeIcon.classList.remove("fa-sun-visibility-visible");
     darkModeStatus.textContent = "Light mode is now enabled";
     darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
 
@@ -261,7 +261,7 @@ function disableDarkMode() {
         paragraph.classList.remove("message-sent-paragraph-dark-mode");
     });
     
-    messageSentEnvelopeSVGEnvelope.classList.remove("message-sent-envelope-svg-envelope-dark-mode");
+    // messageSentEnvelopeSVGEnvelope.classList.remove("message-sent-envelope-svg-envelope-dark-mode");
     
     messageSentEnvelopeSVGEnvelopeEndGap.classList.remove("message-sent-envelope-svg-envelope-end-gap-dark-mode");
     
@@ -326,7 +326,8 @@ function showMenu() {
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    topNavigationBarAccordionContainer.style.transition = "all ease-in-out 0.4s";
+    // Add animation to the top navigation bar
+    topNavigationBarAccordionContainer.classList.add("top-navigation-bar-accordion-container-animation");
 
     // Update the aria-expanded attribute
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
@@ -335,6 +336,16 @@ function showMenu() {
     dynamicAnnouncer.textContent = newAriaExpanded === "true" 
         ? "Hamburger navigation menu opened" 
         : "Hamburger navigation menu closed";
+
+    //Hamburger menu SVG icon animation
+    const hamburgerMenuBottomLine = document.querySelector(".hamburger-menu-bottomline");
+
+    hamburgerMenuBottomLine.getAttribute("d");
+    if (newAriaExpanded === "true") {
+        hamburgerMenuBottomLine.setAttribute("d", "M7.5 30.5 L35 30.5");
+    } else {
+        hamburgerMenuBottomLine.setAttribute("d", "M17.5 30.5 L35 30.5");
+    }
 }   
 
 const thankYouMessageSVGAnimationWriting = document.querySelectorAll(".thank-you-message-svg-animation-writing");
@@ -354,12 +365,12 @@ document.addEventListener("DOMContentLoaded", function() {
     thankYouMessageSVGAnimationWriting.forEach((element, index) => {
         if (isInViewport(element)) {
             setTimeout(() => {
-                element.style.animation = "draw 10s linear 2s forwards";
+                element.classList.add("writing-activate-animation");
 
                 // After the animation of the first element is finished, trigger the animation of the second element
                 element.addEventListener("animationend", function() {
                     thankYouMessageSVGAnimationWritingUnderline.forEach((lineElement) => {
-                        lineElement.style.animation = "draw 2.5s linear 1.5s forwards";
+                        lineElement.classList.add("writing-underline-activate-animation");
                     });
                 });
             }, index * 1000);

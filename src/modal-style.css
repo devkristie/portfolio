@@ -51,10 +51,9 @@ Modal CSS Order:
     position: fixed;
     top: 75%;
     width: 25%;
-    height: 40px;
+    height: 41.5px;
     font-size: 1rem;
     font-family: "roboto-bold", Arial;
-    background-color: var(--primary-color);
     color: var(--dark-mode);
     border: none;
     border-radius: 80px;
@@ -64,10 +63,12 @@ Modal CSS Order:
     cursor: pointer;
 }
 .dark-mode-modal-allow-button:hover,
-.dark-mode-modal-allow-button:focus,
+.dark-mode-modal-allow-button:focus {
+    background-color: rgb(209, 125, 0);
+}
 .dark-mode-modal-decline-button:hover,
 .dark-mode-modal-decline-button:focus {
-    background-color: rgb(235.0, 150.4, 5.3);
+    background-color: rgb(100, 100, 100);
 }
 .dark-mode-modal-container {
     padding-bottom: 10em;
@@ -76,9 +77,12 @@ Modal CSS Order:
 }
 .dark-mode-modal-allow-button {
     left: 5%;
+    background-color: var(--primary-color);
 }
 .dark-mode-modal-decline-button {
     right: 30%;
+    background-color: var(--darker-grey);
+    color: var(--light-mode);
 }
 
 .hcaptcha-modal-container {

@@ -59,6 +59,9 @@ main { /*This is to stop the filter blur from the body::before image, showing at
         stroke-dashoffset: 0;
     }
 }
+.writing-activate-animation {
+    animation: draw 10s linear 2s forwards;
+}
 .thank-you-message-svg-animation-writing-underline {
     stroke: url(#thank-you-message-svg-animation-gradient);
     fill: none;
@@ -67,6 +70,9 @@ main { /*This is to stop the filter blur from the body::before image, showing at
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
 }
+.writing-underline-activate-animation {
+    animation: draw 2.5s linear 1.5s forwards;
+}
 .message-sent-paragraph-container {
     display: flex;
     flex-direction: column;
@@ -74,6 +80,7 @@ main { /*This is to stop the filter blur from the body::before image, showing at
     align-items: center;
     width: 80%;
     margin: 1em 0 1em;
+    padding: 2.5em 0;
     background-color: var(--lightest-grey);
     border-radius: 24px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
@@ -111,7 +118,7 @@ p.message-sent-paragraph-dark-mode:nth-child(2) {
     height: 120px;
 }
 .message-sent-envelope-svg-envelope {
-    stroke: var(--dark-grey);
+    stroke: url(#message-sent-envolope-svg-gradient);
     fill: none;
     stroke-linecap: round;
     stroke-width: 8px;
@@ -151,7 +158,8 @@ p.message-sent-paragraph-dark-mode:nth-child(2) {
         margin: 0.5em 0;
     }
 }
-.thank-you-page-button {
+.back-to-portfolio-button,
+.send-another-message-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,15 +173,23 @@ p.message-sent-paragraph-dark-mode:nth-child(2) {
     letter-spacing: 0.025em;
     text-decoration: none;
     background-color: var(--secondary-color);
-    color: var(--light-mode);
+    color: var(--lightest-grey);
     border: none;
     border-radius: 80px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
     transition: background-color 0.5s;
     cursor: pointer;
 }
-.thank-you-page-button:hover {
-    background-color: rgb(144.3, 92.9, 79.5);
+.back-to-portfolio-button:hover,
+.send-another-message-button:hover {
+    background-color: var(--third-color);
+}
+.send-another-message-button:hover {
+    color: var(--darkest-grey);
+}
+.back-to-portfolio-button {
+    background-color: var(--primary-color);
+    color: var(--darkest-grey);    
 }
 .fa-arrow-left-long {
     margin-right: 0.3em;

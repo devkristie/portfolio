@@ -130,13 +130,15 @@ Dark Mode CSS Order:
 .contact-form-input-box-dark-mode {
     background-color: var(--darkest-grey);
     color: var(--light-mode);
-    border: 0.16px solid var(--lightest-grey);
-    border-right: none;
-    border-left: none;
+    /* border-right: none;
+    border-left: none; */
     /* border-bottom: none; */ /*?Not sure if this is needed?*/
 }
 .contact-form-input-box-dark-mode:focus {
     caret-color: var(--darkest-grey);
+}
+.h-captcha-dark-mode {
+    filter: invert(1) hue-rotate(180deg);
 }
 
 .footer-section-container-dark-mode {
