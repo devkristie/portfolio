@@ -1,5 +1,5 @@
 # VS Code settings
 .vscode/
 
-# Environment Variables
-.env
+# Config Variables
+src/config.php
