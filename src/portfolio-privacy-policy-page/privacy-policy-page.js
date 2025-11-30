@@ -1,12 +1,12 @@
 "use strict"
 
-const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
+// Global variables
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
 const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
-//Skip to main content z-index
+// Skip-to-main-content: move focus and scroll to main content for accessibility
 document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
     const mainSection = document.querySelector(".privacy-policy-page-content-container");
     mainSection.setAttribute("tabindex", "-1");
@@ -23,36 +23,39 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
     }
 });
 
-//Smooth scroll contents navigation links
+// Smoothly scrolls to in-page links and applies a header offset (then focuses the target)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default anchor behavior
-        const targetId = this.getAttribute("href").substring(1);  // Get the ID without '#'
-        const targetHeadingElement = document.getElementById(targetId);  // Get the target h2
+        event.preventDefault(); // Disable default jump-to-anchor behavior
+        const targetId = this.getAttribute("href").substring(1);  // Extract ID (remove '#')
+        const targetHeadingElement = document.getElementById(targetId);  // Find target element
 
         if (targetHeadingElement) {
-            const scrollOffset = 79; // Defines the offset
+            const scrollOffset = 79; // Adjusts scroll position so the fixed header doesn't cover the target
 
-            // Smoothly scroll to the target element with offset
+            // Calculate scroll position with offset
             const targetPosition = targetHeadingElement.getBoundingClientRect().top + window.scrollY - scrollOffset;
 
+            // Smoothly scroll to the calculated position
             window.scrollTo({
                 top: targetPosition,
                 behavior: "smooth"
             });
 
-            // Focus the target element after the scroll completes (delay for smoothness)
+            // Move focus to target for accessibility after scroll completes
             setTimeout(() => targetHeadingElement.focus(), 400);
         }
     });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Dark mode toggle with localStorage preference handling and first-time consent modal
     const darkModeToggleButton = document.querySelector(".dark-mode-toggle-button");
     const darkModeIcon = darkModeToggleButton.querySelector(".fa-moon");
     const lightModeIcon = darkModeToggleButton.querySelector(".fa-sun");
     const darkModeStatus = document.getElementById("darkModeStatus");
 
+    // Toggle dark mode based on stored preference, or show consent modal if none exists
     const toggleDarkMode = () => {
         const darkModePreference = localStorage.getItem("darkModePreference");
 
@@ -69,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Create the dark mode consent modal if it doesn't exist
     const showDarkModeModal = () => {
         let darkModeModalContainer = document.querySelector(".dark-mode-modal-container");
         let darkModeModalOverlay = document.querySelector(".dark-mode-modal-overlay");
@@ -84,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             darkModeModalContainer.setAttribute("aria-label", "Dark mode modal");
             darkModeModalContainer.setAttribute("tabindex", "-1");
 
+            // Modal title and explanation text
             const darkModeModalTitle = document.createElement("p");
             darkModeModalTitle.setAttribute("class", "dark-mode-modal-title");
             darkModeModalTitle.textContent = "Dark Mode Preference Storage Notice";
@@ -99,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             darkModeModalSecondParagraph.textContent = 'If you click "Decline" your data for it will not be saved in local storage, and the website will not remember your preference.';
             darkModeModalContainer.appendChild(darkModeModalSecondParagraph);
 
+            // "Allow" and "Decline" buttons
             const darkModeModalAllowButton = document.createElement("button");
             darkModeModalAllowButton.setAttribute("class", "dark-mode-modal-allow-button");
             darkModeModalAllowButton.textContent = "Allow";
@@ -115,11 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.appendChild(darkModeModalOverlay);
             document.body.appendChild(darkModeModalContainer);
 
-            // Manage focus: move focus to the modal
+            // Move focus into the modal for accessibility
             darkModeModalContainer.focus();
 
             darkModeModalAllowButton.addEventListener("click", () => {
-                // Temporarily disable the aria-live region
+                // Temporarily disable aria-live to avoid unnecessary announcements
                 const ariaLiveElement = document.querySelector("[aria-live]");
                 const previousAriaLiveValue = ariaLiveElement.getAttribute("aria-live");
                 ariaLiveElement.setAttribute("aria-live", "off");
@@ -139,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeModal();
             });
 
-            // Function to close the modal and return focus
+            // Close the modal and return focus to the toggle button
             const closeModal = () => {
                 document.body.removeChild(darkModeModalOverlay);
                 document.body.removeChild(darkModeModalContainer);
@@ -153,10 +159,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 100);
             };
 
-            // Trap focus within the modal
+            // Elements inside the modal that can receive focus
             const focusableElements = [darkModeModalAllowButton, darkModeModalDeclineButton];
             let currentFocusIndex = -1;
             
+            // Trap focus inside the modal (Tab key cycling (Tab + Shift+Tab))
             darkModeModalContainer.addEventListener("keydown", (e) => {
                 if (e.key === "Tab") {
                     e.preventDefault();
@@ -164,22 +171,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (currentFocusIndex === -1) {
                         currentFocusIndex = 0;
                     } else {
-                        // Move focus to the next or previous element
+                        // Shift+Tab → move backward
                         if (e.shiftKey) {
                             currentFocusIndex = (currentFocusIndex === 0) ? focusableElements.length - 1 : currentFocusIndex - 1;
-                        } else {
+                        }
+                        // Tab → move forward
+                        else {
                             currentFocusIndex = (currentFocusIndex === focusableElements.length - 1) ? 0 : currentFocusIndex + 1;
                         }
                     }
                     focusableElements[currentFocusIndex].focus();
-                } else if (e.key === "Escape") {
+                }
+                // Allow closing the modal with Escape
+                if (e.key === "Escape") {
                     closeModal();
                 }
             });
         }
     };
 
-    //Dark mode variables
+    // DOM elements related to dark mode functionality and UI styling
     const screenReadersOnlyText = document.querySelectorAll(".sr-only");
     const bodyDarkMode = document.querySelector("body");
     const mainDarkMode = document.querySelector("main");
@@ -204,11 +215,11 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeStatus.textContent = "Dark mode is now enabled";
         darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
 
+        // Add dark-mode-specific CSS classes to relevant page elements
         screenReadersOnlyText.forEach((text) => {
             text.classList.add("sr-only-dark-mode");
         });
 
-        // Apply dark mode classes to other elements as needed
         bodyDarkMode.classList.add("body-dark-mode");
         
         mainDarkMode.classList.add("main-dark-mode");
@@ -266,12 +277,11 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeStatus.textContent = "Light mode is now enabled";
         darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
         
-        // Remove dark mode classes from other elements as needed
+        // Remove dark-mode-specific CSS classes from all affected elements
         screenReadersOnlyText.forEach((text) => {
             text.classList.remove("sr-only-dark-mode");
         });
 
-        // Remove dark mode classes from other elements as needed
         bodyDarkMode.classList.remove("body-dark-mode");
         
         mainDarkMode.classList.remove("main-dark-mode");
@@ -326,8 +336,8 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeToggleButton.addEventListener("click", toggleDarkMode);
         darkModeToggleButton.addEventListener("keydown", (event) => {
             if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault(); // Prevent the default space scroll behavior
-                toggleDarkMode();
+                event.preventDefault(); // Prevent Space from scrolling the page (default browser behavior)
+                toggleDarkMode(); // Toggle dark mode when these keys are pressed
             }
         });
 
@@ -340,40 +350,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Event listener for both click and keydown (Enter/Space)
+// Trigger hamburger menu on click or on keydown (Enter/Space)
 hamburgerMenuIconContainer.addEventListener("click", showMenu);
 hamburgerMenuIconContainer.addEventListener("keydown", function(event) {
     if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault(); // Prevent scrolling on space key
+        event.preventDefault(); // Prevent page from scrolling when Space is pressed
         showMenu();
     }
 });
 
-// Function to show or hide the menu
+// Show or hide hamburger menu
 function showMenu() {
-    // Get the current state of the aria-expanded attribute
+    // Read current aria-expanded state (used for screen readers)
     const ariaExpanded = hamburgerMenuIconContainer.getAttribute("aria-expanded");
     const newAriaExpanded = ariaExpanded === "true" ? "false" : "true";
 
-    // Toggle menu visibility classes
+    // Toggle visibility classes for the menu container
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-hidden");
     topNavigationBarAccordionContainer.classList.toggle("top-navigation-bar-accordion-container-visible");
 
-    // Add animation to the top navigation bar
+    // Apply opening/closing animation
     topNavigationBarAccordionContainer.classList.add("top-navigation-bar-accordion-container-animation");
 
-    // Update the aria-expanded attribute
+    // Ensure menu stays visually hidden during animation transitions
+    if (topNavigationBarAccordionContainer.classList.contains("top-navigation-bar-accordion-container-hidden")) {
+        topNavigationBarAccordionContainer.classList.add("temporarily");
+    } else if (topNavigationBarAccordionContainer.classList.contains("top-navigation-bar-accordion-container-visible")) {
+        topNavigationBarAccordionContainer.classList.remove("temporarily");
+    }
+
+    // Update aria-expanded for accessibility
     hamburgerMenuIconContainer.setAttribute("aria-expanded", newAriaExpanded);
 
-    // Announce the change for screen readers
-    dynamicAnnouncer.textContent = newAriaExpanded === "true" 
-        ? "Hamburger navigation menu opened" 
-        : "Hamburger navigation menu closed";
+    // Announce menu state change to screen readers
+    dynamicAnnouncer.textContent = newAriaExpanded === "true" ? "Hamburger navigation menu opened" : "Hamburger navigation menu closed";
 
-    //Hamburger menu SVG icon animation
+    // Animate the bottom line of the hamburger icon when opening/closing
     const hamburgerMenuBottomLine = document.querySelector(".hamburger-menu-bottomline");
 
-    hamburgerMenuBottomLine.getAttribute("d");
     if (newAriaExpanded === "true") {
         hamburgerMenuBottomLine.setAttribute("d", "M7.5 30.5 L35 30.5");
     } else {
@@ -381,5 +395,22 @@ function showMenu() {
     }
 }
 
+// Announce when a link opens in a new tab (accessibility for screen readers)
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.addEventListener("click", function() {
+        // Get the aria-live region used for announcements
+        const liveRegion = document.getElementById("tab-announcement");
+        if (liveRegion) {
+            // Announce that a new tab is being opened
+            liveRegion.textContent = "Opening a new tab.";
+            setTimeout(() => {
+                // Clear the announcement after a short delay so it doesn't repeat
+                liveRegion.textContent = "";
+            }, 3000);
+        }
+    });
+});
+
+// Set the copyright year dynamically to the current year based on the system date
 const updateDate = new Date();
 copyrightUpdateYear.textContent = updateDate.getFullYear();

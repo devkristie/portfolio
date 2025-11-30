@@ -8,19 +8,22 @@
         <meta name="author" content="Kristie Larke">
         <meta name="keywords" content="Privacy Policy, Data Privacy, Personal Information, Kristie Larke, Portfolio">
         <title>Privacy Policy - Frontend Developer Portfolio, Kristie Larke</title>
+        <!-- CSS -->
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="./privacy-policy-page-style.css">
         <link rel="stylesheet" href="../responsive-style.css">
         <link rel="stylesheet" href="../dark-mode-style.css">
         <link rel="stylesheet" href="../modal-style.css">
         <link rel="icon" href="../assets/images/favicon.ico">
-        <script src="https://kit.fontawesome.com/46c228a4ce.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+        <!-- Scripts -->
         <script src="./privacy-policy-page.js" defer></script>
     </head>
     <body>
         <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
-            <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a>
-            <a href="index.html" aria-label="Frontend Web Development Portfolio Logo Homepage"><!--!Need to change the link to wwww.kristolio.co.uk when going into production-->
+            <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a> <!-- Accessible skip link to jump directly to main content -->
+            <!-- Navbar Logo -->
+            <a href="https://kristielarke.infy.uk/" aria-label="Frontend Web Development Portfolio Logo Homepage">
                 <svg class="top-navigation-bar-logo-container" aria-hidden="true">
                     <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
                     <path class="logo-less-than-sign" d="M22 11 L12 21.5 L22 31"/>
@@ -35,11 +38,13 @@
                 </svg>
             </a>
             <div class="navigation-right">
+                <!-- Dark Mode Button -->
                 <button class="dark-mode-toggle-button" type="button" aria-label="Enable Dark Mode">
                     <i class="fa-solid fa-moon" aria-hidden="true"></i>
                     <i class="fa-solid fa-sun" aria-hidden="true"></i>
                 </button>
-                <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div>
+                <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div> <!-- Screen-reader only live region that announces dark mode changes -->
+                <!-- Hamburger Menu Button -->
                 <svg class="hamburger-menu-container" aria-label="Hamburger Navigation Menu" role="button" aria-expanded="false" tabindex="0">
                     <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
                     <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
@@ -52,16 +57,16 @@
             <nav aria-label="Main">
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
-                        <a href="#home">Home</a>
+                        <a href="https://kristielarke.infy.uk/#home">Home</a>
                     </li>
                     <li>
-                        <a href="#profile">Profile</a>
+                        <a href="https://kristielarke.infy.uk/#profile">Profile</a>
                     </li>
                     <li>
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="https://kristielarke.infy.uk/#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="https://kristielarke.infy.uk/#contact">Contact</a>
                     </li>
                     <li>
                         <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">
@@ -73,8 +78,9 @@
             </nav>
         </header>
         <main>
-            <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Hidden label for screen readers -->
-            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Hidden label for screen readers -->
+            <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Visually hidden label for screen readers, used as an accessible name for the main region -->
+            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Visually hidden label for screen readers for: Main content landmark, hidden visually but accessible via screen readers and focusable for skip links -->
+            <div class="sr-only" id="tab-announcement" aria-live="assertive" role="alert"></div> <!-- Visually hidden announcement for screen readers, used when the users click on any links that open in a new tab -->
             <section>
                 <header class="section-title-container">
                     <h1 class="section-title">Privacy Policy</h1>
@@ -158,16 +164,16 @@
                             </a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#profile">Profile</a>
+                            <a href="https://kristielarke.infy.uk/#profile">Profile</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#portfolio">Portfolio</a>
+                            <a href="https://kristielarke.infy.uk/#portfolio">Portfolio</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#contact">Contact</a>
+                            <a href="https://kristielarke.infy.uk/#contact">Contact</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#portfolio">Blog (Coming Soon)</a>
+                            <a href="#">Blog (Coming Soon)</a>
                         </li>
                         <li class="footer-absolute-links">
                             <span aria-hidden="true">Icons by -</span>
@@ -200,10 +206,10 @@
                             </a>
                         </li>
                     </ul>
-                    <article>
+                    <div>
                         <p class="footer-bottom-copyright-sign">© <span class="footer-bottom-copyright-year"></span><span class="footer-bottom-copyright"> - Kristie Larke, All Rights Reserved.</span></p> <!--Footer bottom copyright year is automatically updated in the script.js file-->
                         <a class="footer-bottom-privacy-policy-link" href="./portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
-                    </article>
+                    </div>
                 </nav>
             </section>
         </footer>

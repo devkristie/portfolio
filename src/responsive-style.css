@@ -103,12 +103,6 @@ Responsive CSS Order:
         padding: 0.1em 0.70em;
         text-align: center;
     }
-    .top-navigation-bar-accordion-links > li:first-child {
-        margin-left: 5em;
-    }
-    .top-navigation-bar-accordion-links > li:last-child {
-        margin-right: 5em;
-    }
 }
 @media only screen and (max-width: 355px) {
     .top-navigation-bar-accordion-links > li {
@@ -137,44 +131,33 @@ Responsive CSS Order:
 
 @media only screen and (min-width: 1180px) {
     .profile-content-container {
-        position: relative;
         display: flex;
-        flex-direction: row;
-    }
-     /*?Changed the layout of the profile headshot and quotation container, need to try and make it as centered in the grey part of the profile container as possible.
-     The CSS on top of each declaration block is the original code, the declarations under that are the changed properties and values.*/
-    .profile-headshot {
-        position: absolute;
-        display: flex;
-        align-self: center;
-        /* right: 0; */
-        /* margin: 0 20% 15em 0; */
-
-
-
-        /* right: -68px; */
-        right: -73px;
-        margin: 0 20% 11em 0;
-        width: 268px;
-        height: 268px
-    }
-    .profile-quotation-container {
-        position: absolute;
-        display: flex;
-        align-self: center;
-        /* right: -68px; */
-        /* margin: 12em 20% 0 0; */
-
-
-
-        right: -73px;
-        margin: 18em 20% 0 0;
+        flex-direction: row-reverse;
     }
     .profile-introduction-container {
         width: 50%;
         margin: 0;
         padding: 2.5em 3em 0;
         border-radius: 24px 0 0 24px;
+    }
+    .profile-right {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 3em 0;
+    }
+    .profile-headshot {
+        position: static;
+        width: 268px;
+        height: 268px;
+        margin: 0 0 2em 0;
+    }
+    .profile-quotation-container {
+        position: static;
+        margin: 0;
     }
 }
 @media only screen and (max-width: 685px) {
@@ -223,9 +206,7 @@ Responsive CSS Order:
     .portfolio-websites-view-website-button,
     .portfolio-websites-view-source-code-button {
         width: 95%;
-        border-right: none;
-        border-left: none;
-        border-top: 0.16px solid var(--light-mode);
+        border: 0.01px solid var(--light-grey);  
         border-radius: 24px;
     }
     .portfolio-websites-view-website-button {
@@ -265,7 +246,7 @@ Responsive CSS Order:
     .portfolio-websites-slider-right-arrow-dark-mode:focus-visible,
     .portfolio-websites-slider-right-arrow-dark-mode:active {
         background-image: linear-gradient(to bottom, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
-}
+    }
 }
 @media only screen and (max-width: 601px) {
     .portfolio-websites-slider-container {
@@ -278,9 +259,9 @@ Responsive CSS Order:
         height: 48px;
     }
     .portfolio-websites-slider-left-arrow svg,
-    .portfolio-websites-slider-right-arrow svg {
-        width: 48px; /* Size for larger screens */
-        height: 48px; /* Size for larger screens */
+    .portfolio-websites-slider-right-arrow svg { /* SVG size for larger screens */
+        width: 48px;
+        height: 48px;
     }
     .portfolio-websites-slider-left-arrow > svg > path,
     .portfolio-websites-slider-right-arrow > svg > path {
@@ -291,6 +272,8 @@ Responsive CSS Order:
         border-radius: 50% 50% 0 0;
     }
     .portfolio-websites-slider-container > figure {
+        position: relative;
+        display: inline-block;
         width: 100%;
     }
     .portfolio-websites-slider-right-arrow {
@@ -298,8 +281,23 @@ Responsive CSS Order:
         border-radius: 0 0 50% 50%;
     }
 }
+@media only screen and (max-width: 601px) {
+    .images-coming-soon {
+        position: absolute;
+        margin-top: 9em;
+        text-align: center;
+    }
+    .portfolio-websites-slider-image.placeholder {
+        width: 100%;
+        height: 300px;
+        outline: 1px solid var(--dark-mode);
+    }
+    .portfolio-websites-slider-image {
+        outline: 1px solid var(--dark-mode);
+    }
+}
 
-/*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
+/* Portfolio website accordion content displayed when the section is expanded */
 @media only screen and (min-width: 650px) {
     .portfolio-websites-show-more-accordion-container-technology-used-container {
         display: flex;
@@ -317,6 +315,7 @@ Responsive CSS Order:
         width: 50%;
     }
 }
+
 @media only screen and (min-width: 1280px) {
     .contact-form-container {
         width: 80%;
@@ -329,12 +328,10 @@ Responsive CSS Order:
     .contact-form-input-box {
         width: 80%;
         border: 1px solid var(--dark-mode);
-        /*? border-radius: 24px; */
         transition: border-radius 0.25s linear;
     }
     .contact-form-validation-paragraph {
         width: 80%;
-        /*? border-radius: 24px; */
     }
     .contact-form-input-box-message {
         border-bottom: 16px solid var(--primary-color);
@@ -369,7 +366,7 @@ Responsive CSS Order:
         margin-bottom: 0.5em;
     }
 }
-@media only screen and (max-width: 330px) { /*For the smallest screens*/
+@media only screen and (max-width: 330px) { /* For the smallest screens */
     .footer-bottom-copyright-sign {
         margin:auto auto 0.5em;
         width: 80%;

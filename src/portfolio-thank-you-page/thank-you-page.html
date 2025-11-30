@@ -8,19 +8,22 @@
         <meta name="author" content="Kristie Larke">
         <meta name="keywords" content="Thank You, Kristie Larke, Frontend Web Developer, Contact, Portfolio">
         <title>Thank You for Contacting Me - Frontend Developer Portfolio, Kristie Larke</title>
+        <!-- CSS -->
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="./thank-you-page-style.css">
         <link rel="stylesheet" href="../responsive-style.css">
         <link rel="stylesheet" href="../dark-mode-style.css">
         <link rel="stylesheet" href="../modal-style.css">
         <link rel="icon" href="../assets/images/favicon.ico">
-        <script src="https://kit.fontawesome.com/46c228a4ce.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+        <!-- Scripts -->
         <script src="./thank-you-page-script.js" defer></script>
     </head>
     <body>
         <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
-            <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a>
-            <a href="index.html" aria-label="Frontend Web Development Portfolio Logo Homepage"><!--!Need to change the link to wwww.kristolio.co.uk when going into production-->
+            <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a> <!-- Accessible skip link to jump directly to main content -->
+            <!-- Navbar Logo -->
+            <a href="https://kristielarke.infy.uk/" aria-label="Frontend Web Development Portfolio Logo Homepage">
                 <svg class="top-navigation-bar-logo-container" aria-hidden="true">
                     <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
                     <path class="logo-less-than-sign" d="M22 11 L12 21.5 L22 31"/>
@@ -35,11 +38,13 @@
                 </svg>
             </a>
             <div class="navigation-right">
+                <!-- Dark Mode Button -->
                 <button class="dark-mode-toggle-button" type="button" aria-label="Enable Dark Mode">
                     <i class="fa-solid fa-moon" aria-hidden="true"></i>
                     <i class="fa-solid fa-sun" aria-hidden="true"></i>
                 </button>
-                <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div>
+                <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div> <!-- Screen-reader only live region that announces dark mode changes -->
+                <!-- Hamburger Menu Button -->
                 <svg class="hamburger-menu-container" aria-label="Hamburger Navigation Menu" role="button" aria-expanded="false" tabindex="0">
                     <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
                     <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
@@ -52,16 +57,16 @@
             <nav aria-label="Main">
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
-                        <a href="#home">Home</a>
+                        <a href="https://kristielarke.infy.uk/#home">Home</a>
                     </li>
                     <li>
-                        <a href="#profile">Profile</a>
+                        <a href="https://kristielarke.infy.uk/#profile">Profile</a>
                     </li>
                     <li>
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="https://kristielarke.infy.uk/#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="https://kristielarke.infy.uk/#contact">Contact</a>
                     </li>
                     <li>
                         <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">
@@ -73,35 +78,17 @@
             </nav>
         </header>
         <main>
-            <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Hidden label for screen readers -->
-            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Hidden label for screen readers -->
+            <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Visually hidden label for screen readers, used as an accessible name for the main region -->
+            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Visually hidden label for screen readers for: Main content landmark, hidden visually but accessible via screen readers and focusable for skip links -->
+            <div class="sr-only" id="tab-announcement" aria-live="assertive" role="alert"></div> <!-- Visually hidden announcement for screen readers, used when the users click on any links that open in a new tab -->
             <section id="skip-to-main-content-start" class="thank-you-page-landing-page-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">Contact</h1>
                 </header>
-                <div id="aria-label-thank-you" class="sr-only">Thank You</div>
-                <div class="thank-you-page-content-container" aria-labelledby="aria-label-thank-you">
-                    <svg class="thank-you-message-svg-animation" viewBox="0 0 600 120" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="thank-you-message-svg-animation-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
-                                <stop class="svg-animation-gradient-primary-color" offset="0%"/>
-                                <stop class="svg-animation-gradient-secondary-color" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <path class="thank-you-message-svg-animation-writing" d="M20 10 L80 10"/> <!--T-->
-                        <path class="thank-you-message-svg-animation-writing" d="M50 15 L50 65"/> <!--T-->
-                        <path class="thank-you-message-svg-animation-writing" d="M105 10 L105 68 Q110 35 120 35 Q135 35 135 65"/> <!--H-->
-                        <path class="thank-you-message-svg-animation-writing" d="M180 35 Q165 30 160 50 Q160 70 184 60 Q190 50 185 38 Q185 35 190 65"/> <!--A-->
-                        <path class="thank-you-message-svg-animation-writing" d="M216 35 L216 70 Q216 40 230 35 Q245 35 245 65"/> <!--N-->
-                        <path class="thank-you-message-svg-animation-writing" d="M272 10 L272 65"/> <!--K-->
-                        <path class="thank-you-message-svg-animation-writing" d="M297 35 L277 50 L297 65"/> <!--K-->
-                        <path class="thank-you-message-svg-animation-writing" d="M365 10 Q365 40 395 40 Q415 40 425 10 Q426 10 425 40 Q424 72 367 63"/> <!--Y-->
-                        <path class="thank-you-message-svg-animation-writing" d="M466 35 Q451 35 451 50 Q451 65 466 65 Q486 65 483 50 Q481 35 465 35"/> <!--O-->
-                        <path class="thank-you-message-svg-animation-writing" d="M508 35 Q508 65 523 65 Q547 68 543 35"/> <!--U-->
-                        <path class="thank-you-message-svg-animation-writing" d="M575 10 Q575 10 569 48"/> <!---!--->
-                        <path class="thank-you-message-svg-animation-writing" d="M566 68 L566 69"/> <!---!--->
-                        <path class="thank-you-message-svg-animation-writing-underline" d="M50 100 Q400 85 500 95 Q400 95 250 110 Q270 105 550 115"/>
-                    </svg>
+                <div class="thank-you-page-content-container">
+                    <div class="typing-animation-container">
+                        <h1 class="typing-animation-text" data-text="Thank you!" aria-hidden="true"></h1> <!-- Text is added by the typing animation script -->
+                    </div>
                     <article class="message-sent-paragraph-container">
                         <p class="message-sent-paragraph">Your message has successfully been sent.</p>
                         <p class="message-sent-paragraph">I will follow up with you within 1 - 2 business days.</p>
@@ -109,8 +96,8 @@
                     <svg class="message-sent-envelope-svg" aria-label="Message sent envelope icon" aria-hidden="true">
                         <defs>
                             <linearGradient id="message-sent-envolope-svg-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
-                                <stop class="svg-animation-gradient-primary-color" offset="0%"/>
-                                <stop class="svg-animation-gradient-secondary-color" offset="100%"/>
+                                <stop class="svg-envelope-gradient-primary-color" offset="0%"/>
+                                <stop class="svg-envelope-gradient-secondary-color" offset="100%"/>
                             </linearGradient>
                         </defs>
                         <path class="message-sent-envelope-svg-envelope" d="M201 40 L201 80 Q200 90 190 90 L140 90 Q120 90 120 80 L120 40 Q120 30 130 30 L180 30 Q205 30 200 40 Q200 45 165 70 L130 40"/>
@@ -119,12 +106,13 @@
                         <path class="message-sent-envelope-svg-envelope-line" d="M105 60 L50 60"/>
                         <path class="message-sent-envelope-svg-envelope-line" d="M105 80 L70 80"/>
                     </svg>
+                    <div id="thankYouLiveRegion" class="sr-only" aria-live="polite" aria-atomic="true"></div> <!-- Hidden live region: SR will read the final message once -->
                 </div>
                 <div class="thank-you-page-button-container">
-                    <a class="back-to-portfolio-button" href="https://www.kristolio.co.uk" rel="noopener noreferrer" title="Back to portfolio">
+                    <a class="back-to-portfolio-button" href="https://kristielarke.infy.uk/" rel="noopener noreferrer" title="Back to portfolio">
                         <i class="fa-solid fa-arrow-left-long"></i> Go Back To Portfolio
                     </a>
-                    <a class="send-another-message-button" href="https://www.kristolio.co.uk/#contact" rel="noopener noreferrer" title="Send another message">
+                    <a class="send-another-message-button" href="https://kristielarke.infy.uk/#contact" rel="noopener noreferrer" title="Send another message">
                         <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Another Message
                     </a>
                 </div>
@@ -140,16 +128,16 @@
                             </a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#profile">Profile</a>
+                            <a href="https://kristielarke.infy.uk/#profile">Profile</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#portfolio">Portfolio</a>
+                            <a href="https://kristielarke.infy.uk/#portfolio">Portfolio</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#contact">Contact</a>
+                            <a href="https://kristielarke.infy.uk/#contact">Contact</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#portfolio">Blog (Coming Soon)</a>
+                            <a href="#">Blog (Coming Soon)</a>
                         </li>
                         <li class="footer-absolute-links">
                             <span aria-hidden="true">Icons by -</span>
@@ -182,10 +170,10 @@
                             </a>
                         </li>
                     </ul>
-                    <article>
+                    <div>
                         <p class="footer-bottom-copyright-sign">© <span class="footer-bottom-copyright-year"></span><span class="footer-bottom-copyright"> - Kristie Larke, All Rights Reserved.</span></p> <!--Footer bottom copyright year is automatically updated in the script.js file-->
                         <a class="footer-bottom-privacy-policy-link" href="./portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
-                    </article>
+                    </div>
                 </nav>
             </section>
         </footer>

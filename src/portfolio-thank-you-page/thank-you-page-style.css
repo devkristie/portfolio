@@ -2,8 +2,8 @@
     background-color: var(--dark-mode);
     color: var(--light-mode);
 }
-main { /*This is to stop the filter blur from the body::before image, showing at the top of the section title container*/
-    display: inline-block;
+main {
+    display: inline-block; /* Prevents the blurred body::before background from bleeding into the top of <main> */
     width: 100%;
 }
 #home {
@@ -27,52 +27,21 @@ main { /*This is to stop the filter blur from the body::before image, showing at
     justify-content: center;
     align-items: center;
 }
-.thank-you-message-svg-animation {
-    width: 75%;
-    height: 100px;
-    margin-top: 1.5em;
+.typing-animation-container {
+    margin: 2em 0 1.5em;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-@media only screen and (min-width: 660px) {
-    .thank-you-message-svg-animation {
-        margin: 2.75em 0 1.5em;
-    }
-}
-.svg-animation-gradient-primary-color {
-    stop-color: var(--primary-color);
-    stop-opacity: 1;
-}
-.svg-animation-gradient-secondary-color {
-    stop-color: var(--secondary-color);
-    stop-opacity: 1;
-}
-.thank-you-message-svg-animation-writing {
+.typing-animation-text {
+    font-size: 3.5rem;
+    font-family: "roboto-bold";
+    font-weight: 600;
+    color: var(--primary-color);
     white-space: nowrap;
-    stroke: var(--primary-color);
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 9.6px;
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
 }
-@keyframes draw {
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-.writing-activate-animation {
-    animation: draw 10s linear 2s forwards;
-}
-.thank-you-message-svg-animation-writing-underline {
-    stroke: url(#thank-you-message-svg-animation-gradient);
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 4px;
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-}
-.writing-underline-activate-animation {
-    animation: draw 2.5s linear 1.5s forwards;
-}
+
 .message-sent-paragraph-container {
     display: flex;
     flex-direction: column;
@@ -84,11 +53,6 @@ main { /*This is to stop the filter blur from the body::before image, showing at
     background-color: var(--lightest-grey);
     border-radius: 24px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
-}
-@media only screen and (min-width: 550px) {
-    .message-sent-paragraph-container {
-        margin: 2em 0 1em;
-    }
 }
 .message-sent-paragraph-container-dark-mode {
     background-color: var(--darkest-grey);
@@ -113,18 +77,24 @@ p.message-sent-paragraph:nth-child(2) {
 p.message-sent-paragraph-dark-mode:nth-child(2) {
     color: var(--light-grey);
 }
+
 .message-sent-envelope-svg {
     width: 240px;
     height: 120px;
+}
+.svg-envelope-gradient-primary-color {
+    stop-color: var(--primary-color);
+    stop-opacity: 1;
+}
+.svg-envelope-gradient-secondary-color {
+    stop-color: var(--secondary-color);
+    stop-opacity: 1;
 }
 .message-sent-envelope-svg-envelope {
     stroke: url(#message-sent-envolope-svg-gradient);
     fill: none;
     stroke-linecap: round;
     stroke-width: 8px;
-}
-.message-sent-envelope-svg-envelope-dark-mode {
-    stroke: var(--dark-grey);
 }
 .message-sent-envelope-svg-envelope-end-gap {
     stroke: var(--light-mode);
@@ -143,6 +113,7 @@ p.message-sent-paragraph-dark-mode:nth-child(2) {
 .message-sent-envelope-svg-envelope-line-dark-mode {
     stroke: var(--darker-grey);
 }
+
 .thank-you-page-button-container {
     display: flex;
     justify-content: space-evenly;
@@ -172,8 +143,6 @@ p.message-sent-paragraph-dark-mode:nth-child(2) {
     font-weight: 600;
     letter-spacing: 0.025em;
     text-decoration: none;
-    background-color: var(--secondary-color);
-    color: var(--lightest-grey);
     border: none;
     border-radius: 80px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
@@ -184,12 +153,16 @@ p.message-sent-paragraph-dark-mode:nth-child(2) {
 .send-another-message-button:hover {
     background-color: var(--third-color);
 }
-.send-another-message-button:hover {
-    color: var(--darkest-grey);
-}
 .back-to-portfolio-button {
     background-color: var(--primary-color);
     color: var(--darkest-grey);    
+}
+.send-another-message-button {
+    background-color: var(--secondary-color);
+    color: var(--light-mode);
+}
+.send-another-message-button:hover {
+    color: var(--darkest-grey);
 }
 .fa-arrow-left-long {
     margin-right: 0.3em;

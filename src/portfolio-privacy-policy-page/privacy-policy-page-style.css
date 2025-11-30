@@ -1,9 +1,8 @@
 .body-dark-mode {
     background-color: var(--dark-mode);
-    color: var(--light-mode);
 }
-main { /*This is to stop the filter blur from the body::before image, showing at the top of the section title container*/
-    display: inline-block;
+main {
+    display: inline-block; /* Prevents the blurred body::before background from bleeding into the top of <main> */
 }
 #home {
     position: absolute;
@@ -47,6 +46,7 @@ main { /*This is to stop the filter blur from the body::before image, showing at
 .privacy-policy-content-navigation-container h2.navigation-h2-dark-mode {
     background-color: var(--darker-grey);
     color: var(--light-mode);
+    border-left: 3px solid var(--primary-color);
 }
 .privacy-policy-content-navigation-links {
     padding: 0;
@@ -105,6 +105,7 @@ main { /*This is to stop the filter blur from the body::before image, showing at
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
     background-color: var(--darker-grey);
     color: var(--light-mode);
+    border-left: 3px solid var(--primary-color);
 }
 .privacy-policy-page-content-container p {
     margin: 1em 0;

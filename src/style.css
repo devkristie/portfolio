@@ -4,7 +4,8 @@ CSS Order:
 2. If there are any group selectors, they appear at the top of the structured order.
 3. If there are any pseudo selectors or group pseudo selectors, they appear underneath the selectors they relate to.
 */
-/*This is at the top to ensure it renders as quickly as possible*/
+
+/* This is at the top to ensure it renders as quickly as possible */
 .sr-only,
 .sr-only-new-tab {
     position: absolute;
@@ -24,17 +25,17 @@ CSS Order:
     color: var(--light-mode);
 }
 
-/*Fonts*/
+/* Fonts */
 @font-face { font-family: "roboto-bold"; src: url(./assets/fonts/roboto-bold-webfont.woff2);}
 @font-face { font-family: "roboto-light"; src: url(./assets/fonts/roboto-light-webfont.woff2);}
 @font-face { font-family: "roboto-medium"; src: url(./assets/fonts/roboto-medium-webfont.woff2);}
 @font-face { font-family: "roboto-regular"; src: url(./assets/fonts/roboto-regular-webfont.woff2);}
 @font-face { font-family: "jersey-regular"; src: url(./assets/fonts/Jersey10-Regular.ttf);}
 
-/*CSS Variables*/
+/* CSS Variables */
 :root {
-    --primary-color: #FF9900; /* Original primary colour: #FFA724 */
-    --secondary-color: #976659; /* Original secondary colour: #A26D5F*/
+    --primary-color: #FF9900;
+    --secondary-color: #976659;
     --third-color: #FFCC7E;
     --darkest-grey: #404040;
     --darker-grey: #646464;
@@ -56,8 +57,11 @@ CSS Order:
     user-select: none; /* Standard syntax */
 }
 
-/*Section Button Icons*/
-.fa-download,
+/* Section Button Icons */
+.fa-download {
+    margin-right: 0.3em;
+    font-size: 1.25rem;
+}
 .fa-paper-plane,
 .fa-arrow-up-long {
     margin-right: 0.3em;
@@ -72,7 +76,7 @@ CSS Order:
 
 body {
     position: relative;
-    min-width: 313px; /*Needed to stop the website breaking when it reaches the width of 313px*/
+    min-width: 313px; /* Needed to stop the website breaking when it reaches the width of 313px */
     margin: 0;
     overflow-x: hidden;
 }
@@ -184,12 +188,12 @@ body::before {
     cursor: pointer;
 }
 
-/*Focus outline for accessibility */
+/* Focus outline for accessibility */
 .dark-mode-toggle-button:focus-visible {
     box-shadow: 0 0 0 1.25px #0561DA, 0 0 0 2.25px #FFF;
 }
 .fa-moon {
-    font-size: 1.30rem;
+    font-size: 1.15rem;
     color: var(--dark-mode);
 }
 .fa-moon-visibility-hidden {
@@ -197,8 +201,8 @@ body::before {
 }
 .fa-sun {
     position: absolute;
-    top: 0.075em;
-    left: 0;
+    top: 0.08em;
+    left: -0.05em;
     font-size: 1.1rem;
     color: var(--light-mode);
     visibility: hidden;
@@ -217,6 +221,7 @@ body::before {
 .hamburger-menu-middleline,
 .hamburger-menu-bottomline {
     stroke: var(--dark-mode);
+    stroke: currentColor; /* Accessibility: prevents SVG arrows from disappearing in Windows high-contrast mode */
     fill: none;
     stroke-linecap: round;
     stroke-width: 4.8px;
@@ -532,11 +537,11 @@ main {
     position: absolute;
     display: block;
     font-size: 4.688rem;
-    font-family: none;
+    font-family: Georgia, "Times New Roman", serif;
     font-weight: 900;
 }
 .profile-quotation-container-quotation-marks::before {
-    margin: 0.125em 0 0 -0.615em;
+    margin: 0.215em 0 0 -0.635em;
     content: open-quote;
 }
 .profile-quotation-container-quotation-marks::after {
@@ -575,6 +580,16 @@ main {
     margin-top: 0;
     color: #000;
 }
+.profile-introduction-container-paragraph > a {
+    font-family: "roboto-bold", Arial;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--dark-mode);
+}
+.profile-introduction-container-paragraph > a:hover {
+    text-decoration: underline;
+}
 .profile-introduction-download-cv-button {
     display: flex;
     justify-content: center;
@@ -604,6 +619,7 @@ main {
     padding-bottom: 5em;
 }
 .section-introduction-container > h2,
+.portfolio-section-container h2,
 .portfolio-websites-title-container {
     text-align: center;
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
@@ -637,12 +653,17 @@ main {
     background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
-
 .portfolio-top-hr {
     margin-top: 1.75em;
 }
 .portfolio-hr {
-    margin: 0;
+    margin-top: 5em;
+}
+.portfolio-section-container h2 {
+    margin-top: 2.7em;
+    font-size: 1.5rem;
+    font-family: "roboto-bold", Arial;
+    letter-spacing: 0.01em;
 }
 .portfolio-websites-container {
     display: flex;
@@ -664,6 +685,7 @@ main {
     height: 300.01px;
     padding: 0.85em;
     border: none;
+    outline: 1px solid black;
     cursor: pointer;
 }
 .portfolio-websites-slider-left-arrow:hover,
@@ -693,6 +715,7 @@ main {
     width: 24px;
     height: 24px;
     stroke: var(--dark-mode);
+    stroke: currentColor; /* Accessibility: prevents SVG arrows from disappearing in Windows high-contrast mode */
     fill: none;
     stroke-linecap: round;
     stroke-width: 4px;
@@ -704,6 +727,7 @@ main {
 .portfolio-websites-slider-left-arrow:active svg path,
 .portfolio-websites-slider-right-arrow:active svg path {
     stroke: var(--light-mode);
+    stroke: currentColor; /* Accessibility: prevents SVG arrows from disappearing in Windows high-contrast mode */
 }
 .portfolio-websites-view-website-button,
 .portfolio-websites-view-source-code-button {
@@ -716,8 +740,7 @@ main {
     text-align: center;
     text-decoration: none;
     color: var(--light-mode);
-    border-top: none;
-    border-bottom: none;
+    border: 0.01px solid var(--light-grey);  
     border-radius: 24px;
     transition: background-color 0.5s;
     cursor: pointer;
@@ -725,7 +748,8 @@ main {
 .portfolio-websites-title-container {
     width: 100%;
     margin: 0 0 2.85em;
-    font-size: 1.75rem;
+    padding: 0 0.1em;
+    font-size: 1.5rem;
     font-family: "roboto-medium", Arial;
     background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
     border-radius: 24px 24px 0 0;
@@ -750,33 +774,55 @@ main {
     position: relative;
     width: 100%;
     margin: 0;
+    outline: 1px solid var(--dark-mode);
+}
+.images-coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2; /* Bring to front of the placeholder images */
+    margin-top: 0;
+    font-size: 1rem;
+    font-family: "roboto-regular", Arial;
+    color: var(--light-mode);
+    transform: translate(-50%, -50%);
+}
+.portfolio-websites-slider-image.placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: var(--darker-grey);
 }
 .portfolio-websites-slider-image {
-    position: absolute;
-    display: none;
+    position: absolute; /* Stack all images on top of each other */
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 300.01px;
+    height: 300px;
     object-fit: cover;
-    filter: blur(0.8px);
-    image-rendering: auto;
+    opacity: 0; /* Start fully hidden */
+    transition: opacity 0.4s ease-in-out; /* Smooth fade between images */
+    z-index: 0; /* Hidden images sit behind the visible image */
 }
+/* Ensure the first image is visible initially before JS runs */
 .portfolio-websites-slider-image:first-child {
     display: block;
 }
-/*These declaration blocks are for the JavaScript slider functionality*/
+/* Classes added by JavaScript to show the current image */
 .portfolio-websites-slider-image.image-visible {
-    display: block;
+    opacity: 1; /* Fade in */
+    z-index: 1; /* Bring to front */
 }
 .portfolio-websites-slider-image.image-hidden {
-    display: none;
+    opacity: 0; /* Fade out */
+    z-index: 0; /* Send behind visible image */
 }
-
+/* Note: JavaScript toggles .image-visible and .image-hidden to fade images in/out */
 .portfolio-websites-button-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     z-index: 1;
-    margin-bottom: -0.75em;
+    margin-bottom: -1.25em;
     width: 80%;
     background-color: transparent;
 }
@@ -784,22 +830,22 @@ main {
     margin: 0 5% 0 0;
     background-color: var(--dark-mode);
     color: var(--lightest-grey);
-    border: 0.16px solid var(--light-mode);  
+    /* border: 0.01px solid var(--light-grey);   */
 }
 .portfolio-websites-view-website-button:hover,
-.portfolio-websites-view-website-button:focus {
+.portfolio-websites-view-website-button:focus-visible {
     background-color: var(--third-color);
     color: var(--dark-mode);
 }
 .portfolio-websites-view-source-code-button {
     margin: 0 0 0 5%;
     background-color: var(--secondary-color);
-    border: 0.16px solid var(--lightest-grey);
+    /* border: 0.01px solid var(--light-grey); */
 }
 .portfolio-websites-view-source-code-button:hover,
-.portfolio-websites-view-source-code-button:focus {
+.portfolio-websites-view-source-code-button:focus-visible {
     background-color: var(--third-color);
-    color: var(--dark-mode);    
+    color: var(--dark-mode);
 }
 .portfolio-websites-show-more-container {
     width: 100%;
@@ -827,6 +873,7 @@ main {
     margin: -1em 0 2em 0;
     transition: transform 0.2s;
     stroke: var(--dark-mode);
+    stroke: currentColor; /* Accessibility: prevents SVG arrows from disappearing in Windows high-contrast mode */
     fill: none;
     stroke-linecap: round;
     stroke-width: 4px;
@@ -839,13 +886,13 @@ main {
     transform: rotate(0deg);
     margin: -1em 0 2em 0;
 }
-/*Portfolio website container accordion content that is not displayed when the accordion is clicked on*/
+/* Portfolio website container accordion content that is NOT displayed when the accordion is clicked on */
 .portfolio-websites-show-more-accordion-container {
     height: 0;
     overflow: hidden;
     transition: height 0.25s linear;
 }
-/*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
+/* Portfolio website container accordion content that is displayed when the accordion is clicked on */
 .portfolio-websites-show-more-accordion-container-paragraph {
     margin: -1em 3em;
     padding: 1em 0;
@@ -853,9 +900,9 @@ main {
     cursor: text;
 }
 .portfolio-websites-show-more-accordion-container-paragraph-highlighted-text {
-    padding: 0.2em;
+    padding: 0.1em 0.2em 0.2em;
     font-family: "roboto-regular", Arial;
-    line-height: 1.75;
+    line-height: 1.65;
     letter-spacing: 0.01em;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
@@ -891,15 +938,6 @@ main {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
-.fa-html5 {
-    color: #FF6522;
-}
-.fa-css3-alt {
-    color: #129AD4;
-}
-.fa-js {
-    color: #FCCB30;
 }
 .portfolio-websites-show-more-accordion-container-technology-used-container figcaption {
     margin: 0.5em 0 1.5em 0;
@@ -1057,7 +1095,7 @@ main {
     display: flex;
     justify-content: center;
     margin-top: 3em;
-    visibility: visible !important; /*Hardcoded to stop the hCaptchs becoming hidden when the textarea becomes empty*/
+    visibility: visible !important; /* Hardcoded to stop the hCaptchs becoming hidden when the textarea becomes empty */
 }
 .h-captcha iframe {
     border: 0.16px solid var(--darker-grey);
@@ -1080,7 +1118,6 @@ main {
     border-radius: 800px;
     box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.5);
     transition: background-color 0.5s;
-    /*? visibility: visible; */
     cursor: pointer;
 }
 .contact-form-submit-button:hover,
@@ -1100,7 +1137,8 @@ main {
     background-color: var(--light-mode);
 }
 .footer-absolute-links:nth-child(7),
-.footer-absolute-links:nth-child(8) {
+.footer-absolute-links:nth-child(8),
+.footer-absolute-links:nth-child(9) {
     margin-top: 2rem;
 }
 .footer-bottom-copyright-year,
@@ -1108,14 +1146,6 @@ main {
     font-size: 1rem;
     font-family: "roboto-light", Arial;
     color: var(--light-mode);
-}
-.fa-linkedin,
-.fa-square-github {
-    transition: box-shadow 0.5s;
-}
-.fa-linkedin:hover,
-.fa-square-github:hover {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
 .footer-navigation-container {
     width: 80%;
@@ -1211,9 +1241,21 @@ a.footer-navigation-link-backtotop:focus {
     list-style-type: none;
 }
 .footer-bottom-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
     font-size: 1.5rem;
     text-decoration: none;
     color: var(--light-mode);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.5s, background-color 0.5s;
+}
+.footer-bottom-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--light-grey);
 }
 .footer-bottom-copyright-sign {
     margin: 0;

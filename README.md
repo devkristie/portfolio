@@ -78,7 +78,7 @@ Key actions include exploring my services, viewing my portfolio, contacting me, 
 
 ### Known Issues
 
-When closing the hCaptcha modal, the screen reader announces: "button Submit form button".
+NVDA may announce the submit button twice when closing the hCaptcha modal. No current workaround.
 
 At larger screen sizes, the alignment of my profile headshot is off-center.
 

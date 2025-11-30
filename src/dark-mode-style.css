@@ -64,9 +64,14 @@ Dark Mode CSS Order:
     stroke: var(--darker-grey);
     fill: var(--light-grey);
 }
-
 .profile-content-container-dark-mode {
     background-color: var(--darkest-grey);
+}
+.profile-introduction-container-dark-mode {
+    background-image: linear-gradient(to bottom, rgba(115, 77, 69, 100%), rgba(115, 77, 69, 75%), rgba(255, 255, 255, 0%));
+}
+.profile-introduction-container-paragraph > a.contact-link-dark-mode {
+    color: var(--light-mode);
 }
 .profile-quotation-container-dark-mode {
     background-color: var(--darker-grey);
@@ -89,6 +94,16 @@ Dark Mode CSS Order:
 .portfolio-websites-container-dark-mode {
     background-color: var(--darker-grey);
 }
+.portfolio-section-container h2.h2-dark-mode {
+    text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
+    color: var(--light-mode);
+}
+.images-coming-soon-dark-mode {
+    color: var(--dark-mode);
+}
+.portfolio-websites-slider-image.placeholder.placeholder-dark-mode {
+    background-color: var(--light-grey);
+}
 .portfolio-websites-show-more-container-dark-mode {
     background-color: var(--darkest-grey);
 }
@@ -98,7 +113,7 @@ Dark Mode CSS Order:
 .portfolio-websites-show-more-arrow-dark-mode {
     stroke: var(--light-mode);
 }
-/*Portfolio website container accordion content that is displayed when the accordion is clicked on*/
+/* Portfolio website accordion content styling applied when the section is opened */
 .portfolio-websites-show-more-accordion-container-paragraph-dark-mode {
     color: var(--light-grey);
 }
@@ -130,9 +145,6 @@ Dark Mode CSS Order:
 .contact-form-input-box-dark-mode {
     background-color: var(--darkest-grey);
     color: var(--light-mode);
-    /* border-right: none;
-    border-left: none; */
-    /* border-bottom: none; */ /*?Not sure if this is needed?*/
 }
 .contact-form-input-box-dark-mode:focus {
     caret-color: var(--darkest-grey);
