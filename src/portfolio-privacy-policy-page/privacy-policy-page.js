@@ -201,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const policyPageSubheading = document.querySelectorAll(".privacy-policy-page-content-container h2");
     const contentParagraphs = document.querySelectorAll(".privacy-policy-page-content-container p");
     const contentLinks = document.querySelectorAll(".privacy-policy-page-content-container a");
+    const contentStrong = document.querySelector(".privacy-policy-page-content-container strong");
     const footerSectionContainer = document.querySelector(".footer-section-container");
     const footerNavigtionContainer = document.querySelector(".footer-navigation-container");
     const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
@@ -249,6 +250,8 @@ document.addEventListener("DOMContentLoaded", () => {
         contentLinks.forEach((link) => {
             link.classList.add("a-dark-mode");
         });
+
+        contentStrong.classList.add("strong-dark-mode");
 
         footerSectionContainer.classList.add("footer-section-container-dark-mode");
         
@@ -311,6 +314,8 @@ document.addEventListener("DOMContentLoaded", () => {
         contentLinks.forEach((link) => {
             link.classList.remove("a-dark-mode");
         });
+
+        contentStrong.classList.remove("strong-dark-mode");
 
         footerSectionContainer.classList.remove("footer-section-container-dark-mode");
 

@@ -3,3 +3,6 @@
 
 # Config Variables
 src/config.php
+
+# Ignore local .htaccess (server-specific rules)
+.htaccess

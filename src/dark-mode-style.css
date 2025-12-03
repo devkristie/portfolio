@@ -26,8 +26,7 @@ Dark Mode CSS Order:
 }
 .landing-page-title-property-value-to-my-dark-mode,
 .landing-page-title-property-value-front-end-dark-mode,
-.landing-page-title-property-development-dark-mode,
-.landing-page-title-value-semicolon-dark-mode {
+.landing-page-title-property-development-dark-mode {
     color: var(--light-grey);
 }
 .landing-page-title-welcome-dark-mode {

@@ -132,3 +132,7 @@ main {
 .privacy-policy-page-content-container a.a-dark-mode {
     color: var(--lightest-grey);
 }
+
+.privacy-policy-page-content-container strong.strong-dark-mode {
+    color: var(--lightest-grey);
+}

@@ -13,9 +13,11 @@ In this portfolio, you'll find a collection of my projects, each demonstrating d
 **Note on JavaScript:**
 This website is designed to work best with JavaScript enabled. While basic functionality may still be accessible, some features such as the navigation bar, accessibility enhancements, and interactive elements rely on JavaScript for a seamless user experience.
 
+---
+
 ### Technical Details
 
-In this section, we delve into the technical intricacies of the project. While a visual aid like a diagram or video would enhance understanding, let's explore the concept through descriptive text.
+In this section, we explore the technical aspects of the project using descriptive text.
 
 **Conceptual Overview:**
 
@@ -23,9 +25,9 @@ Design: My frontend web development portfolio is designed in Figma with responsi
 
 Frontend: Built using HTML, CSS, and JavaScript, with accessibility features such as screen reader compatibility, keyboard navigation, and high-contrast elements for better usability.
 
-Backend: The backend is supported by Web3Forms for handling form submissions securely.
+Backend: Contact form submissions are processed securely using PHP and PHPMailer. hCaptcha is used to prevent spam and automated submissions.
 
-Deployment: The project is hosted on 123reg for reliable hosting services.
+Deployment: The project is hosted on InfinityFree for reliable, free web hosting services.
 
 **Key Components:**
 
@@ -47,6 +49,8 @@ Deployment: The project is hosted on 123reg for reliable hosting services.
 5. Contact Form: A contact form is available for users to reach out to me directly for inquiries or collaboration opportunities.
 6. Footer Navigation: The footer includes additional navigation links for quick access to essential pages and provides credits for the project.
 7. Privacy Policy: A privacy policy page provides users with information regarding their privacy and cookie policies.
+
+---
 
 ### User Instructions
 
@@ -70,41 +74,73 @@ This section is dedicated to providing clear instructions for non-coders on how 
 - Dive into a portfolio showcase displaying websites I've created to demonstrate my skills. Interested visitors can reach out to me through a contact form.
 - The footer provides convenient navigation, credits, copyright information and the privacy policy link.
 
-Key actions include exploring my services, viewing my portfolio, contacting me, and navigating the website easily.
+Visitors can explore my services, browse my portfolio, get in touch with me, and navigate the site with ease.
 
 **Support:**
 
 - If you have questions or feedback, reach out via the contact form on the website. Thank you for visiting!
 
+---
+
+### Thank You Page
+
+After submitting the contact form on my website, users are redirected to a thank you page. This page confirms that their message has been received and provides reassurance that I will respond promptly. It also includes links to navigate back to the portfolio or submit another message.
+
+**Purpose of the Thank You Page:**
+
+- Confirms successful form submission.
+- Provides additional navigation options for the user.
+- Improves overall user experience and trust.
+
+---
+
+### Privacy Policy Page
+
+My website includes a privacy policy page to ensure transparency regarding data handling practices.
+
+**Key Details:**
+
+- Explains what personal data is collected (e.g., name, email, phone, message from contact form).
+- Describes how the data is stored and processed securely.
+- Mentions the use of cookies or analytics tools if applicable.
+- Offers users information about their rights and how to contact me regarding privacy concerns.
+
+You can access the Privacy Policy page via the footer link on the website.
+
+---
+
 ### Known Issues
 
 NVDA may announce the submit button twice when closing the hCaptcha modal. No current workaround.
 
-At larger screen sizes, the alignment of my profile headshot is off-center.
+On desktop Chrome and Firefox, scrolling very quickly can sometimes cause the fixed parallax background to briefly appear over the main content.
+This is a browser rendering/compositing quirk and does not affect functionality.
+Normal scrolling and all other devices (including mobile) render correctly.
 
 **Footer Section:**
 
-Blog link redirects to portfolio due to ongoing development.
+The Blog link is currently inactive as the blog feature is under development.
 
-I appreciate your patience as I work on enhancing the website for a better user experience.
-
-Thank you for your patience as I continue to improve the functionality and content of the portfolio.
+---
 
 ### Credits And Acknowledgements
 
 **Explore My Profiles:**</br>
 
-- <a href="https://github.com/devkristie?tab=repositories" title="github" target="_blank" rel="noopener noreferrer">GitHub</a> - Connect with me on GitHub for a glimpse into my repositories.</br>
-- <a href="https://www.linkedin.com/in/kristie-larke/" title="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a> - Visit my LinkedIn profile to learn more about my professional journey.
+- <a href="https://github.com/devkristie?tab=repositories" title="Github" target="_blank" rel="noopener noreferrer">GitHub</a> - Connect with me on GitHub for a glimpse into my repositories.</br>
+- <a href="https://www.linkedin.com/in/kristie-larke/" title="Linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a> - Visit my LinkedIn profile to learn more about my professional journey.
 
 **Special Thanks To:**</br>
 
-- <a href="https://www.figma.com/" title="figma" target="_blank" rel="noopener noreferrer">Figma</a> - For enabling seamless design collaboration.</br>
-- <a href="https://fontawesome.com/" title="fontawesome" target="_blank" rel="noopener noreferrer">FontAwesome</a> - Providing stylish icons for my projects.</br>
-- <a href="https://web3forms.com/" title="web3forms" target="_blank" rel="noopener noreferrer">Web3Forms</a> - Simplifying form submissions for enhanced user interaction.
+- <a href="https://www.figma.com/" title="Figma" target="_blank" rel="noopener noreferrer">Figma</a> - For enabling seamless design collaboration.</br>
+- <a href="https://fontawesome.com/" title="Font Awesome" target="_blank" rel="noopener noreferrer">Font Awesome</a> - Providing stylish icons for my projects.</br>
+- <a href="https://fonts.google.com/" title="Google Fonts" target="_blank" rel="noopener noreferrer">Google Fonts</a> - Supplying high-quality typography used throughout the project.
+- <a href="https://devicon.dev/" title="Devicon" target="_blank" rel="noopener noreferrer">Devicon</a> - Providing developer logos used throughout this project.
 
-I would like to acknowledge the assistance I received in enhancing several advanced features, including the image slider functionality, the “show more” accordion, smooth scrolling for cross-browser compatibility, the SVG animation on the landing page, form submission handling, and the contact form label animation. Implementing these features was challenging, and I am grateful for the guidance provided by ChatGPT. The code snippets and explanations offered valuable insights, enabling me to troubleshoot effectively and deepen my understanding of these functionalities.
+I implemented several advanced features myself, including the image slider functionality, the ‘show more’ accordion, smooth scrolling for cross-browser compatibility, the SVG animation on the landing page, form submission handling, and the contact form label animation. I consulted ChatGPT for guidance and clarification on some of these challenges, which provided useful insights and helped me troubleshoot effectively.
+
+---
 
 ### Additional Acknowledgments
 
-I'd like to acknowledge the personal circumstances that impacted this project's timeline. Over this period, I navigated multiple job changes to find a suitable role and currently work full-time as a cleaning supervisor with varied shifts. I also took two family trips, faced some health challenges, and began an intensive full-stack development traineeship with IT Career Switch. Despite these challenges, I remained dedicated to completing the website. Thank you for your understanding.
+This project was developed over an extended period while balancing full-time work, professional development, and other commitments. Despite a busy schedule, I remained dedicated to completing the website and ensuring its quality.

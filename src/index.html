@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width" scale="1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="I am passionate about crafting seamless user experiences by blending creativity, functionality, and accessibility. Each project is an opportunity to make a positive impact through intuitive and visually compelling interfaces.">
         <meta name="author" content="Kristie Larke">
@@ -19,9 +19,13 @@
         <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
         <!-- Scripts -->
         <script src="script.js" defer></script>
-        <script src="https://web3forms.com/client/script.js" async defer></script>
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     </head>
     <body>
+        <!-- Page loader -->
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
         <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
             <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a> <!-- Accessible skip link to jump directly to main content -->
             <!-- Navbar Logo -->
@@ -89,9 +93,9 @@
                     <div class="landing-page-title-welcome-background-one" aria-hidden="true"></div>
                     <div class="landing-page-title-welcome-background-two" aria-hidden="true"></div>
                     <p class="landing-page-title-opening-curly-brace" aria-hidden="true">{</p>
-                    <p class="landing-page-title-property-value-to-my">to<span aria-hidden="true">:</span> my<span aria-hidden="true">;</span></p>
-                    <p class="landing-page-title-property-value-front-end">front<span aria-hidden="true">:</span> end<span aria-hidden="true">;</span></p>
-                    <p class="landing-page-title-property-development">development<span aria-hidden="true">:</span></p>
+                    <p class="landing-page-title-property-value-to-my">to<span class="landing-page-title-proterty-colon" aria-hidden="true">:</span> my<span class="landing-page-title-proterty-colon" aria-hidden="true">;</span></p>
+                    <p class="landing-page-title-property-value-front-end">front<span class="landing-page-title-proterty-colon" aria-hidden="true">:</span> end<span class="landing-page-title-proterty-colon" aria-hidden="true">;</span></p>
+                    <p class="landing-page-title-property-development">development<span class="landing-page-title-proterty-colon" aria-hidden="true">:</span></p>
                     <p class="landing-page-title-value-portfolio">portfolio</p>
                     <p class="landing-page-title-value-semicolon" aria-hidden="true">;</p>
                     <p class="landing-page-title-closing-curly-brace" aria-hidden="true">}</p>
@@ -654,96 +658,11 @@
                         </article>
                     </article>
                 </div>
-
-                <!-- <hr class="portfolio-hr"/>
-                <div class="portfolio-websites-container">
-                    <header class="portfolio-websites-title-container">
-                        <h3>Coming Soon</h3>
-                    </header>
-                    <div class="portfolio-websites-slider-container">
-                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Left Arrow">
-                                <path d="M28 45 L20 53 L28 60" />
-                                <path d="M28 45 L28 53"/>
-                            </svg>
-                        </button>
-                        <figure aria-label="Image slider showcasing various projects">
-                            <div class="portfolio-websites-slider-images">
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/1_1.jpg" alt="Description of image 1"/>
-                                </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/1_2.jpg" alt="Description of image 2"/>
-                                </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/1_3.jpg" alt="Description of image 3"/>
-                                </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/1_4.jpg" alt="Description of image 4"/>
-                                </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/1_5.jpg" alt="Description of image 5"/>
-                                </div>
-                        </figure>
-                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Right Arrow">
-                                <path d="M20 45 L28 53 L20 60" />
-                                <path d="M20 45 L20 53"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <nav class="portfolio-websites-button-container" aria-label="Portfolio navigation buttons">-->
-                        <!-- <a class="portfolio-websites-view-website-button" href="#" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
-                            View Website
-                            <span class="sr-only-new-tab">(opens in a new tab)</span>
-                        </a>
-                        <a class="portfolio-websites-view-source-code-button" href="#" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
-                            View Source Code
-                            <span class="sr-only-new-tab">(opens in a new tab)</span>
-                        </a>
-                    </nav>
-                    <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false" tabindex="0">
-                            <p aria-live="polite" aria-atomic="true">Show More</p>
-                            <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
-                                <path d="M15.5 20 L23 28.5 L30 20" />
-                                <path d="M15.5 20 L23 20"/>
-                            </svg>
-                        </div>
-                        <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
-                        <article class="portfolio-websites-show-more-accordion-container">
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">
-                                <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Coming Soon!</strong> 
-                             This website is currently under construction and in the design phase. I am working diligently to bring you a new and improved experience. Stay tuned for updates as I prepare for the launch.</p> -->
-                            <!-- <p class="portfolio-websites-show-more-accordion-container-paragraph">nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor</p>
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc</p>
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">eu ultrices vitae auctor eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum</p>
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit</p> -->
-                            <!-- <h4 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h4>
-                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container" aria-label="Technologies Used Icons">
-                                <div>
-                                    <i class="fa-brands fa-figma" aria-hidden="true"></i>
-                                    <figcaption>Figma</figcaption>
-                                </div>
-                                <div>
-                                    <i class="fa-brands fa-html5" aria-hidden="true"></i>
-                                    <figcaption>HTML</figcaption>
-                                </div>
-                                <div>
-                                    <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
-                                    <figcaption>CSS</figcaption>
-                                </div>
-                                <div>
-                                    <i class="fa-brands fa-js" aria-hidden="true"></i>
-                                    <figcaption>JavaScript</figcaption>
-                                </div>
-                            </figure>
-                        </article>
-                    </article>
-                </div> -->
             </section>
             <div id="contact" class="anchor" role="region" aria-labelledby="contact-label" tabindex="-1"></div>
             <div id="contact-label" class="sr-only">Contact Section</div>
+            <!-- Parallax background -->
+            <div class="parallax-bg"></div>
             <section class="contact-section-container">
                 <header class="section-title-container">
                     <h1 class="section-title">Contact</h1>
@@ -762,8 +681,7 @@
                             <i class="fa-regular fa-envelope fa-4x"></i>
                         </div>
                     </div>
-                    <form class="contact-form form-hcaptcha" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact Kristie Larke">
-                        <input name="access_key" type="hidden" value="df18c5d1-e440-4c24-9b88-781a4a915c7f">
+                    <form class="contact-form form-hcaptcha" action="./send-form.php" method="POST" aria-label="Contact Kristie Larke">
                         <div class="form-background">
                             <label class="contact-form-label" for="fullname">Full Name</label>
                             <input id="fullname" class="contact-form-input-box" name="name" title="Full name" placeholder="e.g., John Doe" pattern="^(?:[a-zA-Z]{2,}\s[a-zA-Z]{2,})(?:\s[a-zA-Z]{2,})?$" autocomplete="off" aria-describedby="fullname-error" required/>
@@ -784,7 +702,8 @@
                             <textarea id="message" class="contact-form-input-box contact-form-input-box-message" name="message" placeholder="e.g., Dear Kristie, I am writing to you with regards to your services. Yours kindly, John Doe." autocomplete="off" aria-describedby="message-help" required></textarea>
                             <p id="message-help" class="sr-only" aria-live="assertive" aria-atomic="true">Please enter the message you would like to send to Kristie Larke.</p>
                         </div>
-                        <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
+                        <div class="h-captcha" data-captcha="true" data-sitekey="09ee3fbe-7a96-4008-9aa2-2eaca196f212"></div>
+                        
                         <div class="contact-form-submit-button-container">
                             <button class="contact-form-submit-button" type="submit" aria-label="Submit Form">
                                 <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
@@ -793,7 +712,7 @@
                         </div>
                         <label class="visually-hidden" for="botcheck">Leave this field empty</label>
                         <input id="botcheck" class="botcheck-visually-hidden" name="botcheck" type="text" aria-hidden="true">
-                        <input name="redirect" type="hidden" value="https://kristielarke.infy.uk/portfolio-thank-you-page/thank-you-page.html"><!--*Need to change the link when it goes to production-->
+                        <input name="redirect" type="hidden" value="https://kristielarke.infy.uk/portfolio-thank-you-page/thank-you-page.html">
                     </form>
                 </section>
             </section>
@@ -818,14 +737,6 @@
                         </li>
                         <li class="footer-navigation-links">
                             <a href="#">Blog (Coming Soon)</a>
-                        </li>
-                        <li class="footer-absolute-links">
-                            <span aria-hidden="true">Form submission by -</span>
-                            <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer">
-                                <span class="sr-only">Form submission by: </span>
-                                Web3Forms
-                                <span class="sr-only">(opens in a new tab)</span>
-                            </a>                        
                         </li>
                         <li class="footer-absolute-links">
                             <span aria-hidden="true">Icons by -</span>

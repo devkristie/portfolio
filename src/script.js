@@ -18,6 +18,16 @@ const contactFormInputs = document.querySelectorAll(".contact-form-input-box");
 const contactFormLabels = document.querySelectorAll(".contact-form-label");
 const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
+// Wait until the entire page (images, scripts, etc.) has fully loaded
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    // Check if the loader exists to avoid errors
+    if (loader) {
+        loader.style.opacity = "0"; // Fade out the loader by setting opacity to 0 (smooth transition handled via CSS)
+        setTimeout(() => loader.style.display = "none", 400); // After 400ms (matching the CSS transition duration), completely remove the loader from the layout
+    }
+});
+
 // Smooth anchor scroll, compatilble for older browsers
 document.querySelectorAll("a[href^='#']").forEach((anchor) => {
     anchor.addEventListener("click", function(e) {
@@ -207,7 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const landingPageTitleToMy = document.querySelector(".landing-page-title-property-value-to-my");
     const landingPageTitleFrontEnd = document.querySelector(".landing-page-title-property-value-front-end");
     const landingPageTitleDevelopment = document.querySelector(".landing-page-title-property-development");
-    const landingPageTitleSemicolon = document.querySelector(".landing-page-title-value-semicolon");
     const landingPageTitleClosingCurlyBrace = document.querySelector(".landing-page-title-closing-curly-brace");
     const laptopImageTopShell = document.querySelector(".laptop-image-top-shell");
     const laptopImageWebcam = document.querySelector(".laptop-image-webcam");
@@ -278,9 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
         landingPageTitleFrontEnd.classList.add("landing-page-title-property-value-front-end-dark-mode");
         
         landingPageTitleDevelopment.classList.add("landing-page-title-property-development-dark-mode");
-        
-        landingPageTitleSemicolon.classList.add("landing-page-title-value-semicolon-dark-mode");
-        
+                
         landingPageTitleClosingCurlyBrace.classList.add("landing-page-title-closing-curly-brace-dark-mode");
         
         laptopImageTopShell.classList.add("laptop-image-top-shell-dark-mode");
@@ -454,9 +461,7 @@ document.addEventListener("DOMContentLoaded", () => {
         landingPageTitleFrontEnd.classList.remove("landing-page-title-property-value-front-end-dark-mode");
         
         landingPageTitleDevelopment.classList.remove("landing-page-title-property-development-dark-mode");
-        
-        landingPageTitleSemicolon.classList.remove("landing-page-title-value-semicolon-dark-mode");
-        
+                
         landingPageTitleClosingCurlyBrace.classList.remove("landing-page-title-closing-curly-brace-dark-mode");
         
         laptopImageTopShell.classList.remove("laptop-image-top-shell-dark-mode");

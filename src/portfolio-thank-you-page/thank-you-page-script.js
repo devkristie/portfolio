@@ -1,7 +1,6 @@
 "use strict"
 
 // Global variables
-//! const darkModeIconContainer = document.querySelector(".top-navigation-bar-dark-mode-icon-container ul");
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
@@ -36,21 +35,6 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Delay focusing main content to allow assertive live regions (dark mode) to announce first
-    setTimeout(() => {
-        const mainContent = document.getElementById("skip-to-main-content-start");
-        if(mainContent) {
-            mainContent.setAttribute("tabindex", "-1"); // Make it focusable
-            mainContent.focus();
-        }
-
-        // Announce Thank You message politely for screen readers
-        const thankYouLiveRegion = document.getElementById("thankYouLiveRegion");
-        if(thankYouLiveRegion) {
-            thankYouLiveRegion.textContent = "Thank you! Your message has successfully been sent. I will follow up with you within 1 - 2 business days.";
-        }
-    }, 300); // 300ms delay allows assertive dark mode messages to be read first
-
     // Dark mode toggle with localStorage preference handling and first-time consent modal
     const darkModeToggleButton = document.querySelector(".dark-mode-toggle-button");
     const darkModeIcon = darkModeToggleButton.querySelector(".fa-moon");
