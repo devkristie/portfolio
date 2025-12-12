@@ -5,6 +5,35 @@ Responsive CSS Order:
 3. If there are any pseudo selectors or group pseudo selectors, they appear underneath the selectors they relate to.
 4. Media queries are organized from the largest to the smallest screen sizes, with larger screen styles defined first and smaller screen styles overriding them as needed.
 */
+
+/* Remove focus ring only on touch devices forcing no outline or border on tap while keeping focus visible for keyboard users */
+@media (pointer: coarse), (hover: none) {
+    svg.hamburger-menu-container:focus,
+    svg.hamburger-menu-container:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+        -webkit-tap-highlight-color: transparent !important;
+        border: none !important;
+    }
+}
+
+/* High contrast mode: ensures arrows are always visible using currentColor */
+@media (forced-colors: active) {
+    .portfolio-websites-slider-left-arrow svg path,
+    .portfolio-websites-slider-right-arrow svg path {
+        stroke: currentColor;
+        stroke-width: 4px;
+    }
+    .portfolio-websites-slider-left-arrow:hover svg path,
+    .portfolio-websites-slider-right-arrow:hover svg path,
+    .portfolio-websites-slider-left-arrow:focus-visible svg path,
+    .portfolio-websites-slider-right-arrow:focus-visible svg path,
+    .portfolio-websites-slider-left-arrow:active svg path,
+    .portfolio-websites-slider-right-arrow:active svg path {
+        stroke-width: 5px;
+    }
+}
+
 @media only screen and (orientation: landscape) and (max-height: 550px) {
     .dark-mode-modal-container {
         position: absolute;
@@ -47,7 +76,7 @@ Responsive CSS Order:
 }
 @media only screen and (orientation: landscape) and (max-height: 550px) and (min-width: 550px) {
     .dark-mode-modal-allow-button, .dark-mode-modal-decline-button {
-      margin-top: 0.5em;
+        margin-top: 0.5em;
     }
   }
 @media only screen and (min-width: 950px) {
@@ -216,38 +245,6 @@ Responsive CSS Order:
         margin: 0 0.75em 0 0.75em;
     }
 }
-@media only screen and (max-width: 600px) {
-    .portfolio-websites-slider-left-arrow {
-        background-image: linear-gradient(to top, var(--dark-grey), var(--dark-grey), var(--darker-grey));
-        box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
-    }
-    .portfolio-websites-slider-right-arrow {
-        background-image: linear-gradient(to bottom, var(--dark-grey), var(--dark-grey), var(--darker-grey));
-        box-shadow: inset 5px -5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
-    }
-    .portfolio-websites-slider-left-arrow:hover,
-    .portfolio-websites-slider-left-arrow:focus-visible,
-    .portfolio-websites-slider-left-arrow:active {
-        background-image: linear-gradient(to top, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
-        box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
-    }
-    .portfolio-websites-slider-right-arrow:hover,
-    .portfolio-websites-slider-right-arrow:focus-visible,
-    .portfolio-websites-slider-right-arrow:active {
-        background-image: linear-gradient(to bottom, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
-        box-shadow: inset 5px -5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
-    }
-    .portfolio-websites-slider-left-arrow-dark-mode:hover,
-    .portfolio-websites-slider-left-arrow-dark-mode:focus-visible,
-    .portfolio-websites-slider-left-arrow-dark-mode:active {
-        background-image: linear-gradient(to top, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
-    }
-    .portfolio-websites-slider-right-arrow-dark-mode:hover,
-    .portfolio-websites-slider-right-arrow-dark-mode:focus-visible,
-    .portfolio-websites-slider-right-arrow-dark-mode:active {
-        background-image: linear-gradient(to bottom, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
-    }
-}
 @media only screen and (max-width: 601px) {
     .portfolio-websites-slider-container {
         flex-direction: column;
@@ -268,9 +265,6 @@ Responsive CSS Order:
         transform: rotate(90deg);
         transform-origin: center;
     }
-    .portfolio-websites-slider-left-arrow {
-        border-radius: 50% 50% 0 0;
-    }
     .portfolio-websites-slider-container > figure {
         position: relative;
         display: inline-block;
@@ -278,7 +272,6 @@ Responsive CSS Order:
     }
     .portfolio-websites-slider-right-arrow {
         margin-top: 22.25em;
-        border-radius: 0 0 50% 50%;
     }
 }
 @media only screen and (max-width: 601px) {
@@ -294,6 +287,18 @@ Responsive CSS Order:
     }
     .portfolio-websites-slider-image {
         outline: 1px solid var(--dark-mode);
+    }
+}
+@media only screen and (min-width: 601px) {
+    .portfolio-websites-slider-container > figure {
+        outline: 1px solid var(--dark-mode);
+    }
+}
+@media only screen and (max-width: 550px) {
+    .portfolio-websites-title-container {
+        display: flex;
+        align-items: center;
+        height: 130px;
     }
 }
 
@@ -357,7 +362,7 @@ Responsive CSS Order:
 
 @media only screen and (max-width: 600px) {
     a.footer-navigation-link-backtotop {
-      min-width: 150px;
+        min-width: 150px;
     }
 }
 @media only screen and (max-width: 450px) {

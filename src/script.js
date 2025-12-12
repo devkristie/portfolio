@@ -1,8 +1,8 @@
 "use strict"
 
 // Monitor all focusable elements for bebugging - Comment out for production
-// document.addEventListener('focusin', (event) => {
-//     console.log('Focused element:', event.target);
+// document.addEventListener("focusin", (event) => {
+//     console.log("Focused element:", event.target);
 // }, true); 
 
 // Global variables
@@ -26,10 +26,30 @@ window.addEventListener("load", () => {
         loader.style.opacity = "0"; // Fade out the loader by setting opacity to 0 (smooth transition handled via CSS)
         setTimeout(() => loader.style.display = "none", 400); // After 400ms (matching the CSS transition duration), completely remove the loader from the layout
     }
+    handleLaptopAnimation();
+});
+
+// Smoothly scrolls to the top and shifts focus to the hidden #home anchor for screen readers
+document.querySelector(".footer-navigation-link-backtotop").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(".landing-page-section-container");
+
+    target.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start" 
+    });
+
+    // Set focus for screen readers without triggering another scroll
+    const homeAnchor = document.querySelector("#home");
+    homeAnchor.setAttribute("tabindex", "-1"); 
+    homeAnchor.focus({ preventScroll: true });
 });
 
 // Smooth anchor scroll, compatilble for older browsers
-document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    // Skip the Back To Top link
+    if (anchor.classList.contains("footer-navigation-link-backtotop")) return;
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
         const targetElement = document.querySelector(this.getAttribute("href"));
@@ -46,6 +66,7 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
     portfolioSection.setAttribute("tabindex", "-1");
     portfolioSection.focus();
 
+    // Needed to prevent the page from displaying under the fixed header on page load
     const targetSection = document.getElementById("skip-to-main-content-start");
 
     if (targetSection) {
@@ -234,15 +255,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const profileQuotationContainer = document.querySelector(".profile-quotation-container");
     const profileQuotationMark = document.querySelector(".profile-quotation-container-quotation-marks");
     const profileIntrodutionContainerParagraph = document.querySelectorAll(".profile-introduction-container p:not(.profile-introduction-container-greeting)");
-    const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h2");
+    const sectionIntroductionContainerTitle = document.querySelectorAll(".section-introduction-container h3");
     const sectionIntroductionContainerParagraph = document.querySelectorAll(".section-introduction-container p");
     const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
-    const portfolioWebsitesDeveloperTitle = document.querySelectorAll(".portfolio-section-container h2");
-    const portfolioSliderLeftArrow = document.querySelectorAll(".portfolio-websites-slider-left-arrow");
+    const portfolioWebsitesDeveloperTitle = document.querySelectorAll(".portfolio-section-container h3");
+    const portfolioWebsiteArrows = document.querySelectorAll(".portfolio-websites-slider-left-arrow svg path, .portfolio-websites-slider-right-arrow svg path");
     const portfolioSliderPlaceholderText = document.querySelector(".images-coming-soon");
     const portfolioSliderPlaceholderImage = document.querySelectorAll(".placeholder");
-    const portfolioSliderRightArrow = document.querySelectorAll(".portfolio-websites-slider-right-arrow");
     const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
+    const portfolioWebsitesShowMoreContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
     const portfolioShowMoreContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
     const portfolioContainerTechnologiesUsed = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
     const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
@@ -259,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeIcon.classList.add("fa-moon-visibility-hidden");
         lightModeIcon.classList.add("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Dark mode is now enabled";
-        darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
+        darkModeToggleButton.setAttribute("aria-label", "Enable light mode");
 
         // Add dark-mode-specific CSS classes to relevant page elements
         screenReadersOnlyText.forEach((text) => {
@@ -327,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         
         sectionIntroductionContainerTitle.forEach((title) => {
-            title.classList.add("section-introduction-container-h2-dark-mode");
+            title.classList.add("section-introduction-container-h3-dark-mode");
         });
         
         sectionIntroductionContainerParagraph.forEach((paragraph) => {
@@ -339,11 +360,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         portfolioWebsitesDeveloperTitle.forEach((title) => {
-            title.classList.add("h2-dark-mode");
+            title.classList.add("h3-dark-mode");
         });
 
-        portfolioSliderLeftArrow.forEach((arrow) => {
-            arrow.classList.add("portfolio-websites-slider-left-arrow-dark-mode");
+        portfolioWebsiteArrows.forEach((arrow) => {
+            arrow.classList.add("arrow-svg-path-dark-mode");
         });
 
         portfolioSliderPlaceholderText.classList.add("images-coming-soon-dark-mode");
@@ -351,13 +372,13 @@ document.addEventListener("DOMContentLoaded", () => {
         portfolioSliderPlaceholderImage.forEach((placeholder) => {
             placeholder.classList.add("placeholder-dark-mode");
         });
-
-        portfolioSliderRightArrow.forEach((arrow) => {
-            arrow.classList.add("portfolio-websites-slider-right-arrow-dark-mode");
-        });
         
         portfolioWebsitesShowMoreContainer.forEach((background) => {
             background.classList.add("portfolio-websites-show-more-container-dark-mode");
+        });
+
+        portfolioWebsitesShowMoreContainerButton.forEach((background) => {
+            background.classList.add("portfolio-websites-show-more-accordion-container-button-dark-mode");
         });
         
         showMoreAccordionContainerShowLessText.forEach((showMoreText) => {
@@ -394,14 +415,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update placeholder text color for dark mode
         placeholderStyle.textContent = `
-        /* Chrome, Safari, Opera */
-        ::-webkit-input-placeholder { color: var(--darkest-grey); }
-        /* Firefox 19+ */
-        ::-moz-placeholder { color: var(--darkest-grey); }
-        /* Internet Explorer 10+ */
-        :-ms-input-placeholder { color: var(--darkest-grey); }
-        /* Firefox 18- */
-        :-moz-placeholder { color: var(--darkest-grey); }
+            /* Chrome, Safari, Opera */
+            ::-webkit-input-placeholder { color: var(--darkest-grey); }
+            /* Firefox 19+ */
+            ::-moz-placeholder { color: var(--darkest-grey); }
+            /* Internet Explorer 10+ */
+            :-ms-input-placeholder { color: var(--darkest-grey); }
+            /* Firefox 18- */
+            :-moz-placeholder { color: var(--darkest-grey); }
         `;
 
         bodyDarkMode.classList.add("dark-mode"); // Add 'dark-mode' to <body> so that form input backgrounds, borders, and colors switch to the dark theme. This affects all form fields globally.
@@ -433,7 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeIcon.classList.remove("fa-moon-visibility-hidden");
         lightModeIcon.classList.remove("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Light mode is now enabled";
-        darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
+        darkModeToggleButton.setAttribute("aria-label", "Enable dark mode");
         
         // Remove dark-mode-specific CSS classes from all affected elements
         screenReadersOnlyText.forEach((text) => {
@@ -501,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         
         sectionIntroductionContainerTitle.forEach((title) => {
-            title.classList.remove("section-introduction-container-h2-dark-mode");
+            title.classList.remove("section-introduction-container-h3-dark-mode");
         });
         
         sectionIntroductionContainerParagraph.forEach((paragraph) => {
@@ -513,11 +534,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         portfolioWebsitesDeveloperTitle.forEach((title) => {
-            title.classList.remove("h2-dark-mode");
+            title.classList.remove("h3-dark-mode");
         });
 
-        portfolioSliderLeftArrow.forEach((arrow) => {
-            arrow.classList.remove("portfolio-websites-slider-left-arrow-dark-mode");
+        portfolioWebsiteArrows.forEach((arrow) => {
+            arrow.classList.remove("arrow-svg-path-dark-mode");
         });
 
         portfolioSliderPlaceholderText.classList.remove("images-coming-soon-dark-mode");
@@ -525,13 +546,13 @@ document.addEventListener("DOMContentLoaded", () => {
         portfolioSliderPlaceholderImage.forEach((placeholder) => {
             placeholder.classList.remove("placeholder-dark-mode");
         });
-
-        portfolioSliderRightArrow.forEach((arrow) => {
-            arrow.classList.remove("portfolio-websites-slider-right-arrow-dark-mode");
-        });
         
         portfolioWebsitesShowMoreContainer.forEach((background) => {
             background.classList.remove("portfolio-websites-show-more-container-dark-mode");
+        });
+
+        portfolioWebsitesShowMoreContainerButton.forEach((background) => {
+            background.classList.remove("portfolio-websites-show-more-accordion-container-button-dark-mode");
         });
 
         showMoreAccordionContainerShowLessText.forEach((showMoreText) => {
@@ -568,14 +589,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update placeholder text color for light mode
         placeholderStyle.textContent = `
-        /* Chrome, Safari, Opera */
-        ::-webkit-input-placeholder { color: var(--lightest-grey); }
-        /* Firefox 19+ */
-        ::-moz-placeholder { color: var(--lightest-grey); }
-        /* Internet Explorer 10+ */
-        :-ms-input-placeholder { color: var(--lightest-grey); }
-        /* Firefox 18- */
-        :-moz-placeholder { color: var(--lightest-grey); }
+            /* Chrome, Safari, Opera */
+            ::-webkit-input-placeholder { color: var(--lightest-grey); }
+            /* Firefox 19+ */
+            ::-moz-placeholder { color: var(--lightest-grey); }
+            /* Internet Explorer 10+ */
+            :-ms-input-placeholder { color: var(--lightest-grey); }
+            /* Firefox 18- */
+            :-moz-placeholder { color: var(--lightest-grey); }
         `;
 
         bodyDarkMode.classList.remove("dark-mode"); // Remove 'dark-mode' from <body> to revert form fields and other page elements back to the normal light theme
@@ -667,29 +688,16 @@ function showMenu() {
     }
 }
 
-// Check if an element is fully visible in the viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.bottom <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-// Animate each laptop code line when it becomes visible on scroll
-function handleScroll() {
-    laptopImageCode.forEach((element, index) => {
-        if (isInViewport(element)) {
+// Animate each laptop code line when it becomes visible after loader is finished
+function handleLaptopAnimation() {
+    setTimeout(() => { // Small delay before starting the animation
+        laptopImageCode.forEach((element, index) => {
             setTimeout(() => {
                 element.classList.add("laptop-image-code-animation");
             }, index * 500);
-        }
-    });
+        });
+    }, 500);
 }
-// Trigger animation on scroll
-window.addEventListener("scroll", handleScroll);
 
 // Portfolio slider setup: initialize image sliders, arrow controls, keyboard accessibility, and responsive SVG viewBoxes
 document.addEventListener("DOMContentLoaded", function() {
@@ -715,18 +723,34 @@ document.addEventListener("DOMContentLoaded", function() {
         const leftArrowElement = leftArrows[sliderContainerIndex];
         const rightArrowElement = rightArrows[sliderContainerIndex];
         const portfolioWebsitesSliderImages = sliderContainer.querySelectorAll(".portfolio-websites-slider-image");
-        let currentIndex = 0;
+        const statusRegion = sliderContainer.querySelector(".slider-status"); // Announces current slide number and either placeholder text or image alt text for screen readers
+        let currentIndex = 0; // Tracks which image is currently shown
+
+        // Updates the ARIA live region with the current slide information for screen readers
+        function announceSlide() {
+            const currentSlide = portfolioWebsitesSliderImages[currentIndex]; // Get the currently visible slide based on currentIndex
+
+            if (currentSlide.tagName.toLowerCase() === "img") {
+                // If the current slide is an actual image, announce its alt text
+                statusRegion.textContent = `Slide ${currentIndex + 1} of ${portfolioWebsitesSliderImages.length}: ${currentSlide.alt}`;
+            } else {
+                // If the current slide is a placeholder, announce "Image coming soon"
+                statusRegion.textContent = `Slide ${currentIndex + 1} of ${portfolioWebsitesSliderImages.length}: Image coming soon.`;
+            }
+        }
 
         // Move to previous image
         function handleLeftArrow() {
             currentIndex = (currentIndex === 0) ? portfolioWebsitesSliderImages.length - 1 : currentIndex - 1;
             showImage(portfolioWebsitesSliderImages, currentIndex);
+            announceSlide();
         }
 
         // Move to next image
         function handleRightArrow() {
             currentIndex = (currentIndex === portfolioWebsitesSliderImages.length - 1) ? 0 : currentIndex + 1;
             showImage(portfolioWebsitesSliderImages, currentIndex);
+            announceSlide();
         }
 
         // Handle arrow clicks to change the slider image
@@ -1007,7 +1031,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Announce error messages for screen readers
     function announceError(errorId, message) {
         const errorElement = document.getElementById(errorId);
-        errorElement.textContent = ''; // Clear previous message
+        errorElement.textContent = ""; // Clear previous message
         setTimeout(() => {
             errorElement.textContent = message;  
             errorElement.setAttribute("aria-hidden", "false"); // Make it visible to screen readers
@@ -1110,7 +1134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     
                     // Restore the original aria-label when the button loses focus
                     contactFormSubmitButton.addEventListener("blur", () => {
-                        contactFormSubmitButton.setAttribute("aria-label", "Submit Form");
+                        contactFormSubmitButton.setAttribute("aria-label", "Submit form");
                     });
                 }
     

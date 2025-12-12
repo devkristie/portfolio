@@ -25,6 +25,12 @@ CSS Order:
     color: var(--light-mode);
 }
 
+/* Visually hide slider status while keeping it accessible to screen readers */
+.slider-status {
+    position: absolute;
+    left: -9999px;
+}
+
 /* Page loader */
 #loader {
     position: fixed;
@@ -67,6 +73,16 @@ CSS Order:
     --lightest-grey: #EAEAEA;
     --dark-mode: #242424;
     --light-mode: #FEFEFE;
+}
+
+button,
+a,
+input,
+[role="button"],
+button svg {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /*User Select None*/
@@ -121,7 +137,7 @@ body {
 }
 .top-navigation-bar-skip-to-main-content-link {
     position: absolute;
-    left: -187px;
+    left: -200px;
     display: flex;
     align-items: center;
     height: 40px;
@@ -295,6 +311,10 @@ main {
     background-color: var(--light-mode);
 }
 
+#home {
+    position: absolute; /* Stops landing page content being uncentered */
+}
+
 .landing-page-section-container {
     display: flex;
     flex-direction: column;
@@ -357,7 +377,9 @@ main {
 .landing-page-title-welcome  {
     position: relative;
     z-index: 4;
-    font-size: 2.2rem;
+    margin: 0;
+    font-size: 2.1rem;
+    font-family: "roboto-bold", "Tahoma", Arial;
     color: var(--dark-mode);
 }
 .landing-page-title-welcome span {
@@ -387,6 +409,10 @@ main {
 }
 .landing-page-title-value-portfolio {
     padding: 0 0.2em 0.2em 0.2em;
+    font-size: 1.25rem;
+    font-family: "roboto-bold", "Tahoma", Arial;
+    font-weight: 100;
+    letter-spacing: 0.025em;
     background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
@@ -635,9 +661,9 @@ main {
 .portfolio-section-container {
     padding-bottom: 5em;
 }
-.section-introduction-container > h2,
-.portfolio-section-container h2,
-.portfolio-websites-title-container {
+.section-introduction-container > h3,
+.portfolio-section-container h3 {
+    font-family: "roboto-bold", Arial;
     text-align: center;
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     color: var(--dark-mode);
@@ -650,7 +676,7 @@ main {
     width: 80%;
     margin: auto;
 }
-.section-introduction-container > h2 {
+.section-introduction-container > h3 {
     margin-top: 2.7em;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
@@ -676,7 +702,7 @@ main {
 .portfolio-hr {
     margin-top: 5em;
 }
-.portfolio-section-container h2 {
+.portfolio-section-container h3 {
     margin-top: 2.7em;
     font-size: 1.5rem;
     font-family: "roboto-bold", Arial;
@@ -701,38 +727,18 @@ main {
     width: 48px;
     height: 300.01px;
     padding: 0.85em;
+    /* Remove the default button background fully */
+    background: transparent;
+    background-color: transparent;
     border: none;
-    outline: 1px solid black;
     cursor: pointer;
-}
-.portfolio-websites-slider-left-arrow:hover,
-.portfolio-websites-slider-left-arrow:focus-visible,
-.portfolio-websites-slider-left-arrow:active {
-    background-image: linear-gradient(to left, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
-    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
-}
-.portfolio-websites-slider-right-arrow:hover,
-.portfolio-websites-slider-right-arrow:focus-visible,
-.portfolio-websites-slider-right-arrow:active {
-    background-image: linear-gradient(to right, var(--darker-grey), var(--darker-grey), var(--darkest-grey));
-    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
-}
-.portfolio-websites-slider-left-arrow-dark-mode:hover,
-.portfolio-websites-slider-left-arrow-dark-mode:focus-visible,
-.portfolio-websites-slider-left-arrow-dark-mode:active {
-    background-image: linear-gradient(to left, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
-}
-.portfolio-websites-slider-right-arrow-dark-mode:hover,
-.portfolio-websites-slider-right-arrow-dark-mode:focus-visible,
-.portfolio-websites-slider-right-arrow-dark-mode:active {
-    background-image: linear-gradient(to right, var(--darkest-grey), var(--darkest-grey), var(--dark-mode));
 }
 .portfolio-websites-slider-left-arrow svg path,
 .portfolio-websites-slider-right-arrow svg path {
     width: 24px;
     height: 24px;
-    stroke: var(--dark-mode);
-    stroke: currentColor; /* Accessibility: prevents SVG arrows from disappearing in Windows high-contrast mode */
+    transition: stroke-width 0.3s linear;
+    stroke: var(--darker-grey);
     fill: none;
     stroke-linecap: round;
     stroke-width: 4px;
@@ -743,8 +749,9 @@ main {
 .portfolio-websites-slider-right-arrow:focus-visible svg path,
 .portfolio-websites-slider-left-arrow:active svg path,
 .portfolio-websites-slider-right-arrow:active svg path {
-    stroke: var(--light-mode);
-    stroke: currentColor; /* Accessibility: prevents SVG arrows from disappearing in Windows high-contrast mode */
+    transition: stroke-width 0.4s linear;
+    stroke: var(--dark-mode); 
+    stroke-width: 5px;
 }
 .portfolio-websites-view-website-button,
 .portfolio-websites-view-source-code-button {
@@ -762,13 +769,25 @@ main {
     transition: background-color 0.5s;
     cursor: pointer;
 }
+.portfolio-websites-show-more-container,
+.portfolio-websites-show-more-accordion-container-button {
+    background-color: var(--light-grey);
+    border-radius: 0 0 24px 24px;
+}
 .portfolio-websites-title-container {
     width: 100%;
-    margin: 0 0 2.85em;
+    margin: 0 0 5em;
     padding: 0 0.1em;
-    font-size: 1.5rem;
-    font-family: "roboto-medium", Arial;
     background-image: linear-gradient(to bottom, var(--third-color), var(--primary-color));
+    border-radius: 24px 24px 0 0;
+}
+.portfolio-websites-title-container > h4 {
+    width: 100%;
+    margin: 1em 0;
+    font-size: 1.75rem;
+    font-family: "roboto-medium", Arial;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.2);
     border-radius: 24px 24px 0 0;
 }
 .portfolio-websites-slider-container {
@@ -777,21 +796,11 @@ main {
     width: 80%;
     margin-bottom: 5em;
 }
-.portfolio-websites-slider-left-arrow {
-    background-image: linear-gradient(to left, var(--dark-grey), var(--dark-grey), var(--darker-grey));
-    border-radius: 50% 0 0 50%;
-    box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.5), 0px 0px 0px rgba(255, 255, 255, 0.5);
-}
-.portfolio-websites-slider-right-arrow {
-    background-image: linear-gradient(to right, var(--dark-grey), var(--dark-grey), var(--darker-grey));
-    border-radius: 0 50% 50% 0;
-    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.5), -5px 0px 0px rgba(255, 255, 255, 0.5);
-}
 .portfolio-websites-slider-container > figure {
     position: relative;
     width: 100%;
     margin: 0;
-    outline: 1px solid var(--dark-mode);
+    border-radius: 24px;
 }
 .images-coming-soon {
     position: absolute;
@@ -813,12 +822,13 @@ main {
     position: absolute; /* Stack all images on top of each other */
     top: 0;
     left: 0;
+    z-index: 0; /* Hidden images sit behind the visible image */
     width: 100%;
     height: 300px;
+    border-radius: 24px;
     object-fit: cover;
     opacity: 0; /* Start fully hidden */
     transition: opacity 0.4s ease-in-out; /* Smooth fade between images */
-    z-index: 0; /* Hidden images sit behind the visible image */
 }
 /* Ensure the first image is visible initially before JS runs */
 .portfolio-websites-slider-image:first-child {
@@ -847,7 +857,6 @@ main {
     margin: 0 5% 0 0;
     background-color: var(--dark-mode);
     color: var(--lightest-grey);
-    /* border: 0.01px solid var(--light-grey);   */
 }
 .portfolio-websites-view-website-button:hover,
 .portfolio-websites-view-website-button:focus-visible {
@@ -857,7 +866,6 @@ main {
 .portfolio-websites-view-source-code-button {
     margin: 0 0 0 5%;
     background-color: var(--secondary-color);
-    /* border: 0.01px solid var(--light-grey); */
 }
 .portfolio-websites-view-source-code-button:hover,
 .portfolio-websites-view-source-code-button:focus-visible {
@@ -869,19 +877,19 @@ main {
     height: auto;
     padding: 0 0;
     font-family: "roboto-regular", Arial;
-    background-color: var(--light-grey);
-    border-radius: 0 0 24px 24px;
-    cursor: pointer;
 }
 .portfolio-websites-show-more-accordion-container-button {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
 }
 .portfolio-websites-show-more-accordion-container-button > p {
     width: 160px;
-    padding: 2.5em 0 0 2.5em;
+    padding: 2.5em 0 0 0;
     font-family: "roboto-bold", Arial;
 }
 .portfolio-websites-show-more-arrow {
@@ -926,6 +934,7 @@ main {
 }
 .portfolio-websites-show-more-accordion-container-technologies-used-title {
     margin: 2.5em 0;
+    font-size: 1em;
     text-align: center;
     cursor: text;
 }
@@ -961,20 +970,6 @@ main {
     font-family: "roboto-regular", Arial;
     color: var(--light-mode);
     cursor: text;
-}
-
-/* Parallax background */
-.parallax-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url('assets/images/parallax-image-code.jpg') no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-    pointer-events: none;
-    isolation: isolate;
 }
 
 .contact-section-container {
@@ -1159,13 +1154,26 @@ main {
     color: var(--dark-mode);
 }
 
+/* Parallax background */
+.parallax-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35vh;
+    background: url('assets/images/parallax-image-code.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+    isolation: isolate;
+}
+
 .footer-section-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin-top: 15em;
     text-align: center;
     background-color: var(--light-mode);
 }

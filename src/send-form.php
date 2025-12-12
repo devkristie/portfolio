@@ -14,22 +14,32 @@
     use PHPMailer\PHPMailer\Exception;
 
     // Get POST data
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $message = $_POST['message'] ?? '';
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $message = trim($_POST['message'] ?? '');
     $botcheck = $_POST['botcheck'] ?? '';
     $hcaptcha = $_POST['h-captcha-response'] ?? '';
     $redirect = $_POST['redirect'] ?? '';
 
-    // Honeypot bot check
+    // Validate email format to ensure it is a properly formatted email address
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        exit('Invalid email address.');
+    }
+
+    // Honeypot bot check: if the hidden 'botcheck' field is filled, exit the script
     if (!empty($botcheck)) {
         exit('Bot detected');
     }
 
-    // Ensure hCaptcha was completed
+    // Ensure hCaptcha was completed; if not, stop the submission
     if (empty($hcaptcha)) {
         exit('Please complete the captcha');
+    }
+
+    // Limit message length to prevent excessively large submissions or abuse
+    if (strlen($message) > 5000) {
+        exit('Message too long.');
     }
 
     // Verify hCaptcha server-side using cURL

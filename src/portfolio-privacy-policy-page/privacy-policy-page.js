@@ -12,6 +12,7 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
     mainSection.setAttribute("tabindex", "-1");
     mainSection.focus();
 
+    // Needed to prevent the page from displaying under the fixed header on page load
     const targetSection = document.getElementById("skip-to-main-content-start");
 
     if (targetSection) {
@@ -23,11 +24,28 @@ document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEvent
     }
 });
 
+// Smoothly scrolls to the top and shifts focus to the hidden #home anchor for screen readers
+document.querySelector(".footer-navigation-link-backtotop").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(".thank-you-page-landing-page-section-container");
+
+    target.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start" 
+    });
+
+    // Set focus for screen readers without triggering another scroll
+    const homeAnchor = document.querySelector("#home");
+    homeAnchor.setAttribute("tabindex", "-1"); 
+    homeAnchor.focus({ preventScroll: true });
+});
+
 // Smoothly scrolls to in-page links and applies a header offset (then focuses the target)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", function(event) {
         event.preventDefault(); // Disable default jump-to-anchor behavior
-        const targetId = this.getAttribute("href").substring(1);  // Extract ID (remove '#')
+        const targetId = this.getAttribute("href").substring(1);  // Extract ID (remove "#")
         const targetHeadingElement = document.getElementById(targetId);  // Find target element
 
         if (targetHeadingElement) {
@@ -214,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeIcon.classList.add("fa-moon-visibility-hidden");
         lightModeIcon.classList.add("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Dark mode is now enabled";
-        darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
+        darkModeToggleButton.setAttribute("aria-label", "Enable light mode");
 
         // Add dark-mode-specific CSS classes to relevant page elements
         screenReadersOnlyText.forEach((text) => {
@@ -278,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeIcon.classList.remove("fa-moon-visibility-hidden");
         lightModeIcon.classList.remove("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Light mode is now enabled";
-        darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
+        darkModeToggleButton.setAttribute("aria-label", "Enable dark mode");
         
         // Remove dark-mode-specific CSS classes from all affected elements
         screenReadersOnlyText.forEach((text) => {

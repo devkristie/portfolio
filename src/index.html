@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="I am passionate about crafting seamless user experiences by blending creativity, functionality, and accessibility. Each project is an opportunity to make a positive impact through intuitive and visually compelling interfaces.">
         <meta name="author" content="Kristie Larke">
-        <meta name="keywords" content="Front-end Web Developer, Portfolio, Kristie Larke, Web Development, User Experience, UI, UX, Projects, Services, Wed Design, Frontend, Front end">
+        <meta name="keywords" content="Front end Web Developer, Portfolio, Kristie Larke, Web Development, User Experience, UI, UX, Projects, Services, Wed Design, Frontend, Front-end">
         <title>Front-end Web Developer Portfolio - Kristie Larke</title>
         <!-- CSS -->
         <link rel="stylesheet" href="style.css">
@@ -26,11 +26,11 @@
         <div id="loader">
             <div class="spinner"></div>
         </div>
-        <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
+        <header class="top-navigation-bar-container" aria-label="Main navigation bar">
             <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a> <!-- Accessible skip link to jump directly to main content -->
             <!-- Navbar Logo -->
-            <a href="https://kristielarke.infy.uk/" aria-label="Front-end Web Development Portfolio Logo Homepage">
-                <svg class="top-navigation-bar-logo-container" aria-hidden="true">
+            <a href="https://kristielarke.infy.uk/" aria-label="Front end portfolio homepage">
+                <svg class="top-navigation-bar-logo-container" aria-hidden="true" focusable="false">
                     <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
                     <path class="logo-less-than-sign" d="M22 11 L12 21.5 L22 31"/>
                     <circle class="logo-top-colon" cx="29" cy="9.5" r="2.5"/>
@@ -45,22 +45,22 @@
             </a>
             <div class="navigation-right">
                 <!-- Dark Mode Button -->
-                <button class="dark-mode-toggle-button" type="button" aria-label="Enable Dark Mode">
+                <button class="dark-mode-toggle-button" type="button" aria-label="Enable dark mode">
                     <i class="fa-solid fa-moon" aria-hidden="true"></i>
                     <i class="fa-solid fa-sun" aria-hidden="true"></i>
                 </button>
                 <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div> <!-- Screen-reader only live region that announces dark mode changes -->
                 <!-- Hamburger Menu Button -->
-                <svg class="hamburger-menu-container" aria-label="Hamburger Navigation Menu" role="button" aria-expanded="false" tabindex="0">
-                    <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
-                    <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
-                    <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true"/>
+                <svg class="hamburger-menu-container" aria-label="Hamburger navigation menu" role="button" aria-expanded="false" tabindex="0">
+                    <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true" focusable="false"/>
+                    <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true" focusable="false"/>
+                    <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true" focusable="false"/>
                 </svg>
                 <div id="dynamicAnnouncer" aria-live="polite" class="sr-only"></div> <!-- Announces hamburger menu state changes for screen readers -->
             </div>
         </header>
-        <header class="top-navigation-bar-accordion-container-hidden">
-            <nav aria-label="Main">
+        <div class="top-navigation-bar-accordion-container-hidden">
+            <nav aria-label="Main navigation links">
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
                         <a href="#home">Home</a>
@@ -76,18 +76,21 @@
                     </li>
                     <li>
                         <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">
-                            Github
+                            GitHub
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-        </header>
-        <main>
-            <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Visually hidden label for screen readers, used as an accessible name for the main region -->
-            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Visually hidden label for screen readers for: Main content landmark, hidden visually but accessible via screen readers and focusable for skip links -->
-            <div class="sr-only" id="tab-announcement" aria-live="assertive" role="alert"></div> <!-- Visually hidden announcement for screen readers, used when the users click on any links that open in a new tab -->
+        </div>
+        <main aria-label="Main content">
+            <div class="sr-only" id="tab-announcement" aria-live="assertive"></div> <!-- Visually hidden announcement for screen readers, used when the users click on any links that open in a new tab -->
+            <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div> <!-- Visually hidden live region: announces updates when the user clicks the "Show More" button -->
             <section class="landing-page-section-container">
+                <!-- Anchor for the Back to Top link. Visually hidden but read by screen readers. -->
+                <div id="home" tabindex="-1">
+                    <p class="sr-only">Top of the page</p>
+                </div>
                 <header class="landing-page-title-container" aria-labelledby="welcome-title">
                     <p id="welcome-title" class="landing-page-title-welcome"><span class="landing-page-title-welcome" aria-hidden="true">.</span>welcome</p>
                     <div class="landing-page-title-welcome-background-one" aria-hidden="true"></div>
@@ -96,7 +99,7 @@
                     <p class="landing-page-title-property-value-to-my">to<span class="landing-page-title-proterty-colon" aria-hidden="true">:</span> my<span class="landing-page-title-proterty-colon" aria-hidden="true">;</span></p>
                     <p class="landing-page-title-property-value-front-end">front<span class="landing-page-title-proterty-colon" aria-hidden="true">:</span> end<span class="landing-page-title-proterty-colon" aria-hidden="true">;</span></p>
                     <p class="landing-page-title-property-development">development<span class="landing-page-title-proterty-colon" aria-hidden="true">:</span></p>
-                    <p class="landing-page-title-value-portfolio">portfolio</p>
+                    <h1 class="landing-page-title-value-portfolio">portfolio</h1>
                     <p class="landing-page-title-value-semicolon" aria-hidden="true">;</p>
                     <p class="landing-page-title-closing-curly-brace" aria-hidden="true">}</p>
                 </header>
@@ -244,124 +247,122 @@
                     </svg>
                 </div>
             </section>
-            <div id="profile" class="anchor" role="region" aria-labelledby="profile-label" tabindex="-1"></div>
-            <div id="profile-label" class="sr-only">Profile Section</div>
-            <section class="profile-section-container">
+            <div id="profile" class="anchor" tabindex="-1" aria-hidden="true"></div>
+            <section class="profile-section-container" role="region" aria-label="Profile section">
                 <header class="section-title-container">
-                    <h1 class="section-title">Profile</h1>
+                    <h2 class="section-title">Profile</h2>
                 </header>
                 <div class="profile-content-container">
-                    <aside class="profile-right">
+                    <div class="profile-right">
                         <img class="profile-headshot" src="./assets/images/kristie-headshot.jpg" alt="A professional headshot of Kristie.">
                         <blockquote class="profile-quotation-container">
                             <q class="profile-quotation-container-quotation-marks">Elevate your online presence and engage your audience with an extraordinary website.</q>
                             <cite id="profile-quotation-container-cite">— Kristie Larke</cite>
                         </blockquote>
-                    </aside>
+                    </div>
                     <article class="profile-introduction-container">
                         <p class="profile-introduction-container-greeting">Hello</p>
-                        <p class="profile-introduction-container-paragraph">I'm Kristie — a Front-end Web Developer with a solid foundation in Back-end technologies, based in the United Kingdom. I create clean, intuitive, and responsive websites, and I'm always refining my skills to deliver work that is both visually engaging and technically robust.</p>
+                        <p class="profile-introduction-container-paragraph">I'm Kristie — a Front end Web Developer with a solid foundation in Back-end technologies, based in the United Kingdom. I create clean, intuitive, and responsive websites, and I'm always refining my skills to deliver work that is both visually engaging and technically robust.</p>
                         <p class="profile-introduction-container-paragraph">My focus is on building user interfaces that not only look great but also provide smooth, accessible, and enjoyable user experiences. From early concepts to the final product, I work closely with clients and teams to understand their goals and turn ideas into meaningful digital solutions.</p>
                         <p class="profile-introduction-container-paragraph">Whether you're a business owner looking to establish your online presence, a creative professional wanting a modern portfolio, or a company seeking a reliable developer, I offer tailored solutions that balance creativity, functionality, and attention to detail.</p>
                         <p class="profile-introduction-container-paragraph">If you're considering a new website, a redesign, or simply exploring your options, I'd be happy to chat. Let's work together to build something that represents your brand, engages your audience, and supports your long-term goals.</p>
                         <p class="profile-introduction-container-paragraph"><a href="#contact">Contact me</a> to get started.</p>
-                        <a class="profile-introduction-download-cv-button" href="assets/downloads/kristie-larke-full-stack-cv.pdf" download="kristie-larke-full-stack-cv.pdf" aria-label="Download Kristie Larke's Full-stack Web Development CV">
+                        <a class="profile-introduction-download-cv-button" href="assets/downloads/kristie-larke-full-stack-cv.pdf" download="kristie-larke-full-stack-cv.pdf" aria-label="Download Kristie Larke's full stack web development resume">
                             <i class="fa-solid fa-download" aria-hidden="true"></i>Download CV
                         </a>
                     </article>
                 </div>
             </section>
-            <div id="portfolio" class="anchor" role="region" aria-labelledby="portfolio-label" tabindex="-1"></div>
-            <div id="portfolio-label" class="sr-only">Portfolio Section</div>
-            <section id="skip-to-main-content-start" class="portfolio-section-container">
+            <div id="portfolio" class="anchor" tabindex="-1" aria-hidden="true"></div>
+            <section id="skip-to-main-content-start" class="portfolio-section-container" role="region" aria-label="Portfolio section">
                 <header class="section-title-container">
-                    <h1 class="section-title">Portfolio</h1>
+                    <h2 class="section-title">Portfolio</h2>
                 </header>
                 <article class="section-introduction-container">
-                    <h2>Discover My Development Work</h2>
+                    <h3>Discover My Development Work</h3>
                     <p>I build user-focused digital experiences with an emphasis on responsive design, accessibility, and clean, modern code. Projects are where I bring ideas to life, applying practical problem-solving and technical creativity to deliver solutions that meet real needs.</p>
                     <p>I'm passionate about creating interfaces that feel seamless and purposeful. Each project is a chance to blend design thinking with development logic — resulting in sites that not only function well but genuinely enhance the user journey.</p>
                     <p>
                         <span class="section-introduction-container-p-highlighted-text">Ready to explore my work?</span> 
-                        Below you'll find examples of my work that highlight my technical skills, problem-solving approach, and full-stack capabilities.
+                        Below you'll find examples of my work that highlight my technical skills, problem-solving approach, and full stack capabilities.
                     </p>
                 </article>
-                <!-- Front-end project portfolio -->
+                <!-- Front end project portfolio -->
                 <hr class="portfolio-top-hr"/>
-                <h2>Front-end Projects</h2>
+                <h3>Front-end Projects</h3>
                 <div class="portfolio-websites-container">
                     <header class="portfolio-websites-title-container">
-                        <h3>Coming Soon</h3>
+                        <h4>Coming Soon</h4>
                     </header>
                     <div class="portfolio-websites-slider-container">
-                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Left Arrow">
-                                <path d="M28 45 L20 53 L28 60" />
+                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M28 43 L17 53 L28 63" />
                                 <path d="M28 45 L28 53"/>
                             </svg>
                         </button>
-                        <figure aria-label="Image slider showcasing various projects">
+                        <figure aria-label="Coming soon placeholder slider">
+                            <div class="slider-status" aria-live="polite" aria-atomic="true"></div> <!-- Live region for screen readers to announce the current slide -->
                             <p class="images-coming-soon">Images Coming Soon</p>
                             <div class="portfolio-websites-slider-images">
-                                <div aria-live="polite" aria-atomic="true">
-                                    <div class="portfolio-websites-slider-image placeholder"></div>
+                                <div>
+                                    <div class="portfolio-websites-slider-image placeholder" role="presentation"></div>
                                     <!-- <img class="portfolio-websites-slider-image" src="" alt="Description of image 1"/> -->
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <div class="portfolio-websites-slider-image placeholder"></div>
+                                <div>
+                                    <div class="portfolio-websites-slider-image placeholder" role="presentation"></div>
                                     <!-- <img class="portfolio-websites-slider-image" src="" alt="Description of image 2"/> -->
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <div class="portfolio-websites-slider-image placeholder"></div>
+                                <div>
+                                    <div class="portfolio-websites-slider-image placeholder" role="presentation"></div>
                                     <!-- <img class="portfolio-websites-slider-image" src="" alt="Description of image 3"/> -->
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <div class="portfolio-websites-slider-image placeholder"></div>
+                                <div>
+                                    <div class="portfolio-websites-slider-image placeholder" role="presentation"></div>
                                     <!-- <img class="portfolio-websites-slider-image" src="" alt="Description of image 4"/> -->
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <div class="portfolio-websites-slider-image placeholder"></div>
+                                <div>
+                                    <div class="portfolio-websites-slider-image placeholder" role="presentation"></div>
                                     <!-- <img class="portfolio-websites-slider-image" src="" alt="Description of image 5"/> -->
                                 </div>
                             </div>
                         </figure>
-                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Right Arrow">
-                                <path d="M20 45 L28 53 L20 60" />
+                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M20 43 L31 53 L20 63" />
                                 <path d="M20 45 L20 53"/>
                             </svg>
                         </button>
                     </div>
-                    <nav class="portfolio-websites-button-container" aria-label="Portfolio navigation buttons">
-                        <a class="portfolio-websites-view-website-button" href="#" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                    <div class="portfolio-websites-button-container">
+                        <a class="portfolio-websites-view-website-button" href="javascript:void(0)" aria-label="Website coming soon" aria-disabled="true" tabindex="-1">
                             View Website
-                            <span class="sr-only-new-tab">(opens in a new tab)</span>
+                            <!-- future: <span class="sr-only-new-tab">(opens in a new tab)</span> -->
                         </a>
-                        <a class="portfolio-websites-view-source-code-button" href="#" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                        <a class="portfolio-websites-view-source-code-button" href="javascript:void(0)" aria-label="Source code coming soon" aria-disabled="true" tabindex="-1">
                             View Source Code
-                            <span class="sr-only-new-tab">(opens in a new tab)</span>
+                            <!-- future: <span class="sr-only-new-tab">(opens in a new tab)</span> -->
                         </a>
-                    </nav>
+                    </div>
                     <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false" tabindex="0">
+                        <button class="portfolio-websites-show-more-accordion-container-button" type="button" aria-label="Show more details about the Gazetteer project and technologies I used" aria-expanded="false">
                             <p aria-live="polite" aria-atomic="true">Show More</p>
                             <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
                                 <path d="M15.5 20 L23 20"/>
                             </svg>
-                        </div>
-                        <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
+                        </button>
                         <article class="portfolio-websites-show-more-accordion-container">
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">
                                 <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Coming Soon!</strong> 
                              This website is currently under construction and in the design phase. I am working diligently to bring you a new and improved experience. Stay tuned for updates as I prepare for the launch.</p>
-                            <h4 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h4>
-                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container" aria-label="Technologies Used Icons">
+                            <h5 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h5>
+                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container">
                                 <div>
                                     <i class="fa-brands fa-figma" aria-hidden="true"></i>
                                     <figcaption>Figma</figcaption>
                                 </div>
-                                <!-- <div>
+                                <!-- future: <div>
                                     <i class="devicon-html5-plain colored" aria-hidden="true"></i>
                                     <figcaption>HTML</figcaption>
                                 </div>
@@ -377,73 +378,73 @@
                         </article>
                     </article>
                 </div>
-                <!-- Full-stack project portfolio -->
+                <!-- Full stack project portfolio -->
                 <hr class="portfolio-hr"/>
-                <h2>Full-stack Projects</h2>
+                <h3>Full-stack Projects</h3>
                 <div class="portfolio-websites-container">
                     <header class="portfolio-websites-title-container">
-                        <h3>Gazetteer Web Mapping App</h3>
+                        <h4>Gazetteer Web Mapping App</h4>
                     </header>
                     <div class="portfolio-websites-slider-container">
-                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Left Arrow">
-                                <path d="M28 45 L20 53 L28 60" />
+                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M28 43 L17 53 L28 63" />
                                 <path d="M28 45 L28 53"/>
                             </svg>
                         </button>
-                        <figure aria-label="Image slider showcasing various projects">
+                        <figure aria-label="Gazetteer project image slider">
+                            <div class="slider-status" aria-live="polite" aria-atomic="true"></div> <!-- Live region for screen readers to announce the current slide -->
                             <div class="portfolio-websites-slider-images">
-                                <div aria-live="polite" aria-atomic="true">
+                                <div>
                                     <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-gazetteer-one.jpg" alt="Landing page of the Gazetteer website showing a map of England, inviting users to explore locations across the country."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
+                                <div>
                                     <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-gazetteer-two.jpg" alt="Gazetteer website zoomed-in map of London showing five location markers, highlighting selected points of interest in the city."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-gazetteer-three.jpg" alt="Gazetteer website showing the Overview modal for a country, displaying key details including the country name, code, capital city, continent, population, currency, and area."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-gazetteer-three.jpg" alt="Gazetteer website showing the Overview modal for a country, displaying key details, including the country name, code, capital city, continent, population, currency, and area."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
+                                <div>
                                     <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-gazetteer-four.jpg" alt="Gazetteer website showing the weather forecast modal for a city, displaying the city and country name, current date with temperature, humidity, and wind, plus the forecast for the next two days."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
+                                <div>
                                     <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-gazetteer-five.jpg" alt="Gazetteer website showing the currency calculator modal, allowing users to convert amounts between different currencies."/>
                                 </div>
                             </div>
                         </figure>
-                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Right Arrow">
-                                <path d="M20 45 L28 53 L20 60" />
+                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M20 43 L31 53 L20 63" />
                                 <path d="M20 45 L20 53"/>
                             </svg>
                         </button>
                     </div>
-                    <nav class="portfolio-websites-button-container" aria-label="Portfolio navigation buttons">
-                        <a class="portfolio-websites-view-website-button" href="https://kristielarke.rf.gd/project1/" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                    <div class="portfolio-websites-button-container">
+                        <a class="portfolio-websites-view-website-button" href="https://kristielarke.rf.gd/project1/" target="_blank" rel="noopener noreferrer" aria-label="View Gazetteer website (opens in a new tab)">
                             View Website
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
-                        <a class="portfolio-websites-view-source-code-button" href="https://github.com/devkristie/kristieLarke/tree/main/project1" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                        <a class="portfolio-websites-view-source-code-button" href="https://github.com/devkristie/kristieLarke/tree/main/project1" target="_blank" rel="noopener noreferrer" aria-label="View Gazetteer source code (opens in a new tab)">
                             View Source Code
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
-                    </nav>
+                    </div>
                     <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false" tabindex="0">
+                        <button class="portfolio-websites-show-more-accordion-container-button" type="button" aria-label="Show more details about the Gazetteer project and technologies I used" aria-expanded="false">
                             <p aria-live="polite" aria-atomic="true">Show More</p>
                             <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
                                 <path d="M15.5 20 L23 20"/>
                             </svg>
-                        </div>
-                        <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
+                        </button>
                         <article class="portfolio-websites-show-more-accordion-container">
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">
                                 <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Gazetteer Web Mapping App</strong> 
                              This website was created as part of my IT Career Switch Coding Traineeship and is one of the final three projects I needed to complete to pass the course. The project is a mobile-first website that operates equally well on desktop. It provides detailed country profiles, presenting demographic, climate, geographical, and other relevant data such as population, area, capital city, currency, time zone, and local news.</p>
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">The task was to adapt a CodePen template and implement full functionality. I used HTML, CSS, Bootstrap, JavaScript, jQuery, and AJAX, along with PHP cURL, hosted on a PHP-enabled web server using Apache. The project also integrates multiple third-party APIs, including OpenCage for geocoding, OpenWeather for weather forecasts, GeoNames for country and Wikipedia data, and Open Exchange Rates for currency conversion. Additionally, Leaflet and its plugins – Leaflet.markercluster, Leaflet.easyButton, and Leaflet.extraMarker – were used to create interactive, clusterable maps with custom markers.</p>
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">Through this project, I gained experience in integrating multiple APIs, handling asynchronous requests, dynamically updating the frontend, implementing PHP backend functionality, and working with interactive mapping libraries.</p>
-                            <h4 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h4>
-                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container" aria-label="Technologies Used Icons">
+                            <h5 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h5>
+                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container">
                                 <div>
                                     <i class="devicon-html5-plain colored" aria-hidden="true"></i>
                                     <figcaption>HTML</figcaption>
@@ -475,68 +476,68 @@
 
                 <div class="portfolio-websites-container">
                     <header class="portfolio-websites-title-container">
-                        <h3>Full Stack Developer Portfolio</h3>
+                        <h4>Full-stack Developer Portfolio</h4>
                     </header>
                     <div class="portfolio-websites-slider-container">
-                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Left Arrow">
-                                <path d="M28 45 L20 53 L28 60" />
+                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M28 43 L17 53 L28 63" />
                                 <path d="M28 45 L28 53"/>
                             </svg>
                         </button>
-                        <figure aria-label="Image slider showcasing various projects">
+                        <figure aria-label="Full Stack Developer Portfolio project image slider">
+                            <div class="slider-status" aria-live="polite" aria-atomic="true"></div> <!-- Live region for screen readers to announce the current slide -->
                             <div class="portfolio-websites-slider-images">
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-one.jpg" alt="Landing page of Kristie Larke's full-stack web developer portfolio, showing the header with navigation and the hero section with introduction text."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-one.jpg" alt="Landing page of Kristie Larke's Full-stack Developer Portfolio, showing the header with navigation and the hero section with introduction text."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-two.jpg" alt="About section of Kristie Larke's portfolio, showing the headline 'About Me', a profile image, and a paragraph describing her background and experience as a full-stack web developer."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-two.jpg" alt="About section of Kristie Larke's Full-stack Developer Portfolio, showing the headline 'About Me', a profile image, and a paragraph, describing my background and experience as a full stack web developer."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-three.jpg" alt="Skills section of Kristie Larke's portfolio showing a list of programming skills along with logos of the programming languages learned."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-three.jpg" alt="Skills section of Kristie Larke's Full-stack Developer Portfolio, showing a list of programming skills along with logos of the programming languages learned."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-four.jpg" alt="Portfolio section of Kristie Larke's website displaying project cards with images and titles to showcase completed work."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-four.jpg" alt="Portfolio section of Kristie Larke's Full-stack Developer Portfolio, showing project cards with images and titles to showcase my completed work."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-five.jpg" alt="Contact section of Kristie Larke's portfolio showing a form where users can enter their name, email, and message to get in touch."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-portfolio-five.jpg" alt="Contact section of Kristie Larke's Full-stack Developer Portfolio, showing a form where users can enter their name, email, and message to get in touch."/>
                                 </div>
                             </div>
                         </figure>
-                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Right Arrow">
-                                <path d="M20 45 L28 53 L20 60" />
+                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M20 43 L31 53 L20 63" />
                                 <path d="M20 45 L20 53"/>
                             </svg>
                         </button>
                     </div>
-                    <nav class="portfolio-websites-button-container" aria-label="Portfolio navigation buttons">
-                        <a class="portfolio-websites-view-website-button" href="https://kristielarke.rf.gd/" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                    <div class="portfolio-websites-button-container">
+                        <a class="portfolio-websites-view-website-button" href="https://kristielarke.rf.gd/" target="_blank" rel="noopener noreferrer" aria-label="View Full-stack Developer Portfolio website (opens in a new tab)">
                             View Website
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
-                        <a class="portfolio-websites-view-source-code-button" href="https://github.com/devkristie/kristieLarke" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                        <a class="portfolio-websites-view-source-code-button" href="https://github.com/devkristie/kristieLarke" target="_blank" rel="noopener noreferrer" aria-label="View Full-stack Developer Portfolio source code (opens in a new tab)">
                             View Source Code
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
-                    </nav>
+                    </div>
                     <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false" tabindex="0">
+                        <button class="portfolio-websites-show-more-accordion-container-button" type="button" aria-label="Show more details about the Gazetteer project and technologies I used" aria-expanded="false">
                             <p aria-live="polite" aria-atomic="true">Show More</p>
                             <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
                                 <path d="M15.5 20 L23 20"/>
                             </svg>
-                        </div>
-                        <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
+                        </button>
                         <article class="portfolio-websites-show-more-accordion-container">
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">
-                                <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Full Stack Developer Portfolio</strong> 
+                                <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Full-stack Developer Portfolio</strong> 
                              This website was created as part of my IT Career Switch Coding Traineeship and was one of the final three projects required to complete the course. The task was to select a Bootstrap template and transform it into a personalised portfolio website by updating all text and imagery, removing unneeded sections, and adding a fully functioning contact form built with PHP. The form sends messages directly from the website to my email address.</p>
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">I used HTML, CSS, Bootstrap, JavaScript, and PHP to build this project, focusing on understanding how templates are structured and how to customise them effectively. I also learned how to handle form submissions securely in PHP and connect the front-end interface with a simple but functional back-end process.</p>
+                            <p class="portfolio-websites-show-more-accordion-container-paragraph">I used HTML, CSS, Bootstrap, JavaScript, and PHP to build this project, focusing on understanding how templates are structured and how to customise them effectively. I also learned how to handle form submissions securely in PHP and connect the front end interface with a simple but functional back-end process.</p>
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">Through this project, I gained practical experience in Bootstrap layout customisation, template editing, and implementing PHP-based form handling. It strengthened my confidence in working with both client-side and server-side code.</p>
-                            <h4 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h4>
-                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container" aria-label="Technologies Used Icons">
+                            <h5 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h5>
+                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container">
                                 <div>
                                     <i class="devicon-html5-plain colored" aria-hidden="true"></i>
                                     <figcaption>HTML</figcaption>
@@ -564,68 +565,68 @@
 
                 <div class="portfolio-websites-container">
                     <header class="portfolio-websites-title-container">
-                        <h3>Company Directory App</h3>
+                        <h4>Company Directory App</h4>
                     </header>
                     <div class="portfolio-websites-slider-container">
-                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Left Arrow">
-                                <path d="M28 45 L20 53 L28 60" />
+                        <button class="portfolio-websites-slider-left-arrow" type="button" aria-label="Previous slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M28 43 L17 53 L28 63" />
                                 <path d="M28 45 L28 53"/>
                             </svg>
                         </button>
-                        <figure aria-label="Image slider showcasing various projects">
+                        <figure aria-label="Company Directory App project image slider">
+                            <div class="slider-status" aria-live="polite" aria-atomic="true"></div> <!-- Live region for screen readers to announce the current slide -->
                             <div class="portfolio-websites-slider-images">
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-one.jpg" alt="Company directory landing page showing a table of personnel with names, departments, locations, and email addresses."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-one.jpg" alt="Company Directory App landing page showing a table of personnel with names, departments, locations, and email addresses."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-two.jpg" alt="Company directory showing the Edit Employee modal with fields filled in for an employee, including name,department, job title, location, and email address."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-two.jpg" alt="Company Directory App showing the Edit Employee modal with fields filled in for an employee, including name, department, job title, location, and email address."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-three.jpg" alt="Company directory showing the Remove Employee confirmation modal, asking the user to confirm if they want to delete an employee entry."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-three.jpg" alt="Company Directory App showing the Remove Employee confirmation modal, asking the user to confirm if they want to delete an employee entry."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-four.jpg" alt="Company directory showing the Filter modal, allowing users to refine the personnel table by department or location."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-four.jpg" alt="Company Directory App showing the Filter modal, allowing users to refine the personnel table by department or location."/>
                                 </div>
-                                <div aria-live="polite" aria-atomic="true">
-                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-five.jpg" alt="Company directory showing the Add Employee modal with blank input fields for entering a new employee's name, department, job title, location, and email address."/>
+                                <div>
+                                    <img class="portfolio-websites-slider-image" src="assets/images/full-stack-developer-company-directory-five.jpg" alt="Company Directory App showing the Add Employee modal with blank input fields for entering a new employee's name, department, job title, location, and email address."/>
                                 </div>
                             </div>
                         </figure>
-                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next Slide">
-                            <svg viewBox="14 0 20 100" role="img" aria-label="Right Arrow">
-                                <path d="M20 45 L28 53 L20 60" />
+                        <button class="portfolio-websites-slider-right-arrow" type="button" aria-label="Next slide">
+                            <svg viewBox="14 0 20 100" aria-hidden="true" focusable="false">
+                                <path d="M20 43 L31 53 L20 63" />
                                 <path d="M20 45 L20 53"/>
                             </svg>
                         </button>
                     </div>
-                    <nav class="portfolio-websites-button-container" aria-label="Portfolio navigation buttons">
-                        <a class="portfolio-websites-view-website-button" href="https://kristielarke.rf.gd/project2/" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                    <div class="portfolio-websites-button-container">
+                        <a class="portfolio-websites-view-website-button" href="https://kristielarke.rf.gd/project2/" target="_blank" rel="noopener noreferrer" aria-label="View Company Directory App website (opens in a new tab)">
                             View Website
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
-                        <a class="portfolio-websites-view-source-code-button" href="https://github.com/devkristie/kristieLarke/tree/main/project2" target="_blank" rel="noopener noreferrer" aria-label="View Website (opens in a new tab)">
+                        <a class="portfolio-websites-view-source-code-button" href="https://github.com/devkristie/kristieLarke/tree/main/project2" target="_blank" rel="noopener noreferrer" aria-label="View Company Directory App source code (opens in a new tab)">
                             View Source Code
                             <span class="sr-only-new-tab">(opens in a new tab)</span>
                         </a>
-                    </nav>
+                    </div>
                     <article class="portfolio-websites-show-more-container">
-                        <div class="portfolio-websites-show-more-accordion-container-button" role="button" aria-label="Show more details about this website and technologies used" aria-expanded="false" tabindex="0">
+                        <button class="portfolio-websites-show-more-accordion-container-button" type="button" aria-label="Show more details about the Gazetteer project and technologies I used" aria-expanded="false">
                             <p aria-live="polite" aria-atomic="true">Show More</p>
                             <svg class="portfolio-websites-show-more-arrow" aria-hidden="true">
                                 <path d="M15.5 20 L23 28.5 L30 20" />
                                 <path d="M15.5 20 L23 20"/>
                             </svg>
-                        </div>
-                        <div id="dynamicShowMoreAnnouncer" aria-live="polite" class="sr-only"></div>
+                        </button>
                         <article class="portfolio-websites-show-more-accordion-container">
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">
                                 <strong class="portfolio-websites-show-more-accordion-container-paragraph-highlighted-text">Company Directory App</strong> 
                              This website was created as part of my IT Career Switch Coding Traineeship and is one of the final three projects required to pass the course. The task was to build a Company Directory web application using a provided CodePen layout as the design reference and replicate its structure as closely as possible.</p>
                             <p class="portfolio-websites-show-more-accordion-container-paragraph">The application was built using HTML5, CSS3, JavaScript, PHP, and MySQL. It includes full CRUD functionality, allowing users to create, view, edit, and delete employee records stored in a MySQL database. I implemented dynamic features such as form validation, responsive layout adjustments, and live record updates using AJAX to improve user experience. The backend was built with PHP, handling all data operations securely and communicating with the MySQL database.</p>
-                            <p class="portfolio-websites-show-more-accordion-container-paragraph">This project strengthened my understanding of full-stack development, including database design, server-side programming, and integrating frontend and backend functionality into one complete application.</p>
-                            <h4 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h4>
-                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container" aria-label="Technologies Used Icons">
+                            <p class="portfolio-websites-show-more-accordion-container-paragraph">This project strengthened my understanding of full stack development, including database design, server-side programming, and integrating frontend and backend functionality into one complete application.</p>
+                            <h5 class="portfolio-websites-show-more-accordion-container-technologies-used-title">Technologies Used</h5>
+                            <figure class="portfolio-websites-show-more-accordion-container-technology-used-container">
                                 <div>
                                     <i class="devicon-html5-plain colored" aria-hidden="true"></i>
                                     <figcaption>HTML</figcaption>
@@ -659,16 +660,13 @@
                     </article>
                 </div>
             </section>
-            <div id="contact" class="anchor" role="region" aria-labelledby="contact-label" tabindex="-1"></div>
-            <div id="contact-label" class="sr-only">Contact Section</div>
-            <!-- Parallax background -->
-            <div class="parallax-bg"></div>
-            <section class="contact-section-container">
+            <div id="contact" class="anchor" tabindex="-1" aria-hidden="true"></div>
+            <section class="contact-section-container" role="region" aria-label="Contact section">
                 <header class="section-title-container">
-                    <h1 class="section-title">Contact</h1>
+                    <h2 class="section-title">Contact</h2>
                 </header>
                 <article class="section-introduction-container">
-                    <h2>Ready To Get Started?</h2>
+                    <h3>Ready To Get Started?</h3>
                     <p>
                         <span class="section-introduction-container-p-highlighted-text">Thank you for visiting my portfolio!</span> 
                         If you'd like to discuss a project, explore working together, or simply ask a question, you're welcome to reach out through the form below.
@@ -705,7 +703,7 @@
                         <div class="h-captcha" data-captcha="true" data-sitekey="09ee3fbe-7a96-4008-9aa2-2eaca196f212"></div>
                         
                         <div class="contact-form-submit-button-container">
-                            <button class="contact-form-submit-button" type="submit" aria-label="Submit Form">
+                            <button class="contact-form-submit-button" type="submit" aria-label="Submit form">
                                 <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                                 <span aria-hidden="true">Submit</span>
                             </button>
@@ -717,7 +715,9 @@
                 </section>
             </section>
         </main>
-        <footer>
+        <!-- Parallax background -->
+        <div class="parallax-bg"></div>
+        <footer aria-label="Footer navigation bar">
             <section class="footer-section-container">
                 <nav class="footer-navigation-container">
                     <ul>
@@ -736,7 +736,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#">Blog (Coming Soon)</a>
+                            <a href="javascript:void(0)" aria-disabled="true" tabindex="-1">Blog (Coming Soon)</a>
                         </li>
                         <li class="footer-absolute-links">
                             <span aria-hidden="true">Icons by -</span>
@@ -764,22 +764,22 @@
                         </li>
                     </ul>
                 </nav>
-                <nav class="footer-bottom-navigation-container">
+                <nav class="footer-bottom-navigation-container" aria-label="Footer copyright navigation bar">
                     <ul class="footer-bottom-icons">
                         <li>
-                            <a href="https://www.linkedin.com/in/kristie-larke/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's LinkedIn profile">
+                            <a href="https://www.linkedin.com/in/kristie-larke/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's LinkedIn profile (opens in a new tab)">
                                 <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's GitHub repositories">
+                            <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's GitHub repositories (opens in a new tab)">
                                 <i class="fa-brands fa-square-github" aria-hidden="true"></i>
                             </a>
                         </li>
                     </ul>
                     <div>
                         <p class="footer-bottom-copyright-sign">© <span class="footer-bottom-copyright-year"></span><span class="footer-bottom-copyright"> - Kristie Larke, All Rights Reserved.</span></p> <!--Footer bottom copyright year is automatically updated in the script.js file-->
-                        <a class="footer-bottom-privacy-policy-link" href="./portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
+                        <a class="footer-bottom-privacy-policy-link" href="portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer" aria-label="Front end portfolio privacy policy page">Privacy Policy</a>
                     </div>
                 </nav>
             </section>

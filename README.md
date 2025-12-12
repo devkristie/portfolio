@@ -2,7 +2,7 @@
 
 ## Showcases my web development projects and offers my services.
 
-<img src="src\assets\images\logo.jpg" width="70" height="35" alt="Combination of HTML CSS and JavaScript. Left curly brace, left angle bracket, colon, forward slash, semi-colon, right angle bracket, right curly brace logo">
+<img src="src\assets\images\logo.jpg" width="70" height="35" alt="Portfolio logo">
 
 ### Welcome to my frontend web development portfolio!</br>
 
@@ -112,10 +112,6 @@ You can access the Privacy Policy page via the footer link on the website.
 ### Known Issues
 
 NVDA may announce the submit button twice when closing the hCaptcha modal. No current workaround.
-
-On desktop Chrome and Firefox, scrolling very quickly can sometimes cause the fixed parallax background to briefly appear over the main content.
-This is a browser rendering/compositing quirk and does not affect functionality.
-Normal scrolling and all other devices (including mobile) render correctly.
 
 **Footer Section:**
 

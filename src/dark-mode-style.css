@@ -83,7 +83,7 @@ Dark Mode CSS Order:
     color: var(--light-mode);
     filter: contrast(0.625);
 }
-.section-introduction-container > .section-introduction-container-h2-dark-mode {
+.section-introduction-container > .section-introduction-container-h3-dark-mode {
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
     color: var(--light-mode);
 }
@@ -93,9 +93,18 @@ Dark Mode CSS Order:
 .portfolio-websites-container-dark-mode {
     background-color: var(--darker-grey);
 }
-.portfolio-section-container h2.h2-dark-mode {
+.portfolio-section-container h3.h3-dark-mode {
     text-shadow: 1.5px 1.5px 4px rgba(255, 255, 255, 0.2);
     color: var(--light-mode);
+}
+.portfolio-websites-slider-left-arrow svg path.arrow-svg-path-dark-mode,
+.portfolio-websites-slider-right-arrow svg path.arrow-svg-path-dark-mode {
+    stroke: var(--lightest-grey);
+}
+.portfolio-websites-slider-left-arrow:hover svg path.arrow-svg-path-dark-mode,
+.portfolio-websites-slider-right-arrow:hover svg path.arrow-svg-path-dark-mode {
+    transition: stroke-width 0.4s linear;
+    stroke: var(--light-mode);
 }
 .images-coming-soon-dark-mode {
     color: var(--dark-mode);
@@ -104,6 +113,9 @@ Dark Mode CSS Order:
     background-color: var(--light-grey);
 }
 .portfolio-websites-show-more-container-dark-mode {
+    background-color: var(--darkest-grey);
+}
+.portfolio-websites-show-more-accordion-container-button-dark-mode {
     background-color: var(--darkest-grey);
 }
 .portfolio-websites-show-more-accordion-container-button-p-dark-mode {
@@ -116,13 +128,12 @@ Dark Mode CSS Order:
 .portfolio-websites-show-more-accordion-container-paragraph-dark-mode {
     color: var(--light-grey);
 }
-.contact-introduction-container-p-highlighted-text-dark-mode {
-    color: var(--light-grey);
-}
 .portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode {
     color: var(--light-mode);
 }
-
+.contact-introduction-container-p-highlighted-text-dark-mode {
+    color: var(--light-grey);
+}
 .contact-form-valid-dark-mode,
 .contact-form-invalid-dark-mode {
     background-color: var(--darkest-grey);
@@ -151,7 +162,6 @@ Dark Mode CSS Order:
 .h-captcha-dark-mode {
     filter: invert(1) hue-rotate(180deg);
 }
-
 .footer-section-container-dark-mode {
     background-color: var(--dark-mode);
 }

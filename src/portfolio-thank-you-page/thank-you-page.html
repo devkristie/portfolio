@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Thank you for reaching out! Your message has been successfully sent. I will get back to you shortly.">
         <meta name="author" content="Kristie Larke">
-        <meta name="keywords" content="Thank You, Kristie Larke, Frontend Web Developer, Contact, Portfolio">
+        <meta name="keywords" content="Thank You, Kristie Larke, Front End Web Developer, Contact, Portfolio, Contact, Kristie Larke Contact">
         <title>Thank You for Contacting Me - Frontend Developer Portfolio, Kristie Larke</title>
         <!-- CSS -->
         <link rel="stylesheet" href="../style.css">
@@ -20,11 +20,11 @@
         <script src="./thank-you-page-script.js" defer></script>
     </head>
     <body>
-        <header class="top-navigation-bar-container" aria-label="Main Navigation Bar">
+        <header class="top-navigation-bar-container" aria-label="Main navigation bar">
             <a class="top-navigation-bar-skip-to-main-content-link" href="#skip-to-main-content-start">Skip To Main Content</a> <!-- Accessible skip link to jump directly to main content -->
             <!-- Navbar Logo -->
-            <a href="https://kristielarke.infy.uk/" aria-label="Frontend Web Development Portfolio Logo Homepage">
-                <svg class="top-navigation-bar-logo-container" aria-hidden="true">
+            <a href="https://kristielarke.infy.uk/" aria-label="Front end portfolio homepage">
+                <svg class="top-navigation-bar-logo-container" aria-hidden="true" focusable="false">
                     <path class="logo-opening-curly-brace" d="M12 9 Q7 9 7 15 Q7 20.5 4 21.5 M4 21.5 Q7 23.5 7 25 Q7 33.5 12 33.5"/>
                     <path class="logo-less-than-sign" d="M22 11 L12 21.5 L22 31"/>
                     <circle class="logo-top-colon" cx="29" cy="9.5" r="2.5"/>
@@ -39,34 +39,34 @@
             </a>
             <div class="navigation-right">
                 <!-- Dark Mode Button -->
-                <button class="dark-mode-toggle-button" type="button" aria-label="Enable Dark Mode">
+                <button class="dark-mode-toggle-button" type="button" aria-label="Enable dark mode">
                     <i class="fa-solid fa-moon" aria-hidden="true"></i>
                     <i class="fa-solid fa-sun" aria-hidden="true"></i>
                 </button>
                 <div id="darkModeStatus" aria-live="assertive" class="sr-only"></div> <!-- Screen-reader only live region that announces dark mode changes -->
                 <!-- Hamburger Menu Button -->
-                <svg class="hamburger-menu-container" aria-label="Hamburger Navigation Menu" role="button" aria-expanded="false" tabindex="0">
-                    <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true"/>
-                    <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true"/>
-                    <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true"/>
+                <svg class="hamburger-menu-container" aria-label="Hamburger navigation menu" role="button" aria-expanded="false" tabindex="0">
+                    <path class="hamburger-menu-topline" d="M7.5 8.5 L35 8.5" aria-hidden="true" focusable="false"/>
+                    <path class="hamburger-menu-middleline" d="M7.5 19.5 L35 19.5" aria-hidden="true" focusable="false"/>
+                    <path class="hamburger-menu-bottomline" d="M17.5 30.5 L35 30.5" aria-hidden="true" focusable="false"/>
                 </svg>
-                <div id="dynamicAnnouncer" aria-live="polite" class="sr-only"></div>
+                <div id="dynamicAnnouncer" aria-live="polite" class="sr-only"></div> <!-- Announces hamburger menu state changes for screen readers -->
             </div>
         </header>
-        <header class="top-navigation-bar-accordion-container-hidden">
-            <nav aria-label="Main">
+        <div class="top-navigation-bar-accordion-container-hidden">
+            <nav aria-label="Main navigation links">
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
-                        <a href="https://kristielarke.infy.uk/#home">Home</a>
+                        <a href="../#home">Home</a>
                     </li>
                     <li>
-                        <a href="https://kristielarke.infy.uk/#profile">Profile</a>
+                        <a href="../#profile">Profile</a>
                     </li>
                     <li>
-                        <a href="https://kristielarke.infy.uk/#portfolio">Portfolio</a>
+                        <a href="../#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a href="https://kristielarke.infy.uk/#contact">Contact</a>
+                        <a href="../#contact">Contact</a>
                     </li>
                     <li>
                         <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">
@@ -76,18 +76,20 @@
                     </li>
                 </ul>
             </nav>
-        </header>
-        <main>
-            <div id="home-label" class="sr-only">Top Of The Page</div> <!-- Visually hidden label for screen readers, used as an accessible name for the main region -->
-            <div id="home" role="region" aria-labelledby="home-label" tabindex="-1"></div> <!-- Visually hidden label for screen readers for: Main content landmark, hidden visually but accessible via screen readers and focusable for skip links -->
-            <div class="sr-only" id="tab-announcement" aria-live="assertive" role="alert"></div> <!-- Visually hidden announcement for screen readers, used when the users click on any links that open in a new tab -->
+        </div>
+        <main aria-label="Main content">
+            <div class="sr-only" id="tab-announcement" aria-live="assertive"></div> <!-- Visually hidden announcement for screen readers, used when the users click on any links that open in a new tab -->
             <section id="skip-to-main-content-start" class="thank-you-page-landing-page-section-container">
+                <!-- Anchor for the Back to Top link. Visually hidden but read by screen readers. -->
+                <div id="home" tabindex="-1">
+                    <p class="sr-only">Top of the page</p>
+                </div>
                 <header class="section-title-container">
                     <h1 class="section-title">Contact</h1>
                 </header>
                 <div class="thank-you-page-content-container">
                     <div class="typing-animation-container">
-                        <h1 class="typing-animation-text" data-text="Thank you!" aria-hidden="true"></h1> <!-- Text is added by the typing animation script -->
+                        <h2 class="typing-animation-text" data-text="Thank you!" aria-hidden="true"></h2> <!-- Text is added by the typing animation script -->
                     </div>
                     <article class="message-sent-paragraph-container">
                         <p class="message-sent-paragraph">Your message has successfully been sent.</p>
@@ -109,18 +111,18 @@
                     <div id="thankYouLiveRegion" class="sr-only" aria-live="polite" aria-atomic="true"></div> <!-- Hidden live region: SR will read the final message once -->
                 </div>
                 <div class="thank-you-page-button-container">
-                    <a class="back-to-portfolio-button" href="https://kristielarke.infy.uk/" rel="noopener noreferrer" title="Back to portfolio">
+                    <a class="back-to-portfolio-button" href="../" rel="noopener noreferrer">
                         <i class="fa-solid fa-arrow-left-long"></i> Go Back To Portfolio
                     </a>
-                    <a class="send-another-message-button" href="https://kristielarke.infy.uk/#contact" rel="noopener noreferrer" title="Send another message">
+                    <a class="send-another-message-button" href="../#contact" rel="noopener noreferrer">
                         <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Another Message
                     </a>
                 </div>
             </section>
-            <!-- Parallax background -->
-            <div class="parallax-bg"></div>
         </main>
-        <footer>
+        <!-- Parallax background -->
+        <div class="parallax-bg"></div>
+        <footer aria-label="Footer navigation bar">
             <section class="footer-section-container">
                 <nav class="footer-navigation-container">
                     <ul>
@@ -130,16 +132,16 @@
                             </a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="https://kristielarke.infy.uk/#profile">Profile</a>
+                            <a href="../#profile">Profile</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="https://kristielarke.infy.uk/#portfolio">Portfolio</a>
+                            <a href="../#portfolio">Portfolio</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="https://kristielarke.infy.uk/#contact">Contact</a>
+                            <a href="../#contact">Contact</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="#">Blog (Coming Soon)</a>
+                            <a href="javascript:void(0)" aria-disabled="true" tabindex="-1">Blog (Coming Soon)</a>
                         </li>
                         <li class="footer-absolute-links">
                             <span aria-hidden="true">Icons by -</span>
@@ -159,22 +161,22 @@
                         </li>
                     </ul>
                 </nav>
-                <nav class="footer-bottom-navigation-container">
+                <nav class="footer-bottom-navigation-container" aria-label="Footer copyright navigation bar">
                     <ul class="footer-bottom-icons">
                         <li>
-                            <a href="https://www.linkedin.com/in/kristie-larke/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's LinkedIn profile">
+                            <a href="https://www.linkedin.com/in/kristie-larke/" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's LinkedIn profile (opens in a new tab)">
                                 <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's GitHub repositories">
+                            <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Visit Kristie Larke's GitHub repositories (opens in a new tab)">
                                 <i class="fa-brands fa-square-github" aria-hidden="true"></i>
                             </a>
                         </li>
                     </ul>
                     <div>
                         <p class="footer-bottom-copyright-sign">© <span class="footer-bottom-copyright-year"></span><span class="footer-bottom-copyright"> - Kristie Larke, All Rights Reserved.</span></p> <!--Footer bottom copyright year is automatically updated in the script.js file-->
-                        <a class="footer-bottom-privacy-policy-link" href="./portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer">Privacy Policy</a>
+                        <a class="footer-bottom-privacy-policy-link" href="../portfolio-privacy-policy-page/privacy-policy-page.html" rel="noopener noreferrer" aria-label="Front end portfolio privacy policy page">Privacy Policy</a>
                     </div>
                 </nav>
             </section>

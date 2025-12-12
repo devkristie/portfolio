@@ -6,8 +6,43 @@ const topNavigationBarAccordionContainer = document.querySelector(".top-navigati
 const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
 const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
+// Skip-to-main-content: move focus and scroll to main content for accessibility
+document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
+    const mainSection = document.querySelector(".thank-you-page-landing-page-section-container");
+    mainSection.setAttribute("tabindex", "-1");
+    mainSection.focus();
+
+    // Needed to prevent the page from displaying under the fixed header on page load
+    const targetSection = document.getElementById("skip-to-main-content-start");
+
+    if (targetSection) {
+        const scrollOffset = 79;
+        window.scrollTo({
+            top: targetSection.offsetTop - scrollOffset, // Scroll to the top of the section
+            behavior: "smooth" // Smooth scroll behavior
+        });
+    }
+});
+
+// Smoothly scrolls to the top and shifts focus to the hidden #home anchor for screen readers
+document.querySelector(".footer-navigation-link-backtotop").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(".thank-you-page-landing-page-section-container");
+
+    target.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start" 
+    });
+
+    // Set focus for screen readers without triggering another scroll
+    const homeAnchor = document.querySelector("#home");
+    homeAnchor.setAttribute("tabindex", "-1"); 
+    homeAnchor.focus({ preventScroll: true });
+});
+
 // Smooth scroll, compatilble for older browsers
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
         const targetElement = document.querySelector(this.getAttribute("href"));
@@ -197,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeIcon.classList.add("fa-moon-visibility-hidden");
         lightModeIcon.classList.add("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Dark mode is now enabled";
-        darkModeToggleButton.setAttribute("aria-label", "Enable Light Mode");
+        darkModeToggleButton.setAttribute("aria-label", "Enable light mode");
 
         // Add dark-mode-specific CSS classes to relevant page elements
         screenReadersOnlyText.forEach((text) => {
@@ -247,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
         darkModeIcon.classList.remove("fa-moon-visibility-hidden");
         lightModeIcon.classList.remove("fa-sun-visibility-visible");
         darkModeStatus.textContent = "Light mode is now enabled";
-        darkModeToggleButton.setAttribute("aria-label", "Enable Dark Mode");
+        darkModeToggleButton.setAttribute("aria-label", "Enable dark mode");
 
         // Remove dark-mode-specific CSS classes from all affected elements
         screenReadersOnlyText.forEach((text) => {
