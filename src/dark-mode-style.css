@@ -128,6 +128,9 @@ Dark Mode CSS Order:
 .portfolio-websites-show-more-accordion-container-paragraph-dark-mode {
     color: var(--light-grey);
 }
+.portfolio-websites-show-more-accordion-container-paragraph.notice.notice-dark-mode {
+    border: 1px solid var(--light-mode);
+}
 .portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode {
     color: var(--light-mode);
 }

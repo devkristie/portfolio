@@ -314,6 +314,9 @@ Responsive CSS Order:
     .portfolio-websites-show-more-accordion-container-paragraph {
         margin: 0 1em;
     }
+    .portfolio-websites-show-more-accordion-container-paragraph.notice {
+        margin: 0 1em 1.5em;
+    }
 }
 @media only screen and (max-width: 390px) {
     .portfolio-websites-show-more-accordion-container-technology-used-container > div {

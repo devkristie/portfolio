@@ -15,6 +15,14 @@ This website is designed to work best with JavaScript enabled. While basic funct
 
 ---
 
+### Demo Notice
+
+Some portfolio projects were built as part of a coding traineeship and are provided for demonstration purposes only.
+
+These demos may use shared or unauthenticated data sources. Visitors should not enter real personal information into demo applications.
+
+---
+
 ### Technical Details
 
 In this section, we explore the technical aspects of the project using descriptive text.

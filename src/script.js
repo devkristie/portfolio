@@ -265,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     const portfolioWebsitesShowMoreContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
     const portfolioShowMoreContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
+    const portfolioShowMoreContainerNotice = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph.notice");
     const portfolioContainerTechnologiesUsed = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
     const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
@@ -391,6 +392,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         portfolioShowMoreContainerParagraph.forEach((paragraph) => {
             paragraph.classList.add("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
+        });
+
+        portfolioShowMoreContainerNotice.forEach((notice) => {
+            notice.classList.add("notice-dark-mode");
         });
         
         portfolioContainerTechnologiesUsed.forEach((title) => {
@@ -565,6 +570,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         portfolioShowMoreContainerParagraph.forEach((paragraph) => {
             paragraph.classList.remove("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
+        });
+
+        portfolioShowMoreContainerNotice.forEach((notice) => {
+            notice.classList.remove("notice-dark-mode");
         });
         
         portfolioContainerTechnologiesUsed.forEach((title) => {
