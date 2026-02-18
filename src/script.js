@@ -260,12 +260,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioWebsitesContainer = document.querySelectorAll(".portfolio-websites-container");
     const portfolioWebsitesDeveloperTitle = document.querySelectorAll(".portfolio-section-container h3");
     const portfolioWebsiteArrows = document.querySelectorAll(".portfolio-websites-slider-left-arrow svg path, .portfolio-websites-slider-right-arrow svg path");
-    const portfolioSliderPlaceholderText = document.querySelector(".images-coming-soon");
+    // Future placeholder: const portfolioSliderPlaceholderText = document.querySelector(".images-coming-soon");
     const portfolioSliderPlaceholderImage = document.querySelectorAll(".placeholder");
     const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     const portfolioWebsitesShowMoreContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
     const portfolioShowMoreContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
     const portfolioShowMoreContainerNotice = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph.notice");
+    const portfolioContainerTestimonialsTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-testimonials-title");
+    const portfolioContainerTestimonials = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-testimonials-container");
+    const portfolioContainerTestimonialsQuote = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-testimonials-quote");
     const portfolioContainerTechnologiesUsed = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-technologies-used-title");
     const contactFormTopHeaderContainer = document.querySelector(".contact-form-top-header-container");
     const contactFormEnvelopeIcon = document.querySelector(".fa-envelope");
@@ -368,7 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
             arrow.classList.add("arrow-svg-path-dark-mode");
         });
 
-        portfolioSliderPlaceholderText.classList.add("images-coming-soon-dark-mode");
+        // Future placeholder: portfolioSliderPlaceholderText.classList.add("images-coming-soon-dark-mode");
 
         portfolioSliderPlaceholderImage.forEach((placeholder) => {
             placeholder.classList.add("placeholder-dark-mode");
@@ -396,6 +399,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         portfolioShowMoreContainerNotice.forEach((notice) => {
             notice.classList.add("notice-dark-mode");
+        });
+
+        portfolioContainerTestimonialsTitle.forEach((title) => {
+            title.classList.add("portfolio-websites-show-more-accordion-container-testimonials-title-dark-mode");
+        });
+
+        portfolioContainerTestimonials.forEach((background) => {
+            background.classList.add("portfolio-websites-show-more-accordion-container-testimonials-container-dark-mode");
+        });
+
+        portfolioContainerTestimonialsQuote.forEach((quote) => {
+            quote.classList.add("portfolio-websites-show-more-accordion-container-testimonials-quote-dark-mode");
         });
         
         portfolioContainerTechnologiesUsed.forEach((title) => {
@@ -546,7 +561,7 @@ document.addEventListener("DOMContentLoaded", () => {
             arrow.classList.remove("arrow-svg-path-dark-mode");
         });
 
-        portfolioSliderPlaceholderText.classList.remove("images-coming-soon-dark-mode");
+        // Future placeholder: portfolioSliderPlaceholderText.classList.remove("images-coming-soon-dark-mode");
 
         portfolioSliderPlaceholderImage.forEach((placeholder) => {
             placeholder.classList.remove("placeholder-dark-mode");
@@ -576,6 +591,18 @@ document.addEventListener("DOMContentLoaded", () => {
             notice.classList.remove("notice-dark-mode");
         });
         
+        portfolioContainerTestimonialsTitle.forEach((title) => {
+            title.classList.remove("portfolio-websites-show-more-accordion-container-testimonials-title-dark-mode");
+        });
+
+        portfolioContainerTestimonials.forEach((background) => {
+            background.classList.remove("portfolio-websites-show-more-accordion-container-testimonials-container-dark-mode");
+        });
+
+        portfolioContainerTestimonialsQuote.forEach((quote) => {
+            quote.classList.remove("portfolio-websites-show-more-accordion-container-testimonials-quote-dark-mode");
+        });
+
         portfolioContainerTechnologiesUsed.forEach((title) => {
             title.classList.remove("portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode");
         });

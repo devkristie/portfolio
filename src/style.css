@@ -942,6 +942,19 @@ main {
     background-color: var(--darkest-grey);
     color: var(--primary-color);
 }
+.portfolio-websites-show-more-accordion-container-testimonials-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.25em 3em 0.5em;
+    background-color: var(--lightest-grey);
+    border-radius: 24px;
+}
+.portfolio-websites-show-more-accordion-container-testimonials-quote {
+    font-size: 1rem;
+    font-family: "roboto-regular", Arial;
+    color: var(--darkest-grey);
+}
+.portfolio-websites-show-more-accordion-container-testimonials-title,
 .portfolio-websites-show-more-accordion-container-technologies-used-title {
     margin: 2.5em 0;
     font-size: 1rem;
@@ -974,6 +987,12 @@ main {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+.fa-wordpress {
+    color: #21759B;
+}
+.fa-elementor {
+    color: #B3004D;
 }
 .portfolio-websites-show-more-accordion-container-technology-used-container figcaption {
     margin: 0.5em 0 1.5em 0;

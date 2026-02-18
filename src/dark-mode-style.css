@@ -131,6 +131,15 @@ Dark Mode CSS Order:
 .portfolio-websites-show-more-accordion-container-paragraph.notice.notice-dark-mode {
     border: 1px solid var(--light-mode);
 }
+.portfolio-websites-show-more-accordion-container-testimonials-title-dark-mode {
+    color: var(--light-mode);
+}
+.portfolio-websites-show-more-accordion-container-testimonials-container-dark-mode {
+    background-color: var(--darker-grey);
+}
+.portfolio-websites-show-more-accordion-container-testimonials-quote-dark-mode {
+    color: var(--lightest-grey);
+}
 .portfolio-websites-show-more-accordion-container-technologies-used-title-dark-mode {
     color: var(--light-mode);
 }
