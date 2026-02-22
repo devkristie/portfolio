@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Thank you for reaching out! Your message has been successfully sent. I will get back to you shortly.">
+        <meta name="description" content="Explore the complete screenshot gallery of the Fresh Within website redesign, showcasing the design, layout, and frontend implementation.">
         <meta name="author" content="Kristie Larke">
-        <meta name="keywords" content="Thank You, Kristie Larke, Front End Web Developer, Contact, Portfolio, Contact, Kristie Larke Contact">
-        <title>Thank You for Contacting Me - Frontend Developer Portfolio, Kristie Larke</title>
+        <meta name="keywords" content="Fresh Within, Website Screenshots, Website Redesign, Frontend Portfolio, Web Development Portfolio, Kristie Larke">
+        <title>Fresh Within – Website Screenshot Gallery | Frontend Portfolio</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="./thank-you-page-style.css">
-        <link rel="stylesheet" href="../responsive-style.css">
-        <link rel="stylesheet" href="../dark-mode-style.css">
-        <link rel="stylesheet" href="../modal-style.css">
-        <link rel="icon" href="../assets/images/favicon.ico">
-        <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="./fresh-within-screenshots-style.css">
+        <link rel="stylesheet" href="../../responsive-style.css">
+        <link rel="stylesheet" href="../../dark-mode-style.css">
+        <link rel="stylesheet" href="../../modal-style.css">
+        <link rel="icon" href="../../assets/images/favicon.ico">
+        <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css">
         <!-- Scripts -->
-        <script src="./thank-you-page-script.js" defer></script>
+        <script src="./fresh-within-screenshots-script.js" defer></script>
     </head>
     <body>
         <header class="top-navigation-bar-container" aria-label="Main navigation bar">
@@ -57,16 +57,16 @@
             <nav aria-label="Main navigation links">
                 <ul class="top-navigation-bar-accordion-links">
                     <li>
-                        <a href="../#home">Home</a>
+                        <a href="../../#home">Home</a>
                     </li>
                     <li>
-                        <a href="../#profile">Profile</a>
+                        <a href="../../#profile">Profile</a>
                     </li>
                     <li>
-                        <a href="../#portfolio">Portfolio</a>
+                        <a href="../../#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a href="../#contact">Contact</a>
+                        <a href="../../#contact">Contact</a>
                     </li>
                     <li>
                         <a href="https://github.com/devkristie?tab=repositories" target="_blank" rel="noopener noreferrer">
@@ -79,45 +79,80 @@
         </div>
         <main aria-label="Main content">
             <div class="sr-only" id="tab-announcement" aria-live="assertive"></div> <!-- Visually hidden announcement for screen readers, used when the users click on any links that open in a new tab -->
-            <section id="skip-to-main-content-start" class="thank-you-page-landing-page-section-container">
+            <section>
                 <!-- Anchor for the Back to Top link. Visually hidden but read by screen readers. -->
                 <div id="home" tabindex="-1">
                     <p class="sr-only">Top of the page</p>
                 </div>
                 <header class="section-title-container">
-                    <h1 class="section-title">Contact</h1>
+                    <h1 class="section-title">Gallery</h1>
                 </header>
-                <div class="thank-you-page-content-container">
-                    <div class="typing-animation-container">
-                        <h2 class="typing-animation-text" data-text="Thank you!" aria-hidden="true"></h2> <!-- Text is added by the typing animation script -->
+                <article id="skip-to-main-content-start" class="gallery-page-content-container">
+                    <h2>Fresh Within Website Image Gallery</h2>
+                    <p class="section-introduction-container">This page presents the complete desktop screenshot gallery of the Fresh Within website redesign. The images below provide a full visual overview of the final frontend implementation, showcasing layout structure, spacing, typography, and overall design consistency.</p>
+                    <p class="section-introduction-container">The gallery supports the portfolio project description and README by offering a detailed visual record of the finished site following its transformation.</p>
+                    <div class="gallery-page-button-container">
+                        <a class="back-to-portfolio-button" href="../../#portfolio" aria-label="Back to Portfolio section">
+                            <i class="fa-solid fa-arrow-left-long"></i> Back To Portfolio
+                        </a>
                     </div>
-                    <article class="message-sent-paragraph-container">
-                        <p class="message-sent-paragraph">Your message has successfully been sent.</p>
-                        <p class="message-sent-paragraph">I will follow up with you within 1 - 2 business days.</p>
-                    </article>
-                    <svg class="message-sent-envelope-svg" aria-label="Message sent envelope icon" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="message-sent-envolope-svg-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
-                                <stop class="svg-envelope-gradient-primary-color" offset="0%"/>
-                                <stop class="svg-envelope-gradient-secondary-color" offset="100%"/>
-                            </linearGradient>
-                        </defs>
-                        <path class="message-sent-envelope-svg-envelope" d="M201 40 L201 80 Q200 90 190 90 L140 90 Q120 90 120 80 L120 40 Q120 30 130 30 L180 30 Q205 30 200 40 Q200 45 165 70 L130 40"/>
-                        <path class="message-sent-envelope-svg-envelope-end-gap" d="M206 43.5 L195 53.5"/>
-                        <path class="message-sent-envelope-svg-envelope-line" d="M105 40 L30 40"/>
-                        <path class="message-sent-envelope-svg-envelope-line" d="M105 60 L50 60"/>
-                        <path class="message-sent-envelope-svg-envelope-line" d="M105 80 L70 80"/>
-                    </svg>
-                    <div id="thankYouLiveRegion" class="sr-only" aria-live="polite" aria-atomic="true"></div> <!-- Hidden live region: SR will read the final message once -->
-                </div>
-                <div class="thank-you-page-button-container">
-                    <a class="back-to-portfolio-button" href="../">
-                        <i class="fa-solid fa-arrow-left-long"></i> Back To Portfolio
-                    </a>
-                    <a class="send-another-message-button" href="../#contact">
-                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Another Message
-                    </a>
-                </div>
+                    <hr class="portfolio-top-hr"/>
+                    <div class="image-screenshot-container">
+                        <div class="image-screenshot-row">
+                            <div class="image-screenshot-column">
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-home-screenshot.jpg" alt="Full website home page layout for Fresh Within wellness brand."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-about-us-screenshot.jpg" alt="About Us page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-our-product-screenshot.jpg" alt="Product information page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-shop-screenshot.jpg" alt="Online shop page design for Fresh Within wellness brand."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-cart-empty-screenshot.jpg" alt="Shopping cart page with no items in the cart on the Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-cart-full-screenshot.jpg" alt="Shopping cart page with items in the cart on Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-blog-and-articles-screenshot.jpg" alt="Blog and articles listing page layout for Fresh Within website."/>
+                                </button>
+                            </div>
+                            <div class="image-screenshot-column">
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-faqs-screenshot.jpg" alt="Frequently Asked Questions page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-contact-us-screenshot.jpg" alt="Contact Us page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-checkout-screenshot.jpg" alt="Secure checkout page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-refund-and-returns-screenshot.jpg" alt="Refund and returns policy page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-subscribe-screenshot.jpg" alt="Email subscribe page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-terms-and-conditions-screenshot.jpg" alt="Terms and Conditions page layout for Fresh Within website."/>
+                                </button>
+                                <button class="image-container" type="button">
+                                    <img class="thumb" src="../../assets/images/frontend-developer-fresh-within-privacy-policy-screenshot.jpg" alt="Privacy Policy page layout for Fresh Within website."/>
+                                </button>
+                            </div>
+                            <!-- Lightbox overlay -->
+                            <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+                                <button class="close" type="button" aria-label="Close image">&times;</button>
+                                <img class="lightbox-img" src="" alt=""/> <!-- Set the source and alternative text dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </section>
         </main>
         <!-- Parallax background -->
@@ -132,13 +167,13 @@
                             </a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="../#profile">Profile</a>
+                            <a href="../../#profile">Profile</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="../#portfolio">Portfolio</a>
+                            <a href="../../#portfolio">Portfolio</a>
                         </li>
                         <li class="footer-navigation-links">
-                            <a href="../#contact">Contact</a>
+                            <a href="../../#contact">Contact</a>
                         </li>
                         <li class="footer-navigation-links">
                             <a href="javascript:void(0)" aria-disabled="true" tabindex="-1">Blog (Coming Soon)</a>

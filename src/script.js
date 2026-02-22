@@ -265,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioWebsitesShowMoreContainer = document.querySelectorAll(".portfolio-websites-show-more-container");
     const portfolioWebsitesShowMoreContainerButton = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-button");
     const portfolioShowMoreContainerParagraph = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph");
+    const portfolioShowMoreContainerLinks = document.querySelector(".portfolio-websites-show-more-accordion-container-paragraph a");
     const portfolioShowMoreContainerNotice = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-paragraph.notice");
     const portfolioContainerTestimonialsTitle = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-testimonials-title");
     const portfolioContainerTestimonials = document.querySelectorAll(".portfolio-websites-show-more-accordion-container-testimonials-container");
@@ -396,6 +397,8 @@ document.addEventListener("DOMContentLoaded", () => {
         portfolioShowMoreContainerParagraph.forEach((paragraph) => {
             paragraph.classList.add("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
         });
+
+        portfolioShowMoreContainerLinks.classList.add("link-dark-mode");
 
         portfolioShowMoreContainerNotice.forEach((notice) => {
             notice.classList.add("notice-dark-mode");
@@ -586,6 +589,8 @@ document.addEventListener("DOMContentLoaded", () => {
         portfolioShowMoreContainerParagraph.forEach((paragraph) => {
             paragraph.classList.remove("portfolio-websites-show-more-accordion-container-paragraph-dark-mode");
         });
+
+        portfolioShowMoreContainerLinks.classList.remove("link-dark-mode");
 
         portfolioShowMoreContainerNotice.forEach((notice) => {
             notice.classList.remove("notice-dark-mode");

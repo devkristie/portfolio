@@ -4,11 +4,14 @@
 const hamburgerMenuIconContainer = document.querySelector(".hamburger-menu-container");
 const topNavigationBarAccordionContainer = document.querySelector(".top-navigation-bar-accordion-container-hidden");
 const dynamicAnnouncer = document.getElementById("dynamicAnnouncer");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxCloseButton = document.querySelector("#lightbox .close");
 const copyrightUpdateYear = document.querySelector(".footer-bottom-copyright-year");
 
 // Skip-to-main-content: move focus and scroll to main content for accessibility
 document.querySelector(".top-navigation-bar-skip-to-main-content-link").addEventListener("click", () => {
-    const mainSection = document.querySelector(".privacy-policy-page-content-container");
+    const mainSection = document.querySelector(".gallery-page-content-container");
     mainSection.setAttribute("tabindex", "-1");
     mainSection.focus();
 
@@ -205,14 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const screenReadersOnlyText = document.querySelectorAll(".sr-only");
     const bodyDarkMode = document.querySelector("body");
     const mainDarkMode = document.querySelector("main");
-    const policyNavigationContainer = document.querySelector(".privacy-policy-content-navigation-container");
-    const policyNavigationContainerSubheading = document.querySelector(".privacy-policy-content-navigation-container h2");
-    const policyNavigationLinks = document.querySelectorAll(".privacy-policy-content-navigation-links a");
-    const policyNavigationBulletPoints = document.querySelectorAll(".privacy-policy-content-navigation-links li");
-    const policyPageSubheading = document.querySelectorAll(".privacy-policy-page-content-container h2");
-    const contentParagraphs = document.querySelectorAll(".privacy-policy-page-content-container p");
-    const contentLinks = document.querySelectorAll(".privacy-policy-page-content-container a");
-    const contentStrong = document.querySelector(".privacy-policy-page-content-container strong");
+    const galleryPageSubheading = document.querySelectorAll(".gallery-page-content-container h2");
+    const contentParagraphs = document.querySelectorAll(".gallery-page-content-container p");
+    const galleryImageBackground = document.querySelectorAll(".image-container");
     const footerSectionContainer = document.querySelector(".footer-section-container");
     const footerNavigtionContainer = document.querySelector(".footer-navigation-container");
     const footerBackToTopLink = document.querySelector("a.footer-navigation-link-backtotop");
@@ -238,19 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         dynamicAnnouncer.classList.add("dynamic-announcer-dark-mode");
 
-        policyNavigationContainer.classList.add("privacy-policy-content-navigation-container-dark-mode");
-
-        policyNavigationContainerSubheading.classList.add("navigation-h2-dark-mode");
-
-        policyNavigationLinks.forEach((link) => {
-            link.classList.add("navigation-a-dark-mode");
-        });
-
-        policyNavigationBulletPoints.forEach((bullet) => {
-            bullet.classList.add("navigation-li-dark-mode");
-        });
-
-        policyPageSubheading.forEach((subheading) => {
+        galleryPageSubheading.forEach((subheading) => {
             subheading.classList.add("h2-dark-mode");
         });
 
@@ -258,11 +244,9 @@ document.addEventListener("DOMContentLoaded", () => {
             paragraph.classList.add("p-dark-mode");
         });
 
-        contentLinks.forEach((link) => {
-            link.classList.add("a-dark-mode");
+        galleryImageBackground.forEach((background) => {
+            background.classList.add("image-container-dark-mode");
         });
-
-        contentStrong.classList.add("strong-dark-mode");
 
         footerSectionContainer.classList.add("footer-section-container-dark-mode");
         
@@ -302,19 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         dynamicAnnouncer.classList.remove("dynamic-announcer-dark-mode");
 
-        policyNavigationContainer.classList.remove("privacy-policy-content-navigation-container-dark-mode");
-
-        policyNavigationContainerSubheading.classList.remove("navigation-h2-dark-mode");
-
-        policyNavigationLinks.forEach((link) => {
-            link.classList.remove("navigation-a-dark-mode");
-        });
-
-        policyNavigationBulletPoints.forEach((bullet) => {
-            bullet.classList.remove("navigation-li-dark-mode");
-        });
-
-        policyPageSubheading.forEach((subheading) => {
+        galleryPageSubheading.forEach((subheading) => {
             subheading.classList.remove("h2-dark-mode");
         });
 
@@ -322,11 +294,9 @@ document.addEventListener("DOMContentLoaded", () => {
             paragraph.classList.remove("p-dark-mode");
         });
 
-        contentLinks.forEach((link) => {
-            link.classList.remove("a-dark-mode");
+        galleryImageBackground.forEach((background) => {
+            background.classList.remove("image-container-dark-mode");
         });
-
-        contentStrong.classList.remove("strong-dark-mode");
 
         footerSectionContainer.classList.remove("footer-section-container-dark-mode");
 
@@ -425,6 +395,37 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
             }, 3000);
         }
     });
+});
+
+// Lightbox modal
+let lastFocusedElement;
+
+document.querySelectorAll(".image-container").forEach(button => {
+    button.addEventListener("click", () => {
+        const img = button.querySelector("img"); 
+        lastFocusedElement = document.activeElement; // Save focused element
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCloseButton.focus(); // Move focus to close button
+    });
+});
+
+// Close lightbox
+function closeLightbox() {
+    lightbox.style.display = "none";
+    if (lastFocusedElement) lastFocusedElement.focus(); // Restore focus
+}
+
+// Close lightbox on click
+lightboxCloseButton.addEventListener("click", closeLightbox);
+
+// Handle Enter/Space for accessibility
+lightboxCloseButton.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        closeLightbox();
+    }
 });
 
 // Set the copyright year dynamically to the current year based on the system date

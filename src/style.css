@@ -679,7 +679,6 @@ main {
 .section-introduction-container > h3 {
     margin-top: 2.7em;
     font-size: 1.5rem;
-    font-family: "roboto-bold", Arial;
     letter-spacing: 0.01em;
 }
 .section-introduction-container > p {
@@ -924,9 +923,20 @@ main {
     color: var(--darkest-grey);
     cursor: text;
 }
+.portfolio-websites-show-more-accordion-container-paragraph a {
+    padding: 0 0.2em;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--dark-mode);
+}
+.portfolio-websites-show-more-accordion-container-paragraph a:hover,
+.portfolio-websites-show-more-accordion-container-paragraph a:focus-visible {
+    background-color: var(--secondary-color);
+    color: var(--lightest-grey);
+}
 .portfolio-websites-show-more-accordion-container-paragraph.notice {
     display: inline-block;
-    margin: 0 3em 1.5em;
+    margin: 1.5em 3em;
     padding: 0 0.5em 0.1em;
     border: 1px solid var(--darkest-grey);
 }

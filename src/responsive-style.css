@@ -208,7 +208,7 @@ Responsive CSS Order:
     .profile-introduction-container {
         width: 100%;
         margin: -14.25em auto 0;
-    } 
+    }
 }
 @media only screen and (min-width: 1000px) {
     .section-introduction-container {
@@ -315,7 +315,7 @@ Responsive CSS Order:
         margin: 0 1em;
     }
     .portfolio-websites-show-more-accordion-container-paragraph.notice {
-        margin: 0 1em 1.5em;
+        margin: 1.5em 1em;
     }
     .portfolio-websites-show-more-accordion-container-testimonials-container {
         padding: 1.25em 1em 0.5em;
